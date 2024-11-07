@@ -1,0 +1,1 @@
+export  const logo : string ="https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/logo/logo.png"

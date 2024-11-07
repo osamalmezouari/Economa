@@ -1,0 +1,194 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum DiscountType {
+  Percentage
+  Flat
+}
+
+enum OrderStatus {
+  Pending
+  Completed
+  Shipped
+  Cancelled
+}
+
+model Category {
+  id          String    @id
+  name        String    @unique
+  description String?
+  products    Product[]
+}
+
+model Coupon {
+  id                  String    @id
+  code                String    @unique
+  description         String?
+  discount_type       String
+  discount_value      Float
+  max_usage           Int?      @default(1)
+  used_count          Int?      @default(0)
+  expiration_date     DateTime?
+  minimum_order_value Float?
+  created_at          DateTime  @default(now())
+  updated_at          DateTime  @updatedAt
+  orders              Order[]
+}
+
+model Permission {
+  id          String           @id
+  name        String           @unique
+  description String?
+  roles       RolePermission[]
+}
+
+model Product {
+  id           String          @id
+  name         String
+  description  String?
+  price        Float
+  stock        Int
+  categoryId   String?
+  category     Category?       @relation(fields: [categoryId], references: [id])
+  created_at   DateTime        @default(now())
+  updated_at   DateTime        @updatedAt
+  gallery      Gallery[]
+  orderItems   OrderItem[]
+  reviews      ProductReview[]
+  shoppingCart ShoppingCart[]
+  wishList     Wishlist[]
+}
+
+model Gallery {
+  id        String   @id
+  productId String?
+  imagePath String
+  altText   String?
+  createdAt DateTime @default(now())
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Role {
+  id          String           @id
+  name        String           @unique
+  description String?
+  users       User[]
+  permissions RolePermission[]
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model User {
+  id            String          @id
+  name          String?
+  email         String          @unique
+  password      String
+  roleId        String?
+  phoneNumber   String?
+  address       String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  lastLogin     DateTime?
+  role          Role?           @relation(fields: [roleId], references: [id], onDelete: SetNull)
+  notifications Notification[]
+  orders        Order[]
+  reviews       ProductReview[]
+  shoppingCart  ShoppingCart[]
+  wishList      Wishlist[]
+}
+
+model Notification {
+  id        String   @id
+  userId    String?
+  type      String?
+  message   String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id              String      @id
+  userId          String?
+  couponId        String?
+  status          String      @default("Pending")
+  shippingAddress String?
+  billingAddress  String?
+  totalAmount     Float
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  user            User?       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  coupon          Coupon?     @relation(fields: [couponId], references: [id], onDelete: SetNull)
+  orderItems      OrderItem[]
+  payment         Payment?
+}
+
+model OrderItem {
+  id        String  @id
+  orderId   String
+  productId String
+  quantity  Int
+  unitPrice Float
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id            String   @id
+  orderId       String   @unique
+  amount        Float
+  paymentDate   DateTime @default(now())
+  paymentStatus String
+  paymentMethod String?
+  transactionId String   @unique
+  order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model ProductReview {
+  id         String   @id
+  userId     String?
+  productId  String?
+  rating     Int?
+  reviewText String?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product    Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+}
+
+model ShoppingCart {
+  id        String   @id
+  userId    String
+  productId String
+  quantity  Int      @default(1)
+  addedAt   DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+}
+
+model Wishlist {
+  id        String   @id
+  userId    String
+  productId String
+  addedAt   DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+}
