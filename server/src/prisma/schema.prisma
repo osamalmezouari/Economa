@@ -27,17 +27,17 @@ model Category {
 }
 
 model Coupon {
-  id                  String    @id
-  code                String    @unique
+  id                  String       @id
+  code                String       @unique
   description         String?
-  discount_type       String
+  discount_type       DiscountType
   discount_value      Float
-  max_usage           Int?      @default(1)
-  used_count          Int?      @default(0)
+  max_usage           Int?         @default(1)
+  used_count          Int?         @default(0)
   expiration_date     DateTime?
   minimum_order_value Float?
-  created_at          DateTime  @default(now())
-  updated_at          DateTime  @updatedAt
+  created_at          DateTime     @default(now())
+  updated_at          DateTime     @updatedAt
   orders              Order[]
 }
 
@@ -124,7 +124,7 @@ model Order {
   id              String      @id
   userId          String?
   couponId        String?
-  status          String      @default("Pending")
+  status          OrderStatus
   shippingAddress String?
   billingAddress  String?
   totalAmount     Float

@@ -29,7 +29,7 @@ const Mobile_nav_bar = ({ NavItems }: NavItemsProps) => {
 
             </Box>
             <Box component={'div'} className="flex p-4 border-b-2 items-center justify-between">
-                <Box component={'img'} src={NavItems.logo} className="w-[60px] h-[17.5px]" alt="logo" />
+                <Box component={'img'} src={NavItems.logo} className="w-[80px] h-[80px]" alt="logo" />
                 <TextField
                     className="w-[250px]"
                     variant="outlined"
