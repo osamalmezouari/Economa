@@ -6,89 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="30aff376-8b12-4f2b-a064-2c7e7b0056e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/assets/icons/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/base/navbars/desktop_nav_bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/navbars/desktop_nav_bar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mock/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mock/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/theme/palette.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/theme/palette.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/permission/dto/create-permission.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/permission/dto/create-permission.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/permission/dto/update-permission.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/permission/dto/update-permission.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/permission/permission.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/permission/permission.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/permission/permission.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/permission/permission.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/permission/permission.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/permission/permission.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/roles/dto/create-role.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/roles/dto/create-role.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/roles/dto/update-role.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/roles/dto/update-role.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/roles/roles.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/roles/roles.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/roles/roles.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/roles/roles.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/access/roles/roles.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/access/roles/roles.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/coupon/coupon.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/coupon/coupon.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/coupon/coupon.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/coupon/dto/create-coupon.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/dto/create-coupon.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/coupon/dto/update-coupon.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/dto/update-coupon.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/discount-type/discount-type.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/discount-type/discount-type.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/discount-type/discount-type.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/discount-type/dto/create-discount-type.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/discount-type/dto/update-discount-type.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/payment/dto/create-payment.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/dto/create-payment.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/payment/dto/update-payment.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/dto/update-payment.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/billing/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-item/dto/create-order-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/order-item/dto/create-order-item.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-item/dto/update-order-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/order-item/dto/update-order-item.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-item/order-item.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/order-item/order-item.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-item/order-item.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/order-item/order-item.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-item/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/order-item/order-item.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-status/dto/create-order-status.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-status/dto/update-order-status.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-status/order-status.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-status/order-status.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/order-status/order-status.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/orders/dto/create-order.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/dto/create-order.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/orders/dto/update-order.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/dto/update-order.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/orders/orders.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/orders/orders.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/orders/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product-review/dto/create-product-review.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product-review/dto/create-product-review.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product-review/dto/update-product-review.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product-review/dto/update-product-review.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product-review/product-review.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product-review/product-review.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product-review/product-review.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product-review/product-review.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product-review/product-review.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product-review/product-review.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product/dto/create-product.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/dto/create-product.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product/dto/update-product.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/dto/update-product.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/product.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/dto/create-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/user/dto/update-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/dto/update-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/user.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/core/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/media/gallery/dto/create-gallery.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/media/gallery/dto/create-gallery.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/media/gallery/dto/update-gallery.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/media/gallery/dto/update-gallery.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/media/gallery/gallery.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/media/gallery/gallery.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/media/gallery/gallery.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/media/gallery/gallery.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/media/gallery/gallery.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/media/gallery/gallery.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/notifications/notification/dto/create-notification.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/notifications/notification/dto/create-notification.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/notifications/notification/dto/update-notification.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/notifications/notification/dto/update-notification.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/notifications/notification/notification.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/notifications/notification/notification.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/notifications/notification/notification.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/notifications/notification/notification.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/notifications/notification/notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/notifications/notification/notification.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/shopping-cart/dto/create-shopping-cart.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/dto/create-shopping-cart.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/shopping-cart/dto/update-shopping-cart.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/dto/update-shopping-cart.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/shopping-cart/shopping-cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/shopping-cart/shopping-cart.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/shopping-cart/shopping-cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/wishlist/dto/create-wishlist.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/dto/create-wishlist.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/wishlist/dto/update-wishlist.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/dto/update-wishlist.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/wishlist/wishlist.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/wishlist.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/wishlist/wishlist.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/wishlist.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/collections/settings/wishlist/wishlist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/wishlist.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/prisma/prisma.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/prisma/prisma.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/category-card/categoryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/category-card/categoryCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/category-card/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/extra/categoryCard/categoryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/extra/categoryCard/categoryCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/category/dto/create-category.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/category/dto/create-category.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/dto/create-order.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/dto/create-order.dto.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Oussama/PROJECTS/AOS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Oussama/PROJECTS/Ecommerce&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -129,7 +55,7 @@
     &quot;npm.lint.executor&quot;: &quot;Run&quot;,
     &quot;npm.start:dev.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Oussama\\PROJECTS\\Ecommerce\\server\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.inline.completion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Oussama\\PROJECTS\\Ecommerce\\client\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -222,6 +148,8 @@
       <workItem from="1731514175023" duration="2772000" />
       <workItem from="1731517007417" duration="805000" />
       <workItem from="1731529414984" duration="4000" />
+      <workItem from="1731764079058" duration="3526000" />
+      <workItem from="1731767652428" duration="110000" />
     </task>
     <servers />
   </component>

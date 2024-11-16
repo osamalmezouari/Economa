@@ -1,22 +1,19 @@
-import { Badge, Box, colors, Typography } from "@mui/material";
+import { Badge, Box } from "@mui/material";
 import Card from "@mui/material/Card";
-import { PiPopcornDuotone } from "react-icons/pi";
+import { CategorySignleProps } from "./interfaces";
 
-const CategoryCardSingle = () => {
-    const calors : string[] =  ['#e2fde2' ,'#fee9e8','#fdf4ea','#F9DEF2','fdf5eb']
-    const randomColor  = calors[Math.floor(Math.random() * calors.length - 1)];
+const CategoryCardSingle = ({ IconImage, linkTo, productsCount , name , description }: CategorySignleProps) => {
+    const calors: string[] = ['#e2fde2', '#fee9e8', '#fdf4ea', '#F9DEF2', 'fdf5eb']
+    const randomColor = calors[Math.floor(Math.random() * calors.length )];
 
     return (
-        <Box component={'div'}  className={`p-3 rounded bg-[${randomColor}]`}>
+        <Box component={'div'} className={`p-3 rounded`} style={{backgroundColor : `${randomColor}`}}>
             <Card
-                className="w-[180px] h-[160px]  bg-secondary-darker  "
-                style={{
-                    transition: "box-shadow 0.5s ease-in-out, outline 0.5s ease-in-out",
-                }}
+                className="w-[180px] h-[160px]  bg-secondary-darker"
             >
                 <Badge className="rounded px-3 text-white bg-primary-dark">20 %</Badge>
                 <Box component={"div"} className="p-4 text-center grid justify-center gap-y-1">
-                    <Box component={'div'} className="" style={{backgroundImage : `url()`}}></Box>
+                    <Box component={'div'} className="w-12 m-auto h-12 bg-cover bg-center" style={{ backgroundImage: `url(https://raw.githubusercontent.com/osamalmezouari/ecommerce/refs/heads/master/client/public/assets/icons/popcorn.svg)` }}></Box>
                     <Box component={"div"} className="font-secondary font-bold text-secondary-darker">
                         Fast Food
                     </Box>
