@@ -7,7 +7,7 @@ import { CATEGORY_NOT_FOUND_Exception } from '../../../common/exceptions/CATEGOR
 
 @Injectable()
 export class CategoryService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
 
   async create(createCategoryDto: CreateCategoryDto) {
     const category = await this.prisma.category.create({
@@ -17,8 +17,19 @@ export class CategoryService {
   }
 
   async findAll() {
-    const categories = await this.prisma.category.findMany();
-    return categories;
+    const categories = await this.prisma.category.findMany({
+      include: {
+        products: true
+      }
+    });
+    const categoriesWithProductsCount = await categories.map((item) => {
+      return {
+        ...item,
+        products :null,
+        productsCount: item.products.length,
+      }
+    })
+    return categoriesWithProductsCount;
   }
 
   async findOne(id: string) {

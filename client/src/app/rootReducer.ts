@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import { categoryReducer } from '../features/category/categorySlice';
 
 const rootReducer = combineReducers({
-    //categories: ,
+    category : categoryReducer,
     //auth: authReducer,
 });
 
