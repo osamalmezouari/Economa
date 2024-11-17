@@ -7,11 +7,13 @@ import Typography from '@mui/material/Typography';
 
 export default function ProductCard() {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 300 , padding : '5px' }}>
             <CardMedia
-                sx={{ height: 140 }}
-                image=""
+                sx={{ height: 280}}
+                className='bg-cover bg-center'
+                image="https://raw.githubusercontent.com/osamalmezouari/ecommerce/refs/heads/master/client/public/assets/products/bakery/product3.jpg"
                 title="green iguana"
+                
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
