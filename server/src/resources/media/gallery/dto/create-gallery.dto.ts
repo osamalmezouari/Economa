@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString } from 'class-validator';
 export class CreateGalleryDto {
   @IsNotEmpty()
   @IsString()
-  imagePath: string;
+  imageUrl: string;
 
   @IsString()
   altText?: string;
