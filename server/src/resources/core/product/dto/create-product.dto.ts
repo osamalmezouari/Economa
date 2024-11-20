@@ -7,6 +7,8 @@ export class CreateProductDto {
     @MaxLength(150)
     description: string;
     @IsNumber()
+    @IsString()
+    discount?: string
     price: number;
     @IsInt()
     stock: number;
