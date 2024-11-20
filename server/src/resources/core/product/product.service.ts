@@ -6,10 +6,20 @@ import { v4 as uuid } from 'uuid';
 import { PRODUCT_NOT_FOUND_Exception } from 'src/common/exceptions/PRODUCT_NOT_FOUND.exception';
 @Injectable()
 export class ProductService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
   async create(createProductDto: CreateProductDto) {
     const product = await this.prisma.product.create({
-      data: { id: uuid(), ...createProductDto },
+      data: {
+        id: uuid(),
+        name: createProductDto.name,
+        description: createProductDto.description,
+        price: createProductDto.price,
+        stock: createProductDto.stock,
+        discount: createProductDto.discount,
+        category: {
+          connect: { id: createProductDto.categoryId },  // This is assuming createProductDto has categoryId
+        },
+      },
     });
     return product;
   }

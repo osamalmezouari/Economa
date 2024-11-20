@@ -55,9 +55,9 @@ model Product {
   description  String?
   price        Float
   stock        Int
-  categoryId   String?
-  discount     String?
-  category     Category?       @relation(fields: [categoryId], references: [id])
+  categoryId   String
+  discount     Int?
+  category     Category       @relation(fields: [categoryId], references: [id])
   created_at   DateTime        @default(now())
   updated_at   DateTime        @updatedAt
   gallery      Gallery[]
@@ -69,10 +69,10 @@ model Product {
 
 model Gallery {
   id        String   @id
-  productId String?
+  productId String
   imageUrl  String
   createdAt DateTime @default(now())
-  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Role {

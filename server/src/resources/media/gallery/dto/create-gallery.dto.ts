@@ -6,8 +6,5 @@ export class CreateGalleryDto {
   imageUrl: string;
 
   @IsString()
-  altText?: string;
-
-  @IsString()
-  productId?: string;
+  productId: string;
 }

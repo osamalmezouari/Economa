@@ -3,11 +3,11 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateGalleryDto } from './dto/create-gallery.dto';
 import { UpdateGalleryDto } from './dto/update-gallery.dto';
 import { v4 as uuid } from 'uuid';
-import { GALLERY_NOT_FOUND_Exception } from '../../../common/exceptions/GALLERY_NOT_FOUND.exception'; // Assuming custom exception
+import { GALLERY_NOT_FOUND_Exception } from '../../../common/exceptions/GALLERY_NOT_FOUND.exception';
 
 @Injectable()
 export class GalleryService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
 
   async create(createGalleryDto: CreateGalleryDto) {
     const gallery = await this.prisma.gallery.create({
@@ -28,7 +28,7 @@ export class GalleryService {
   }
 
   async update(id: string, updateGalleryDto: UpdateGalleryDto) {
-    await this.findOne(id); // Will throw exception if not found
+    await this.findOne(id);
     const gallery = await this.prisma.gallery.update({
       where: { id },
       data: updateGalleryDto,
@@ -37,7 +37,7 @@ export class GalleryService {
   }
 
   async remove(id: string) {
-    await this.findOne(id); // Will throw exception if not found
+    await this.findOne(id); 
     const gallery = await this.prisma.gallery.delete({ where: { id } });
     return gallery;
   }

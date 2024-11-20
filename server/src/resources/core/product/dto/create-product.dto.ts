@@ -7,11 +7,10 @@ export class CreateProductDto {
     @MaxLength(150)
     description: string;
     @IsNumber()
-    @IsString()
-    discount?: string
+    discount?: number
     price: number;
     @IsInt()
     stock: number;
     @IsUUID()
-    categoryId?: string;
+    categoryId: string;
 }
