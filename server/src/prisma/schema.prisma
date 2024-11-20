@@ -57,7 +57,7 @@ model Product {
   stock        Int
   categoryId   String
   discount     Int?
-  category     Category       @relation(fields: [categoryId], references: [id])
+  category     Category        @relation(fields: [categoryId], references: [id])
   created_at   DateTime        @default(now())
   updated_at   DateTime        @updatedAt
   gallery      Gallery[]
@@ -65,6 +65,9 @@ model Product {
   reviews      ProductReview[]
   shoppingCart ShoppingCart[]
   wishList     Wishlist[]
+  unitId       String
+  Units        Units           @relation(fields: [unitId], references: [id])
+  
 }
 
 model Gallery {
@@ -72,7 +75,7 @@ model Gallery {
   productId String
   imageUrl  String
   createdAt DateTime @default(now())
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Role {
@@ -192,4 +195,10 @@ model Wishlist {
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@unique([userId, productId])
+}
+
+model Units {
+  id       String    @id
+  name     String    @unique
+  products Product[]
 }

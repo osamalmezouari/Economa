@@ -11,14 +11,7 @@ export class ProductService {
     const product = await this.prisma.product.create({
       data: {
         id: uuid(),
-        name: createProductDto.name,
-        description: createProductDto.description,
-        price: createProductDto.price,
-        stock: createProductDto.stock,
-        discount: createProductDto.discount,
-        category: {
-          connect: { id: createProductDto.categoryId },  // This is assuming createProductDto has categoryId
-        },
+        ...createProductDto
       },
     });
     return product;

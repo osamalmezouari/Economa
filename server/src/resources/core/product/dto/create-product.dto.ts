@@ -13,4 +13,6 @@ export class CreateProductDto {
     stock: number;
     @IsUUID()
     categoryId: string;
+    @IsString()
+    unitId : string
 }
