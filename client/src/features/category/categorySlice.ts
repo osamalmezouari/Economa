@@ -1,14 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CategoryType } from '../../interfaces/category';
+import { CategoryStateType, CategoryType } from '../../interfaces/category';
 import { getCategories, createCategory, updateCategory, deleteCategory } from './categoryThunk';
 
-interface CategoryState {
-    categories: CategoryType[];
-    loading: boolean;
-    error: string | null;
-}
 
-const initialState: CategoryState = {
+const initialState: CategoryStateType = {
     categories: [],
     loading: false,
     error: null,
