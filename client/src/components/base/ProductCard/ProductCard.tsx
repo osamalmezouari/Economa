@@ -55,7 +55,7 @@ export default function ProductCard({
         </div>
       </Box>
       <CardContent sx={{ padding: '5px 10px' }}>
-        <p className="my-1 text-secondary-lighter">
+        <p className="my-1 text-secondary-lighter capitalize">
           {categoryName} - {name}
         </p>
         <p className="text-secondary-main capitalize mb-8 max-h-6 overflow-hidden">
