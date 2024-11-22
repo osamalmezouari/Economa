@@ -1,12 +1,12 @@
 
 import Navbar from "../components/extra/navbars/Navbar"
 import HeroImage from "../components/base/hero-image/heroImage"
-import CategoryCard from "../components/extra/categoryCard/categoryCard"
+import CategoryCardContainer from "../components/extra/categoryCardContainer/categoryCardContainer"
 const Home = () => {
     return <>
         <Navbar />
         <HeroImage />
-        <CategoryCard />
+        <CategoryCardContainer />
     </>
 }
 

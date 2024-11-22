@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
 
-const ProductCardGrid = () => {
+const ProductCardContainer = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { productsCard } = useSelector((state: RootState) => state.products);
   const { loading, data } = productsCard;
@@ -80,4 +80,4 @@ const ProductCardGrid = () => {
   );
 };
 
-export default ProductCardGrid;
+export default ProductCardContainer;
