@@ -3,8 +3,8 @@ import ProductCard from '../../base/ProductCard/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { getproductsCards } from '../../../features/products/productThunk';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
 
 const ProductCardGrid = () => {
@@ -15,6 +15,7 @@ const ProductCardGrid = () => {
   useEffect(() => {
     dispatch(getproductsCards());
   }, [dispatch]);
+
 
   const settings = {
     dots: false,
@@ -48,7 +49,10 @@ const ProductCardGrid = () => {
   };
 
   return (
-    <div className="slider-container" style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}>
+    <div
+      className="slider-container"
+      style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}
+    >
       {loading ? (
         'Loading...'
       ) : (
@@ -69,6 +73,7 @@ const ProductCardGrid = () => {
               />
             </div>
           ))}
+          
         </Slider>
       )}
     </div>

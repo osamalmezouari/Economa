@@ -11,6 +11,11 @@ export interface ProductCardType {
   imageLink: string;
 }
 
+export interface ProductDialogProps extends ProductCardType {
+  open: boolean;
+  setopen: (open: boolean) => void;
+}
+
 export interface ProductCardStateType {
   productsCard: {
     data: ProductCardType[];

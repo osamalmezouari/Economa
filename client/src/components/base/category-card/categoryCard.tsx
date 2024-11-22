@@ -13,7 +13,7 @@ const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name, description 
             >
                 <Badge className="rounded px-3 text-white bg-primary-dark">20 %</Badge>
                 <Box component={"div"} className="p-4 text-center grid justify-center gap-y-1">
-                    <Box component={'div'} className="w-12 m-auto h-12 bg-cover bg-center" style={{ backgroundImage: `url(${svgLink})` }}></Box>
+                   <Box component={'div'} className="w-12 m-auto h-12 bg-cover bg-center" style={{ backgroundImage: `url(${svgLink})` }}></Box>
                     <Box component={"div"} className="font-secondary font-bold text-secondary-darker">
                         {name}
                     </Box>
