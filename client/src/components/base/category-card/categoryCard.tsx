@@ -1,8 +1,8 @@
 import { Badge, Box } from "@mui/material";
 import Card from "@mui/material/Card";
-import { CategorySignleProps } from "./interfaces";
+import { CategoryCardProps } from "../../../interfaces/category";
 
-const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name, description }: CategorySignleProps) => {
+const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name, description }: CategoryCardProps) => {
     const calors: string[] = ['#e2fde2', '#fee9e8', '#fdf4ea', '#F9DEF2', 'fdf5eb']
     const randomColor = calors[Math.floor(Math.random() * calors.length)];
 
