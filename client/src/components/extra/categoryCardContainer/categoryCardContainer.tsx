@@ -19,7 +19,7 @@ const CategoryCardContainer = () => {
             {loading ? (
                 <p>Loading categories...</p>
             ) : (
-                <Grid2 container spacing={4} sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+                <Grid2 container spacing={4} sx={{ alignItems: 'center'}} component={'div'} className="justify-evenly" >
                     {categories.map((category) => (
                         <CategoryCard
                             key={category.id}
