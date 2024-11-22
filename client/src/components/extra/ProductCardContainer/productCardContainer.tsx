@@ -1,4 +1,5 @@
 import Slider from 'react-slick';
+import Grid from '@mui/material/Grid';
 import ProductCard from '../../base/ProductCard/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
@@ -16,8 +17,7 @@ const ProductCardContainer = () => {
     dispatch(getproductsCards());
   }, [dispatch]);
 
-
-  const settings = {
+  const sliderSettings = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -49,31 +49,31 @@ const ProductCardContainer = () => {
   };
 
   return (
-    <div
-      className="slider-container"
-      style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}
-    >
+    <div style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}>
       {loading ? (
         'Loading...'
       ) : (
-        <Slider {...settings}>
-          {data.map((productCard) => (
-            <div key={productCard.id} style={{ padding: '0 10px' }}>
-              <ProductCard
-                id={productCard.id}
-                discount={productCard.discount}
-                name={productCard.name}
-                categoryName={productCard.categoryName}
-                description={productCard.description}
-                productAvgRaiting={productCard.productAvgRaiting}
-                price={productCard.price}
-                priceWithDiscount={productCard.priceWithDiscount}
-                unit={productCard.unit}
-                imageLink={productCard.imageLink}
-              />
+        <Slider {...sliderSettings}>
+          {data?.map((productCard) => (
+            <div key={productCard.id}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} gap={2}>
+                  <ProductCard
+                    id={productCard.id}
+                    discount={productCard.discount}
+                    name={productCard.name}
+                    categoryName={productCard.categoryName}
+                    description={productCard.description}
+                    productAvgRaiting={productCard.productAvgRaiting}
+                    price={productCard.price}
+                    priceWithDiscount={productCard.priceWithDiscount}
+                    unit={productCard.unit}
+                    imageLink={productCard.imageLink}
+                  />
+                </Grid>
+              </Grid>
             </div>
           ))}
-          
         </Slider>
       )}
     </div>
