@@ -10,7 +10,7 @@ const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name }: CategoryCa
     return (
         <Box component={'div'} className={`p-3 rounded`} style={{ backgroundColor: `${randomColor}` }}>
             <Card
-                className="w-[180px] h-[160px]  bg-secondary-darker"
+                className="w-[140px]   bg-secondary-darker"
             >
                 <Box component={"div"} className="p-4 text-center grid justify-center gap-y-1">
                    <Box component={'div'} className="w-12 m-auto h-12 bg-cover bg-center" style={{ backgroundImage: `url(${svgLink})` }} onClick={()=>Navigate(linkTo)}></Box>
