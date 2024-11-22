@@ -34,7 +34,12 @@ export default function ProductCard({
 
   return (
     <Card
-      sx={{ maxWidth: 280, borderRadius: '2px', border: '2px solid #eeeeee' ,margin:'auto'}}
+      sx={{
+        maxWidth: 280,
+        borderRadius: '2px',
+        border: '2px solid #eeeeee',
+        margin: 'auto',
+      }}
       className="group relative overflow-hidden"
     >
       <CardMedia
