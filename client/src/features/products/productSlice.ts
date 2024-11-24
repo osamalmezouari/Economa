@@ -25,6 +25,7 @@ const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+
       //products cards
       .addCase(getproductsCards.pending, (state) => {
         state.productsCard.loading === true;
