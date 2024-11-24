@@ -89,7 +89,69 @@ export class ProductService {
 
     return productsWithAvgRating;
   }
+  async getnewArrivals() {
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+    const productsWithDiscount = await this.prisma.product.findMany({
+      where: {
+        created_at: {
+          gt: oneMonthAgo,
+        },
+      },
+      select: {
+        id: true,
+        name: true,
+        price: true,
+        description: true,
+        discount: true,
+        gallery: {
+          select: {
+            imageUrl: true,
+          },
+        },
+        category: {
+          select: {
+            name: true,
+          },
+        },
+        reviews: {
+          select: {
+            rating: true,
+          },
+        },
+        Units: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
 
+    const productsWithAvgRating = productsWithDiscount.map((product) => {
+      const totalRating = product.reviews.reduce((total, review) => {
+        return total + (review.rating || 0);
+      }, 0);
+      const avgRating = totalRating / product.reviews.length;
+      const cappedAvgRating = Math.min(avgRating, 5);
+
+      return {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        discount: product.discount,
+        description: product.description,
+        productAvgRating: cappedAvgRating || 0,
+        priceWithDiscount: parseFloat(
+          (product.price - (product.price * product.discount) / 100).toFixed(2),
+        ),
+        categoryName: product.category.name,
+        unit: product.Units.name,
+        imageLink: product.gallery[0].imageUrl,
+      };
+    });
+
+    return productsWithAvgRating;
+  }
   async update(id: string, updateProductDto: UpdateProductDto) {
     await this.findOne(id);
     const product = await this.prisma.product.update({
