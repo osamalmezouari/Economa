@@ -1,14 +1,14 @@
-import React from "react";
-import PromoCard from "../../base/PromoCard/PromoCard";
+import React from 'react';
+import PromoCard from '../../base/PromoCard/PromoCard';
 
 const PromoCardWraper: React.FC = () => {
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: '20px' }}>
       <PromoCard
-        image="" 
+        image="https://github.com/osamalmezouari/ecommerce/blob/master/client/public/assets/images/PromoCard.jpg?raw=true"
         title="Fresh Fruits"
         subtitle="Healthy Products"
-        discountText="30% off sale Hurry up!!!"
+        discountText=" Hurry up! Grab your 10% off sale now!"
         buttonText="Shop now"
       />
     </div>
