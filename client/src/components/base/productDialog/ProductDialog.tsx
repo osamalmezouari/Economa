@@ -74,13 +74,15 @@ export default function ProductDialog({
                 backgroundImage: `url(${imageLink})`,
               }}
             >
-              <div className="absolute top-1 right-2">
-                <Badge className="bg-red-400 text-white rounded-sm px-2 uppercase text-[12px]">
-                  - {discount} %
-                </Badge>
-              </div>
+              {discount > 0 && (
+                <div className="absolute top-1 right-2">
+                  <Badge className="bg-red-400 text-white rounded-sm px-2 uppercase text-[12px]">
+                    - {discount} %
+                  </Badge>
+                </div>
+              )}
               <div className="absolute top-1 left-2">
-                <Badge className="bg-green-400 text-white rounded-sm px-2 uppercase text-[12px]">
+                <Badge className="bg-primary-main  text-white rounded-sm px-2 uppercase text-[12px]">
                   1 {unit}
                 </Badge>
               </div>
@@ -99,13 +101,20 @@ export default function ProductDialog({
             />
             <p className="text-secondary-main py-4">{description}</p>
             <Box className="flex gap-4 text-secondary-main pb-5">
-              <p className="text-secondary-main font-extrabold text-2xl">
-                ${priceWithDiscount}
-              </p>
-              <p className="line-through font-light text-secondary-main text-2xl">
+              {priceWithDiscount && priceWithDiscount > 0 && (
+                <p className="text-secondary-main font-extrabold text-2xl">
+                  ${priceWithDiscount}
+                </p>
+              )}
+              <p
+                className={`font-light text-secondary-main text-2xl ${
+                  discount > 0 ? 'line-through' : 'hidden'
+                }`}
+              >
                 ${price}
               </p>
             </Box>
+
             <DialogActions sx={{ padding: '5px !important' }}>
               <TextField
                 className="w-16 text-secondary-main"
