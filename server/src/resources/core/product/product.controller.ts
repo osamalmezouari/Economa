@@ -26,6 +26,10 @@ export class ProductController {
     return this.productService.getAllProductCards();
   }
 
+  @Get('newArrivals')
+  async getnewArrivals() {
+    return this.productService.getnewArrivals();
+  }
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const product = await this.productService.findOne(id);
