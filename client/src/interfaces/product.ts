@@ -1,15 +1,17 @@
 export interface ProductCardType {
   id: string;
-  discount: string;
+  discount: number;
   name: string;
   categoryName: string;
   description: string;
   productAvgRaiting: number;
   price: string;
-  priceWithDiscount: string;
+  priceWithDiscount: number;
   unit: string;
   imageLink: string;
 }
+
+export interface ProductsNewArrivals extends ProductCardType {}
 
 export interface ProductDialogProps extends ProductCardType {
   open: boolean;
@@ -19,6 +21,11 @@ export interface ProductDialogProps extends ProductCardType {
 export interface ProductCardStateType {
   productsCard: {
     data: ProductCardType[];
+    loading: boolean;
+    error: string;
+  };
+  productsNewArrivals: {
+    data: ProductsNewArrivals[];
     loading: boolean;
     error: string;
   };
