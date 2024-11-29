@@ -45,7 +45,7 @@ const Mobile_nav_bar = ({ NavItems }: NavItemsProps) => {
         <Box
           component={'img'}
           src={NavItems.logo}
-          className="w-[80px] h-[80px]"
+          className="w-[80px] h-[80px] scale-[1.5]"
           alt="logo"
         />
         <TextField

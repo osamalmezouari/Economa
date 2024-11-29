@@ -23,7 +23,7 @@ const Desktop_nav_bar = ({ NavItems }: NavItemsProps) => {
               <Box
                 component={'img'}
                 src={NavItems.logo}
-                className="w-[140px] h-[140px]"
+                className="w-[140px] h-[140px] scale-[1.5]"
                 alt="logo"
               />
             </Grid>
