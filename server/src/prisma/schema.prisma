@@ -67,7 +67,6 @@ model Product {
   wishList     Wishlist[]
   unitId       String
   Units        Units           @relation(fields: [unitId], references: [id])
-  
 }
 
 model Gallery {
@@ -100,13 +99,13 @@ model User {
   name          String?
   email         String          @unique
   password      String
-  roleId        String?
   phoneNumber   String?
   address       String?
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   lastLogin     DateTime?
-  role          Role?           @relation(fields: [roleId], references: [id], onDelete: SetNull)
+  roleId        String
+  role          Role            @relation(fields: [roleId], references: [id])
   notifications Notification[]
   orders        Order[]
   reviews       ProductReview[]
@@ -164,12 +163,12 @@ model Payment {
 model ProductReview {
   id         String   @id
   userId     String?
-  productId  String?
-  rating     Int?
+  productId  String
+  rating     Int
   reviewText String?
   createdAt  DateTime @default(now())
   user       User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  product    Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  product    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@unique([userId, productId])
 }
