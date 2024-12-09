@@ -1,5 +1,5 @@
 import { ProductCardType, ProductsNewArrivals } from '../interfaces/product';
-import { apiClient } from './apiClient';
+import { apiClient } from '../utils/apiClient';
 
 export const getProductsCards = async (): Promise<ProductCardType[]> => {
   try {
