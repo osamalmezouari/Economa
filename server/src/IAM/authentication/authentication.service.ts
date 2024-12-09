@@ -54,10 +54,12 @@ export class AuthenticationService {
     const HashingPassword = await this.HashingSevice.hash(signUpDto.password);
     try {
       const data = await this.prisma.user.create({
+              //@ts-ignore
         data: {
           id: uuid(),
           email: signUpDto.email,
           password: HashingPassword,
+          
         },
       });
       return data;
