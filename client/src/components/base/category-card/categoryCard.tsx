@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name }: CategoryCardProps) => {
     const calors: string[] = ['#e2fde2', '#fee9e8', '#fdf4ea', '#F9DEF2', 'fdf5eb']
-    const randomColor = calors[Math.floor(Math.random() * calors.length)];
+    const randomColor = calors[Math.floor(Math.random() * calors.length - 1)];
     const Navigate =  useNavigate()
     return (
         <Box component={'div'} className={`p-3 rounded`} style={{ backgroundColor: `${randomColor}` }}>
