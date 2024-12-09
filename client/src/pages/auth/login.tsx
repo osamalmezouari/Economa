@@ -7,11 +7,7 @@ const Login = () => {
     <>
       <Navbar />
       <Box className="flex max-w-[1000px] gap-4 h-full my-20 m-auto items-center justify-center">
-        <Grid
-          container
-          spacing={1}
-          className="justify-center items-center p-4"
-        >
+        <Grid container spacing={1} className="justify-center items-center p-4">
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Typography variant="h2" className="text-primary-main">
               Login
@@ -26,9 +22,19 @@ const Login = () => {
               className="mb-4"
               defaultValue={''}
               required={true}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&.Mui-focused fieldset': {
+                    borderColor: (theme) => theme.palette.primary.light,
+                  },
+                  '&:hover fieldset': {
+                    borderColor: (theme) => theme.palette.primary.main,
+                  },
+                },
+              }}
             />
           </Grid>
-          <Grid item  xs={12} sm={12} md={12} lg={12}>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
             <TextField
               variant="outlined"
               fullWidth
@@ -36,6 +42,16 @@ const Login = () => {
               placeholder="Password"
               type="password"
               className="mb-4"
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&.Mui-focused fieldset': {
+                    borderColor: (theme) => theme.palette.primary.light,
+                  },
+                  '&:hover fieldset': {
+                    borderColor: (theme) => theme.palette.primary.main,
+                  },
+                },
+              }}
               defaultValue={''}
               required={true}
             />
