@@ -11,12 +11,12 @@ import { SignInDto } from './dto/sign-in.dto';
 import { SignUpDto } from './dto/sign-up.dto';
 // import { Response } from 'express';
 
-@Controller('authentication')
+@Controller('auth')
 export class AuthenticationController {
   constructor(private readonly authenticationService: AuthenticationService) {}
 
   @HttpCode(HttpStatus.OK)
-  @Post('SignIn')
+  @Post('Login')
   async SignIn(@Body() signInDto: SignInDto) {
     return this.authenticationService.SignIn(signInDto);
   }
@@ -34,7 +34,7 @@ export class AuthenticationController {
   //   });
   // }
 
-  @Post('SignUp')
+  @Post('Register')
   SignUp(@Body() signUpDto: SignUpDto) {
     return this.authenticationService.SignUp(signUpDto);
   }
