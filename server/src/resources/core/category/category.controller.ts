@@ -23,10 +23,16 @@ export class CategoryController {
     return category;
   }
 
-  @AUTH(AuthenticationType.None)
   @Get()
   async findAll() {
     const categories = await this.categoryService.findAll();
+    return categories;
+  }
+
+  @AUTH(AuthenticationType.None)
+  @Get('cards')
+  async findAllCards() {
+    const categories = await this.categoryService.findAllCards();
     return categories;
   }
 
