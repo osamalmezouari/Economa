@@ -9,12 +9,15 @@ import {
 import { AuthenticationService } from './authentication.service';
 import { SignInDto } from './dto/sign-in.dto';
 import { SignUpDto } from './dto/sign-up.dto';
+import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
+import { AuthenticationType } from 'src/common/enums/authentication';
 // import { Response } from 'express';
 
 @Controller('auth')
 export class AuthenticationController {
   constructor(private readonly authenticationService: AuthenticationService) {}
 
+  @AUTH(AuthenticationType.None)
   @HttpCode(HttpStatus.OK)
   @Post('Login')
   async SignIn(@Body() signInDto: SignInDto) {
@@ -34,6 +37,8 @@ export class AuthenticationController {
   //   });
   // }
 
+
+  @AUTH(AuthenticationType.None)
   @Post('Register')
   SignUp(@Body() signUpDto: SignUpDto) {
     return this.authenticationService.SignUp(signUpDto);
