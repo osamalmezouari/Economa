@@ -1,40 +1,14 @@
 import { apiClient } from '../utils/apiClient';
-import { CategoryType } from '../interfaces/category';
+import { CategoryType } from '../types/category';
 
-
-export const getCategory = async (): Promise<CategoryType[]> => {
-    try {
-        const response = await apiClient.get<CategoryType[]>('/category');
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to fetch categories with products');
+export const CategoryCards = async (): Promise<CategoryType[]> => {
+  try {
+    const response = await apiClient.get<CategoryType[]>('/category/cards');
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
     }
-};
-
-
-export const createCategory = async (CategoryData: CategoryType): Promise<CategoryType[]> => {
-    try {
-        const response = await apiClient.post<CategoryType[]>('/category', CategoryData);
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to fetch categories with products');
-    }
-};
-
-export const updateCategory = async (CategoryData: CategoryType, id: string): Promise<CategoryType[]> => {
-    try {
-        const response = await apiClient.patch(`/category/${id}`, CategoryData);
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to fetch categories with products');
-    }
-};
-
-export const deleteCategory = async ( id: string): Promise<CategoryType[]> => {
-    try {
-        const response = await apiClient.delete<CategoryType[]>(`/category/${id}`);
-        return response.data;
-    } catch (error) {
-        throw new Error('Failed to fetch categories with products');
-    }
+    throw new Error('Failed to Fetch Category Cards');
+  }
 };
