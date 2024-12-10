@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Card from "@mui/material/Card";
-import { CategoryCardProps } from "../../../interfaces/category";
+import { CategoryCardProps } from "../../../types/category";
 import { useNavigate } from "react-router-dom";
 
 const CategoryCardSingle = ({ svgLink, linkTo, productsCount, name }: CategoryCardProps) => {
