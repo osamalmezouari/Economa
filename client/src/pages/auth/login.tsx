@@ -1,12 +1,46 @@
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import {
+  Alert,
+  Box,
+  Button,
+  CircularProgress,
+  Grid,
+  TextField,
+  Typography,
+} from '@mui/material';
 import Navbar from '../../components/extra/navbar/Navbar';
 import Footer from '../../components/extra/footer/footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../app/store';
+import { ApiError } from '../../types/error';
+import { Login } from '../../features/auth/authThunk';
 
-const Login = () => {
+const LoginComponent = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { loading, error, data } = useSelector(
+    (state: RootState) => state.auth.Login
+  );
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const loginData = {
+      email: formData.get('email') as string,
+      password: formData.get('password') as string,
+    };
+    await dispatch(Login(loginData));
+  };
+
   return (
     <>
       <Navbar />
-      <Box className="flex max-w-[1000px] gap-4 h-full my-20 m-auto items-center justify-center">
+      <Box
+        component={'form'}
+        className="flex max-w-[1000px] gap-4 h-full my-20 m-auto items-center justify-center"
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
+      >
+        <img
+          src="assets/images/Login_register.png"
+          className="rounded w-0 md:w-[500px]"
+        />
         <Grid container spacing={1} className="justify-center items-center p-4">
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Typography variant="h2" className="text-primary-main">
@@ -20,6 +54,7 @@ const Login = () => {
               label="Email"
               placeholder="Email"
               className="mb-4"
+              name="email"
               defaultValue={''}
               required={true}
               sx={{
@@ -41,6 +76,7 @@ const Login = () => {
               label="Password"
               placeholder="Password"
               type="password"
+              name="password"
               className="mb-4"
               sx={{
                 '& .MuiOutlinedInput-root': {
@@ -62,24 +98,36 @@ const Login = () => {
             </p>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
+            {error instanceof ApiError && (
+              <Alert severity="error">{error.message}</Alert>
+            )}
+            {data.length > 0 && (
+              <Alert severity="success">
+                Login successful! You can now access your account.
+              </Alert>
+            )}
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
             <Button
               variant="contained"
               color="primary"
               fullWidth
               className="mt-4"
+              type="submit"
+              disabled={loading}
             >
-              Submit
+              {loading && data.length === 0 ? (
+                <CircularProgress size="30px" color="inherit" />
+              ) : (
+                'Login'
+              )}
             </Button>
           </Grid>
         </Grid>
-        <img
-          src="assets/images/Login_register.png"
-          className="rounded w-0 md:w-[500px]"
-        />
       </Box>
       <Footer />
     </>
   );
 };
 
-export default Login;
+export default LoginComponent;
