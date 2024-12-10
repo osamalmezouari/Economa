@@ -32,7 +32,7 @@ export class AuthenticationService {
       where: { email: signInDto.email },
     });
     if (user) {
-      const user_unHashed_passowrd = await user.password;
+      const user_unHashed_passowrd = user.password;
       const provided_passowrd_compare = this.HashingSevice.compare(
         user_unHashed_passowrd,
         signInDto.password,
@@ -52,14 +52,15 @@ export class AuthenticationService {
 
   async SignUp(signUpDto: SignUpDto) {
     const HashingPassword = await this.HashingSevice.hash(signUpDto.password);
+    const costumer = this.prisma.role.findUnique({
+      where: { name: 'costumer' },
+    });
     try {
       const data = await this.prisma.user.create({
-              //@ts-ignore
         data: {
           id: uuid(),
-          email: signUpDto.email,
-          password: HashingPassword,
-          
+          roleId: (await costumer).id,
+          ...signUpDto,
         },
       });
       return data;
@@ -77,21 +78,24 @@ export class AuthenticationService {
   }
 
   generateAccessToken(user: any) {
-    const issuer = process.env.JWT_TOKEN_ISSUER?.trim();
-    const audience = process.env.JWT_TOKEN_AUDIENCE.includes(',')
-      ? process.env.JWT_TOKEN_AUDIENCE?.split(',')
-      : process.env.JWT_TOKEN_AUDIENCE;
-    return this.jwtService.signAsync(
-      {
-        email: user.email,
-        sub: user.id,
-      } as ActiveUser,
-      {
-        secret: process.env.JWT_SECRET,
-        issuer,
-        audience,
-        expiresIn: process.env.JWT_ACCESS_TOKEN_TTL || 3600,
-      },
-    );
+    try {
+      const issuer = this.jwtConfigurations.issuer || 'default_issuer';
+      const audience = this.jwtConfigurations.audience || 'default_audience';
+      return this.jwtService.signAsync(
+        {
+          email: user.email,
+          sub: user.id,
+          roleId: user.roleId,
+        } as ActiveUser,
+        {
+          secret: process.env.JWT_SECRET,
+          issuer,
+          audience,
+          expiresIn: process.env.JWT_ACCESS_TOKEN_TTL || 3600,
+        },
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
