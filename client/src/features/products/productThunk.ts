@@ -7,8 +7,13 @@ export const getproductsCards = createAsyncThunk(
     try {
       const products = await productsApi.getProductsCards();
       return products;
-    } catch (error) {
-      return rejectWithValue(error.message || 'Failed to fetch products Cards');
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong.',
+      });
     }
   }
 );
@@ -19,8 +24,13 @@ export const getProductsNewArrivals = createAsyncThunk(
     try {
       const products = await productsApi.getProductsNewArrivals();
       return products;
-    } catch (error) {
-      return rejectWithValue(error.message || 'Failed to fetch products Cards');
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong.',
+      });
     }
   }
 );
