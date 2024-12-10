@@ -15,7 +15,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { BiMinus, BiPlus } from 'react-icons/bi';
 import { ShoppingBagOutlined } from '@mui/icons-material';
-import { ProductDialogProps } from '../../../interfaces/product';
+import { ProductDialogProps } from '../../../types/product';
 
 export default function ProductDialog({
   open,
