@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { GrView } from 'react-icons/gr';
 import { IoGitCompare, IoBagAdd, IoHeart } from 'react-icons/io5';
-import { ProductCardType } from '../../../interfaces/product';
+import { ProductCardType } from '../../../types/product';
 import ProductDialog from '../productDialog/ProductDialog';
 import { useState } from 'react';
 
