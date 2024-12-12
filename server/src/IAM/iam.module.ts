@@ -23,11 +23,11 @@ import { AuthenticationGuard } from '../common/guards/authentication/authenticat
       provide: HashingService,
       useClass: BcryptService,
     },
-    {
+/*     {
       provide: APP_GUARD,
       useClass: AuthenticationGuard,
     },
-    AccesTokenGuard,
+    AccesTokenGuard, */
   ],
   controllers: [AuthenticationController],
 })
