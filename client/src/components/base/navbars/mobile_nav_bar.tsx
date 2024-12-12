@@ -15,7 +15,7 @@ const Mobile_nav_bar = ({ NavItems }: NavItemsProps) => {
     <>
       <Box
         component={'div'}
-        className="bg-gray-200 relative z-30 p-4 flex justify-between"
+        className="bg-gray-200 relative z-30 p-4 flex justify-between items-center"
       >
         <FaBars
           fontSize={26}
@@ -23,18 +23,7 @@ const Mobile_nav_bar = ({ NavItems }: NavItemsProps) => {
         />
         <Box component={'div'} className="flex gap-6">
           {NavItems.ItemsRight.map((item) => {
-            return (
-              <>
-                <Badge
-                  badgeContent={4}
-                  color="primary"
-                  component={'button'}
-                  onClick={() => navigate(item.link)}
-                >
-                  {item.icon}
-                </Badge>
-              </>
-            );
+            return  item.icon;
           })}
         </Box>
       </Box>
@@ -66,7 +55,7 @@ const Mobile_nav_bar = ({ NavItems }: NavItemsProps) => {
           component={'div'}
           className={`gap-x-4 absolute w-full p-2 bg-white z-20 transition-all duration-500 ease-in-out transform ${
             NavItems.isOpen
-              ? 'top-[170px] opacity-100 '
+              ? 'top-[200px] opacity-100 '
               : '-top-[500px] opacity-0'
           }`}
         >
