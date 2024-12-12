@@ -83,7 +83,6 @@ export class AuthenticationService {
       const audience = this.jwtConfigurations.audience || 'default_audience';
       return this.jwtService.signAsync(
         {
-          email: user.email,
           sub: user.id,
           roleId: user.roleId,
         } as ActiveUser,
