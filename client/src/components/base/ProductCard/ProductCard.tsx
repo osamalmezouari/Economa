@@ -5,12 +5,19 @@ import {
   Card,
   CardContent,
   CardMedia,
+  CircularProgress,
 } from '@mui/material';
 import { GrView } from 'react-icons/gr';
 import { IoGitCompare, IoBagAdd, IoHeart } from 'react-icons/io5';
 import { ProductCardType } from '../../../types/product';
 import ProductDialog from '../productDialog/ProductDialog';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../app/store';
+import {
+  createshoppingCart,
+  getshoppingCart,
+} from '../../../features/shoppingCart/shoppingCartThunk';
 
 export default function ProductCard({
   id,
@@ -24,12 +31,21 @@ export default function ProductCard({
   imageLink,
   unit,
 }: ProductCardType) {
+  const dispatch = useDispatch<AppDispatch>();
+  const { loading } = useSelector(
+    (state: RootState) => state.shoppingCart.createshoppingCart
+  );
   const [open, setOpen] = useState(false);
   const [dialogData, setDialogData] = useState<ProductCardType | {}>();
 
   const handleOpen = (data: ProductCardType) => {
     setOpen(!open);
     setDialogData(open ? {} : { ...data });
+  };
+
+  const addProducttoshoppingCart = async () => {
+    dispatch(createshoppingCart({ productId: id, quantity: 1 }));
+    dispatch(getshoppingCart());
   };
 
   return (
@@ -48,7 +64,6 @@ export default function ProductCard({
         image={imageLink}
         title={name}
       >
-        {/* Only show discount badge if discount > 0 */}
         {discount > 0 && (
           <div className="absolute top-2 right-4">
             <Badge className="bg-red-400 text-white rounded-sm px-2 uppercase text-[12px]">
@@ -56,8 +71,6 @@ export default function ProductCard({
             </Badge>
           </div>
         )}
-
-        {/* Only show unit badge if unit exists */}
         <div className="absolute top-2 left-4">
           <Badge className="bg-primary-main text-white rounded-sm px-2 uppercase text-[12px]">
             1 {unit}
@@ -66,9 +79,19 @@ export default function ProductCard({
       </CardMedia>
 
       <Box className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-7/12 flex h-max top-[240px] group-hover:top-[190px] hover:z-10 items-center mx-auto justify-between bg-slate-100 p-2 rounded-xl">
-        <div className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent">
-          <IoBagAdd fontSize={16} />
-        </div>
+        <Box
+          component={'div'}
+          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+        >
+          {loading ? (
+            <CircularProgress size={8} className="h-max" color="primary" />
+          ) : (
+            <IoBagAdd
+              fontSize={16}
+              onClick={() => addProducttoshoppingCart()}
+            />
+          )}
+        </Box>
         <div
           className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           onClick={() =>
