@@ -13,7 +13,6 @@ import { NavItemsProps } from './interfaces';
 
 const Desktop_nav_bar = ({ NavItems }: NavItemsProps) => {
   const navigate = useNavigate();
-
   return (
     <>
       <Stack className={'border-b-2 bg-gray'}>
@@ -45,17 +44,7 @@ const Desktop_nav_bar = ({ NavItems }: NavItemsProps) => {
               {NavItems.ItemsRight.map((item) => {
                 return (
                   <>
-                    {' '}
-                    <Button
-                      variant="text"
-                      className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2 "
-                      startIcon={item.icon}
-                      onClick={() => navigate(item.link)}
-                    >
-                      <p className="text-secondary-darker font-secondary">
-                        {item.name}
-                      </p>
-                    </Button>
+                   {item.icon}
                   </>
                 );
               })}
