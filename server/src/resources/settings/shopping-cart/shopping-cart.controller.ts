@@ -18,26 +18,22 @@ import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
-  @Get()
-  async findAll() {
-    const shoppingCarts = await this.shoppingCartService.findAll();
-    return shoppingCarts;
-  }
-
   @AUTH(AuthenticationType.bearer)
-  @Get('WithProducts') // shopping cart from a single user with some details of product like unit | price with discount | product name | product image
-  async findAllWithProducts(@activeUser('sub') userId: string) {
-    const shoppingCarts =
-      await this.shoppingCartService.findByUserIdWithProducts(userId);
-    return shoppingCarts;
-  }
-
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const shoppingCart = await this.shoppingCartService.findOne(id);
     return shoppingCart;
   }
 
+  @AUTH(AuthenticationType.bearer)
+  @Get('WithProducts')
+  async findShoppingCartByUserId(@activeUser('sub') userId: string) {
+    const shoppingCarts =
+      await this.shoppingCartService.findShoppingCartByUserId(userId);
+    return shoppingCarts;
+  }
+
+  @AUTH(AuthenticationType.bearer)
   @Post()
   async create(
     @Body() createShoppingCartDto: CreateShoppingCartDto,
@@ -51,15 +47,15 @@ export class ShoppingCartController {
   }
 
   @Patch(':id')
-  async update(
+  async updatequantity(
     @Param('id') id: string,
     @activeUser('sub') userId: string,
-    @Body() body: { quantity: number }, // Corrected: body instead of quantity
+    @Body() quantity: { quantity: number },
   ) {
-    const shoppingCart = await this.shoppingCartService.update(
+    const shoppingCart = await this.shoppingCartService.updatequantity(
       id,
       userId,
-      body.quantity, // Access the quantity directly here
+      quantity.quantity,
     );
     return shoppingCart;
   }
