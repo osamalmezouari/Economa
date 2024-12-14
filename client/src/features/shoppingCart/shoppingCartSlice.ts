@@ -49,9 +49,13 @@ const shoppingCartSlice = createSlice({
         0
       );
     },
-    setDisplayCart: (state) => {
-      state.open = !state.open;
+    setDisplayCart: (state, action: { payload?: boolean }) => {
+      return {
+        ...state,
+        open: action.payload !== undefined ? action.payload : !state.open,
+      };
     },
+    
     clearCreateError: (state) => {
       state.createshoppingCart.error = null;
     },
