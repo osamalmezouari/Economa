@@ -152,6 +152,77 @@ export class ProductService {
 
     return productsWithAvgRating;
   }
+
+  async getComparedProductDetails(ids: string[]) {
+    const validateIds = await this.prisma.product.findMany({
+      where: {
+        id: {
+          in: ids,
+        },
+      },
+    });
+  
+    if (validateIds.length !== ids.length) {
+      throw new Error('Invalid Ids');
+    }
+  
+    const products = await Promise.all(
+      validateIds.map(async (product) => {
+        const productData = await this.prisma.product.findUnique({
+          where: {
+            id: product.id,
+          },
+          select: {
+            id: true,
+            name: true,
+            price: true,
+            discount: true,
+            description: true,
+            stock: true,
+            gallery: {
+              select: {
+                imageUrl: true,
+              },
+            },
+            Units: {
+              select: {
+                name: true,
+              },
+            },
+            category: {
+              select: {
+                name: true,
+              },
+            },
+            reviews: {
+              select: {
+                rating: true,
+              },
+            },
+          },
+        });
+  
+        // Format the product data to match CompareItemProps
+        return {
+          id: productData.id,
+          svgLink: productData.gallery?.[0]?.imageUrl || '', // Use the first gallery image URL or fallback
+          productName: productData.name,
+          productId: productData.id,
+          categoryName: productData.category?.name || 'Uncategorized',
+          rating: productData.reviews?.[0]?.rating || 0,
+          reviewsCount: productData.reviews?.length || 0,
+          price: productData.price,
+          weight: productData.Units?.name || 'N/A',
+          description: productData.description,
+          stock: productData.stock,
+        };
+      })
+    );
+  
+    return products;
+  }
+  
+
   async update(id: string, updateProductDto: UpdateProductDto) {
     await this.findOne(id);
     const product = await this.prisma.product.update({
