@@ -18,6 +18,11 @@ import {
   createshoppingCart,
   getshoppingCart,
 } from '../../../features/shoppingCart/shoppingCartThunk';
+import {
+  createWishList,
+  getWishlist,
+} from '../../../features/wishlist/wishlistThunk';
+import { addCompareItem } from '../../../features/compare/compareSlice';
 
 export default function ProductCard({
   id,
@@ -34,6 +39,9 @@ export default function ProductCard({
   const dispatch = useDispatch<AppDispatch>();
   const { loading } = useSelector(
     (state: RootState) => state.shoppingCart.createshoppingCart
+  );
+  const { loading: loadingWishlist } = useSelector(
+    (state: RootState) => state.wishlist.createWishList
   );
   const [open, setOpen] = useState(false);
   const [dialogData, setDialogData] = useState<ProductCardType | {}>();
@@ -55,6 +63,7 @@ export default function ProductCard({
         borderRadius: '2px',
         border: '2px solid #eeeeee',
         margin: 'auto',
+        height: '400px',
       }}
       className="group relative overflow-hidden"
     >
@@ -111,12 +120,29 @@ export default function ProductCard({
         >
           <GrView fontSize={16} />
         </div>
-        <div className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent">
+        <Box
+          component={'div'}
+          onClick={() => dispatch(addCompareItem(id))}
+          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+        >
           <IoGitCompare fontSize={16} />
-        </div>
-        <div className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent">
-          <IoHeart fontSize={16} />
-        </div>
+        </Box>
+        <Box
+          component={'div'}
+          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+        >
+          {loadingWishlist ? (
+            <CircularProgress size={8} className="h-max" color="primary" />
+          ) : (
+            <IoHeart
+              fontSize={16}
+              onClick={async () => {
+                await dispatch(createWishList(id));
+                await dispatch(getWishlist());
+              }}
+            />
+          )}
+        </Box>
       </Box>
 
       <CardContent sx={{ padding: '5px 10px' }}>
