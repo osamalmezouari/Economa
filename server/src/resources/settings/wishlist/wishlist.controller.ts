@@ -9,42 +9,33 @@ import {
 } from '@nestjs/common';
 import { WishlistService } from './wishlist.service';
 import { CreateWishlistDto } from './dto/create-wishlist.dto';
-import { UpdateWishlistDto } from './dto/update-wishlist.dto';
+import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 
 @Controller('wishlist')
 export class WishlistController {
   constructor(private readonly wishlistService: WishlistService) {}
 
   @Post()
-  async create(@Body() createWishlistDto: CreateWishlistDto) {
-    const wishlist = await this.wishlistService.create(createWishlistDto);
+  async create(
+    @Body() createWishlistDto: CreateWishlistDto,
+    @activeUser('sub') userId: string,
+  ) {
+    const wishlist = await this.wishlistService.create(
+      createWishlistDto.productId,
+      userId,
+    );
     return wishlist;
   }
 
-  @Get()
-  async findAll() {
-    const wishlists = await this.wishlistService.findAll();
+  @Get('withproducts')
+  async findwishlistsByUserId(@activeUser('sub') userId: string) {
+    const wishlists = await this.wishlistService.findwishlistsByUserId(userId);
     return wishlists;
   }
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const wishlist = await this.wishlistService.findOne(id);
-    return wishlist;
-  }
-
-  @Get('user/:userId')
-  async findByUserId(@Param('userId') userId: string) {
-    const wishlists = await this.wishlistService.findByUserId(userId);
-    return wishlists;
-  }
-
-  @Patch(':id')
-  async update(
-    @Param('id') id: string,
-    @Body() updateWishlistDto: UpdateWishlistDto,
-  ) {
-    const wishlist = await this.wishlistService.update(id, updateWishlistDto);
     return wishlist;
   }
 
