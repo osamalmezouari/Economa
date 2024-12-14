@@ -56,10 +56,16 @@ const ShoppingCart = () => {
           >
             My Cart
           </Typography>
-          <button onClick={() => console.log('hello')}>
+          <button>
             <Cancel
               className="w-16 h-16 cursor-pointer  text-red-500 font"
-              onClick={() => dispatch(setDisplayCart())}
+              onClick={() => {
+                dispatch({
+                  type: 'wishlist/setDisplayWishlist',
+                  payload: false,
+                });
+                dispatch(setDisplayCart());
+              }}
             />
           </button>
         </Box>
