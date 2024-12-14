@@ -14,6 +14,7 @@ import { AppDispatch } from '../../../app/store';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
+import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -46,6 +47,7 @@ const Navbar = () => {
             variant="text"
             className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2 "
             startIcon={<GrFavorite />}
+            onClick={() => dispatch(setDisplayWishlist())}
           >
             <p className="text-secondary-darker font-secondary">Wishlist</p>
           </Button>
