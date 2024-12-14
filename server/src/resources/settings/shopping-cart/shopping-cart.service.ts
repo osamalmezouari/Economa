@@ -4,7 +4,7 @@ import { CreateShoppingCartDto } from './dto/create-shopping-cart.dto';
 import { UpdateShoppingCartDto } from './dto/update-shopping-cart.dto';
 import { v4 as uuid } from 'uuid';
 import { SHOPPING_CART_NOT_FOUND_Exception } from '../../../common/exceptions/SHOPPING_CART_NOT_FOUND.exception';
-import { SHOPPING_CART_EXISST_Exception } from 'src/common/exceptions/SHOPPING_CART_EXISST.exception';
+import { SHOPPING_CART_ITEM_EXISST_FOR_USER_Exception } from 'src/common/exceptions/SHOPPING_CART_EXISST_FOR_USER.exception';
 
 @Injectable()
 export class ShoppingCartService {
@@ -15,7 +15,7 @@ export class ShoppingCartService {
     return shoppingCarts;
   }
 
-  async findByUserIdWithProducts(userId: string) {
+  async findShoppingCartByUserId(userId: string) {
     const shoppingCarts = await this.prisma.shoppingCart.findMany({
       where: {
         userId: userId,
@@ -44,7 +44,9 @@ export class ShoppingCartService {
         },
       },
     });
-
+    if (!(shoppingCarts.length > 0)) {
+      throw new SHOPPING_CART_NOT_FOUND_Exception(userId);
+    }
     const shoppingCartsWithProduct = shoppingCarts.map((item) => {
       return {
         id: item.id,
@@ -75,7 +77,7 @@ export class ShoppingCartService {
     const productinfo = await this.prisma.product.findUnique({
       where: { id: createShoppingCartDto.productId },
     });
-    const { productId, quantity } = createShoppingCartDto;
+    const { productId, quantity = 1 } = createShoppingCartDto;
     const existingCartItem = await this.prisma.shoppingCart.findFirst({
       where: {
         userId: userId,
@@ -83,15 +85,20 @@ export class ShoppingCartService {
       },
     });
     if (existingCartItem) {
-      throw new SHOPPING_CART_EXISST_Exception(productinfo.name);
+      throw new SHOPPING_CART_ITEM_EXISST_FOR_USER_Exception(productinfo.name);
     }
     const shoppingCart = await this.prisma.shoppingCart.create({
-      data: { id: uuid(), userId: userId, ...createShoppingCartDto },
+      data: {
+        id: uuid(),
+        userId: userId,
+        productId: productId,
+        quantity: quantity,
+      },
     });
     return shoppingCart;
   }
 
-  async update(id: string, userId: string, quantity: number) {
+  async updatequantity(id: string, userId: string, quantity: number) {
     await this.findOne(id);
     const shoppingCart = await this.prisma.shoppingCart.update({
       where: { id: id, user: { id: userId } },
