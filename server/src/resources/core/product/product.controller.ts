@@ -12,11 +12,12 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
+import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
 
 @Controller('products')
 export class ProductController {
-  constructor(private readonly productService: ProductService) { }
-  
+  constructor(private readonly productService: ProductService) {}
+
   @AUTH(AuthenticationType.None)
   @Get()
   async findAll() {
@@ -29,15 +30,24 @@ export class ProductController {
   async getAllProductCards() {
     return this.productService.getAllProductCards();
   }
-  
+
   @AUTH(AuthenticationType.None)
   @Get('newArrivals')
   async getnewArrivals() {
     return this.productService.getnewArrivals();
   }
-  @Get(':id')
-  async findOne(@Param('id') id: string) {
-    const product = await this.productService.findOne(id);
+
+  @Get('ComparedProductDetails/:ids')
+  async getComparedProductDetails(@Param('ids', ParseIdsPipe) ids: string[]) {
+    console.log("ids",ids);
+    const product = await this.productService.getComparedProductDetails(ids);
+    console.log('Product Details:', product); // Log the data returned from the service
+    return product;
+  }
+ 
+  @Get(':productId')
+  async findOne(@Param('productId') productId: string) {
+    const product = await this.productService.findOne(productId);
     return product;
   }
 
