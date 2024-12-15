@@ -19,19 +19,21 @@ export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
   @AUTH(AuthenticationType.bearer)
-  @Get(':id')
-  async findOne(@Param('id') id: string) {
-    const shoppingCart = await this.shoppingCartService.findOne(id);
-    return shoppingCart;
-  }
-
-  @AUTH(AuthenticationType.bearer)
   @Get('WithProducts')
   async findShoppingCartByUserId(@activeUser('sub') userId: string) {
     const shoppingCarts =
       await this.shoppingCartService.findShoppingCartByUserId(userId);
     return shoppingCarts;
   }
+
+  
+  @AUTH(AuthenticationType.bearer)
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    const shoppingCart = await this.shoppingCartService.findOne(id);
+    return shoppingCart;
+  }
+
 
   @AUTH(AuthenticationType.bearer)
   @Post()
