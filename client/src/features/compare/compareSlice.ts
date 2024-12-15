@@ -25,7 +25,6 @@ const compareSlice = createSlice({
       }
     },
     removeCompareItem: (state, action: PayloadAction<string>) => {
-      console.log('recivedId', action.payload);
       const updatedCompareItemsIds = state.compareItemsIds.filter(
         (productId) => productId !== action.payload
       );
