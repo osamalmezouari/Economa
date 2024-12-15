@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
+  Tooltip,
 } from '@mui/material';
 import { GrView } from 'react-icons/gr';
 import { IoGitCompare, IoBagAdd, IoHeart } from 'react-icons/io5';
@@ -23,6 +24,7 @@ import {
   getWishlist,
 } from '../../../features/wishlist/wishlistThunk';
 import { addCompareItem } from '../../../features/compare/compareSlice';
+import HomeAlert from '../homeAlert/homealert';
 
 export default function ProductCard({
   id,
@@ -52,8 +54,8 @@ export default function ProductCard({
   };
 
   const addProducttoshoppingCart = async () => {
-    dispatch(createshoppingCart({ productId: id, quantity: 1 }));
-    dispatch(getshoppingCart());
+    await dispatch(createshoppingCart({ productId: id, quantity: 1 }));
+    await dispatch(getshoppingCart());
   };
 
   return (
@@ -88,61 +90,70 @@ export default function ProductCard({
       </CardMedia>
 
       <Box className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-7/12 flex h-max top-[240px] group-hover:top-[190px] hover:z-10 items-center mx-auto justify-between bg-slate-100 p-2 rounded-xl">
-        <Box
-          component={'div'}
-          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
-        >
-          {loading ? (
-            <CircularProgress size={8} className="h-max" color="primary" />
-          ) : (
-            <IoBagAdd
-              fontSize={16}
-              onClick={() => addProducttoshoppingCart()}
-            />
-          )}
-        </Box>
-        <div
-          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
-          onClick={() =>
-            handleOpen({
-              id,
-              discount,
-              name,
-              categoryName,
-              description,
-              productAvgRaiting,
-              price,
-              priceWithDiscount,
-              imageLink,
-              unit,
-            })
-          }
-        >
-          <GrView fontSize={16} />
-        </div>
-        <Box
-          component={'div'}
-          onClick={() => dispatch(addCompareItem(id))}
-          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
-        >
-          <IoGitCompare fontSize={16} />
-        </Box>
-        <Box
-          component={'div'}
-          className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
-        >
-          {loadingWishlist ? (
-            <CircularProgress size={8} className="h-max" color="primary" />
-          ) : (
-            <IoHeart
-              fontSize={16}
-              onClick={async () => {
-                await dispatch(createWishList(id));
-                await dispatch(getWishlist());
-              }}
-            />
-          )}
-        </Box>
+        <Tooltip title="Add to cart">
+          <Box
+            component={'div'}
+            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+          >
+            {loading ? (
+              <CircularProgress size={8} className="h-max" color="primary" />
+            ) : (
+              <IoBagAdd
+                fontSize={16}
+                onClick={() => addProducttoshoppingCart()}
+              />
+            )}
+          </Box>
+        </Tooltip>
+        <Tooltip title="Quick View">
+          <Box
+            component={'div'}
+            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+            onClick={() =>
+              handleOpen({
+                id,
+                discount,
+                name,
+                categoryName,
+                description,
+                productAvgRaiting,
+                price,
+                priceWithDiscount,
+                imageLink,
+                unit,
+              })
+            }
+          >
+            <GrView fontSize={16} />
+          </Box>
+        </Tooltip>
+        <Tooltip title="Add to Compare list">
+          <Box
+            component={'div'}
+            onClick={() => dispatch(addCompareItem(id))}
+            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+          >
+            <IoGitCompare fontSize={16} />
+          </Box>
+        </Tooltip>
+        <Tooltip title="Add to wishlist">
+          <Box
+            component={'div'}
+            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+          >
+            {loadingWishlist ? (
+              <CircularProgress size={8} className="h-max" color="primary" />
+            ) : (
+              <IoHeart
+                fontSize={16}
+                onClick={async () => {
+                  await dispatch(createWishList(id));
+                  await dispatch(getWishlist());
+                }}
+              />
+            )}
+          </Box>
+        </Tooltip>
       </Box>
 
       <CardContent sx={{ padding: '5px 10px' }}>
@@ -179,6 +190,7 @@ export default function ProductCard({
           {...(dialogData as ProductCardType)}
         />
       )}
+      <HomeAlert message="Hello World" type="success" />
     </Card>
   );
 }
