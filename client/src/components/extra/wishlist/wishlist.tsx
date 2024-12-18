@@ -10,6 +10,7 @@ import WishlistItem from '../../base/wishlistItem/wishlistItem';
 import { getWishlist } from '../../../features/wishlist/wishlistThunk';
 import { WishlistType } from '../../../types/wishlist';
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
+import EmptyBox from '../../base/empty-box/empty-box';
 const Wishlist = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
@@ -27,9 +28,10 @@ const Wishlist = () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100vh',
+
         width: '460px',
       }}
-      className={`bg-white z-[100] fixed p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
+      className={`bg-white z-[100] fixed top-0 p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
     >
       <Box>
         <Box
@@ -57,9 +59,17 @@ const Wishlist = () => {
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
           {(error as ApiError) && (
-            <Alert severity="warning">{(error as ApiError).message}</Alert>
+            <Box>
+              {(error as ApiError).errorCode ===
+              'WISHLIST_NOT_FOUND_FOR_USER' ? (
+                <EmptyBox />
+              ) : (
+                ''
+              )}
+            </Box>
           )}
           {!loading &&
+            !error &&
             cartItems.map((item) => {
               return (
                 <>
