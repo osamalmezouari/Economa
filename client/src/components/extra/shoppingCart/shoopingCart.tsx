@@ -8,7 +8,6 @@ import {
   TableCell,
   TableRow,
   CircularProgress,
-  Alert,
 } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
 import { AppDispatch } from '../../../app/store';
@@ -20,6 +19,7 @@ import { getshoppingCart } from '../../../features/shoppingCart/shoppingCartThun
 import { ApiError } from '../../../types/error';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import ShoppingCartItem from '../../base/shoppingCartItem/shoppingCartItem';
+import EmptyBox from '../../base/empty-box/empty-box';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -42,7 +42,7 @@ const ShoppingCart = () => {
         height: '100vh',
         width: '460px',
       }}
-      className={`bg-white z-[100] fixed p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
+      className={`bg-white z-[100] top-0 fixed p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
     >
       <Box>
         <Box
@@ -74,9 +74,16 @@ const ShoppingCart = () => {
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
           {(error as ApiError) && (
-            <Alert severity="warning">{(error as ApiError).message}</Alert>
+            <Box>
+              {(error as ApiError).errorCode === 'SHOPPING_CART_NOT_FOUND' ? (
+                <EmptyBox />
+              ) : (
+                ''
+              )}
+            </Box>
           )}
           {!loading &&
+            !error &&
             cartItems.map((item) => {
               return (
                 <>
@@ -95,69 +102,71 @@ const ShoppingCart = () => {
         </Box>
       </Box>
 
-      <Box>
-        <Divider sx={{ my: 2 }} />
-        <Table>
-          <TableBody>
-            <TableRow>
-              <TableCell
-                sx={{
-                  fontWeight: 'bold',
-                  color: 'secondary.main',
-                  fontSize: '18px',
-                }}
-              >
-                Base price :{' '}
-              </TableCell>
-              <TableCell align="right" sx={{ fontWeight: 'bold' }}>
-                ${basePrice?.toFixed(2)}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                sx={{
-                  fontWeight: 'bold',
-                  color: 'secondary.main',
-                  fontSize: '18px',
-                }}
-              >
-                VAT (20%) :
-              </TableCell>
-              <TableCell align="right" sx={{ fontWeight: 'bold' }}>
-                ${vat?.toFixed(2)}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                sx={{
-                  fontWeight: 'bold',
-                  color: 'secondary.main',
-                  fontSize: '18px',
-                }}
-              >
-                Total :
-              </TableCell>
-              <TableCell
-                align="right"
-                sx={{ color: 'primary.main', fontWeight: 'bold' }}
-              >
-                ${totalPrice?.toFixed(2)}
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+      {!loading && !error && (
+        <Box>
+          <Divider sx={{ my: 2 }} />
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'secondary.main',
+                    fontSize: '18px',
+                  }}
+                >
+                  Base price :{' '}
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: 'bold' }}>
+                  ${basePrice?.toFixed(2)}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'secondary.main',
+                    fontSize: '18px',
+                  }}
+                >
+                  VAT (20%) :
+                </TableCell>
+                <TableCell align="right" sx={{ fontWeight: 'bold' }}>
+                  ${vat?.toFixed(2)}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'secondary.main',
+                    fontSize: '18px',
+                  }}
+                >
+                  Total :
+                </TableCell>
+                <TableCell
+                  align="right"
+                  sx={{ color: 'primary.main', fontWeight: 'bold' }}
+                >
+                  ${totalPrice?.toFixed(2)}
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
 
-        <Button
-          variant="contained"
-          sx={{
-            width: '100%',
-            backgroundColor: 'secondary.main',
-            '&:hover': { backgroundColor: 'primary.main' },
-          }}
-        >
-          Checkout
-        </Button>
-      </Box>
+          <Button
+            variant="contained"
+            sx={{
+              width: '100%',
+              backgroundColor: 'secondary.main',
+              '&:hover': { backgroundColor: 'primary.main' },
+            }}
+          >
+            Checkout
+          </Button>
+        </Box>
+      )}
     </Box>
   );
 };
