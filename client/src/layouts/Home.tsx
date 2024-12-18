@@ -8,7 +8,6 @@ const Home = () => {
     <>
       <ShoppingCart />
       <Wishlist />
-      <Navbar />
       <HeroImage />
       <CategoryCardContainer />
     </>
