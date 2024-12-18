@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getComparedProductDetails } from '../../../features/compare/compareThunk';
 import { CompareItemProps } from '../../base/compareItem/interface';
+import EmptyBox from '../../base/empty-box/empty-box';
 const Compare = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error } = useSelector(
-    (state: RootState) => state.compare
-  );
+  const { data, loading } = useSelector((state: RootState) => state.compare);
   useEffect(() => {
     const compareItemsIds: string[] = JSON.parse(
       localStorage.getItem('compareItemsIds') || '[]'
@@ -19,9 +18,9 @@ const Compare = () => {
   return (
     <Box
       component={'div'}
-      className="flex max-w-[1000px]  m-auto mt-20 overflow-x-scroll mb-20"
+      className="flex max-w-[1000px]  m-auto mt-20 overflow-x-scroll mb-20 rounded-xl"
     >
-      <Box className="header min-w-[150px] ">
+      <Box className="header min-w-[250px] ">
         <Typography
           sx={{ fontWeight: 'bold', color: 'secondary.main.dark' }}
           className="font-bold h-[200px] border-[1px] text-center flex items-center  p-2"
@@ -73,7 +72,7 @@ const Compare = () => {
       </Box>
       {loading ? (
         <div className="w-full h-full flex justify-center items-center">
-          <CircularProgress className='self-center' color="primary" size={50} />
+          <CircularProgress className="self-center" color="primary" size={50} />
         </div>
       ) : (
         data.map((item: CompareItemProps) => {
@@ -95,12 +94,9 @@ const Compare = () => {
         })
       )}
       {data.length === 0 && (
-        <Typography
-          variant="h4"
-          className="text-center w-full flex items-center justify-center"
-        >
-          Compare list is empty
-        </Typography>
+        <Box className="text-center w-full flex items-center justify-center bg-gray-200 text-3xl">
+          <EmptyBox />
+        </Box>
       )}
     </Box>
   );
