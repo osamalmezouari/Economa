@@ -31,7 +31,6 @@ const LoginComponent = () => {
 
   return (
     <>
-      <Navbar />
       <Box
         component={'form'}
         className="flex max-w-[1000px] gap-4 h-full my-20 m-auto items-center justify-center"
@@ -125,7 +124,6 @@ const LoginComponent = () => {
           </Grid>
         </Grid>
       </Box>
-      <Footer />
     </>
   );
 };
