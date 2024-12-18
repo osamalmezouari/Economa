@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Container, Grid, Typography, TextField, Button, IconButton, Snackbar, Alert } from "@mui/material";
+import  { useState } from "react";
+import { Container, Grid, Typography, IconButton, Snackbar, Alert } from "@mui/material";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
@@ -28,9 +28,9 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6">Product Features</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom : "10px"}}>Product Features</Typography>
                             <ul>
-                                <li className="mb-3 cursor-pointer hover:text-primary-main">Solutions</li>
+                                <li className="mb-3 cursor-pointer hover:text-primary-main ">Solutions</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Integrations</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Pricing Plans</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Product Updates</li>
@@ -40,7 +40,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6">Company Information</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Company Information</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">About Us</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Careers</li>
@@ -52,7 +52,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6">Customer Support</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Customer Support</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Help Center</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Documentation</li>
@@ -64,7 +64,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6">Legal & Policies</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Legal & Policies</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Privacy Policy</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Terms of Service</li>
