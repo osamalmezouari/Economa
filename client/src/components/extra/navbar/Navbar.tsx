@@ -12,20 +12,21 @@ import { logo } from '../../../mock/constants';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
+import { useRouter } from '@tanstack/react-router';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
+  const router = useRouter();
+  /*   const navigate = useNavigate(); */
   const NavItems = {
     itemsCenter: [
       { icon: <FiHome />, link: '#', name: 'home' },
       { icon: <BiStoreAlt />, link: '#', name: 'Store' },
       { icon: <RiDiscountPercentLine />, link: '#', name: 'Offers' },
-      { icon: <LuGitCompare />, link: '#', name: 'Compare' },
+      { icon: <LuGitCompare  />, link: '#', name: 'Compare' },
     ],
     ItemsRight: [
       {
@@ -34,6 +35,11 @@ const Navbar = () => {
             variant="text"
             className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2 "
             startIcon={<IoPersonOutline />}
+            onClick={() =>
+              router.navigate({
+                to: '/login',
+              })
+            }
           >
             <p className="text-secondary-darker font-secondary">Login</p>
           </Button>
@@ -47,7 +53,10 @@ const Navbar = () => {
             variant="text"
             className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2 "
             startIcon={<GrFavorite />}
-            onClick={() => dispatch(setDisplayWishlist())}
+            onClick={() => {
+              dispatch({ type: 'setDisplayCart', payload: false });
+              dispatch(setDisplayWishlist());
+            }}
           >
             <p className="text-secondary-darker font-secondary">Wishlist</p>
           </Button>
@@ -61,7 +70,10 @@ const Navbar = () => {
             variant="text"
             className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2 "
             startIcon={<TbShoppingBag />}
-            onClick={() => dispatch(setDisplayCart())}
+            onClick={() => {
+              dispatch({ type: 'setDisplayWishlist', payload: false });
+              dispatch(setDisplayCart());
+            }}
           >
             <p className="text-secondary-darker font-secondary">cart</p>
           </Button>
@@ -86,9 +98,9 @@ const Navbar = () => {
   }, []);
 
   return isDesktop ? (
-    <Desktop_nav_bar NavItems={NavItems} />
+    <Desktop_nav_bar />
   ) : (
-    <Mobile_nav_bar NavItems={NavItems} />
+    <Mobile_nav_bar/>
   );
 };
 
