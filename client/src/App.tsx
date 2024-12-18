@@ -1,13 +1,11 @@
 import ThemeProvider from './theme';
-import { BrowserRouter } from 'react-router-dom';
-import Landing from './pages/landing';
-import Compare from './components/extra/compare/compare';
+import { RouterProvider } from '@tanstack/react-router';
+import { router } from './routes/__root';
+
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Landing />
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
