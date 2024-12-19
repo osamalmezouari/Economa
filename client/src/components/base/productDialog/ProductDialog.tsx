@@ -24,7 +24,7 @@ import {
 } from '../../../features/shoppingCart/shoppingCartThunk';
 import { AppDispatch, RootState } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { ApiError } from '../../../types/error';
+import { ApiError } from '../../../types/apierror';
 import { clearCreateError } from '../../../features/shoppingCart/shoppingCartSlice';
 
 export default function ProductDialog({

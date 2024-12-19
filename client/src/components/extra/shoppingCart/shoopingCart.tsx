@@ -16,7 +16,7 @@ import { RootState } from '../../../app/store';
 import { shoppingCartItemProps } from '../../base/shoppingCartItem/interface';
 import { useEffect } from 'react';
 import { getshoppingCart } from '../../../features/shoppingCart/shoppingCartThunk';
-import { ApiError } from '../../../types/error';
+import { ApiError } from '../../../types/apierror';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import ShoppingCartItem from '../../base/shoppingCartItem/shoppingCartItem';
 import EmptyBox from '../../base/empty-box/empty-box';

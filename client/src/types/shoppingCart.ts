@@ -1,5 +1,5 @@
 import { shoppingCartItemProps } from '../components/base/shoppingCartItem/interface';
-import { ApiError } from './error';
+import { ApiError } from './apierror';
 
 export interface ShoopingCartType extends shoppingCartItemProps {}
 

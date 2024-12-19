@@ -11,7 +11,7 @@ import Navbar from '../../components/extra/navbar/Navbar';
 import Footer from '../../components/extra/footer/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
-import { ApiError } from '../../types/error';
+import { ApiError } from '../../types/apierror';
 import { Login } from '../../features/auth/authThunk';
 
 const LoginComponent = () => {

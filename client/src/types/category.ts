@@ -1,4 +1,4 @@
-import { ApiError } from './error';
+import { ApiError } from './apierror';
 
 export interface CategoryType {
   id: string;

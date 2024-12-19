@@ -11,7 +11,7 @@ import { RegisterPayload } from '../../types/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { Register } from '../../features/auth/authThunk';
-import { ApiError } from '../../types/error';
+import { ApiError } from '../../types/apierror';
 
 const RegisterComponent = () => {
   const dispatch = useDispatch<AppDispatch>();

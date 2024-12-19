@@ -1,5 +1,5 @@
 import { WishlistItemProps } from '../components/base/wishlistItem/interfaces';
-import { ApiError } from './error';
+import { ApiError } from './apierror';
 
 export interface WishlistType extends WishlistItemProps {}
 

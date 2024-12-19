@@ -5,7 +5,7 @@ import { AppDispatch } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../app/store';
 import { useEffect } from 'react';
-import { ApiError } from '../../../types/error';
+import { ApiError } from '../../../types/apierror';
 import WishlistItem from '../../base/wishlistItem/wishlistItem';
 import { getWishlist } from '../../../features/wishlist/wishlistThunk';
 import { WishlistType } from '../../../types/wishlist';
