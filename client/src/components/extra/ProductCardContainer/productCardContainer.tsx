@@ -7,6 +7,7 @@ import { getproductsCards } from '../../../features/products/productThunk';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
+import { Box, CircularProgress } from '@mui/material';
 
 const ProductCardContainer = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -51,7 +52,9 @@ const ProductCardContainer = () => {
   return (
     <div style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}>
       {loading ? (
-        'Loading...'
+        <Box className={'w-full flex justify-center items-center py-8'}>
+          <CircularProgress className='' />
+        </Box>
       ) : (
         <Slider {...sliderSettings}>
           {data?.map((productCard) => (
