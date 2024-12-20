@@ -85,7 +85,7 @@ const ProductnewArrivalsContainer = () => {
 export default ProductnewArrivalsContainer;
  */
 
-import { Grid } from '@mui/material';
+import { Box, CircularProgress, Grid } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { getProductsNewArrivals } from '../../../features/products/productThunk';
@@ -140,7 +140,9 @@ const ProductnewArrivalsContainer = () => {
   return (
     <div style={{ margin: 'auto', maxWidth: '1200px', padding: '20px' }}>
       {loading ? (
-        'Loading...'
+        <Box className={'w-full flex justify-center items-center py-8'}>
+          <CircularProgress className='' />
+        </Box>
       ) : (
         <>
           {/* First Slider - Group 1 */}
