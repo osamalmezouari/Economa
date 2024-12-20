@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Box, CircularProgress, Container } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
 import CategoryCard from '../../base/category-card/categoryCard';
 import { useEffect } from 'react';
@@ -19,7 +19,9 @@ const CategoryCardContainer = () => {
   return (
     <Container style={{ maxWidth: '1200px', marginTop: '40px' }}>
       {loading ? (
-        <p>Loading categories...</p>
+        <Box className={'w-full flex justify-center items-center py-8'}>
+          <CircularProgress className='' />
+        </Box>
       ) : (
         <Grid2
           container
