@@ -4,6 +4,7 @@ import Footer from '../components/extra/footer/footer';
 import { LoginRoute, RegisterRoute } from './auth';
 import { indexRoute } from './landing';
 import { compareRoute } from './compare';
+import { StoreRoute } from './store';
 
 export const rootRoute = createRootRoute({
   component: RootComponent,
@@ -24,6 +25,7 @@ const routeTree = rootRoute.addChildren([
   LoginRoute,
   indexRoute,
   compareRoute,
+  StoreRoute,
 ]);
 export const router = createRouter({ routeTree, defaultPreload: 'intent' });
 declare module '@tanstack/react-router' {
