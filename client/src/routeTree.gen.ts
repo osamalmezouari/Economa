@@ -11,11 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as StoreImport } from './routes/store'
 import { Route as LandingImport } from './routes/landing'
 import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
 
 // Create/Update Routes
+
+const StoreRoute = StoreImport.update({
+  id: '/store',
+  path: '/store',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const LandingRoute = LandingImport.update({
   id: '/landing',
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingImport
       parentRoute: typeof rootRoute
     }
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/store': typeof StoreRoute
 }
 
 export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/store': typeof StoreRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/store': typeof StoreRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/auth' | '/compare' | '/landing'
+  fullPaths: '/auth' | '/compare' | '/landing' | '/store'
   fileRoutesByTo: FileRoutesByTo
-  to: '/auth' | '/compare' | '/landing'
-  id: '__root__' | '/auth' | '/compare' | '/landing'
+  to: '/auth' | '/compare' | '/landing' | '/store'
+  id: '__root__' | '/auth' | '/compare' | '/landing' | '/store'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CompareRoute: typeof CompareRoute
   LandingRoute: typeof LandingRoute
+  StoreRoute: typeof StoreRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CompareRoute: CompareRoute,
   LandingRoute: LandingRoute,
+  StoreRoute: StoreRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/auth",
         "/compare",
-        "/landing"
+        "/landing",
+        "/store"
       ]
     },
     "/auth": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/landing": {
       "filePath": "landing.tsx"
+    },
+    "/store": {
+      "filePath": "store.tsx"
     }
   }
 }
