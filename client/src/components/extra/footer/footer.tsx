@@ -28,7 +28,7 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom : "10px"}}>Product Features</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{ marginBottom: "10px" }}>Product Features</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main ">Solutions</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Integrations</li>
@@ -40,7 +40,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Company Information</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{ marginBottom: "10px" }}>Company Information</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">About Us</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Careers</li>
@@ -52,7 +52,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Customer Support</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{ marginBottom: "10px" }}>Customer Support</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Help Center</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Documentation</li>
@@ -64,7 +64,7 @@ const Footer = () => {
 
                     <Grid item xs={12} sm={6} md={3}>
                         <div>
-                            <Typography variant="h6" className="font-semibold mb-6" sx={{marginBottom :"10px"}}>Legal & Policies</Typography>
+                            <Typography variant="h6" className="font-semibold mb-6" sx={{ marginBottom: "10px" }}>Legal & Policies</Typography>
                             <ul>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Privacy Policy</li>
                                 <li className="mb-3 cursor-pointer hover:text-primary-main">Terms of Service</li>
@@ -75,8 +75,8 @@ const Footer = () => {
                     </Grid>
                 </Grid>
 
-                
- 
+
+
                 <div className="mt-8 w-max ml-auto ">
                     <div className="mb-4">
                         <IconButton aria-label="Facebook" className="text-white mx-2 hover:text-primary-main">
