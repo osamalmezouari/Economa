@@ -126,7 +126,7 @@ const Desktop_nav_bar = () => {
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<BiStoreAlt />}
-          /* onClick={() => router.navigate({ to: '/store' })} */
+          onClick={() => router.navigate({ to: '/Store' })}
         >
           <p className="text-secondary-darker font-main">Store</p>
         </Button>
