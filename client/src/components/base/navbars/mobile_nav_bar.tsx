@@ -90,9 +90,8 @@ const Mobile_nav_bar = () => {
       {/* Dropdown Center Navigation */}
       <Box
         component={'div'}
-        className={`gap-x-4 absolute w-full p-2 bg-white z-20 transition-all duration-500 ease-in-out transform ${
-          isOpen ? 'top-[200px] opacity-100' : '-top-[500px] opacity-0'
-        }`}
+        className={`gap-x-4 absolute w-full p-2 bg-white z-20 transition-all duration-500 ease-in-out transform ${isOpen ? 'top-[200px] opacity-100' : '-top-[500px] opacity-0'
+          }`}
       >
         {/* Home */}
         <Box
@@ -108,7 +107,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          /* onClick={() => router.navigate({ to: '/store' })} */
+          onClick={() => router.navigate({ to: '/Store' })}
         >
           <BiStoreAlt fontSize={24} />
           <Box component={'div'}>Store</Box>
@@ -117,8 +116,8 @@ const Mobile_nav_bar = () => {
         {/* Offers */}
         <Box
           component={'div'}
-          className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          /* onClick={() => router.navigate({ to: '/offers' })} */
+          className="flex items-center  gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
+        /* onClick={() => router.navigate({ to: '/offers' })} */
         >
           <RiDiscountPercentLine fontSize={24} />
           <Box component={'div'}>Offers</Box>
@@ -128,7 +127,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          onClick={() => router.navigate({ to:"/compare" })}
+          onClick={() => router.navigate({ to: "/compare" })}
         >
           <LuGitCompare fontSize={24} />
           <Box component={'div'}>Compare</Box>
