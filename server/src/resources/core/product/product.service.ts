@@ -91,7 +91,7 @@ export class ProductService {
   }
   async getnewArrivals() {
     const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 2);
     const productsWithDiscount = await this.prisma.product.findMany({
       where: {
         created_at: {
