@@ -24,10 +24,10 @@ import EmptyBox from '../../base/empty-box/empty-box';
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
-    (state: RootState) => state.shoppingCart.shoppingCartWithProducts
+    (state: RootState) => state.shoppingCart.shoppingCartWithProducts,
   );
   const { basePrice, vat, totalPrice, open } = useSelector(
-    (state: RootState) => state.shoppingCart
+    (state: RootState) => state.shoppingCart,
   );
   const cartItems: shoppingCartItemProps[] = data;
   useEffect(() => {
@@ -82,6 +82,7 @@ const ShoppingCart = () => {
               )}
             </Box>
           )}
+          {(!cartItems.length) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
