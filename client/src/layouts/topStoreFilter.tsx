@@ -12,7 +12,7 @@ const TopStoreFilter = () => {
         setAnchorEl(null);
     };
     return <>
-        <Grid item spacing={2} lg={12}>
+        <>
             <Box className="w-full flex border p-4 items-start justify-end gap-2 h-max">
                 <div>
                     <Button
@@ -46,7 +46,7 @@ const TopStoreFilter = () => {
                     clear filter
                 </Button>
             </Box>
-        </Grid>
+        </>
     </>;
 };
 export default TopStoreFilter;
