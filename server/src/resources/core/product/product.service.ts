@@ -27,7 +27,71 @@ export class ProductService {
     if (product) return product;
     if (!product) throw new PRODUCT_NOT_FOUND_Exception(id);
   }
+  async getStoreProducts(page: number) {
+    const products = await this.prisma.product.findMany({
+      skip: (page - 1) * 6,
+      take: 6,
+      
+      select: {
+        id: true,
+        name: true,
+        price: true,
+        description: true,
+        discount: true,
+        gallery: {
+          select: {
+            imageUrl: true,
+          },
+        },
+        category: {
+          select: {
+            name: true,
+          },
+        },
+        reviews: {
+          select: {
+            rating: true,
+          },
+        },
+        Units: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
 
+    const productPageCount = await this.findAll().then((products) => {
+      return Math.ceil(products.length / 6);
+    });
+    const productsWithAvgRating = products.map((product) => {
+      const totalRating = product.reviews.reduce((total, review) => {
+        return total + (review.rating || 0);
+      }, 0);
+      const avgRating = totalRating / product.reviews.length;
+      const cappedAvgRating = Math.min(avgRating, 5);
+
+      return {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        discount: product.discount || 0,
+        description: product.description,
+        productAvgRating: cappedAvgRating || 0,
+        priceWithDiscount: parseFloat(
+          (product.price - (product.price * product.discount) / 100).toFixed(2),
+        ),
+        categoryName: product.category.name,
+        unit: product.Units.name,
+        imageLink: product.gallery[0].imageUrl,
+      };
+    });
+
+    return {
+      productPageCount,
+      products: productsWithAvgRating,
+    };
+  }
   async getAllProductCards() {
     const productsWithDiscount = await this.prisma.product.findMany({
       where: {
@@ -161,11 +225,11 @@ export class ProductService {
         },
       },
     });
-  
+
     if (validateIds.length !== ids.length) {
       throw new Error('Invalid Ids');
     }
-  
+
     const products = await Promise.all(
       validateIds.map(async (product) => {
         const productData = await this.prisma.product.findUnique({
@@ -201,7 +265,7 @@ export class ProductService {
             },
           },
         });
-  
+
         // Format the product data to match CompareItemProps
         return {
           id: productData.id,
@@ -216,12 +280,11 @@ export class ProductService {
           description: productData.description,
           stock: productData.stock,
         };
-      })
+      }),
     );
-  
+
     return products;
   }
-  
 
   async update(id: string, updateProductDto: UpdateProductDto) {
     await this.findOne(id);
