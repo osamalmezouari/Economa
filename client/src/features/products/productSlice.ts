@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getproductsCards, getProductsNewArrivals } from './productThunk';
+import {
+  getproductsCards,
+  getProductsNewArrivals,
+  getProductsStore,
+} from './productThunk';
 import {
   ProductCardStateType,
   ProductCardType,
   ProductsNewArrivals,
+  ProductStoreType,
 } from '../../types/product';
 
 const initialState: ProductCardStateType = {
@@ -14,6 +19,14 @@ const initialState: ProductCardStateType = {
   },
   productsNewArrivals: {
     data: [],
+    loading: false,
+    error: null,
+  },
+  productsStore: {
+    data: {
+      productPageCount: 0,
+      products: [],
+    },
     loading: false,
     error: null,
   },
@@ -49,19 +62,34 @@ const productsSlice = createSlice({
         state.productsNewArrivals.loading = true;
         state.productsNewArrivals.error = null;
       })
-      .addCase(
-        getProductsNewArrivals.rejected,
-        (state, action) => {
-          state.productsNewArrivals.loading = false;
-          state.productsNewArrivals.error = action.payload;
-        }
-      )
+      .addCase(getProductsNewArrivals.rejected, (state, action) => {
+        state.productsNewArrivals.loading = false;
+        state.productsNewArrivals.error = action.payload;
+      })
       .addCase(
         getProductsNewArrivals.fulfilled,
         (state, action: PayloadAction<ProductsNewArrivals[]>) => {
           state.productsNewArrivals.loading = false;
           state.productsNewArrivals.error = null;
           state.productsNewArrivals.data = action.payload;
+        }
+      )
+
+      //storeproducts
+      .addCase(getProductsStore.pending, (state) => {
+        state.productsStore.loading = true;
+        state.productsStore.error = null;
+      })
+      .addCase(getProductsStore.rejected, (state, action) => {
+        state.productsStore.loading = false;
+        state.productsStore.error = action.payload;
+      })
+      .addCase(
+        getProductsStore.fulfilled,
+        (state, action: PayloadAction<ProductStoreType[]>) => {
+          state.productsStore.loading = false;
+          state.productsStore.error = null;
+          state.productsStore.data = action.payload;
         }
       );
   },
