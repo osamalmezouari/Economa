@@ -1,5 +1,6 @@
 import { IsInt, IsNumber, IsString, IsUUID, MaxLength } from "class-validator";
 
+
 export class CreateProductDto {
     @IsString()
     name: string;
