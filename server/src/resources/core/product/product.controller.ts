@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -13,6 +14,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('products')
 export class ProductController {
@@ -23,6 +25,12 @@ export class ProductController {
   async findAll() {
     const product = await this.productService.findAll();
     return product;
+  }
+
+  @AUTH(AuthenticationType.None)
+  @Get('store')
+  async getStoreProducts(@Query() { page }: PaginationDto) {
+    return this.productService.getStoreProducts(page);
   }
 
   @AUTH(AuthenticationType.None)
@@ -39,12 +47,12 @@ export class ProductController {
 
   @Get('ComparedProductDetails/:ids')
   async getComparedProductDetails(@Param('ids', ParseIdsPipe) ids: string[]) {
-    console.log("ids",ids);
+    console.log('ids', ids);
     const product = await this.productService.getComparedProductDetails(ids);
     console.log('Product Details:', product); // Log the data returned from the service
     return product;
   }
- 
+
   @Get(':productId')
   async findOne(@Param('productId') productId: string) {
     const product = await this.productService.findOne(productId);
