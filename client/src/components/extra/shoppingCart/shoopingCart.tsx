@@ -75,14 +75,10 @@ const ShoppingCart = () => {
           {loading && <CircularProgress color="primary" className="m-auto" />}
           {(error as ApiError) && (
             <Box>
-              {(error as ApiError).errorCode === 'SHOPPING_CART_NOT_FOUND' ? (
-                <EmptyBox />
-              ) : (
-                ''
-              )}
+              {(error as ApiError).errorCode === 'SHOPPING_CART_NOT_FOUND' ? (<EmptyBox />) : ('')}
             </Box>
           )}
-          {(!cartItems.length) && <EmptyBox />}
+          {(!error && !cartItems.length) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
