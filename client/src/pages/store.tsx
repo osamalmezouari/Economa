@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import StoreTopSection from '../components/extra/StoreTopSection/StoreTopSection.tsx';
 import LeftStoreFilter from '../layouts/leftStoreFilter.tsx';
 import TopStoreFilter from '../layouts/topStoreFilter.tsx';
+import StoreProducts from '../layouts/storeProducts.tsx';
 
 const Store = () => {
     return <>
@@ -10,7 +11,7 @@ const Store = () => {
             <LeftStoreFilter />
             <Grid item lg={8.5} sx={{ marginTop: '20px', paddingTop: '0px' }}>
                 <TopStoreFilter />
-
+                <StoreProducts />
             </Grid>
         </Grid>
     </>;
