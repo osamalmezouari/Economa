@@ -5,9 +5,9 @@ import {
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
 
-export const getProductsStore = async (page : number): Promise<ProductStoreType[]> => {
+export const getProductsStore = async (page : number): Promise<ProductStoreType> => {
   try {
-    const response = await apiClient.get<ProductStoreType[]>(`products/store?page=${page}`);
+    const response = await apiClient.get<ProductStoreType>(`products/store?page=${page}`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
