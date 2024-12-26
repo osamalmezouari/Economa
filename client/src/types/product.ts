@@ -1,5 +1,10 @@
 import { ApiError } from './apierror';
 
+export interface ProductStoreType {
+  productPageCount: 0;
+  products: ProductCardType[];
+}
+
 export interface ProductCardType {
   id: string;
   discount: number;
@@ -28,6 +33,11 @@ export interface ProductCardStateType {
   };
   productsNewArrivals: {
     data: ProductsNewArrivals[];
+    loading: boolean;
+    error: ApiError | null | undefined | unknown;
+  };
+  productsStore: {
+    data: ProductStoreType ;
     loading: boolean;
     error: ApiError | null | undefined | unknown;
   };
