@@ -11,8 +11,7 @@ import { Box, CircularProgress } from '@mui/material';
 
 const ProductCardContainer = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { productsCard } = useSelector((state: RootState) => state.products);
-  const { loading, data } = productsCard;
+  const {  loading, data } = useSelector((state: RootState) => state.products.productsCard);
 
   useEffect(() => {
     dispatch(getproductsCards());
