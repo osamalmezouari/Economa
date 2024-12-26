@@ -1,9 +1,9 @@
 import { Box, CircularProgress, Grid, Pagination } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../app/store';
-import { getProductsStore } from '../features/products/productThunk';
 import { useEffect, useState } from 'react';
-import ProductCard from '../components/base/ProductCard/ProductCard';
+import { AppDispatch, RootState } from '../../../app/store';
+import { getProductsStore } from '../../../features/products/productThunk';
+import ProductCard from '../../base/ProductCard/ProductCard';
 
 const StoreProducts = () => {
     const dispatch = useDispatch<AppDispatch>();
