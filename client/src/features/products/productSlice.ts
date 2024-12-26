@@ -86,7 +86,7 @@ const productsSlice = createSlice({
       })
       .addCase(
         getProductsStore.fulfilled,
-        (state, action: PayloadAction<ProductStoreType[]>) => {
+        (state, action: PayloadAction<ProductStoreType>) => {
           state.productsStore.loading = false;
           state.productsStore.error = null;
           state.productsStore.data = action.payload;
