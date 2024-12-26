@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import StoreTopSection from '../components/extra/StoreTopSection/StoreTopSection.tsx';
 import LeftStoreFilter from '../layouts/leftStoreFilter.tsx';
 import TopStoreFilter from '../layouts/topStoreFilter.tsx';
-import StoreProducts from '../layouts/storeProducts.tsx';
+import StoreProducts from '../components/extra/storeProducts/storeProducts.tsx';
 
 const Store = () => {
     return <>
