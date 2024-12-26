@@ -1,5 +1,4 @@
-import React from 'react';
-import { Box, Typography, CircularProgress, Alert } from '@mui/material';
+import { Box, Typography, CircularProgress } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
 import { AppDispatch } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
@@ -68,6 +67,7 @@ const Wishlist = () => {
               )}
             </Box>
           )}
+          {( !error && !cartItems.length) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
