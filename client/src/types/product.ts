@@ -11,7 +11,7 @@ export interface ProductCardType {
   name: string;
   categoryName: string;
   description: string;
-  productAvgRaiting: number;
+  productAvgRating: number;
   price: string;
   priceWithDiscount: number;
   unit: string;
