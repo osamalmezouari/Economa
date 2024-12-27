@@ -4,7 +4,6 @@ import { AppDispatch } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../app/store';
 import { useEffect } from 'react';
-import { ApiError } from '../../../types/apierror';
 import WishlistItem from '../../base/wishlistItem/wishlistItem';
 import { getWishlist } from '../../../features/wishlist/wishlistThunk';
 import { WishlistType } from '../../../types/wishlist';
@@ -57,17 +56,7 @@ const Wishlist = () => {
           className={`h-[80vh] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(error as ApiError) && (
-            <Box>
-              {(error as ApiError).errorCode ===
-              'WISHLIST_NOT_FOUND_FOR_USER' ? (
-                <EmptyBox />
-              ) : (
-                ''
-              )}
-            </Box>
-          )}
-          {( !error && !cartItems.length) && <EmptyBox />}
+          {(!cartItems.length) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
