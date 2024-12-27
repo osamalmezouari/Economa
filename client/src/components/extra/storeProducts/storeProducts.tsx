@@ -34,7 +34,7 @@ const StoreProducts = () => {
                             name={product.name}
                             categoryName={product.categoryName}
                             description={product.description}
-                            productAvgRaiting={product.productAvgRaiting}
+                            productAvgRating={product.productAvgRating}
                             price={product.price}
                             priceWithDiscount={product.priceWithDiscount}
                             unit={product.unit}
