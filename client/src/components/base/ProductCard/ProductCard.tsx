@@ -32,7 +32,7 @@ export default function ProductCard({
   name,
   categoryName,
   description,
-  productAvgRaiting,
+  productAvgRating,
   price,
   priceWithDiscount,
   imageLink,
@@ -116,7 +116,7 @@ export default function ProductCard({
                 name,
                 categoryName,
                 description,
-                productAvgRaiting,
+                productAvgRating,
                 price,
                 priceWithDiscount,
                 imageLink,
@@ -166,8 +166,9 @@ export default function ProductCard({
         <Rating
           name="half-rating"
           size="small"
-          defaultValue={productAvgRaiting}
-          precision={0.5}
+          value={productAvgRating}
+          precision={1}
+          onClick={()=>console.log(productAvgRating)}
         />
         <Box className="flex gap-8 text-secondary-main">
           {priceWithDiscount && priceWithDiscount > 0 ? (
