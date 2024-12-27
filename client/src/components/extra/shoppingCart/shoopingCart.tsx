@@ -73,12 +73,7 @@ const ShoppingCart = () => {
           className={`h-[400px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(error as ApiError) && (
-            <Box>
-              {(error as ApiError).errorCode === 'SHOPPING_CART_NOT_FOUND' ? (<EmptyBox />) : ('')}
-            </Box>
-          )}
-          {(!error && !cartItems.length) && <EmptyBox />}
+          {(!cartItems.length) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
