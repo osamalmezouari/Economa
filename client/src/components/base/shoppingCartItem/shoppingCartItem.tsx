@@ -24,24 +24,37 @@ const ShoppingCartItem = ({
   const [newQuantity, setNewQuantity] = useState(quantity);
 
   const handleIncrease = async () => {
-    setNewQuantity((prevQuantity: number) => prevQuantity + 1);
-    dispatch(updatequantity({ id: id, quantity: newQuantity }));
-    console.log(newQuantity);
+    const updatedQuantity = newQuantity + 1;
+    const result = await dispatch(
+      updatequantity({ id: id, quantity: updatedQuantity })
+    );
+    if (result.meta.requestStatus === 'fulfilled') {
+      setNewQuantity(updatedQuantity);
+    }
   };
 
   const handleDecrease = async () => {
-    setNewQuantity((prevQuantity: number) =>
-      prevQuantity > 1 ? prevQuantity - 1 : 1
+    const updatedQuantity = newQuantity > 1 ? newQuantity - 1 : 1;
+    const result = await dispatch(
+      updatequantity({ id: id, quantity: updatedQuantity })
     );
-    dispatch(updatequantity({ id: id, quantity: newQuantity }));
-    console.log(newQuantity);
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      setNewQuantity(updatedQuantity);
+    }
   };
 
-  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleQuantityChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const value = parseInt(event.target.value, 10);
     if (!isNaN(value) && value > 0) {
-      setNewQuantity(value);
-      dispatch(updatequantity({ id: id, quantity: newQuantity }));
+      const result = await dispatch(
+        updatequantity({ id: id, quantity: value })
+      );
+      if (result.meta.requestStatus === 'fulfilled') {
+        setNewQuantity(value);
+      }
     } else {
       setNewQuantity(1);
     }
@@ -80,7 +93,7 @@ const ShoppingCartItem = ({
         <Typography variant="body2" color="#777" sx={{ mt: 1 }}>
           <strong>${productPrice.toFixed(2)}</strong> x{' '}
           <span className="text-black">
-            {quantity} {productunit}
+            {newQuantity} {productunit}
           </span>
         </Typography>
         <Box
@@ -100,10 +113,9 @@ const ShoppingCartItem = ({
             />
           </InputAdornment>
           <TextField
-            value={quantity}
+            value={newQuantity}
             onChange={handleQuantityChange}
             variant="outlined"
-            disabled={true}
             sx={{
               '& .MuiOutlinedInput-notchedOutline': {
                 borderColor: '#ccc',
