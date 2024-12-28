@@ -56,7 +56,7 @@ const Wishlist = () => {
           className={`h-[80vh] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(!cartItems.length) && <EmptyBox />}
+          {(!cartItems.length && !loading) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
