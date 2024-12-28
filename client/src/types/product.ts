@@ -1,4 +1,5 @@
 import { ApiError } from './apierror';
+import { StoreFilters } from './storeFilters';
 
 export interface ProductStoreType {
   productPageCount: 0;
@@ -37,8 +38,9 @@ export interface ProductCardStateType {
     error: ApiError | null | undefined | unknown;
   };
   productsStore: {
-    data: ProductStoreType ;
+    data: ProductStoreType;
     loading: boolean;
     error: ApiError | null | undefined | unknown;
   };
+  filters: StoreFilters;
 }
