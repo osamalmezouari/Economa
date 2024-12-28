@@ -16,7 +16,6 @@ import { RootState } from '../../../app/store';
 import { shoppingCartItemProps } from '../../base/shoppingCartItem/interface';
 import { useEffect } from 'react';
 import { getshoppingCart } from '../../../features/shoppingCart/shoppingCartThunk';
-import { ApiError } from '../../../types/apierror';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import ShoppingCartItem from '../../base/shoppingCartItem/shoppingCartItem';
 import EmptyBox from '../../base/empty-box/empty-box';
@@ -73,7 +72,7 @@ const ShoppingCart = () => {
           className={`h-[400px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(!cartItems.length) && <EmptyBox />}
+          {(!cartItems.length && !loading) && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
