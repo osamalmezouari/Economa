@@ -4,10 +4,18 @@ import {
   ProductStoreType,
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
+import { StoreFilters } from '../types/storeFilters';
 
-export const getProductsStore = async (page : number): Promise<ProductStoreType> => {
+export const getProductsStore = async (
+  filters: StoreFilters
+): Promise<ProductStoreType> => {
   try {
-    const response = await apiClient.get<ProductStoreType>(`products/store?page=${page}`);
+    const filtersQuery = new URLSearchParams(
+      filters as Record<string, string>
+    ).toString();
+    const response = await apiClient.get<ProductStoreType>(
+      `products/store?${filtersQuery ? `${filtersQuery}` : ''}`
+    );
     return response.data;
   } catch (error: any) {
     if (error.response) {
