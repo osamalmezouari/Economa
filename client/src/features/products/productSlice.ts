@@ -10,6 +10,7 @@ import {
   ProductsNewArrivals,
   ProductStoreType,
 } from '../../types/product';
+import { StoreFilters } from '../../types/storeFilters';
 
 const initialState: ProductCardStateType = {
   productsCard: {
@@ -30,12 +31,29 @@ const initialState: ProductCardStateType = {
     loading: false,
     error: null,
   },
+  filters: {
+    category: '',
+    search: '',
+    weight: '',
+    Minprice: 0,
+    Maxprice: 0,
+    page : 1,
+    sort: '',
+  },
 };
 
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    setFilters: <K extends keyof StoreFilters>(
+      state,
+      action: PayloadAction<{ key: K; value: StoreFilters[K] }>
+    ) => {
+      const { key, value } = action.payload;
+      state.filters[key] = value;
+    },
+  },
   extraReducers: (builder) => {
     builder
 
@@ -97,3 +115,4 @@ const productsSlice = createSlice({
 
 export const productsReducer = productsSlice.reducer;
 export default productsSlice.reducer;
+export const { setFilters } = productsSlice.actions;
