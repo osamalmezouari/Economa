@@ -1,11 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as productsApi from '../../api/products';
+import { StoreFilters } from '../../types/storeFilters';
 
 export const getProductsStore = createAsyncThunk(
   '/products/store',
-  async (page: number, { rejectWithValue }) => {
+  async (
+    filters: StoreFilters,
+    { rejectWithValue }
+  ) => {
     try {
-      const products = await productsApi.getProductsStore(page);
+      const products = await productsApi.getProductsStore(filters);
       return products;
     } catch (error: any) {
       if (error) {
