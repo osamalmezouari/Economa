@@ -20,10 +20,14 @@ import { AppDispatch } from '../../../app/store';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { useRouter } from '@tanstack/react-router';
+import { setFilters } from '../../../features/products/productSlice';
 
 const Desktop_nav_bar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setFilters({ key: 'search', value: event.target.value }));
+  };
 
   return (
     <>
@@ -47,10 +51,12 @@ const Desktop_nav_bar = () => {
                 variant="outlined"
                 fullWidth
                 placeholder="Search for a product"
+                onChange={handleSearchChange}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
                       <BiSearch
+                        onClick={() => router.navigate({ to: '/Store' })}
                         className={
                           'hover:bg-primary-main rounded-full w-8 h-8 border-8 bg-secondary-main text-white transition-all duration-500 ease-in-out cursor-pointer hover:text-white border-secondary-main hover:border-primary-main '
                         }
