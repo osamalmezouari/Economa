@@ -14,7 +14,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
-import { PaginationDto } from 'src/common/dto/pagination.dto';
+import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
 
 @Controller('products')
 export class ProductController {
@@ -29,8 +29,23 @@ export class ProductController {
 
   @AUTH(AuthenticationType.None)
   @Get('store')
-  async getStoreProducts(@Query() { page }: PaginationDto) {
-    return this.productService.getStoreProducts(page);
+  async getStoreProducts(
+    @Query('page') page: number,
+    @Query('category') category: string,
+    @Query('search') search: string,
+    @Query('weight') weight: string,
+    @Query('Minprice') Minprice: number,
+    @Query('Maxprice') Maxprice: number,
+    @Query('sort') sort: string,
+  ) {
+    console.log('Page:', page);
+    console.log('Category:', category);
+    console.log('Search:', search);
+    console.log('Weight:', weight);
+    console.log('Minprice:', Minprice);
+    console.log('Maxprice:', Maxprice);
+    console.log('Sort:', sort);
+    return this.productService.getStoreProducts({ page, category, search, weight, Minprice, Maxprice, sort });
   }
 
   @AUTH(AuthenticationType.None)
