@@ -10,13 +10,20 @@ import { GrFavorite } from 'react-icons/gr';
 import { TbShoppingBag } from 'react-icons/tb';
 import { useState } from 'react';
 import { useRouter } from '@tanstack/react-router';
+import { setFilters } from '../../../features/products/productSlice';
+import { AppDispatch } from '../../../app/store';
+import { useDispatch } from 'react-redux';
 
 const Mobile_nav_bar = () => {
   const [isOpen, setOpen] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
 
   const handleClick = () => {
     setOpen(!isOpen);
+  };
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setFilters({ key: 'search', value: event.target.value }));
   };
 
   return (
@@ -77,10 +84,11 @@ const Mobile_nav_bar = () => {
           className="w-[250px]"
           variant="outlined"
           placeholder="Search for a product"
+          onChange={handleSearchChange}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <Search />
+                <Search onClick={() => router.navigate({ to: '/Store' })} />
               </InputAdornment>
             ),
           }}
@@ -90,8 +98,9 @@ const Mobile_nav_bar = () => {
       {/* Dropdown Center Navigation */}
       <Box
         component={'div'}
-        className={`gap-x-4 absolute w-full p-2 bg-white z-20 transition-all duration-500 ease-in-out transform ${isOpen ? 'top-[200px] opacity-100' : '-top-[500px] opacity-0'
-          }`}
+        className={`gap-x-4 absolute w-full p-2 bg-white z-20 transition-all duration-500 ease-in-out transform ${
+          isOpen ? 'top-[200px] opacity-100' : '-top-[500px] opacity-0'
+        }`}
       >
         {/* Home */}
         <Box
@@ -117,7 +126,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center  gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-        /* onClick={() => router.navigate({ to: '/offers' })} */
+          /* onClick={() => router.navigate({ to: '/offers' })} */
         >
           <RiDiscountPercentLine fontSize={24} />
           <Box component={'div'}>Offers</Box>
@@ -127,7 +136,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          onClick={() => router.navigate({ to: "/compare" })}
+          onClick={() => router.navigate({ to: '/compare' })}
         >
           <LuGitCompare fontSize={24} />
           <Box component={'div'}>Compare</Box>
