@@ -4,6 +4,8 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { v4 as uuid } from 'uuid';
 import { PRODUCT_NOT_FOUND_Exception } from 'src/common/exceptions/PRODUCT_NOT_FOUND.exception';
+import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
+import { contains } from 'class-validator';
 @Injectable()
 export class ProductService {
   constructor(private readonly prisma: PrismaService) {}
@@ -27,11 +29,66 @@ export class ProductService {
     if (product) return product;
     if (!product) throw new PRODUCT_NOT_FOUND_Exception(id);
   }
-  async getStoreProducts(page: number) {
+
+  async getStoreProducts(filters: StoreFiltersDto) {
+    const filterConditions: any = {};
+    let orderBy: any = {};
+    switch (filters.sort) {
+      case 'price-asc':
+        orderBy = { price: 'asc' };
+        break;
+      case 'price-desc':
+        orderBy = { price: 'desc' };
+        break;
+      case 'rating-asc':
+        orderBy = { reviews: { rating: 'asc' } };
+        break;
+      case 'rating-desc':
+        orderBy = { reviews: { rating: 'desc' } };
+        break;
+      case 'name-asc':
+        orderBy = { name: 'asc' };
+        break;
+      case 'name-desc':
+        orderBy = { name: 'desc' };
+        break;
+      default:
+        orderBy = {};
+    }
+
+    if (filters.search) {
+      filterConditions.name = {
+        contains: filters.search,
+      };
+      filterConditions.description = {
+        contains: filters.search,
+      };
+    }
+    if (filters.category) {
+      filterConditions.category = {
+        name: filters.category,
+      };
+    }
+    if (filters.weight) {
+      filterConditions.weight = filters.weight;
+    }
+    if (filters.Minprice) {
+      filterConditions.price = {
+        gte: filters.Minprice,
+      };
+    }
+
+    if (filters.Maxprice) {
+      if (!filterConditions.price) filterConditions.price = {};
+      filterConditions.price.lte = filters.Maxprice;
+    }
     const products = await this.prisma.product.findMany({
-      skip: (page - 1) * 6,
+      skip: (filters.page - 1) * 6,
       take: 6,
-      
+      orderBy: orderBy,
+      where: {
+        ...filterConditions,
+      },
       select: {
         id: true,
         name: true,
@@ -61,9 +118,9 @@ export class ProductService {
       },
     });
 
-    const productPageCount = await this.findAll().then((products) => {
-      return Math.ceil(products.length / 6);
-    });
+    const productPageCount = await this.prisma.product.count({
+      where: filterConditions,
+    }).then((count) => Math.ceil(count / 6));
     const productsWithAvgRating = products.map((product) => {
       const totalRating = product.reviews.reduce((total, review) => {
         return total + (review.rating || 0);
@@ -92,6 +149,7 @@ export class ProductService {
       products: productsWithAvgRating,
     };
   }
+
   async getAllProductCards() {
     const productsWithDiscount = await this.prisma.product.findMany({
       where: {
@@ -266,10 +324,9 @@ export class ProductService {
           },
         });
 
-        // Format the product data to match CompareItemProps
         return {
           id: productData.id,
-          svgLink: productData.gallery?.[0]?.imageUrl || '', // Use the first gallery image URL or fallback
+          svgLink: productData.gallery?.[0]?.imageUrl || '', 
           productName: productData.name,
           productId: productData.id,
           categoryName: productData.category?.name || 'Uncategorized',
