@@ -17,7 +17,7 @@ const CategoryCardContainer = () => {
   }, [dispatch]);
 
   return (
-    <Container style={{ maxWidth: '1200px', marginTop: '40px' }}>
+    <Container style={{ maxWidth: '1350px', marginTop: '40px' }}>
       {loading ? (
         <Box className={'w-full flex justify-center items-center py-8'}>
           <CircularProgress className='' />
