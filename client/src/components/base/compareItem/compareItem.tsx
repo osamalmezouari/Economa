@@ -35,7 +35,7 @@ const CompareItem = ({
     <Box className="header min-w-[300px] max-w-[300px] h-full">
       <Box
         sx={{ fontWeight: 'bold', color: 'secondary.main.dark' }}
-        className="font-bold h-[200px] border-[1px] text-center flex border-l-0 items-center  p-4"
+        className="font-bold h-[300px] border-[1px] text-center flex border-l-0 items-center  p-4"
       >
         <Box
           component={'div'}
