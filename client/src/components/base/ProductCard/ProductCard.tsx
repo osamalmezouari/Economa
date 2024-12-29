@@ -61,11 +61,13 @@ export default function ProductCard({
   return (
     <Card
       sx={{
-        maxWidth: 280,
+        maxWidth: 240,
+        maxHeight: 380,
         borderRadius: '2px',
-        border: '2px solid #eeeeee',
+        border: '1px solid #eeeeee',
         margin: 'auto',
         height: '400px',
+        boxShadow: '0 0 0px ',
       }}
       className="group relative overflow-hidden"
     >
@@ -76,14 +78,14 @@ export default function ProductCard({
         title={name}
       >
         {discount > 0 && (
-          <div className="absolute top-2 right-4">
-            <Badge className="bg-red-400 text-white rounded-sm px-2 uppercase text-[12px]">
+          <div className="absolute top-8 left-4">
+            <Badge className="bg-red-400 text-white text-center  rounded-sm px-2 uppercase text-[12px]" sx={{textAlign : 'center'}}>
               - {discount} %
             </Badge>
           </div>
         )}
         <div className="absolute top-2 left-4">
-          <Badge className="bg-primary-main text-white rounded-sm px-2 uppercase text-[12px]">
+          <Badge className="bg-primary-main text-white  rounded-sm px-2 uppercase text-[12px]">
             1 {unit}
           </Badge>
         </div>
@@ -101,6 +103,7 @@ export default function ProductCard({
               <IoBagAdd
                 fontSize={16}
                 onClick={() => addProducttoshoppingCart()}
+                
               />
             )}
           </Box>
