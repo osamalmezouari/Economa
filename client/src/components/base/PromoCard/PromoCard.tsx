@@ -14,16 +14,16 @@ const PromoCard: React.FC<PromoCardProps> = ({
     <Box
         component="div"
         style={{ backgroundImage: `url(${image})` }}
-        className="bg-cover w-full m-auto h-[320px] rounded relative bg-center flex justify-center items-center text-center sm:block sm:text-start"
+        className="bg-cover w-full m-auto h-[400px] rounded relative bg-center flex justify-center items-center text-center sm:block sm:text-start"
       >
         <Box
           component={'div'}
           className=" sm:absolute sm:right-[10%] sm:top-[25%] text-end"
         >
-          <Typography variant="h3" fontWeight="bold" color="secondary">
+          <Typography variant="h2" fontWeight="bold" color="secondary">
             {title}
           </Typography>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h4" color="text.secondary">
             {subtitle}
           </Typography>
           <Typography
@@ -38,7 +38,7 @@ const PromoCard: React.FC<PromoCardProps> = ({
             variant="contained"
             color="secondary"
             className="hover:bg-primary-main bg-secondary-main h-8"
-            sx={{ textTransform: 'none', fontSize: 16 }}
+            sx={{ textTransform: 'none', fontSize: 16 , borderRadius : '1px' , padding :"22px"}}
           >
             {buttonText}
           </Button>}
