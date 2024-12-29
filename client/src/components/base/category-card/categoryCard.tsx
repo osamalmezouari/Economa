@@ -14,15 +14,16 @@ const CategoryCardSingle = ({
     '#F9DEF2',
     'fdf5eb',
   ];
-  const randomColor = calors[Math.floor(Math.random() * calors.length - 1)];
+  const randomColor = calors[Math.floor(Math.random() * calors.length)];
   /*     const Navigate =  useNavigate() */
   return (
     <Box
       component={'div'}
       className={`p-3 rounded`}
       style={{ backgroundColor: `${randomColor}` }}
+      
     >
-      <Card className="w-[140px]   bg-secondary-darker">
+      <Card className="w-[160px]   bg-secondary-darker">
         <Box
           component={'div'}
           className="p-4 text-center grid justify-center gap-y-1"
