@@ -23,7 +23,7 @@ const Compare = () => {
       <Box className="header min-w-[250px] ">
         <Typography
           sx={{ fontWeight: 'bold', color: 'secondary.main.dark' }}
-          className="font-bold h-[200px] border-[1px] text-center flex items-center  p-2"
+          className="font-bold h-[300px] border-[1px] text-center flex items-center  p-2"
         >
           Product Image
         </Typography>
@@ -93,11 +93,11 @@ const Compare = () => {
           );
         })
       )}
-      {data.length === 0 && (
+      {!data.length && !loading  ? (
         <Box className="text-center w-full flex items-center justify-center bg-gray-200 text-3xl">
           <EmptyBox />
         </Box>
-      )}
+      ):""}
     </Box>
   );
 };
