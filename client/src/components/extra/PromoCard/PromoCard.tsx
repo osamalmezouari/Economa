@@ -3,7 +3,7 @@ import PromoCard from '../../base/PromoCard/PromoCard';
 
 const PromoCardWraper: React.FC = () => {
   return (
-    <div style={{ padding: '20px' }} className='w-[1200px] m-auto'>
+    <div style={{ padding: '20px' }} className='w-[1350px] m-auto'>
       <PromoCard
         image="https://github.com/osamalmezouari/ecommerce/blob/master/client/public/assets/images/PromoCard.jpg?raw=true"
         title="Fresh Fruits"
