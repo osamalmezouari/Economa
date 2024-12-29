@@ -34,7 +34,7 @@ export default function ProductDialog({
   discount,
   name,
   description,
-  productAvgRaiting,
+  productAvgRating,
   price,
   priceWithDiscount,
   unit,
@@ -73,17 +73,18 @@ export default function ProductDialog({
       <Dialog
         className="h-full"
         onClose={async () => {
-          await dispatch(clearCreateError());
+          dispatch(clearCreateError());
           setopen(false);
         }}
         aria-labelledby="customized-dialog-title"
         open={open}
         maxWidth="lg"
+        
         fullWidth
         sx={{
           '& .MuiDialog-paper': {
             maxWidth: '800px',
-            borderRadius: '8px',
+            borderRadius: '',
           },
         }}
       >
@@ -140,7 +141,7 @@ export default function ProductDialog({
               <Rating
                 name="half-rating"
                 size="small"
-                defaultValue={productAvgRaiting}
+                defaultValue={productAvgRating}
                 precision={0.5}
                 className="py-2"
               />
@@ -196,7 +197,7 @@ export default function ProductDialog({
                   disabled={loading}
                 >
                   {loading ? (
-                    <CircularProgress size={24} color="inherit" />
+                    <CircularProgress size={40} color="inherit" />
                   ) : (
                     'Add to Cart'
                   )}
