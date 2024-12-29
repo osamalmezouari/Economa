@@ -7,6 +7,7 @@ import { compareRoute } from './compare';
 import { StoreRoute } from './store';
 import Wishlist from '../components/extra/wishlist/wishlist';
 import ShoppingCart from '../components/extra/shoppingCart/shoopingCart';
+import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
 
 export const rootRoute = createRootRoute({
   component: RootComponent,
@@ -16,6 +17,7 @@ function RootComponent() {
   return (
     <>
       <Navbar />
+      <GlobalAlert />
       <ShoppingCart />
       <Wishlist />
       <Outlet />
