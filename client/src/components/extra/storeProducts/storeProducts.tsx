@@ -29,7 +29,7 @@ const StoreProducts = () => {
 
   return (
     <>
-      <Grid container spacing={2} sx={{ marginTop: '0px' }} className='px-12'>
+      <Grid container spacing={2} sx={{ marginTop: '0px' }} className="px-12">
         {loading && !products.length ? (
           <Box className={'w-full flex justify-center items-center py-8'}>
             <CircularProgress className="" />
@@ -53,7 +53,14 @@ const StoreProducts = () => {
           ))
         )}
       </Grid>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 , marginBottom: 2}}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: 2,
+          marginBottom: 2,
+        }}
+      >
         <Pagination
           count={productPageCount}
           page={filters.page}

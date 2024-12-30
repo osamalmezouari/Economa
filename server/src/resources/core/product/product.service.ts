@@ -118,9 +118,11 @@ export class ProductService {
       },
     });
 
-    const productPageCount = await this.prisma.product.count({
-      where: filterConditions,
-    }).then((count) => Math.ceil(count / 6));
+    const productPageCount = await this.prisma.product
+      .count({
+        where: filterConditions,
+      })
+      .then((count) => Math.ceil(count / 6));
     const productsWithAvgRating = products.map((product) => {
       const totalRating = product.reviews.reduce((total, review) => {
         return total + (review.rating || 0);
@@ -326,7 +328,7 @@ export class ProductService {
 
         return {
           id: productData.id,
-          svgLink: productData.gallery?.[0]?.imageUrl || '', 
+          svgLink: productData.gallery?.[0]?.imageUrl || '',
           productName: productData.name,
           productId: productData.id,
           categoryName: productData.category?.name || 'Uncategorized',

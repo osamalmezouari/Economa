@@ -7,7 +7,7 @@ import { GALLERY_NOT_FOUND_Exception } from '../../../common/exceptions/GALLERY_
 
 @Injectable()
 export class GalleryService {
-  constructor(private readonly prisma: PrismaService) { }
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(createGalleryDto: CreateGalleryDto) {
     const gallery = await this.prisma.gallery.create({
@@ -37,7 +37,7 @@ export class GalleryService {
   }
 
   async remove(id: string) {
-    await this.findOne(id); 
+    await this.findOne(id);
     const gallery = await this.prisma.gallery.delete({ where: { id } });
     return gallery;
   }

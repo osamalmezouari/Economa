@@ -37,7 +37,6 @@ export class AuthenticationController {
   //   });
   // }
 
-
   @AUTH(AuthenticationType.None)
   @Post('Register')
   SignUp(@Body() signUpDto: SignUpDto) {

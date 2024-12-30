@@ -26,14 +26,12 @@ export class ShoppingCartController {
     return shoppingCarts;
   }
 
-  
   @AUTH(AuthenticationType.bearer)
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const shoppingCart = await this.shoppingCartService.findOne(id);
     return shoppingCart;
   }
-
 
   @AUTH(AuthenticationType.bearer)
   @Post()

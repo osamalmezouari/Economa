@@ -7,9 +7,8 @@ export class CreateCategoryDto {
 
   @IsOptional()
   @IsString()
-
   description?: string;
 
   @IsUrl()
-  svgLink: string
+  svgLink: string;
 }

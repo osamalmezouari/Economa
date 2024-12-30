@@ -45,7 +45,15 @@ export class ProductController {
     console.log('Minprice:', Minprice);
     console.log('Maxprice:', Maxprice);
     console.log('Sort:', sort);
-    return this.productService.getStoreProducts({ page, category, search, weight, Minprice, Maxprice, sort });
+    return this.productService.getStoreProducts({
+      page,
+      category,
+      search,
+      weight,
+      Minprice,
+      Maxprice,
+      sort,
+    });
   }
 
   @AUTH(AuthenticationType.None)

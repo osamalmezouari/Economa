@@ -80,7 +80,6 @@ export class WishlistService {
     return wishlistWithProducts;
   }
 
-
   async remove(id: string) {
     await this.findOne(id);
     const wishlist = await this.prisma.wishlist.delete({ where: { id } });
