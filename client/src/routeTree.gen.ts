@@ -11,16 +11,23 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as StoreImport } from './routes/store'
+import { Route as StoreroutImport } from './routes/storerout'
+import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
 import { Route as LandingImport } from './routes/landing'
 import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
 
 // Create/Update Routes
 
-const StoreRoute = StoreImport.update({
-  id: '/store',
-  path: '/store',
+const StoreroutRoute = StoreroutImport.update({
+  id: '/storerout',
+  path: '/storerout',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProductdetailsrootRoute = ProductdetailsrootImport.update({
+  id: '/productdetailsroot',
+  path: '/productdetailsroot',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,11 +74,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingImport
       parentRoute: typeof rootRoute
     }
-    '/store': {
-      id: '/store'
-      path: '/store'
-      fullPath: '/store'
-      preLoaderRoute: typeof StoreImport
+    '/productdetailsroot': {
+      id: '/productdetailsroot'
+      path: '/productdetailsroot'
+      fullPath: '/productdetailsroot'
+      preLoaderRoute: typeof ProductdetailsrootImport
+      parentRoute: typeof rootRoute
+    }
+    '/storerout': {
+      id: '/storerout'
+      path: '/storerout'
+      fullPath: '/storerout'
+      preLoaderRoute: typeof StoreroutImport
       parentRoute: typeof rootRoute
     }
   }
@@ -83,14 +97,16 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
-  '/store': typeof StoreRoute
+  '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/storerout': typeof StoreroutRoute
 }
 
 export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
-  '/store': typeof StoreRoute
+  '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/storerout': typeof StoreroutRoute
 }
 
 export interface FileRoutesById {
@@ -98,15 +114,27 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
-  '/store': typeof StoreRoute
+  '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/storerout': typeof StoreroutRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/auth' | '/compare' | '/landing' | '/store'
+  fullPaths:
+    | '/auth'
+    | '/compare'
+    | '/landing'
+    | '/productdetailsroot'
+    | '/storerout'
   fileRoutesByTo: FileRoutesByTo
-  to: '/auth' | '/compare' | '/landing' | '/store'
-  id: '__root__' | '/auth' | '/compare' | '/landing' | '/store'
+  to: '/auth' | '/compare' | '/landing' | '/productdetailsroot' | '/storerout'
+  id:
+    | '__root__'
+    | '/auth'
+    | '/compare'
+    | '/landing'
+    | '/productdetailsroot'
+    | '/storerout'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,14 +142,16 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CompareRoute: typeof CompareRoute
   LandingRoute: typeof LandingRoute
-  StoreRoute: typeof StoreRoute
+  ProductdetailsrootRoute: typeof ProductdetailsrootRoute
+  StoreroutRoute: typeof StoreroutRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CompareRoute: CompareRoute,
   LandingRoute: LandingRoute,
-  StoreRoute: StoreRoute,
+  ProductdetailsrootRoute: ProductdetailsrootRoute,
+  StoreroutRoute: StoreroutRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +167,8 @@ export const routeTree = rootRoute
         "/auth",
         "/compare",
         "/landing",
-        "/store"
+        "/productdetailsroot",
+        "/storerout"
       ]
     },
     "/auth": {
@@ -149,8 +180,11 @@ export const routeTree = rootRoute
     "/landing": {
       "filePath": "landing.tsx"
     },
-    "/store": {
-      "filePath": "store.tsx"
+    "/productdetailsroot": {
+      "filePath": "productdetailsroot.tsx"
+    },
+    "/storerout": {
+      "filePath": "storerout.tsx"
     }
   }
 }
