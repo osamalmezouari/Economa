@@ -1,15 +1,15 @@
 import {
   Badge,
   Box,
-  Rating,
   Card,
   CardContent,
   CardMedia,
   CircularProgress,
+  Rating,
   Tooltip,
 } from '@mui/material';
 import { GrView } from 'react-icons/gr';
-import { IoGitCompare, IoBagAdd, IoHeart } from 'react-icons/io5';
+import { IoBagAdd, IoGitCompare, IoHeart } from 'react-icons/io5';
 import { ProductCardType } from '../../../types/product';
 import ProductDialog from '../productDialog/ProductDialog';
 import { useState } from 'react';
@@ -24,7 +24,6 @@ import {
   getWishlist,
 } from '../../../features/wishlist/wishlistThunk';
 import { addCompareItem } from '../../../features/compare/compareSlice';
-import HomeAlert from '../homeAlert/homealert';
 
 export default function ProductCard({
   id,
@@ -61,7 +60,7 @@ export default function ProductCard({
   return (
     <Card
       sx={{
-        maxWidth: 240,
+        maxWidth: 260,
         maxHeight: 380,
         borderRadius: '2px',
         border: '1px solid #eeeeee',
@@ -79,7 +78,10 @@ export default function ProductCard({
       >
         {discount > 0 && (
           <div className="absolute top-8 left-4">
-            <Badge className="bg-red-400 text-white text-center  rounded-sm px-2 uppercase text-[12px]" sx={{textAlign : 'center'}}>
+            <Badge
+              className="bg-red-400 text-white text-center  rounded-sm px-2 uppercase text-[12px]"
+              sx={{ textAlign: 'center' }}
+            >
               - {discount} %
             </Badge>
           </div>
@@ -103,7 +105,6 @@ export default function ProductCard({
               <IoBagAdd
                 fontSize={16}
                 onClick={() => addProducttoshoppingCart()}
-                
               />
             )}
           </Box>
@@ -171,7 +172,7 @@ export default function ProductCard({
           size="small"
           value={productAvgRating}
           precision={1}
-          onClick={()=>console.log(productAvgRating)}
+          onClick={() => console.log(productAvgRating)}
         />
         <Box className="flex gap-8 text-secondary-main">
           {priceWithDiscount && priceWithDiscount > 0 ? (
@@ -194,7 +195,6 @@ export default function ProductCard({
           {...(dialogData as ProductCardType)}
         />
       )}
-      <HomeAlert message="Hello World" type="success" />
     </Card>
   );
 }
