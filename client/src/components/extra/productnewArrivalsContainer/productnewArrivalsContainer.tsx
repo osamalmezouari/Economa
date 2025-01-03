@@ -54,16 +54,16 @@ const ProductnewArrivalsContainer = () => {
     <div style={{ margin: 'auto', maxWidth: '1350px', padding: '20px' }}>
       {loading ? (
         <Box className={'w-full flex justify-center items-center py-8'}>
-          <CircularProgress className='' />
+          <CircularProgress className="" />
         </Box>
       ) : (
         <>
           {/* First Slider - Group 1 */}
-          <Slider {...sliderSettings} className='mb-6'>
+          <Slider {...sliderSettings} className="mb-6">
             {data?.slice(0, Math.ceil(data.length / 2)).map((product) => (
               <div key={product.id}>
-                <Grid container spacing={2}>
-                  <Grid item >
+                <Grid container spacing={0}>
+                  <Grid item>
                     <ProductCard
                       id={product.id}
                       discount={product.discount}
@@ -81,29 +81,29 @@ const ProductnewArrivalsContainer = () => {
               </div>
             ))}
           </Slider>
-
-          {/* Second Slider - Group 2 */}
           <Slider {...sliderSettings}>
-            {data?.slice(Math.ceil(data.length / 2), data.length).map((product) => (
-              <div key={product.id}>
-                <Grid container spacing={2}>
-                  <Grid item >
-                    <ProductCard
-                      id={product.id}
-                      discount={product.discount}
-                      name={product.name}
-                      categoryName={product.categoryName}
-                      description={product.description}
-                      productAvgRating={product.productAvgRating}
-                      price={product.price}
-                      priceWithDiscount={product.priceWithDiscount}
-                      unit={product.unit}
-                      imageLink={product.imageLink}
-                    />
+            {data
+              ?.slice(Math.ceil(data.length / 2), data.length)
+              .map((product) => (
+                <div key={product.id}>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <ProductCard
+                        id={product.id}
+                        discount={product.discount}
+                        name={product.name}
+                        categoryName={product.categoryName}
+                        description={product.description}
+                        productAvgRating={product.productAvgRating}
+                        price={product.price}
+                        priceWithDiscount={product.priceWithDiscount}
+                        unit={product.unit}
+                        imageLink={product.imageLink}
+                      />
+                    </Grid>
                   </Grid>
-                </Grid>
-              </div>
-            ))}
+                </div>
+              ))}
           </Slider>
         </>
       )}
