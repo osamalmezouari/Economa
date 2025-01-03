@@ -1,13 +1,14 @@
-import { Outlet, createRootRoute, createRouter } from '@tanstack/react-router';
+import { createRootRoute, createRouter, Outlet } from '@tanstack/react-router';
 import Navbar from '../components/extra/navbar/Navbar';
 import Footer from '../components/extra/footer/footer';
 import { LoginRoute, RegisterRoute } from './auth';
 import { indexRoute } from './landing';
 import { compareRoute } from './compare';
-import { StoreRoute } from './store';
+import { StoreRoute } from './storerout.tsx';
 import Wishlist from '../components/extra/wishlist/wishlist';
 import ShoppingCart from '../components/extra/shoppingCart/shoopingCart';
 import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
+import { productdetailsroot } from './productdetailsroot.tsx';
 
 export const rootRoute = createRootRoute({
   component: RootComponent,
@@ -32,6 +33,7 @@ const routeTree = rootRoute.addChildren([
   indexRoute,
   compareRoute,
   StoreRoute,
+  productdetailsroot,
 ]);
 export const router = createRouter({ routeTree, defaultPreload: 'intent' });
 declare module '@tanstack/react-router' {
