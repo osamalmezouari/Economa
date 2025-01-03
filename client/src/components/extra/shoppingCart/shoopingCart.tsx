@@ -1,18 +1,17 @@
 import {
   Box,
-  Typography,
   Button,
+  CircularProgress,
   Divider,
   Table,
   TableBody,
   TableCell,
   TableRow,
-  CircularProgress,
+  Typography,
 } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
-import { AppDispatch } from '../../../app/store';
+import { AppDispatch, RootState } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../app/store';
 import { shoppingCartItemProps } from '../../base/shoppingCartItem/interface';
 import { useEffect } from 'react';
 import { getshoppingCart } from '../../../features/shoppingCart/shoppingCartThunk';
@@ -23,10 +22,10 @@ import EmptyBox from '../../base/empty-box/empty-box';
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
-    (state: RootState) => state.shoppingCart.shoppingCartWithProducts,
+    (state: RootState) => state.shoppingCart.shoppingCartWithProducts
   );
   const { basePrice, vat, totalPrice, open } = useSelector(
-    (state: RootState) => state.shoppingCart,
+    (state: RootState) => state.shoppingCart
   );
   const cartItems: shoppingCartItemProps[] = data;
   useEffect(() => {
@@ -72,7 +71,7 @@ const ShoppingCart = () => {
           className={`h-[400px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(!cartItems.length && !loading) && <EmptyBox />}
+          {!cartItems.length && !loading && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
@@ -86,6 +85,7 @@ const ShoppingCart = () => {
                     quantity={item.quantity}
                     id={item.id}
                     productId={item.productId}
+                    key={item.productId}
                   />
                 </>
               );
@@ -148,13 +148,14 @@ const ShoppingCart = () => {
 
           <Button
             variant="contained"
+            className={'tracking-widest'}
             sx={{
               width: '100%',
               backgroundColor: 'secondary.main',
               '&:hover': { backgroundColor: 'primary.main' },
             }}
           >
-            Checkout
+            Place Order
           </Button>
         </Box>
       )}
