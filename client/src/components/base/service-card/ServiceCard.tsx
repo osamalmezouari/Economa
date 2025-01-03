@@ -1,18 +1,14 @@
-import { Box } from "@mui/material"
-import { ServiceCardProps } from "./interface"
+import { Box } from '@mui/material';
+import { ServiceCardProps } from './interface';
 
-const ServiceCard = ({
-    icon,
-    title,
-    subtitle,
-}: ServiceCardProps) => {
-
-    return <Box className="w-[300px] h-max p-6 flex-col place-items-center border-gray-200 border-2 rounded text-center">
-        <>{icon}</>
-        <p className="p-2 font-bold tracking-wider  text-xl text-secondary-main">
-            {title}
-        </p>
-        <p className="px-4 py-1 text-secondary-main font-light">{subtitle}</p>
+const ServiceCard = ({ icon, subtitle }: ServiceCardProps) => {
+  return (
+    <Box className="w-full h-[140px] p-6 flex place-items-center border-gray-200 border-2 rounded text-center">
+      <>{icon}</>
+      <p className="text-start px-4 py-1 text-secondary-main font-normal text-xl font-primay">
+        {subtitle}
+      </p>
     </Box>
-}
-export default ServiceCard
+  );
+};
+export default ServiceCard;
