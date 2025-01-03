@@ -13,7 +13,7 @@ const Landing = () => {
       <PromoCardWraper />
       <NewArrivalsSection />
       <OfferBanner />
-      <ServicesContainer />      
+      <ServicesContainer />
     </>
   );
 };
