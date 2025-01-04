@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
+      <change afterPath="$PROJECT_DIR$/client/src/components/base/bannerCard/bannerCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/base/bannerCard/interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/extra/BannerContainer/bannerContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/ProductsDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/routes/productdetailsroot.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/types/productDetails.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/ProductCard/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/ProductCard/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/PromoCard/PromoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/PromoCard/PromoCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/homeAlert/homealert.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/homeAlert/interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/service-card/ServiceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/service-card/ServiceCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/extra/offerBanner/offerBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/extra/offerBanner/offerBanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/extra/productnewArrivalsContainer/productnewArrivalsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/extra/productnewArrivalsContainer/productnewArrivalsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/extra/servicesContainer/ServicesContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/extra/servicesContainer/ServicesContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/extra/shoppingCart/shoopingCart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/extra/shoppingCart/shoopingCart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routeTree.gen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routeTree.gen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/__root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/storerout.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;osamalmezouari&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/osamalmezouari/ecommerce.git&quot;,
+    &quot;accountId&quot;: &quot;47b8c903-f140-405f-b7ab-fa544ee96ada&quot;
+  }
+}</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2r5HYLyusUd1DPrGWCPDCRC8K29" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.start:dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Oussama\\PROJECTS\\Ecommerce\\client\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\Oussama\\PROJECTS\\Ecommerce\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start:dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="" />
+      <created>1735842066631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735842066631</updated>
+      <workItem from="1735842071897" duration="11000" />
+      <workItem from="1735842662934" duration="9770000" />
+      <workItem from="1735930417662" duration="4308000" />
+    </task>
+    <task id="LOCAL-00001" summary="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
+      <option name="closed" value="true" />
+      <created>1735848876804</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735848876804</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
+      <option name="closed" value="true" />
+      <created>1735848887264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735848887264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality." />
+  </component>
+</project>
