@@ -24,6 +24,7 @@ import {
   getWishlist,
 } from '../../../features/wishlist/wishlistThunk';
 import { addCompareItem } from '../../../features/compare/compareSlice';
+import { useRouter } from '@tanstack/react-router';
 
 export default function ProductCard({
   id,
@@ -56,7 +57,7 @@ export default function ProductCard({
     await dispatch(createshoppingCart({ productId: id, quantity: 1 }));
     await dispatch(getshoppingCart());
   };
-
+  const Router = useRouter();
   return (
     <Card
       sx={{
@@ -164,7 +165,14 @@ export default function ProductCard({
         <p className="my-1 text-secondary-lighter capitalize">
           {categoryName} - {name}
         </p>
-        <p className="text-secondary-main capitalize mb-3 max-h-6 overflow-hidden text-[14px] hover:text-primary-main cursor-pointer transition-colors duration-500">
+        <p
+          onClick={() =>
+            Router.navigate({
+              to: `/Store/${id}`,
+            })
+          }
+          className="text-secondary-main capitalize mb-3 max-h-6 overflow-hidden text-[14px] hover:text-primary-main cursor-pointer transition-colors duration-500"
+        >
           {description} ...
         </p>
         <Rating
