@@ -2,14 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { MiniProductCardTypeProps } from '../../base/minProductCard/interfaces';
 import MiniProductCard from '../../base/minProductCard/miniProductCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../app/store';
 
-interface MiniProductContainerProps {
-  products: MiniProductCardTypeProps[];
-}
-
-const MiniProductContainer: React.FC<MiniProductContainerProps> = ({ products }) => {
+const MiniProductContainer: React.FC = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -33,7 +30,10 @@ const MiniProductContainer: React.FC<MiniProductContainerProps> = ({ products })
       },
     ],
   };
-
+  const dispatch = useDispatch<AppDispatch>();
+  const products = useSelector(
+    (state: RootState) => state.products.productsDetails.data.relatedProducts
+  );
   return (
     <div className="mini-product-container p-4 max-w-[1200px] mx-auto">
       <Slider {...settings}>
