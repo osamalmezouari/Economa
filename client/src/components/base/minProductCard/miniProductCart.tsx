@@ -15,6 +15,7 @@ import {
   createshoppingCart,
   getshoppingCart,
 } from '../../../features/shoppingCart/shoppingCartThunk';
+import { useRouter } from '@tanstack/react-router';
 
 const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
   name,
@@ -28,10 +29,7 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
   const { loading } = useSelector(
     (state: RootState) => state.shoppingCart.createshoppingCart
   );
-  const addProducttoshoppingCart = async () => {
-    await dispatch(createshoppingCart({ productId: productId, quantity: 1 }));
-    await dispatch(getshoppingCart());
-  };
+  const Router = useRouter();
   return (
     <Box className="mini-product-card h-full p-3 flex flex-row  border  border-solid border-gray-200 rounded-lg bg-gray-50 relative">
       <p className="add-to-cart-btn py-1 px-2 absolute top-1 right-1 opacity-0 transition-all duration-300 ease-in-out text-sm font-medium bg-green-600 text-white text-center rounded-md hover:bg-gray-600 hover:text-white">
@@ -47,7 +45,10 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
       </Box>
 
       <Box className="product-info flex flex-col">
-        <Typography className="text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1">
+        <Typography
+          onClick={() => Router.navigate({ to: `/Store/${productId}` })}
+          className="text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1"
+        >
           {name}
         </Typography>
         <Box className="product-rating mb-1 flex">
@@ -72,16 +73,20 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
       </Box>
       <Tooltip title="Add to cart">
         <Box
+          onClick={async () => {
+            console.log(productId);
+            await dispatch(
+              createshoppingCart({ productId: productId, quantity: 1 })
+            );
+            await dispatch(getshoppingCart());
+          }}
           component={'div'}
           className="border-2 p-1 ml-auto self-end text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
         >
           {loading ? (
             <CircularProgress size={8} className="h-max" color="primary" />
           ) : (
-            <IoBagAdd
-              fontSize={16}
-              onClick={() => addProducttoshoppingCart()}
-            />
+            <IoBagAdd fontSize={16} />
           )}
         </Box>
       </Tooltip>
