@@ -1,4 +1,4 @@
-import TitleTwo from '../components/extra/LandingTitles/TitleTwo';
+import TitleTwo from '../components/extra/Titles/TitleTwo';
 import ProductnewArrivalsContainer from '../components/extra/productnewArrivalsContainer/productnewArrivalsContainer';
 
 const NewArrivalsSection = () => {
