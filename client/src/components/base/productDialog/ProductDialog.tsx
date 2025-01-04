@@ -26,6 +26,7 @@ import { AppDispatch, RootState } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApiError } from '../../../types/apierror';
 import { clearCreateError } from '../../../features/shoppingCart/shoppingCartSlice';
+import { useRouter } from '@tanstack/react-router';
 
 export default function ProductDialog({
   open,
@@ -41,6 +42,7 @@ export default function ProductDialog({
   imageLink,
 }: ProductDialogProps) {
   const dispatch = useDispatch<AppDispatch>();
+  const Router = useRouter();
   const quantity = useSelector((state: RootState) => {
     const item = state.shoppingCart.shoppingCartWithProducts.data.find(
       (item) => item.productId === id
@@ -79,7 +81,6 @@ export default function ProductDialog({
         aria-labelledby="customized-dialog-title"
         open={open}
         maxWidth="lg"
-        
         fullWidth
         sx={{
           '& .MuiDialog-paper': {
@@ -135,7 +136,10 @@ export default function ProductDialog({
               </div>
             </Grid>
             <Grid item xs={12} md={6} className="p-4">
-              <p className="tracking-wide font-normal text-secondary-main text-2xl mt-4 cursor-pointer hover:text-primary-main transition-all duration-300">
+              <p
+                onClick={() => Router.navigate({ to: `/Store/${id}` })}
+                className="tracking-wide font-normal text-secondary-main text-2xl mt-4 cursor-pointer hover:text-primary-main transition-all duration-300"
+              >
                 {name}
               </p>
               <Rating
