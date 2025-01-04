@@ -1,39 +1,57 @@
 import { Avatar, Grid, Rating } from '@mui/material';
+import Review from '../../../types/review';
 
-const ReviewCard = () => {
+const ReviewCard = ({
+  id,
+  user,
+  productId,
+  rating,
+  reviewText,
+  createdAt,
+}: Review) => {
+  const formatDateTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('En-MA', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
   return (
     <Grid
       container
       gap={2}
-      className=" review-card flex flex-col p-4 border-b-2  my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
+      className="review-card flex flex-col p-4 border-b-2 my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
     >
       <Grid item lg={1} className="flex items-center justify-center">
         <Avatar
-          src="/assets/images/"
-          alt="A"
+          src={user.name || ''}
+          alt={user.name || user.name.trim().charAt(0).toUpperCase()}
           sx={{
-            width: 70, // Set width
-            height: 70, // Set height
+            width: 70,
+            height: 70,
           }}
         />
       </Grid>
       <Grid item lg={10}>
         <Grid item lg={12}>
-          <p className="mb-2">Mariya Lykra</p>
+          <p>{user.name || 'Anonymous'}</p>
         </Grid>
-        <Grid item lg={12}>
-          <Rating size="small" value={4} />
+        <Grid item lg={12} className="flex items-center gap-2">
+          <Rating size="small" value={rating || 0} disabled/>
+          <p className="text-secondary-light py-2 text-[12px]">
+            {createdAt ? formatDateTime(createdAt) : ''}
+          </p>
         </Grid>
         <Grid item lg={12}>
           <p className="text-secondary-main text-[14px] w-11/12">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen.
+            {reviewText || 'No review text provided.'}
           </p>
         </Grid>
       </Grid>
     </Grid>
   );
 };
+
 export default ReviewCard;
