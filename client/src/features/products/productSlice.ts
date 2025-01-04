@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   getproductsCards,
+  getProductsDetails,
   getProductsNewArrivals,
   getProductsStore,
 } from './productThunk';
@@ -37,8 +38,32 @@ const initialState: ProductCardStateType = {
     weight: '',
     Minprice: 0,
     Maxprice: 0,
-    page : 1,
+    page: 1,
     sort: '',
+  },
+  productsDetails: {
+    data: {
+      product: {
+        id: '',
+        discount: 0,
+        name: '',
+        categoryName: '',
+        description: '',
+        productAvgRating: 0,
+        price: '',
+        priceWithDiscount: 0,
+        unit: '',
+        imageLink: '',
+        categoryId: '',
+        reviewsCount: 0,
+        inStock: false,
+      },
+      reviews: [],
+      HighlyRighted: [],
+      relatedProducts: [],
+    },
+    loading: false,
+    error: null,
   },
 };
 
@@ -109,7 +134,22 @@ const productsSlice = createSlice({
           state.productsStore.error = null;
           state.productsStore.data = action.payload;
         }
-      );
+      )
+
+      //products Details
+      .addCase(getProductsDetails.pending, (state) => {
+        state.productsDetails.loading = true;
+        state.productsDetails.error = null;
+      })
+      .addCase(getProductsDetails.rejected, (state, action) => {
+        state.productsDetails.loading = false;
+        state.productsDetails.error = action.payload;
+      })
+      .addCase(getProductsDetails.fulfilled, (state, action) => {
+        state.productsDetails.loading = false;
+        state.productsDetails.error = null;
+        state.productsDetails.data = action.payload;
+      });
   },
 });
 
