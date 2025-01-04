@@ -1,4 +1,4 @@
-import {
+import ProductDetails, {
   ProductCardType,
   ProductsNewArrivals,
   ProductStoreType,
@@ -52,3 +52,16 @@ export const getProductsNewArrivals = async (): Promise<
     throw new Error('Failed to Fetch products New Arrivals');
   }
 };
+
+
+export const getProductsDetails = async (id: string): Promise<ProductDetails> => {
+  try {
+    const response = await apiClient.get<ProductDetails>(`products/productdetails/${id}`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to Fetch product details');
+  }
+}
