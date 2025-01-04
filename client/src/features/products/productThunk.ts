@@ -4,10 +4,7 @@ import { StoreFilters } from '../../types/storeFilters';
 
 export const getProductsStore = createAsyncThunk(
   '/products/store',
-  async (
-    filters: StoreFilters,
-    { rejectWithValue }
-  ) => {
+  async (filters: StoreFilters, { rejectWithValue }) => {
     try {
       const products = await productsApi.getProductsStore(filters);
       return products;
@@ -44,6 +41,23 @@ export const getProductsNewArrivals = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const products = await productsApi.getProductsNewArrivals();
+      return products;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong.',
+      });
+    }
+  }
+);
+
+export const getProductsDetails = createAsyncThunk(
+  '/products/productdetails',
+  async (productId: string, { rejectWithValue }) => {
+    try {
+      const products = await productsApi.getProductsDetails(productId);
       return products;
     } catch (error: any) {
       if (error) {
