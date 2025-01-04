@@ -30,128 +30,6 @@ export class ProductService {
     if (!product) throw new PRODUCT_NOT_FOUND_Exception(id);
   }
 
-  async getStoreProducts(filters: StoreFiltersDto) {
-    const filterConditions: any = {};
-    let orderBy: any = {};
-    switch (filters.sort) {
-      case 'price-asc':
-        orderBy = { price: 'asc' };
-        break;
-      case 'price-desc':
-        orderBy = { price: 'desc' };
-        break;
-      case 'rating-asc':
-        orderBy = { reviews: { rating: 'asc' } };
-        break;
-      case 'rating-desc':
-        orderBy = { reviews: { rating: 'desc' } };
-        break;
-      case 'name-asc':
-        orderBy = { name: 'asc' };
-        break;
-      case 'name-desc':
-        orderBy = { name: 'desc' };
-        break;
-      default:
-        orderBy = {};
-    }
-
-    if (filters.search) {
-      filterConditions.name = {
-        contains: filters.search,
-      };
-      filterConditions.description = {
-        contains: filters.search,
-      };
-    }
-    if (filters.category) {
-      filterConditions.category = {
-        name: filters.category,
-      };
-    }
-    if (filters.weight) {
-      filterConditions.weight = filters.weight;
-    }
-    if (filters.Minprice) {
-      filterConditions.price = {
-        gte: filters.Minprice,
-      };
-    }
-
-    if (filters.Maxprice) {
-      if (!filterConditions.price) filterConditions.price = {};
-      filterConditions.price.lte = filters.Maxprice;
-    }
-    const products = await this.prisma.product.findMany({
-      skip: (filters.page - 1) * 6,
-      take: 6,
-      orderBy: orderBy,
-      where: {
-        ...filterConditions,
-      },
-      select: {
-        id: true,
-        name: true,
-        price: true,
-        description: true,
-        discount: true,
-        gallery: {
-          select: {
-            imageUrl: true,
-          },
-        },
-        category: {
-          select: {
-            name: true,
-          },
-        },
-        reviews: {
-          select: {
-            rating: true,
-          },
-        },
-        Units: {
-          select: {
-            name: true,
-          },
-        },
-      },
-    });
-
-    const productPageCount = await this.prisma.product
-      .count({
-        where: filterConditions,
-      })
-      .then((count) => Math.ceil(count / 6));
-    const productsWithAvgRating = products.map((product) => {
-      const totalRating = product.reviews.reduce((total, review) => {
-        return total + (review.rating || 0);
-      }, 0);
-      const avgRating = totalRating / product.reviews.length;
-      const cappedAvgRating = Math.min(avgRating, 5);
-
-      return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        discount: product.discount || 0,
-        description: product.description,
-        productAvgRating: cappedAvgRating || 0,
-        priceWithDiscount: parseFloat(
-          (product.price - (product.price * product.discount) / 100).toFixed(2),
-        ),
-        categoryName: product.category.name,
-        unit: product.Units.name,
-        imageLink: product.gallery[0].imageUrl,
-      };
-    });
-
-    return {
-      productPageCount,
-      products: productsWithAvgRating,
-    };
-  }
-
   async getAllProductCards() {
     const productsWithDiscount = await this.prisma.product.findMany({
       where: {
@@ -213,6 +91,7 @@ export class ProductService {
 
     return productsWithAvgRating;
   }
+
   async getnewArrivals() {
     const oneMonthAgo = new Date();
     oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 2);
@@ -343,6 +222,244 @@ export class ProductService {
     );
 
     return products;
+  }
+
+  async getStoreProducts(filters: StoreFiltersDto) {
+    const filterConditions: any = {};
+    let orderBy: any = {};
+    switch (filters.sort) {
+      case 'price-asc':
+        orderBy = { price: 'asc' };
+        break;
+      case 'price-desc':
+        orderBy = { price: 'desc' };
+        break;
+      /*       case 'rating-asc':
+        orderBy = { reviews: { rating: 'asc' } };
+        break;
+      case 'rating-desc':
+        orderBy = { reviews: { rating: 'desc' } };
+        break; */
+      case 'name-asc':
+        orderBy = { name: 'asc' };
+        break;
+      case 'name-desc':
+        orderBy = { name: 'desc' };
+        break;
+      default:
+        orderBy = {};
+    }
+
+    if (filters.search) {
+      filterConditions.name = {
+        contains: filters.search,
+      };
+      filterConditions.description = {
+        contains: filters.search,
+      };
+    }
+    if (filters.category) {
+      filterConditions.category = {
+        name: filters.category,
+      };
+    }
+    if (filters.weight) {
+      filterConditions.weight = filters.weight;
+    }
+    if (filters.Minprice) {
+      filterConditions.price = {
+        gte: filters.Minprice,
+      };
+    }
+
+    if (filters.Maxprice) {
+      if (!filterConditions.price) filterConditions.price = {};
+      filterConditions.price.lte = filters.Maxprice;
+    }
+    const products = await this.prisma.product.findMany({
+      skip: filters.page ? (filters.page - 1) * 6 : 0,
+      take: filters.page ? 6 : undefined,
+      orderBy: orderBy,
+      where: {
+        ...filterConditions,
+      },
+      select: {
+        id: true,
+        name: true,
+        price: true,
+        description: true,
+        discount: true,
+        gallery: {
+          select: {
+            imageUrl: true,
+          },
+        },
+        category: {
+          select: {
+            name: true,
+          },
+        },
+        reviews: {
+          select: {
+            rating: true,
+          },
+        },
+        Units: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    const productPageCount = await this.prisma.product
+      .count({
+        where: filterConditions,
+      })
+      .then((count) => Math.ceil(count / 6));
+    const productsWithAvgRating = products.map((product) => {
+      const totalRating = product.reviews.reduce((total, review) => {
+        return total + (review.rating || 0);
+      }, 0);
+      const avgRating = totalRating / product.reviews.length;
+      const cappedAvgRating = Math.min(avgRating, 5);
+
+      return {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        discount: product.discount || 0,
+        description: product.description,
+        productAvgRating: cappedAvgRating || 0,
+        priceWithDiscount: parseFloat(
+          (product.price - (product.price * product.discount) / 100).toFixed(2),
+        ),
+        categoryName: product.category.name,
+        unit: product.Units.name,
+        imageLink: product.gallery[0].imageUrl,
+      };
+    });
+    if (filters.sort === 'rating-asc' || filters.sort === 'rating-desc') {
+      productsWithAvgRating.sort((a, b) =>
+        filters.sort === 'rating-asc'
+          ? a.productAvgRating - b.productAvgRating
+          : b.productAvgRating - a.productAvgRating,
+      );
+    }
+
+    return {
+      productPageCount,
+      products: productsWithAvgRating,
+    };
+  }
+
+  async getProductDetails(productId: string) {
+    this.findOne(productId);
+    const product = await this.prisma.product.findUnique({
+      where: {
+        id: productId,
+      },
+      select: {
+        id: true,
+        name: true,
+        price: true,
+        description: true,
+        discount: true,
+        stock: true,
+
+        gallery: {
+          select: {
+            imageUrl: true,
+          },
+        },
+        category: {
+          select: {
+            name: true,
+          },
+        },
+        reviews: {
+          include :{
+            user : {
+              select: {
+                name: true,
+                email : true,
+              },
+            }
+          }
+        },
+        Units: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    const totalRating = product.reviews.reduce((total, review) => {
+      return total + (review.rating || 0);
+    }, 0);
+    const avgRating = totalRating / product.reviews.length;
+    const cappedAvgRating = Math.min(avgRating, 5);
+
+    const productWithAvgRating = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      discount: product.discount,
+      description: product.description,
+      productAvgRating: cappedAvgRating || 0,
+      priceWithDiscount: parseFloat(
+        (product.price - (product.price * product.discount) / 100).toFixed(2),
+      ),
+      categoryName: product.category.name,
+      unit: product.Units.name,
+      imageLink: product.gallery[0]?.imageUrl || '',
+      reviewsCount: product.reviews.length,
+      inStock: product.stock > 0,
+    };
+    const productDetails = {
+      product: {
+        ...productWithAvgRating,
+      },
+      reviews: product.reviews,
+      relatedProducts: await this.getStoreProducts({
+        category: product.category.name,
+        sort: '',
+        page: 0,
+        search: '',
+        weight: '',
+        Minprice: 0,
+        Maxprice: 0,
+      }).then((data) => {
+        const WithoutRequestedProduct = data.products.filter(
+          (p) => p.id !== productId,
+        );
+        return [
+          ...WithoutRequestedProduct.map((product) => {
+            return {
+              productId: product.id,
+              name: product.name,
+              svgLink: product.imageLink,
+              price: product.price,
+              priceWithDiscount: product.priceWithDiscount,
+              productAvgRating: product.productAvgRating,
+            };
+          }),
+        ];
+      }),
+      HighlyRighted: await this.getStoreProducts({
+        category: '',
+        sort: 'rating-desc',
+        page: 0,
+        search: '',
+        weight: '',
+        Minprice: 0,
+        Maxprice: 0,
+      }).then((data) => {
+        return data.products.filter((product) => product.productAvgRating >= 3);
+      }),
+    };
+    return productDetails;
   }
 
   async update(id: string, updateProductDto: UpdateProductDto) {
