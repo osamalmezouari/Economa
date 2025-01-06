@@ -37,6 +37,12 @@ export class AuthenticationController {
   //   });
   // }
 
+  @AUTH(AuthenticationType.bearer)
+  @Post('/verifyToken')
+  async VerfyToekn() {
+    return { isValid: true };
+  }
+
   @AUTH(AuthenticationType.None)
   @Post('Register')
   SignUp(@Body() signUpDto: SignUpDto) {
