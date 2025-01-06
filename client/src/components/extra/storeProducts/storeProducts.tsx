@@ -32,7 +32,7 @@ const StoreProducts = () => {
       <Grid container spacing={2} sx={{ marginTop: '0px' }} className="px-12">
         {loading && !products.length ? (
           <Box className={'w-full flex justify-center items-center py-8'}>
-            <CircularProgress className="" />
+            <CircularProgress />
           </Box>
         ) : (
           products.map((product) => (
