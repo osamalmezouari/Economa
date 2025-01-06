@@ -179,8 +179,8 @@ export default function ProductCard({
           name="half-rating"
           size="small"
           value={productAvgRating}
-          precision={1}
-          onClick={() => console.log(productAvgRating)}
+          precision={0.5}
+          onClick={() => Router.navigate({ to: `/Store/${id}` })}
         />
         <Box className="flex gap-8 text-secondary-main">
           {priceWithDiscount && priceWithDiscount > 0 ? (
