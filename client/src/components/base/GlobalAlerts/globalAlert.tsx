@@ -3,7 +3,13 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../app/store';
 import { useEffect, useState } from 'react';
 
-const GlobalAlert = () => {
+const GlobalAlert = ({
+  message,
+  status,
+}: {
+  message?: string;
+  status?: 'info' | 'success' | 'warning' | 'error';
+}) => {
   const [open, setOpen] = useState<boolean>(false);
   const cart = useSelector(
     (state: RootState) => state.shoppingCart.createshoppingCart.data
@@ -28,9 +34,9 @@ const GlobalAlert = () => {
         <Box className="flex w-full ml-auto">
           <Alert
             className="fixed top-5 right-5 z-[100] rounded capitalize"
-            severity="success"
+            severity={status ? status : 'success'}
           >
-            The product has been successfully added
+            {message ? message : 'The product has been successfully added'}
           </Alert>
         </Box>
       )}
