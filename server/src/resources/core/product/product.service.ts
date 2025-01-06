@@ -6,9 +6,14 @@ import { v4 as uuid } from 'uuid';
 import { PRODUCT_NOT_FOUND_Exception } from 'src/common/exceptions/PRODUCT_NOT_FOUND.exception';
 import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
 import { contains } from 'class-validator';
+import { ProductReviewService } from '../product-review/product-review.service';
+import { CreateProductReviewDto } from '../product-review/dto/create-product-review.dto';
 @Injectable()
 export class ProductService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly reviewService: ProductReviewService,
+  ) {}
   async create(createProductDto: CreateProductDto) {
     const product = await this.prisma.product.create({
       data: {
@@ -378,14 +383,14 @@ export class ProductService {
           },
         },
         reviews: {
-          include :{
-            user : {
+          include: {
+            user: {
               select: {
                 name: true,
-                email : true,
+                email: true,
               },
-            }
-          }
+            },
+          },
         },
         Units: {
           select: {
@@ -456,10 +461,24 @@ export class ProductService {
         Minprice: 0,
         Maxprice: 0,
       }).then((data) => {
-        return data.products.filter((product) => product.productAvgRating >= 3);
+        return data.products.filter(
+          (product) =>
+            product.productAvgRating >= 3 && product.id !== productId,
+        );
       }),
     };
     return productDetails;
+  }
+
+  async addProductReview(ProductReview: CreateProductReviewDto) {
+    const review = await this.reviewService.create({
+      name: ProductReview.name,
+      email: ProductReview.email,
+      productId: ProductReview.productId,
+      rating: ProductReview.rating,
+      reviewText: ProductReview.reviewText,
+    });
+    return review;
   }
 
   async update(id: string, updateProductDto: UpdateProductDto) {
