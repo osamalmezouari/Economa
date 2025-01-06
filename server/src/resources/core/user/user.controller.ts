@@ -11,6 +11,7 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 
 @Controller('user')
 export class UserController {
@@ -28,6 +29,11 @@ export class UserController {
     return user;
   }
 
+  @Get('byEmail')
+  async findEmail(@activeUser('sub') userId: string) {
+    const user = await this.userService.findByEmail(userId);
+    return user;
+  }
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const user = await this.userService.findOne(id);
