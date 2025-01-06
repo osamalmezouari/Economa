@@ -15,6 +15,7 @@ import { UpdateProductReviewDto } from './dto/update-product-review.dto';
 export class ProductReviewController {
   constructor(private readonly productReviewService: ProductReviewService) {}
 
+
   @Post()
   async create(@Body() createProductReviewDto: CreateProductReviewDto) {
     const productReview = await this.productReviewService.create(
@@ -23,7 +24,7 @@ export class ProductReviewController {
     return productReview;
   }
 
-  @Get()
+/*   @Get()
   async findAll() {
     const productReviews = await this.productReviewService.findAll();
     return productReviews;
@@ -58,5 +59,5 @@ export class ProductReviewController {
   async remove(@Param('id') id: string) {
     const productReview = await this.productReviewService.remove(id);
     return productReview;
-  }
+  } */
 }
