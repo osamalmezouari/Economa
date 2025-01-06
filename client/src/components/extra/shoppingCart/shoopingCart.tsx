@@ -155,7 +155,7 @@ const ShoppingCart = () => {
               '&:hover': { backgroundColor: 'primary.main' },
             }}
           >
-            Place Order
+            Checkout
           </Button>
         </Box>
       )}
