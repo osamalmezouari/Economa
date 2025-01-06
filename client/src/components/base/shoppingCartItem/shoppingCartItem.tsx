@@ -10,6 +10,7 @@ import {
   removefromshoppingCart,
   updatequantity,
 } from '../../../features/shoppingCart/shoppingCartThunk';
+import { useRouter } from '@tanstack/react-router';
 
 const ShoppingCartItem = ({
   productName,
@@ -22,6 +23,7 @@ const ShoppingCartItem = ({
 }: shoppingCartItemProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const [newQuantity, setNewQuantity] = useState(quantity);
+  const router = useRouter();
 
   const handleIncrease = async () => {
     const updatedQuantity = newQuantity + 1;
@@ -87,6 +89,8 @@ const ShoppingCartItem = ({
             overflow: 'hidden',
             textOverflow: 'ellipsis',
           }}
+          className='cursor-pointer'
+          onClick={() => router.navigate({ to: `/Store/${productId}` })}
         >
           {productName}
         </Typography>
