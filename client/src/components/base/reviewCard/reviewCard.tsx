@@ -18,11 +18,12 @@ const ReviewCard = ({
     });
   };
 
+  
   return (
     <Grid
       container
       gap={2}
-      className="review-card flex flex-col p-4 border-b-2 my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
+      className="review-card flex flex-col p-4 border-[1px] my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
     >
       <Grid item lg={1} className="flex items-center justify-center">
         <Avatar
