@@ -5,6 +5,7 @@ import ProductDetails, {
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
 import { StoreFilters } from '../types/storeFilters';
+import { AddReview } from '../types/review';
 
 export const getProductsStore = async (
   filters: StoreFilters
@@ -53,10 +54,13 @@ export const getProductsNewArrivals = async (): Promise<
   }
 };
 
-
-export const getProductsDetails = async (id: string): Promise<ProductDetails> => {
+export const getProductsDetails = async (
+  id: string
+): Promise<ProductDetails> => {
   try {
-    const response = await apiClient.get<ProductDetails>(`products/productdetails/${id}`);
+    const response = await apiClient.get<ProductDetails>(
+      `products/productdetails/${id}`
+    );
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -64,4 +68,18 @@ export const getProductsDetails = async (id: string): Promise<ProductDetails> =>
     }
     throw new Error('Failed to Fetch product details');
   }
-}
+};
+
+export const addReview = async (review: AddReview) => {
+  try {
+    const response = await apiClient.post(`products/addReview`, review);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error(`Failed to Add Review`);
+  }
+};
+
+
