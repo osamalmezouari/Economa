@@ -34,7 +34,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
     );
     return item ? item.quantity : 1;
   });
-  const { loading, error } = useSelector(
+  const { loading } = useSelector(
     (state: RootState) => state.shoppingCart.createshoppingCart
   );
 
@@ -94,7 +94,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
         <Grid item lg={6}>
           <Typography
             variant={'h4'}
-            className={'tracking-wider py-2'}
+            className={'tracking-wider py-2 capitalize'}
             color={'secondary.main'}
           >
             {productdetailsData.name} - {productdetailsData.categoryName}
@@ -111,9 +111,9 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
             </p>
             <p className="text-primary-main text-2xl font-bold">
               {productdetailsData.priceWithDiscount === productdetailsData.price
-                ? productdetailsData.discount
-                : ''}
-              %
+                ? ""
+                :"-" + productdetailsData.discount + "%"}
+              
             </p>
           </Box>
           <Box
