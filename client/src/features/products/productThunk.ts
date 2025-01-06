@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as productsApi from '../../api/products';
 import { StoreFilters } from '../../types/storeFilters';
+import { AddReview } from '../../types/review';
 
 export const getProductsStore = createAsyncThunk(
   '/products/store',
@@ -65,6 +66,23 @@ export const getProductsDetails = createAsyncThunk(
       }
       return rejectWithValue({
         message: error.message || 'Something went wrong.',
+      });
+    }
+  }
+);
+
+export const addReview = createAsyncThunk(
+  '/products/addReview',
+  async (reviewobj: AddReview, { rejectWithValue }) => {
+    try {
+      const review = await productsApi.addReview(reviewobj);
+      return review;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong',
       });
     }
   }
