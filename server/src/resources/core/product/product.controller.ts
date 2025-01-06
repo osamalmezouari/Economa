@@ -15,6 +15,7 @@ import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
 import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
+import { CreateProductReviewDto } from '../product-review/dto/create-product-review.dto';
 
 @Controller('products')
 export class ProductController {
@@ -68,6 +69,7 @@ export class ProductController {
     return this.productService.getnewArrivals();
   }
 
+  @AUTH(AuthenticationType.None)
   @Get('ComparedProductDetails/:ids')
   async getComparedProductDetails(@Param('ids', ParseIdsPipe) ids: string[]) {
     console.log('ids', ids);
@@ -76,24 +78,39 @@ export class ProductController {
     return product;
   }
 
+  @AUTH(AuthenticationType.None)
   @Get('productdetails/:id')
   async getProductDetails(@Param('id') id: string) {
     const product = await this.productService.getProductDetails(id);
     return product;
   }
 
+  @AUTH(AuthenticationType.bearer)
   @Get(':productId')
   async findOne(@Param('productId') productId: string) {
     const product = await this.productService.findOne(productId);
     return product;
   }
 
+  @AUTH(AuthenticationType.bearer)
   @Post()
   async create(@Body() createProductDto: CreateProductDto) {
     const product = await this.productService.create(createProductDto);
     return product;
   }
 
+  @AUTH(AuthenticationType.None)
+  @Post('addReview')
+  async addProductReview(
+    @Body() createProductReviewDto: CreateProductReviewDto,
+  ) {
+    const review = await this.productService.addProductReview(
+      createProductReviewDto,
+    );
+    return review;
+  }
+
+  @AUTH(AuthenticationType.bearer)
   @Patch(':id')
   async update(
     @Param('id') id: string,
@@ -102,6 +119,8 @@ export class ProductController {
     const product = await this.productService.update(id, updateProductDto);
     return product;
   }
+
+  @AUTH(AuthenticationType.bearer)
   @Delete(':id')
   async remove(@Param('id') id: string) {
     const product = await this.productService.remove(id);
