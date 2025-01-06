@@ -1,3 +1,5 @@
+import { ApiError } from './apierror';
+
 export interface User {
   id: string;
   name: string;
@@ -9,4 +11,17 @@ export interface User {
   updatedAt: Date;
   lastLogin?: Date;
   roleId: String;
+}
+
+export interface ShoortedUserInfo {
+  name: string;
+  email: string;
+}
+
+export interface userStateType {
+  ShoortedUserInfo: {
+    data: ShoortedUserInfo;
+    loading: boolean;
+    error: ApiError | null | undefined | unknown;
+  };
 }
