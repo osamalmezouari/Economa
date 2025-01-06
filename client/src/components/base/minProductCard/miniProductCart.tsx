@@ -31,7 +31,7 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
   );
   const Router = useRouter();
   return (
-    <Box className="mini-product-card h-full p-3 flex flex-row  border  border-solid border-gray-200 rounded-lg bg-gray-50 relative">
+    <Box className=" mini-product-card h-full p-3 flex flex-row  border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
       <p className="add-to-cart-btn py-1 px-2 absolute top-1 right-1 opacity-0 transition-all duration-300 ease-in-out text-sm font-medium bg-green-600 text-white text-center rounded-md hover:bg-gray-600 hover:text-white">
         <GiShoppingCart className="inline-block" />
       </p>
@@ -47,7 +47,7 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
       <Box className="product-info flex flex-col">
         <Typography
           onClick={() => Router.navigate({ to: `/Store/${productId}` })}
-          className="text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1"
+          className="cursor-pointer hover:text-primary-main text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1"
         >
           {name}
         </Typography>
