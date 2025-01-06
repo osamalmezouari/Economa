@@ -35,7 +35,7 @@ const MiniProductContainer: React.FC = () => {
     (state: RootState) => state.products.productsDetails.data.relatedProducts
   );
   return (
-    <div className="mini-product-container p-4 max-w-[1200px] mx-auto">
+    <div className="mini-product-container py-4 max-w-[1200px] mx-auto">
       <Slider {...settings}>
         {products.map((product) => (
           <div key={product.productId} className="px-2">
