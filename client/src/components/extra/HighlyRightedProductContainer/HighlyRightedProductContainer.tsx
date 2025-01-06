@@ -6,16 +6,14 @@ import { getproductsCards } from '../../../features/products/productThunk';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect } from 'react';
-import { Box, CircularProgress } from '@mui/material';
+
 
 const HighlyRightedProductContainer = () => {
   const dispatch = useDispatch<AppDispatch>();
   const data = useSelector(
     (state: RootState) => state.products.productsDetails.data.HighlyRighted
   );
-  const { loading } = useSelector(
-    (state: RootState) => state.products.productsDetails
-  );
+
 
   useEffect(() => {
     dispatch(getproductsCards());
@@ -54,11 +52,6 @@ const HighlyRightedProductContainer = () => {
 
   return (
     <div style={{ margin: 'auto', maxWidth: '1350px', padding: '20px' }}>
-      {loading ? (
-        <Box className="w-full flex justify-center items-center py-8">
-          <CircularProgress />
-        </Box>
-      ) : (
         <Slider {...sliderSettings}>
           {data?.map((productCard) => (
             <div key={productCard.id} style={{ padding: '0 10px' }}>
@@ -77,7 +70,6 @@ const HighlyRightedProductContainer = () => {
             </div>
           ))}
         </Slider>
-      )}
     </div>
   );
 };
