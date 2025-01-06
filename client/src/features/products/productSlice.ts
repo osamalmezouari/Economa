@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
+  addReview,
   getproductsCards,
   getProductsDetails,
   getProductsNewArrivals,
@@ -61,6 +62,18 @@ const initialState: ProductCardStateType = {
       reviews: [],
       HighlyRighted: [],
       relatedProducts: [],
+    },
+
+    loading: false,
+    error: null,
+  },
+  addReview: {
+    data: {
+      productId: '',
+      reviewText: '',
+      email: '',
+      mame: '',
+      rating: 0
     },
     loading: false,
     error: null,
@@ -149,6 +162,23 @@ const productsSlice = createSlice({
         state.productsDetails.loading = false;
         state.productsDetails.error = null;
         state.productsDetails.data = action.payload;
+      })
+
+      //add Product Review
+      .addCase(addReview.pending, (state) => {
+        state.addReview.loading = true;
+        state.addReview.error = null;
+      })
+
+      .addCase(addReview.fulfilled, (state, action) => {
+        state.addReview.loading = false;
+        state.addReview.error = null;
+        state.addReview.data = action.payload;
+      })
+
+      .addCase(addReview.rejected, (state, action) => {
+        state.addReview.loading = false;
+        state.addReview.error = action.payload;
       });
   },
 });
