@@ -16,6 +16,7 @@ import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
 import { Route as LandingImport } from './routes/landing'
 import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
+import { Route as ProtectedRoutesAuthProtectedRouteImport } from './routes/protectedRoutes/AuthProtectedRoute'
 
 // Create/Update Routes
 
@@ -48,6 +49,13 @@ const AuthRoute = AuthImport.update({
   path: '/auth',
   getParentRoute: () => rootRoute,
 } as any)
+
+const ProtectedRoutesAuthProtectedRouteRoute =
+  ProtectedRoutesAuthProtectedRouteImport.update({
+    id: '/protectedRoutes/AuthProtectedRoute',
+    path: '/protectedRoutes/AuthProtectedRoute',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -88,6 +96,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StoreroutImport
       parentRoute: typeof rootRoute
     }
+    '/protectedRoutes/AuthProtectedRoute': {
+      id: '/protectedRoutes/AuthProtectedRoute'
+      path: '/protectedRoutes/AuthProtectedRoute'
+      fullPath: '/protectedRoutes/AuthProtectedRoute'
+      preLoaderRoute: typeof ProtectedRoutesAuthProtectedRouteImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -99,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/landing': typeof LandingRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
 export interface FileRoutesByTo {
@@ -107,6 +123,7 @@ export interface FileRoutesByTo {
   '/landing': typeof LandingRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
 export interface FileRoutesById {
@@ -116,6 +133,7 @@ export interface FileRoutesById {
   '/landing': typeof LandingRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
 export interface FileRouteTypes {
@@ -126,8 +144,15 @@ export interface FileRouteTypes {
     | '/landing'
     | '/productdetailsroot'
     | '/storerout'
+    | '/protectedRoutes/AuthProtectedRoute'
   fileRoutesByTo: FileRoutesByTo
-  to: '/auth' | '/compare' | '/landing' | '/productdetailsroot' | '/storerout'
+  to:
+    | '/auth'
+    | '/compare'
+    | '/landing'
+    | '/productdetailsroot'
+    | '/storerout'
+    | '/protectedRoutes/AuthProtectedRoute'
   id:
     | '__root__'
     | '/auth'
@@ -135,6 +160,7 @@ export interface FileRouteTypes {
     | '/landing'
     | '/productdetailsroot'
     | '/storerout'
+    | '/protectedRoutes/AuthProtectedRoute'
   fileRoutesById: FileRoutesById
 }
 
@@ -144,6 +170,7 @@ export interface RootRouteChildren {
   LandingRoute: typeof LandingRoute
   ProductdetailsrootRoute: typeof ProductdetailsrootRoute
   StoreroutRoute: typeof StoreroutRoute
+  ProtectedRoutesAuthProtectedRouteRoute: typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -152,6 +179,8 @@ const rootRouteChildren: RootRouteChildren = {
   LandingRoute: LandingRoute,
   ProductdetailsrootRoute: ProductdetailsrootRoute,
   StoreroutRoute: StoreroutRoute,
+  ProtectedRoutesAuthProtectedRouteRoute:
+    ProtectedRoutesAuthProtectedRouteRoute,
 }
 
 export const routeTree = rootRoute
@@ -168,7 +197,8 @@ export const routeTree = rootRoute
         "/compare",
         "/landing",
         "/productdetailsroot",
-        "/storerout"
+        "/storerout",
+        "/protectedRoutes/AuthProtectedRoute"
       ]
     },
     "/auth": {
@@ -185,6 +215,9 @@ export const routeTree = rootRoute
     },
     "/storerout": {
       "filePath": "storerout.tsx"
+    },
+    "/protectedRoutes/AuthProtectedRoute": {
+      "filePath": "protectedRoutes/AuthProtectedRoute.tsx"
     }
   }
 }
