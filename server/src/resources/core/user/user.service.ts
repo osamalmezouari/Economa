@@ -9,8 +9,17 @@ import { USER_NOT_FOUND_Exception } from 'src/common/exceptions/User_not_found.e
 export class UserService {
   constructor(private readonly prisma: PrismaService) {}
   async create(createUserDto: CreateUserDto) {
+    const role = await this.prisma.role.findUnique({
+      where: {
+        name: 'costumer',
+      },
+    });
     const user = await this.prisma.user.create({
-      data: { id: uuid(), ...createUserDto },
+      data: {
+        id: uuid(),
+        roleId: !createUserDto.roleId && role.id,
+        ...createUserDto,
+      },
     });
     return user;
   }
@@ -24,6 +33,14 @@ export class UserService {
     const user = await this.prisma.user.findUnique({ where: { id } });
     if (user) return user;
     if (!user) throw new USER_NOT_FOUND_Exception(id);
+  }
+
+  async findByEmail(userId: string) {
+    const user = await this.findOne(userId);
+    return {
+      name: user.name,
+      email: user.email,
+    };
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
