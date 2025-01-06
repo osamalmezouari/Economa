@@ -12,7 +12,7 @@ const ProductDetailsPage = () => {
     <>
       <ProductsDetails ProductId={ProductId} />
       <MiniProductContainer />
-      <ReviewContainer />
+      <ReviewContainer productId={ProductId} />
       <HighlyRightedProductSection />
     </>
   );
