@@ -5,19 +5,45 @@ import { UpdateProductReviewDto } from './dto/update-product-review.dto';
 import { v4 as uuid } from 'uuid';
 import { REVIEW_NOT_FOUND_Exception } from '../../../common/exceptions/REVIEW_NOT_FOUND.exception';
 import { PRODUCT_NOT_FOUND_Exception } from '../../../common/exceptions/PRODUCT_NOT_FOUND.exception';
+import { USER_NOT_FOUND_Exception } from 'src/common/exceptions/User_not_found.exception';
+import { REVIEW_EXISST_Exception } from 'src/common/exceptions/REVIEW_EXISST.exception';
 
 @Injectable()
 export class ProductReviewService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createProductReviewDto: CreateProductReviewDto) {
+    const User = await this.prisma.user.findUnique({
+      where: {
+        email: createProductReviewDto.email,
+      },
+    });
+    if (!User) {
+      throw new USER_NOT_FOUND_Exception('');
+    }
+    const Check_exissting_review_for_user =
+      await this.prisma.productReview.findMany({
+        where: {
+          userId: User.id,
+          productId: createProductReviewDto.productId,
+        },
+      });
+    if (Check_exissting_review_for_user.length) {
+      throw new REVIEW_EXISST_Exception();
+    }
     const productReview = await this.prisma.productReview.create({
-      data: { id: uuid(), ...createProductReviewDto },
+      data: {
+        id: uuid(),
+        rating: createProductReviewDto.rating,
+        reviewText: createProductReviewDto.reviewText,
+        productId: createProductReviewDto.productId,
+        userId: User.id,
+      },
     });
     return productReview;
   }
 
-  async findAll() {
+  /*   async findAll() {
     const productReviews = await this.prisma.productReview.findMany();
     return productReviews;
   }
@@ -54,5 +80,5 @@ export class ProductReviewService {
       where: { id },
     });
     return productReview;
-  }
+  } */
 }
