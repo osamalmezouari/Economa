@@ -24,3 +24,13 @@ export const Register = async (data: RegisterPayload) => {
     throw new Error('Failed to register');
   }
 };
+
+export const VerifyToken = async (): Promise<boolean> => {
+  try {
+    const response = await apiClient.post('/auth/verifyToken');
+    return response.data.isValid; 
+  } catch (error) {
+    console.error('Error verifying token:', error);
+    return false;
+  }
+};
