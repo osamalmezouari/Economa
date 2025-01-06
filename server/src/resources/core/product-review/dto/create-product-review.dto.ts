@@ -1,15 +1,25 @@
-import { IsOptional, IsString, IsInt, Min, Max, IsUUID } from 'class-validator';
+import {
+  IsOptional,
+  IsString,
+  Min,
+  Max,
+  IsUUID,
+  IsEmail,
+  IsNumber,
+} from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class CreateProductReviewDto {
-  @IsUUID()
-  userId: string;
+  @IsString()
+  name: string;
+  @IsEmail()
+  email: string;
   @IsUUID()
   productId: string;
-  @IsInt()
+  @IsNumber()
   @Min(1)
   @Max(5)
-  @Transform(({ value }) => parseInt(value))
+  @Transform(({ value }) => parseFloat(value))
   rating: number;
   @IsOptional()
   @IsString()
