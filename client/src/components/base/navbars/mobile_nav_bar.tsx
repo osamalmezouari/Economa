@@ -13,10 +13,12 @@ import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
 import { AppDispatch } from '../../../app/store';
 import { useDispatch } from 'react-redux';
+import useAuth from '../../../hooks/useAuth';
 
 const Mobile_nav_bar = () => {
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
 
   const handleClick = () => {
