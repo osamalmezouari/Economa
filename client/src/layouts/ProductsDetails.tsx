@@ -107,11 +107,11 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
           </Box>
           <Box className={'flex item-center py-4 gap-4 '}>
             <p className="font-bold text-2xl text-secondary-dark">
-              ${productdetailsData.priceWithDiscount}
+              ${(productdetailsData.priceWithDiscount)}
             </p>
             <p className="text-primary-main text-2xl font-bold">
               {productdetailsData.priceWithDiscount === productdetailsData.price
-                ? ""
+                ? "No Discount"
                 :"-" + productdetailsData.discount + "%"}
               
             </p>
