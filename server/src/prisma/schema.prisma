@@ -50,23 +50,24 @@ model Permission {
 }
 
 model Product {
-  id           String          @id
-  name         String
-  description  String?
-  price        Float
-  stock        Int
-  categoryId   String
-  discount     Int?
-  category     Category        @relation(fields: [categoryId], references: [id])
-  created_at   DateTime        @default(now())
-  updated_at   DateTime        @updatedAt
-  gallery      Gallery[]
-  orderItems   OrderItem[]
-  reviews      ProductReview[]
-  shoppingCart ShoppingCart[]
-  wishList     Wishlist[]
-  unitId       String
-  Units        Units           @relation(fields: [unitId], references: [id])
+  id               String          @id
+  name             String
+  description      String?
+  price            Float
+  stock            Int
+  categoryId       String
+  incomePercentage Float           @default(0)
+  discount         Int?
+  category         Category        @relation(fields: [categoryId], references: [id])
+  created_at       DateTime        @default(now())
+  updated_at       DateTime        @updatedAt
+  gallery          Gallery[]
+  orderItems       OrderItem[]
+  reviews          ProductReview[]
+  shoppingCart     ShoppingCart[]
+  wishList         Wishlist[]
+  unitId           String
+  Units            Units           @relation(fields: [unitId], references: [id])
 }
 
 model Gallery {
@@ -120,7 +121,7 @@ model Balance {
   amount    Float    @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Notification {
@@ -164,9 +165,7 @@ model Payment {
   orderId       String   @unique
   amount        Float
   paymentDate   DateTime @default(now())
-  paymentStatus String
-  paymentMethod String?
-  transactionId String   @unique
+  paymentStatus String   @default("paid")
   order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }
 
