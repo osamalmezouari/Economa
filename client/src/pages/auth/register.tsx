@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { Register } from '../../features/auth/authThunk';
 import { ApiError } from '../../types/apierror';
+import { useRouter } from '@tanstack/react-router';
 
 const RegisterComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,7 +31,7 @@ const RegisterComponent = () => {
     };
     await dispatch(Register(newRegistredUser));
   };
-
+  const Router = useRouter();
   return (
     <>
       <Box
@@ -40,7 +41,7 @@ const RegisterComponent = () => {
       >
         <img
           src="assets/images/Login_register.png"
-          className="rounded w-0 md:w-[580px] h-full"
+          className="rounded w-0 md:w-[500px]"
         />
         <Grid
           container
@@ -167,7 +168,10 @@ const RegisterComponent = () => {
             />
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-            <p className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline">
+            <p
+              onClick={() => Router.navigate({ to: '/login' })}
+              className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
+            >
               do you already have an account ? Login
             </p>
           </Grid>
