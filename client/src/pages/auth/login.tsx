@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { ApiError } from '../../types/apierror';
 import { Login } from '../../features/auth/authThunk';
+import { useRouter } from '@tanstack/react-router';
 
 const LoginComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -26,6 +27,7 @@ const LoginComponent = () => {
     };
     await dispatch(Login(loginData));
   };
+  const Router = useRouter();
 
   return (
     <>
@@ -90,7 +92,10 @@ const LoginComponent = () => {
             />
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-            <p className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline">
+            <p
+              onClick={() => Router.navigate({ to: '/Register' })}
+              className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
+            >
               Don't have an account? Register
             </p>
           </Grid>
