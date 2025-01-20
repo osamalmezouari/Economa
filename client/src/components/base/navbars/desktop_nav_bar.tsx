@@ -7,13 +7,13 @@ import {
   TextField,
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { BiSearch } from 'react-icons/bi';
+import { BiSearch, BiSolidUserCircle } from 'react-icons/bi';
 import { FiHome } from 'react-icons/fi';
 import { BiStoreAlt } from 'react-icons/bi';
 import { RiDiscountPercentLine } from 'react-icons/ri';
 import { LuGitCompare } from 'react-icons/lu';
-import { IoPersonOutline } from 'react-icons/io5';
-import { GrFavorite } from 'react-icons/gr';
+import { IoBookmark } from 'react-icons/io5';
+
 import { TbShoppingBag } from 'react-icons/tb';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
@@ -21,6 +21,7 @@ import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
+import { FaBasketShopping, FaWallet } from 'react-icons/fa6';
 
 const Desktop_nav_bar = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -66,43 +67,48 @@ const Desktop_nav_bar = () => {
                 }}
               />
             </Grid>
-            <Grid size={4} className="flex justify-end gap-4">
+            <Grid size={4} className="flex justify-end gap-2">
               {/* Login */}
               <Button
-                variant="text"
-                className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2"
-                startIcon={<IoPersonOutline />}
+                variant="outlined"
                 onClick={() =>
                   router.navigate({
                     to: '/login',
                   })
                 }
+                sx={{ borderRadius: '4px' , color : 'primary.main' }}
               >
-                <p className="text-secondary-darker font-secondary">Login</p>
+                <BiSolidUserCircle  className="w-4 h-10  text-primary-main"></BiSolidUserCircle>
               </Button>
               <Button
-                variant="text"
-                className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2"
-                startIcon={<GrFavorite />}
+                variant="outlined"
                 onClick={() => {
                   dispatch({ type: 'setDisplayCart', payload: false });
                   dispatch(setDisplayWishlist());
                 }}
+                sx={{ borderRadius: '4px' }}
               >
-                <p className="text-secondary-darker font-secondary">Wishlist</p>
+                <IoBookmark className="w-4 h-6  text-primary-main"></IoBookmark>
               </Button>
 
               {/* Cart */}
               <Button
-                variant="text"
-                className="w-28 bg-secondary-darker ml-2 h-14 hover:border-2"
-                startIcon={<TbShoppingBag />}
+                variant="outlined"
                 onClick={() => {
                   dispatch({ type: 'setDisplayWishlist', payload: false });
                   dispatch(setDisplayCart());
                 }}
+                sx={{ borderRadius: '4px' }}
               >
-                <p className="text-secondary-darker font-secondary">Cart</p>
+                <FaBasketShopping className="w-4 h-10 text-primary-main "></FaBasketShopping>
+              </Button>
+              <Button
+                variant="contained"
+                startIcon={<FaWallet className="w-4 h-4" />}
+                className="text-start"
+                sx={{ fontSize: '12px', borderRadius: '2px' }}
+              >
+                Refil balance
               </Button>
             </Grid>
           </Grid>
