@@ -12,23 +12,39 @@ import {
   Typography,
 } from '@mui/material';
 import { Wallet } from '@mui/icons-material';
-
-type PaymentType = 'cash' | 'bank-transfer';
-type FileType = File | null;
+import { RefillBalanceRequest } from '../types/refillbalance';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../app/store';
+import { refillBalanceRequest } from '../features/balance/balanceThunk';
 
 const RefillBalanceRequestPage = () => {
-  const [amount, setAmount] = useState<number | string>('');
-  const [paymentType, setPaymentType] = useState<PaymentType>('cash');
-  const [file, setFile] = useState<FileType>(null);
+  const dispatch = useDispatch<AppDispatch>();
+  const [formData, setFormData] = useState<RefillBalanceRequest>({
+    amount: 0,
+    paymentType: 'cash',
+    file: null,
+  });
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files ? e.target.files[0] : null;
-    setFile(selectedFile);
+    setFormData((prev) => ({ ...prev, file: selectedFile }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (
+    e: ChangeEvent<{ value: 'cash' | 'bank-transfer' }>
+  ) => {
+    setFormData((prev) => ({ ...prev, paymentType: e.target.value }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ amount, paymentType, file });
+    console.log(formData);
+    await dispatch(refillBalanceRequest(formData));
   };
 
   return (
@@ -39,12 +55,12 @@ const RefillBalanceRequestPage = () => {
     >
       <img
         src="assets/images/balanceCard.svg"
-        className="rounded w-0 md:w-[450px]"
+        className="rounded w-0 md:w-[450px] drop-shadow-lg"
         alt="Balance Card"
       ></img>
       <Box
         className={
-          'absolute top-[42%] left-[3%] text-white text-2xl capitalize font-Inria'
+          'absolute top-[42%] left-[3%] text-white text-2xl uppercase font-Inria'
         }
       >
         oussama lmezouari
@@ -70,7 +86,7 @@ const RefillBalanceRequestPage = () => {
           <Typography variant="h5" className="text-primary-main">
             Refill Balance
           </Typography>
-          <Chip label="2500 2000 3000 4000"  color='primary' icon={<Wallet />} />
+          <Chip label="2500 2000 3000 4000" color="primary" icon={<Wallet />} />
         </Grid>
         <Grid item xs={12}>
           <TextField
@@ -79,8 +95,9 @@ const RefillBalanceRequestPage = () => {
             label="Amount"
             placeholder="Enter amount"
             type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            name="amount"
+            value={formData.amount}
+            onChange={handleInputChange}
             inputProps={{ min: 1 }}
             required
             sx={{
@@ -109,8 +126,8 @@ const RefillBalanceRequestPage = () => {
             </InputLabel>
             <Select
               labelId="payment-type-label"
-              value={paymentType}
-              onChange={(e) => setPaymentType(e.target.value as PaymentType)}
+              value={formData.paymentType}
+              onChange={handleSelectChange}
               label="Payment Type"
               sx={{
                 '&:hover .MuiOutlinedInput-notchedOutline': {
@@ -126,7 +143,7 @@ const RefillBalanceRequestPage = () => {
             </Select>
           </FormControl>
         </Grid>
-        {paymentType === 'bank-transfer' && (
+        {formData.paymentType === 'bank-transfer' && (
           <Grid item xs={12}>
             <Button
               variant="outlined"
@@ -134,7 +151,7 @@ const RefillBalanceRequestPage = () => {
               color="secondary"
               className="w-full"
             >
-              bank Transfer File
+              Bank Transfer File
               <input
                 type="file"
                 accept=".jpg,.jpeg,.png,.pdf"
@@ -142,7 +159,9 @@ const RefillBalanceRequestPage = () => {
                 hidden
               />
             </Button>
-            {file && <p className="mt-2 text-gray-500">{file.name}</p>}
+            {formData.file && (
+              <p className="mt-2 text-gray-500">{formData.file.name}</p>
+            )}
           </Grid>
         )}
 
