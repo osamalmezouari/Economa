@@ -9,6 +9,7 @@ import Wishlist from '../components/extra/wishlist/wishlist';
 import ShoppingCart from '../components/extra/shoppingCart/shoopingCart';
 import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
 import { productdetailsroot } from './productdetailsroot.tsx';
+import { RefillBalanceRequestRoute } from './RefillBalanceRequestRoute.tsx';
 
 export const rootRoute = createRootRoute({
   component: RootComponent,
@@ -34,6 +35,7 @@ const routeTree = rootRoute.addChildren([
   compareRoute,
   StoreRoute,
   productdetailsroot,
+  RefillBalanceRequestRoute,
 ]);
 export const router = createRouter({ routeTree, defaultPreload: 'intent' });
 declare module '@tanstack/react-router' {
