@@ -16,6 +16,7 @@ import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
 import { Route as LandingImport } from './routes/landing'
 import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
+import { Route as RefillBalanceRequestRouteImport } from './routes/RefillBalanceRequestRoute'
 import { Route as ProtectedRoutesAuthProtectedRouteImport } from './routes/protectedRoutes/AuthProtectedRoute'
 
 // Create/Update Routes
@@ -50,6 +51,12 @@ const AuthRoute = AuthImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const RefillBalanceRequestRouteRoute = RefillBalanceRequestRouteImport.update({
+  id: '/RefillBalanceRequestRoute',
+  path: '/RefillBalanceRequestRoute',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const ProtectedRoutesAuthProtectedRouteRoute =
   ProtectedRoutesAuthProtectedRouteImport.update({
     id: '/protectedRoutes/AuthProtectedRoute',
@@ -61,6 +68,13 @@ const ProtectedRoutesAuthProtectedRouteRoute =
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/RefillBalanceRequestRoute': {
+      id: '/RefillBalanceRequestRoute'
+      path: '/RefillBalanceRequestRoute'
+      fullPath: '/RefillBalanceRequestRoute'
+      preLoaderRoute: typeof RefillBalanceRequestRouteImport
+      parentRoute: typeof rootRoute
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -109,6 +123,7 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/RefillBalanceRequestRoute': typeof RefillBalanceRequestRouteRoute
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
@@ -118,6 +133,7 @@ export interface FileRoutesByFullPath {
 }
 
 export interface FileRoutesByTo {
+  '/RefillBalanceRequestRoute': typeof RefillBalanceRequestRouteRoute
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
@@ -128,6 +144,7 @@ export interface FileRoutesByTo {
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/RefillBalanceRequestRoute': typeof RefillBalanceRequestRouteRoute
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
@@ -139,6 +156,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/RefillBalanceRequestRoute'
     | '/auth'
     | '/compare'
     | '/landing'
@@ -147,6 +165,7 @@ export interface FileRouteTypes {
     | '/protectedRoutes/AuthProtectedRoute'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/RefillBalanceRequestRoute'
     | '/auth'
     | '/compare'
     | '/landing'
@@ -155,6 +174,7 @@ export interface FileRouteTypes {
     | '/protectedRoutes/AuthProtectedRoute'
   id:
     | '__root__'
+    | '/RefillBalanceRequestRoute'
     | '/auth'
     | '/compare'
     | '/landing'
@@ -165,6 +185,7 @@ export interface FileRouteTypes {
 }
 
 export interface RootRouteChildren {
+  RefillBalanceRequestRouteRoute: typeof RefillBalanceRequestRouteRoute
   AuthRoute: typeof AuthRoute
   CompareRoute: typeof CompareRoute
   LandingRoute: typeof LandingRoute
@@ -174,6 +195,7 @@ export interface RootRouteChildren {
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  RefillBalanceRequestRouteRoute: RefillBalanceRequestRouteRoute,
   AuthRoute: AuthRoute,
   CompareRoute: CompareRoute,
   LandingRoute: LandingRoute,
@@ -193,6 +215,7 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/RefillBalanceRequestRoute",
         "/auth",
         "/compare",
         "/landing",
@@ -200,6 +223,9 @@ export const routeTree = rootRoute
         "/storerout",
         "/protectedRoutes/AuthProtectedRoute"
       ]
+    },
+    "/RefillBalanceRequestRoute": {
+      "filePath": "RefillBalanceRequestRoute.tsx"
     },
     "/auth": {
       "filePath": "auth.tsx"
