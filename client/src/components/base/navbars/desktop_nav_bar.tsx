@@ -13,8 +13,6 @@ import { BiStoreAlt } from 'react-icons/bi';
 import { RiDiscountPercentLine } from 'react-icons/ri';
 import { LuGitCompare } from 'react-icons/lu';
 import { IoBookmark } from 'react-icons/io5';
-
-import { TbShoppingBag } from 'react-icons/tb';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
@@ -106,6 +104,7 @@ const Desktop_nav_bar = () => {
                 variant="contained"
                 startIcon={<FaWallet className="w-4 h-4" />}
                 className="text-start"
+                onClick={() => router.navigate({ to: '/Refill_Balance' })}
                 sx={{ fontSize: '12px', borderRadius: '2px' }}
               >
                 Refil balance
