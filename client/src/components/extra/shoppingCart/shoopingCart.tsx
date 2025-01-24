@@ -50,13 +50,13 @@ const ShoppingCart = () => {
           <Typography
             variant="h6"
             fontWeight="bold"
-            className="text-secondary-main "
+            className="text-secondary-main"
           >
             My Cart
           </Typography>
           <button>
             <Cancel
-              className="w-16 h-16 cursor-pointer  text-red-500 font"
+              className="w-16 h-16 cursor-pointer  text-red-500 "
               onClick={() => {
                 dispatch({
                   type: 'wishlist/setDisplayWishlist',
@@ -98,8 +98,9 @@ const ShoppingCart = () => {
           <Divider sx={{ my: 2 }} />
           <Table>
             <TableBody>
-              <TableRow>
-                <TableCell
+              <TableRow className='items-center !flex justify-between p-2'>
+                <Typography
+                variant='h6'
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
@@ -107,13 +108,15 @@ const ShoppingCart = () => {
                   }}
                 >
                   Base price :{' '}
-                </TableCell>
-                <TableCell align="right" sx={{ fontWeight: 'bold' }}>
+                </Typography>
+                <Typography align="right" sx={{ fontWeight: 'bold' }}>
                   ${basePrice?.toFixed(2)}
-                </TableCell>
+                </Typography>
               </TableRow>
-              <TableRow>
-                <TableCell
+              <TableRow className='items-center !flex justify-between p-2'>
+                <Typography
+                                variant='h6'
+
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
@@ -121,27 +124,29 @@ const ShoppingCart = () => {
                   }}
                 >
                   VAT (20%) :
-                </TableCell>
-                <TableCell align="right" sx={{ fontWeight: 'bold' }}>
+                </Typography>
+                <Typography align="right" sx={{ fontWeight: 'bold' }}>
                   ${vat?.toFixed(2)}
-                </TableCell>
+                </Typography>
               </TableRow>
-              <TableRow>
-                <TableCell
+              <TableRow className='items-center !flex justify-between p-2'>
+                <Typography
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
                     fontSize: '18px',
                   }}
+                  variant='h6'
+
                 >
                   Total :
-                </TableCell>
-                <TableCell
+                </Typography>
+                <Typography
                   align="right"
                   sx={{ color: 'primary.main', fontWeight: 'bold' }}
                 >
                   ${totalPrice?.toFixed(2)}
-                </TableCell>
+                </Typography>
               </TableRow>
             </TableBody>
           </Table>
