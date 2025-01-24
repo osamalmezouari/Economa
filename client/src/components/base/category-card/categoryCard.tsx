@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import { CategoryCardProps } from '../../../types/category';
 
@@ -15,7 +15,6 @@ const CategoryCardSingle = ({
     'fdf5eb',
   ];
   const randomColor = calors[Math.floor(Math.random() * calors.length)];
-  /*     const Navigate =  useNavigate() */
   return (
     <Box
       component={'div'}
@@ -35,12 +34,11 @@ const CategoryCardSingle = ({
               backgroundImage: `url(${svgLink})`,
             }} /* onClick={()=>Navigate(linkTo)} */
           ></Box>
-          <Box
-            component={'div'}
-            className="font-secondary font-bold text-secondary-darker"
+          <Typography
+            className="!font-main font-bold text-secondary-darker"
           >
             {name}
-          </Box>
+          </Typography>
           <p className="text-[12px] text-secondary-main">
             {productsCount} Products
           </p>
