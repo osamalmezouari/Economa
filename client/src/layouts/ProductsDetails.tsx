@@ -101,7 +101,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
           </Typography>
           <Box className={'flex item-center py-2 gap-4 '}>
             <Rating name="read-only" value={4} readOnly size={'small'} />
-            <p className={'font-bold font-primary text-secondary-main '}>
+            <p className={'font-bold font-main text-secondary-main '}>
               ( {productdetailsData.reviewsCount} Reviews )
             </p>
           </Box>
@@ -121,7 +121,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
           >
             <p
               className={
-                'font-bold font-primary line-through tracking-widest text-secondary-light text-2xl'
+                'font-bold font-main line-through tracking-widest text-secondary-light text-2xl'
               }
             >
               {productdetailsData.priceWithDiscount === productdetailsData.price
