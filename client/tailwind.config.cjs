@@ -4,17 +4,25 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        main: ['Roboto', 'Barlow', 'sans-serif'],
-        secondary: ['Poppins', 'sans-serif'],
+        main: ['Lexend Deca', 'sans-serif'],
+        secondary: ['Inter', 'sans-serif'],
         Inria: ['Inria Sans'],
       },
       backgroundColor: {
-        primary: {
+        /* primary: {
           lighter: '#A5E1B7',
           light: '#79D89E',
           main: '#5CAF90',
           dark: '#4D9F7A',
           darker: '#3D815C',
+          contrastText: '#fff',
+        }, */
+        primary : {
+          lighter: '#1eebda',
+          light: '#11c5b6',
+          main: '#0d9488',
+          dark: '#09675f',
+          darker: '#053834',
           contrastText: '#fff',
         },
         secondary: {
@@ -27,12 +35,22 @@ module.exports = {
         },
       },
       colors: {
-        primary: {
+        /* primary: {
           lighter: '#A5E1B7',
           light: '#79D89E',
           main: '#5CAF90',
           dark: '#4D9F7A',
           darker: '#3D815C',
+          contrastText: '#fff',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        }, */
+        primary: {
+          lighter: '#1eebda',
+          light: '#11c5b6',
+          main: '#0d9488',
+          dark: '#09675f',
+          darker: '#053834',
           contrastText: '#fff',
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -88,4 +106,5 @@ module.exports = {
     },
   },
   plugins: [require('tailwindcss-animate')],
+ 
 };
