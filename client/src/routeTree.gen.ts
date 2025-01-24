@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as StoreroutImport } from './routes/storerout'
 import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
+import { Route as PlaceOrderImport } from './routes/placeOrder'
 import { Route as LandingImport } from './routes/landing'
 import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
@@ -30,6 +31,12 @@ const StoreroutRoute = StoreroutImport.update({
 const ProductdetailsrootRoute = ProductdetailsrootImport.update({
   id: '/productdetailsroot',
   path: '/productdetailsroot',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PlaceOrderRoute = PlaceOrderImport.update({
+  id: '/placeOrder',
+  path: '/placeOrder',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -96,6 +103,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingImport
       parentRoute: typeof rootRoute
     }
+    '/placeOrder': {
+      id: '/placeOrder'
+      path: '/placeOrder'
+      fullPath: '/placeOrder'
+      preLoaderRoute: typeof PlaceOrderImport
+      parentRoute: typeof rootRoute
+    }
     '/productdetailsroot': {
       id: '/productdetailsroot'
       path: '/productdetailsroot'
@@ -127,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -137,6 +152,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -148,6 +164,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/compare': typeof CompareRoute
   '/landing': typeof LandingRoute
+  '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -160,6 +177,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/compare'
     | '/landing'
+    | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -169,6 +187,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/compare'
     | '/landing'
+    | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -178,6 +197,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/compare'
     | '/landing'
+    | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -189,6 +209,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CompareRoute: typeof CompareRoute
   LandingRoute: typeof LandingRoute
+  PlaceOrderRoute: typeof PlaceOrderRoute
   ProductdetailsrootRoute: typeof ProductdetailsrootRoute
   StoreroutRoute: typeof StoreroutRoute
   ProtectedRoutesAuthProtectedRouteRoute: typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -199,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CompareRoute: CompareRoute,
   LandingRoute: LandingRoute,
+  PlaceOrderRoute: PlaceOrderRoute,
   ProductdetailsrootRoute: ProductdetailsrootRoute,
   StoreroutRoute: StoreroutRoute,
   ProtectedRoutesAuthProtectedRouteRoute:
@@ -219,6 +241,7 @@ export const routeTree = rootRoute
         "/auth",
         "/compare",
         "/landing",
+        "/placeOrder",
         "/productdetailsroot",
         "/storerout",
         "/protectedRoutes/AuthProtectedRoute"
@@ -235,6 +258,9 @@ export const routeTree = rootRoute
     },
     "/landing": {
       "filePath": "landing.tsx"
+    },
+    "/placeOrder": {
+      "filePath": "placeOrder.tsx"
     },
     "/productdetailsroot": {
       "filePath": "productdetailsroot.tsx"
