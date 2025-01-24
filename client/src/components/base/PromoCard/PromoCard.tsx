@@ -23,11 +23,11 @@ const PromoCard: React.FC<PromoCardProps> = ({
           <Typography variant="h3" fontWeight="bold" color="secondary">
             {title}
           </Typography>
-          <Typography variant="h4" color="text.secondary">
+          <Typography variant="h5" color="text.secondary">
             {subtitle}
           </Typography>
           <Typography
-            variant="body1"
+            variant="body2"
             color="success.main"
             fontWeight="bold"
             gutterBottom
