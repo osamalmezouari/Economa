@@ -130,7 +130,7 @@ model refillBalanceRequest {
   id        String   @id
   userId    String
   amount    Float
-  file  String
+  file      String   @db.Text
   status    String   @default("pending")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
