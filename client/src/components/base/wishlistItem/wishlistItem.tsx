@@ -34,6 +34,7 @@ const WishlistItem = ({
       />
       <Box sx={{ flexBasis: '70%', pl: 2 }}>
         <Typography
+        className='capitalize'
           variant="body1"
           color="#777"
           sx={{
