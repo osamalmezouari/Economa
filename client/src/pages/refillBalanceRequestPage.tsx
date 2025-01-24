@@ -1,8 +1,10 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import {
+  Alert,
   Box,
   Button,
   Chip,
+  CircularProgress,
   FormControl,
   Grid,
   InputLabel,
@@ -11,18 +13,30 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { Wallet } from '@mui/icons-material';
-import { RefillBalanceRequest } from '../types/refillbalance';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../app/store';
-import { refillBalanceRequest } from '../features/balance/balanceThunk';
+import { UploadFile, Wallet } from '@mui/icons-material';
+import { RefillBalanceRequest } from '../types/balance';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../app/store';
+import {
+  getbalanceCardInfo,
+  refillBalanceRequest,
+} from '../features/balance/balanceThunk';
+import { ApiError } from '../types/apierror';
 
 const RefillBalanceRequestPage = () => {
+  const { loading, error, data } = useSelector(
+    (state: RootState) => state.balance.refillBalanceRequest
+  );
+  const { balance, name } = useSelector(
+    (state: RootState) => state.balance.balanceCard.data
+  );        
   const dispatch = useDispatch<AppDispatch>();
+
   const [formData, setFormData] = useState<RefillBalanceRequest>({
     amount: 0,
     paymentType: 'cash',
     file: null,
+    reqStatus: { statusCode: null, message: null },
   });
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -43,9 +57,25 @@ const RefillBalanceRequestPage = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    await dispatch(refillBalanceRequest(formData));
+    const formDataToSend = new FormData();
+    formDataToSend.append('amount', formData.amount.toString());
+    formDataToSend.append('paymentType', formData.paymentType);
+
+    if (formData.file && formData.paymentType === 'bank-transfer') {
+      formDataToSend.append('file', formData.file);
+    }
+    await dispatch(refillBalanceRequest(formDataToSend));
+    setFormData({
+      amount: 0,
+      paymentType: 'cash',
+      file: null,
+      reqStatus: { statusCode: null, message: null },
+    });
   };
+
+  useEffect(() => {
+    dispatch(getbalanceCardInfo());
+  }, [dispatch]);
 
   return (
     <Box
@@ -55,7 +85,7 @@ const RefillBalanceRequestPage = () => {
     >
       <img
         src="assets/images/balanceCard.svg"
-        className="rounded w-0 md:w-[450px] drop-shadow-lg"
+        className="rounded w-0 md:w-[450px]  drop-shadow-lg"
         alt="Balance Card"
       ></img>
       <Box
@@ -63,15 +93,15 @@ const RefillBalanceRequestPage = () => {
           'absolute top-[42%] left-[3%] text-white text-2xl uppercase font-Inria'
         }
       >
-        oussama lmezouari
+        {name}
       </Box>
       <Box
         className={
           'absolute bottom-[15%] left-[45px] text-white capitalize font-Inria'
         }
       >
-        <span className="text-[28px]">5000.</span>
-        <span className="text-[12px]">45</span>
+        <span className="text-[28px]">{balance}.</span>
+        <span className="text-[12px]">00</span>
       </Box>
       <p
         className={
@@ -98,7 +128,10 @@ const RefillBalanceRequestPage = () => {
             name="amount"
             value={formData.amount}
             onChange={handleInputChange}
-            inputProps={{ min: 1 }}
+            helperText={
+              formData.amount > 50 ? '' : 'Amount should be greater than 50$'
+            }
+            inputProps={{ min: 50 }}
             required
             sx={{
               '& .MuiOutlinedInput-root': {
@@ -150,6 +183,8 @@ const RefillBalanceRequestPage = () => {
               component="label"
               color="secondary"
               className="w-full"
+              startIcon={<UploadFile />}
+              sx={{ borderRadius : '1px' }}
             >
               Bank Transfer File
               <input
@@ -157,6 +192,7 @@ const RefillBalanceRequestPage = () => {
                 accept=".jpg,.jpeg,.png,.pdf"
                 onChange={handleFileChange}
                 hidden
+                required={formData.paymentType === 'bank-transfer'}
               />
             </Button>
             {formData.file && (
@@ -164,15 +200,29 @@ const RefillBalanceRequestPage = () => {
             )}
           </Grid>
         )}
-
+        <Grid item xs={12} sm={12} md={12} lg={12}>
+          {error instanceof ApiError && (
+            <Alert severity="error">{error.message}</Alert>
+          )}
+          {data.reqStatus.statusCode === 201 ? (
+            <Alert severity="success">{data.reqStatus.message}</Alert>
+          ) : (
+            ''
+          )}
+        </Grid>
         <Grid item xs={12} sx={{ padding: 0 }}>
           <Button
             className="w-full"
             variant="contained"
             color="primary"
             type="submit"
+            disabled={loading}
           >
-            Refill Balance
+            {loading ? (
+              <CircularProgress size="30px" color="inherit" />
+            ) : (
+              'Refill Balance'
+            )}
           </Button>
         </Grid>
       </Grid>
