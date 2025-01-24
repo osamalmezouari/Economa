@@ -31,7 +31,7 @@ const Desktop_nav_bar = () => {
   return (
     <>
       <Stack className={'border-b-2 bg-gray'}>
-        <Container style={{ maxWidth: '1200px' }}>
+        <Container style={{ maxWidth: '1300px' }}>
           <Grid container spacing={2} className={'px-8 items-center'}>
             {/* Logo */}
             <Grid size={2}>
