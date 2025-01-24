@@ -89,7 +89,7 @@ const ShoppingCartItem = ({
             overflow: 'hidden',
             textOverflow: 'ellipsis',
           }}
-          className='cursor-pointer'
+          className='cursor-pointer capitalize'
           onClick={() => router.navigate({ to: `/Store/${productId}` })}
         >
           {productName}
@@ -146,7 +146,7 @@ const ShoppingCartItem = ({
           await dispatch(getshoppingCart());
         }}
       >
-        <RemoveCircleSharp className="w-16 h-16 cursor-pointer text-secondary-main transition-all duration-1000 ease-in-out hover:text-red-400 font" />
+        <RemoveCircleSharp className="w-16 h-16 cursor-pointer text-secondary-main transition-all duration-1000 ease-in-out hover:text-red-400 " />
       </button>
     </Box>
   );
