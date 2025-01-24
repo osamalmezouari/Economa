@@ -1,5 +1,3 @@
-
-
 export function remToPx(value: string) {
   return Math.round(parseFloat(value) * 16);
 }
@@ -8,7 +6,15 @@ export function pxToRem(value: number) {
   return `${value / 16}rem`;
 }
 
-export function responsiveFontSizes({ sm, md, lg }: { sm: number; md: number; lg: number }) {
+export function responsiveFontSizes({
+  sm,
+  md,
+  lg,
+}: {
+  sm: number;
+  md: number;
+  lg: number;
+}) {
   return {
     '@media (min-width:600px)': {
       fontSize: pxToRem(sm),
@@ -22,9 +28,8 @@ export function responsiveFontSizes({ sm, md, lg }: { sm: number; md: number; lg
   };
 }
 
-
 const typography = {
-  fontFamily:  "'Roboto', 'Barlow', sans-serif",
+  fontFamily: 'Lexend Deca, sans-serif',
   fontWeightRegular: 400,
   fontWeightMedium: 600,
   fontWeightBold: 700,
@@ -65,20 +70,24 @@ const typography = {
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
   },
   subtitle1: {
+    fontFamily: 'Inter, sans-serif',
     fontWeight: 600,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
   },
   subtitle2: {
+    fontFamily: 'Inter, sans-serif',
     fontWeight: 600,
     lineHeight: 22 / 14,
     fontSize: pxToRem(14),
   },
   body1: {
+    fontFamily: 'Inter, sans-serif',
     lineHeight: 1.5,
     fontSize: pxToRem(16),
   },
   body2: {
+    fontFamily: 'Inter, sans-serif',
     lineHeight: 22 / 14,
     fontSize: pxToRem(14),
   },
