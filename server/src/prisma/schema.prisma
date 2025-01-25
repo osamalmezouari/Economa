@@ -50,24 +50,24 @@ model Permission {
 }
 
 model Product {
-  id               String          @id
-  name             String
-  description      String?
-  price            Float
-  stock            Int
-  categoryId       String
-  incomePercentage Float           @default(0)
-  discount         Int?
-  category         Category        @relation(fields: [categoryId], references: [id])
-  created_at       DateTime        @default(now())
-  updated_at       DateTime        @updatedAt
-  gallery          Gallery[]
-  orderItems       OrderItem[]
-  reviews          ProductReview[]
-  shoppingCart     ShoppingCart[]
-  wishList         Wishlist[]
-  unitId           String
-  Units            Units           @relation(fields: [unitId], references: [id])
+  id           String          @id
+  name         String
+  description  String?
+  price        Float
+  stock        Int
+  categoryId   String
+  cost_price   Float
+  discount     Int?
+  category     Category        @relation(fields: [categoryId], references: [id])
+  created_at   DateTime        @default(now())
+  updated_at   DateTime        @updatedAt
+  gallery      Gallery[]
+  orderItems   OrderItem[]
+  reviews      ProductReview[]
+  shoppingCart ShoppingCart[]
+  wishList     Wishlist[]
+  unitId       String
+  Units        Units           @relation(fields: [unitId], references: [id])
 }
 
 model Gallery {
