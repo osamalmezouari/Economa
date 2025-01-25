@@ -27,22 +27,22 @@ const OrderSummary = () => {
         <EmptyBox />
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
-        <Typography variant="body1">Subtotal</Typography>
-        <Typography variant="body1">$0.00</Typography>
+        <Typography variant="body2">Subtotal</Typography>
+        <Typography variant="body2">$0.00</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-        <Typography variant="body1">Tax</Typography>
-        <Typography variant="body1">$0.00</Typography>
+        <Typography variant="body2">Tax</Typography>
+        <Typography variant="body2">$0.00</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-        <Typography variant="body1">Shipping</Typography>
-        <Typography variant="body1">$0.00</Typography>
+        <Typography variant="body2">Shipping</Typography>
+        <Typography variant="body2">$0.00</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-        <Typography variant="body1" fontWeight="bold">
+        <Typography variant="body2" fontWeight="bold">
           Total
         </Typography>
-        <Typography variant="body1" fontWeight="bold">
+        <Typography variant="body2" fontWeight="bold">
           $0.00
         </Typography>
       </Box>
