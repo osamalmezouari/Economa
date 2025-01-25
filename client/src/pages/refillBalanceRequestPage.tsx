@@ -22,14 +22,12 @@ import {
   refillBalanceRequest,
 } from '../features/balance/balanceThunk';
 import { ApiError } from '../types/apierror';
+import BalanceCard from '../components/extra/balanceCard/balanceCard';
 
 const RefillBalanceRequestPage = () => {
   const { loading, error, data } = useSelector(
     (state: RootState) => state.balance.refillBalanceRequest
   );
-  const { balance, name } = useSelector(
-    (state: RootState) => state.balance.balanceCard.data
-  );        
   const dispatch = useDispatch<AppDispatch>();
 
   const [formData, setFormData] = useState<RefillBalanceRequest>({
@@ -83,33 +81,7 @@ const RefillBalanceRequestPage = () => {
       onSubmit={handleSubmit}
       className="relative flex max-w-[1000px] gap-4 h-full my-20 m-auto items-center justify-center"
     >
-      <img
-        src="assets/images/balanceCard.svg"
-        className="rounded w-0 md:w-[450px]  drop-shadow-lg"
-        alt="Balance Card"
-      ></img>
-      <Box
-        className={
-          'absolute top-[42%] left-[3%] text-white text-2xl uppercase font-Inria'
-        }
-      >
-        {name}
-      </Box>
-      <Box
-        className={
-          'absolute bottom-[15%] left-[45px] text-white capitalize font-Inria'
-        }
-      >
-        <span className="text-[28px]">{balance}.</span>
-        <span className="text-[12px]">00</span>
-      </Box>
-      <p
-        className={
-          'absolute bottom-[15%] left-[360px] text-white capitalize font-Inria'
-        }
-      >
-        2025
-      </p>
+      <BalanceCard />
 
       <Grid container className="justify-center items-center p-4 gap-y-2">
         <Grid item xs={12} className="flex justify-between">
@@ -184,7 +156,7 @@ const RefillBalanceRequestPage = () => {
               color="secondary"
               className="w-full"
               startIcon={<UploadFile />}
-              sx={{ borderRadius : '1px' }}
+              sx={{ borderRadius: '1px' }}
             >
               Bank Transfer File
               <input
