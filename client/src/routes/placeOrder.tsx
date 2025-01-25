@@ -1,9 +1,9 @@
 import { createRoute } from '@tanstack/react-router';
 import { rootRoute } from './__root';
-import OrderSummary from '../layouts/orderSummary';
+import Order from '../pages/order';
 
-export const placeOrderRoute = createRoute({
+export const OrderRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/placeOrder',
-  component: OrderSummary,
+  component: Order,
 });
