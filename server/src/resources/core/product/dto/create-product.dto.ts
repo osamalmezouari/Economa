@@ -8,7 +8,10 @@ export class CreateProductDto {
   description: string;
   @IsNumber()
   discount?: number;
+  @IsNumber()
   price: number;
+  @IsNumber()
+  cost_price: number;
   @IsInt()
   stock: number;
   @IsUUID()
