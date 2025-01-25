@@ -19,6 +19,7 @@ export class ProductService {
       data: {
         id: uuid(),
         ...createProductDto,
+      
       },
     });
     return product;
