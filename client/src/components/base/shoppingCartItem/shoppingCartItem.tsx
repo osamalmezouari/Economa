@@ -89,7 +89,7 @@ const ShoppingCartItem = ({
             overflow: 'hidden',
             textOverflow: 'ellipsis',
           }}
-          className='cursor-pointer capitalize'
+          className="cursor-pointer capitalize"
           onClick={() => router.navigate({ to: `/Store/${productId}` })}
         >
           {productName}
@@ -110,13 +110,12 @@ const ShoppingCartItem = ({
             borderRadius: 1,
           }}
         >
-          <InputAdornment position="start">
             <BiMinus
               onClick={handleDecrease}
-              className="hover:cursor-pointer hover:bg-primary-main hover:rounded-full hover:text-white duration-300 transition-all"
+              className="hover:cursor-pointer w-16 h-max mx-1 hover:bg-primary-main hover:rounded-full hover:text-white duration-300 transition-all"
             />
-          </InputAdornment>
           <TextField
+            size="small"
             value={newQuantity}
             onChange={handleQuantityChange}
             variant="outlined"
@@ -132,12 +131,10 @@ const ShoppingCartItem = ({
               style: { height: '20px', textAlign: 'center' },
             }}
           />
-          <InputAdornment position="end">
             <BiPlus
               onClick={handleIncrease}
-              className="hover:cursor-pointer hover:bg-primary-main hover:rounded-full hover:text-white duration-300 transition-all"
+              className="hover:cursor-pointer  w-16 h-max mx-1 hover:bg-primary-main hover:rounded-full hover:text-white duration-300 transition-all"
             />
-          </InputAdornment>
         </Box>
       </Box>
       <button
