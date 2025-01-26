@@ -25,6 +25,12 @@ const ShoppingCart = () => {
   const { data, loading, error } = useSelector(
     (state: RootState) => state.shoppingCart.shoppingCartWithProducts
   );
+  const { loading: createloading } = useSelector(
+    (state: RootState) => state.shoppingCart.createshoppingCart
+  );
+  const { loading: removeloading } = useSelector(
+    (state: RootState) => state.shoppingCart.removefromshoppingCart
+  );
   const { basePrice, vat, totalPrice, open } = useSelector(
     (state: RootState) => state.shoppingCart
   );
@@ -40,7 +46,7 @@ const ShoppingCart = () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100vh',
-        width: '460px',
+        width: '380px',
       }}
       className={`bg-white z-[100] top-0 fixed p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
     >
@@ -72,7 +78,9 @@ const ShoppingCart = () => {
         <Box
           className={`h-[400px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
-          {loading && <CircularProgress color="primary" className="m-auto" />}
+          {(loading || createloading || removeloading) && (
+            <CircularProgress color="primary" className="m-auto" />
+          )}
           {!cartItems.length && !loading && <EmptyBox />}
           {!loading &&
             !error &&
