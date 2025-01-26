@@ -1,7 +1,19 @@
-import { Box, Typography, Button, Divider } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Button,
+  Divider,
+  TextField,
+  InputAdornment,
+} from '@mui/material';
 import EmptyBox from '../../components/base/empty-box/empty-box';
+import OrderItem from '../../components/extra/orderItem/orderitem';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../app/store';
+import { setDisplayCart } from '../../features/shoppingCart/shoppingCartSlice';
 
 const OrderSummary = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <Box
       sx={{
@@ -21,29 +33,43 @@ const OrderSummary = () => {
           Order items
         </Typography>
         <Typography
-          className={'!underline'}
+          className={'!underline cursor-pointer'}
           color="primary.main"
           variant="body2"
+          onClick={() => {
+            dispatch({ type: 'setDisplayWishlist', payload: false });
+            dispatch(setDisplayCart());
+          }}
         >
           Edit Cart
         </Typography>
       </Box>
       <Divider />
       <Box className={'flex items-center justify-center py-2'}>
-        <EmptyBox />
+        {/* <EmptyBox /> */}
+        <OrderItem />
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1 }}>
         <Typography variant="body2">Subtotal</Typography>
         <Typography variant="body2">$0.00</Typography>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
         <Typography variant="body2">Tax</Typography>
         <Typography variant="body2">$0.00</Typography>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-        <Typography variant="body2">Shipping</Typography>
-        <Typography variant="body2">$0.00</Typography>
-      </Box>
+      <TextField
+        variant="outlined"
+        fullWidth
+        size="small"
+        className="!mb-2"
+        InputProps={{
+          endAdornment: (
+            <Button size="small" className="text-[8px] w-full ">
+              apply cupon
+            </Button>
+          ),
+        }}
+      />
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
         <Typography variant="body2" fontWeight="bold">
           Total
