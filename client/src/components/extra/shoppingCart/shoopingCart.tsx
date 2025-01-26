@@ -18,6 +18,7 @@ import { getshoppingCart } from '../../../features/shoppingCart/shoppingCartThun
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import ShoppingCartItem from '../../base/shoppingCartItem/shoppingCartItem';
 import EmptyBox from '../../base/empty-box/empty-box';
+import { useRouter } from '@tanstack/react-router';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -31,6 +32,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     dispatch(getshoppingCart());
   }, [dispatch]);
+  const Router = useRouter();
   return (
     <Box
       sx={{
@@ -98,9 +100,9 @@ const ShoppingCart = () => {
           <Divider sx={{ my: 2 }} />
           <Table>
             <TableBody>
-              <TableRow className='items-center !flex justify-between p-2'>
+              <TableRow className="items-center !flex justify-between p-2">
                 <Typography
-                variant='h6'
+                  variant="h6"
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
@@ -113,10 +115,9 @@ const ShoppingCart = () => {
                   ${basePrice?.toFixed(2)}
                 </Typography>
               </TableRow>
-              <TableRow className='items-center !flex justify-between p-2'>
+              <TableRow className="items-center !flex justify-between p-2">
                 <Typography
-                                variant='h6'
-
+                  variant="h6"
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
@@ -129,15 +130,14 @@ const ShoppingCart = () => {
                   ${vat?.toFixed(2)}
                 </Typography>
               </TableRow>
-              <TableRow className='items-center !flex justify-between p-2'>
+              <TableRow className="items-center !flex justify-between p-2">
                 <Typography
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary.main',
                     fontSize: '18px',
                   }}
-                  variant='h6'
-
+                  variant="h6"
                 >
                   Total :
                 </Typography>
@@ -158,6 +158,9 @@ const ShoppingCart = () => {
               width: '100%',
               backgroundColor: 'secondary.main',
               '&:hover': { backgroundColor: 'primary.main' },
+            }}
+            onClick={() => {
+              Router.navigate({ to: '/placeOrder' });
             }}
           >
             Checkout
