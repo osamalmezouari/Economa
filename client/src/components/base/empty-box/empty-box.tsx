@@ -5,7 +5,7 @@ const EmptyBox = () => {
     <Box
       component={'img'}
       src="/assets/images/empty-box.svg"
-      className="h-44 w-44"
+      className="h-44 w-44 m-auto"
     ></Box>
   );
 };
