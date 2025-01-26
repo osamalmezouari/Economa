@@ -27,7 +27,7 @@ const Wishlist = () => {
         justifyContent: 'space-between',
         height: '100vh',
 
-        width: '460px',
+        width: '380px',
       }}
       className={`bg-white z-[100] fixed top-0 p-4 right-0 transition-all duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}`}
     >
