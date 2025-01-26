@@ -15,7 +15,7 @@ const Order = () => {
       <Grid item lg={4}>
         <OrderValidationForm />
       </Grid>
-      <Grid item lg={3}>
+      <Grid item lg={4}>
         <OrderSummary />
       </Grid>
     </Grid>
