@@ -10,10 +10,22 @@ import {
 import { CouponService } from './coupon.service';
 import { CreateCouponDto } from './dto/create-coupon.dto';
 import { UpdateCouponDto } from './dto/update-coupon.dto';
+import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 
 @Controller('coupon')
 export class CouponController {
   constructor(private readonly couponService: CouponService) {}
+
+  @Post('/verify')
+  async verify(
+    @Body() data: { code: string  },
+    @activeUser('sub') userId: string,
+  ) {
+    return await this.couponService.verify({
+      code: data.code,
+      userId,
+    });
+  }
 
   @Post()
   async create(@Body() createCouponDto: CreateCouponDto) {
