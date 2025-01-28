@@ -30,7 +30,7 @@ const StoreProducts = () => {
   return (
     <>
       <Grid container spacing={2} sx={{ marginTop: '0px' }} className="px-12">
-        {loading && !products.length ? (
+        {loading  ? (
           <Box className={'w-full flex justify-center items-center py-8'}>
             <CircularProgress />
           </Box>
