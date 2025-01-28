@@ -27,7 +27,7 @@ const OrderItem = () => {
         data.length > 0 &&
         data.map((item) => {
           return (
-            <Box className="w-full h-full p-3 flex flex-row items-center   border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
+            <Box className="w-full m-auto h-full p-3 flex flex-row items-center   border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
               <Box className="product-image mr-3 relative ">
                 <img
                   src={item.svgLink}
