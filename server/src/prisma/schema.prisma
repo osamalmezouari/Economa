@@ -34,11 +34,11 @@ model Coupon {
   discount_type       DiscountType
   discount_value      Float
   max_usage           Int?         @default(1)
-  used_count          Int?         @default(0)
   expiration_date     DateTime?
   minimum_order_value Float?
   created_at          DateTime     @default(now())
   updated_at          DateTime     @updatedAt
+  users               User[]       @relation("UsersCoupons")
   orders              Order[]
 }
 
@@ -114,6 +114,7 @@ model User {
   wishList             Wishlist[]
   balance              Balance?
   refillBalanceRequest refillBalanceRequest[]
+  Coupon               Coupon[]               @relation("UsersCoupons")
 }
 
 model Balance {
