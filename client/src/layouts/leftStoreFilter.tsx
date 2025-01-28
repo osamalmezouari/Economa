@@ -5,12 +5,10 @@ import {
   Box,
   Checkbox,
   Grid,
-  InputAdornment,
   Divider,
   FormGroup,
   Slider,
 } from '@mui/material';
-import { BiSearch } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilters } from '../features/products/productSlice';
 
@@ -185,11 +183,11 @@ const StoreFilter = () => {
         <Box className="flex justify-center">
           <Slider
             sx={{ width: '80%', padding: '5px' }}
-            value={[filters.Minprice, filters.Maxprice]} // Bind the price range values from Redux store
+            value={[filters.Minprice, filters.Maxprice]}
             onChange={handlePriceChange}
             valueLabelDisplay="auto"
             min={0}
-            max={1000} // Adjust max value as needed
+            max={1000} 
           />
         </Box>
       </Box>
