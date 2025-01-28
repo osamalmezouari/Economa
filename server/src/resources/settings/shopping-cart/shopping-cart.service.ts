@@ -10,10 +10,10 @@ import { SHOPPING_CART_ITEM_EXISST_FOR_USER_Exception } from 'src/common/excepti
 export class ShoppingCartService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findAll() {
+  /*   async findAll() {
     const shoppingCarts = await this.prisma.shoppingCart.findMany();
     return shoppingCarts;
-  }
+  } */
 
   async findShoppingCartByUserId(userId: string) {
     const shoppingCarts = await this.prisma.shoppingCart.findMany({
@@ -21,10 +21,9 @@ export class ShoppingCartService {
         userId: userId,
       },
       select: {
-        // Make sure to use 'select' instead of 'id: true'
         id: true,
         quantity: true,
-        productId: true, // Ensure productId is selected explicitly
+        productId: true,
         product: {
           select: {
             name: true,
@@ -45,7 +44,7 @@ export class ShoppingCartService {
       },
     });
     if (!(shoppingCarts.length > 0)) {
-      throw new SHOPPING_CART_NOT_FOUND_Exception(userId);
+      return [];
     }
     const shoppingCartsWithProduct = shoppingCarts.map((item) => {
       return {
@@ -53,7 +52,7 @@ export class ShoppingCartService {
         productName: item.product.name,
         productPrice: item.product.price * (1 - item.product.discount / 100),
         productunit: item.product.Units.name,
-        productId: item.productId, // Access productId correctly
+        productId: item.productId,
         svgLink:
           item.product.gallery.length > 0
             ? item.product.gallery[0].imageUrl
@@ -67,7 +66,7 @@ export class ShoppingCartService {
 
   async findOne(id: string) {
     const shoppingCart = await this.prisma.shoppingCart.findUnique({
-      where: { id },
+      where: { id: id },
     });
     if (!shoppingCart) throw new SHOPPING_CART_NOT_FOUND_Exception(id);
     return shoppingCart;
