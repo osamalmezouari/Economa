@@ -98,7 +98,7 @@ export default function ProductCard({
         <Tooltip title="Add to cart">
           <Box
             component={'div'}
-            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+            className="w-[26px] h-[26px] border-2 flex justify-center items-center  text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           >
             {loading ? (
               <CircularProgress size={8} className="h-max" color="primary" />
@@ -113,7 +113,7 @@ export default function ProductCard({
         <Tooltip title="Quick View">
           <Box
             component={'div'}
-            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+            className="w-[26px] h-[26px] border-2 flex justify-center items-center text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
             onClick={() =>
               handleOpen({
                 id,
@@ -136,7 +136,7 @@ export default function ProductCard({
           <Box
             component={'div'}
             onClick={() => dispatch(addCompareItem(id))}
-            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+            className="w-[26px] h-[26px] border-2 flex justify-center items-center text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           >
             <IoGitCompare fontSize={16} />
           </Box>
@@ -144,10 +144,10 @@ export default function ProductCard({
         <Tooltip title="Add to wishlist">
           <Box
             component={'div'}
-            className="border-2 p-1 text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
+            className="w-[26px] h-[26px] border-2 flex justify-center items-center  text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           >
             {loadingWishlist ? (
-              <CircularProgress size={8} className="h-max" color="primary" />
+              <CircularProgress size={12}  className=" !text-white !m-auto" />
             ) : (
               <IoHeart
                 fontSize={16}
