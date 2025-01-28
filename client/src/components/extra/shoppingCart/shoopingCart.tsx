@@ -5,7 +5,6 @@ import {
   Divider,
   Table,
   TableBody,
-  TableCell,
   TableRow,
   Typography,
 } from '@mui/material';
