@@ -26,10 +26,6 @@ export class CreateCouponDto {
   @Min(0)
   max_usage?: number;
 
-  @IsInt()
-  @Min(0)
-  used_count?: number;
-
   @IsDateString()
   @IsOptional()
   expiration_date?: Date;
