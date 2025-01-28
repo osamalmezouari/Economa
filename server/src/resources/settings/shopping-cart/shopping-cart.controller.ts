@@ -9,7 +9,6 @@ import {
 } from '@nestjs/common';
 import { ShoppingCartService } from './shopping-cart.service';
 import { CreateShoppingCartDto } from './dto/create-shopping-cart.dto';
-import { UpdateShoppingCartDto } from './dto/update-shopping-cart.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
@@ -24,13 +23,6 @@ export class ShoppingCartController {
     const shoppingCarts =
       await this.shoppingCartService.findShoppingCartByUserId(userId);
     return shoppingCarts;
-  }
-
-  @AUTH(AuthenticationType.bearer)
-  @Get(':id')
-  async findOne(@Param('id') id: string) {
-    const shoppingCart = await this.shoppingCartService.findOne(id);
-    return shoppingCart;
   }
 
   @AUTH(AuthenticationType.bearer)
@@ -61,7 +53,7 @@ export class ShoppingCartController {
   }
 
   @Delete(':id')
-  async remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string, @activeUser('sub') userId: string) {
     const shoppingCart = await this.shoppingCartService.remove(id);
     return shoppingCart;
   }
