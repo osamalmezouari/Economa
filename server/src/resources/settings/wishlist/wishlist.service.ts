@@ -3,7 +3,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateWishlistDto } from './dto/create-wishlist.dto';
 import { v4 as uuid } from 'uuid';
 import { WISHLIST_NOT_FOUND_Exception } from '../../../common/exceptions/WISHLIST_NOT_FOUND.exception';
-import { WISHLIST_NOT_FOUND_FOR_USER_Exception } from 'src/common/exceptions/WISHLIST_NOT_FOUND_FOR_USER.exception';
 import { WISHLIST_EXISST_FOR_USER_Exception } from 'src/common/exceptions/WISHLIST_EXISST_FOR_USER.exception';
 
 @Injectable()
@@ -61,8 +60,8 @@ export class WishlistService {
         },
       },
     });
-    if (!(wishlists.length > 0)) {
-      throw new WISHLIST_NOT_FOUND_FOR_USER_Exception(`${userId}`);
+    if (!wishlists.length) {
+      return [];
     }
     const wishlistWithProducts = wishlists.map((item) => {
       return {
