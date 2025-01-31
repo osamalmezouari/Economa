@@ -8,6 +8,7 @@ import { compareReducer } from '../features/compare/compareSlice';
 import { UserReducer } from '../features/user/userSlice';
 import { balanceReducer } from '../features/balance/balanceSilce';
 import { CouponReducer } from '../features/coupon/couponSlice';
+import { OrderReducer } from '../features/order/orderSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   compare: compareReducer,
   user: UserReducer,
   balance: balanceReducer,
-  coupon : CouponReducer
+  coupon: CouponReducer,
+  order: OrderReducer,
 });
 export default rootReducer;
