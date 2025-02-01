@@ -32,7 +32,7 @@ const HeroImage = () => {
             color="secondary"
             endIcon={<KeyboardDoubleArrowRight />}
             className="text-white top-8 h-12  hover:bg-primary-main"
-            onClick={() => router.navigate({ to: '/Store' })}
+            onClick={() => router.navigate({ to:'/Economa/Store' })}
           >
             Shop Now
           </Button>
