@@ -40,7 +40,7 @@ const RegisterComponent = () => {
         onSubmit={(e) => HandleSubmit(e)}
       >
         <img
-          src="assets/images/Login_register.png"
+          src="/assets/images/Login_register.png"
           className="rounded w-0 md:w-[500px]"
         />
         <Grid
@@ -169,7 +169,7 @@ const RegisterComponent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <p
-              onClick={() => Router.navigate({ to: '/login' })}
+              onClick={() => Router.navigate({ to: '/Economa/login' })}
               className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
             >
               do you already have an account ? Login
