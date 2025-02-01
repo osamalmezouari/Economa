@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
-      <change beforePath="$PROJECT_DIR$/client/src/pages/refillBalanceRequestPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/refillBalanceRequestPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/apiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/apiClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/dto/create-refillbalancerequest.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/dto/create-refillbalancerequest.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/refillbalancerequest.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/refillbalancerequest.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/refillbalancerequest.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/refillbalancerequest.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,6 +107,7 @@
       <workItem from="1735842662934" duration="9770000" />
       <workItem from="1735930417662" duration="4308000" />
       <workItem from="1737637509462" duration="26000" />
+      <workItem from="1738063116185" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
       <option name="closed" value="true" />
