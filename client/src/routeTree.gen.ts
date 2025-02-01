@@ -19,6 +19,7 @@ import { Route as CompareImport } from './routes/compare'
 import { Route as AuthImport } from './routes/auth'
 import { Route as RefillBalanceRequestRouteImport } from './routes/RefillBalanceRequestRoute'
 import { Route as ProtectedRoutesAuthProtectedRouteImport } from './routes/protectedRoutes/AuthProtectedRoute'
+import { Route as AdminOverviewRouteImport } f./routes/admin/overviewRouterviewRoute'
 
 // Create/Update Routes
 
@@ -70,6 +71,12 @@ const ProtectedRoutesAuthProtectedRouteRoute =
     path: '/protectedRoutes/AuthProtectedRoute',
     getParentRoute: () => rootRoute,
   } as any)
+
+const AdminOverviewRouteRoute = AdminOverviewRouteImport.update({
+  id: '/admin/overviewRoute',
+  path: '/admin/overviewRoute',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -124,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StoreroutImport
       parentRoute: typeof rootRoute
     }
+    '/admin/overviewRoute': {
+      id: '/admin/overviewRoute'
+      path: '/admin/overviewRoute'
+      fullPath: '/admin/overviewRoute'
+      preLoaderRoute: typeof AdminOverviewRouteImport
+      parentRoute: typeof rootRoute
+    }
     '/protectedRoutes/AuthProtectedRoute': {
       id: '/protectedRoutes/AuthProtectedRoute'
       path: '/protectedRoutes/AuthProtectedRoute'
@@ -144,6 +158,7 @@ export interface FileRoutesByFullPath {
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/admin/overviewRoute': typeof AdminOverviewRouteRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
@@ -155,6 +170,7 @@ export interface FileRoutesByTo {
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/admin/overviewRoute': typeof AdminOverviewRouteRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
@@ -167,6 +183,7 @@ export interface FileRoutesById {
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
   '/storerout': typeof StoreroutRoute
+  '/admin/overviewRoute': typeof AdminOverviewRouteRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
@@ -180,6 +197,7 @@ export interface FileRouteTypes {
     | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
+    | '/admin/overviewRoute'
     | '/protectedRoutes/AuthProtectedRoute'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -190,6 +208,7 @@ export interface FileRouteTypes {
     | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
+    | '/admin/overviewRoute'
     | '/protectedRoutes/AuthProtectedRoute'
   id:
     | '__root__'
@@ -200,6 +219,7 @@ export interface FileRouteTypes {
     | '/placeOrder'
     | '/productdetailsroot'
     | '/storerout'
+    | '/admin/overviewRoute'
     | '/protectedRoutes/AuthProtectedRoute'
   fileRoutesById: FileRoutesById
 }
@@ -212,6 +232,7 @@ export interface RootRouteChildren {
   PlaceOrderRoute: typeof PlaceOrderRoute
   ProductdetailsrootRoute: typeof ProductdetailsrootRoute
   StoreroutRoute: typeof StoreroutRoute
+  AdminOverviewRouteRoute: typeof AdminOverviewRouteRoute
   ProtectedRoutesAuthProtectedRouteRoute: typeof ProtectedRoutesAuthProtectedRouteRoute
 }
 
@@ -223,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlaceOrderRoute: PlaceOrderRoute,
   ProductdetailsrootRoute: ProductdetailsrootRoute,
   StoreroutRoute: StoreroutRoute,
+  AdminOverviewRouteRoute: AdminOverviewRouteRoute,
   ProtectedRoutesAuthProtectedRouteRoute:
     ProtectedRoutesAuthProtectedRouteRoute,
 }
@@ -244,6 +266,7 @@ export const routeTree = rootRoute
         "/placeOrder",
         "/productdetailsroot",
         "/storerout",
+        "/admin/overviewRoute",
         "/protectedRoutes/AuthProtectedRoute"
       ]
     },
@@ -267,6 +290,9 @@ export const routeTree = rootRoute
     },
     "/storerout": {
       "filePath": "storerout.tsx"
+    },
+    "/admin/overviewRoute": {
+      "filePath": "admin/overviewRoute.tsx"
     },
     "/protectedRoutes/AuthProtectedRoute": {
       "filePath": "protectedRoutes/AuthProtectedRoute.tsx"
