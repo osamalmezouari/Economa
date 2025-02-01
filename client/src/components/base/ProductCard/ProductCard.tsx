@@ -147,7 +147,7 @@ export default function ProductCard({
             className="w-[26px] h-[26px] border-2 flex justify-center items-center  text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           >
             {loadingWishlist ? (
-              <CircularProgress size={12}  className=" !text-white !m-auto" />
+              <CircularProgress size={12} className=" !text-white !m-auto" />
             ) : (
               <IoHeart
                 fontSize={16}
@@ -168,7 +168,7 @@ export default function ProductCard({
         <p
           onClick={() =>
             Router.navigate({
-              to: `/Store/${id}`,
+              to: `/Economa/Store/${id}`,
             })
           }
           className="text-secondary-main capitalize mb-3 max-h-6 overflow-hidden text-[14px] hover:text-primary-main cursor-pointer transition-colors duration-500"
@@ -180,7 +180,7 @@ export default function ProductCard({
           size="small"
           value={productAvgRating}
           precision={0.5}
-          onClick={() => Router.navigate({ to: `/Store/${id}` })}
+          onClick={() => Router.navigate({ to: `/Economa/Store/${id}` })}
         />
         <Box className="flex gap-8 text-secondary-main">
           {priceWithDiscount && priceWithDiscount > 0 ? (
