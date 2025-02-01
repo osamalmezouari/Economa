@@ -40,7 +40,7 @@ const Desktop_nav_bar = () => {
                 src="/assets/images/logo.png"
                 className="w-[140px] h-[140px] scale-[1.5] cursor-pointer"
                 alt="logo"
-                onClick={() => router.navigate({ to: '/' })}
+                onClick={() => router.navigate({ to: '/Economa' })}
               />
             </Grid>
 
@@ -55,7 +55,9 @@ const Desktop_nav_bar = () => {
                   endAdornment: (
                     <InputAdornment position="end">
                       <BiSearch
-                        onClick={() => router.navigate({ to: '/Store' })}
+                        onClick={() =>
+                          router.navigate({ to: '/Economa/Store' })
+                        }
                         className={
                           'hover:bg-primary-main rounded-full w-8 h-8 border-8 bg-secondary-main text-white transition-all duration-500 ease-in-out cursor-pointer hover:text-white border-secondary-main hover:border-primary-main '
                         }
@@ -71,12 +73,12 @@ const Desktop_nav_bar = () => {
                 variant="outlined"
                 onClick={() =>
                   router.navigate({
-                    to: '/login',
+                    to: '/Economa/login',
                   })
                 }
-                sx={{ borderRadius: '4px' , color : 'primary.main' }}
+                sx={{ borderRadius: '4px', color: 'primary.main' }}
               >
-                <BiSolidUserCircle  className="w-4 h-10  text-primary-main"></BiSolidUserCircle>
+                <BiSolidUserCircle className="w-4 h-10  text-primary-main"></BiSolidUserCircle>
               </Button>
               <Button
                 variant="outlined"
@@ -104,7 +106,9 @@ const Desktop_nav_bar = () => {
                 variant="contained"
                 startIcon={<FaWallet className="w-4 h-4" />}
                 className="text-start"
-                onClick={() => router.navigate({ to: '/Refill_Balance' })}
+                onClick={() =>
+                  router.navigate({ to: '/Economa/Refill_Balance' })
+                }
                 sx={{ fontSize: '12px', borderRadius: '2px' }}
               >
                 Refil balance
@@ -130,28 +134,28 @@ const Desktop_nav_bar = () => {
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<FiHome />}
-          onClick={() => router.navigate({ to: '/' })}
+          onClick={() => router.navigate({ to: '/Economa' })}
         >
           <p className="text-secondary-darker font-main">Home</p>
         </Button>
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<BiStoreAlt />}
-          onClick={() => router.navigate({ to: '/Store' })}
+          onClick={() => router.navigate({ to: '/Economa/Store' })}
         >
           <p className="text-secondary-darker font-main">Store</p>
         </Button>
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<RiDiscountPercentLine />}
-          /* onClick={() => router.navigate({ to: '/offers' })} */
+          /* onClick={() => router.navigate({ to:'/Economa/offers' })} */
         >
           <p className="text-secondary-darker font-main">Offers</p>
         </Button>
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<LuGitCompare />}
-          onClick={() => router.navigate({ to: '/compare' })}
+          onClick={() => router.navigate({ to: '/Economa/compare' })}
         >
           <p className="text-secondary-darker font-main">Compare</p>
         </Button>
