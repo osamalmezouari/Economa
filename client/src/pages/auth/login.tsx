@@ -37,7 +37,7 @@ const LoginComponent = () => {
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
       >
         <img
-          src="assets/images/Login_register.png"
+          src="/assets/images/Login_register.png"
           className="rounded w-0 md:w-[500px]"
         />
         <Grid container spacing={1} className="justify-center items-center p-4">
@@ -93,7 +93,7 @@ const LoginComponent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <p
-              onClick={() => Router.navigate({ to: '/Register' })}
+              onClick={() => Router.navigate({ to:'/Economa/Register' })}
               className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
             >
               Don't have an account? Register
