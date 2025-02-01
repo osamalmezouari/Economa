@@ -1,9 +1,9 @@
 import { createRoute } from '@tanstack/react-router';
-import { rootRoute } from './__root.tsx';
+import { mainRoute } from './__root.tsx';
 import ProductDetailsPage from '../pages/productDetailsPage.tsx';
 
 export const productdetailsroot = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => mainRoute,
   path: 'Store/$ProductId',
   component: ProductDetailsPage,
 });
