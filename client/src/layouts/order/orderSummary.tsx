@@ -15,16 +15,20 @@ import { useRouter } from '@tanstack/react-router';
 import { useState } from 'react';
 import { verfyCoupon } from '../../features/coupon/couponThunk';
 import { ApiError } from '../../types/apierror';
+import { verfy_coupon_type } from '../../types/coupon';
 
 const OrderSummary = () => {
   const Router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
-  const [coupon, setcoupon] = useState({
+  const [coupon, setcoupon] = useState<verfy_coupon_type>({
     code: '',
+    orderAmountValue: 0,
   });
   const handleCouponChange = (e) => {
-    setcoupon(e.target.value);
-    console.log(coupon);
+    setcoupon({
+      ...coupon,
+      code: e.target.value,
+    });
   };
   const { basePrice, vat, totalPrice } = useSelector(
     (state: RootState) => state.shoppingCart
@@ -65,7 +69,7 @@ const OrderSummary = () => {
       <Divider />
       <Box
         className={
-          ' flex  flex-col gap-2 py-2 h-[323px] px-2   overflow-y-scroll'
+          ' flex  flex-col  py-2 h-[323px] px-2   overflow-y-scroll'
         }
       >
         <OrderItem />
@@ -85,8 +89,16 @@ const OrderSummary = () => {
         className="!mb-2"
         value={coupon.code}
         onChange={handleCouponChange}
-        error={data.verfied}
-        helperText={data.verfied ? 'token was applied' : ''}
+        helperText={
+          data.verified && !error ? (
+            <p className="text-primary-main">
+              {` - ${data.discount_value} ${data.discount_type === 'Percentage' ? '%' : '$'} discount was
+              applied `}
+            </p>
+          ) : (
+            ''
+          )
+        }
         InputProps={{
           endAdornment: (
             <Button
@@ -95,7 +107,16 @@ const OrderSummary = () => {
               className="text-[8px] w-[180px] !rounded-[4px]"
               disabled={loading}
               onClick={async () => {
-                await dispatch(verfyCoupon(coupon));
+                console.log({
+                  code: coupon.code,
+                  orderAmountValue: totalPrice,
+                });
+                await dispatch(
+                  verfyCoupon({
+                    code: coupon.code,
+                    orderAmountValue: totalPrice,
+                  })
+                );
               }}
             >
               {loading ? (
@@ -110,22 +131,48 @@ const OrderSummary = () => {
       {(error as ApiError) && (
         <Alert severity="info">{(error as ApiError).message}</Alert>
       )}
-      {data.verfied && (
-        <Alert security="info">coupon is was applied succufuly</Alert>
-      )}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
         <Typography variant="body2" fontWeight="bold">
           Total
         </Typography>
-        <Typography variant="body2" fontWeight="bold">
-          ${totalPrice.toFixed(2)}
-        </Typography>
+        {data.verified && !error && !loading ? (
+          data.discount_type === 'Percentage' ? (
+            <Typography className="flex gap-5">
+              <Typography variant="body2" className="line-through ">
+                ${totalPrice.toFixed(2)}
+              </Typography>
+              <Typography variant="body2" fontWeight="bold">
+                {'$' +
+                  (
+                    totalPrice -
+                    totalPrice * (data.discount_value / 100)
+                  ).toFixed(2)}
+              </Typography>
+            </Typography>
+          ) : (
+            <Typography className="flex gap-5">
+              <Typography
+                variant="body2"
+                fontWeight="bold"
+                className="line-through "
+              >
+                ${totalPrice.toFixed(2)}
+              </Typography>
+              <Typography variant="body2" fontWeight="bold">
+                {'$' + (totalPrice - data.discount_value).toFixed(2)}
+              </Typography>
+            </Typography>
+          )
+        ) : !loading ? (
+          <Typography variant="body2">${totalPrice.toFixed(2)}</Typography>
+        ) : (
+          ''
+        )}
       </Box>
       <Button
         variant="contained"
         fullWidth
-        sx={{ mt: 2 }}
-        onClick={() => Router.navigate({ to: '/Store' })}
+        onClick={() => Router.navigate({ to:'/Economa/Store' })}
       >
         Back to Store
       </Button>
