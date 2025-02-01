@@ -1,9 +1,9 @@
 import { createRoute } from '@tanstack/react-router';
 import RefillBalanceRequestPage from '../pages/refillBalanceRequestPage';
-import { rootRoute } from './__root';
+import { mainRoute } from './__root';
 
 export const RefillBalanceRequestRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => mainRoute,
   path: 'Refill_Balance',
   component: RefillBalanceRequestPage,
 });
