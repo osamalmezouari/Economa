@@ -1,17 +1,55 @@
 import {
-  Badge,
+  Alert,
   Box,
   Button,
   Checkbox,
-  Chip,
+  CircularProgress,
   FormControlLabel,
   FormGroup,
   Typography,
 } from '@mui/material';
 import BalanceCard from '../../components/extra/balanceCard/balanceCard';
 import { IoTrendingDown } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../app/store';
+import { BiWallet } from 'react-icons/bi';
+import { placeandpay } from '../../features/order/orderThunk';
+import { FormEvent } from 'react';
+import { getshoppingCart } from '../../features/shoppingCart/shoppingCartThunk';
+import { ApiError } from '../../types/apierror';
 
 const OrderValidationForm = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const totalPrice = useSelector(
+    (state: RootState) => state.shoppingCart.totalPrice
+  );
+  const { loading, error, data } = useSelector(
+    (state: RootState) => state.coupon.verifyCoupon
+  );
+
+  const { loading: balanceLoading, data: balanceData } = useSelector(
+    (state: RootState) => {
+      return state.balance.balanceCard;
+    }
+  );
+
+  const { data: placeandpaydata, error: placeandpayerror } = useSelector(
+    (state: RootState) => {
+      return state.order.placeandpay;
+    }
+  );
+
+  const Handlesubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    await dispatch(
+      placeandpay({
+        couponCode: data.code,
+      })
+    );
+    if (placeandpaydata.orderId) {
+      await dispatch(getshoppingCart());
+    }
+  };
   return (
     <Box>
       <Box className={'bg-primary-main p-4 rounded '}>
@@ -29,11 +67,26 @@ const OrderValidationForm = () => {
         <Typography variant="body2" className="!font-Inria ">
           This will cost you
         </Typography>
-        <Chip
-          icon={<IoTrendingDown color="white" scale={3} />}
-          label={'- $50'}
-          className="!text-white !bg-red-500 w-[100px] !rounded "
-        />
+        <Button
+          startIcon={!loading && <IoTrendingDown color="white" scale={3} />}
+          className="!text-white !bg-red-500 !cursor-text"
+          variant="contained"
+        >
+          {loading ? (
+            <CircularProgress size={16} sx={{ color: 'white' }} />
+          ) : (
+            ''
+          )}
+          {data.verified && !error && !loading
+            ? data.discount_type === 'Percentage'
+              ? (totalPrice - totalPrice * (data.discount_value / 100)).toFixed(
+                  2
+                ) + '$'
+              : (totalPrice - data.discount_value).toFixed(2) + '$'
+            : !loading
+              ? totalPrice.toFixed(2) + '$'
+              : ''}
+        </Button>
       </Box>
       <Box
         className={
@@ -43,22 +96,49 @@ const OrderValidationForm = () => {
         <Typography variant="body2" className="capitalize !font-Inria ">
           Remaining balance after purchase
         </Typography>
-        <Chip
-          label={'$950'}
-          className="!text-white !bg-primary-main w-[100px] !rounded "
-        />
+        <Button
+          startIcon={!loading && <BiWallet color="white" scale={3} />}
+          className="!text-white !cursor-text"
+          color="primary"
+          variant="contained"
+        >
+          {loading ? (
+            <CircularProgress size={16} sx={{ color: 'white' }} />
+          ) : (
+            ''
+          )}
+          {data.verified && !error && !balanceLoading && !loading
+            ? data.discount_type === 'Percentage'
+              ? (
+                  balanceData.balance -
+                  (totalPrice - totalPrice * (data.discount_value / 100))
+                ).toFixed(2) + '$'
+              : (
+                  balanceData.balance -
+                  (totalPrice - data.discount_value)
+                ).toFixed(2) + '$'
+            : !loading && balanceData.balance
+              ? (balanceData.balance - totalPrice).toFixed(2) + '$'
+              : ''}
+          {}
+        </Button>
       </Box>
-      <FormGroup className="px-2 my-2">
-        <FormControlLabel
-          required
-          className="text-[12px]"
-          control={<Checkbox />}
-          label="I accept no cancellations or returns of money."
-        />
-      </FormGroup>
-      <Button className="w-full" variant="outlined">
-        Pay and Place Order
-      </Button>
+      <Box component={'form'} onSubmit={(e: FormEvent) => Handlesubmit(e)}>
+        <FormGroup className="px-2 my-2">
+          <FormControlLabel
+            required
+            className="text-[12px]"
+            control={<Checkbox />}
+            label="I accept no cancellations or returns of money."
+          />
+        </FormGroup>
+        <Button className="w-full" variant="outlined" type="submit">
+          Pay and Place Order
+        </Button>
+        {(placeandpayerror as ApiError) && (
+          <Alert severity="info">{(error as ApiError).message}</Alert>
+        )}
+      </Box>
     </Box>
   );
 };
