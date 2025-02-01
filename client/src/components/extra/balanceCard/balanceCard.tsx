@@ -12,10 +12,11 @@ const BalanceCard = () => {
   useEffect(() => {
     dispatch(getbalanceCardInfo());
   }, [dispatch]);
+
   return (
     <Box className={'relative my-4'}>
       <img
-        src="assets/images/balanceCard.svg"
+        src="/assets/images/balanceCard.svg"
         className="rounded  drop-shadow-lg"
         alt="Balance Card"
       ></img>
@@ -31,8 +32,12 @@ const BalanceCard = () => {
           'absolute bottom-[12%] left-[10%] text-white capitalize font-Inria'
         }
       >
-        <span className="text-[28px]">{balance}.</span>
-        <span className="text-[12px]">00</span>
+        <span className="text-[28px]">
+          {balance?.toFixed(2).toString().split(',')[0]}
+        </span>
+        <span className="text-[12px]">
+          {balance?.toFixed(2).toString().split(',')[1]}
+        </span>
       </Box>
       <p
         className={
