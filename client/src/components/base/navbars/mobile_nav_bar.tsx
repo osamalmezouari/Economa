@@ -44,7 +44,7 @@ const Mobile_nav_bar = () => {
           <IoPersonOutline
             fontSize={24}
             className="cursor-pointer"
-            onClick={() => router.navigate({ to: '/login' })}
+            onClick={() => router.navigate({ to:'/Economa/login' })}
           />
 
           {/* Wishlist */}
@@ -78,7 +78,7 @@ const Mobile_nav_bar = () => {
           src="/path/to/logo.png"
           className="w-[80px] h-[80px] scale-[1.5]"
           alt="logo"
-          onClick={() => router.navigate({ to: '/' })}
+          onClick={() => router.navigate({ to:'/Economa' })}
         />
 
         {/* Search Bar */}
@@ -90,7 +90,7 @@ const Mobile_nav_bar = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <Search onClick={() => router.navigate({ to: '/Store' })} />
+                <Search onClick={() => router.navigate({ to:'/Economa/Store' })} />
               </InputAdornment>
             ),
           }}
@@ -108,7 +108,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          onClick={() => router.navigate({ to: '/' })}
+          onClick={() => router.navigate({ to:'/Economa' })}
         >
           <FiHome fontSize={24} />
           <Box component={'div'}>Home</Box>
@@ -118,7 +118,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          onClick={() => router.navigate({ to: '/Store' })}
+          onClick={() => router.navigate({ to:'/Economa/Store' })}
         >
           <BiStoreAlt fontSize={24} />
           <Box component={'div'}>Store</Box>
@@ -128,7 +128,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center  gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          /* onClick={() => router.navigate({ to: '/offers' })} */
+          /* onClick={() => router.navigate({ to:'/Economa/offers' })} */
         >
           <RiDiscountPercentLine fontSize={24} />
           <Box component={'div'}>Offers</Box>
@@ -138,7 +138,7 @@ const Mobile_nav_bar = () => {
         <Box
           component={'div'}
           className="flex items-center gap-4 border-y-1 p-4 hover:bg-primary-main hover:text-white transition-all duration-500 cursor-pointer"
-          onClick={() => router.navigate({ to: '/compare' })}
+          onClick={() => router.navigate({ to:'/Economa/compare' })}
         >
           <LuGitCompare fontSize={24} />
           <Box component={'div'}>Compare</Box>
