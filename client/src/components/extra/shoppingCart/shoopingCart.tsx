@@ -167,7 +167,7 @@ const ShoppingCart = () => {
               '&:hover': { backgroundColor: 'primary.main' },
             }}
             onClick={() => {
-              Router.navigate({ to: '/placeOrder' });
+              Router.navigate({ to:'/Economa/placeOrder' });
             }}
           >
             Checkout
