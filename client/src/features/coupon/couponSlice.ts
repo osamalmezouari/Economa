@@ -6,6 +6,9 @@ const initialState: couponStoreType = {
   verifyCoupon: {
     data: {
       code: '',
+      verified: false,
+      discount_type: '',
+      discount_value: 0,
     },
     loading: false,
     error: null,
