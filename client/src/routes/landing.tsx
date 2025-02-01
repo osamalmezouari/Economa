@@ -1,9 +1,9 @@
 import { createRoute } from '@tanstack/react-router';
-import { rootRoute } from './__root';
+import { mainRoute } from './__root';
 import Landing from '../pages/landing';
 
 export const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => mainRoute,
   path: '/',
   component: Landing,
 });
