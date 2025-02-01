@@ -55,7 +55,7 @@ const shoppingCartSlice = createSlice({
         open: action.payload !== undefined ? action.payload : !state.open,
       };
     },
-    
+
     clearCreateError: (state) => {
       state.createshoppingCart.error = null;
     },
@@ -81,6 +81,7 @@ const shoppingCartSlice = createSlice({
       .addCase(getshoppingCart.rejected, (state, action) => {
         state.shoppingCartWithProducts.loading = false;
         state.shoppingCartWithProducts.error = action.payload;
+        state.shoppingCartWithProducts.data = [];
       })
       .addCase(updatequantity.fulfilled, (state, action: any) => {
         const updatedItem = action.payload;
@@ -115,7 +116,6 @@ const shoppingCartSlice = createSlice({
         state.createshoppingCart.loading = false;
         state.createshoppingCart.error = action.payload;
       })
-
 
       .addCase(removefromshoppingCart.rejected, (state, action) => {
         state.createshoppingCart.loading = false;
