@@ -15,11 +15,12 @@ import { UpdatePaymentDto } from './dto/update-payment.dto';
 export class PaymentController {
   constructor(private readonly paymentService: PaymentService) {}
 
-  @Post()
+  
+/*   @Post()
   async create(@Body() createPaymentDto: CreatePaymentDto) {
     const payment = await this.paymentService.create(createPaymentDto);
     return payment;
-  }
+  } */
 
   @Get()
   async findAll() {
