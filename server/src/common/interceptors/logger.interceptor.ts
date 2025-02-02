@@ -13,25 +13,58 @@ export class LoggerInterceptor implements NestInterceptor {
   private readonly logger = new Logger(LoggerInterceptor.name);
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    const request = context.switchToHttp().getRequest();
-    const method = request.method;
-    const url = request.url;
-    const body = request.body;
-    const query = request.query;
-    const headers = request.headers;
-    this.logger.log(
-      `${method} ${url} - Request Body: ${JSON.stringify(body)} - Query: ${JSON.stringify(query)} - Headers: ${JSON.stringify(headers)}`,
-    );
+    const httpContext = context.switchToHttp();
+    const request = httpContext.getRequest();
+    const response = httpContext.getResponse();
 
-    const now = Date.now();
+    const { method, url, body, query, headers } = request;
+
+    // Log request details
+    this.logRequest(method, url, body, query, headers);
+
+    const startTime = Date.now();
 
     return next.handle().pipe(
       tap(() => {
-        const response = context.switchToHttp().getResponse();
-        const statusCode = response.statusCode;
-        const elapsedTime = Date.now() - now;
-        this.logger.log(`${method} ${url} ${statusCode} - ${elapsedTime}ms`);
+        const elapsedTime = Date.now() - startTime;
+        this.logResponse(method, url, response.statusCode, elapsedTime);
       }),
     );
+  }
+
+  private logRequest(
+    method: string,
+    url: string,
+    body: any,
+    query: any,
+    headers: any,
+  ) {
+    const logMessage = `
+      Request:
+      - Method: ${method}
+      - URL: ${url}
+      - Body: ${JSON.stringify(body)}
+      - Query: ${JSON.stringify(query)}
+      - Headers: ${JSON.stringify(headers)}
+    `;
+
+    this.logger.log(logMessage);
+  }
+
+  private logResponse(
+    method: string,
+    url: string,
+    statusCode: number,
+    elapsedTime: number,
+  ) {
+    const logMessage = `
+      Response:
+      - Method: ${method}
+      - URL: ${url}
+      - Status Code: ${statusCode}
+      - Time Taken: ${elapsedTime}ms
+    `;
+
+    this.logger.log(logMessage);
   }
 }
