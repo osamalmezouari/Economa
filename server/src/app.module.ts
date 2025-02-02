@@ -16,7 +16,7 @@ import { PaymentModule } from './resources/billing/payment/payment.module';
 import { GalleryModule } from './resources/media/gallery/gallery.module';
 import { CouponModule } from './resources/billing/coupon/coupon.module';
 import { CategoryModule } from './resources/core/category/category.module';
-import { RefillbalancerequestModule } from './resources/billing/refillbalancerequest/balance.module';
+import { BalanceModule } from './resources/billing/balance/balance.module';
 
 @Module({
   imports: [
@@ -38,7 +38,7 @@ import { RefillbalancerequestModule } from './resources/billing/refillbalancereq
     GalleryModule,
     CouponModule,
     CategoryModule,
-    RefillbalancerequestModule,
+    BalanceModule,
   ],
   controllers: [],
   providers: [],
