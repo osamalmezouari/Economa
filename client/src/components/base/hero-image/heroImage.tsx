@@ -1,6 +1,5 @@
 import { KeyboardDoubleArrowRight } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
-import { Image_bg_hero } from '../../../mock/constants';
 import { useRouter } from '@tanstack/react-router';
 const HeroImage = () => {
   const router = useRouter();
@@ -11,7 +10,7 @@ const HeroImage = () => {
           'rounded bg-cover mt-10 bg-center max-w-[1300px] h-[600px] m-auto grid grid-cols-2  p-4 sm:px-24 sm:pt-4'
         }
         component={'div'}
-        style={{ backgroundImage: `url(${Image_bg_hero.src})` }}
+        style={{ backgroundImage: `url(/assets/images/hero-bg-1.jpg)` }}
       >
         <Box className=" row-start-2 md:col-span-1 col-span-2 ">
           <Typography
@@ -32,7 +31,7 @@ const HeroImage = () => {
             color="secondary"
             endIcon={<KeyboardDoubleArrowRight />}
             className="text-white top-8 h-12  hover:bg-primary-main"
-            onClick={() => router.navigate({ to:'/Economa/Store' })}
+            onClick={() => router.navigate({ to: '/Economa/Store' })}
           >
             Shop Now
           </Button>
