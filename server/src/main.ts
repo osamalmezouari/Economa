@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { ConsoleLogger, ValidationPipe } from '@nestjs/common';
 import { GLOBAL_EXCEPTION_Filter } from './common/filters/GLOBAL_EXCEPTION.filter';
 import { LoggerInterceptor } from './common/interceptors/logger.interceptor';
 
