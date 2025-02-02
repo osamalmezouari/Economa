@@ -153,8 +153,6 @@ model Order {
   userId          String
   couponId        String?
   status          String
-  shippingAddress String
-  billingAddress  String?
   totalAmount     Float
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
