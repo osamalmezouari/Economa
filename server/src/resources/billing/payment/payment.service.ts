@@ -4,17 +4,31 @@ import { CreatePaymentDto } from './dto/create-payment.dto';
 import { UpdatePaymentDto } from './dto/update-payment.dto';
 import { PAYMENT_NOT_FOUND_Exception } from '../../../common/exceptions/PAYMENT_NOT_FOUND.exception';
 import { v4 as uuid } from 'uuid';
+import { BalanceService } from '../balance/balance.service';
+import { PayOrderDto } from './dto/payOrder.dto';
 
 @Injectable()
 export class PaymentService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+  ) {}
 
-  async create(createPaymentDto: CreatePaymentDto) {
+  async payOrder(payOrderData: PayOrderDto) {
+    return await this.prisma.payment.create({
+      data: {
+        id: uuid(),
+        amount: payOrderData.amount,
+        orderId: payOrderData.orderId,
+      },
+    });
+  }
+
+  /*   async create(createPaymentDto: CreatePaymentDto) {
     const payment = await this.prisma.payment.create({
       data: { id: uuid(), ...createPaymentDto },
     });
     return payment;
-  }
+  } */
 
   async findAll() {
     const payment = await this.prisma.payment.findMany();
