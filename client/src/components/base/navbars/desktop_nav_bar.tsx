@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   InputAdornment,
@@ -20,6 +19,7 @@ import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
 import { FaBasketShopping, FaWallet } from 'react-icons/fa6';
+import Logo from '../../icons/logo';
 
 const Desktop_nav_bar = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -32,20 +32,18 @@ const Desktop_nav_bar = () => {
     <>
       <Stack className={'border-b-2 bg-gray'}>
         <Container style={{ maxWidth: '1300px' }}>
-          <Grid container spacing={2} className={'px-8 items-center'}>
+          <Grid
+            container
+            spacing={2}
+            className={' items-center justify-between h-24'}
+          >
             {/* Logo */}
-            <Grid size={2}>
-              <Box
-                component={'img'}
-                src="/assets/images/logo.png"
-                className="w-[140px] h-[140px] scale-[1.5] cursor-pointer"
-                alt="logo"
-                onClick={() => router.navigate({ to: '/Economa' })}
-              />
+            <Grid size={2.5}>
+              <Logo />
             </Grid>
 
             {/* Search Bar */}
-            <Grid size={6}>
+            <Grid size={5.5}>
               <TextField
                 variant="outlined"
                 fullWidth
