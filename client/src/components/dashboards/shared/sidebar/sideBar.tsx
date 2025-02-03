@@ -63,7 +63,7 @@ export default function Sidebar() {
         className={'py-8 h-20'}
       >
         <Link to="/Economa">
-          <Logo className="max-w-[155px]" />
+          <Logo />
         </Link>
       </Box>
 
@@ -108,7 +108,6 @@ export default function Sidebar() {
                           '&:hover': { backgroundColor: 'action.hover' },
                           ...(dropdownActive && {
                             color: 'primary.main',
-                            bgcolor: 'primary.light',
                           }),
                         }}
                       >
@@ -202,7 +201,6 @@ export default function Sidebar() {
                         '&:hover': { backgroundColor: 'action.hover' },
                         ...(isActive(item.href) && {
                           color: 'primary.main',
-                          bgcolor: 'primary.light',
                         }),
                       }}
                     >
