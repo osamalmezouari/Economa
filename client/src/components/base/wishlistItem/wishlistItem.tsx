@@ -56,7 +56,7 @@ const WishlistItem = ({
           await dispatch(getWishlist());
         }}
       >
-        <RemoveCircleSharp className="w-16 h-16 cursor-pointer text-secondary-main transition-all duration-1000 ease-in-out hover:text-red-400 font" />
+        <RemoveCircleSharp className="w-6 h-6 cursor-pointer text-secondary-main transition-all duration-1000 ease-in-out hover:text-red-400 font" />
       </button>
     </Box>
   );
