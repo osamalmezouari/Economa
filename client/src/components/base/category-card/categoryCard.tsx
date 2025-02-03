@@ -22,7 +22,7 @@ const CategoryCardSingle = ({
       style={{ backgroundColor: `${randomColor}` }}
       
     >
-      <Card className="w-[160px]   bg-secondary-darker">
+      <Card className="w-[160px]">
         <Box
           component={'div'}
           className="p-4 text-center grid justify-center gap-y-1"
