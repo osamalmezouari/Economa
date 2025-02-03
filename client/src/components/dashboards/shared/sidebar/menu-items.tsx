@@ -1,5 +1,7 @@
 import { routes } from './../../../../mock/routes';
 import { DUMMY_ID } from '../../../../mock/constants';
+
+
 import {
   PiShoppingCartDuotone,
   PiHeadsetDuotone,
@@ -44,34 +46,17 @@ import {
 export const menuItems = [
   // label start
   {
-    name: 'Home',
-  },
-  // label end
-  {
-    name: 'File Manager',
-    href: '/',
-    // href: routes.file.dashboard,
-    icon: <PiFileImageDuotone />,
+    name: 'Overview',
   },
   {
-    name: 'Logistics',
-    href: routes.logistics.dashboard,
-    icon: <PiPackageDuotone />,
-  },
-  {
-    name: 'E-Commerce',
-    href: routes.eCommerce.dashboard,
-    icon: <PiShoppingCartDuotone />,
-  },
-  {
-    name: 'Analytics',
-    href: routes.analytics,
+    name: 'Store Analytics',
+    href: '/Economa/Admin/Dashboard',
     icon: <PiChartBarDuotone />,
   },
   {
-    name: 'Support',
+    name: 'Refill Insights',
     href: routes.support.dashboard,
-    icon: <PiHeadsetDuotone />,
+    icon: <PiCreditCardDuotone />,
   },
 
   // label start
