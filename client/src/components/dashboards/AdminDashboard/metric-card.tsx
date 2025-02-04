@@ -1,8 +1,3 @@
-import {
-  PiBankDuotone,
-  PiChartPieSliceDuotone,
-  PiGiftDuotone,
-} from 'react-icons/pi';
 import cn from '../../../utils/class-names';
 import { Typography } from '@mui/material';
 
@@ -18,7 +13,7 @@ const metricCardClasses = {
 
 type MetricCardTypes = {
   title: string;
-  metric: React.ReactNode;
+  metric: number;
   icon?: React.ReactNode;
   iconClassName?: string;
   contentClassName?: string;
@@ -43,6 +38,7 @@ export default function MetricCard({
   titleClassName,
   metricClassName,
   chartClassName,
+  icon,
   children,
 }: React.PropsWithChildren<MetricCardTypes>) {
   return (
@@ -53,50 +49,29 @@ export default function MetricCard({
         className
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <div className="flex items-center">
-          {title === 'New Orders' && (
+          {title && icon && (
             <div
               className={cn(
                 'flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 lg:h-12 lg:w-12',
                 iconClassName
               )}
             >
-              {<PiGiftDuotone className="h-6 w-6" />}
+              {icon}
             </div>
           )}
-          {title === 'Sales' && (
-            <div
-              className={cn(
-                'flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 lg:h-12 lg:w-12',
-                iconClassName
-              )}
-            >
-              {<PiChartPieSliceDuotone className="h-6 w-6" />}
-            </div>
-          )}
-          {title === 'Revenue' && (
-            <div
-              className={cn(
-                'flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 lg:h-12 lg:w-12',
-                iconClassName
-              )}
-            >
-              {<PiBankDuotone className="h-6 w-6" />}
-            </div>
-          )}
-
           <div className={cn('ps-3', contentClassName)}>
             <Typography className={cn('mb-0.5 text-gray-500', titleClassName)}>
               {title}
             </Typography>
             <Typography
               className={cn(
-                'font-lexend text-lg font-semibold text-gray-900 2xl:xl:text-xl',
+                'text-lg font-semibold text-gray-900 2xl:xl:text-xl font-Inria',
                 metricClassName
               )}
             >
-              {metric}
+              ${metric}
             </Typography>
 
             {info ? info : null}
