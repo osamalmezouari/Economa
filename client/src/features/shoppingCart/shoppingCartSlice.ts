@@ -38,7 +38,7 @@ const shoppingCartSlice = createSlice({
   initialState,
   reducers: {
     setTotalPrice: (state) => {
-      state.totalPrice = state.basePrice + state.vat;
+      state.totalPrice = state.basePrice;
     },
     setvat: (state) => {
       state.vat = state.basePrice * 0.2;
@@ -76,7 +76,7 @@ const shoppingCartSlice = createSlice({
           0
         );
         state.vat = state.basePrice * 0.2;
-        state.totalPrice = state.basePrice + state.vat;
+        state.totalPrice = state.basePrice;
       })
       .addCase(getshoppingCart.rejected, (state, action) => {
         state.shoppingCartWithProducts.loading = false;
@@ -98,7 +98,7 @@ const shoppingCartSlice = createSlice({
           0
         );
         state.vat = state.basePrice * 0.2;
-        state.totalPrice = state.basePrice + state.vat;
+        state.totalPrice = state.basePrice;
       })
 
       .addCase(createshoppingCart.pending, (state) => {
