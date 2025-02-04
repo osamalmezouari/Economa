@@ -9,6 +9,7 @@ import { UserReducer } from '../features/user/userSlice';
 import { balanceReducer } from '../features/balance/balanceSilce';
 import { CouponReducer } from '../features/coupon/couponSlice';
 import { OrderReducer } from '../features/order/orderSlice';
+import { StoreAnalyticsReducer } from '../features/StoreAnalytics/StoreAnalyticsSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
@@ -21,5 +22,6 @@ const rootReducer = combineReducers({
   balance: balanceReducer,
   coupon: CouponReducer,
   order: OrderReducer,
+  StoreAnalytics: StoreAnalyticsReducer,
 });
 export default rootReducer;
