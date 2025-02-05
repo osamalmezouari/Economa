@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality." />
+    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/base/hero-image/heroImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/base/hero-image/heroImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/dashboards/shared/header/header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mock/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mock/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/__root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/types/coupon.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/coupon.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/interceptors/logger.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/interceptors/logger.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/coupon/coupon.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/balance.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/balance.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/balance.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/refillbalancerequest/dto/create-refillbalancerequest.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/orders.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/orders.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/shopping-cart/shopping-cart.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,6 +139,7 @@
       <workItem from="1735930417662" duration="4308000" />
       <workItem from="1737637509462" duration="26000" />
       <workItem from="1738063116185" duration="25000" />
+      <workItem from="1738457941109" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
       <option name="closed" value="true" />
