@@ -101,7 +101,7 @@ export default function ProductCard({
             className="w-[26px] h-[26px] border-2 flex justify-center items-center  text-secondary-main hover:bg-primary-main hover:text-white cursor-pointer rounded transition-all duration-300 hover:border-transparent"
           >
             {loading ? (
-              <CircularProgress size={8} className="h-max" color="primary" />
+              <CircularProgress size={8} className="h-max" color="inherit" />
             ) : (
               <IoBagAdd
                 fontSize={16}
