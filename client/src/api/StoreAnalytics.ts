@@ -8,6 +8,18 @@ export const getCardStats = async () => {
     if (error.response) {
       throw error.response.data;
     }
-    throw new Error('Failed Apply Coupon');
+    throw new Error('Failed to fetch analytics');
+  }
+};
+
+export const getSalesXProfit = async (year? : number) => {
+  try {
+    const response = await apiClient.get(`/analytics/store/SalesXProfit?year=${year}`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch analytics');
   }
 };
