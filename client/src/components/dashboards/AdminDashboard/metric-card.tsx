@@ -41,6 +41,7 @@ export default function MetricCard({
   icon,
   children,
 }: React.PropsWithChildren<MetricCardTypes>) {
+
   return (
     <div
       className={cn(
@@ -51,7 +52,6 @@ export default function MetricCard({
     >
       <div className="flex items-center justify-between ">
         <div className="flex items-center">
-          {title && icon && (
             <div
               className={cn(
                 'flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 lg:h-12 lg:w-12',
@@ -60,7 +60,6 @@ export default function MetricCard({
             >
               {icon}
             </div>
-          )}
           <div className={cn('ps-3', contentClassName)}>
             <Typography className={cn('mb-0.5 text-gray-500', titleClassName)}>
               {title}
@@ -71,7 +70,7 @@ export default function MetricCard({
                 metricClassName
               )}
             >
-              ${metric}
+              {title === 'New Orders' ? metric :"$"+ metric}
             </Typography>
 
             {info ? info : null}
