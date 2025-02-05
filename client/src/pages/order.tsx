@@ -1,7 +1,7 @@
 import { Box, Grid, Dialog, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import OrderValidationForm from '../layouts/order/orderValidationForm';
-import OrderSummary from '../layouts/order/orderSummary';
+import OrderValidationForm from '../widgets/orderValidationForm';
+import OrderSummary from '../widgets/orderSummary';
 import { AppDispatch, RootState } from '../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import QRCodeGenerator from '../components/base/QrCodeGen/QRCodeGenerator';
@@ -19,7 +19,7 @@ const Order = () => {
   const [openQrDialog, setOpenQrDialog] = useState(false);
 
   const handleCloseQrDialog = async () => {
-    router.navigate({ to:'/Economa/Store' });
+    router.navigate({ to: '/Economa/Store' });
     dispatch(clearOrderId());
     setOpenQrDialog(false);
     await dispatch(getshoppingCart());
