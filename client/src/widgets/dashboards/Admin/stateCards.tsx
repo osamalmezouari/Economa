@@ -1,13 +1,13 @@
 import MetricCard from '../../../components/dashboards/AdminDashboard/metric-card';
 import cn from '../../../utils/class-names';
 import {
-  PiCaretDoubleUpDuotone,
-  PiCaretDoubleDownDuotone,
-  PiGiftDuotone,
-  PiChartPieSliceDuotone,
   PiBankDuotone,
+  PiCaretDoubleDownDuotone,
+  PiCaretDoubleUpDuotone,
+  PiChartPieSliceDuotone,
+  PiGiftDuotone,
 } from 'react-icons/pi';
-import { BarChart, Bar, ResponsiveContainer } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer } from 'recharts';
 import { Box, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
@@ -15,155 +15,9 @@ import { useEffect } from 'react';
 import { getCardsStats } from '../../../features/StoreAnalytics/StoreAnalyticsThunk';
 import { BiMinus } from 'react-icons/bi';
 
-/* const orderData = [
-  {
-    day: 'Sunday',
-    sale: 4000,
-    cost: 2400,
-  },
-  {
-    day: 'Monday',
-    sale: 3000,
-    cost: 1398,
-  },
-  {
-    day: 'Tuesday',
-    sale: 2000,
-    cost: 9800,
-  },
-  {
-    day: 'Wednesday',
-    sale: 2780,
-    cost: 3908,
-  },
-  {
-    day: 'Thursday',
-    sale: 1890,
-    cost: 4800,
-  },
-  {
-    day: 'Friday',
-    sale: 2390,
-    cost: 3800,
-  },
-  {
-    day: 'Saturday',
-    sale: 3490,
-    cost: 4300,
-  },
-];
-
-const salesData = [
-  {
-    day: 'Sunday',
-    sale: 2000,
-    cost: 2400,
-  },
-  {
-    day: 'Monday',
-    sale: 3000,
-    cost: 1398,
-  },
-  {
-    day: 'Tuesday',
-    sale: 2000,
-    cost: 9800,
-  },
-  {
-    day: 'Wednesday',
-    sale: 2780,
-    cost: 3908,
-  },
-  {
-    day: 'Thursday',
-    sale: 1890,
-    cost: 4800,
-  },
-  {
-    day: 'Friday',
-    sale: 2390,
-    cost: 3800,
-  },
-  {
-    day: 'Saturday',
-    sale: 3490,
-    cost: 4300,
-  },
-];
-
-const revenueData = [
-  {
-    day: 'Sunday',
-    sale: 2000,
-  },
-  {
-    day: 'Monday',
-    sale: 2800,
-  },
-  {
-    day: 'Tuesday',
-    sale: 3500,
-  },
-  {
-    day: 'Wednesday',
-    sale: 2780,
-  },
-  {
-    day: 'Thursday',
-    sale: 1890,
-  },
-  {
-    day: 'Friday',
-    sale: 2390,
-  },
-  {
-    day: 'Saturday',
-    sale: 500,
-  },
-];
- */
-/* const eComDashboardStatData = [
-  {
-    id: '1',
-    title: 'New Orders',
-    metric: 0,
-    increased: true,
-    decreased: false,
-    percentage: 0,
-    style: 'text-[#3872FA]',
-    fill: '#3872FA',
-    chart: [],
-    icon: ,
-  },
-  {
-    id: '2',
-    title: 'Sales',
-    metric: 0,
-    increased: false,
-    decreased: true,
-    percentage: 0,
-    style: 'text-[#10b981]',
-    fill: '#10b981',
-    chart: [],
-    icon: <PiChartPieSliceDuotone className="h-6 w-6" />,
-  },
-  {
-    id: '3',
-    title: 'Profit',
-    metric: 0,
-    increased: true,
-    decreased: false,
-    percentage: 0,
-    style: 'text-[#7928ca]',
-    fill: '#7928ca',
-    chart: [],
-    icon: <PiBankDuotone className="h-6 w-6" />,
-  },
-];
- */
 export default function StatCards({ className }: { className?: string }) {
   const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error } = useSelector(
+  const { data } = useSelector(
     (state: RootState) => state.StoreAnalytics.stateCards
   );
   const { orderStats, ProfitStats, SalesStats } = data;
@@ -171,9 +25,9 @@ export default function StatCards({ className }: { className?: string }) {
     dispatch(getCardsStats());
   }, [dispatch]);
 
-  if (loading) {
+  /*if (loading) {
     return <>loading...</>;
-  }
+  }*/
 
   return (
     <Box
