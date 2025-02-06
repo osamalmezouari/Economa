@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   getCardsStats,
+  getCostXProfitLastWeek,
   getsalesXProfit,
-  getsalesXProfitLastWeek,
 } from './StoreAnalyticsThunk';
 import { storeAnalyticsState } from '../../types/storeAnalytics';
 
@@ -43,7 +43,7 @@ const initialState: storeAnalyticsState = {
     loading: false,
     error: null,
   },
-  SalesXProfitLastWeek: {
+  CostXProfitLastWeek: {
     data: [],
     loading: false,
     error: null,
@@ -80,17 +80,17 @@ const StoreAnalyticsSlice = createSlice({
           (state.SalesXProfit.error = action.payload);
       })
 
-      .addCase(getsalesXProfitLastWeek.pending, (state) => {
-        (state.SalesXProfitLastWeek.loading = true),
-          (state.SalesXProfitLastWeek.error = null);
+      .addCase(getCostXProfitLastWeek.pending, (state) => {
+        (state.CostXProfitLastWeek.loading = true),
+          (state.CostXProfitLastWeek.error = null);
       })
-      .addCase(getsalesXProfitLastWeek.fulfilled, (state, action) => {
-        (state.SalesXProfitLastWeek.loading = false),
-          (state.SalesXProfitLastWeek.data = action.payload);
+      .addCase(getCostXProfitLastWeek.fulfilled, (state, action) => {
+        (state.CostXProfitLastWeek.loading = false),
+          (state.CostXProfitLastWeek.data = action.payload);
       })
-      .addCase(getsalesXProfitLastWeek.rejected, (state, action) => {
-        (state.SalesXProfitLastWeek.loading = false),
-          (state.SalesXProfitLastWeek.error = action.payload);
+      .addCase(getCostXProfitLastWeek.rejected, (state, action) => {
+        (state.CostXProfitLastWeek.loading = false),
+          (state.CostXProfitLastWeek.error = action.payload);
       });
   },
 });
