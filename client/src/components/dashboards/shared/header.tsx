@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Box
       className={
-        'sticky flex justify-between px-8 py-8 bg-gray-0/80 z-50 w-full h-20 bg-opacity-20 items-center  backdrop-blur-xl '
+        'solid flex justify-between px-8 py-8 bg-gray-0/80 z-50 w-full h-20 bg-opacity-20 items-center  backdrop-blur '
       }
     >
       <Box className={'w-4/12 hover:pt-[1px]'}>
