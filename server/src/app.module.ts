@@ -17,6 +17,7 @@ import { GalleryModule } from './resources/media/gallery/gallery.module';
 import { CouponModule } from './resources/billing/coupon/coupon.module';
 import { CategoryModule } from './resources/core/category/category.module';
 import { BalanceModule } from './resources/billing/balance/balance.module';
+import { AnalyticsModule } from './resources/core/analytics/analytics.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { BalanceModule } from './resources/billing/balance/balance.module';
     CouponModule,
     CategoryModule,
     BalanceModule,
+    AnalyticsModule,
   ],
   controllers: [],
   providers: [],
