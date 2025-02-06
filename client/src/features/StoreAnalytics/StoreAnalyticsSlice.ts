@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCardsStats, getsalesXProfit } from './StoreAnalyticsThunk';
+import {
+  getCardsStats,
+  getsalesXProfit,
+  getsalesXProfitLastWeek,
+} from './StoreAnalyticsThunk';
 import { storeAnalyticsState } from '../../types/storeAnalytics';
 
 const initialState: storeAnalyticsState = {
@@ -39,6 +43,11 @@ const initialState: storeAnalyticsState = {
     loading: false,
     error: null,
   },
+  SalesXProfitLastWeek: {
+    data: [],
+    loading: false,
+    error: null,
+  },
 };
 
 const StoreAnalyticsSlice = createSlice({
@@ -69,6 +78,19 @@ const StoreAnalyticsSlice = createSlice({
       .addCase(getsalesXProfit.rejected, (state, action) => {
         (state.SalesXProfit.loading = false),
           (state.SalesXProfit.error = action.payload);
+      })
+
+      .addCase(getsalesXProfitLastWeek.pending, (state) => {
+        (state.SalesXProfitLastWeek.loading = true),
+          (state.SalesXProfitLastWeek.error = null);
+      })
+      .addCase(getsalesXProfitLastWeek.fulfilled, (state, action) => {
+        (state.SalesXProfitLastWeek.loading = false),
+          (state.SalesXProfitLastWeek.data = action.payload);
+      })
+      .addCase(getsalesXProfitLastWeek.rejected, (state, action) => {
+        (state.SalesXProfitLastWeek.loading = false),
+          (state.SalesXProfitLastWeek.error = action.payload);
       });
   },
 });
