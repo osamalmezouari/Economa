@@ -9,9 +9,7 @@ import { PayOrderDto } from './dto/payOrder.dto';
 
 @Injectable()
 export class PaymentService {
-  constructor(
-    private readonly prisma: PrismaService,
-  ) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async payOrder(payOrderData: PayOrderDto) {
     return await this.prisma.payment.create({
