@@ -1,47 +1,54 @@
 import { routes } from './../../../../mock/routes';
 import { DUMMY_ID } from '../../../../mock/constants';
 
-
 import {
-  PiShoppingCartDuotone,
-  PiHeadsetDuotone,
-  PiPackageDuotone,
-  PiChartBarDuotone,
-  PiFileImageDuotone,
-  PiCurrencyDollarDuotone,
-  PiSquaresFourDuotone,
-  PiGridFourDuotone,
-  PiFeatherDuotone,
-  PiChartLineUpDuotone,
-  // PiImageDuotone,
-  PiMapPinLineDuotone,
-  PiUserGearDuotone,
   PiBellSimpleRingingDuotone,
-  PiUserDuotone,
-  PiEnvelopeSimpleOpenDuotone,
-  PiStepsDuotone,
-  PiCreditCardDuotone,
-  PiStackDuotone,
-  PiTableDuotone,
-  PiBrowserDuotone,
-  PiBoundingBoxDuotone,
-  PiHourglassSimpleDuotone,
-  PiUserCircleDuotone,
-  PiShootingStarDuotone,
-  PiRocketLaunchDuotone,
-  PiFolderLockDuotone,
   PiBinocularsDuotone,
-  PiHammerDuotone,
-  PiNoteBlankDuotone,
-  PiUserPlusDuotone,
-  PiShieldCheckDuotone,
-  PiLockKeyDuotone,
-  PiChatCenteredDotsDuotone,
-  PiMagicWandDuotone,
+  PiBoundingBoxDuotone,
+  PiBrowserDuotone,
   PiCalendarPlusDuotone,
+  PiChartBarDuotone,
+  PiChartLineUpDuotone,
+  PiChatCenteredDotsDuotone,
+  PiCreditCardDuotone,
+  PiCurrencyDollarDuotone,
   PiEnvelopeDuotone,
+  PiEnvelopeSimpleOpenDuotone,
+  PiFeatherDuotone,
+  PiFileImageDuotone,
+  PiFolderLockDuotone,
+  PiGridFourDuotone,
+  PiHammerDuotone,
+  PiHeadsetDuotone,
+  PiHourglassSimpleDuotone,
+  PiLockKeyDuotone,
+  PiMagicWandDuotone,
+  PiMapPinLineDuotone,
+  PiNoteBlankDuotone,
+  PiPackageDuotone,
+  PiRocketLaunchDuotone,
+  PiShieldCheckDuotone,
+  PiShootingStarDuotone,
+  PiShoppingCartDuotone,
+  PiSquaresFourDuotone,
+  PiStackDuotone,
+  PiStepsDuotone,
+  PiTableDuotone,
+  PiUserCircleDuotone,
+  PiUserDuotone,
+  PiUserGearDuotone,
+  PiUserPlusDuotone,
 } from 'react-icons/pi';
 
+export interface MenuItemType {
+  name: string;
+  icon?: React.ReactNode;
+  herf?: string;
+  dropdownItems?: {
+    name: string;
+    icon?: React.ReactNode;
+  }[];
+}
 // Note: do not add href in the label object, it is rendering as label
 export const menuItems = [
   // label start
