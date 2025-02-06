@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react';
 import {
-  Card,
-  CardHeader,
-  CardContent,
   Badge,
-  Typography,
-  useTheme,
-  useMediaQuery,
   Box,
+  Card,
+  CardContent,
+  CardHeader,
   styled,
+  Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import {
+  Area,
   Bar,
+  CartesianGrid,
+  ComposedChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Area,
-  ComposedChart,
 } from 'recharts';
 import { CustomYAxisTick } from '../../../components/base/charts/custom-yaxis-tick';
 import { RoundedBottomBar } from '../../../components/base/charts/rounded-bottombar';
@@ -29,6 +29,7 @@ import { AppDispatch, RootState } from '../../../app/store';
 import { getsalesXProfit } from '../../../features/StoreAnalytics/StoreAnalyticsThunk';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import cn from '../../../utils/class-names';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   '& .recharts-tooltip-cursor': {
@@ -54,18 +55,20 @@ export default function SalesXProfit({ className }: { className?: string }) {
     new Date().getFullYear()
   );
   const dispatch = useDispatch<AppDispatch>();
-  const { data, error, loading } = useSelector(
+  const { data } = useSelector(
     (state: RootState) => state.StoreAnalytics.SalesXProfit
   );
   useEffect(() => {
     dispatch(getsalesXProfit(selectedYear));
   }, [dispatch, selectedYear]);
 
-  if (loading) {
+  /*if (loading) {
     return <>loading ...</>;
-  }
+  }*/
   return (
-    <StyledCard className={'shadow-none border-[1px] rounded-[5px] mt-6'} >
+    <StyledCard
+      className={cn('shadow-none border-[1px] rounded-[5px] mt-6', className)}
+    >
       <CardHeader
         title="Sales Report"
         titleTypographyProps={{ variant: 'h5', letterSpacing: '2px' }}
