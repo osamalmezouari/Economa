@@ -1,5 +1,4 @@
 import { Avatar, Badge, Box, IconButton } from '@mui/material';
-import { useRouter } from '@tanstack/react-router';
 import RingBellSolidIcon from '../../icons/ring-bell-solid';
 import ChatSolidIcon from '../../icons/chat-solid';
 import ScanQrCode from '../../icons/scanqrcode';
@@ -7,13 +6,11 @@ import LanguageSwitcherIcon from '../../icons/langugaeSwitcher';
 import { PiCommand, PiMagnifyingGlassBold } from 'react-icons/pi';
 
 const Header = () => {
+  /*
   const router = useRouter();
+*/
   return (
-    <Box
-      className={
-        'solid flex justify-between px-8 py-8 bg-gray-0/80 z-50 w-full h-20 bg-opacity-20 items-center  backdrop-blur '
-      }
-    >
+    <Box className="fixed top-0 flex justify-between px-8 py-8 bg-gray-0/80 z-50 w-[calc(100%-290px)] h-20 bg-opacity-20 items-center backdrop-blur">
       <Box className={'w-4/12 hover:pt-[1px]'}>
         <button
           /*   onClick={() => setOpen(true)} */
