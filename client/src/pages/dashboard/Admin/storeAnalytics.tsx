@@ -5,6 +5,7 @@ import { PiPlusBold } from 'react-icons/pi';
 import HandWaveIcon from '../../../components/icons/hand-wave';
 import StatCards from '../../../widgets/dashboards/Admin/stateCards';
 import SalesXProfit from '../../../widgets/dashboards/Admin/SalesXProfit';
+import SalesXProfitLastWeek from '../../../widgets/dashboards/Admin/SalesXProfitLastWeek';
 
 const StoreAnalytics = () => {
   return (
@@ -46,7 +47,10 @@ const StoreAnalytics = () => {
           <StatCards className="@2xl:grid-cols-3 mt-6 grid-cols-3 @3xl:gap-6 @4xl:col-span-2 @7xl:col-span-8" />
         </Grid>
         <Grid size={12}>
-        <SalesXProfit className="@4xl:col-span-2 @7xl:col-span-8 mt-6" />
+          <SalesXProfit className="@4xl:col-span-2 @7xl:col-span-8 mt-6" />
+        </Grid>
+        <Grid size={7}>
+          <SalesXProfitLastWeek />
         </Grid>
       </Grid>
     </Grid>
