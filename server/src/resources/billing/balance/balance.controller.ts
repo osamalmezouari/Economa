@@ -32,8 +32,6 @@ export class BalanceController {
     );
   }
 
-  
-
   @Get('CardInfo')
   getCardInfo(@activeUser('sub') userId: string) {
     return this.balanceService.getCardInfo(userId);
