@@ -76,7 +76,9 @@ function AdminRoute() {
           flexDirection: 'column',
         }}
       >
-        <Header />
+        <Box>
+          <Header />
+        </Box>
         <Box p={2} flexGrow={1}>
           <Outlet />
         </Box>
