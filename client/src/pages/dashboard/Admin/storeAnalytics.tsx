@@ -5,11 +5,12 @@ import { PiPlusBold } from 'react-icons/pi';
 import HandWaveIcon from '../../../components/icons/hand-wave';
 import StatCards from '../../../widgets/dashboards/Admin/stateCards';
 import SalesXProfit from '../../../widgets/dashboards/Admin/SalesXProfit';
-import SalesXProfitLastWeek from '../../../widgets/dashboards/Admin/SalesXProfitLastWeek';
+import CostXProfitLastWeek from '../../../widgets/dashboards/Admin/CostXProfitLastWeek';
+import CategorySales from '../../../widgets/dashboards/Admin/CategorySales';
 
 const StoreAnalytics = () => {
   return (
-    <Grid container>
+    <Grid container className={'mt-16'}>
       <Grid size={12} className={'px-4'}>
         <WelcomeBanner
           title={
@@ -49,8 +50,14 @@ const StoreAnalytics = () => {
         <Grid size={12}>
           <SalesXProfit className="@4xl:col-span-2 @7xl:col-span-8 mt-6" />
         </Grid>
-        <Grid size={7}>
-          <SalesXProfitLastWeek />
+        <Grid size={12}  container spacing={2}>
+          <Grid size={6}>
+            <CostXProfitLastWeek />
+          </Grid>
+
+          <Grid size={6}>
+            <CategorySales />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
