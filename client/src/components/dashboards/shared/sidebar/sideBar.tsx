@@ -1,20 +1,19 @@
-import { useState, Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import {
+  Box,
+  Collapse,
   Drawer,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Typography,
-  Collapse,
-  Box,
   styled,
+  Typography,
   useTheme,
 } from '@mui/material';
 import { PiCaretDownBold } from 'react-icons/pi';
-import SimpleBar from 'simplebar-react';
-import { menuItems } from './menu-items';
+import { menuItems, MenuItemType } from './menu-items';
 import Logo from '../../../icons/logo';
 
 const SidebarDrawer = styled(Drawer)(({ theme }) => ({
@@ -50,7 +49,7 @@ export default function Sidebar() {
   };
 
   const isActive = (href?: string) => pathname === href;
-  const isDropdownActive = (items?: any[]) =>
+  const isDropdownActive = (items?: never[]) =>
     items?.some((item) => isActive(item.href));
 
   return (
@@ -70,7 +69,7 @@ export default function Sidebar() {
       <div className="h-full group relative overflow-hidden">
         <div className="h-full overflow-hidden group-hover:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 ">
           <List component="nav" sx={{ pt: 2 }}>
-            {menuItems.map((item, index) => {
+            {menuItems.map((item: MenuItemType, index) => {
               const dropdownActive = isDropdownActive(item.dropdownItems);
               const isOpen = openDropdowns[item.name] || dropdownActive;
 
