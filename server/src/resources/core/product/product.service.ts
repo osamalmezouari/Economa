@@ -19,7 +19,6 @@ export class ProductService {
       data: {
         id: uuid(),
         ...createProductDto,
-      
       },
     });
     return product;
@@ -100,7 +99,7 @@ export class ProductService {
 
   async getnewArrivals() {
     const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 2);
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 3);
     const productsWithDiscount = await this.prisma.product.findMany({
       where: {
         created_at: {
@@ -187,7 +186,6 @@ export class ProductService {
             price: true,
             discount: true,
             description: true,
-            stock: true,
             gallery: {
               select: {
                 imageUrl: true,
@@ -210,7 +208,7 @@ export class ProductService {
             },
           },
         });
-
+        const ProductStock = await this.findStockForProduct(productData.id);
         return {
           id: productData.id,
           svgLink: productData.gallery?.[0]?.imageUrl || '',
@@ -222,7 +220,7 @@ export class ProductService {
           price: productData.price,
           weight: productData.Units?.name || 'N/A',
           description: productData.description,
-          stock: productData.stock,
+          stock: ProductStock,
         };
       }),
     );
@@ -371,7 +369,6 @@ export class ProductService {
         price: true,
         description: true,
         discount: true,
-        stock: true,
 
         gallery: {
           select: {
@@ -406,7 +403,7 @@ export class ProductService {
     }, 0);
     const avgRating = totalRating / product.reviews.length;
     const cappedAvgRating = Math.min(avgRating, 5);
-
+    const ProductStock = await this.findStockForProduct(product.id);
     const productWithAvgRating = {
       id: product.id,
       name: product.name,
@@ -421,7 +418,7 @@ export class ProductService {
       unit: product.Units.name,
       imageLink: product.gallery[0]?.imageUrl || '',
       reviewsCount: product.reviews.length,
-      inStock: product.stock > 0,
+      inStock: ProductStock > 0,
     };
     const productDetails = {
       product: {
@@ -495,5 +492,31 @@ export class ProductService {
     await this.findOne(id);
     const product = await this.prisma.product.delete({ where: { id } });
     return product;
+  }
+
+  async findStockForProduct(productId: string) {
+    const result = await this.prisma.stockTransaction.groupBy({
+      by: ['transactionType'],
+      _sum: { quantity: true },
+      where: { productId },
+    });
+
+    // Aggregate stock from transactions
+    let currentStock = 0;
+    for (const entry of result) {
+      const quantity = entry._sum.quantity ?? 0;
+      switch (entry.transactionType) {
+        case 'purchase':
+        case 'return':
+        case 'adjustment':
+          currentStock += quantity;
+          break;
+        case 'sale':
+          currentStock -= quantity;
+          break;
+      }
+    }
+
+    return currentStock;
   }
 }
