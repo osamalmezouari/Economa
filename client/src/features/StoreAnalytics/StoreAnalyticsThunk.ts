@@ -1,5 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getCardStats, getSalesXProfit } from '../../api/StoreAnalytics';
+import {
+  getCardStats,
+  getSalesXProfit,
+  getSalesXProfitLastWeek,
+} from '../../api/StoreAnalytics';
 
 export const getCardsStats = createAsyncThunk(
   'analytics/store/Stats-Cards',
@@ -27,6 +31,21 @@ export const getsalesXProfit = createAsyncThunk(
         return rejectWithValue(error.response.data);
       }
       return rejectWithValue('Failed to fetch sales profit analytics');
+    }
+  }
+);
+
+export const getsalesXProfitLastWeek = createAsyncThunk(
+  'analytics/store/SalesXProfitLastWeek',
+  async (_, { rejectWithValue }) => {
+    try {
+      const SalesXProfitLastWeek = await getSalesXProfitLastWeek();
+      return SalesXProfitLastWeek;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch sales profit last week analytics');
     }
   }
 );
