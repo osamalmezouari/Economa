@@ -8,8 +8,15 @@ import { BalanceModule } from 'src/resources/billing/balance/balance.module';
 import { PaymentModule } from 'src/resources/billing/payment/payment.module';
 
 @Module({
-  imports: [PrismaModule, CouponModule, ShoppingCartModule , BalanceModule , PaymentModule],
+  imports: [
+    PrismaModule,
+    CouponModule,
+    ShoppingCartModule,
+    BalanceModule,
+    PaymentModule,
+  ],
   controllers: [OrdersController],
   providers: [OrdersService],
+  exports: [OrdersService],
 })
 export class OrdersModule {}
