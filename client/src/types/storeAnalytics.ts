@@ -27,10 +27,10 @@ interface SalesXProfitData {
   profit: number;
   expense: number;
 }
-interface SalesXProfitlastweekData {
+interface CostXProfitlastweekData {
   day: string;
+  cost: number;
   profit: number;
-  expense: number;
 }
 
 export interface storeAnalyticsState {
@@ -44,8 +44,8 @@ export interface storeAnalyticsState {
     loading: boolean;
     error: ApiError | null | undefined | unknown;
   };
-  SalesXProfitLastWeek: {
-    data: SalesXProfitlastweekData[];
+  CostXProfitLastWeek: {
+    data: CostXProfitlastweekData[];
     loading: boolean;
     error: ApiError | null | undefined | unknown;
   };
