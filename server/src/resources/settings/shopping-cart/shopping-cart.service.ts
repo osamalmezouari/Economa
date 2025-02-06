@@ -5,6 +5,7 @@ import { UpdateShoppingCartDto } from './dto/update-shopping-cart.dto';
 import { v4 as uuid } from 'uuid';
 import { SHOPPING_CART_NOT_FOUND_Exception } from '../../../common/exceptions/SHOPPING_CART_NOT_FOUND.exception';
 import { SHOPPING_CART_ITEM_EXISST_FOR_USER_Exception } from 'src/common/exceptions/SHOPPING_CART_EXISST_FOR_USER.exception';
+import { SHOPPING_CART_EMPTY_Exception } from 'src/common/exceptions/SHOPPING_CART_EMPTY.exception';
 
 @Injectable()
 export class ShoppingCartService {
@@ -43,8 +44,8 @@ export class ShoppingCartService {
         },
       },
     });
-    if (!(shoppingCarts.length > 0)) {
-      return [];
+    if (!shoppingCarts.length) {
+      throw new SHOPPING_CART_EMPTY_Exception();
     }
     const shoppingCartsWithProduct = shoppingCarts.map((item) => {
       return {
@@ -115,5 +116,13 @@ export class ShoppingCartService {
       where: { id },
     });
     return shoppingCart;
+  }
+
+  async clearshoopingCart(userId: string) {
+    await this.prisma.shoppingCart.deleteMany({
+      where: {
+        userId: userId,
+      },
+    });
   }
 }
