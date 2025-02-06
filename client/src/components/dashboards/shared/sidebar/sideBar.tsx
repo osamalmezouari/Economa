@@ -68,7 +68,7 @@ export default function Sidebar() {
       </Box>
 
       <div className="h-full group relative overflow-hidden">
-        <SimpleBar className="h-full overflow-hidden group-hover:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 ">
+        <div className="h-full overflow-hidden group-hover:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 ">
           <List component="nav" sx={{ pt: 2 }}>
             {menuItems.map((item, index) => {
               const dropdownActive = isDropdownActive(item.dropdownItems);
@@ -232,7 +232,7 @@ export default function Sidebar() {
               );
             })}
           </List>
-        </SimpleBar>
+        </div>
       </div>
     </SidebarDrawer>
   );
