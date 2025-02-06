@@ -24,9 +24,9 @@ export const getSalesXProfit = async (year? : number) => {
   }
 };
 
-export const getSalesXProfitLastWeek = async () => {
+export const getcostXProfitLastWeek = async () => {
   try {
-    const response = await apiClient.get(`/analytics/store/SalesXProfitLastWeek`);
+    const response = await apiClient.get(`/analytics/store/CostXProfitLastWeek`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
