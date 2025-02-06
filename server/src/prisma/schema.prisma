@@ -13,10 +13,15 @@ enum DiscountType {
 }
 
 enum OrderStatus {
-  Pending
+  Paid
   Completed
-  Shipped
-  Cancelled
+}
+
+enum TransactionType {
+  purchase
+  sale
+  return
+  adjustment
 }
 
 model Category {
@@ -50,24 +55,35 @@ model Permission {
 }
 
 model Product {
-  id           String          @id
-  name         String
-  description  String?
-  price        Float
-  stock        Int
-  categoryId   String
-  cost_price   Float
-  discount     Int?
-  category     Category        @relation(fields: [categoryId], references: [id])
-  created_at   DateTime        @default(now())
-  updated_at   DateTime        @updatedAt
-  gallery      Gallery[]
-  orderItems   OrderItem[]
-  reviews      ProductReview[]
-  shoppingCart ShoppingCart[]
-  wishList     Wishlist[]
-  unitId       String
-  Units        Units           @relation(fields: [unitId], references: [id])
+  id               String             @id
+  name             String
+  description      String?
+  price            Float
+  categoryId       String
+  cost_price       Float
+  discount         Int?
+  category         Category           @relation(fields: [categoryId], references: [id])
+  created_at       DateTime           @default(now())
+  updated_at       DateTime           @updatedAt
+  gallery          Gallery[]
+  orderItems       OrderItem[]
+  reviews          ProductReview[]
+  shoppingCart     ShoppingCart[]
+  wishList         Wishlist[]
+  unitId           String
+  Units            Units              @relation(fields: [unitId], references: [id])
+  StockTransaction StockTransaction[]
+}
+
+model StockTransaction {
+  id              Int             @id @default(autoincrement())
+  productId       String
+  transactionType TransactionType
+  quantity        Int
+  unitCost        Decimal?        @db.Decimal(10, 2) // Optional, only for 'purchase' type
+  transactionDate DateTime        @default(now())
+
+  product Product @relation(fields: [productId], references: [id])
 }
 
 model Gallery {
@@ -149,17 +165,17 @@ model Notification {
 }
 
 model Order {
-  id              String      @id
-  userId          String
-  couponId        String?
-  status          String
-  totalAmount     Float
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
-  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  coupon          Coupon?     @relation(fields: [couponId], references: [id], onDelete: SetNull)
-  orderItems      OrderItem[]
-  payment         Payment?
+  id          String      @id
+  userId      String
+  couponId    String?
+  status      String
+  totalAmount Float
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  coupon      Coupon?     @relation(fields: [couponId], references: [id], onDelete: SetNull)
+  orderItems  OrderItem[]
+  payment     Payment?
 }
 
 model OrderItem {
