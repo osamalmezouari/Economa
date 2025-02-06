@@ -10,14 +10,17 @@ import { LoginRoute, RegisterRoute } from './auth';
 import { indexRoute } from './landing';
 import { compareRoute } from './compare';
 import { StoreRoute } from './storerout.tsx';
-import Wishlist from '../components/extra/wishlist/wishlist';
-import ShoppingCart from '../components/extra/shoppingCart/shoopingCart';
+import Wishlist from '../layouts/wishlist.tsx';
+import ShoppingCart from '../layouts/shoopingCart.tsx';
 import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
 import { productdetailsroot } from './productdetailsroot.tsx';
 import { RefillBalanceRequestRoute } from './RefillBalanceRequestRoute.tsx';
 import { OrderRoute } from './placeOrder.tsx';
-import Header from '../components/dashboards/shared/header/header.tsx';
+import Header from '../components/dashboards/shared/header.tsx';
 import { OverviewRoute } from './overviewRoute.tsx';
+import Sidebar from '../components/dashboards/shared/sidebar/sideBar.tsx';
+import { Box } from '@mui/material';
+import { StoreAnalyticsRoute } from './storeAnalytcs.ts';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -57,13 +60,32 @@ export const adminRoute = createRoute({
 
 function AdminRoute() {
   return (
-    <>
-      <Header />
-      <Outlet />
-    </>
+    <Box display="flex" flexDirection="row" height="100vh">
+      <Box
+        sx={{
+          width: '288px', // Sidebar width
+          flexShrink: 0,
+        }}
+      >
+        <Sidebar />
+      </Box>
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Header />
+        <Box p={2} flexGrow={1}>
+          <Outlet />
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
+export default AdminRoute;
 // Create the route tree
 const routeTree = rootRoute.addChildren([
   mainRoute,
@@ -77,6 +99,7 @@ const routeTree = rootRoute.addChildren([
   RefillBalanceRequestRoute,
   OrderRoute,
   OverviewRoute,
+  StoreAnalyticsRoute,
 ]);
 
 // Create the router
