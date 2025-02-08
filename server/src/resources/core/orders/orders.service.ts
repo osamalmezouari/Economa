@@ -504,7 +504,7 @@ export class OrdersService {
     const today = new Date();
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(today.getDate() - 7);
-  
+
     const orderItems = await this.prisma.orderItem.findMany({
       where: {
         order: {
@@ -529,20 +529,20 @@ export class OrdersService {
         },
       },
     });
-  
+
     const financialData: { date: Date; cost: number; profit: number }[] = [];
-  
+
     orderItems.forEach((item) => {
       const itemDate = new Date(item.order.createdAt);
       const dateKey = itemDate.toDateString();
       const existingEntry = financialData.find(
-        (entry) => entry.date.toDateString() === dateKey
+        (entry) => entry.date.toDateString() === dateKey,
       );
-  
+
       const revenue = item.unitPrice * item.quantity;
       const cost = item.product.cost_price * item.quantity;
       const profit = revenue - cost;
-  
+
       if (existingEntry) {
         existingEntry.cost += cost;
         existingEntry.profit += profit;
@@ -550,7 +550,7 @@ export class OrdersService {
         financialData.push({ date: itemDate, cost, profit });
       }
     });
-  
+
     const sortedData = financialData
       .sort((a, b) => a.date.getTime() - b.date.getTime())
       .map((item) => ({
@@ -560,23 +560,22 @@ export class OrdersService {
         cost: item.cost,
         profit: item.profit,
       }));
-  
+
     return sortedData;
   }
-  
 
-  /* async getLastWeekSalesXProfit() {
-    const today = new Date();
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(today.getDate() - 7);
+  async getSalesProfitCategoryData() {
+    const currentYear = new Date().getFullYear();
+    const startDate = new Date(currentYear, 0, 1); // January 1st
+    const endDate = new Date(currentYear, 11, 31, 23, 59, 59); // December 31st
 
-    // Fetch order items for the last 7 days
+    // Fetch order items with product and category data
     const orderItems = await this.prisma.orderItem.findMany({
       where: {
         order: {
           createdAt: {
-            gte: sevenDaysAgo,
-            lte: today,
+            gte: startDate,
+            lte: endDate,
           },
         },
       },
@@ -586,51 +585,153 @@ export class OrdersService {
         product: {
           select: {
             cost_price: true,
-          },
-        },
-        order: {
-          select: {
-            createdAt: true,
+            category: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
           },
         },
       },
     });
 
-    // Aggregate financial data by date
-    const financialData: { date: Date; profit: number; expense: number }[] = [];
+    // Group data by category
+    const categoryData = new Map<
+      string,
+      { category: string; sales: number; profit: number }
+    >();
 
     orderItems.forEach((item) => {
-      const itemDate = new Date(item.order.createdAt);
-      const dateKey = itemDate.toDateString();
-      const existingEntry = financialData.find(
-        (entry) => entry.date.toDateString() === dateKey,
-      );
-
+      const categoryName = item.product.category.name;
       const sales = item.unitPrice * item.quantity;
       const profit = (item.unitPrice - item.product.cost_price) * item.quantity;
 
-      if (existingEntry) {
-        existingEntry.profit += profit;
-        existingEntry.expense += sales;
-      } else {
-        financialData.push({ date: itemDate, profit, expense: sales });
+      if (!categoryData.has(categoryName)) {
+        categoryData.set(categoryName, {
+          category: categoryName,
+          sales: 0,
+          profit: 0,
+        });
       }
+
+      const categoryStat = categoryData.get(categoryName)!;
+      categoryStat.sales += sales;
+      categoryStat.profit += profit;
     });
 
-    // Sort ascending by date and map to return the first letter of the day
-    const sortedData = financialData
-      .sort((a, b) => a.date.getTime() - b.date.getTime())
-      .map((item) => ({
-        day: item.date
-          .toLocaleString('en-US', { weekday: 'long' })
-          .substring(0, 3),
-        profit: item.profit,
-        sales: item.expense,
-      }));
-
-    return sortedData;
+    return Array.from(categoryData.values());
   }
-*/
+
+  /*   async getTopSellingProducts() {
+    const results = await this.prisma.orderItem.groupBy({
+      by: ['productId'],
+      _sum: {
+        unitPrice: true,
+        quantity: true,
+      },
+      orderBy: {
+        _sum: {
+          unitPrice: 'desc',
+        },
+      },
+      take: 5,
+    });
+
+    return Promise.all(
+      results.map(async (item) => {
+        const product = await this.prisma.product.findUnique({
+          where: { id: item.productId },
+          include: {
+            gallery: true,
+          },
+        });
+        return {
+          productId: product.id,
+          productImage: product.gallery[0].imageUrl,
+          productName: product?.name || 'Unknown',
+          totalSales: (item._sum.unitPrice ?? 0) * (item._sum.quantity ?? 0),
+        };
+      }),
+    );
+  } */
+
+  async getTopSellingProducts() {
+    // Fetch all order items to aggregate manually
+    const orderItems = await this.prisma.orderItem.findMany({
+      select: {
+        productId: true,
+        unitPrice: true,
+        quantity: true,
+      },
+    });
+
+    // Aggregate sales data by productId
+    const productSalesMap = orderItems.reduce(
+      (acc, item) => {
+        const { productId, unitPrice, quantity } = item;
+        if (!acc[productId]) {
+          acc[productId] = { productId, totalSales: 0 };
+        }
+        acc[productId].totalSales += (unitPrice ?? 0) * (quantity ?? 0);
+        return acc;
+      },
+      {} as Record<string, { productId: string; totalSales: number }>,
+    );
+
+    // Get the top 5 products by total sales
+    const topProducts = Object.values(productSalesMap)
+      .sort((a, b) => b.totalSales - a.totalSales)
+      .slice(0, 5);
+
+    // Fetch product details for the top products
+    return Promise.all(
+      topProducts.map(async (product) => {
+        const productData = await this.prisma.product.findUnique({
+          where: { id: product.productId },
+          include: { gallery: true },
+        });
+
+        return {
+          productId: product.productId,
+          productImage: productData?.gallery[0]?.imageUrl || 'No Image',
+          productName: productData?.name || 'Unknown',
+          totalSales: product.totalSales,
+        };
+      }),
+    );
+  }
+
+  async getTopCustomers() {
+    const results = await this.prisma.order.groupBy({
+      by: ['userId'],
+      _sum: {
+        totalAmount: true,
+      },
+      orderBy: {
+        _sum: {
+          totalAmount: 'desc',
+        },
+      },
+      take: 5,
+    });
+
+    return Promise.all(
+      results.map(async (item) => {
+        const user = await this.prisma.user.findUnique({
+          where: { id: item.userId },
+        });
+        return {
+          id: user.id,
+          name: user?.name || 'Anonymous',
+          email: user.email,
+          totalSpent: item._sum.totalAmount ?? 0,
+          avatar: user.avatar,
+        };
+      }),
+    );
+  }
+
   private convertToMoroccoTime(date: Date): Date {
     const moroccoTimeZone = 'Africa/Casablanca';
     return toZonedTime(date, moroccoTimeZone); // Use toZonedTime to convert to Morocco time
