@@ -3,6 +3,9 @@ import {
   getCardsStats,
   getCostXProfitLastWeek,
   getsalesXProfit,
+  getSalesXProfitCategory,
+  getTopCostumers,
+  getTopSellingProducts,
 } from './StoreAnalyticsThunk';
 import { storeAnalyticsState } from '../../types/storeAnalytics';
 
@@ -44,6 +47,21 @@ const initialState: storeAnalyticsState = {
     error: null,
   },
   CostXProfitLastWeek: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  SalesXProfitCategory: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  TopCostumers: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  TopSellingProducts: {
     data: [],
     loading: false,
     error: null,
@@ -91,6 +109,44 @@ const StoreAnalyticsSlice = createSlice({
       .addCase(getCostXProfitLastWeek.rejected, (state, action) => {
         (state.CostXProfitLastWeek.loading = false),
           (state.CostXProfitLastWeek.error = action.payload);
+      })
+
+      .addCase(getSalesXProfitCategory.pending, (state) => {
+        (state.SalesXProfitCategory.loading = true),
+          (state.SalesXProfitCategory.error = null);
+      })
+      .addCase(getSalesXProfitCategory.fulfilled, (state, action) => {
+        (state.SalesXProfitCategory.loading = false),
+          (state.SalesXProfitCategory.data = action.payload);
+      })
+      .addCase(getSalesXProfitCategory.rejected, (state, action) => {
+        (state.SalesXProfitCategory.loading = false),
+          (state.SalesXProfitCategory.error = action.payload);
+      })
+
+      .addCase(getTopCostumers.pending, (state) => {
+        (state.TopCostumers.loading = true), (state.TopCostumers.error = null);
+      })
+      .addCase(getTopCostumers.fulfilled, (state, action) => {
+        (state.TopCostumers.loading = false),
+          (state.TopCostumers.data = action.payload);
+      })
+      .addCase(getTopCostumers.rejected, (state, action) => {
+        (state.TopCostumers.loading = false),
+          (state.TopCostumers.error = action.payload);
+      })
+
+      .addCase(getTopSellingProducts.pending, (state) => {
+        (state.TopSellingProducts.loading = true),
+          (state.TopSellingProducts.error = null);
+      })
+      .addCase(getTopSellingProducts.fulfilled, (state, action) => {
+        (state.TopSellingProducts.loading = false),
+          (state.TopSellingProducts.data = action.payload);
+      })
+      .addCase(getTopSellingProducts.rejected, (state, action) => {
+        (state.TopSellingProducts.loading = false),
+          (state.TopSellingProducts.error = action.payload);
       });
   },
 });
