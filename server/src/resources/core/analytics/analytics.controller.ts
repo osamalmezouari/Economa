@@ -19,4 +19,19 @@ export class AnalyticsController {
   async getSalesXProfitLastWeek() {
     return this.analyticsService.CostXProfitLastWeek();
   }
+
+  @Get('store/SalesXProfitCategory')
+  async getSalesXProfitCategory() {
+    return this.analyticsService.getSalesProfitCategory();
+  }
+
+  @Get('store/TopSellingProducts')
+  async getTopSellingProducts() {
+    return this.analyticsService.getTopProducts();
+  }
+
+  @Get('store/TopCostumers')
+  async getTopCostumers() {
+    return this.analyticsService.getTopCostumers();
+  }
 }
