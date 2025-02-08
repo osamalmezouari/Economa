@@ -33,6 +33,25 @@ interface CostXProfitlastweekData {
   profit: number;
 }
 
+export interface SalesXProfitCategory {
+  category: string;
+  sales: number;
+  profit: number;
+}
+export interface TopSellingProducts {
+  productId: string;
+  productName: string;
+  productImage: string;
+  totalSales: number;
+}
+
+export interface TopCostumers {
+  id: string;
+  name: string;
+  email: string;
+  totalSpent: number;
+  avatar : string
+}
 export interface storeAnalyticsState {
   stateCards: {
     data: DashboardStats;
@@ -48,5 +67,21 @@ export interface storeAnalyticsState {
     data: CostXProfitlastweekData[];
     loading: boolean;
     error: ApiError | null | undefined | unknown;
+  };
+  SalesXProfitCategory: {
+    data: SalesXProfitCategory[];
+    loading: boolean;
+    error: null | ApiError | undefined | unknown;
+  };
+
+  TopSellingProducts: {
+    data: TopSellingProducts[];
+    loading: boolean;
+    error: null | ApiError | undefined | unknown;
+  };
+  TopCostumers: {
+    data: TopCostumers[];
+    loading: boolean;
+    error: null | ApiError | undefined | unknown;
   };
 }
