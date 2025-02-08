@@ -21,51 +21,26 @@ import {
   Box,
   Badge,
 } from '@mui/material';
-
-const data = [
-  {
-    category: 'Automotive',
-    sales: 3500,
-    target: 3700,
-  },
-  {
-    category: 'Electronics',
-    sales: 4600,
-    target: 4000,
-  },
-  {
-    category: 'Furniture',
-    sales: 5900,
-    target: 5000,
-  },
-  {
-    category: 'Sports',
-    sales: 5780,
-    target: 6000,
-  },
-  {
-    category: 'Jewelry',
-    sales: 4890,
-    target: 4300,
-  },
-  {
-    category: 'Toys',
-    sales: 8000,
-    target: 6000,
-  },
-  {
-    category: 'Office',
-    sales: 4300,
-    target: 4890,
-  },
-];
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../app/store';
+import { getSalesXProfitCategory } from '../../../features/StoreAnalytics/StoreAnalyticsThunk';
 
 const CategorySales = ({ className }: { className?: string }) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { data } = useSelector(
+    (state: RootState) => state.StoreAnalytics.SalesXProfitCategory
+  );
+  useEffect(() => {
+    dispatch(getSalesXProfitCategory());
+  }, [dispatch]);
+
+  const totalSales = data.reduce((sum, item) => sum + item.sales, 0);
   return (
     <Card
       className={cn(
         className,
-        'p-4 mt-6 rounded-[5px] shadow-none border-[1px] '
+        'p-4 mt-6 rounded-[5px] shadow-none border-[1px] h-[500px] '
       )}
     >
       <CardHeader
@@ -77,14 +52,14 @@ const CategorySales = ({ className }: { className?: string }) => {
               sx={{
                 fontSize: 14,
                 mb: 1.5,
-                mt : 1.5
+                mt: 1.5,
               }}
             >
               Sales By Category
             </Typography>
             <div className="flex items-center justify-between">
               <Typography variant="h3" className="me-2 font-semibold">
-                $83.45k
+                ${totalSales}
               </Typography>
               <Box className={'flex gap-4 mt-2'}>
                 <Box>
@@ -93,8 +68,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                     variant="dot"
                     sx={{
                       '& .MuiBadge-badge': {
-                        backgroundImage:
-                          'linear-gradient(45deg, #fef3c7, #FCB03D, #FCB03D)',
+                        backgroundColor: '#244d68',
                         right: 'auto',
                       },
                     }}
@@ -105,7 +79,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                     className="ml-6 inline"
                     color="text.secondary"
                   >
-                    Cost
+                    Sales
                   </Typography>
                 </Box>
                 <Box>
@@ -114,8 +88,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                     variant="dot"
                     sx={{
                       '& .MuiBadge-badge': {
-                        backgroundImage:
-                          'linear-gradient(45deg, #A5BDEC, #477DFF, #477DFF)',
+                        backgroundColor: '#eab308',
                         right: 'auto',
                       },
                     }}
@@ -216,7 +189,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                     <Cell
                       key={item.category}
                       fill={
-                        item.sales >= item.target
+                        item.sales >= item.sales
                           ? 'url(#aboveTarget)'
                           : 'url(#belowTarget)'
                       }
@@ -225,7 +198,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                 </Bar>
                 <Line
                   stroke="#eab308"
-                  dataKey="target"
+                  dataKey="profit"
                   strokeWidth={2}
                   dot={false}
                 />
