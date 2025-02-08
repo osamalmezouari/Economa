@@ -18,6 +18,7 @@ export class UserService {
       data: {
         id: uuid(),
         roleId: !createUserDto.roleId && role.id,
+        
         ...createUserDto,
       },
     });
