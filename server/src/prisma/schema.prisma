@@ -122,6 +122,7 @@ model User {
   updatedAt            DateTime               @updatedAt
   lastLogin            DateTime?
   roleId               String
+  avatar               String
   role                 Role                   @relation(fields: [roleId], references: [id])
   notifications        Notification[]
   orders               Order[]
