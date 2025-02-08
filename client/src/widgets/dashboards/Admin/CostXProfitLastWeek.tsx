@@ -3,7 +3,6 @@ import {
   Box,
   Card,
   CardContent,
-  Divider,
   Typography,
 } from '@mui/material';
 import {
@@ -41,7 +40,7 @@ export default function CostXProfitLastWeek({
   const totalProfitLastWeek = data.reduce((acc, item) => acc + item.profit, 0);
   return (
     <Card
-      className={cn('p-2 mt-6 rounded-[5px] shadow-none', className)}
+      className={cn('p-2 mt-6 rounded-[5px] shadow-none h-[500px]', className)}
       variant="outlined"
     >
       <CardContent>
