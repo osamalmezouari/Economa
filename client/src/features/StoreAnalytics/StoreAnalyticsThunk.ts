@@ -3,6 +3,9 @@ import {
   getCardStats,
   getcostXProfitLastWeek,
   getSalesXProfit,
+  getsalesXProfitCategory,
+  getTopcostumers,
+  getTopsellingProducts,
 } from '../../api/StoreAnalytics';
 
 export const getCardsStats = createAsyncThunk(
@@ -48,6 +51,53 @@ export const getCostXProfitLastWeek = createAsyncThunk(
       return rejectWithValue(
         'Failed to fetch sales profit last week analytics'
       );
+    }
+  }
+);
+
+export const getSalesXProfitCategory = createAsyncThunk(
+  'analytics/store/SalesXProfitCategory',
+  async (_, { rejectWithValue }) => {
+    try {
+      const SalesXProfitCategory = await getsalesXProfitCategory();
+      return SalesXProfitCategory;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue(
+        'Failed to fetch sales profit last week analytics'
+      );
+    }
+  }
+);
+
+export const getTopSellingProducts = createAsyncThunk(
+  'analytics/store/TopsellingProducts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const TopsellingProducts = await getTopsellingProducts();
+      return TopsellingProducts;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch TopsellingProducts');
+    }
+  }
+);
+
+export const getTopCostumers = createAsyncThunk(
+  'analytics/store/TopCostumers',
+  async (_, { rejectWithValue }) => {
+    try {
+      const Topcostumers = await getTopcostumers();
+      return Topcostumers;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch Topcostumers');
     }
   }
 );
