@@ -43,14 +43,15 @@ import {
 export interface MenuItemType {
   name: string;
   icon?: React.ReactNode;
-  herf?: string;
+  href?: string;
   dropdownItems?: {
     name: string;
     icon?: React.ReactNode;
+    href : string
   }[];
 }
 // Note: do not add href in the label object, it is rendering as label
-export const menuItems = [
+export const menuItems : MenuItemType[] = [
   // label start
   {
     name: 'Overview',
@@ -82,7 +83,7 @@ export const menuItems = [
       },
       {
         name: 'Product Details',
-        herf: '',
+        href: '',
       },
       {
         name: 'Create Product',
