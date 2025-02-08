@@ -51,4 +51,19 @@ export class AnalyticsService {
     const data = await this.orderService.getLastWeekCostXProfit();
     return data;
   }
+
+  async getSalesProfitCategory() {
+    const data = await this.orderService.getSalesProfitCategoryData();
+    return data;
+  }
+
+  async getTopProducts() {
+    const data = await this.orderService.getTopSellingProducts();
+    return data;
+  }
+
+  async getTopCostumers() {
+    const data = await this.orderService.getTopCustomers();
+    return data;
+  }
 }
