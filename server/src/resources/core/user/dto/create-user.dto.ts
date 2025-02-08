@@ -19,4 +19,7 @@ export class CreateUserDto {
   phoneNumber: string;
   @IsString()
   address: string;
+
+  @IsString()
+  avatar : string
 }
