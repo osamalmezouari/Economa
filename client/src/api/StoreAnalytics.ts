@@ -12,9 +12,11 @@ export const getCardStats = async () => {
   }
 };
 
-export const getSalesXProfit = async (year? : number) => {
+export const getSalesXProfit = async (year?: number) => {
   try {
-    const response = await apiClient.get(`/analytics/store/SalesXProfit?year=${year}`);
+    const response = await apiClient.get(
+      `/analytics/store/SalesXProfit?year=${year}`
+    );
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -26,12 +28,52 @@ export const getSalesXProfit = async (year? : number) => {
 
 export const getcostXProfitLastWeek = async () => {
   try {
-    const response = await apiClient.get(`/analytics/store/CostXProfitLastWeek`);
+    const response = await apiClient.get(
+      `/analytics/store/CostXProfitLastWeek`
+    );
     return response.data;
   } catch (error: any) {
     if (error.response) {
       throw error.response.data;
     }
     throw new Error('Failed to fetch analytics');
+  }
+};
+
+export const getsalesXProfitCategory = async () => {
+  try {
+    const response = await apiClient.get(
+      `/analytics/store/SalesXProfitCategory`
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch analytics');
+  }
+};
+
+export const getTopsellingProducts = async () => {
+  try {
+    const response = await apiClient.get(`/analytics/store/TopSellingProducts`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch analytic');
+  }
+};
+
+export const getTopcostumers = async () => {
+  try {
+    const response = await apiClient.get(`/analytics/store/TopCostumers`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch analytic');
   }
 };
