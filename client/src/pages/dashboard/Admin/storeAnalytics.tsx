@@ -7,6 +7,9 @@ import StatCards from '../../../widgets/dashboards/Admin/stateCards';
 import SalesXProfit from '../../../widgets/dashboards/Admin/SalesXProfit';
 import CostXProfitLastWeek from '../../../widgets/dashboards/Admin/CostXProfitLastWeek';
 import CategorySales from '../../../widgets/dashboards/Admin/CategorySales';
+import TopProducts from '../../../widgets/dashboards/Admin/TopProducts';
+import TopCostumers from '../../../widgets/dashboards/Admin/TopCostumers';
+import StockReport from '../../../widgets/dashboards/Admin/StockReport';
 
 const StoreAnalytics = () => {
   return (
@@ -50,14 +53,24 @@ const StoreAnalytics = () => {
         <Grid size={12}>
           <SalesXProfit className="@4xl:col-span-2 @7xl:col-span-8 mt-6" />
         </Grid>
-        <Grid size={12}  container spacing={2}>
+        <Grid size={12} container spacing={2}>
           <Grid size={6}>
             <CostXProfitLastWeek />
           </Grid>
-
+          <Grid size={6}>
+            <TopProducts />
+          </Grid>
+        </Grid>
+        <Grid container size={12} spacing={2}>
+          <Grid size={6}>
+            <TopCostumers />
+          </Grid>
           <Grid size={6}>
             <CategorySales />
           </Grid>
+        </Grid>
+        <Grid size={12}>
+          <StockReport />
         </Grid>
       </Grid>
     </Grid>
