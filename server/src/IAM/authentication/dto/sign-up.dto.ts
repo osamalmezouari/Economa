@@ -24,4 +24,7 @@ export class SignUpDto {
   @IsOptional()
   @IsString()
   address?: string;
+
+  @IsString()
+  avatar: string;
 }
