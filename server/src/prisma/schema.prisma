@@ -62,6 +62,7 @@ model Product {
   categoryId       String
   cost_price       Float
   discount         Int?
+  stock            Int
   category         Category           @relation(fields: [categoryId], references: [id])
   created_at       DateTime           @default(now())
   updated_at       DateTime           @updatedAt
