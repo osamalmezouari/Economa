@@ -8,18 +8,24 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
-import { ProductService } from './product.service';
+import { ProductService } from './services/product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
 import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
-import { CreateProductReviewDto } from '../product-review/dto/create-product-review.dto';
+import { CreateProductReviewDto } from './dto/create-product-review.dto';
+import { ProductReviewService } from './services/product-review.service';
+import { ProductStockService } from './services/product-stock.service';
 
 @Controller('products')
 export class ProductController {
-  constructor(private readonly productService: ProductService) {}
+  constructor(
+    private readonly productService: ProductService,
+    private readonly productreviewService: ProductReviewService,
+    private readonly productstockService: ProductStockService,
+  ) {}
 
   @AUTH(AuthenticationType.None)
   @Get()
@@ -98,18 +104,6 @@ export class ProductController {
     const product = await this.productService.create(createProductDto);
     return product;
   }
-
-  @AUTH(AuthenticationType.None)
-  @Post('addReview')
-  async addProductReview(
-    @Body() createProductReviewDto: CreateProductReviewDto,
-  ) {
-    const review = await this.productService.addProductReview(
-      createProductReviewDto,
-    );
-    return review;
-  }
-
   @AUTH(AuthenticationType.bearer)
   @Patch(':id')
   async update(
@@ -125,5 +119,15 @@ export class ProductController {
   async remove(@Param('id') id: string) {
     const product = await this.productService.remove(id);
     return product;
+  }
+  @AUTH(AuthenticationType.None)
+  @Post('addReview')
+  async addProductReview(
+    @Body() createProductReviewDto: CreateProductReviewDto,
+  ) {
+    const review = await this.productreviewService.create(
+      createProductReviewDto,
+    );
+    return review;
   }
 }
