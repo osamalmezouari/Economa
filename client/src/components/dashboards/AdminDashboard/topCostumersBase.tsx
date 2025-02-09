@@ -10,18 +10,19 @@ import {
   Box,
   Card,
   CardContent,
+  CardHeader,
 } from '@mui/material';
 import { TopCostumers } from '../../../types/storeAnalytics';
 
 const TopCostumersBase = ({ costumers }: { costumers: TopCostumers[] }) => {
   return (
     <Card className="border-[1px] shadow-none mt-6 rounded-[5px] h-[500px]">
+      <CardHeader title={<Typography variant="h6" className=''>Top Costumers</Typography>} />
       <CardContent>
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {/* Header Row */}
           <ListItem
             sx={{
-              py: 2,
               display: 'flex',
               justifyContent: 'space-between',
               borderBottom: 1,
@@ -48,7 +49,7 @@ const TopCostumersBase = ({ costumers }: { costumers: TopCostumers[] }) => {
             <React.Fragment key={costumer.id}>
               <ListItem
                 sx={{
-                  py: 2.5,
+                  py: 2,
                   display: 'flex',
                   justifyContent: 'space-between',
 
