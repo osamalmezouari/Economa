@@ -2,12 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { OrdersService } from '../orders/orders.service';
 import { sortStoreAnalyticsStatsCardsByDate } from 'src/common/utils/sortStoreAnalyticsStatsCardsByDate';
+import { ProductStockService } from '../product/services/product-stock.service';
 
 @Injectable()
 export class AnalyticsService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly orderService: OrdersService,
+    private readonly productstockService: ProductStockService,
   ) {}
 
   async getCardStats() {
@@ -65,5 +67,19 @@ export class AnalyticsService {
   async getTopCostumers() {
     const data = await this.orderService.getTopCustomers();
     return data;
+  }
+
+  async getLowStockProducts({
+    productName,
+    page,
+  }: {
+    productName?: string;
+    page: number;
+  }) {
+    const data = await this.productstockService.getLowStockProducts({
+      productName: productName,
+      page: page,
+    });
+    return data
   }
 }
