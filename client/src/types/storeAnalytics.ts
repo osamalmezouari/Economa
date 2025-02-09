@@ -50,7 +50,23 @@ export interface TopCostumers {
   name: string;
   email: string;
   totalSpent: number;
-  avatar : string
+  avatar: string;
+}
+
+export interface StockReportFilter {
+  page: number;
+  productName: string;
+}
+export interface StockReportProductInfo {
+  id: string;
+  name: string;
+  unit: string;
+  stock: number;
+  price: number;
+  rating: number;
+  avgRating: number;
+  discount: number;
+  productPageCount: number;
 }
 export interface storeAnalyticsState {
   stateCards: {
@@ -83,5 +99,10 @@ export interface storeAnalyticsState {
     data: TopCostumers[];
     loading: boolean;
     error: null | ApiError | undefined | unknown;
+  };
+  StockReport: {
+    data: StockReportProductInfo[];
+    loading: boolean;
+    error: null;
   };
 }
