@@ -3,7 +3,6 @@ import { IamModule } from './IAM/iam.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { ProductModule } from './resources/core/product/product.module';
-import { ProductReviewModule } from './resources/core/product-review/product-review.module';
 import { UserModule } from './resources/core/user/user.module';
 import { NotificationModule } from './resources/notifications/notification/notification.module';
 import { WishlistModule } from './resources/settings/wishlist/wishlist.module';
@@ -25,7 +24,6 @@ import { AnalyticsModule } from './resources/core/analytics/analytics.module';
     PrismaModule,
     ConfigModule.forRoot(),
     ProductModule,
-    ProductReviewModule,
     UserModule,
     NotificationModule,
     WishlistModule,
