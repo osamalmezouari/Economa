@@ -66,6 +66,11 @@ const initialState: storeAnalyticsState = {
     loading: false,
     error: null,
   },
+  StockReport: {
+    data: [],
+    loading: false,
+    error: null,
+  },
 };
 
 const StoreAnalyticsSlice = createSlice({
