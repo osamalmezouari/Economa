@@ -6,32 +6,43 @@ export class AnalyticsController {
   constructor(private readonly analyticsService: AnalyticsService) {}
 
   @Get('store/Stats-Cards')
-  async getCardStats() {
+  getCardStats() {
     return this.analyticsService.getCardStats();
   }
 
   @Get('store/SalesXProfit')
-  async getSalesxProfit(@Query('year') year: number) {
+  getSalesxProfit(@Query('year') year: number) {
     return this.analyticsService.SalesXProfit(year);
   }
 
   @Get('store/CostXProfitLastWeek')
-  async getSalesXProfitLastWeek() {
+  getSalesXProfitLastWeek() {
     return this.analyticsService.CostXProfitLastWeek();
   }
 
   @Get('store/SalesXProfitCategory')
-  async getSalesXProfitCategory() {
+  getSalesXProfitCategory() {
     return this.analyticsService.getSalesProfitCategory();
   }
 
   @Get('store/TopSellingProducts')
-  async getTopSellingProducts() {
+  getTopSellingProducts() {
     return this.analyticsService.getTopProducts();
   }
 
   @Get('store/TopCostumers')
-  async getTopCostumers() {
+  getTopCostumers() {
     return this.analyticsService.getTopCostumers();
+  }
+
+  @Get('store/lowStockProducts')
+  getLowStockProducts(
+    @Query('productName') productName: string,
+    @Query('page') page: number = 1,
+  ) {
+    return this.analyticsService.getLowStockProducts({
+      productName,
+      page,
+    });
   }
 }
