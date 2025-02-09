@@ -1,5 +1,5 @@
 import { RemoveCircleSharp } from '@mui/icons-material';
-import { Box, InputAdornment, TextField, Typography } from '@mui/material';
+import { Box, TextField, Typography } from '@mui/material';
 import { BiMinus, BiPlus } from 'react-icons/bi';
 import { shoppingCartItemProps } from './interface';
 import { useState } from 'react';
@@ -90,7 +90,7 @@ const ShoppingCartItem = ({
             textOverflow: 'ellipsis',
           }}
           className="cursor-pointer capitalize"
-          onClick={() => router.navigate({ to: `/Store/${productId}` })}
+          onClick={() => router.navigate({ to: `/Economa/Store/${productId}` })}
         >
           {productName}
         </Typography>
