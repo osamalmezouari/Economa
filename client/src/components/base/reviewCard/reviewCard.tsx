@@ -18,12 +18,11 @@ const ReviewCard = ({
     });
   };
 
-  
   return (
     <Grid
       container
       gap={2}
-      className="review-card flex flex-col p-4 border-[1px] my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
+      className="review-card flex rounded  p-4 border-[1px] my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
     >
       <Grid item lg={1} className="flex items-center justify-center">
         <Avatar
@@ -40,7 +39,7 @@ const ReviewCard = ({
           <p>{user.name || 'Anonymous'}</p>
         </Grid>
         <Grid item lg={12} className="flex items-center gap-2">
-          <Rating size="small" value={rating || 0} disabled/>
+          <Rating size="small" value={rating || 0} disabled />
           <p className="text-secondary-light py-2 text-[12px]">
             {createdAt ? formatDateTime(createdAt) : ''}
           </p>
