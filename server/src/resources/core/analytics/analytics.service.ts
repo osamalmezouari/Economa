@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { OrdersService } from '../orders/orders.service';
+import { OrdersService } from '../orders/services/orders.service';
 import { sortStoreAnalyticsStatsCardsByDate } from 'src/common/utils/sortStoreAnalyticsStatsCardsByDate';
 import { ProductStockService } from '../product/services/product-stock.service';
 
