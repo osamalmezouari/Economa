@@ -69,7 +69,7 @@ const Order = () => {
           <video
             muted
             playsInline
-            src="/assets/animtedicons/qr-code-animated.mp4"
+            src="/assets/illustrations/animated/qr-code-animated.mp4"
             autoPlay
             loop
             style={{ maxWidth: '250px', maxHeight: '250px' }}
