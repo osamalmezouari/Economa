@@ -1,7 +1,24 @@
 import { ApiError } from './apierror';
-import { StoreFilters } from './storeFilters';
 import { MiniProductCardTypeProps } from '../components/base/minProductCard/interfaces';
 import { AddReview, Review } from './review';
+
+
+export interface StoreFilters {
+  category?: string;
+  search?: string;
+  weight?: string;
+  Maxprice?: number;
+  Minprice?: number;
+  page?: number;
+  sort?:
+    | ''
+    | 'price-asc'
+    | 'price-desc'
+    | 'rating-asc'
+    | 'rating-desc'
+    | 'name-asc'
+    | 'name-desc';
+}
 
 export interface ProductDetailsParams {
   ProductId: string;
