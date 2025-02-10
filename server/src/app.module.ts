@@ -9,7 +9,6 @@ import { WishlistModule } from './resources/settings/wishlist/wishlist.module';
 import { ShoppingCartModule } from './resources/settings/shopping-cart/shopping-cart.module';
 import { RolesModule } from './resources/access/roles/roles.module';
 import { OrdersModule } from './resources/core/orders/orders.module';
-import { OrderItemModule } from './resources/core/order-item/order-item.module';
 import { PermissionModule } from './resources/access/permission/permission.module';
 import { PaymentModule } from './resources/billing/payment/payment.module';
 import { GalleryModule } from './resources/media/gallery/gallery.module';
@@ -30,7 +29,6 @@ import { AnalyticsModule } from './resources/core/analytics/analytics.module';
     ShoppingCartModule,
     RolesModule,
     OrdersModule,
-    OrderItemModule,
     PermissionModule,
     PaymentModule,
     PrismaModule,
