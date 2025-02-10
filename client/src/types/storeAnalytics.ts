@@ -58,14 +58,17 @@ export interface StockReportFilter {
   productName: string;
 }
 export interface StockReportProductInfo {
-  id: string;
-  name: string;
-  unit: string;
-  stock: number;
-  price: number;
-  rating: number;
-  avgRating: number;
-  discount: number;
+  products: {
+    id: string;
+    name: string;
+    unit: string;
+    stock: number;
+    costprice: number;
+    reviews: number;
+    rating: number;
+    productImage: string;
+    category : string
+  }[];
   productPageCount: number;
 }
 export interface storeAnalyticsState {
@@ -101,8 +104,12 @@ export interface storeAnalyticsState {
     error: null | ApiError | undefined | unknown;
   };
   StockReport: {
-    data: StockReportProductInfo[];
+    data: StockReportProductInfo;
+    filters: {
+      page: number;
+      productName: string;
+    };
     loading: boolean;
-    error: null;
+    error: null | ApiError | undefined | unknown;
   };
 }
