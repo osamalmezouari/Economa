@@ -77,3 +77,23 @@ export const getTopcostumers = async () => {
     throw new Error('Failed to fetch analytic');
   }
 };
+
+export const getlowStockProducts = async ({
+  page = 1,
+  productName,
+}: {
+  page: number;
+  productName?: string;
+}) => {
+  try {
+    const response = await apiClient.get(
+      `/analytics/store/lowStockProducts?page=${page}&productName=${productName}`
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch analytic');
+  }
+};
