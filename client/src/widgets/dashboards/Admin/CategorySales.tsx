@@ -59,7 +59,7 @@ const CategorySales = ({ className }: { className?: string }) => {
             </Typography>
             <div className="flex items-center justify-between">
               <Typography variant="h3" className="me-2 font-semibold">
-                ${totalSales}
+                ${totalSales.toFixed(2)}
               </Typography>
               <Box className={'flex gap-4 mt-2'}>
                 <Box>
