@@ -20,7 +20,6 @@ const CategoryCardSingle = ({
       component={'div'}
       className={`p-3 rounded`}
       style={{ backgroundColor: `${randomColor}` }}
-      
     >
       <Card className="w-[160px]">
         <Box
@@ -34,9 +33,7 @@ const CategoryCardSingle = ({
               backgroundImage: `url(${svgLink})`,
             }} /* onClick={()=>Navigate(linkTo)} */
           ></Box>
-          <Typography
-            className="!font-main font-bold text-secondary-darker"
-          >
+          <Typography className="!font-main font-bold text-secondary-darker">
             {name}
           </Typography>
           <p className="text-[12px] text-secondary-main">
