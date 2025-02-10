@@ -2,9 +2,9 @@ import ProductDetails, {
   ProductCardType,
   ProductsNewArrivals,
   ProductStoreType,
+  StoreFilters,
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
-import { StoreFilters } from '../types/storeFilters';
 import { AddReview } from '../types/review';
 
 export const getProductsStore = async (
