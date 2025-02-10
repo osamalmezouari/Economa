@@ -45,13 +45,10 @@ export class ProductReviewService {
 
   async getProductAvgRating(productId: string): Promise<number> {
     const result = await this.prisma.productReview.aggregate({
-      where: {
-        productId: productId,
-      },
-      _avg: {
-        rating: true,
-      },
+      where: { productId },
+      _avg: { rating: true },
     });
+
     if (result._avg?.rating === null || result._avg?.rating === undefined) {
       return 0;
     }
