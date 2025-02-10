@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   getCardStats,
   getcostXProfitLastWeek,
+  getlowStockProducts,
   getSalesXProfit,
   getsalesXProfitCategory,
   getTopcostumers,
@@ -102,4 +103,23 @@ export const getTopCostumers = createAsyncThunk(
   }
 );
 
-
+export const getLowStockProducts = createAsyncThunk(
+  'analytics/store/LowStockProducts',
+  async (
+    { page = 1, productName }: { page: number; productName: string },
+    { rejectWithValue }
+  ) => {
+    try {
+      const Topcostumers = await getlowStockProducts({
+        page: page,
+        productName,
+      });
+      return Topcostumers;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch low Stock products');
+    }
+  }
+);
