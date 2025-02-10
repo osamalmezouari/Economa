@@ -144,7 +144,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
             <Button
               color="primary"
               variant="outlined"
-              className="bg-primary-main w-max cursor-text h-8"
+              className="bg-primary-main w-max cursor-text h-8 text-white"
             >
               {productdetailsData.unit}
             </Button>
