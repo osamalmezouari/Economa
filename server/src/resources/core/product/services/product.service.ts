@@ -469,17 +469,6 @@ export class ProductService {
     return productDetails;
   }
 
-/*   async addProductReview(ProductReview: CreateProductReviewDto) {
-    const review = await this.reviewService.create({
-      name: ProductReview.name,
-      email: ProductReview.email,
-      productId: ProductReview.productId,
-      rating: ProductReview.rating,
-      reviewText: ProductReview.reviewText,
-    });
-    return review;
-  }
-  */
   
 
   async update(id: string, updateProductDto: UpdateProductDto) {
