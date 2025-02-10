@@ -46,7 +46,7 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
 
       <Box className="product-info flex flex-col">
         <Typography
-          onClick={() => Router.navigate({ to: `/Store/${productId}` })}
+          onClick={() => Router.navigate({ to: `/Economa/Store/${productId}` })}
           className="cursor-pointer hover:text-primary-main text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1"
         >
           {name}
