@@ -1,191 +1,3 @@
-/* import {
-  Avatar,
-  Box,
-  Card,
-  CardHeader,
-  InputAdornment,
-  LinearProgress,
-  linearProgressClasses,
-  Pagination,
-  Rating,
-  styled,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  TextField,
-  Typography,
-} from '@mui/material';
-import { useEffect, useState } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../../app/store';
-import { getLowStockProducts } from '../../../features/StoreAnalytics/StoreAnalyticsThunk';
-
-const StockReport = () => {
-  const [filters, setFilters] = useState({
-    page: 1,
-    productName: '',
-  });
-
-  const dispatch = useDispatch<AppDispatch>();
-  const { data } = useSelector(
-    (state: RootState) => state.StoreAnalytics.StockReport
-  );
-  useEffect(() => {
-    dispatch(getLowStockProducts(filters));
-  }, [filters, dispatch]);
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFilters({ ...filters, productName: event.target.value, page: 1 });
-  };
-
-  const handlePageChange = (event: unknown, page: number) => {
-    setFilters({ ...filters, page });
-  };
-
-  const BorderLinearProgress = styled(LinearProgress)(
-    ({ theme, value }: { value: number }) => ({
-      height: 8,
-      width: 100,
-      borderRadius: 5,
-      [`&.${linearProgressClasses.colorPrimary}`]: {
-        backgroundColor: theme.palette.grey[200],
-      },
-      [`& .${linearProgressClasses.bar}`]: {
-        borderRadius: 5,
-        backgroundColor:
-          value <= 20
-            ? '#ff0800'
-            : value <= 40
-              ? '#FF5733'
-              : value <= 60
-                ? '#fff033'
-                : value <= 80
-                  ? '#3371ff'
-                  : '',
-      },
-    })
-  );
-
-  return (
-    <Card className="mt-6 mb-6 rounded-[5px] border-[1px] shadow-none px-4 relative">
-      <CardHeader
-        className="h-24 p-0"
-        title={
-          <Box className={'flex justify-between'}>
-            <Typography variant="h5">Stock Report</Typography>
-            <TextField
-              className="w-[200px]"
-              variant="outlined"
-              fullWidth
-              size="small"
-              placeholder="Search for a product"
-              value={filters.productName}
-              onChange={handleSearchChange}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <BiSearch
-                      className={
-                        'hover:bg-primary-main  rounded-full w-6 h-6 border-8 bg-secondary-main text-white transition-all duration-500 ease-in-out cursor-pointer hover:text-white border-secondary-main hover:border-primary-main '
-                      }
-                    />
-                  </InputAdornment>
-                ),
-              }}
-              sx={{
-                '& .MuiInputBase-input::placeholder': {
-                  fontSize: '12px',
-                },
-              }}
-            />
-          </Box>
-        }
-      />
-      <Table>
-        <TableHead className="bg-secondary-main">
-          <TableRow>
-            <TableCell sx={{ width: '50px' }}>ID</TableCell>
-            <TableCell sx={{ width: '200px' }}>Name</TableCell>
-            <TableCell sx={{ width: '80px' }}>Unit</TableCell>
-            <TableCell sx={{ width: '150px' }}>Stock</TableCell>
-            <TableCell sx={{ width: '100px' }}>Cost Price</TableCell>
-            <TableCell sx={{ width: '150px' }}>Rating</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.products.map((product) => (
-            <TableRow
-              key={product.id}
-              className="hover:bg-gray-50 transform transition-all duration-300"
-            >
-              <TableCell sx={{ width: '50px' }}>
-                #{product.id.substring(0, 6)}...
-              </TableCell>
-              <TableCell
-                
-                className="flex items-center gap-2"
-              >
-                <Avatar
-                  sx={{ width: '55px', height: '55px' }}
-                  className="rounded-none"
-                  src={product.productImage}
-                />
-                <Box>
-                  <Typography
-                    variant="body1"
-                    className="text-[14px] capitalize"
-                  >
-                    {product.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    className="text-[12px] text-gray-500"
-                  >
-                    {product.category}
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell sx={{ width: '80px' }}>1kg</TableCell>
-              <TableCell sx={{ width: '150px' }}>
-                <Box className={'flex items-center gap-5'}>
-                  <BorderLinearProgress
-                    variant="determinate"
-                    value={product.stock*2}
-                  />
-                  <Typography variant="body2">{product.stock}</Typography>
-                </Box>
-              </TableCell>
-              <TableCell sx={{ width: '100px' }}>{product.costprice}</TableCell>
-              <TableCell sx={{ width: '150px' }} className="">
-                <Box className={'flex items-center gap-2'}>
-                  <Rating size="small" value={product.rating} />
-                  <Typography variant="body2">({product.reviews})</Typography>
-                </Box>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-
-      <Box className={'p-4 flex justify-end'}>
-        <Pagination
-          className="right-0"
-          count={data.productPageCount}
-          color="primary"
-          page={filters.page}
-          onChange={handlePageChange}
-        />
-      </Box>
-    </Card>
-  );
-};
-
-export default StockReport;
- */
-
 import {
   Avatar,
   Box,
@@ -267,7 +79,7 @@ const StockReport = () => {
       },
       [`& .${linearProgressClasses.bar}`]: {
         borderRadius: 5,
-        backgroundColor:
+        /* backgroundColor:
           value <= 20
             ? '#ff0800'
             : value <= 40
@@ -276,7 +88,7 @@ const StockReport = () => {
                 ? '#fff033'
                 : value <= 80
                   ? '#3371ff'
-                  : '',
+                  : '',*/
       },
     })
   );
@@ -356,7 +168,6 @@ const StockReport = () => {
               </TableSortLabel>
             </TableCell>
             <TableCell>Cost Price</TableCell>
-            <TableCell>Category</TableCell>
             <TableCell>Rating</TableCell>
           </TableRow>
         </TableHead>
@@ -400,9 +211,7 @@ const StockReport = () => {
                   <Typography variant="body2">{product.stock}</Typography>
                 </Box>
               </TableCell>
-              <TableCell>{product.costprice}</TableCell>
-
-              <TableCell>{product.category}</TableCell>
+              <TableCell>${product.costprice}</TableCell>
               <TableCell>
                 <Box className="flex items-center gap-2">
                   <Rating size="small" value={product.rating} />
