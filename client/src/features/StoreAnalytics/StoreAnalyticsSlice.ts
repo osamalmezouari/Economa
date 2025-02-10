@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   getCardsStats,
   getCostXProfitLastWeek,
+  getLowStockProducts,
   getsalesXProfit,
   getSalesXProfitCategory,
   getTopCostumers,
@@ -67,7 +68,14 @@ const initialState: storeAnalyticsState = {
     error: null,
   },
   StockReport: {
-    data: [],
+    data: {
+      products: [],
+      productPageCount: 0,
+    },
+    filters: {
+      page: 0,
+      productName: '',
+    },
     loading: false,
     error: null,
   },
@@ -152,6 +160,18 @@ const StoreAnalyticsSlice = createSlice({
       .addCase(getTopSellingProducts.rejected, (state, action) => {
         (state.TopSellingProducts.loading = false),
           (state.TopSellingProducts.error = action.payload);
+      })
+
+      .addCase(getLowStockProducts.pending, (state) => {
+        (state.StockReport.loading = true), (state.StockReport.error = null);
+      })
+      .addCase(getLowStockProducts.fulfilled, (state, action) => {
+        (state.StockReport.loading = false),
+          (state.StockReport.data = action.payload);
+      })
+      .addCase(getLowStockProducts.rejected, (state, action) => {
+        (state.StockReport.loading = false),
+          (state.StockReport.error = action.payload);
       });
   },
 });
