@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface ChartData {
   day: string;
@@ -67,7 +66,7 @@ export interface StockReportProductInfo {
     reviews: number;
     rating: number;
     productImage: string;
-    category : string
+    category: string;
   }[];
   productPageCount: number;
 }
@@ -75,33 +74,33 @@ export interface storeAnalyticsState {
   stateCards: {
     data: DashboardStats;
     loading: boolean;
-    error: ApiError | null | unknown | undefined;
+    error: string;
   };
   SalesXProfit: {
     data: SalesXProfitData[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
   CostXProfitLastWeek: {
     data: CostXProfitlastweekData[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
   SalesXProfitCategory: {
     data: SalesXProfitCategory[];
     loading: boolean;
-    error: null | ApiError | undefined | unknown;
+    error: string;
   };
 
   TopSellingProducts: {
     data: TopSellingProducts[];
     loading: boolean;
-    error: null | ApiError | undefined | unknown;
+    error: string;
   };
   TopCostumers: {
     data: TopCostumers[];
     loading: boolean;
-    error: null | ApiError | undefined | unknown;
+    error: string;
   };
   StockReport: {
     data: StockReportProductInfo;
@@ -110,6 +109,6 @@ export interface storeAnalyticsState {
       productName: string;
     };
     loading: boolean;
-    error: null | ApiError | undefined | unknown;
+    error: string;
   };
 }
