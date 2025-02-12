@@ -7,7 +7,7 @@ export const GetWishList = async (): Promise<WishlistType[]> => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to Fetch wishList');
   }
@@ -23,7 +23,7 @@ export const createWishList = async (
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to add to wishList');
   }
@@ -35,7 +35,7 @@ export const removefromWishList = async (id: string): Promise<WishlistType> => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to remove from wishList');
   }
