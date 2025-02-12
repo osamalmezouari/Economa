@@ -16,7 +16,6 @@ import { BiWallet } from 'react-icons/bi';
 import { placeandpay } from '../features/order/orderThunk';
 import { FormEvent } from 'react';
 import { getshoppingCart } from '../features/shoppingCart/shoppingCartThunk';
-import { ApiError } from '../types/apierror';
 
 const OrderValidationForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -132,12 +131,11 @@ const OrderValidationForm = () => {
             label="I accept no cancellations or returns of money."
           />
         </FormGroup>
+        {placeandpayerror && <Alert severity="info" className='my-2'>{placeandpayerror}</Alert>}
         <Button className="w-full" variant="outlined" type="submit">
           Pay and Place Order
         </Button>
-        {(placeandpayerror as ApiError) && (
-          <Alert severity="info">{(error as ApiError).message}</Alert>
-        )}
+        
       </Box>
     </Box>
   );
