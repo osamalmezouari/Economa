@@ -12,7 +12,7 @@ export const refillBalance = async (
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to Refill Balance');
   }
@@ -24,7 +24,7 @@ export const getbalanceCardInfo = async (): Promise<BalanceCard> => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to Fetch Balance');
   }
