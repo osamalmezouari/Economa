@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface CategoryType {
   id: string;
@@ -16,6 +15,6 @@ export interface CategoryStateType {
   CategoryCards: {
     data: CategoryType[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error:string;
   };
 }
