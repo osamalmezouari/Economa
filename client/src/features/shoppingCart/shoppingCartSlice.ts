@@ -15,17 +15,17 @@ const initialState: shoppingCartStateType = {
   shoppingCartWithProducts: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   createshoppingCart: {
     data: {},
     loading: false,
-    error: null,
+    error: '',
   },
   removefromshoppingCart: {
     data: {},
     loading: false,
-    error: null,
+    error: '',
   },
   open: true,
   basePrice: 0,
@@ -57,18 +57,18 @@ const shoppingCartSlice = createSlice({
     },
 
     clearCreateError: (state) => {
-      state.createshoppingCart.error = null;
+      state.createshoppingCart.error = '';
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getshoppingCart.pending, (state) => {
         state.shoppingCartWithProducts.loading = true;
-        state.shoppingCartWithProducts.error = null;
+        state.shoppingCartWithProducts.error = '';
       })
       .addCase(getshoppingCart.fulfilled, (state, action: any) => {
         state.shoppingCartWithProducts.loading = false;
-        state.shoppingCartWithProducts.error = null;
+        state.shoppingCartWithProducts.error = '';
         state.shoppingCartWithProducts.data = action.payload;
         state.basePrice = action.payload.reduce(
           (total: number, item: ShoopingCartType) =>
@@ -80,7 +80,7 @@ const shoppingCartSlice = createSlice({
       })
       .addCase(getshoppingCart.rejected, (state, action) => {
         state.shoppingCartWithProducts.loading = false;
-        state.shoppingCartWithProducts.error = action.payload;
+        state.shoppingCartWithProducts.error = action.payload as string;
         state.shoppingCartWithProducts.data = [];
       })
       .addCase(updatequantity.fulfilled, (state, action: any) => {
@@ -103,31 +103,32 @@ const shoppingCartSlice = createSlice({
 
       .addCase(createshoppingCart.pending, (state) => {
         state.createshoppingCart.loading = true;
-        state.createshoppingCart.error = null;
+        state.createshoppingCart.error = '';
       })
       .addCase(
         createshoppingCart.fulfilled,
         (state, action: PayloadAction<createShoppingCart>) => {
           state.createshoppingCart.loading = false;
           state.createshoppingCart.data = action.payload;
+          state.createshoppingCart.error = '';
         }
       )
       .addCase(createshoppingCart.rejected, (state, action) => {
         state.createshoppingCart.loading = false;
-        state.createshoppingCart.error = action.payload;
+        state.createshoppingCart.error = action.payload as string;
       })
 
       .addCase(removefromshoppingCart.rejected, (state, action) => {
-        state.createshoppingCart.loading = false;
-        state.createshoppingCart.error = action.payload;
+        state.removefromshoppingCart.loading = false;
+        state.removefromshoppingCart.error = action.payload as string;
       })
       .addCase(removefromshoppingCart.pending, (state) => {
-        state.createshoppingCart.loading = true;
-        state.createshoppingCart.error = null;
+        state.removefromshoppingCart.loading = true;
+        state.removefromshoppingCart.error = '';
       })
       .addCase(removefromshoppingCart.fulfilled, (state, action) => {
-        state.createshoppingCart.loading = false;
-        state.createshoppingCart.data = action.payload;
+        state.removefromshoppingCart.loading = false;
+        state.removefromshoppingCart.data = action.payload;
       });
   },
 });
