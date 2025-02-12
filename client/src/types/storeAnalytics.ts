@@ -1,13 +1,13 @@
 import { ApiError } from './apierror';
 
-interface ChartData {
+export interface ChartData {
   day: string;
   orders?: number;
   totalAmount?: number;
   totalProfit?: number;
 }
 
-interface StatData {
+export interface StatData {
   title: string;
   metric: number;
   increased: boolean;
@@ -16,18 +16,18 @@ interface StatData {
   chart: ChartData[];
 }
 
-interface DashboardStats {
+export interface DashboardStats {
   orderStats: StatData;
   SalesStats: StatData;
   ProfitStats: StatData;
 }
 
-interface SalesXProfitData {
+export interface SalesXProfitData {
   month: number;
   profit: number;
   expense: number;
 }
-interface CostXProfitlastweekData {
+export interface CostXProfitlastweekData {
   day: string;
   cost: number;
   profit: number;
