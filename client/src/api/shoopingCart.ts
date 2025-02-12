@@ -9,7 +9,7 @@ export const shoppingCart = async (): Promise<ShoopingCartType[]> => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to Fetch shoppingCart');
   }
@@ -26,7 +26,7 @@ export const createshoppingCart = async (
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to create shoppingCart');
   }
@@ -40,20 +40,19 @@ export const updatequantityapi = async (id: string, quantity: number) => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to update quantity');
   }
 };
 
-
 export const removefromshoppingCart = async (id: string) => {
   try {
-    const response = await apiClient.delete(`/shopping-cart/${id}`); 
+    const response = await apiClient.delete(`/shopping-cart/${id}`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to remove from shoppingCart');
   }
