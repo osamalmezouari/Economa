@@ -18,19 +18,19 @@ const categorySlice = createSlice({
     builder
       .addCase(getCategoryCards.pending, (state) => {
         state.CategoryCards.loading = true;
-        state.CategoryCards.error = null;
+        state.CategoryCards.error = '';
       })
       .addCase(
         getCategoryCards.fulfilled,
         (state, action: PayloadAction<CategoryType[]>) => {
           state.CategoryCards.loading = false;
-          state.CategoryCards.error = null;
+          state.CategoryCards.error = '';
           state.CategoryCards.data = action.payload;
         }
       )
       .addCase(getCategoryCards.rejected, (state, action) => {
         state.CategoryCards.loading = false;
-        state.CategoryCards.error = action.payload;
+        state.CategoryCards.error = action.payload as string;
       });
   },
 });
