@@ -5,7 +5,7 @@ import { OrderStateType } from '../../types/order';
 const initialState: OrderStateType = {
   placeandpay: {
     loading: false,
-    error: null,
+    error: '',
     data: {
       orderId: '',
     },
@@ -24,15 +24,15 @@ const OrderSlice = createSlice({
     builder
       .addCase(placeandpay.pending, (state) => {
         state.placeandpay.loading = true;
-        state.placeandpay.error = null;
+        state.placeandpay.error = '';
       })
       .addCase(placeandpay.fulfilled, (state, action) => {
         state.placeandpay.data = action.payload;
-        state.placeandpay.error = null;
+        state.placeandpay.error = '';
         state.placeandpay.loading = false;
       })
       .addCase(placeandpay.rejected, (state, action) => {
-        state.placeandpay.error = action.payload;
+        state.placeandpay.error = action.payload as string;
         state.placeandpay.loading = false;
       });
   },
