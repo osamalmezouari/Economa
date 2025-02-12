@@ -176,7 +176,7 @@ const RefillBalanceRequestPage = () => {
           {error instanceof ApiError && (
             <Alert severity="error">{error.message}</Alert>
           )}
-          {data.reqStatus.statusCode === 201 ? (
+          {data.reqStatus?.statusCode === 201 ? (
             <Alert severity="success">{data.reqStatus.message}</Alert>
           ) : (
             ''
