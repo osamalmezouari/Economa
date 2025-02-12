@@ -49,6 +49,7 @@ const Desktop_nav_bar = () => {
                 fullWidth
                 placeholder="Search for a product"
                 onChange={handleSearchChange}
+                size="small"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -57,7 +58,7 @@ const Desktop_nav_bar = () => {
                           router.navigate({ to: '/Economa/Store' })
                         }
                         className={
-                          'hover:bg-primary-main rounded-full w-8 h-8 border-8 bg-secondary-main text-white transition-all duration-500 ease-in-out cursor-pointer hover:text-white border-secondary-main hover:border-primary-main '
+                          ' rounded-full w-4 h-4  text-secondary-main transition-all duration-500 ease-in-out cursor-pointer hover:text-primary-main   '
                         }
                       />
                     </InputAdornment>
@@ -65,49 +66,48 @@ const Desktop_nav_bar = () => {
                 }}
               />
             </Grid>
-            <Grid size={4} className="flex justify-end gap-2">
+            <Grid size={4} className="flex justify-end gap-2 ">
               {/* Login */}
               <Button
-                variant="outlined"
+                variant="contained"
                 onClick={() =>
                   router.navigate({
                     to: '/Economa/login',
                   })
                 }
-                sx={{ borderRadius: '4px', color: 'primary.main' }}
+                className="rounded h-[40px] "
               >
-                <BiSolidUserCircle className="w-4 h-10  text-primary-main"></BiSolidUserCircle>
+                <BiSolidUserCircle className="h-4 w-4 "></BiSolidUserCircle>
               </Button>
               <Button
-                variant="outlined"
+                variant="contained"
                 onClick={() => {
                   dispatch({ type: 'setDisplayCart', payload: false });
                   dispatch(setDisplayWishlist());
                 }}
-                sx={{ borderRadius: '4px' }}
+                className="rounded "
               >
-                <IoBookmark className="w-4 h-6  text-primary-main"></IoBookmark>
+                <IoBookmark className=" w-4 h-4  "></IoBookmark>
               </Button>
 
               {/* Cart */}
               <Button
-                variant="outlined"
+                variant="contained"
                 onClick={() => {
                   dispatch({ type: 'setDisplayWishlist', payload: false });
                   dispatch(setDisplayCart());
                 }}
-                sx={{ borderRadius: '4px' }}
+                className="rounded "
               >
-                <FaBasketShopping className="w-4 h-10 text-primary-main "></FaBasketShopping>
+                <FaBasketShopping className="h-6 w-4"></FaBasketShopping>
               </Button>
               <Button
                 variant="contained"
                 startIcon={<FaWallet className="w-4 h-4" />}
-                className="text-start"
                 onClick={() =>
                   router.navigate({ to: '/Economa/Refill_Balance' })
                 }
-                sx={{ fontSize: '12px', borderRadius: '2px' }}
+                sx={{ fontSize: '12px', borderRadius: '4px' }}
               >
                 Refil balance
               </Button>
