@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface verfy_coupon_type {
   code: string;
@@ -14,6 +13,6 @@ export interface couponStoreType {
       discount_value: number;
     };
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
 }
