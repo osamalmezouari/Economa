@@ -7,15 +7,19 @@ import {
   UseInterceptors,
   UploadedFile,
 } from '@nestjs/common';
-import { BalanceService } from './balance.service';
+import { BalanceService } from './services/balance.service';
 import { Express } from 'express';
 import { CreateRefillbalancerequestDto } from './dto/create-refillbalancerequest.dto';
-import { AnyFilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
+import { RefillBalanceService } from './services/refillbalance.service';
 
 @Controller('balance')
 export class BalanceController {
-  constructor(private readonly balanceService: BalanceService) {}
+  constructor(
+    private readonly balanceService: BalanceService,
+    private readonly refillBalanceService: RefillBalanceService,
+  ) {}
 
   @UseInterceptors(FileInterceptor('file'))
   @Post('refillbalancerequest')
@@ -26,7 +30,7 @@ export class BalanceController {
   ) {
     console.log('file', file);
     createRefillbalancerequestDto.file = file;
-    return this.balanceService.refilbalanceRequestcreate(
+    return this.refillBalanceService.refilbalanceRequestcreate(
       createRefillbalancerequestDto,
       userId,
     );
