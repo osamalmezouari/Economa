@@ -1,23 +1,21 @@
 import { shoppingCartItemProps } from '../components/base/shoppingCartItem/interface';
-import { ApiError } from './apierror';
-
 export interface ShoopingCartType extends shoppingCartItemProps {}
 
 export interface shoppingCartStateType {
   shoppingCartWithProducts: {
     data: ShoopingCartType[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string | '';
   };
   createshoppingCart: {
     data: createShoppingCart | {};
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string | '';
   };
   removefromshoppingCart: {
     data: removefromshoppingCart | {};
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string | '';
   };
   open: boolean;
   basePrice: number;
