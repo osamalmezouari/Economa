@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface User {
   id: string;
@@ -22,6 +21,6 @@ export interface userStateType {
   ShoortedUserInfo: {
     data: ShoortedUserInfo;
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error:string;
   };
 }
