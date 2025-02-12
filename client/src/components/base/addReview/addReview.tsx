@@ -15,9 +15,7 @@ import {
   addReview,
   getProductsDetails,
 } from '../../../features/products/productThunk';
-import { ApiError } from '../../../types/apierror';
 import GlobalAlert from '../GlobalAlerts/globalAlert';
-import { error } from 'console';
 
 const AddReview = ({ productId }: AddReviewProps) => {
   const [name, setName] = useState('');
