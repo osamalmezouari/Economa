@@ -8,7 +8,7 @@ const Logo = () => {
       <Box
         component={'div'}
         className="cursor-pointer bg-cover bg-center w-60 h-10"
-        style={{ backgroundImage: 'url(/assets/images/testlogo2.png)' }}
+        style={{ backgroundImage: 'url(/assets/images/logo.png)' }}
         onClick={() => router.navigate({ to: '/Economa' })}
       />
     </>
