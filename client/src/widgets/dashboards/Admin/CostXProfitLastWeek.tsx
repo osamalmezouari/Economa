@@ -28,10 +28,8 @@ export default function CostXProfitLastWeek({
 }: {
   className?: string;
 }) {
-  /*   const data = dailyData;
-   */
   const dispatch = useDispatch<AppDispatch>();
-  const { data /* loading, error */ } = useSelector(
+  const { data  } = useSelector(
     (state: RootState) => state.StoreAnalytics.CostXProfitLastWeek
   );
   useEffect(() => {
