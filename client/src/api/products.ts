@@ -5,7 +5,6 @@ import ProductDetails, {
   StoreFilters,
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
-import { AddReview } from '../types/review';
 
 export const getProductsStore = async (
   filters: StoreFilters
@@ -20,7 +19,7 @@ export const getProductsStore = async (
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.string;
     }
     throw new Error('Failed to Fetch products');
   }
@@ -32,7 +31,7 @@ export const getProductsCards = async (): Promise<ProductCardType[]> => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.string;
     }
     throw new Error('Failed to Fetch products Cards');
   }
@@ -48,7 +47,7 @@ export const getProductsNewArrivals = async (): Promise<
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.string;
     }
     throw new Error('Failed to Fetch products New Arrivals');
   }
@@ -64,22 +63,12 @@ export const getProductsDetails = async (
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.string;
     }
     throw new Error('Failed to Fetch product details');
   }
 };
 
-export const addReview = async (review: AddReview) => {
-  try {
-    const response = await apiClient.post(`products/addReview`, review);
-    return response.data;
-  } catch (error: any) {
-    if (error.response) {
-      throw error.response.data;
-    }
-    throw new Error(`Failed to Add Review`);
-  }
-};
+
 
 
