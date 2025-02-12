@@ -70,7 +70,7 @@ const StockReport = () => {
   });
 
   const BorderLinearProgress = styled(LinearProgress)(
-    ({ theme, value }: { value: number }) => ({
+    ({ theme}) => ({
       height: 8,
       width: 100,
       borderRadius: 5,
