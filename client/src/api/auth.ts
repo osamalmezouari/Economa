@@ -7,7 +7,7 @@ export const Login = async (data: LoginPayload) => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to login');
   }
@@ -19,7 +19,7 @@ export const Register = async (data: RegisterPayload) => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to register');
   }
