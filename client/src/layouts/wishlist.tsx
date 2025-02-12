@@ -9,12 +9,20 @@ import { getWishlist } from '../features/wishlist/wishlistThunk';
 import { WishlistType } from '../types/wishlist';
 import { setDisplayWishlist } from '../features/wishlist/wishlistSlice';
 import EmptyBox from '../components/base/empty-box/empty-box';
+import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
 const Wishlist = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
     (state: RootState) => state.wishlist.wishlist
   );
+  const { error: createError } = useSelector(
+    (state: RootState) => state.wishlist.createWishList
+  );
+  const { error: removeError } = useSelector(
+    (state: RootState) => state.wishlist.removefromWishList
+  );
   const { open } = useSelector((state: RootState) => state.wishlist);
+
   const cartItems: WishlistType[] = data;
   useEffect(() => {
     dispatch(getWishlist());
@@ -56,7 +64,7 @@ const Wishlist = () => {
           className={`h-[80vh] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {loading && <CircularProgress color="primary" className="m-auto" />}
-          {(!cartItems.length && !loading) && <EmptyBox />}
+          {!cartItems.length && !loading && <EmptyBox />}
           {!loading &&
             !error &&
             cartItems.map((item) => {
@@ -74,6 +82,8 @@ const Wishlist = () => {
               );
             })}
         </Box>
+        {createError && <GlobalAlert message={createError} status="warning" />}
+        {removeError && <GlobalAlert message={removeError} status="warning" />}
       </Box>
     </Box>
   );
