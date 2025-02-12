@@ -5,7 +5,7 @@ import { balanceStateType } from '../../types/balance';
 const initialState: balanceStateType = {
   refillBalanceRequest: {
     loading: false,
-    error: null,
+    error: '',
     data: {
       paymentType: 'cash',
       file: null,
@@ -15,9 +15,9 @@ const initialState: balanceStateType = {
   },
   balanceCard: {
     loading: false,
-    error: null,
+    error: '',
     data: {
-      Balance: 0,
+      balance: 0,
       name: '',
     },
   },
@@ -35,31 +35,31 @@ const balanceSlice = createSlice({
     builder
       .addCase(refillBalanceRequest.pending, (state) => {
         state.refillBalanceRequest.loading = true;
-        state.refillBalanceRequest.error = null;
+        state.refillBalanceRequest.error = '';
       })
       .addCase(refillBalanceRequest.fulfilled, (state, action) => {
         state.refillBalanceRequest.loading = false;
-        state.refillBalanceRequest.error = null;
+        state.refillBalanceRequest.error = '';
         state.refillBalanceRequest.data = action.payload;
       })
       .addCase(refillBalanceRequest.rejected, (state, action) => {
         state.refillBalanceRequest.loading = false;
-        state.refillBalanceRequest.error = action.payload;
+        state.refillBalanceRequest.error = action.payload as string;
       })
       .addCase(getbalanceCardInfo.pending, (state) => {
         state.balanceCard.loading = true;
-        state.balanceCard.error = null;
+        state.balanceCard.error = '';
       })
       .addCase(getbalanceCardInfo.fulfilled, (state, action) => {
         state.balanceCard.loading = false;
-        state.balanceCard.error = null;
+        state.balanceCard.error = '';
         state.balanceCard.data = action.payload;
       })
       .addCase(getbalanceCardInfo.rejected, (state, action) => {
         state.balanceCard.loading = false;
-        state.balanceCard.error = action.payload;
+        state.balanceCard.error = action.payload as string;
       });
-    },
+  },
 });
 
 export default balanceSlice.reducer;
