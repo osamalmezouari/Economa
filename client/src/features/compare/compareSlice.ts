@@ -6,7 +6,7 @@ const initialState: CompareStateType = {
   data: [],
   compareItemsIds: [],
   loading: false,
-  error: null,
+  error: '',
 };
 
 const compareSlice = createSlice({
@@ -43,13 +43,13 @@ const compareSlice = createSlice({
     builder
       .addCase(getComparedProductDetails.pending, (state) => {
         state.loading = true;
-        state.error = null;
+        state.error = '';
       })
       .addCase(
         getComparedProductDetails.fulfilled,
         (state, action: PayloadAction<CompareType[]>) => {
           state.loading = false;
-          state.error = null;
+          state.error = '';
           state.data = action.payload;
         }
       )
@@ -57,7 +57,7 @@ const compareSlice = createSlice({
         getComparedProductDetails.rejected,
         (state, action: PayloadAction<any>) => {
           state.loading = false;
-          state.error = action.payload;
+          state.error = action.payload as string;
         }
       );
   },
