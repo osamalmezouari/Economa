@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface RefillBalanceRequest {
   paymentType: 'cash' | 'bank-transfer';
@@ -6,7 +5,6 @@ export interface RefillBalanceRequest {
   amount: number;
   reqStatus: { statusCode: number | null; message: string | null };
 }
-
 
 export interface BalanceCard {
   balance: number;
@@ -16,12 +14,12 @@ export interface BalanceCard {
 export interface balanceStateType {
   refillBalanceRequest: {
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
     data: RefillBalanceRequest;
   };
   balanceCard: {
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
     data: BalanceCard;
-  }
+  };
 }
