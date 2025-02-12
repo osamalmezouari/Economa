@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface LoginPayload {
   email: string;
@@ -15,12 +14,12 @@ export interface RegisterPayload {
 export interface AuthState {
   Login: {
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string 
     data: LoginPayload[];
   };
   Register: {
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string
     data: RegisterPayload[];
   };
 }
