@@ -1,4 +1,3 @@
-import { ApiError } from './apierror';
 
 export interface place_and_pay_order {
   couponCode: string;
