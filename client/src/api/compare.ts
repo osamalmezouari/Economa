@@ -9,7 +9,7 @@ export const getComparedProductDetails = async (ids: string[]) => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed to fetch compare items data');
   }
