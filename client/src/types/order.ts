@@ -10,6 +10,6 @@ export interface OrderStateType {
       orderId: string;
     };
     loading: boolean;
-    error: ApiError | null | unknown | undefined;
+    error: string;
   };
 }
