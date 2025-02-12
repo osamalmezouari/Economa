@@ -18,13 +18,14 @@ import { setDisplayCart } from '../features/shoppingCart/shoppingCartSlice';
 import ShoppingCartItem from '../components/base/shoppingCartItem/shoppingCartItem';
 import EmptyBox from '../components/base/empty-box/empty-box';
 import { useRouter } from '@tanstack/react-router';
+import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
     (state: RootState) => state.shoppingCart.shoppingCartWithProducts
   );
-  const { loading: createloading } = useSelector(
+  const { loading: createloading, error: createError } = useSelector(
     (state: RootState) => state.shoppingCart.createshoppingCart
   );
   const { loading: removeloading } = useSelector(
@@ -37,6 +38,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     dispatch(getshoppingCart());
   }, [dispatch]);
+
   const Router = useRouter();
   return (
     <Box
@@ -80,9 +82,16 @@ const ShoppingCart = () => {
           {(loading || createloading || removeloading) && (
             <CircularProgress color="primary" className="m-auto" />
           )}
-          {!cartItems.length && !loading && <EmptyBox />}
+          {!cartItems.length &&
+            !loading &&
+            !createloading &&
+            !removeloading && (
+              <Box className={'w-full'}>
+                <EmptyBox />
+              </Box>
+            )}
+          {createError && <GlobalAlert message={createError} status="error" />}
           {!loading &&
-            !error &&
             cartItems.map((item) => {
               return (
                 <>
@@ -167,8 +176,9 @@ const ShoppingCart = () => {
               '&:hover': { backgroundColor: 'primary.main' },
             }}
             onClick={() => {
-              Router.navigate({ to:'/Economa/placeOrder' });
+              Router.navigate({ to: '/Economa/placeOrder' });
             }}
+            disabled={data.length === 0}
           >
             Checkout
           </Button>
