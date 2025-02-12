@@ -9,7 +9,7 @@ const initialState: userStateType = {
       name: '',
     },
     loading: false,
-    error: null,
+    error: '',
   },
 };
 
@@ -21,16 +21,16 @@ const UserStore = createSlice({
     builder
       .addCase(getShoortedUserInfo.pending, (state) => {
         state.ShoortedUserInfo.loading = true;
-        state.ShoortedUserInfo.error = null;
+        state.ShoortedUserInfo.error = '';
       })
       .addCase(getShoortedUserInfo.fulfilled, (state, action) => {
         state.ShoortedUserInfo.loading = false;
-        state.ShoortedUserInfo.error = null;
+        state.ShoortedUserInfo.error = '';
         state.ShoortedUserInfo.data = action.payload;
       })
-      .addCase(getShoortedUserInfo.rejected, (state) => {
+      .addCase(getShoortedUserInfo.rejected, (state, action) => {
         state.ShoortedUserInfo.loading = true;
-        state.ShoortedUserInfo.error = null;
+        state.ShoortedUserInfo.error = action.payload as string;
       });
   },
 });
