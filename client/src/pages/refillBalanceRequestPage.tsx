@@ -21,7 +21,6 @@ import {
   getbalanceCardInfo,
   refillBalanceRequest,
 } from '../features/balance/balanceThunk';
-import { ApiError } from '../types/apierror';
 import BalanceCard from '../components/extra/balanceCard/balanceCard';
 
 const RefillBalanceRequestPage = () => {
@@ -173,9 +172,7 @@ const RefillBalanceRequestPage = () => {
           </Grid>
         )}
         <Grid item xs={12} sm={12} md={12} lg={12}>
-          {error instanceof ApiError && (
-            <Alert severity="error">{error.message}</Alert>
-          )}
+          {error && <Alert severity="error">{error}</Alert>}
           {data.reqStatus?.statusCode === 201 ? (
             <Alert severity="success">{data.reqStatus.message}</Alert>
           ) : (
