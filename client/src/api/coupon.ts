@@ -7,7 +7,7 @@ export const verfy_coupon = async (data: verfy_coupon_type) => {
     return response.data;
   } catch (error: any) {
     if (error.response) {
-      throw error.response.data;
+      throw error.response.data.message;
     }
     throw new Error('Failed Apply Coupon');
   }
