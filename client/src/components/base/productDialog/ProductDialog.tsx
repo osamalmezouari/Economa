@@ -137,7 +137,7 @@ export default function ProductDialog({
             </Grid>
             <Grid item xs={12} md={6} className="p-4">
               <p
-                onClick={() => Router.navigate({ to: `/Store/${id}` })}
+                onClick={() => Router.navigate({ to: `/Economa/Store/${id}` })}
                 className="tracking-wide font-normal text-secondary-main text-2xl mt-4 cursor-pointer hover:text-primary-main transition-all duration-300"
               >
                 {name}
