@@ -18,7 +18,7 @@ import useAuth from '../../../hooks/useAuth';
 const Mobile_nav_bar = () => {
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-  const { isAuthenticated, isLoading } = useAuth();
+/*   const { isAuthenticated, isLoading } = useAuth(); */
   const router = useRouter();
 
   const handleClick = () => {
