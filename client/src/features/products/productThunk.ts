@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as productsApi from '../../api/products';
-import { StoreFilters } from '../../types/storeFilters';
 import { AddReview } from '../../types/review';
+import { addreview } from '../../api/productReview';
+import { StoreFilters } from '../../types/product';
 
 export const getProductsStore = createAsyncThunk(
   '/products/store',
@@ -75,7 +76,7 @@ export const addReview = createAsyncThunk(
   '/products/addReview',
   async (reviewobj: AddReview, { rejectWithValue }) => {
     try {
-      const review = await productsApi.addReview(reviewobj);
+      const review = await addreview(reviewobj);
       return review;
     } catch (error: any) {
       if (error) {
