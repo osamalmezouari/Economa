@@ -10,17 +10,17 @@ const initialState: WishlistState = {
   wishlist: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   createWishList: {
     data: {},
     loading: false,
-    error: null,
+    error: '',
   },
   removefromWishList: {
     data: {},
     loading: false,
-    error: null,
+    error: '',
   },
   open: false,
 };
