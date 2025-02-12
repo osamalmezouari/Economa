@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
-import { ApiError } from '../../types/apierror';
 import { Login } from '../../features/auth/authThunk';
 import { useRouter } from '@tanstack/react-router';
 
@@ -93,16 +92,14 @@ const LoginComponent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <p
-              onClick={() => Router.navigate({ to:'/Economa/Register' })}
+              onClick={() => Router.navigate({ to: '/Economa/Register' })}
               className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
             >
               Don't have an account? Register
             </p>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-            {error instanceof ApiError && (
-              <Alert severity="error">{error.message}</Alert>
-            )}
+            {error && <Alert severity="error">{error}</Alert>}
             {data.length > 0 && (
               <Alert severity="success">
                 Login successful! You can now access your account.
