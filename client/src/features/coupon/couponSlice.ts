@@ -11,7 +11,7 @@ const initialState: couponStoreType = {
       discount_value: 0,
     },
     loading: false,
-    error: null,
+    error: '',
   },
 };
 
@@ -23,16 +23,16 @@ const CouponSlice = createSlice({
     builder
       .addCase(verfyCoupon.pending, (state) => {
         state.verifyCoupon.loading = true;
-        state.verifyCoupon.error = null;
+        state.verifyCoupon.error = '';
       })
       .addCase(verfyCoupon.fulfilled, (state, action) => {
         state.verifyCoupon.loading = false;
-        state.verifyCoupon.error = null;
+        state.verifyCoupon.error = '';
         state.verifyCoupon.data = action.payload;
       })
       .addCase(verfyCoupon.rejected, (state, action: PayloadAction<any>) => {
         state.verifyCoupon.loading = false;
-        state.verifyCoupon.error = action.payload;
+        state.verifyCoupon.error = action.payload as string;
       });
   },
 });
