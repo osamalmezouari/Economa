@@ -5,12 +5,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState: AuthState = {
   Login: {
     loading: false,
-    error: null,
+    error: '',
     data: [],
   },
   Register: {
     loading: false,
-    error: null,
+    error: '',
     data: [],
   },
 };
@@ -24,30 +24,30 @@ const authSlice = createSlice({
       builder
         .addCase(Register.pending, (state) => {
           state.Register.loading = true;
-          state.Register.error = null;
+          state.Register.error = '';
         })
         .addCase(Register.fulfilled, (state, action) => {
           state.Register.loading = false;
-          state.Register.error = null;
+          state.Register.error = '';
           state.Register.data = action.payload;
         })
         .addCase(Register.rejected, (state, action) => {
           state.Register.loading = false;
-          state.Register.error = action.payload;
+          state.Register.error = action.payload as string;
         })
         .addCase(Login.pending, (state) => {
           state.Login.loading = true;
-          state.Login.error = null;
+          state.Login.error = '';
         })
         .addCase(Login.fulfilled, (state, action) => {
           state.Login.loading = false;
-          state.Login.error = null;
+          state.Login.error = '';
           state.Login.data = action.payload;
           localStorage.setItem('token', action.payload);
         })
         .addCase(Login.rejected, (state, action) => {
           state.Login.loading = false;
-          state.Login.error = action.payload;
+          state.Login.error = action.payload as string;
         });
     }
   },
