@@ -11,19 +11,19 @@ import {
   ProductCardType,
   ProductsNewArrivals,
   ProductStoreType,
+  StoreFilters,
 } from '../../types/product';
-import { StoreFilters } from '../../types/storeFilters';
 
 const initialState: ProductCardStateType = {
   productsCard: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   productsNewArrivals: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   productsStore: {
     data: {
@@ -31,7 +31,7 @@ const initialState: ProductCardStateType = {
       products: [],
     },
     loading: false,
-    error: null,
+    error: '',
   },
   filters: {
     category: '',
@@ -65,7 +65,7 @@ const initialState: ProductCardStateType = {
     },
 
     loading: false,
-    error: null,
+    error: '',
   },
   addReview: {
     data: {
@@ -76,7 +76,7 @@ const initialState: ProductCardStateType = {
       rating: 0
     },
     loading: false,
-    error: null,
+    error: '',
   },
 };
 
@@ -98,7 +98,7 @@ const productsSlice = createSlice({
       //products cards
       .addCase(getproductsCards.pending, (state) => {
         state.productsCard.loading = true;
-        state.productsCard.error = null;
+        state.productsCard.error = '';
       })
       .addCase(getproductsCards.rejected, (state, action) => {
         state.productsCard.loading = false;
@@ -108,7 +108,7 @@ const productsSlice = createSlice({
         getproductsCards.fulfilled,
         (state, action: PayloadAction<ProductCardType[]>) => {
           state.productsCard.loading = false;
-          state.productsCard.error = null;
+          state.productsCard.error = '';
           state.productsCard.data = action.payload;
         }
       )
@@ -116,17 +116,17 @@ const productsSlice = createSlice({
       //new Arrivals
       .addCase(getProductsNewArrivals.pending, (state) => {
         state.productsNewArrivals.loading = true;
-        state.productsNewArrivals.error = null;
+        state.productsNewArrivals.error = '';
       })
       .addCase(getProductsNewArrivals.rejected, (state, action) => {
         state.productsNewArrivals.loading = false;
-        state.productsNewArrivals.error = action.payload;
+        state.productsNewArrivals.error = action.payload as string;
       })
       .addCase(
         getProductsNewArrivals.fulfilled,
         (state, action: PayloadAction<ProductsNewArrivals[]>) => {
           state.productsNewArrivals.loading = false;
-          state.productsNewArrivals.error = null;
+          state.productsNewArrivals.error = '';
           state.productsNewArrivals.data = action.payload;
         }
       )
@@ -134,17 +134,17 @@ const productsSlice = createSlice({
       //storeproducts
       .addCase(getProductsStore.pending, (state) => {
         state.productsStore.loading = true;
-        state.productsStore.error = null;
+        state.productsStore.error = '';
       })
       .addCase(getProductsStore.rejected, (state, action) => {
         state.productsStore.loading = false;
-        state.productsStore.error = action.payload;
+        state.productsStore.error = action.payload as string;
       })
       .addCase(
         getProductsStore.fulfilled,
         (state, action: PayloadAction<ProductStoreType>) => {
           state.productsStore.loading = false;
-          state.productsStore.error = null;
+          state.productsStore.error = '';
           state.productsStore.data = action.payload;
         }
       )
@@ -152,33 +152,33 @@ const productsSlice = createSlice({
       //products Details
       .addCase(getProductsDetails.pending, (state) => {
         state.productsDetails.loading = true;
-        state.productsDetails.error = null;
+        state.productsDetails.error = '';
       })
       .addCase(getProductsDetails.rejected, (state, action) => {
         state.productsDetails.loading = false;
-        state.productsDetails.error = action.payload;
+        state.productsDetails.error = action.payload as string;
       })
       .addCase(getProductsDetails.fulfilled, (state, action) => {
         state.productsDetails.loading = false;
-        state.productsDetails.error = null;
+        state.productsDetails.error = '';
         state.productsDetails.data = action.payload;
       })
 
       //add Product Review
       .addCase(addReview.pending, (state) => {
         state.addReview.loading = true;
-        state.addReview.error = null;
+        state.addReview.error = '';
       })
 
       .addCase(addReview.fulfilled, (state, action) => {
         state.addReview.loading = false;
-        state.addReview.error = null;
+        state.addReview.error = '';
         state.addReview.data = action.payload;
       })
 
       .addCase(addReview.rejected, (state, action) => {
         state.addReview.loading = false;
-        state.addReview.error = action.payload;
+        state.addReview.error = action.payload as string;
       });
   },
 });
