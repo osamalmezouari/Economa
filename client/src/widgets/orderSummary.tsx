@@ -14,7 +14,6 @@ import { setDisplayCart } from '../features/shoppingCart/shoppingCartSlice';
 import { useRouter } from '@tanstack/react-router';
 import { useState } from 'react';
 import { verfyCoupon } from '../features/coupon/couponThunk';
-import { ApiError } from '../types/apierror';
 import { verfy_coupon_type } from '../types/coupon';
 
 const OrderSummary = () => {
@@ -68,9 +67,7 @@ const OrderSummary = () => {
       </Box>
       <Divider />
       <Box
-        className={
-          ' flex  flex-col  py-2 h-[323px] px-2   overflow-y-scroll'
-        }
+        className={' flex  flex-col  py-2 h-[323px] px-2   overflow-y-scroll'}
       >
         <OrderItem />
       </Box>
@@ -128,9 +125,7 @@ const OrderSummary = () => {
           ),
         }}
       />
-      {(error as ApiError) && (
-        <Alert severity="info">{(error as ApiError).message}</Alert>
-      )}
+      {error && <Alert severity="info">{error}</Alert>}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
         <Typography variant="body2" fontWeight="bold">
           Total
@@ -172,7 +167,7 @@ const OrderSummary = () => {
       <Button
         variant="contained"
         fullWidth
-        onClick={() => Router.navigate({ to:'/Economa/Store' })}
+        onClick={() => Router.navigate({ to: '/Economa/Store' })}
       >
         Back to Store
       </Button>
