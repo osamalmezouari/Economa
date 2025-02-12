@@ -11,7 +11,6 @@ import { RegisterPayload } from '../../types/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { Register } from '../../features/auth/authThunk';
-import { ApiError } from '../../types/apierror';
 import { useRouter } from '@tanstack/react-router';
 
 const RegisterComponent = () => {
@@ -176,8 +175,8 @@ const RegisterComponent = () => {
             </p>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-            {error instanceof ApiError && (
-              <Alert severity="error">{error.message}</Alert>
+            {error && (
+              <Alert severity="error">{error}</Alert>
             )}
             {data.length > 0 && (
               <Alert severity="success">
