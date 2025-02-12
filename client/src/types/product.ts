@@ -1,7 +1,5 @@
-import { ApiError } from './apierror';
 import { MiniProductCardTypeProps } from '../components/base/minProductCard/interfaces';
 import { AddReview, Review } from './review';
-
 
 export interface StoreFilters {
   category?: string;
@@ -73,28 +71,28 @@ export interface ProductCardStateType {
   productsCard: {
     data: ProductCardType[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
   productsNewArrivals: {
     data: ProductsNewArrivals[];
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
   productsStore: {
     data: ProductStoreType;
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
   productsDetails: {
     data: ProductDetails;
     loading: boolean;
-    error: ApiError | null | undefined | unknown;
+    error: string;
   };
 
   addReview: {
     data: AddReview;
     loading: boolean;
-    error: ApiError | null;
+    error: string;
   };
   filters: StoreFilters;
 }
