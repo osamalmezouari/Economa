@@ -24,7 +24,6 @@ import {
 } from '../../../features/shoppingCart/shoppingCartThunk';
 import { AppDispatch, RootState } from '../../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { ApiError } from '../../../types/apierror';
 import { clearCreateError } from '../../../features/shoppingCart/shoppingCartSlice';
 import { useRouter } from '@tanstack/react-router';
 
@@ -164,9 +163,7 @@ export default function ProductDialog({
                   ${price}
                 </p>
               </Box>
-              {(error as ApiError) && (
-                <Alert severity="info">{(error as ApiError).message}</Alert>
-              )}
+              {error && <Alert severity="info">{error}</Alert>}
 
               <DialogActions sx={{ padding: '5px !important' }}>
                 <TextField
