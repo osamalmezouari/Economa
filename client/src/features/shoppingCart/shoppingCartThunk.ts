@@ -62,9 +62,8 @@ export const removefromshoppingCart = createAsyncThunk(
   '/shoppingCart/remove',
   async (id: string, { rejectWithValue }) => {
     try {
-      const removefromshoppingCart = await shoopingCartApi.removefromshoppingCart(
-        id
-      );
+      const removefromshoppingCart =
+        await shoopingCartApi.removefromshoppingCart(id);
       return removefromshoppingCart;
     } catch (error: any) {
       if (error) {
