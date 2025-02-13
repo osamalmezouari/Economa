@@ -1,0 +1,165 @@
+Index: client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { createSlice } from '@reduxjs/toolkit';\r\nimport {\r\n  getCardsStats,\r\n  getCostXProfitLastWeek,\r\n  getLowStockProducts,\r\n  getsalesXProfit,\r\n  getSalesXProfitCategory,\r\n  getTopCostumers,\r\n  getTopSellingProducts,\r\n} from './StoreAnalyticsThunk';\r\nimport { storeAnalyticsState } from '../../types/storeAnalytics';\r\n\r\nconst initialState: storeAnalyticsState = {\r\n  stateCards: {\r\n    data: {\r\n      orderStats: {\r\n        title: 'New Orders',\r\n        metric: 0,\r\n        increased: false,\r\n        decreased: false,\r\n        percentage: 0,\r\n        chart: [],\r\n      },\r\n      SalesStats: {\r\n        title: 'Sales',\r\n        metric: 0,\r\n        increased: false,\r\n        decreased: false,\r\n        percentage: 0,\r\n        chart: [],\r\n      },\r\n      ProfitStats: {\r\n        title: 'Profit',\r\n        metric: 0,\r\n        increased: false,\r\n        decreased: false,\r\n        percentage: 0,\r\n        chart: [],\r\n      },\r\n    },\r\n\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  SalesXProfit: {\r\n    data: [],\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  CostXProfitLastWeek: {\r\n    data: [],\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  SalesXProfitCategory: {\r\n    data: [],\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  TopCostumers: {\r\n    data: [],\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  TopSellingProducts: {\r\n    data: [],\r\n    loading: false,\r\n    error: null,\r\n  },\r\n  StockReport: {\r\n    data: {\r\n      products: [],\r\n      productPageCount: 0,\r\n    },\r\n    filters: {\r\n      page: 0,\r\n      productName: '',\r\n    },\r\n    loading: false,\r\n    error: null,\r\n  },\r\n};\r\n\r\nconst StoreAnalyticsSlice = createSlice({\r\n  name: 'StoreAnalyticsSlice',\r\n  initialState,\r\n  reducers: {},\r\n  extraReducers: (builder) => {\r\n    builder\r\n      .addCase(getCardsStats.pending, (state) => {\r\n        (state.stateCards.loading = true), (state.stateCards.error = null);\r\n      })\r\n      .addCase(getCardsStats.fulfilled, (state, action) => {\r\n        (state.stateCards.loading = false),\r\n          (state.stateCards.data = action.payload);\r\n      })\r\n      .addCase(getCardsStats.rejected, (state, action) => {\r\n        (state.stateCards.loading = false),\r\n          (state.stateCards.error = action.payload);\r\n      })\r\n\r\n      .addCase(getsalesXProfit.pending, (state) => {\r\n        (state.SalesXProfit.loading = true), (state.SalesXProfit.error = null);\r\n      })\r\n      .addCase(getsalesXProfit.fulfilled, (state, action) => {\r\n        (state.SalesXProfit.loading = false),\r\n          (state.SalesXProfit.data = action.payload);\r\n      })\r\n      .addCase(getsalesXProfit.rejected, (state, action) => {\r\n        (state.SalesXProfit.loading = false),\r\n          (state.SalesXProfit.error = action.payload);\r\n      })\r\n\r\n      .addCase(getCostXProfitLastWeek.pending, (state) => {\r\n        (state.CostXProfitLastWeek.loading = true),\r\n          (state.CostXProfitLastWeek.error = null);\r\n      })\r\n      .addCase(getCostXProfitLastWeek.fulfilled, (state, action) => {\r\n        (state.CostXProfitLastWeek.loading = false),\r\n          (state.CostXProfitLastWeek.data = action.payload);\r\n      })\r\n      .addCase(getCostXProfitLastWeek.rejected, (state, action) => {\r\n        (state.CostXProfitLastWeek.loading = false),\r\n          (state.CostXProfitLastWeek.error = action.payload);\r\n      })\r\n\r\n      .addCase(getSalesXProfitCategory.pending, (state) => {\r\n        (state.SalesXProfitCategory.loading = true),\r\n          (state.SalesXProfitCategory.error = null);\r\n      })\r\n      .addCase(getSalesXProfitCategory.fulfilled, (state, action) => {\r\n        (state.SalesXProfitCategory.loading = false),\r\n          (state.SalesXProfitCategory.data = action.payload);\r\n      })\r\n      .addCase(getSalesXProfitCategory.rejected, (state, action) => {\r\n        (state.SalesXProfitCategory.loading = false),\r\n          (state.SalesXProfitCategory.error = action.payload);\r\n      })\r\n\r\n      .addCase(getTopCostumers.pending, (state) => {\r\n        (state.TopCostumers.loading = true), (state.TopCostumers.error = null);\r\n      })\r\n      .addCase(getTopCostumers.fulfilled, (state, action) => {\r\n        (state.TopCostumers.loading = false),\r\n          (state.TopCostumers.data = action.payload);\r\n      })\r\n      .addCase(getTopCostumers.rejected, (state, action) => {\r\n        (state.TopCostumers.loading = false),\r\n          (state.TopCostumers.error = action.payload);\r\n      })\r\n\r\n      .addCase(getTopSellingProducts.pending, (state) => {\r\n        (state.TopSellingProducts.loading = true),\r\n          (state.TopSellingProducts.error = null);\r\n      })\r\n      .addCase(getTopSellingProducts.fulfilled, (state, action) => {\r\n        (state.TopSellingProducts.loading = false),\r\n          (state.TopSellingProducts.data = action.payload);\r\n      })\r\n      .addCase(getTopSellingProducts.rejected, (state, action) => {\r\n        (state.TopSellingProducts.loading = false),\r\n          (state.TopSellingProducts.error = action.payload);\r\n      })\r\n\r\n      .addCase(getLowStockProducts.pending, (state) => {\r\n        (state.StockReport.loading = true), (state.StockReport.error = null);\r\n      })\r\n      .addCase(getLowStockProducts.fulfilled, (state, action) => {\r\n        (state.StockReport.loading = false),\r\n          (state.StockReport.data = action.payload);\r\n      })\r\n      .addCase(getLowStockProducts.rejected, (state, action) => {\r\n        (state.StockReport.loading = false),\r\n          (state.StockReport.error = action.payload);\r\n      });\r\n  },\r\n});\r\n\r\nexport default StoreAnalyticsSlice;\r\nexport const StoreAnalyticsReducer = StoreAnalyticsSlice.reducer;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts b/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts
+--- a/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts	(revision f5f1f2d30f9ac05dba397812b432081910de91ca)
++++ b/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts	(date 1739469731456)
+@@ -40,32 +40,33 @@
+     },
+ 
+     loading: false,
+-    error: null,
++    error: ''
++    ,
+   },
+   SalesXProfit: {
+     data: [],
+     loading: false,
+-    error: null,
++    error: '',
+   },
+   CostXProfitLastWeek: {
+     data: [],
+     loading: false,
+-    error: null,
++    error: '',
+   },
+   SalesXProfitCategory: {
+     data: [],
+     loading: false,
+-    error: null,
++    error: '',
+   },
+   TopCostumers: {
+     data: [],
+     loading: false,
+-    error: null,
++    error: '',
+   },
+   TopSellingProducts: {
+     data: [],
+     loading: false,
+-    error: null,
++    error: '',
+   },
+   StockReport: {
+     data: {
+@@ -77,7 +78,7 @@
+       productName: '',
+     },
+     loading: false,
+-    error: null,
++    error: '',
+   },
+ };
+ 
+@@ -88,7 +89,7 @@
+   extraReducers: (builder) => {
+     builder
+       .addCase(getCardsStats.pending, (state) => {
+-        (state.stateCards.loading = true), (state.stateCards.error = null);
++        (state.stateCards.loading = true), (state.stateCards.error = '');
+       })
+       .addCase(getCardsStats.fulfilled, (state, action) => {
+         (state.stateCards.loading = false),
+@@ -96,11 +97,11 @@
+       })
+       .addCase(getCardsStats.rejected, (state, action) => {
+         (state.stateCards.loading = false),
+-          (state.stateCards.error = action.payload);
++          (state.stateCards.error = action.payload as string);
+       })
+ 
+       .addCase(getsalesXProfit.pending, (state) => {
+-        (state.SalesXProfit.loading = true), (state.SalesXProfit.error = null);
++        (state.SalesXProfit.loading = true), (state.SalesXProfit.error = '');
+       })
+       .addCase(getsalesXProfit.fulfilled, (state, action) => {
+         (state.SalesXProfit.loading = false),
+@@ -108,12 +109,12 @@
+       })
+       .addCase(getsalesXProfit.rejected, (state, action) => {
+         (state.SalesXProfit.loading = false),
+-          (state.SalesXProfit.error = action.payload);
++          (state.SalesXProfit.error = action.payload as string);
+       })
+ 
+       .addCase(getCostXProfitLastWeek.pending, (state) => {
+         (state.CostXProfitLastWeek.loading = true),
+-          (state.CostXProfitLastWeek.error = null);
++          (state.CostXProfitLastWeek.error = '');
+       })
+       .addCase(getCostXProfitLastWeek.fulfilled, (state, action) => {
+         (state.CostXProfitLastWeek.loading = false),
+@@ -121,12 +122,12 @@
+       })
+       .addCase(getCostXProfitLastWeek.rejected, (state, action) => {
+         (state.CostXProfitLastWeek.loading = false),
+-          (state.CostXProfitLastWeek.error = action.payload);
++          (state.CostXProfitLastWeek.error = action.payload as string);
+       })
+ 
+       .addCase(getSalesXProfitCategory.pending, (state) => {
+         (state.SalesXProfitCategory.loading = true),
+-          (state.SalesXProfitCategory.error = null);
++          (state.SalesXProfitCategory.error = '');
+       })
+       .addCase(getSalesXProfitCategory.fulfilled, (state, action) => {
+         (state.SalesXProfitCategory.loading = false),
+@@ -134,24 +135,24 @@
+       })
+       .addCase(getSalesXProfitCategory.rejected, (state, action) => {
+         (state.SalesXProfitCategory.loading = false),
+-          (state.SalesXProfitCategory.error = action.payload);
++          (state.SalesXProfitCategory.error = action.payload as string);
+       })
+ 
+       .addCase(getTopCostumers.pending, (state) => {
+-        (state.TopCostumers.loading = true), (state.TopCostumers.error = null);
++        (state.TopCostumers.loading = true), (state.TopCostumers.error = '');
+       })
+       .addCase(getTopCostumers.fulfilled, (state, action) => {
+         (state.TopCostumers.loading = false),
+-          (state.TopCostumers.data = action.payload);
++          (state.TopCostumers.data = action.payload );
+       })
+       .addCase(getTopCostumers.rejected, (state, action) => {
+         (state.TopCostumers.loading = false),
+-          (state.TopCostumers.error = action.payload);
++          (state.TopCostumers.error = action.payload as string);
+       })
+ 
+       .addCase(getTopSellingProducts.pending, (state) => {
+         (state.TopSellingProducts.loading = true),
+-          (state.TopSellingProducts.error = null);
++          (state.TopSellingProducts.error = '');
+       })
+       .addCase(getTopSellingProducts.fulfilled, (state, action) => {
+         (state.TopSellingProducts.loading = false),
+@@ -159,11 +160,11 @@
+       })
+       .addCase(getTopSellingProducts.rejected, (state, action) => {
+         (state.TopSellingProducts.loading = false),
+-          (state.TopSellingProducts.error = action.payload);
++          (state.TopSellingProducts.error = action.payload as string);
+       })
+ 
+       .addCase(getLowStockProducts.pending, (state) => {
+-        (state.StockReport.loading = true), (state.StockReport.error = null);
++        (state.StockReport.loading = true), (state.StockReport.error = '');
+       })
+       .addCase(getLowStockProducts.fulfilled, (state, action) => {
+         (state.StockReport.loading = false),
+@@ -171,7 +172,7 @@
+       })
+       .addCase(getLowStockProducts.rejected, (state, action) => {
+         (state.StockReport.loading = false),
+-          (state.StockReport.error = action.payload);
++          (state.StockReport.error = action.payload as string);
+       });
+   },
+ });
