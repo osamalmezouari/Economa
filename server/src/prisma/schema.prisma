@@ -17,6 +17,12 @@ enum OrderStatus {
   Completed
 }
 
+enum RefillStatus {
+  pending
+  rejected
+  approved
+}
+
 enum TransactionType {
   purchase
   sale
@@ -146,14 +152,23 @@ model Balance {
 }
 
 model refillBalanceRequest {
-  id        String   @id
-  userId    String
-  amount    Float
-  file      String   @db.Text
-  status    String   @default("pending")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                         String                       @id
+  userId                     String
+  amount                     Float
+  file                       String                       @db.Text
+  status                     String                       @default("pending")
+  createdAt                  DateTime                     @default(now())
+  updatedAt                  DateTime                     @updatedAt
+  user                       User                         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refillBalanceRequestStatus refillBalanceRequestStatus[]
+}
+
+model refillBalanceRequestStatus {
+  id        String               @id
+  requestId String
+  status    RefillStatus
+  createdAt DateTime             @default(now()) // Timestamp when status was set
+  request   refillBalanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
 }
 
 model Notification {
