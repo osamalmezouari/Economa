@@ -167,7 +167,7 @@ model refillBalanceRequestStatus {
   id        String               @id
   requestId String
   status    RefillStatus
-  createdAt DateTime             @default(now()) // Timestamp when status was set
+  createdAt DateTime             @default(now()) 
   request   refillBalanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
 }
 
