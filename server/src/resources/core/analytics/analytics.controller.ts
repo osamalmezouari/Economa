@@ -45,4 +45,14 @@ export class AnalyticsController {
       page,
     });
   }
+
+  @Get('RefillInsights/StatsCards')
+  getRefillStatsCards() {
+    return this.analyticsService.getRefillStatsCards();
+  }
+
+  @Get('RefillInsights/YearlyChart')
+  getYearlyRefillChart() {
+    return this.analyticsService.getYearlyrefillReuqtestsChart();
+  }
 }
