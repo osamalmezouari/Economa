@@ -139,6 +139,20 @@ model User {
   balance              Balance?
   refillBalanceRequest refillBalanceRequest[]
   Coupon               Coupon[]               @relation("UsersCoupons")
+  sentTransfers        UserTransfers[]        @relation("SenderTransfers")
+  receivedTransfers    UserTransfers[]        @relation("ReceiverTransfers")
+}
+
+model UserTransfers {
+  id          String   @id
+  senderId    String
+  receiverId  String
+  amount      Float
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  sender      User     @relation("SenderTransfers", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver    User     @relation("ReceiverTransfers", fields: [receiverId], references: [id], onDelete: Cascade)
 }
 
 model Balance {
@@ -167,7 +181,7 @@ model refillBalanceRequestStatus {
   id        String               @id
   requestId String
   status    RefillStatus
-  createdAt DateTime             @default(now()) 
+  createdAt DateTime             @default(now())
   request   refillBalanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
 }
 
