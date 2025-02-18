@@ -106,7 +106,12 @@ export class AnalyticsService {
     };
   }
 
-  getYearlyrefillReuqtestsChart() {
-    return this.refillBalanceService.YearlyrefillReuqtestsChart();
+  async getYearlyrefillReuqtestsChart(year: number) {
+    return await this.refillBalanceService.YearlyrefillReuqtestsChart(year);
   }
+
+  async getRefillDaily(Date: string) {
+    return await this.refillBalanceService.refillRequestDaily(Date);
+  }
+  
 }
