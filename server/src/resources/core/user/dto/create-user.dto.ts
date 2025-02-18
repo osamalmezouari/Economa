@@ -21,5 +21,5 @@ export class CreateUserDto {
   address: string;
 
   @IsString()
-  avatar : string
+  avatar: string;
 }
