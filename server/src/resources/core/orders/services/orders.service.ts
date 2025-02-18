@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { PlaceOrderDto } from '../dto/placeOrder.dto';
 import { CouponService } from 'src/resources/billing/coupon/coupon.service';
 import { ShoppingCartService } from 'src/resources/settings/shopping-cart/shopping-cart.service';
-import { BalanceService } from 'src/resources/billing/balance/balance.service';
+import { BalanceService } from 'src/resources/billing/balance/services/balance.service';
 import { PaymentService } from 'src/resources/billing/payment/payment.service';
 import { endOfMonth, startOfMonth, subDays, subMonths } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
