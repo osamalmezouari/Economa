@@ -4,7 +4,7 @@ import { CreatePaymentDto } from './dto/create-payment.dto';
 import { UpdatePaymentDto } from './dto/update-payment.dto';
 import { PAYMENT_NOT_FOUND_Exception } from '../../../common/exceptions/PAYMENT_NOT_FOUND.exception';
 import { v4 as uuid } from 'uuid';
-import { BalanceService } from '../balance/balance.service';
+import { BalanceService } from '../balance/services/balance.service';
 import { PayOrderDto } from './dto/payOrder.dto';
 
 @Injectable()
