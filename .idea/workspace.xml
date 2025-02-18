@@ -4,33 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="Refactor auth thunks to streamline API call returns.&#10;&#10;Simplified the return statements in the Register and Login async thunks by removing unnecessary intermediate variables. This improves readability without altering functionality.">
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-22T21-43-55.794Z.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-22T22-00-08.714Z.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-22T22-01-42.019Z.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-22T22-02-05.620Z.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-22T22-03-01.709Z.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-23T13-17-36.402Z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-23T13-17-57.765Z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-23T13-27-45.499Z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-23T14-02-12.114Z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecommerce_payments_documents/0b26d6c7-488e-4fef-80b7-a88c0ad9368b/2025/0b26d6c7-488e-4fef-80b7-a88c0ad9368b_2025-01-25T00-04-17.309Z.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/StoreAnalytics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/StoreAnalytics.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/dashboards/shared/sidebar/menu-items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboards/shared/sidebar/menu-items.tsx" afterDir="false" />
+    <list default="true" id="4cdcd66c-2265-463c-8434-780580f1612e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes2/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/api/balanceAnalytics.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/prisma/migrations/20250213164147_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/resources/billing/balance/services/balance.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/resources/core/product/dto/storeFilters.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/features/StoreAnalytics/StoreAnalyticsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/features/StoreAnalytics/StoreAnalyticsThunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/features/StoreAnalytics/StoreAnalyticsThunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/dashboard/Admin/storeAnalytics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/dashboard/Admin/storeAnalytics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/storeAnalytics.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/storeAnalytics.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/dashboards/Admin/CategorySales.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/dashboards/Admin/CategorySales.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/dashboards/Admin/CostXProfitLastWeek.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/dashboards/Admin/CostXProfitLastWeek.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/IAM/authentication/dto/sign-up.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/IAM/authentication/dto/sign-up.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/common/utils/sortStoreAnalyticsStatsCardsByDate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/utils/sortStoreAnalyticsStatsCardsByDate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/balance/balance.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/balance/services/refillbalance.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/billing/payment/payment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/analytics/analytics.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/orders.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/orders.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/services/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/services/order-item.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/orders/services/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/orders/services/orders.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/product/services/product-stock.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/services/product-stock.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/core/product/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/product/services/product.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resources/core/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/dto/create-user.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/resources/core/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/core/user/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/resources/settings/wishlist/wishlist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/resources/settings/wishlist/wishlist.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,36 +58,39 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2r5HYLyusUd1DPrGWCPDCRC8K29" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.format.executor&quot;: &quot;Run&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start:dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Oussama\\PROJECTS\\Ecommerce\\client\\node_modules\\prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Oussama\\PROJECTS\\Ecommerce\\client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.format.executor": "Run",
+    "npm.lint.executor": "Run",
+    "npm.start:dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Oussama\\PROJECTS\\Economa\\client\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\Oussama\\PROJECTS\\Economa\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="npm.lint">
+}]]></component>
+  <component name="RunManager" selected="npm.format">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -132,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:dev" />
-        <item itemvalue="npm.lint" />
         <item itemvalue="npm.format" />
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>

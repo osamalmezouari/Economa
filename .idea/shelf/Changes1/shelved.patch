@@ -1,0 +1,31 @@
+Index: server/src/resources/settings/wishlist/wishlist.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Injectable } from '@nestjs/common';\r\nimport { PrismaService } from 'src/prisma/prisma.service';\r\nimport { CreateWishlistDto } from './dto/create-wishlist.dto';\r\nimport { v4 as uuid } from 'uuid';\r\nimport { WISHLIST_NOT_FOUND_Exception } from '../../../common/exceptions/WISHLIST_NOT_FOUND.exception';\r\nimport { WISHLIST_EXISST_FOR_USER_Exception } from 'src/common/exceptions/WISHLIST_EXISST_FOR_USER.exception';\r\n\r\n@Injectable()\r\nexport class WishlistService {\r\n  constructor(private readonly prisma: PrismaService) {}\r\n\r\n  async findOne(id: string) {\r\n    const wishlist = await this.prisma.wishlist.findUnique({ where: { id } });\r\n    if (!wishlist) throw new WISHLIST_NOT_FOUND_Exception(id);\r\n    return wishlist;\r\n  }\r\n\r\n  async create(productId: string, userId: string) {\r\n    const WISHLIST_EXISST = await this.prisma.wishlist.findFirst({\r\n      where: { id: productId, userId: userId },\r\n    });\r\n    const productinfo = await this.prisma.product.findUnique({\r\n      where: { id: productId },\r\n    });\r\n    if (WISHLIST_EXISST) {\r\n      throw new WISHLIST_EXISST_FOR_USER_Exception(productinfo.name);\r\n    }\r\n    const wishlist = await this.prisma.wishlist.create({\r\n      data: {\r\n        id: uuid(),\r\n        productId: productId,\r\n        userId: userId,\r\n      },\r\n    });\r\n    return wishlist;\r\n  }\r\n\r\n  async findwishlistsByUserId(userId: string) {\r\n    const wishlists = await this.prisma.wishlist.findMany({\r\n      where: { userId },\r\n      select: {\r\n        id: true,\r\n        productId: true,\r\n        product: {\r\n          select: {\r\n            name: true,\r\n            price: true,\r\n            discount: true,\r\n            gallery: {\r\n              select: {\r\n                imageUrl: true,\r\n              },\r\n            },\r\n            Units: {\r\n              select: {\r\n                name: true,\r\n              },\r\n            },\r\n          },\r\n        },\r\n      },\r\n    });\r\n    if (!wishlists.length) {\r\n      return [];\r\n    }\r\n    const wishlistWithProducts = wishlists.map((item) => {\r\n      return {\r\n        id: item.id,\r\n        productName: item.product.name,\r\n        productPrice: item.product.price * (1 - item.product.discount / 100),\r\n        productunit: item.product.Units.name,\r\n        productId: item.productId,\r\n        svgLink:\r\n          item.product.gallery.length > 0\r\n            ? item.product.gallery[0].imageUrl\r\n            : '',\r\n      };\r\n    });\r\n    return wishlistWithProducts;\r\n  }\r\n\r\n  async remove(id: string) {\r\n    await this.findOne(id);\r\n    const wishlist = await this.prisma.wishlist.delete({ where: { id } });\r\n    return wishlist;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/src/resources/settings/wishlist/wishlist.service.ts b/server/src/resources/settings/wishlist/wishlist.service.ts
+--- a/server/src/resources/settings/wishlist/wishlist.service.ts	(revision f5f1f2d30f9ac05dba397812b432081910de91ca)
++++ b/server/src/resources/settings/wishlist/wishlist.service.ts	(date 1739401578928)
+@@ -17,13 +17,17 @@
+ 
+   async create(productId: string, userId: string) {
+     const WISHLIST_EXISST = await this.prisma.wishlist.findFirst({
+-      where: { id: productId, userId: userId },
++      where: { productId: productId, userId: userId },
+     });
+-    const productinfo = await this.prisma.product.findUnique({
++
++    const productName = await this.prisma.product.findUnique({
+       where: { id: productId },
++      select: {
++        name: true,
++      },
+     });
+     if (WISHLIST_EXISST) {
+-      throw new WISHLIST_EXISST_FOR_USER_Exception(productinfo.name);
++      throw new WISHLIST_EXISST_FOR_USER_Exception(productName.name);
+     }
+     const wishlist = await this.prisma.wishlist.create({
+       data: {
