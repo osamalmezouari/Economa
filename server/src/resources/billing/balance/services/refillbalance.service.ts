@@ -14,7 +14,6 @@ export class RefillBalanceService {
     createRefillbalancerequestDto: CreateRefillbalancerequestDto,
     userId: string,
   ) {
-    let requestId = '';
     try {
       if (!createRefillbalancerequestDto.file) {
         const refillbalancerequest =
@@ -27,7 +26,13 @@ export class RefillBalanceService {
               file: 'no file',
             },
           });
-        requestId = refillbalancerequest.id;
+        await this.prisma.refillBalanceRequestStatus.create({
+          data: {
+            id: uuid(),
+            status: 'pending',
+            requestId: refillbalancerequest.id,
+          },
+        });
         return {
           reqStatus: {
             statusCode: 201,
@@ -50,13 +55,12 @@ export class RefillBalanceService {
             file: filePath,
           },
         });
-      requestId = refillbalancerequest.id;
 
       await this.prisma.refillBalanceRequestStatus.create({
         data: {
           id: uuid(),
           status: 'pending',
-          requestId: requestId,
+          requestId: refillbalancerequest.id,
         },
       });
       return {
@@ -95,7 +99,7 @@ export class RefillBalanceService {
     );
     const userFolder = path.join(documentsRoot, userId);
     const currentYear = new Date().getFullYear().toString();
-    d
+
     const yearFolder = path.join(userFolder, currentYear);
     const fileExtension = path.extname(file.originalname).toLowerCase();
     if (!['.png', '.jpg', '.jpeg'].includes(fileExtension)) {
@@ -112,5 +116,259 @@ export class RefillBalanceService {
     } catch (error) {
       throw new Error(`Error while storing file: ${error.message}`);
     }
+  }
+
+  TotalRefillBalanceRequestsStatCard = async () => {
+    const now = new Date();
+
+    const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+    const prevMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const prevMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+
+    const currentMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: currentMonthStart,
+          lte: currentMonthEnd,
+        },
+      },
+    });
+
+    const prevMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: prevMonthStart,
+          lte: prevMonthEnd,
+        },
+      },
+    });
+    let percentageChange = 0;
+    if (prevMonthCount > 0) {
+      percentageChange =
+        ((currentMonthCount - prevMonthCount) / prevMonthCount) * 100;
+    }
+
+    return {
+      title: 'Total Refill Requests',
+      metric: currentMonthCount,
+      increased: currentMonthCount > prevMonthCount,
+      decreased: currentMonthCount < prevMonthCount,
+      percentage: Math.trunc(percentageChange),
+    };
+  };
+
+  TotalPendingRefillBalanceRequestsStatCard = async () => {
+    const now = new Date();
+
+    const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+    const prevMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const prevMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+
+    const currentMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: currentMonthStart,
+          lte: currentMonthEnd,
+        },
+        status: 'pending',
+      },
+    });
+
+    const prevMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: prevMonthStart,
+          lte: prevMonthEnd,
+        },
+        status: 'pending',
+      },
+    });
+    let percentageChange = 0;
+    if (prevMonthCount > 0) {
+      percentageChange =
+        ((currentMonthCount - prevMonthCount) / prevMonthCount) * 100;
+    }
+
+    return {
+      title: 'Total pendding Refill Requests',
+      metric: currentMonthCount,
+      increased: currentMonthCount > prevMonthCount,
+      decreased: currentMonthCount < prevMonthCount,
+      percentage: Math.trunc(percentageChange),
+    };
+  };
+
+  TotalApprovedRefillBalanceRequestsStatCard = async () => {
+    const now = new Date();
+
+    const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+    const prevMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const prevMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+
+    const currentMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: currentMonthStart,
+          lte: currentMonthEnd,
+        },
+        status: 'approved',
+      },
+    });
+
+    const prevMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: prevMonthStart,
+          lte: prevMonthEnd,
+        },
+        status: 'approved',
+      },
+    });
+    let percentageChange = 0;
+    if (prevMonthCount > 0) {
+      percentageChange =
+        ((currentMonthCount - prevMonthCount) / prevMonthCount) * 100;
+    }
+
+    return {
+      title: 'Total approved Refill Requests',
+      metric: currentMonthCount,
+      increased: currentMonthCount > prevMonthCount,
+      decreased: currentMonthCount < prevMonthCount,
+      percentage: Math.trunc(percentageChange),
+    };
+  };
+
+  TotalRejectedRefillBalanceRequestsStatCard = async () => {
+    const now = new Date();
+
+    const currentMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const currentMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+    const prevMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const prevMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+
+    const currentMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: currentMonthStart,
+          lte: currentMonthEnd,
+        },
+        status: 'rejected',
+      },
+    });
+
+    const prevMonthCount = await this.prisma.refillBalanceRequest.count({
+      where: {
+        createdAt: {
+          gte: prevMonthStart,
+          lte: prevMonthEnd,
+        },
+        status: 'rejected',
+      },
+    });
+    let percentageChange = 0;
+    if (prevMonthCount > 0) {
+      percentageChange =
+        ((currentMonthCount - prevMonthCount) / prevMonthCount) * 100;
+    }
+
+    return {
+      title: 'Total rejected Refill Requests',
+      metric: currentMonthCount,
+      increased: currentMonthCount > prevMonthCount,
+      decreased: currentMonthCount < prevMonthCount,
+      percentage: Math.trunc(percentageChange),
+    };
+  };
+
+  async YearlyrefillReuqtestsChart(year = new Date().getFullYear()) {
+    const months = Array.from({ length: 12 }, (_, i) => i + 1);
+    const result = [];
+
+    for (let month of months) {
+      const start = new Date(year, month - 1, 1);
+      const end = new Date(year, month, 0);
+
+      const [totalRefillRequests, totalApproved, totalBalanceApproved] =
+        await Promise.all([
+          this.prisma.refillBalanceRequest.count({
+            where: {
+              createdAt: {
+                gte: start,
+                lte: end,
+              },
+            },
+          }),
+          this.prisma.refillBalanceRequest.count({
+            where: {
+              createdAt: {
+                gte: start,
+                lte: end,
+              },
+              status: 'approved',
+            },
+          }),
+          this.prisma.refillBalanceRequest
+            .aggregate({
+              where: {
+                createdAt: {
+                  gte: start,
+                  lte: end,
+                },
+                status: 'approved',
+              },
+              _sum: {
+                amount: true,
+              },
+            })
+            .then((res) => res._sum.amount || 0),
+        ]);
+
+      result.push({
+        month: month,
+        totalRefillRequests,
+        totalApproved,
+        totalBalanceApproved,
+      });
+    }
+
+    // Calculate percentage change for total balance approved compared to the previous year
+    const thisYearTotal = result.reduce(
+      (sum, data) => sum + data.totalBalanceApproved,
+      0,
+    );
+    const prevYearTotal = await this.prisma.refillBalanceRequest
+      .aggregate({
+        where: {
+          createdAt: {
+            gte: new Date(year - 1, 0, 1),
+            lte: new Date(year - 1, 11, 31),
+          },
+          status: 'approved',
+        },
+        _sum: {
+          amount: true,
+        },
+      })
+      .then((res) => res._sum.amount || 0);
+
+    const percentageChange =
+      prevYearTotal !== 0
+        ? ((thisYearTotal - prevYearTotal) / prevYearTotal) * 100
+        : 0;
+
+    return {
+      monthlyData: result,
+      yearTotal: thisYearTotal,
+      prevYearTotal: prevYearTotal,
+      percentageChange: percentageChange.toFixed(2),
+    };
   }
 }
