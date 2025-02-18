@@ -80,6 +80,6 @@ export class AnalyticsService {
       productName: productName,
       page: page,
     });
-    return data
+    return data;
   }
 }
