@@ -371,4 +371,47 @@ export class RefillBalanceService {
       percentageChange: percentageChange.toFixed(2),
     };
   }
+
+  async refillRequestDaily(date = new Date().toISOString().split('T')[0]) {
+    const targetDay = new Date(date);
+    targetDay.setHours(0, 0, 0, 0);
+    const nextDay = new Date(targetDay);
+    nextDay.setDate(targetDay.getDate() + 1);
+
+    const requests = await this.prisma.refillBalanceRequest.findMany({
+      where: {
+        createdAt: {
+          gte: targetDay,
+          lt: nextDay,
+        },
+      },
+      include: {
+        user: {
+          select: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    const formattedData = requests.map((request) => ({
+      fullname: request.user.name,
+      date: request.createdAt.toISOString(),
+      amount: request.amount,
+      status: request.status,
+    }));
+
+    const statusCounts = formattedData.reduce((acc, request) => {
+      acc[request.status] = (acc[request.status] || 0) + 1;
+      return acc;
+    }, {});
+
+    return {
+      totalRefillRequests: formattedData.length,
+      totalApproved: statusCounts['approved'] || 0,
+      totalRejected: statusCounts['rejected'] || 0,
+      totalPending: statusCounts['pending'] || 0,
+      data: formattedData,
+    };
+  }
 }
