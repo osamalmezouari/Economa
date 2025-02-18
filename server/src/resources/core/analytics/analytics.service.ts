@@ -3,6 +3,8 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { OrdersService } from '../orders/services/orders.service';
 import { sortStoreAnalyticsStatsCardsByDate } from 'src/common/utils/sortStoreAnalyticsStatsCardsByDate';
 import { ProductStockService } from '../product/services/product-stock.service';
+import { BalanceService } from 'src/resources/billing/balance/services/balance.service';
+import { RefillBalanceService } from 'src/resources/billing/balance/services/refillbalance.service';
 
 @Injectable()
 export class AnalyticsService {
@@ -10,6 +12,8 @@ export class AnalyticsService {
     private readonly prisma: PrismaService,
     private readonly orderService: OrdersService,
     private readonly productstockService: ProductStockService,
+    private readonly balanceService: BalanceService,
+    private readonly refillBalanceService: RefillBalanceService,
   ) {}
 
   async getCardStats() {
@@ -81,5 +85,28 @@ export class AnalyticsService {
       page: page,
     });
     return data;
+  }
+
+  async getRefillStatsCards() {
+    const totalRefillbalanceRequests =
+      await this.refillBalanceService.TotalRefillBalanceRequestsStatCard();
+    const TotalPendingRefillBalanceRequests =
+      await this.refillBalanceService.TotalPendingRefillBalanceRequestsStatCard();
+    const TotalApprovedRefillBalanceRequests =
+      await this.refillBalanceService.TotalApprovedRefillBalanceRequestsStatCard();
+
+    const TotalRejectedRefillBalanceRequests =
+      await this.refillBalanceService.TotalRejectedRefillBalanceRequestsStatCard();
+
+    return {
+      totalRefillbalanceRequests,
+      TotalPendingRefillBalanceRequests,
+      TotalApprovedRefillBalanceRequests,
+      TotalRejectedRefillBalanceRequests,
+    };
+  }
+
+  getYearlyrefillReuqtestsChart() {
+    return this.refillBalanceService.YearlyrefillReuqtestsChart();
   }
 }
