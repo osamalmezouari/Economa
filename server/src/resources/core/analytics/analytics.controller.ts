@@ -52,7 +52,12 @@ export class AnalyticsController {
   }
 
   @Get('RefillInsights/YearlyChart')
-  getYearlyRefillChart() {
-    return this.analyticsService.getYearlyrefillReuqtestsChart();
+  getYearlyRefillChart(@Query('year') year: number) {
+    return this.analyticsService.getYearlyrefillReuqtestsChart(year);
+  }
+
+  @Get('RefillInsights/RefillRequestDaily')
+  getRefillDaily(@Query('date') date: string) {
+    return this.analyticsService.getRefillDaily(date);
   }
 }
