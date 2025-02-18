@@ -8,6 +8,6 @@ import { RefillBalanceService } from './services/refillbalance.service';
   imports: [PrismaModule],
   controllers: [BalanceController],
   providers: [BalanceService, RefillBalanceService],
-  exports: [BalanceService],
+  exports: [BalanceService , RefillBalanceService],
 })
 export class BalanceModule {}
