@@ -4,7 +4,7 @@ import { UpdateProductDto } from '../dto/update-product.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { v4 as uuid } from 'uuid';
 import { PRODUCT_NOT_FOUND_Exception } from 'src/common/exceptions/PRODUCT_NOT_FOUND.exception';
-import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
+import { StoreFiltersDto } from 'src/resources/core/product/dto/storeFilters.dto';
 import { contains } from 'class-validator';
 import { ProductReviewService } from './product-review.service';
 import { CreateProductReviewDto } from '../dto/create-product-review.dto';
@@ -468,8 +468,6 @@ export class ProductService {
     };
     return productDetails;
   }
-
-  
 
   async update(id: string, updateProductDto: UpdateProductDto) {
     await this.findOne(id);
