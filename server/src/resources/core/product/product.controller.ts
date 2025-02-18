@@ -14,7 +14,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
-import { StoreFiltersDto } from 'src/common/dto/storeFilters.dto';
+import { StoreFiltersDto } from 'src/resources/core/product/dto/storeFilters.dto';
 import { CreateProductReviewDto } from './dto/create-product-review.dto';
 import { ProductReviewService } from './services/product-review.service';
 import { ProductStockService } from './services/product-stock.service';
