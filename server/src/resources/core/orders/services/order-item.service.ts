@@ -20,7 +20,7 @@ export class OrderItemService {
     startDate: Date,
     endDate: Date,
     useGt: boolean = false,
-    includeCategory: boolean = false
+    includeCategory: boolean = false,
   ) {
     return await this.prisma.orderItem.findMany({
       where: {
@@ -55,7 +55,6 @@ export class OrderItemService {
       },
     });
   }
-  
 
   /*   async findAll() {
     const orderItem = await this.prisma.orderItem.findMany();
