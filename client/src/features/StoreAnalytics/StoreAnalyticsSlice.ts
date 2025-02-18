@@ -40,32 +40,32 @@ const initialState: storeAnalyticsState = {
     },
 
     loading: false,
-    error: null,
+    error: '',
   },
   SalesXProfit: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   CostXProfitLastWeek: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   SalesXProfitCategory: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   TopCostumers: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   TopSellingProducts: {
     data: [],
     loading: false,
-    error: null,
+    error: '',
   },
   StockReport: {
     data: {
@@ -77,7 +77,7 @@ const initialState: storeAnalyticsState = {
       productName: '',
     },
     loading: false,
-    error: null,
+    error: '',
   },
 };
 
@@ -88,7 +88,7 @@ const StoreAnalyticsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCardsStats.pending, (state) => {
-        (state.stateCards.loading = true), (state.stateCards.error = null);
+        (state.stateCards.loading = true), (state.stateCards.error = '');
       })
       .addCase(getCardsStats.fulfilled, (state, action) => {
         (state.stateCards.loading = false),
@@ -96,11 +96,11 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getCardsStats.rejected, (state, action) => {
         (state.stateCards.loading = false),
-          (state.stateCards.error = action.payload);
+          (state.stateCards.error = action.payload as string);
       })
 
       .addCase(getsalesXProfit.pending, (state) => {
-        (state.SalesXProfit.loading = true), (state.SalesXProfit.error = null);
+        (state.SalesXProfit.loading = true), (state.SalesXProfit.error = '');
       })
       .addCase(getsalesXProfit.fulfilled, (state, action) => {
         (state.SalesXProfit.loading = false),
@@ -108,12 +108,12 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getsalesXProfit.rejected, (state, action) => {
         (state.SalesXProfit.loading = false),
-          (state.SalesXProfit.error = action.payload);
+          (state.SalesXProfit.error = action.payload as string);
       })
 
       .addCase(getCostXProfitLastWeek.pending, (state) => {
         (state.CostXProfitLastWeek.loading = true),
-          (state.CostXProfitLastWeek.error = null);
+          (state.CostXProfitLastWeek.error = '');
       })
       .addCase(getCostXProfitLastWeek.fulfilled, (state, action) => {
         (state.CostXProfitLastWeek.loading = false),
@@ -121,12 +121,12 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getCostXProfitLastWeek.rejected, (state, action) => {
         (state.CostXProfitLastWeek.loading = false),
-          (state.CostXProfitLastWeek.error = action.payload);
+          (state.CostXProfitLastWeek.error = action.payload as string);
       })
 
       .addCase(getSalesXProfitCategory.pending, (state) => {
         (state.SalesXProfitCategory.loading = true),
-          (state.SalesXProfitCategory.error = null);
+          (state.SalesXProfitCategory.error = '');
       })
       .addCase(getSalesXProfitCategory.fulfilled, (state, action) => {
         (state.SalesXProfitCategory.loading = false),
@@ -134,11 +134,11 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getSalesXProfitCategory.rejected, (state, action) => {
         (state.SalesXProfitCategory.loading = false),
-          (state.SalesXProfitCategory.error = action.payload);
+          (state.SalesXProfitCategory.error = action.payload as string);
       })
 
       .addCase(getTopCostumers.pending, (state) => {
-        (state.TopCostumers.loading = true), (state.TopCostumers.error = null);
+        (state.TopCostumers.loading = true), (state.TopCostumers.error = '');
       })
       .addCase(getTopCostumers.fulfilled, (state, action) => {
         (state.TopCostumers.loading = false),
@@ -146,12 +146,12 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getTopCostumers.rejected, (state, action) => {
         (state.TopCostumers.loading = false),
-          (state.TopCostumers.error = action.payload);
+          (state.TopCostumers.error = action.payload as string);
       })
 
       .addCase(getTopSellingProducts.pending, (state) => {
         (state.TopSellingProducts.loading = true),
-          (state.TopSellingProducts.error = null);
+          (state.TopSellingProducts.error = '');
       })
       .addCase(getTopSellingProducts.fulfilled, (state, action) => {
         (state.TopSellingProducts.loading = false),
@@ -159,11 +159,11 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getTopSellingProducts.rejected, (state, action) => {
         (state.TopSellingProducts.loading = false),
-          (state.TopSellingProducts.error = action.payload);
+          (state.TopSellingProducts.error = action.payload as string);
       })
 
       .addCase(getLowStockProducts.pending, (state) => {
-        (state.StockReport.loading = true), (state.StockReport.error = null);
+        (state.StockReport.loading = true), (state.StockReport.error = '');
       })
       .addCase(getLowStockProducts.fulfilled, (state, action) => {
         (state.StockReport.loading = false),
@@ -171,7 +171,7 @@ const StoreAnalyticsSlice = createSlice({
       })
       .addCase(getLowStockProducts.rejected, (state, action) => {
         (state.StockReport.loading = false),
-          (state.StockReport.error = action.payload);
+          (state.StockReport.error = action.payload as string);
       });
   },
 });
