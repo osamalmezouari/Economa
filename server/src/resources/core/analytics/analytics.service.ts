@@ -114,4 +114,9 @@ export class AnalyticsService {
     return await this.refillBalanceService.refillRequestDaily(Date);
   }
   
+
+/*   async getUsersTransfers() {
+    const data = await this.balanceService.getUsersTransfers();
+    return data;
+  } */
 }
