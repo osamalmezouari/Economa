@@ -71,7 +71,7 @@ export class AuthenticationService {
       throw new ForbiddenException({
         statusCode: 403,
         message:
-          'There was an issue with your sign-up request. Please try again later.',
+          `There was an issue with your sign-up request. Please try again later`,
         error: 'Forbidden',
       });
     }
