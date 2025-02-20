@@ -20,7 +20,8 @@ import Header from '../components/dashboards/shared/header.tsx';
 import { OverviewRoute } from './overviewRoute.tsx';
 import Sidebar from '../components/dashboards/shared/sidebar/sideBar.tsx';
 import { Box } from '@mui/material';
-import { StoreAnalyticsRoute } from './storeAnalytcs.ts';
+import { StoreAnalyticsRoute } from './storeAnalytcs.tsx';
+import { RefillInsightsRoute } from './refillInsights.tsx';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -102,6 +103,7 @@ const routeTree = rootRoute.addChildren([
   OrderRoute,
   OverviewRoute,
   StoreAnalyticsRoute,
+  RefillInsightsRoute,
 ]);
 
 // Create the router
