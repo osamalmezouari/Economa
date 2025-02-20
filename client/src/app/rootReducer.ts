@@ -10,6 +10,7 @@ import { balanceReducer } from '../features/balance/balanceSilce';
 import { CouponReducer } from '../features/coupon/couponSlice';
 import { OrderReducer } from '../features/order/orderSlice';
 import { StoreAnalyticsReducer } from '../features/StoreAnalytics/StoreAnalyticsSlice';
+import { RefillInsightsReducer } from '../features/RefillInsights/refillInsightsSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
@@ -23,5 +24,6 @@ const rootReducer = combineReducers({
   coupon: CouponReducer,
   order: OrderReducer,
   StoreAnalytics: StoreAnalyticsReducer,
+  RefillInsights: RefillInsightsReducer,
 });
 export default rootReducer;
