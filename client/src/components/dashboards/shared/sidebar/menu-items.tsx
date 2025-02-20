@@ -63,7 +63,7 @@ export const menuItems : MenuItemType[] = [
   },
   {
     name: 'Refill Insights',
-    href: routes.support.dashboard,
+    href: '/Economa/Admin/Dashboard/RefillInsights',
     icon: <PiCreditCardDuotone />,
   },
 
