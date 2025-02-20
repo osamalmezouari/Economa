@@ -98,12 +98,12 @@ export class AnalyticsService {
     const TotalRejectedRefillBalanceRequests =
       await this.refillBalanceService.TotalRejectedRefillBalanceRequestsStatCard();
 
-    return {
+    return [
       totalRefillbalanceRequests,
       TotalPendingRefillBalanceRequests,
       TotalApprovedRefillBalanceRequests,
       TotalRejectedRefillBalanceRequests,
-    };
+    ];
   }
 
   async getYearlyrefillReuqtestsChart(year: number) {
@@ -113,9 +113,8 @@ export class AnalyticsService {
   async getRefillDaily(Date: string) {
     return await this.refillBalanceService.refillRequestDaily(Date);
   }
-  
 
-/*   async getUsersTransfers() {
+  /*   async getUsersTransfers() {
     const data = await this.balanceService.getUsersTransfers();
     return data;
   } */
