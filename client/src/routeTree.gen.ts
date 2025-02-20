@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as StoreroutImport } from './routes/storerout'
 import { Route as StoreAnalytcsImport } from './routes/storeAnalytcs'
+import { Route as RefillInsightsImport } from './routes/refillInsights'
 import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
 import { Route as PlaceOrderImport } from './routes/placeOrder'
 import { Route as OverviewRouteImport } from './routes/overviewRoute'
@@ -33,6 +34,12 @@ const StoreroutRoute = StoreroutImport.update({
 const StoreAnalytcsRoute = StoreAnalytcsImport.update({
   id: '/storeAnalytcs',
   path: '/storeAnalytcs',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const RefillInsightsRoute = RefillInsightsImport.update({
+  id: '/refillInsights',
+  path: '/refillInsights',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -138,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductdetailsrootImport
       parentRoute: typeof rootRoute
     }
+    '/refillInsights': {
+      id: '/refillInsights'
+      path: '/refillInsights'
+      fullPath: '/refillInsights'
+      preLoaderRoute: typeof RefillInsightsImport
+      parentRoute: typeof rootRoute
+    }
     '/storeAnalytcs': {
       id: '/storeAnalytcs'
       path: '/storeAnalytcs'
@@ -172,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/refillInsights': typeof RefillInsightsRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -185,6 +200,7 @@ export interface FileRoutesByTo {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/refillInsights': typeof RefillInsightsRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -199,6 +215,7 @@ export interface FileRoutesById {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
+  '/refillInsights': typeof RefillInsightsRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -214,6 +231,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
+    | '/refillInsights'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -226,6 +244,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
+    | '/refillInsights'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -238,6 +257,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
+    | '/refillInsights'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -252,6 +272,7 @@ export interface RootRouteChildren {
   OverviewRouteRoute: typeof OverviewRouteRoute
   PlaceOrderRoute: typeof PlaceOrderRoute
   ProductdetailsrootRoute: typeof ProductdetailsrootRoute
+  RefillInsightsRoute: typeof RefillInsightsRoute
   StoreAnalytcsRoute: typeof StoreAnalytcsRoute
   StoreroutRoute: typeof StoreroutRoute
   ProtectedRoutesAuthProtectedRouteRoute: typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -265,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   OverviewRouteRoute: OverviewRouteRoute,
   PlaceOrderRoute: PlaceOrderRoute,
   ProductdetailsrootRoute: ProductdetailsrootRoute,
+  RefillInsightsRoute: RefillInsightsRoute,
   StoreAnalytcsRoute: StoreAnalytcsRoute,
   StoreroutRoute: StoreroutRoute,
   ProtectedRoutesAuthProtectedRouteRoute:
@@ -288,6 +310,7 @@ export const routeTree = rootRoute
         "/overviewRoute",
         "/placeOrder",
         "/productdetailsroot",
+        "/refillInsights",
         "/storeAnalytcs",
         "/storerout",
         "/protectedRoutes/AuthProtectedRoute"
@@ -314,8 +337,11 @@ export const routeTree = rootRoute
     "/productdetailsroot": {
       "filePath": "productdetailsroot.tsx"
     },
+    "/refillInsights": {
+      "filePath": "refillInsights.tsx"
+    },
     "/storeAnalytcs": {
-      "filePath": "storeAnalytcs.ts"
+      "filePath": "storeAnalytcs.tsx"
     },
     "/storerout": {
       "filePath": "storerout.tsx"
