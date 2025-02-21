@@ -12,14 +12,14 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as StoreroutImport } from './routes/storerout'
-import { Route as StoreAnalytcsImport } from './routes/storeAnalytcs'
-import { Route as RefillInsightsImport } from './routes/refillInsights'
-import { Route as ProductdetailsrootImport } from './routes/productdetailsroot'
-import { Route as PlaceOrderImport } from './routes/placeOrder'
+import { Route as StoreAnalytcsImport } from './routes/storeAnalytcsRoute'
+import { Route as RefillInsightsRouteImport } f./routes/refillInsightsRouteightsRoute'
+import { Route as ProductdetailsrootImport } from './routes/productdetailsRoute'
+import { Route as PlaceOrderImport } from './routes/placeOrderRoute'
 import { Route as OverviewRouteImport } from './routes/overviewRoute'
-import { Route as LandingImport } from './routes/landing'
-import { Route as CompareImport } from './routes/compare'
-import { Route as AuthImport } from './routes/auth'
+import { Route as LandingImport } from './routes/landingRoute'
+import { Route as CompareImport } from './routes/compareRoute'
+import { Route as AuthImport } from './routes/authRoute'
 import { Route as RefillBalanceRequestRouteImport } from './routes/RefillBalanceRequestRoute'
 import { Route as ProtectedRoutesAuthProtectedRouteImport } from './routes/protectedRoutes/AuthProtectedRoute'
 
@@ -37,9 +37,9 @@ const StoreAnalytcsRoute = StoreAnalytcsImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const RefillInsightsRoute = RefillInsightsImport.update({
-  id: '/refillInsights',
-  path: '/refillInsights',
+const RefillInsightsRouteRoute = RefillInsightsRouteImport.update({
+  id: '/refillInsightsRoute',
+  path: '/refillInsightsRoute',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -145,11 +145,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductdetailsrootImport
       parentRoute: typeof rootRoute
     }
-    '/refillInsights': {
-      id: '/refillInsights'
-      path: '/refillInsights'
-      fullPath: '/refillInsights'
-      preLoaderRoute: typeof RefillInsightsImport
+    '/refillInsightsRoute': {
+      id: '/refillInsightsRoute'
+      path: '/refillInsightsRoute'
+      fullPath: '/refillInsightsRoute'
+      preLoaderRoute: typeof RefillInsightsRouteImport
       parentRoute: typeof rootRoute
     }
     '/storeAnalytcs': {
@@ -186,7 +186,7 @@ export interface FileRoutesByFullPath {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
-  '/refillInsights': typeof RefillInsightsRoute
+  '/refillInsightsRoute': typeof RefillInsightsRouteRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -200,7 +200,7 @@ export interface FileRoutesByTo {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
-  '/refillInsights': typeof RefillInsightsRoute
+  '/refillInsightsRoute': typeof RefillInsightsRouteRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -215,7 +215,7 @@ export interface FileRoutesById {
   '/overviewRoute': typeof OverviewRouteRoute
   '/placeOrder': typeof PlaceOrderRoute
   '/productdetailsroot': typeof ProductdetailsrootRoute
-  '/refillInsights': typeof RefillInsightsRoute
+  '/refillInsightsRoute': typeof RefillInsightsRouteRoute
   '/storeAnalytcs': typeof StoreAnalytcsRoute
   '/storerout': typeof StoreroutRoute
   '/protectedRoutes/AuthProtectedRoute': typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -231,7 +231,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
-    | '/refillInsights'
+    | '/refillInsightsRoute'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -244,7 +244,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
-    | '/refillInsights'
+    | '/refillInsightsRoute'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -257,7 +257,7 @@ export interface FileRouteTypes {
     | '/overviewRoute'
     | '/placeOrder'
     | '/productdetailsroot'
-    | '/refillInsights'
+    | '/refillInsightsRoute'
     | '/storeAnalytcs'
     | '/storerout'
     | '/protectedRoutes/AuthProtectedRoute'
@@ -272,7 +272,7 @@ export interface RootRouteChildren {
   OverviewRouteRoute: typeof OverviewRouteRoute
   PlaceOrderRoute: typeof PlaceOrderRoute
   ProductdetailsrootRoute: typeof ProductdetailsrootRoute
-  RefillInsightsRoute: typeof RefillInsightsRoute
+  RefillInsightsRouteRoute: typeof RefillInsightsRouteRoute
   StoreAnalytcsRoute: typeof StoreAnalytcsRoute
   StoreroutRoute: typeof StoreroutRoute
   ProtectedRoutesAuthProtectedRouteRoute: typeof ProtectedRoutesAuthProtectedRouteRoute
@@ -286,7 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   OverviewRouteRoute: OverviewRouteRoute,
   PlaceOrderRoute: PlaceOrderRoute,
   ProductdetailsrootRoute: ProductdetailsrootRoute,
-  RefillInsightsRoute: RefillInsightsRoute,
+  RefillInsightsRouteRoute: RefillInsightsRouteRoute,
   StoreAnalytcsRoute: StoreAnalytcsRoute,
   StoreroutRoute: StoreroutRoute,
   ProtectedRoutesAuthProtectedRouteRoute:
@@ -310,14 +310,14 @@ export const routeTree = rootRoute
         "/overviewRoute",
         "/placeOrder",
         "/productdetailsroot",
-        "/refillInsights",
+        "/refillInsightsRoute",
         "/storeAnalytcs",
         "/storerout",
         "/protectedRoutes/AuthProtectedRoute"
       ]
     },
     "/RefillBalanceRequestRoute": {
-      "filePath": "RefillBalanceRequestRoute.tsx"
+      "filePath": "RefillBalanceRequestRoute.ts"
     },
     "/auth": {
       "filePath": "auth.tsx"
@@ -337,8 +337,8 @@ export const routeTree = rootRoute
     "/productdetailsroot": {
       "filePath": "productdetailsroot.tsx"
     },
-    "/refillInsights": {
-      "filePath": "refillInsights.tsx"
+    "/refillInsightsRoute": {
+      "filePath": "refillInsightsRoute.ts"
     },
     "/storeAnalytcs": {
       "filePath": "storeAnalytcs.tsx"
