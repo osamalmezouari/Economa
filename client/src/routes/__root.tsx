@@ -6,22 +6,22 @@ import {
 } from '@tanstack/react-router';
 import Navbar from '../components/extra/navbar/Navbar';
 import Footer from '../components/extra/footer/footer';
-import { LoginRoute, RegisterRoute } from './auth';
-import { indexRoute } from './landing';
-import { compareRoute } from './compare';
-import { StoreRoute } from './storerout.tsx';
+import { LoginRoute, RegisterRoute } from './authRoute.ts';
+import { indexRoute } from './landingRoute.ts';
+import { compareRoute } from './compareRoute.ts';
+import { StoreRoute } from './storeRoute.ts';
 import Wishlist from '../layouts/wishlist.tsx';
 import ShoppingCart from '../layouts/shoopingCart.tsx';
 import GlobalAlert from '../components/base/GlobalAlerts/globalAlert';
-import { productdetailsroot } from './productdetailsroot.tsx';
-import { RefillBalanceRequestRoute } from './RefillBalanceRequestRoute.tsx';
-import { OrderRoute } from './placeOrder.tsx';
+import { productdetailsRoute } from './productdetailsRoute.ts';
+import { RefillBalanceRequestRoute } from './RefillBalanceRequestRoute.ts';
+import { OrderRoute } from './placeOrderRoute.ts';
 import Header from '../components/dashboards/shared/header.tsx';
-import { OverviewRoute } from './overviewRoute.tsx';
+import { OverviewRoute } from './overviewRoute.ts';
 import Sidebar from '../components/dashboards/shared/sidebar/sideBar.tsx';
 import { Box } from '@mui/material';
-import { StoreAnalyticsRoute } from './storeAnalytcs.tsx';
-import { RefillInsightsRoute } from './refillInsights.tsx';
+import { StoreAnalyticsRoute } from './storeAnalytcsRoute.ts';
+import { RefillInsightsRoute } from './refillInsightsRoute.ts';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -98,12 +98,13 @@ const routeTree = rootRoute.addChildren([
   indexRoute,
   compareRoute,
   StoreRoute,
-  productdetailsroot,
+  productdetailsRoute,
   RefillBalanceRequestRoute,
   OrderRoute,
   OverviewRoute,
-  StoreAnalyticsRoute,
   RefillInsightsRoute,
+
+  StoreAnalyticsRoute,
 ]);
 
 // Create the router
