@@ -151,7 +151,7 @@ export class RefillBalanceService {
     }
 
     return {
-      title: 'Total Refill Requests',
+      title: 'Total Requests',
       metric: currentMonthCount,
       increased: currentMonthCount > prevMonthCount,
       decreased: currentMonthCount < prevMonthCount,
@@ -194,7 +194,7 @@ export class RefillBalanceService {
     }
 
     return {
-      title: 'Total pendding Refill Requests',
+      title: 'Pendding Requests',
       metric: currentMonthCount,
       increased: currentMonthCount > prevMonthCount,
       decreased: currentMonthCount < prevMonthCount,
@@ -237,7 +237,7 @@ export class RefillBalanceService {
     }
 
     return {
-      title: 'Total approved Refill Requests',
+      title: 'Approved Requests',
       metric: currentMonthCount,
       increased: currentMonthCount > prevMonthCount,
       decreased: currentMonthCount < prevMonthCount,
@@ -280,7 +280,7 @@ export class RefillBalanceService {
     }
 
     return {
-      title: 'Total rejected Refill Requests',
+      title: 'Rejected Requests',
       metric: currentMonthCount,
       increased: currentMonthCount > prevMonthCount,
       decreased: currentMonthCount < prevMonthCount,
