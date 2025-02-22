@@ -1,10 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RefillStatsStat } from '../../types/RefillInsights';
-import { getRefillInsightsCardsStats } from './refillInsightsThunk';
+import {
+  getRefillInsightsCardsStats,
+  getRefillInsightsYearlyChart,
+} from './refillInsightsThunk';
 
 const initialState: RefillStatsStat = {
   RefillReqStatsCard: {
     data: [],
+    loading: false,
+    error: '',
+  },
+  RefillYearlyChart: {
+    data: {
+      monthlyData: [],
+      yearTotal: 0,
+      prevYearTotal: 0,
+      percentageChange: '',
+    },
     loading: false,
     error: '',
   },
@@ -31,6 +44,26 @@ const RefillInsightsSlice = createSlice({
         state.RefillReqStatsCard.loading = false;
         state.RefillReqStatsCard.error = action.payload as string;
       });
+
+    builder.addCase(getRefillInsightsYearlyChart.pending, (state) => {
+      state.RefillYearlyChart.loading = true;
+      state.RefillYearlyChart.error = '';
+    }),
+      builder.addCase(
+        getRefillInsightsYearlyChart.fulfilled,
+        (state, action) => {
+          state.RefillYearlyChart.loading = false;
+          state.RefillYearlyChart.data = action.payload;
+          state.RefillYearlyChart.error = '';
+        }
+      ),
+      builder.addCase(
+        getRefillInsightsYearlyChart.rejected,
+        (state, action) => {
+          state.RefillYearlyChart.loading = false;
+          state.RefillYearlyChart.error = action.payload as string;
+        }
+      );
   },
 });
 
