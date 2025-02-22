@@ -211,19 +211,6 @@ const CategorySales = ({ className }: { className?: string }) => {
   );
 };
 
-/* function Legend({ className }: { className?: string }) {
-  return (
-    <div className={cn('flex flex-wrap items-start gap-3 lg:gap-4', className)}>
-      <span className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#2980b9]" />
-        <span>Sales</span>
-      </span>
-      <span className="flex items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#eab308]" />
-        <span>Target</span>
-      </span>
-    </div>
-  );
-} */
+
 
 export default CategorySales;
