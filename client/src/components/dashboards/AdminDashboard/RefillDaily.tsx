@@ -116,6 +116,7 @@ const RefillDaily = () => {
               value={selectedDate}
               displayStaticWrapperAs="desktop"
               onChange={(newDate) => setSelectedDate(newDate)}
+              sx={{ width: '100%' }}
             />
           </LocalizationProvider>
         </CardContent>
