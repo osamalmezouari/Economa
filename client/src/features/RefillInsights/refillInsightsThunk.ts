@@ -3,6 +3,7 @@ import {
   getRefillDaily,
   getRefillStatsCard,
   getRefillYearlyChart,
+  getUsersTransfers,
 } from '../../api/refillinsights';
 
 export const getRefillInsightsCardsStats = createAsyncThunk(
@@ -41,6 +42,22 @@ export const getrefillDaily = createAsyncThunk(
     try {
       const dailyData = await getRefillDaily(date);
       return dailyData;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch RefillDaily');
+    }
+  }
+);
+
+
+export const getusersTransfers = createAsyncThunk(
+  'analytics/RefillInsights/UsersTransfers',
+  async (_, { rejectWithValue }) => {
+    try {
+      const UsersTransfers = await getUsersTransfers();
+      return UsersTransfers;
     } catch (error: any) {
       if (error.response) {
         return rejectWithValue(error.response.data);
