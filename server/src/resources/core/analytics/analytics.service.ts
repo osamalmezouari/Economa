@@ -5,15 +5,16 @@ import { sortStoreAnalyticsStatsCardsByDate } from 'src/common/utils/sortStoreAn
 import { ProductStockService } from '../product/services/product-stock.service';
 import { BalanceService } from 'src/resources/billing/balance/services/balance.service';
 import { RefillBalanceService } from 'src/resources/billing/balance/services/refillbalance.service';
+import { UsersTransfersService } from 'src/resources/billing/balance/services/userTransfers.service';
 
 @Injectable()
 export class AnalyticsService {
   constructor(
-    private readonly prisma: PrismaService,
     private readonly orderService: OrdersService,
     private readonly productstockService: ProductStockService,
     private readonly balanceService: BalanceService,
     private readonly refillBalanceService: RefillBalanceService,
+    private readonly userTransfersService: UsersTransfersService,
   ) {}
 
   async getCardStats() {
@@ -114,8 +115,8 @@ export class AnalyticsService {
     return await this.refillBalanceService.refillRequestDaily(Date);
   }
 
-  /*   async getUsersTransfers() {
-    const data = await this.balanceService.getUsersTransfers();
+    async getUsersTransfers() {
+    const data = await this.userTransfersService.getUsersTransfers();
     return data;
-  } */
+  }
 }
