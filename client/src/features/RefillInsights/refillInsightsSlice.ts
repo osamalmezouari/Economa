@@ -4,6 +4,7 @@ import {
   getrefillDaily,
   getRefillInsightsCardsStats,
   getRefillInsightsYearlyChart,
+  getusersTransfers,
 } from './refillInsightsThunk';
 
 const initialState: RefillStatsStat = {
@@ -33,6 +34,11 @@ const initialState: RefillStatsStat = {
     loading: false,
     error: '',
   },
+  UsersTransfers: {
+    data: [],
+    loading: false,
+    error: '',
+  },
 };
 
 const RefillInsightsSlice = createSlice({
@@ -40,52 +46,61 @@ const RefillInsightsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getRefillInsightsCardsStats.pending, (state) => {
-      state.RefillReqStatsCard.loading = true;
-      state.RefillReqStatsCard.error = '';
-    }),
-      builder.addCase(
-        getRefillInsightsCardsStats.fulfilled,
-        (state, action) => {
-          state.RefillReqStatsCard.loading = false;
-          state.RefillReqStatsCard.data = action.payload;
-          state.RefillReqStatsCard.error = '';
-        }
-      ),
-      builder.addCase(getRefillInsightsCardsStats.rejected, (state, action) => {
+    builder
+      .addCase(getRefillInsightsCardsStats.pending, (state) => {
+        state.RefillReqStatsCard.loading = true;
+        state.RefillReqStatsCard.error = '';
+      })
+      .addCase(getRefillInsightsCardsStats.fulfilled, (state, action) => {
+        state.RefillReqStatsCard.loading = false;
+        state.RefillReqStatsCard.data = action.payload;
+        state.RefillReqStatsCard.error = '';
+      })
+      .addCase(getRefillInsightsCardsStats.rejected, (state, action) => {
         state.RefillReqStatsCard.loading = false;
         state.RefillReqStatsCard.error = action.payload as string;
-      });
+      })
 
-    builder.addCase(getRefillInsightsYearlyChart.pending, (state) => {
-      state.RefillYearlyChart.loading = true;
-      state.RefillYearlyChart.error = '';
-    }),
-      builder.addCase(
-        getRefillInsightsYearlyChart.fulfilled,
-        (state, action) => {
-          state.RefillYearlyChart.loading = false;
-          state.RefillYearlyChart.data = action.payload;
-          state.RefillYearlyChart.error = '';
-        }
-      ),
-      builder
-        .addCase(getRefillInsightsYearlyChart.rejected, (state, action) => {
-          state.RefillYearlyChart.loading = false;
-          state.RefillYearlyChart.error = action.payload as string;
-        })
-        .addCase(getrefillDaily.pending, (state) => {
-          state.RefillRequestDaily.loading = true;
-          state.RefillRequestDaily.error = '';
-        }),
-      builder.addCase(getrefillDaily.fulfilled, (state, action) => {
+      .addCase(getRefillInsightsYearlyChart.pending, (state) => {
+        state.RefillYearlyChart.loading = true;
+        state.RefillYearlyChart.error = '';
+      })
+      .addCase(getRefillInsightsYearlyChart.fulfilled, (state, action) => {
+        state.RefillYearlyChart.loading = false;
+        state.RefillYearlyChart.data = action.payload;
+        state.RefillYearlyChart.error = '';
+      })
+
+      .addCase(getRefillInsightsYearlyChart.rejected, (state, action) => {
+        state.RefillYearlyChart.loading = false;
+        state.RefillYearlyChart.error = action.payload as string;
+      })
+      .addCase(getrefillDaily.pending, (state) => {
+        state.RefillRequestDaily.loading = true;
+        state.RefillRequestDaily.error = '';
+      })
+      .addCase(getrefillDaily.fulfilled, (state, action) => {
         state.RefillRequestDaily.loading = false;
         state.RefillRequestDaily.data = action.payload;
         state.RefillRequestDaily.error = '';
-      }),
-      builder.addCase(getrefillDaily.rejected, (state, action) => {
+      })
+      .addCase(getrefillDaily.rejected, (state, action) => {
         state.RefillRequestDaily.loading = false;
         state.RefillRequestDaily.error = action.payload as string;
+      })
+
+      .addCase(getusersTransfers.pending, (state) => {
+        state.UsersTransfers.loading = true;
+        state.UsersTransfers.error = '';
+      })
+      .addCase(getusersTransfers.fulfilled, (state, action) => {
+        state.UsersTransfers.loading = false;
+        state.UsersTransfers.data = action.payload;
+        state.UsersTransfers.error = '';
+      })
+      .addCase(getusersTransfers.rejected, (state, action) => {
+        state.UsersTransfers.loading = false;
+        state.UsersTransfers.error = action.payload as string;
       });
   },
 });
