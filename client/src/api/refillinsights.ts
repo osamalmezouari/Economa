@@ -2,6 +2,7 @@ import {
   RefillRequestDaily,
   RefillStatCard,
   RefillYearlyChart,
+  UserTransfer,
 } from '../types/RefillInsights';
 import { apiClient } from '../utils/apiClient';
 
@@ -48,5 +49,19 @@ export const getRefillDaily = async (
       throw error.response.data;
     }
     throw new Error('Failed to fetch RefillDaily');
+  }
+};
+
+export const getUsersTransfers = async (): Promise<UserTransfer[]> => {
+  try {
+    const response = await apiClient.get(
+      `/analytics/RefillInsights/UsersTransfers`
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch UsersTransfers');
   }
 };
