@@ -60,4 +60,9 @@ export class AnalyticsController {
   getRefillDaily(@Query('date') date: string) {
     return this.analyticsService.getRefillDaily(date);
   }
+
+  @Get('RefillInsights/UsersTransfers')
+  getUsersTransfers() {
+    return this.analyticsService.getUsersTransfers();
+  }
 }
