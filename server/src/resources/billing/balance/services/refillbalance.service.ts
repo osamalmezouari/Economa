@@ -372,11 +372,20 @@ export class RefillBalanceService {
     };
   }
 
-  async refillRequestDaily(date = new Date().toISOString().split('T')[0]) {
-    const targetDay = new Date(date);
-    targetDay.setHours(0, 0, 0, 0);
+  async refillRequestDaily(date?: string) {
+    let targetDay = new Date();
+
+    // If a date is provided, validate it
+    if (date) {
+      const parsedDate = new Date(date);
+      if (!isNaN(parsedDate.getTime())) {
+        targetDay = parsedDate;
+      }
+    }
+
+    targetDay.setHours(0, 0, 0, 0); // Ensure start of the day
     const nextDay = new Date(targetDay);
-    nextDay.setDate(targetDay.getDate() + 1);
+    nextDay.setDate(targetDay.getDate() + 1); // Move to the next day
 
     const requests = await this.prisma.refillBalanceRequest.findMany({
       where: {
@@ -389,6 +398,7 @@ export class RefillBalanceService {
         user: {
           select: {
             name: true,
+            avatar :true
           },
         },
       },
@@ -399,12 +409,16 @@ export class RefillBalanceService {
       date: request.createdAt.toISOString(),
       amount: request.amount,
       status: request.status,
+      avatar :request.user.avatar
     }));
 
-    const statusCounts = formattedData.reduce((acc, request) => {
-      acc[request.status] = (acc[request.status] || 0) + 1;
-      return acc;
-    }, {});
+    const statusCounts = formattedData.reduce(
+      (acc, request) => {
+        acc[request.status] = (acc[request.status] || 0) + 1;
+        return acc;
+      },
+      {} as Record<string, number>,
+    );
 
     return {
       totalRefillRequests: formattedData.length,
