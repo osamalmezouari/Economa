@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
+  getRefillDaily,
   getRefillStatsCard,
   getRefillYearlyChart,
 } from '../../api/refillinsights';
@@ -30,6 +31,21 @@ export const getRefillInsightsYearlyChart = createAsyncThunk(
         return rejectWithValue(error.response.data);
       }
       return rejectWithValue('Failed to fetch refill chart');
+    }
+  }
+);
+
+export const getrefillDaily = createAsyncThunk(
+  'analytics/RefillInsights/RefillRequestDaily',
+  async (date: string, { rejectWithValue }) => {
+    try {
+      const dailyData = await getRefillDaily(date);
+      return dailyData;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch RefillDaily');
     }
   }
 );
