@@ -1,4 +1,8 @@
-import { RefillStatCard, RefillYearlyChart } from '../types/RefillInsights';
+import {
+  RefillRequestDaily,
+  RefillStatCard,
+  RefillYearlyChart,
+} from '../types/RefillInsights';
 import { apiClient } from '../utils/apiClient';
 
 export const getRefillStatsCard = async (): Promise<RefillStatCard[]> => {
@@ -28,5 +32,21 @@ export const getRefillYearlyChart = async (
       throw error.response.data;
     }
     throw new Error('Failed to fetch YearlyChart');
+  }
+};
+
+export const getRefillDaily = async (
+  date: string
+): Promise<RefillRequestDaily> => {
+  try {
+    const response = await apiClient.get(
+      `/analytics/RefillInsights/RefillRequestDaily?date=${date}`
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch RefillDaily');
   }
 };
