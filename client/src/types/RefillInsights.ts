@@ -18,6 +18,22 @@ export interface RefillYearlyChart {
   percentageChange: string;
 }
 
+export interface subRefillRequestdaily {
+  fullname: string;
+  date: string;
+  amount: number;
+  status: 'pending' | 'approved' | 'rejected';
+  avatar : string
+}
+
+export interface RefillRequestDaily {
+  totalRefillRequests: number;
+  totalApproved: number;
+  totalRejected: number;
+  totalPending: number;
+  data: subRefillRequestdaily[];
+}
+
 export interface RefillStatsStat {
   RefillReqStatsCard: {
     data: RefillStatCard[];
@@ -26,6 +42,11 @@ export interface RefillStatsStat {
   };
   RefillYearlyChart: {
     data: RefillYearlyChart;
+    loading: boolean;
+    error: string;
+  };
+  RefillRequestDaily: {
+    data: RefillRequestDaily;
     loading: boolean;
     error: string;
   };
