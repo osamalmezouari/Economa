@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RefillStatsStat } from '../../types/RefillInsights';
 import {
+  getrefillDaily,
   getRefillInsightsCardsStats,
   getRefillInsightsYearlyChart,
 } from './refillInsightsThunk';
@@ -17,6 +18,17 @@ const initialState: RefillStatsStat = {
       yearTotal: 0,
       prevYearTotal: 0,
       percentageChange: '',
+    },
+    loading: false,
+    error: '',
+  },
+  RefillRequestDaily: {
+    data: {
+      totalRefillRequests: 0,
+      totalApproved: 0,
+      totalRejected: 0,
+      totalPending: 0,
+      data: [],
     },
     loading: false,
     error: '',
@@ -57,13 +69,24 @@ const RefillInsightsSlice = createSlice({
           state.RefillYearlyChart.error = '';
         }
       ),
-      builder.addCase(
-        getRefillInsightsYearlyChart.rejected,
-        (state, action) => {
+      builder
+        .addCase(getRefillInsightsYearlyChart.rejected, (state, action) => {
           state.RefillYearlyChart.loading = false;
           state.RefillYearlyChart.error = action.payload as string;
-        }
-      );
+        })
+        .addCase(getrefillDaily.pending, (state) => {
+          state.RefillRequestDaily.loading = true;
+          state.RefillRequestDaily.error = '';
+        }),
+      builder.addCase(getrefillDaily.fulfilled, (state, action) => {
+        state.RefillRequestDaily.loading = false;
+        state.RefillRequestDaily.data = action.payload;
+        state.RefillRequestDaily.error = '';
+      }),
+      builder.addCase(getrefillDaily.rejected, (state, action) => {
+        state.RefillRequestDaily.loading = false;
+        state.RefillRequestDaily.error = action.payload as string;
+      });
   },
 });
 
