@@ -126,7 +126,7 @@ const CategorySales = ({ className }: { className?: string }) => {
                   bottom: 0,
                   left: -15,
                 }}
-                className="[&_.recharts-tooltip-cursor]:fill-opacity-20 dark:[&_.recharts-tooltip-cursor]:fill-opacity-10 [&_.recharts-cartesian-axis-tick-value]:fill-gray-500 [&_.recharts-cartesian-axis.yAxis]:-translate-y-3 rtl:[&_.recharts-cartesian-axis.yAxis]:-translate-x-12 [&_.recharts-cartesian-grid-vertical]:opacity-0"
+                className="[&_.recharts-tooltip-cursor]:fill-opacity-20  [&_.recharts-cartesian-axis-tick-value]:fill-gray-500 [&_.recharts-cartesian-axis.yAxis]:-translate-y-3  [&_.recharts-cartesian-grid-vertical]:opacity-0"
               >
                 <CartesianGrid strokeDasharray="8 10" strokeOpacity={0.435} />
                 <XAxis
