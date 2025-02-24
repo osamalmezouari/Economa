@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import {
   Box,
@@ -39,16 +39,29 @@ const ActiveIndicator = styled('div')(({ theme }) => ({
 export default function Sidebar() {
   const theme = useTheme();
   const router = useRouter();
-  const { pathname } = router.state.location;
+  const [currentPath, setCurrentPath] = useState(
+    router.state.location.pathname
+  );
   const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>(
     {}
   );
+
+  // Listen for route changes and update `currentPath`
+  useEffect(() => {
+    const unsubscribe = router.subscribe('onResolved', ({ toLocation }) => {
+      setCurrentPath(toLocation.pathname);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [router]);
 
   const handleDropdownToggle = (itemName: string) => {
     setOpenDropdowns((prev) => ({ ...prev, [itemName]: !prev[itemName] }));
   };
 
-  const isActive = (href?: string) => pathname === href;
+  const isActive = (href?: string) => currentPath === href;
   const isDropdownActive = (items?: never[]) =>
     items?.some((item) => isActive(item.href));
 
