@@ -1,4 +1,6 @@
 import ProductDetails, {
+  ManageProductsFilters,
+  ManageProductsResponse,
   ProductCardType,
   ProductsNewArrivals,
   ProductStoreType,
@@ -69,6 +71,36 @@ export const getProductsDetails = async (
   }
 };
 
+export const getManageProductsTable = async (
+  filters: ManageProductsFilters
+): Promise<ManageProductsResponse> => {
+  try {
+    const params = new URLSearchParams();
 
+    if (filters.page) {
+      params.append('page', String(filters.page));
+    } else {
+      params.append('page', String(1));
+    }
+    if (filters.category) params.append('category', filters.category);
+    if (filters.min_price)
+      params.append('min_price', String(filters.min_price));
+    if (filters.max_price)
+      params.append('max_price', String(filters.max_price));
+    if (filters.min_stock)
+      params.append('min_stock', String(filters.min_stock));
+    if (filters.max_stock)
+      params.append('max_stock', String(filters.max_stock));
 
+    const response = await apiClient.get<ManageProductsResponse>(
+      `products/manageproductstable?${params.toString()}`
+    );
 
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data;
+    }
+    throw new Error('Failed to fetch products data');
+  }
+};
