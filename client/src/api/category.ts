@@ -1,5 +1,5 @@
 import { apiClient } from '../utils/apiClient';
-import { CategoryType } from '../types/category';
+import { CategoriesnamesandIds, CategoryType } from '../types/category';
 
 export const CategoryCards = async (): Promise<CategoryType[]> => {
   try {
@@ -10,5 +10,21 @@ export const CategoryCards = async (): Promise<CategoryType[]> => {
       throw error.response.data.message;
     }
     throw new Error('Failed to Fetch Category Cards');
+  }
+};
+
+export const getCategoriesNamesandIds = async (): Promise<
+  CategoriesnamesandIds[]
+> => {
+  try {
+    const response = await apiClient.get<CategoriesnamesandIds[]>(
+      '/category/CategoriesNamesandIds'
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch Category');
   }
 };
