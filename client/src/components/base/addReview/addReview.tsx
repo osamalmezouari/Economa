@@ -15,7 +15,7 @@ import {
   addReview,
   getProductsDetails,
 } from '../../../features/products/productThunk';
-import GlobalAlert from '../GlobalAlerts/globalAlert';
+import GlobalAlert from '../globalAlert';
 
 const AddReview = ({ productId }: AddReviewProps) => {
   const [name, setName] = useState('');
