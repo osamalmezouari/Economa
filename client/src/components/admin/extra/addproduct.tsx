@@ -17,10 +17,13 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { closeAddProductDialog } from '../../../features/products/productSlice';
-import { UploadFile } from '@mui/icons-material';
 import { getCategoriesNamesandIds } from '../../../features/category/categoryThunk';
-import { CreateProduct } from '../../../features/products/productThunk';
+import {
+  CreateProduct,
+  getManageProductsTable,
+} from '../../../features/products/productThunk';
 import { createProduct } from '../../../types/product';
+import { MdOutlineCloudUpload } from 'react-icons/md';
 
 const AddProductDialog = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -32,10 +35,9 @@ const AddProductDialog = () => {
     loading,
     error,
   } = useSelector((state: RootState) => state.category.CategoriesnamesandIds);
-  const {
-    loading: createLoading,
-    error: createError,
-  } = useSelector((state: RootState) => state.category.CategoriesnamesandIds);
+  const { loading: createLoading, error: createError } = useSelector(
+    (state: RootState) => state.category.CategoriesnamesandIds
+  );
 
   const [product, setProduct] = useState<createProduct>({
     name: '',
@@ -74,6 +76,7 @@ const AddProductDialog = () => {
     formData.append('file', product.file);
     await dispatch(CreateProduct(formData));
     dispatch(closeAddProductDialog());
+    await dispatch(getManageProductsTable({ page: 1 }));
   };
   useEffect(() => {
     dispatch(getCategoriesNamesandIds());
@@ -125,9 +128,10 @@ const AddProductDialog = () => {
               margin="dense"
               value={product.description}
               onChange={handleChange}
+              
               multiline
               rows={4}
-              inputProps={{ maxLength: 200 }}
+              inputProps={{ maxLength: 100 }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -177,14 +181,14 @@ const AddProductDialog = () => {
           {/* File Upload Section */}
           <Grid item xs={12}>
             <Button
-              variant="outlined"
+              variant="contained"
               component="label"
-              color="secondary"
-              className="w-full"
-              startIcon={<UploadFile />}
-              sx={{ borderRadius: '1px' }}
+              color="primary"
+              className="w-max"
+              startIcon={<MdOutlineCloudUpload />}
+              sx={{ borderRadius: '5px' }}
             >
-              Bank Transfer File
+              upload Image
               <input
                 type="file"
                 accept=".jpg,.jpeg,.png,.pdf"
@@ -198,9 +202,10 @@ const AddProductDialog = () => {
           </Grid>
           <Grid item xs={12} md={12} lg={12}>
             {createError && <Alert severity="error">{error} </Alert>}
-            {!createError || !createLoading && (
-              <Alert severity="success">Product created successfully!</Alert>
-            )}
+            {!createError ||
+              (!createLoading && (
+                <Alert severity="success">Product created successfully!</Alert>
+              ))}
           </Grid>
         </Grid>
       </DialogContent>
