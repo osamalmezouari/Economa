@@ -1,14 +1,7 @@
 import { Avatar, Grid, Rating } from '@mui/material';
-import Review from '../../../types/review';
+import { Review } from '../../types/review';
 
-const ReviewCard = ({
-  id,
-  user,
-  productId,
-  rating,
-  reviewText,
-  createdAt,
-}: Review) => {
+const ReviewCard = ({ user, rating, reviewText, createdAt }: Review) => {
   const formatDateTime = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('En-MA', {
