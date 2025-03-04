@@ -6,6 +6,7 @@ import ProductDetails, {
   ProductsNewArrivals,
   ProductStoreType,
   StoreFilters,
+  updateProduct,
 } from '../types/product';
 import { apiClient } from '../utils/apiClient';
 
@@ -97,3 +98,19 @@ export const CreateProduct = async (
     throw error.response?.data || new Error('Failed to Create Product');
   }
 };
+
+export const UpdateProduct = async (
+  productId: string,
+  data: updateProduct
+): Promise<updateProduct> => {
+  try {
+    const response = await apiClient.patch<updateProduct>(
+      `products:${productId}`,
+      data
+    );
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data || new Error('Failed to update Product');
+  }
+};
+
