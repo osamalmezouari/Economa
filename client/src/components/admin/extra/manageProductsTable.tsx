@@ -93,7 +93,7 @@ const ManageProductsTable = () => {
 
   useEffect(() => {
     dispatch(getManageProductsTable(filters));
-  }, [dispatch, filters.page, filters.search]);
+  }, [dispatch, filters]);
 
   return (
     <>
