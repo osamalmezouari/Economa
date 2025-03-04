@@ -87,7 +87,7 @@ const ManageProductFilterBar = () => {
               type="number"
               value={formData.min_price}
               onChange={handleChange}
-              inputProps={{ min: 1 }}
+              inputProps={{ min: 0}}
             />
           </Grid>
           <Grid item xs={6}>
