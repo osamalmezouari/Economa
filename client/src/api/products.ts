@@ -5,6 +5,7 @@ import ProductDetails, {
   ProductCardType,
   ProductsNewArrivals,
   ProductStoreType,
+  SingleProduct,
   StoreFilters,
   updateProduct,
 } from '../types/product';
@@ -101,12 +102,12 @@ export const CreateProduct = async (
 
 export const UpdateProduct = async (
   productId: string,
-  data: updateProduct
+  formData: FormData 
 ): Promise<updateProduct> => {
   try {
     const response = await apiClient.patch<updateProduct>(
-      `products:${productId}`,
-      data
+      `products/${productId}`,
+      formData
     );
     return response.data;
   } catch (error: any) {
@@ -114,3 +115,15 @@ export const UpdateProduct = async (
   }
 };
 
+export const getproductById = async (
+  productId: string
+): Promise<SingleProduct> => {
+  try {
+    const response = await apiClient.get<SingleProduct>(
+      `products/${productId}`
+    );
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data || new Error('Failed to fetch signle product');
+  }
+};
