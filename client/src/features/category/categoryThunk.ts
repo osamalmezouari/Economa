@@ -17,3 +17,20 @@ export const getCategoryCards = createAsyncThunk(
     }
   }
 );
+
+export const getCategoriesNamesandIds = createAsyncThunk(
+  'category/CategoriesNamesandIds',
+  async (_, { rejectWithValue }) => {
+    try {
+      const categories = await categoryApi.getCategoriesNamesandIds();
+      return categories;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong.',
+      });
+    }
+  }
+);
