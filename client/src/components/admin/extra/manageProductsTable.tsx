@@ -27,13 +27,16 @@ import { useEffect, useState } from 'react';
 import { getManageProductsTable } from '../../../features/products/productThunk';
 import { ManageProduct } from '../../../types/product';
 import {
+  openupdateProductDialog,
   setManageFilter,
   setOpenFilter,
+  setProductIdToEdit,
 } from '../../../features/products/productSlice';
 import { FiEdit3 } from 'react-icons/fi';
 import { PiTextColumns } from 'react-icons/pi';
 import { IoFilterCircleOutline } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
+import EditProductDialog from './updateproduct';
 
 const ManageProductsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -321,6 +324,10 @@ const ManageProductsTable = () => {
                     <IconButton
                       color="secondary"
                       className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
+                      onClick={() => {
+                        dispatch(setProductIdToEdit(product.id));
+                        dispatch(openupdateProductDialog());
+                      }}
                     >
                       <FiEdit3
                         fontSize={'small'}
