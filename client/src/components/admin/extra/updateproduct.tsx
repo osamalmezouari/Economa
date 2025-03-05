@@ -16,20 +16,19 @@ import {
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
-import { closeEditProductDialog } from '../../../features/products/productSlice';
 import { getCategoriesNamesandIds } from '../../../features/category/categoryThunk';
 import {
-  updateProduct,
   getProductById,
+  UpdateProduct,
 } from '../../../features/products/productThunk';
-import { createProduct } from '../../../types/product';
+import { updateProduct } from '../../../types/product';
 import { MdOutlineCloudUpload } from 'react-icons/md';
+import { closeupdateProductDialog } from '../../../features/products/productSlice';
 
-interface EditProductDialogProps {
-  productId: string;
-}
-
-const EditProductDialog: React.FC<EditProductDialogProps> = ({ productId }) => {
+const EditProductDialog: React.FC = () => {
+  const productId = useSelector(
+    (state: RootState) => state.products.productToEditId
+  );
   const dispatch = useDispatch<AppDispatch>();
   const open = useSelector(
     (state: RootState) => state.products.isEditProductOpen
@@ -37,33 +36,49 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({ productId }) => {
   const { data: categories, loading: categoriesLoading } = useSelector(
     (state: RootState) => state.category.CategoriesnamesandIds
   );
-
-  const { loading: updateLoading, error: updateError } = useSelector(
-    (state: RootState) => state.products.updateProductStatus
+  const {
+    loading: updateLoading,
+    error: updateError,
+    data: updateData,
+  } = useSelector((state: RootState) => state.products.updateProduct);
+  const targetproductdata = useSelector(
+    (state: RootState) => state.products.productById.data
   );
-
-  const [product, setProduct] = useState<createProduct>({
-    name: '',
-    description: '',
-    price: 0,
-    cost_price: 0,
-    discount: 0,
-    categoryId: '',
-    unitname: '',
+  const [product, setProduct] = useState<updateProduct>({
+    name: targetproductdata?.name,
+    description: targetproductdata?.description,
+    price: targetproductdata?.price,
+    cost_price: targetproductdata?.cost_price,
+    discount: targetproductdata?.discount,
+    categoryId: targetproductdata?.categoryId,
+    unitname: targetproductdata?.unitname,
     file: null,
   });
 
   useEffect(() => {
+    dispatch(getProductById(productId));
     dispatch(getCategoriesNamesandIds());
-    dispatch(getProductById(productId)).then((res) => {
-      if (res.payload) {
-        setProduct(res.payload);
-      }
-    });
   }, [dispatch, productId]);
 
+  useEffect(() => {
+    if (targetproductdata) {
+      setProduct({
+        name: targetproductdata.name || '',
+        description: targetproductdata.description || '',
+        price: targetproductdata.price || 0,
+        cost_price: targetproductdata.cost_price || 0,
+        discount: targetproductdata.discount || 0,
+        categoryId: targetproductdata.categoryId || '',
+        unitname: targetproductdata.unitname || '',
+        file: null, // Keep file as null since it's not stored in Redux
+      });
+    }
+  }, [targetproductdata]);
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
@@ -78,25 +93,39 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({ productId }) => {
 
   const onSubmit = async () => {
     const formData = new FormData();
-    formData.append('name', product.name);
-    formData.append('description', product.description);
-    formData.append('price', product.price.toString());
-    formData.append('cost_price', product.cost_price.toString());
-    formData.append('discount', product.discount.toString());
-    formData.append('categoryId', product.categoryId);
-    formData.append('unitname', product.unitname);
+    if (product.name) {
+      formData.append('name', product.name);
+    }
+    if (product.description) {
+      formData.append('description', product.description);
+    }
+    if (product.price !== undefined) {
+      formData.append('price', product.price.toString());
+    }
+    if (product.cost_price !== undefined) {
+      formData.append('cost_price', product.cost_price.toString());
+    }
+    if (product.discount !== undefined) {
+      formData.append('discount', product.discount.toString());
+    }
+    if (product.categoryId) {
+      formData.append('categoryId', product.categoryId);
+    }
+    if (product.unitname) {
+      formData.append('unitname', product.unitname);
+    }
     if (product.file) {
       formData.append('file', product.file);
     }
 
-    await dispatch(updateProduct({ productId, formData }));
-    dispatch(closeEditProductDialog());
+    await dispatch(UpdateProduct({ productId, formData }));
+    dispatch(closeupdateProductDialog());
   };
 
   return (
     <Dialog
       open={open}
-      onClose={() => dispatch(closeEditProductDialog())}
+      onClose={() => dispatch(closeupdateProductDialog())}
       fullWidth
       maxWidth="sm"
     >
@@ -213,15 +242,15 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({ productId }) => {
 
           <Grid item xs={12}>
             {updateError && <Alert severity="error">{updateError}</Alert>}
-            {!updateError && !updateLoading && (
+            {updateData?.name && (
               <Alert severity="success">Product updated successfully!</Alert>
-            )}
+            )}++
           </Grid>
         </Grid>
       </DialogContent>
       <DialogActions>
         <Button
-          onClick={() => dispatch(closeEditProductDialog())}
+          onClick={() => dispatch(closeupdateProductDialog())}
           color="secondary"
         >
           Cancel
