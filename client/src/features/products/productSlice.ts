@@ -1,20 +1,53 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   addReview,
+  CreateProduct,
+  getManageProductsTable,
+  getProductById,
   getproductsCards,
   getProductsDetails,
   getProductsNewArrivals,
   getProductsStore,
+  UpdateProduct,
 } from './productThunk';
 import {
-  ProductCardStateType,
+  ManageProductsFilters,
   ProductCardType,
   ProductsNewArrivals,
+  ProductStateType,
   ProductStoreType,
   StoreFilters,
 } from '../../types/product';
 
-const initialState: ProductCardStateType = {
+const initialState: ProductStateType = {
+  createProduct: {
+    data: {
+      name: '',
+      description: '',
+      price: 0,
+      cost_price: 0,
+      discount: 0,
+      categoryId: '',
+      unitname: '',
+      file: null, //
+    },
+    loading: false,
+    error: '',
+  },
+  updateProduct: {
+    data: {
+      name: '',
+      description: '',
+      price: 0,
+      cost_price: 0,
+      discount: 0,
+      categoryId: '',
+      unitname: '',
+      file: null, //
+    },
+    loading: false,
+    error: '',
+  },
   productsCard: {
     data: [],
     loading: false,
@@ -73,11 +106,49 @@ const initialState: ProductCardStateType = {
       reviewText: '',
       email: '',
       mame: '',
-      rating: 0
+      rating: 0,
     },
     loading: false,
     error: '',
   },
+  productsManage: {
+    data: {
+      products: [],
+      totalProducts: 0,
+      productspageCount: 0,
+    },
+    loading: false,
+    error: '',
+  },
+  manageProductsFilters: {
+    filters: {
+      page: 1,
+      search: '',
+      category: '',
+      min_price: 1,
+      max_price: 50,
+      min_stock: 0,
+      max_stock: 50,
+    },
+    openFilters: false,
+  },
+  productById: {
+    data: {
+      id: '',
+      name: '',
+      description: '',
+      price: 0,
+      cost_price: 0,
+      discount: 0,
+      unitname: '',
+      categoryId: '',
+    },
+    loading: false,
+    error: '',
+  },
+  isAddProductOpen: false,
+  isEditProductOpen: false,
+  productToEditId: '',
 };
 
 const productsSlice = createSlice({
@@ -85,16 +156,46 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     setFilters: <K extends keyof StoreFilters>(
-      state,
+      state: any,
       action: PayloadAction<{ key: K; value: StoreFilters[K] }>
     ) => {
       const { key, value } = action.payload;
       state.filters[key] = value;
     },
+    setManageFilter: <K extends keyof ManageProductsFilters>(
+      state: any,
+      action: PayloadAction<{ key: K; value: ManageProductsFilters[K] }>
+    ) => {
+      const { key, value } = action.payload;
+      state.manageProductsFilters.filters[key] = value;
+    },
+    setOpenFilter: (state) => {
+      state.manageProductsFilters.openFilters =
+        !state.manageProductsFilters.openFilters;
+    },
+    openAddProductDialog: (state) => {
+      state.isAddProductOpen = true;
+    },
+    closeAddProductDialog: (state) => {
+      state.isAddProductOpen = false;
+    },
+
+    openupdateProductDialog: (state) => {
+      state.isEditProductOpen = true;
+    },
+    closeupdateProductDialog: (state) => {
+      state.isEditProductOpen = false;
+    },
+    setProductIdToEdit: (state, action) => {
+      state.productToEditId = action.payload;
+    },
+    clearProductIdToEdit: (state) => {
+      state.productToEditId = '';
+    },
   },
+
   extraReducers: (builder) => {
     builder
-
       //products cards
       .addCase(getproductsCards.pending, (state) => {
         state.productsCard.loading = true;
@@ -179,10 +280,79 @@ const productsSlice = createSlice({
       .addCase(addReview.rejected, (state, action) => {
         state.addReview.loading = false;
         state.addReview.error = action.payload as string;
+      })
+
+      //manage products
+      .addCase(getManageProductsTable.pending, (state) => {
+        state.productsManage.loading = true;
+        state.productsManage.error = '';
+      })
+      .addCase(getManageProductsTable.rejected, (state, action) => {
+        state.productsManage.loading = false;
+        state.productsManage.error = action.payload as string;
+      })
+      .addCase(getManageProductsTable.fulfilled, (state, action) => {
+        state.productsManage.loading = false;
+        state.productsManage.error = '';
+        state.productsManage.data = action.payload;
+      })
+
+      //Create Product
+      .addCase(CreateProduct.pending, (state) => {
+        state.createProduct.loading = true;
+        state.createProduct.error = '';
+      })
+      .addCase(CreateProduct.rejected, (state, action) => {
+        state.createProduct.loading = false;
+        state.createProduct.error = action.payload as string;
+      })
+      .addCase(CreateProduct.fulfilled, (state, action) => {
+        state.createProduct.loading = false;
+        state.createProduct.error = '';
+        state.createProduct.data = action.payload;
+      })
+
+      //Update Product
+      .addCase(UpdateProduct.pending, (state) => {
+        state.updateProduct.loading = true;
+        state.updateProduct.error = '';
+      })
+      .addCase(UpdateProduct.rejected, (state, action) => {
+        state.updateProduct.loading = false;
+        state.updateProduct.error = action.payload as string;
+      })
+      .addCase(UpdateProduct.fulfilled, (state, action) => {
+        state.updateProduct.loading = false;
+        state.updateProduct.error = '';
+        state.updateProduct.data = action.payload;
+      })
+
+      .addCase(getProductById.pending, (state) => {
+        state.productById.loading = true;
+        state.productById.error = '';
+      })
+      .addCase(getProductById.rejected, (state, action) => {
+        state.productById.loading = false;
+        state.productById.error = action.payload as string;
+      })
+      .addCase(getProductById.fulfilled, (state, action) => {
+        state.productById.loading = false;
+        state.productById.error = '';
+        state.productById.data = action.payload;
       });
   },
 });
 
 export const productsReducer = productsSlice.reducer;
 export default productsSlice.reducer;
-export const { setFilters } = productsSlice.actions;
+export const {
+  setFilters,
+  setManageFilter,
+  setOpenFilter,
+  closeAddProductDialog,
+  openAddProductDialog,
+  closeupdateProductDialog,
+  openupdateProductDialog,
+  setProductIdToEdit,
+  clearProductIdToEdit,
+} = productsSlice.actions;
