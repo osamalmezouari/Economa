@@ -1,10 +1,10 @@
 import { Box, Grid, Dialog, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import OrderValidationForm from '../widgets/orderValidationForm';
-import OrderSummary from '../widgets/orderSummary';
+import OrderValidationForm from '../components/extra/orderValidationForm';
+import OrderSummary from '../components/extra/orderSummary';
 import { AppDispatch, RootState } from '../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import QRCodeGenerator from '../components/base/QrCodeGen/QRCodeGenerator';
+import QRCodeGenerator from '../components/base/QRCodeGenerator';
 import { useEffect, useState } from 'react';
 import { useRouter } from '@tanstack/react-router';
 import { getshoppingCart } from '../features/shoppingCart/shoppingCartThunk';
