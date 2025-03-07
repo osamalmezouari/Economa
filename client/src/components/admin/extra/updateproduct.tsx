@@ -244,7 +244,7 @@ const EditProductDialog: React.FC = () => {
             {updateError && <Alert severity="error">{updateError}</Alert>}
             {updateData?.name && (
               <Alert severity="success">Product updated successfully!</Alert>
-            )}++
+            )}
           </Grid>
         </Grid>
       </DialogContent>
