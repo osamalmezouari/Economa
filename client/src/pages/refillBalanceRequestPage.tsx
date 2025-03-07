@@ -21,7 +21,7 @@ import {
   getbalanceCardInfo,
   refillBalanceRequest,
 } from '../features/balance/balanceThunk';
-import BalanceCard from '../components/extra/balanceCard/balanceCard';
+import BalanceCard from '../components/extra/balanceCard';
 
 const RefillBalanceRequestPage = () => {
   const { loading, error, data } = useSelector(
