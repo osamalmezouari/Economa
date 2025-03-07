@@ -1,9 +1,10 @@
-import OfferBanner from '../components/extra/offerBanner/offerBanner';
-import PromoCardWraper from '../components/extra/PromoCard/PromoCard';
-import ServicesContainer from '../components/extra/servicesContainer/ServicesContainer';
-import Home from '../layouts/Home';
-import NewArrivalsSection from '../layouts/newArrivalsSection';
-import ProductsWithDiscount from '../layouts/ProductsWithDiscount';
+
+import Home from '../components/extra/Home';
+import NewArrivalsSection from '../components/extra/newArrivalsSection';
+import OfferBanner from '../components/extra/offerBanner';
+import ProductsWithDiscount from '../components/extra/ProductsWithDiscount';
+import PromoCardWraper from '../components/extra/PromoCard';
+import ServicesContainer from '../components/extra/ServicesContainer';
 
 const Landing = () => {
   return (
