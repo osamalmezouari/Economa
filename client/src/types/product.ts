@@ -1,6 +1,27 @@
 import { MiniProductCardTypeProps } from '../components/base/minProductCard/interfaces';
 import { AddReview, Review } from './review';
 
+export interface createProduct {
+  name: string;
+  description: string;
+  price: number;
+  cost_price: number;
+  discount: number;
+  categoryId: string;
+  unitname: string;
+  file: File | null;
+}
+
+export interface updateProduct {
+  name?: string;
+  description?: string;
+  price?: number;
+  cost_price?: number;
+  discount?: number;
+  categoryId?: string;
+  unitname?: string;
+  file?: File | null;
+}
 export interface StoreFilters {
   category?: string;
   search?: string;
@@ -67,7 +88,48 @@ export interface ProductDialogProps extends ProductCardType {
   setopen: (open: boolean) => void;
 }
 
-export interface ProductCardStateType {
+export interface ManageProduct {
+  id: string;
+  name: string;
+  price: number;
+  costprice: number;
+  stock: number;
+  description: string;
+  productAvgRating: number;
+  priceWithDiscount: number;
+  categoryName: string;
+  unit: string;
+  imageLink: string | null;
+}
+
+export interface ManageProductsResponse {
+  products: ManageProduct[];
+  totalProducts: number;
+  productspageCount: number;
+}
+
+export interface ManageProductsFilters {
+  page?: number;
+  search?: string;
+  category?: string;
+  min_price?: number;
+  max_price?: number;
+  min_stock?: number;
+  max_stock?: number;
+}
+
+export interface SingleProduct {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  cost_price: number;
+  discount: number;
+  unitname: string;
+  categoryId: string;
+}
+
+export interface ProductStateType {
   productsCard: {
     data: ProductCardType[];
     loading: boolean;
@@ -94,5 +156,33 @@ export interface ProductCardStateType {
     loading: boolean;
     error: string;
   };
+  productsManage: {
+    data: ManageProductsResponse;
+    loading: boolean;
+    error: string;
+  };
+  manageProductsFilters: {
+    filters: ManageProductsFilters;
+    openFilters: boolean;
+  };
+
+  createProduct: {
+    data: createProduct;
+    loading: boolean;
+    error: string;
+  };
+  updateProduct: {
+    data: updateProduct;
+    loading: boolean;
+    error: string;
+  };
+  productById: {
+    data: SingleProduct;
+    loading: boolean;
+    error: string;
+  };
+  productToEditId: string;
+  isEditProductOpen: boolean;
+  isAddProductOpen: boolean;
   filters: StoreFilters;
 }
