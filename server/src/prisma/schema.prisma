@@ -68,7 +68,8 @@ model Product {
   categoryId       String
   cost_price       Float
   discount         Int?
-  stock            Int
+  stock            Int?
+  unitId           String
   category         Category           @relation(fields: [categoryId], references: [id])
   created_at       DateTime           @default(now())
   updated_at       DateTime           @updatedAt
@@ -77,7 +78,6 @@ model Product {
   reviews          ProductReview[]
   shoppingCart     ShoppingCart[]
   wishList         Wishlist[]
-  unitId           String
   Units            Units              @relation(fields: [unitId], references: [id])
   StockTransaction StockTransaction[]
 }
@@ -96,7 +96,7 @@ model StockTransaction {
 model Gallery {
   id        String   @id
   productId String
-  imageUrl  String
+  imageUrl  String   @db.Text
   createdAt DateTime @default(now())
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
