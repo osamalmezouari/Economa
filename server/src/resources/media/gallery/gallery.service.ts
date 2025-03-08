@@ -16,6 +16,27 @@ export class GalleryService {
     return gallery;
   }
 
+  async StoreProductImage(path: string, productId: string) {
+    const existingImage = await this.prisma.gallery.findFirst({
+      where: { productId },
+    });
+
+    if (existingImage) {
+      return this.prisma.gallery.update({
+        where: { id: existingImage.id },
+        data: { imageUrl: path },
+      });
+    } else {
+      return this.prisma.gallery.create({
+        data: {
+          id: uuid(),
+          productId,
+          imageUrl: path,
+        },
+      });
+    }
+  }
+
   async findAll() {
     const galleries = await this.prisma.gallery.findMany();
     return galleries;
