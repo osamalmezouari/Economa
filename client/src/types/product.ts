@@ -129,6 +129,13 @@ export interface SingleProduct {
   categoryId: string;
 }
 
+export interface addStockTransaction {
+  productId: string;
+  transactionType: string;
+  quantity: number;
+  unitCost: number;
+}
+
 export interface ProductStateType {
   productsCard: {
     data: ProductCardType[];
@@ -181,8 +188,14 @@ export interface ProductStateType {
     loading: boolean;
     error: string;
   };
+  createTransaction: {
+    data: addStockTransaction;
+    loading: boolean;
+    error: string;
+  };
   productToEditId: string;
   isEditProductOpen: boolean;
   isAddProductOpen: boolean;
+  isStockTransactionOpen: boolean;
   filters: StoreFilters;
 }
