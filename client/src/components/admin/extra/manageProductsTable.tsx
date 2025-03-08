@@ -36,7 +36,7 @@ import { FiEdit3 } from 'react-icons/fi';
 import { PiTextColumns } from 'react-icons/pi';
 import { IoFilterCircleOutline } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
-import EditProductDialog from './updateproduct';
+import { HiOutlineInboxIn } from 'react-icons/hi';
 
 const ManageProductsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -210,7 +210,7 @@ const ManageProductsTable = () => {
               <TableCell className="py-2 h-6">Rating</TableCell>
             )}
             {columnVisibility.actions && (
-              <TableCell className="py-2 h-6"> </TableCell>
+              <TableCell className="py-2 h-6"></TableCell>
             )}
           </TableRow>
         </TableHead>
@@ -319,7 +319,7 @@ const ManageProductsTable = () => {
                 </TableCell>
               )}
               {columnVisibility.actions && (
-                <TableCell>
+                <TableCell className="flex">
                   <Tooltip title={`Edit ${product.name}`} placement="top">
                     <IconButton
                       color="secondary"
@@ -330,6 +330,24 @@ const ManageProductsTable = () => {
                       }}
                     >
                       <FiEdit3
+                        fontSize={'small'}
+                        className="group-hover:text-primary-main"
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip
+                    title={`Add stock transaction for ${product.name}`}
+                    placement="top"
+                  >
+                    <IconButton
+                      color="secondary"
+                      className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
+                      onClick={() => {
+                        dispatch(setProductIdToEdit(product.id));
+                        dispatch(openupdateProductDialog());
+                      }}
+                    >
+                      <HiOutlineInboxIn
                         fontSize={'small'}
                         className="group-hover:text-primary-main"
                       />
