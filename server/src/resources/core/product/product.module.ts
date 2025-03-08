@@ -4,11 +4,12 @@ import { ProductController } from './product.controller';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { ProductReviewService } from './services/product-review.service';
 import { ProductStockService } from './services/product-stock.service';
+import { GalleryModule } from 'src/resources/media/gallery/gallery.module';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [PrismaModule , GalleryModule],
   controllers: [ProductController],
-  providers: [ProductService, ProductReviewService, ProductStockService],
+  providers: [ProductService, ProductReviewService, ProductStockService ],
   exports: [ProductStockService],
 })
 export class ProductModule {}
