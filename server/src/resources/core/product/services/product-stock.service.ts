@@ -1,12 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { ProductReviewService } from './product-review.service';
+import { CreateStockTransactionDto } from '../dto/create-stock-transaction.dto';
+import { ProductService } from './product.service';
 
 @Injectable()
 export class ProductStockService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly productreviewService: ProductReviewService,
+    private readonly productService: ProductService,
   ) {}
 
   async getLowStockProducts(filter: { page: number; productName?: string }) {
@@ -86,5 +89,25 @@ export class ProductStockService {
       }
     }
     return currentStock;
+  }
+
+  async createStockTransaction(
+    createStockTransaction: CreateStockTransactionDto,
+  ) {
+    const product = await this.productService.findOne(
+      createStockTransaction.productId,
+    );
+    const storeTransaction = await this.prisma.stockTransaction.create({
+      data: {
+        productId: createStockTransaction.productId,
+        quantity: createStockTransaction.quantity,
+        transactionType: createStockTransaction.transactionType,
+        unitCost: createStockTransaction.transactionType,
+      },
+    });
+    await this.productService.update(createStockTransaction.productId, {
+      stock: product.stock + createStockTransaction.quantity,
+    });
+    return storeTransaction;
   }
 }
