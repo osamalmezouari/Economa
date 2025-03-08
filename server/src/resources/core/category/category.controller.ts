@@ -29,6 +29,12 @@ export class CategoryController {
     return categories;
   }
 
+  @Get('CategoriesNamesandIds')
+  async findCategoriesNamesandIds() {
+    const categories = await this.categoryService.CategoriesNamesandIds();
+    return categories;
+  }
+
   @AUTH(AuthenticationType.None)
   @Get('cards')
   async findAllCards() {
