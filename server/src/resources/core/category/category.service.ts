@@ -21,6 +21,16 @@ export class CategoryService {
     return categories;
   }
 
+  async CategoriesNamesandIds() {
+    const categories = await this.prisma.category.findMany({
+      select: {
+        name: true,
+        id: true,
+      },
+    });
+    return categories;
+  }
+
   async findAllCards() {
     const categories = await this.prisma.category.findMany({
       include: {
