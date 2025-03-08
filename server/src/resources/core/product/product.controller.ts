@@ -7,6 +7,8 @@ import {
   Param,
   Delete,
   Query,
+  UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { ProductService } from './services/product.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -18,6 +20,9 @@ import { StoreFiltersDto } from 'src/resources/core/product/dto/storeFilters.dto
 import { CreateProductReviewDto } from './dto/create-product-review.dto';
 import { ProductReviewService } from './services/product-review.service';
 import { ProductStockService } from './services/product-stock.service';
+import { ManageProductsTableDto } from './dto/manageProductsTable.dto';
+import { AnyFilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
+import { CreateStockTransactionDto } from './dto/create-stock-transaction.dto';
 
 @Controller('products')
 export class ProductController {
@@ -45,13 +50,13 @@ export class ProductController {
     @Query('Maxprice') Maxprice: number,
     @Query('sort') sort: string,
   ) {
-    console.log('Page:', page);
+    /*     console.log('Page:', page);
     console.log('Category:', category);
     console.log('Search:', search);
     console.log('Weight:', weight);
     console.log('Minprice:', Minprice);
     console.log('Maxprice:', Maxprice);
-    console.log('Sort:', sort);
+    console.log('Sort:', sort); */
     return this.productService.getStoreProducts({
       page,
       category,
@@ -91,6 +96,13 @@ export class ProductController {
     return product;
   }
 
+  @Get('manageProductsTable')
+  async getManageProductsTable(@Query() query: ManageProductsTableDto) {
+    const products = this.productService.ManageProductsTable(query);
+    console.log('products', products);
+    return products;
+  }
+
   @AUTH(AuthenticationType.bearer)
   @Get(':productId')
   async findOne(@Param('productId') productId: string) {
@@ -98,29 +110,37 @@ export class ProductController {
     return product;
   }
 
+  @UseInterceptors(FileInterceptor('file'))
   @AUTH(AuthenticationType.bearer)
   @Post()
-  async create(@Body() createProductDto: CreateProductDto) {
+  async create(
+    @Body() createProductDto: CreateProductDto,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    createProductDto.file = file;
     const product = await this.productService.create(createProductDto);
     return product;
   }
+
+  @UseInterceptors(FileInterceptor('file'))
   @AUTH(AuthenticationType.bearer)
-  @Patch(':id')
+  @Patch(':productId')
   async update(
-    @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
+    @Param('productId') productId: string,
+    @UploadedFile() file: Express.Multer.File,
   ) {
-    const product = await this.productService.update(id, updateProductDto);
+    if (file) {
+      updateProductDto.file = file;
+    }
+    const product = await this.productService.update(
+      productId,
+      updateProductDto,
+    );
     return product;
   }
 
   @AUTH(AuthenticationType.bearer)
-  @Delete(':id')
-  async remove(@Param('id') id: string) {
-    const product = await this.productService.remove(id);
-    return product;
-  }
-  @AUTH(AuthenticationType.None)
   @Post('addReview')
   async addProductReview(
     @Body() createProductReviewDto: CreateProductReviewDto,
@@ -129,5 +149,14 @@ export class ProductController {
       createProductReviewDto,
     );
     return review;
+  }
+
+  @Post('addStockTransaction')
+  async addStockTransaction(createStockTransaction: CreateStockTransactionDto) {
+    const storeStockTransaction =
+      await this.productstockService.createStockTransaction(
+        createStockTransaction,
+      );
+    return storeStockTransaction;
   }
 }
