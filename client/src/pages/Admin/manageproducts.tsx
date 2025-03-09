@@ -52,7 +52,7 @@ const ManageProducts = () => {
       <ManageproductFilterBar />
       <AddProductDialog />
       <EditProductDialog />
-      <AddStockTransaction open={true} onClose={() => 'hello'} />
+      <AddStockTransaction/>
     </Box>
   );
 };
