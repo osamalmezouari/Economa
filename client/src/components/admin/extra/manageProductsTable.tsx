@@ -27,6 +27,7 @@ import { useEffect, useState } from 'react';
 import { getManageProductsTable } from '../../../features/products/productThunk';
 import { ManageProduct } from '../../../types/product';
 import {
+  addStockTransactionOpen,
   openupdateProductDialog,
   setManageFilter,
   setOpenFilter,
@@ -344,7 +345,7 @@ const ManageProductsTable = () => {
                       className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
                       onClick={() => {
                         dispatch(setProductIdToEdit(product.id));
-                        dispatch(openupdateProductDialog());
+                        dispatch(addStockTransactionOpen());
                       }}
                     >
                       <HiOutlineInboxIn
