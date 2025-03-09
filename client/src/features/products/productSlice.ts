@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   addReview,
+  AddStockTransaction,
   CreateProduct,
   getManageProductsTable,
   getProductById,
@@ -356,6 +357,20 @@ const productsSlice = createSlice({
         state.productById.loading = false;
         state.productById.error = '';
         state.productById.data = action.payload;
+      })
+
+      .addCase(AddStockTransaction.pending, (state) => {
+        state.createTransaction.loading = true;
+        state.createTransaction.error = '';
+      })
+      .addCase(AddStockTransaction.rejected, (state, action) => {
+        state.createTransaction.loading = false;
+        state.createTransaction.error = action.payload as string;
+      })
+      .addCase(AddStockTransaction.fulfilled, (state, action) => {
+        state.createTransaction.loading = false;
+        state.createTransaction.error = '';
+        state.createTransaction.data = action.payload;
       });
   },
 });
@@ -372,4 +387,6 @@ export const {
   openupdateProductDialog,
   setProductIdToEdit,
   clearProductIdToEdit,
+  addStockTransactionClose,
+  addStockTransactionOpen,
 } = productsSlice.actions;
