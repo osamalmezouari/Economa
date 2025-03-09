@@ -133,7 +133,7 @@ export interface addStockTransaction {
   productId: string;
   transactionType: string;
   quantity: number;
-  unitCost: number;
+  unitCost?: number;
 }
 
 export interface ProductStateType {
