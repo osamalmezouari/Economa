@@ -131,7 +131,7 @@ export const getproductById = async (
 
 export const AddStockTransaction = async (data: addStockTransaction) => {
   try {
-    const response = await apiClient.post(`products/${data}`);
+    const response = await apiClient.post(`products/addStockTransaction`, data);
     return response.data;
   } catch (error: any) {
     throw error.response?.data || new Error('Failed to fetch signle product');
