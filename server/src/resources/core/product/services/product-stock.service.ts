@@ -102,12 +102,13 @@ export class ProductStockService {
         productId: createStockTransaction.productId,
         quantity: createStockTransaction.quantity,
         transactionType: createStockTransaction.transactionType,
-        unitCost: createStockTransaction.transactionType,
+        unitCost: createStockTransaction.unitCost || 0,
       },
     });
-    await this.productService.update(createStockTransaction.productId, {
-      stock: product.stock + createStockTransaction.quantity,
-    });
+    await this.productService.updateProductStock(
+      createStockTransaction.productId,
+      product.stock + createStockTransaction.quantity,
+    );
     return storeTransaction;
   }
 }
