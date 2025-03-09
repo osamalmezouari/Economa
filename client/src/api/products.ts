@@ -1,4 +1,5 @@
 import ProductDetails, {
+  addStockTransaction,
   createProduct,
   ManageProductsFilters,
   ManageProductsResponse,
@@ -102,7 +103,7 @@ export const CreateProduct = async (
 
 export const UpdateProduct = async (
   productId: string,
-  formData: FormData 
+  formData: FormData
 ): Promise<updateProduct> => {
   try {
     const response = await apiClient.patch<updateProduct>(
@@ -122,6 +123,15 @@ export const getproductById = async (
     const response = await apiClient.get<SingleProduct>(
       `products/${productId}`
     );
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data || new Error('Failed to fetch signle product');
+  }
+};
+
+export const AddStockTransaction = async (data: addStockTransaction) => {
+  try {
+    const response = await apiClient.post(`products/${data}`);
     return response.data;
   } catch (error: any) {
     throw error.response?.data || new Error('Failed to fetch signle product');
