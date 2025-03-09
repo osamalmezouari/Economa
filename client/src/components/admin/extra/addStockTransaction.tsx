@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Dialog,
   DialogActions,
@@ -10,28 +10,59 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-} from "@mui/material";
+  CircularProgress,
+} from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../app/store';
+import { AddStockTransaction } from '../../../features/products/productThunk';
+import { addStockTransactionClose } from '../../../features/products/productSlice';
+import { addStockTransaction } from '../../../types/product';
 
-const transactionTypes = ["purchase", "sale", "return", "adjustment"];
+const transactionTypes = ['purchase', 'sale', 'return', 'adjustment'];
 
-export default function AddStockTransaction({ open, onClose }) {
-  const [formData, setFormData] = useState({
-    transactionType: "purchase",
-    quantity: "",
-    unitCost: "",
+export default function AddStockTransactions() {
+  const dispatch = useDispatch<AppDispatch>();
+  const [formData, setFormData] = useState<addStockTransaction>({
+    transactionType: 'purchase',
+    quantity: 0,
+    unitCost: 0,
+    productId: '',
   });
+
+  const { data, loading, error } = useSelector(
+    (state: RootState) => state.products.createTransaction
+  );
+
+  const open = useSelector(
+    (state: RootState) => state.products.isStockTransactionOpen
+  );
+
+  const tragetproduct = useSelector(
+    (state: RootState) => state.products.productToEditId
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    onClose();
+  const handleSubmit = async () => {
+    await dispatch(AddStockTransaction(formData));
   };
 
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      productId: tragetproduct,
+    });
+  }, [tragetproduct]);
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
+    <Dialog
+      open={open}
+      onClose={() => dispatch(addStockTransactionClose())}
+      fullWidth
+      maxWidth="sm"
+    >
       <DialogTitle>Stock Transaction</DialogTitle>
       <DialogContent>
         <FormControl fullWidth margin="dense">
@@ -59,7 +90,7 @@ export default function AddStockTransaction({ open, onClose }) {
           onChange={handleChange}
         />
 
-        {formData.transactionType === "purchase" && (
+        {formData.transactionType === 'purchase' && (
           <TextField
             fullWidth
             margin="dense"
@@ -72,9 +103,20 @@ export default function AddStockTransaction({ open, onClose }) {
         )}
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} color="secondary">Cancel</Button>
-        <Button onClick={handleSubmit} color="primary" variant="contained">
-          Submit
+        <Button onClick={() => addStockTransactionClose()} color="secondary">
+          Cancel
+        </Button>
+        <Button
+          onClick={handleSubmit}
+          color="primary"
+          variant="contained"
+          disabled={loading}
+        >
+          {data.productId ? (
+            'Submit'
+          ) : (
+            <CircularProgress color="primary" size={20} />
+          )}
         </Button>
       </DialogActions>
     </Dialog>
