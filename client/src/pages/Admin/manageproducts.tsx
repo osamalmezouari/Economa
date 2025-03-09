@@ -10,6 +10,7 @@ import exportToCSV from '../../utils/exportcsv';
 import AddProductDialog from '../../components/admin/extra/addproduct';
 import { openAddProductDialog } from '../../features/products/productSlice';
 import EditProductDialog from '../../components/admin/extra/updateproduct';
+import AddStockTransaction from '../../components/admin/extra/addStockTransaction';
 const ManageProducts = () => {
   const { data } = useSelector(
     (state: RootState) => state.products.productsManage
@@ -50,7 +51,8 @@ const ManageProducts = () => {
       <ManageProductsTable />
       <ManageproductFilterBar />
       <AddProductDialog />
-      <EditProductDialog/>
+      <EditProductDialog />
+      <AddStockTransaction open={true} onClose={() => 'hello'} />
     </Box>
   );
 };
