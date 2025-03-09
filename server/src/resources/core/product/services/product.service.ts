@@ -161,7 +161,6 @@ export class ProductService {
         Units: {
           select: {
             name: true,
-          
           },
         },
         category: {
@@ -181,7 +180,7 @@ export class ProductService {
         discount: product.discount,
         unitname: product.Units.name,
         categoryId: product.category.id,
-        stock : product.stock
+        stock: product.stock,
       };
 
     if (!product) throw new PRODUCT_NOT_FOUND_Exception(id);
@@ -722,6 +721,17 @@ export class ProductService {
     };
   };
 
+  async updateProductStock(productId: string, stock) {
+    const storeProduct = await this.prisma.product.update({
+      where: {
+        id: productId,
+      },
+      data: {
+        stock: stock,
+      },
+    });
+    return storeProduct;
+  }
   private storeProductImage(
     productId: string,
     file: Express.Multer.File,
