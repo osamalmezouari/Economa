@@ -146,9 +146,20 @@ const initialState: ProductStateType = {
     loading: false,
     error: '',
   },
+  createTransaction: {
+    data: {
+      quantity: 0,
+      transactionType: 'purchase',
+      productId: '',
+      unitCost: 0,
+    },
+    loading: false,
+    error: '',
+  },
   isAddProductOpen: false,
   isEditProductOpen: false,
   productToEditId: '',
+  isStockTransactionOpen: false,
 };
 
 const productsSlice = createSlice({
@@ -191,6 +202,12 @@ const productsSlice = createSlice({
     },
     clearProductIdToEdit: (state) => {
       state.productToEditId = '';
+    },
+    addStockTransactionOpen: (state) => {
+      state.isStockTransactionOpen = true;
+    },
+    addStockTransactionClose: (state) => {
+      state.isStockTransactionOpen = false;
     },
   },
 
