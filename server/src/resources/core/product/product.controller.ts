@@ -152,7 +152,9 @@ export class ProductController {
   }
 
   @Post('addStockTransaction')
-  async addStockTransaction(createStockTransaction: CreateStockTransactionDto) {
+  async addStockTransaction(
+    @Body() createStockTransaction: CreateStockTransactionDto,
+  ) {
     const storeStockTransaction =
       await this.productstockService.createStockTransaction(
         createStockTransaction,
