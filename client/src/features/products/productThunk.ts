@@ -3,6 +3,7 @@ import * as productsApi from '../../api/products';
 import { AddReview } from '../../types/review';
 import { addreview } from '../../api/productReview';
 import {
+  addStockTransaction,
   ManageProductsFilters,
   ManageProductsResponse,
   StoreFilters,
@@ -152,6 +153,23 @@ export const getProductById = createAsyncThunk(
   async (productId: string, { rejectWithValue }) => {
     try {
       const product = await productsApi.getproductById(productId);
+      return product;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong',
+      });
+    }
+  }
+);
+
+export const AddStockTransaction = createAsyncThunk(
+  '/products/addStockTransaction',
+  async (data: addStockTransaction, { rejectWithValue }) => {
+    try {
+      const product = await productsApi.AddStockTransaction(data);
       return product;
     } catch (error: any) {
       if (error) {
