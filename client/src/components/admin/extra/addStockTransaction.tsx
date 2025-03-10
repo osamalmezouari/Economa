@@ -14,7 +14,10 @@ import {
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
-import { AddStockTransaction } from '../../../features/products/productThunk';
+import {
+  AddStockTransaction,
+  getManageProductsTable,
+} from '../../../features/products/productThunk';
 import { addStockTransactionClose } from '../../../features/products/productSlice';
 import { addStockTransaction } from '../../../types/product';
 
@@ -29,7 +32,7 @@ export default function AddStockTransactions() {
     productId: '',
   });
 
-  const { data, loading, error } = useSelector(
+  const { data, loading } = useSelector(
     (state: RootState) => state.products.createTransaction
   );
 
@@ -48,6 +51,8 @@ export default function AddStockTransactions() {
 
   const handleSubmit = async () => {
     await dispatch(AddStockTransaction(formData));
+    dispatch(addStockTransactionClose());
+    await dispatch(getManageProductsTable({ page: 1 }));
   };
 
   useEffect(() => {
@@ -59,7 +64,15 @@ export default function AddStockTransactions() {
   return (
     <Dialog
       open={open}
-      onClose={() => dispatch(addStockTransactionClose())}
+      onClose={() => {
+        setFormData({
+          productId: '',
+          quantity: 0,
+          transactionType: 'purchase',
+          unitCost: 0,
+        });
+        dispatch(addStockTransactionClose());
+      }}
       fullWidth
       maxWidth="sm"
     >
@@ -112,11 +125,7 @@ export default function AddStockTransactions() {
           variant="contained"
           disabled={loading}
         >
-          {data.productId ? (
-            'Submit'
-          ) : (
-            <CircularProgress color="primary" size={20} />
-          )}
+          {!loading ? 'Submit' : <CircularProgress color="primary" size={20} />}
         </Button>
       </DialogActions>
     </Dialog>
