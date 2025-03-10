@@ -76,7 +76,7 @@ const ManageProductsTable = () => {
 
   const handleSearch = async () => {
     dispatch(setManageFilter({ key: 'search', value: search }));
-    await dispatch(getManageProductsTable(filters));
+    //await dispatch(getManageProductsTable(filters));
   };
 
   const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
