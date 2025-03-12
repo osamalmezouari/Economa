@@ -129,11 +129,21 @@ export const getproductById = async (
   }
 };
 
+export const stockTransaction = async (page: number) => {
+  try {
+    const response = await apiClient.get(
+      `products/StockTransactions?page=${page}`
+    );
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data || new Error('Failed to fetch transaction');
+  }
+};
 export const AddStockTransaction = async (data: addStockTransaction) => {
   try {
     const response = await apiClient.post(`products/addStockTransaction`, data);
     return response.data;
   } catch (error: any) {
-    throw error.response?.data || new Error('Failed to fetch signle product');
+    throw error.response?.data || new Error('Failed to add Transaction');
   }
 };
