@@ -67,7 +67,11 @@ export class ProductController {
       sort,
     });
   }
-
+  @Get('StockTransactions')
+  async StockTransaction(@Query('page') page: number) {
+    page = page || 1;
+    return this.productstockService.getStockTransactions(page);
+  }
   @AUTH(AuthenticationType.None)
   @Get('cards')
   async getAllProductCards() {
