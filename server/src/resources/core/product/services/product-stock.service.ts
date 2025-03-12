@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { ProductReviewService } from './product-review.service';
 import { CreateStockTransactionDto } from '../dto/create-stock-transaction.dto';
 import { ProductService } from './product.service';
+import { TransactionType } from '@prisma/client';
 
 @Injectable()
 export class ProductStockService {
@@ -110,5 +111,51 @@ export class ProductStockService {
       product.stock + createStockTransaction.quantity,
     );
     return storeTransaction;
+  }
+
+  async getStockTransactions(page = 1) {
+    const stockTransactions = await this.prisma.stockTransaction.findMany({
+      take: 10,
+      skip: 10 * page - 10,
+      orderBy: {
+        transactionDate: 'desc',
+      },
+      include: {
+        product: {
+          include: {
+            gallery: {
+              select: {
+                imageUrl: true,
+              },
+            },
+            category: {
+              select: {
+                name: true,
+              },
+            },
+            Units: {
+              select: {
+                name: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    return {
+      pageCount: Math.ceil(stockTransactions.length / 10),
+      stockTransactions: stockTransactions.map((transaction) => {
+        return {
+          categoryName: transaction.product.category.name,
+          productName: transaction.product.name,
+          imageUrl: transaction.product.gallery[0].imageUrl,
+          unitName: transaction.product.Units.name,
+          quantity: transaction.quantity,
+          Type: transaction.transactionType,
+          date: transaction.transactionDate,
+          unitCost: transaction.unitCost,
+        };
+      }),
+    };
   }
 }
