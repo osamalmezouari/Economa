@@ -136,6 +136,22 @@ export interface addStockTransaction {
   unitCost?: number;
 }
 
+export interface StockTransactionType {
+  categoryName: string;
+  productName: string;
+  imageUrl: string;
+  unitName: string;
+  quantity: number;
+  Type: string;
+  date: string; // Assuming date is in string format (ISO or other)
+  unitCost: number;
+}
+
+export interface StockTransactionResponse {
+  pageCount: number;
+  stockTransactions: StockTransactionType[];
+}
+
 export interface ProductStateType {
   productsCard: {
     data: ProductCardType[];
@@ -188,6 +204,12 @@ export interface ProductStateType {
     loading: boolean;
     error: string;
   };
+
+  stockTransactions : {
+    data : StockTransactionResponse,
+    loading : boolean,
+    error : string
+  }
   createTransaction: {
     data: addStockTransaction;
     loading: boolean;
