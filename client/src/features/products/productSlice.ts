@@ -9,6 +9,7 @@ import {
   getProductsDetails,
   getProductsNewArrivals,
   getProductsStore,
+  StockTransaction,
   UpdateProduct,
 } from './productThunk';
 import {
@@ -143,6 +144,14 @@ const initialState: ProductStateType = {
       discount: 0,
       unitname: '',
       categoryId: '',
+    },
+    loading: false,
+    error: '',
+  },
+  stockTransactions: {
+    data: {
+      pageCount: 0,
+      stockTransactions: [],
     },
     loading: false,
     error: '',
@@ -371,6 +380,20 @@ const productsSlice = createSlice({
         state.createTransaction.loading = false;
         state.createTransaction.error = '';
         state.createTransaction.data = action.payload;
+      })
+
+      .addCase(StockTransaction.pending, (state) => {
+        state.stockTransactions.loading = true;
+        state.stockTransactions.error = '';
+      })
+      .addCase(StockTransaction.rejected, (state, action) => {
+        state.stockTransactions.loading = false;
+        state.stockTransactions.error = action.payload as string;
+      })
+      .addCase(StockTransaction.fulfilled, (state, action) => {
+        state.stockTransactions.loading = false;
+        state.stockTransactions.error = '';
+        state.stockTransactions.data = action.payload;
       });
   },
 });
