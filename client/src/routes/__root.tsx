@@ -24,6 +24,7 @@ import Navbar from '../components/extra/Navbar.tsx';
 import { ManageProductsRoute } from './manageProductsRoote.ts';
 import Header from '../components/admin/extra/header.tsx';
 import AddProductDialog from '../components/admin/extra/addproduct.tsx';
+import { StoreTransactionsRoute } from './stocktransactionsRoute.ts';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -108,6 +109,7 @@ const routeTree = rootRoute.addChildren([
   RefillInsightsRoute,
   StoreAnalyticsRoute,
   ManageProductsRoute,
+  StoreTransactionsRoute,
 ]);
 
 // Create the router
