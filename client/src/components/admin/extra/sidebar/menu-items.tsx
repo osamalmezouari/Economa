@@ -55,12 +55,12 @@ export const menuItems: MenuItemType[] = [
   // label end
   {
     name: 'Manage Products',
-    href:'/Economa/Admin/Dashboard/ManageProducts',
+    href: '/Economa/Admin/Dashboard/ManageProducts',
     icon: <PiPackageDuotone />,
   },
   {
     name: 'Stock Transactions',
-    href: '#',
+    href: '/Economa/Admin/Dashboard/Stock_Transactions',
     icon: <GrTransaction />,
   },
   {
