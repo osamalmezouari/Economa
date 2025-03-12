@@ -165,6 +165,23 @@ export const getProductById = createAsyncThunk(
   }
 );
 
+export const StockTransaction = createAsyncThunk(
+  '/products/StockTransaction',
+  async (page: number, { rejectWithValue }) => {
+    try {
+      const product = await productsApi.stockTransaction(page);
+      return product;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong',
+      });
+    }
+  }
+);
+
 export const AddStockTransaction = createAsyncThunk(
   '/products/addStockTransaction',
   async (data: addStockTransaction, { rejectWithValue }) => {
