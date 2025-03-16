@@ -65,7 +65,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     name: 'Manage Categories',
-    href: '/',
+    href: '/Economa/Admin/Dashboard/ManageProducts',
     icon: <BiCategoryAlt />,
   },
 
