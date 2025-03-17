@@ -17,9 +17,7 @@ import { BsQrCodeScan } from 'react-icons/bs';
 import { GrTransaction } from 'react-icons/gr';
 import { RiUserSettingsLine } from 'react-icons/ri';
 import { TbMailCog, TbUserSquareRounded } from 'react-icons/tb';
-import { ManageProductsRoute } from '../../../../routes/manageProductsRoote';
-import { StoreAnalyticsRoute } from '../../../../routes/storeAnalytcsRoute';
-import { RefillInsightsRoute } from '../../../../routes/refillInsightsRoute';
+
 
 export interface MenuItemType {
   name: string;
@@ -125,7 +123,7 @@ export const menuItems: MenuItemType[] = [
   // label end
   {
     name: 'Order Verfication',
-    href: '#',
+    href: '/',
     icon: <BsQrCodeScan />,
   },
   {
