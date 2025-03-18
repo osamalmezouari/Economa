@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
@@ -21,7 +22,11 @@ export class CategoryController {
 
   @Post()
   @UseInterceptors(FileInterceptor('file'))
-  async create(@Body() createCategoryDto: CreateCategoryDto) {
+  async create(
+    @Body() createCategoryDto: CreateCategoryDto,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    createCategoryDto.file = file;
     const category = await this.categoryService.create(createCategoryDto);
     return category;
   }
@@ -51,11 +56,16 @@ export class CategoryController {
     return category;
   }
 
+  @UseInterceptors(FileInterceptor('file'))
   @Patch(':id')
   async update(
     @Param('id') id: string,
     @Body() updateCategoryDto: UpdateCategoryDto,
+    @UploadedFile() file: Express.Multer.File,
   ) {
+    if (file) {
+      updateCategoryDto.file = file;
+    }
     const category = await this.categoryService.update(id, updateCategoryDto);
     return category;
   }
