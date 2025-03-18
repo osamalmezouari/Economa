@@ -10,6 +10,7 @@ import { Unsupported_FILE_Exception } from 'src/common/exceptions/UNSPORTED_FILE
 import * as fs from 'fs';
 import * as path from 'path';
 import { v4 as uuid } from 'uuid';
+
 import { GalleryService } from 'src/resources/media/gallery/gallery.service';
 @Injectable()
 export class ProductService {
