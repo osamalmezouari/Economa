@@ -9,6 +9,5 @@ export class CreateCategoryDto {
   @IsString()
   description?: string;
 
-  @IsUrl()
-  svgLink: string;
+  file: Express.Multer.File;
 }
