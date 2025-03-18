@@ -76,7 +76,11 @@ export class CategoryService {
         where: {
           id: categoryId,
         },
-        data: { ...updateCategoryDto, svgLink: imagepath },
+        data: {
+          name: updateCategoryDto.name,
+          description: updateCategoryDto.description,
+          svgLink: imagepath,
+        },
       });
       return category;
     }
@@ -84,7 +88,10 @@ export class CategoryService {
       where: {
         id: categoryId,
       },
-      data: { ...updateCategoryDto },
+      data: {
+        name: updateCategoryDto.name,
+        description: updateCategoryDto.description,
+      },
     });
     return category;
   }
