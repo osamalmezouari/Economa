@@ -33,7 +33,7 @@ enum TransactionType {
 model Category {
   id          String    @id
   name        String    @unique
-  svgLink     String
+  svgLink     String    
   description String?
   products    Product[]
 }
