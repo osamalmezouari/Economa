@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 
 import { StockTransactionType } from '../../../types/product';
 import { StockTransaction } from '../../../features/products/productThunk';
-import DateCell from './dateCell';
+import DateCell from '../base/dateCell';
 
 const StockTransactionsTable = () => {
   enum TransactionType {
