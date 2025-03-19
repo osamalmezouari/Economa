@@ -27,9 +27,21 @@ export class CategoryService {
     return category;
   }
 
-  async findAll() {
-    const categories = await this.prisma.category.findMany();
-    return categories;
+  async findAll(page: number = 1) {
+    const pagenum = page ? page : 1;
+    const categoriesCount = await this.prisma.category.count();
+    const categories = await this.prisma.category.findMany({
+      take: 6,
+      skip: (pagenum - 1) * 6,
+      include: {
+        products: true,
+      },
+    });
+    const pageCount = Math.ceil(categoriesCount / 6);
+    return {
+      categories: categories,
+      pageCount: pageCount,
+    };
   }
 
   async CategoriesNamesandIds() {
