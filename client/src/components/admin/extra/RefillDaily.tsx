@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { LocalizationProvider, StaticDatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import DateCell from './dateCell';
+import DateCell from '../base/dateCell';
 import { AppDispatch, RootState } from '../../../app/store';
 import { getrefillDaily } from '../../../features/RefillInsights/refillInsightsThunk';
 
