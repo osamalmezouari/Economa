@@ -8,6 +8,7 @@ import {
   Delete,
   UseInterceptors,
   UploadedFile,
+  Query,
 } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
@@ -32,8 +33,8 @@ export class CategoryController {
   }
 
   @Get()
-  async findAll() {
-    const categories = await this.categoryService.findAll();
+  async findAll(@Query('page') page: number) {
+    const categories = await this.categoryService.findAll(page);
     return categories;
   }
 
