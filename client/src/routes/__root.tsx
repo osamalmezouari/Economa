@@ -25,6 +25,8 @@ import { ManageProductsRoute } from './manageProductsRoote.ts';
 import Header from '../components/admin/extra/header.tsx';
 import AddProductDialog from '../components/admin/extra/addproduct.tsx';
 import { StoreTransactionsRoute } from './stocktransactionsRoute.ts';
+import { ManageCategoriesRoute } from './managecategoriesRoute.ts';
+import AddCategoryDialog from '../components/admin/extra/addCategory.tsx';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -86,6 +88,7 @@ function AdminRoute() {
         <Box p={2} flexGrow={1}>
           <Outlet />
           <AddProductDialog />
+          <AddCategoryDialog />
         </Box>
       </Box>
     </Box>
@@ -110,6 +113,7 @@ const routeTree = rootRoute.addChildren([
   StoreAnalyticsRoute,
   ManageProductsRoute,
   StoreTransactionsRoute,
+  ManageCategoriesRoute,
 ]);
 
 // Create the router
