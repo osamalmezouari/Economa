@@ -106,14 +106,13 @@ const ManageCateogryTable = () => {
           ))}
         </TableBody>
       </Table>
-
       <Box className="flex">
         <Pagination
           className="p-4 ml-auto"
-          count={data.pageCount} // Set the total number of pages
+          count={data.pageCount}
           color="primary"
           variant="outlined"
-          page={currentPage} // Set the current page here
+          page={currentPage}
           onChange={handlePageChange}
           disabled={loading}
         />
