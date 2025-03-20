@@ -29,3 +29,15 @@ export const getbalanceCardInfo = async (): Promise<BalanceCard> => {
     throw new Error('Failed to Fetch Balance');
   }
 };
+
+export const getRefillsList = async (page: number) => {
+  try {
+    const response = await apiClient.get(`/balance/manageRefills?page=${page}`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch Refill Requests');
+  }
+};
