@@ -58,10 +58,23 @@ export const AddCategory = async (
 };
 
 export const updateCategory = async (
-  category: FormData
+  category: FormData,
+  categoryId: string
 ): Promise<CategoryType> => {
   try {
-    const response = await apiClient.patch('/category', category);
+    const response = await apiClient.patch(`/category/${categoryId}`, category);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Add Category');
+  }
+};
+
+export const getCategoryById = async (categoryId: string) => {
+  try {
+    const response = await apiClient.get(`/category/${categoryId}`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
