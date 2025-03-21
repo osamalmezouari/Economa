@@ -34,12 +34,25 @@ export class CategoryService {
       take: 6,
       skip: (pagenum - 1) * 6,
       include: {
-        products: true,
+        products: {
+          select: {
+            id: true,
+          },
+        },
       },
     });
     const pageCount = Math.ceil(categoriesCount / 6);
+    const categoriesWithProductsCount = categories.map((item) => {
+      return {
+        svgLink: item.svgLink,
+        name: item.name,
+        productsCount: item.products.length,
+        description: item.description,
+        id: item.id,
+      };
+    });
     return {
-      categories: categories,
+      categories: categoriesWithProductsCount,
       pageCount: pageCount,
     };
   }
