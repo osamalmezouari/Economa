@@ -6,8 +6,8 @@ import { AppDispatch, RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
 import ManageCateogryTable from '../../components/admin/extra/categorymanageTable';
 import { BiPlus } from 'react-icons/bi';
-import { openAddProductDialog } from '../../features/products/productSlice';
 import { OpenCreateCategoryDailog } from '../../features/category/categorySlice';
+import UpdateCategoryDialog from '../../components/admin/extra/updateCategory';
 
 const ManageCategories = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -49,6 +49,7 @@ const ManageCategories = () => {
         </Button>
       </PageHeader>
       <ManageCateogryTable />
+      <UpdateCategoryDialog />
     </Box>
   );
 };
