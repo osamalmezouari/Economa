@@ -89,6 +89,7 @@ function AdminRoute() {
           <Outlet />
           <AddProductDialog />
           <AddCategoryDialog />
+          
         </Box>
       </Box>
     </Box>
