@@ -70,9 +70,28 @@ export const AddCategory = createAsyncThunk(
 
 export const updateCategory = createAsyncThunk(
   'category/updateCategory',
-  (category: FormData, { rejectWithValue }) => {
+  (
+    { formData, CategoryId }: { formData: FormData; CategoryId: string },
+    { rejectWithValue }
+  ) => {
     try {
-      return categoryApi.updateCategory(category);
+      return categoryApi.updateCategory(formData, CategoryId);
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue({
+        message: error.message || 'Something went wrong.',
+      });
+    }
+  }
+);
+
+export const getCategoryById = createAsyncThunk(
+  'category/categoryById',
+  (categoryId: string, { rejectWithValue }) => {
+    try {
+      return categoryApi.getCategoryById(categoryId);
     } catch (error: any) {
       if (error) {
         return rejectWithValue(error);
