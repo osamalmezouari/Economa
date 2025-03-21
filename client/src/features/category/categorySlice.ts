@@ -7,6 +7,7 @@ import {
 import {
   AddCategory,
   getCategoriesNamesandIds,
+  getCategoryById,
   getCategoryCards,
   getCategoryList,
   updateCategory,
@@ -49,6 +50,15 @@ const initialState: CategoryStateType = {
       svgLink: '',
       description: '',
       productsCount: 0,
+    },
+    loading: false,
+    error: '',
+  },
+  CategoryById: {
+    data: {
+      id: '',
+      name: '',
+      description: '',
     },
     loading: false,
     error: '',
@@ -154,6 +164,20 @@ const categorySlice = createSlice({
       .addCase(updateCategory.rejected, (state, action) => {
         state.updateCategory.loading = false;
         state.updateCategory.error = action.payload as string;
+      })
+
+      .addCase(getCategoryById.pending, (state) => {
+        state.CategoryById.loading = true;
+        state.CategoryById.error = '';
+      })
+      .addCase(getCategoryById.fulfilled, (state, action) => {
+        state.CategoryById.loading = false;
+        state.CategoryById.error = '';
+        state.CategoryById.data = action.payload;
+      })
+      .addCase(getCategoryById.rejected, (state, action) => {
+        state.CategoryById.loading = false;
+        state.CategoryById.error = action.payload as string;
       });
   },
 });
