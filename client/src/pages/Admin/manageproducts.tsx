@@ -50,7 +50,6 @@ const ManageProducts = () => {
       </PageHeader>
       <ManageProductsTable />
       <ManageproductFilterBar />
-      <AddProductDialog />
       <EditProductDialog />
       <AddStockTransaction/>
     </Box>
