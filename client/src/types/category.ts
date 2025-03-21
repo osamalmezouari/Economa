@@ -21,14 +21,18 @@ export interface CreateCategory {
 export interface CreateCategory {
   name: string;
   description: string;
-  file: File|any;
+  file: File | any;
 }
 export interface UpdateCategory {
   name: string;
   description: string;
-  file: File|any;
+  file: File | any;
 }
 
+export interface CategoriesnamesandIds {
+  id: string;
+  name: string;
+}
 export interface CategoryStateType {
   CategoryCards: {
     data: CategoryType[];
@@ -58,7 +62,16 @@ export interface CategoryStateType {
     loading: boolean;
     error: string;
   };
-  categorytoEdit: String;
+  CategoryById: {
+    data: {
+      id: string;
+      name: string;
+      description: string;
+    };
+    loading: boolean;
+    error: string;
+  };
+  categorytoEdit: string;
   isUpdateCategoryOpen: boolean;
   isCreateCategoryOpen: boolean;
 }
