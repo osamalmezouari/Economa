@@ -398,7 +398,7 @@ export class RefillBalanceService {
         user: {
           select: {
             name: true,
-            avatar :true
+            avatar: true,
           },
         },
       },
@@ -409,7 +409,7 @@ export class RefillBalanceService {
       date: request.createdAt.toISOString(),
       amount: request.amount,
       status: request.status,
-      avatar :request.user.avatar
+      avatar: request.user.avatar,
     }));
 
     const statusCounts = formattedData.reduce(
@@ -427,5 +427,30 @@ export class RefillBalanceService {
       totalPending: statusCounts['pending'] || 0,
       data: formattedData,
     };
+  }
+
+  async findAllRefillRequests(page: number = 1) {
+    const take = 10;
+    const skip = (page - 1) * take;
+
+    const refillBalanceRequests =
+      await this.prisma.refillBalanceRequest.findMany({
+        take,
+        skip,
+        include: {
+          user: {
+            select: {
+              name: true,
+              email: true,
+              avatar: true,
+            },
+          },
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
+
+    return refillBalanceRequests;
   }
 }
