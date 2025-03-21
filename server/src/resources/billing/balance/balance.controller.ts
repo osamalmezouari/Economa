@@ -6,6 +6,7 @@ import {
   Param,
   UseInterceptors,
   UploadedFile,
+  Query,
 } from '@nestjs/common';
 import { BalanceService } from './services/balance.service';
 import { Express } from 'express';
@@ -13,6 +14,7 @@ import { CreateRefillbalancerequestDto } from './dto/create-refillbalancerequest
 import { FileInterceptor } from '@nestjs/platform-express';
 import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 import { RefillBalanceService } from './services/refillbalance.service';
+import { ManageRefillsDto } from './dto/manageRefillsDto';
 
 @Controller('balance')
 export class BalanceController {
@@ -34,6 +36,11 @@ export class BalanceController {
       createRefillbalancerequestDto,
       userId,
     );
+  }
+
+  @Get('refillbalancerequest')
+  async findAllRefills(@Query() page: number) {
+    return this.refillBalanceService.findAllRefillRequests(page);
   }
 
   @Get('CardInfo')
