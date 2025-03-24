@@ -1,4 +1,3 @@
-
 export interface RefillBalanceRequest {
   paymentType: 'cash' | 'bank-transfer';
   file: File | null;
@@ -11,6 +10,18 @@ export interface BalanceCard {
   name: string;
 }
 
+export interface Refills {
+  id: string;
+  amount: number;
+  file: File | string;
+  status: 'pending' | 'approved' | 'rejected';
+  createdAt: string;
+  updatedAt: string;
+  name: string;
+  email: string;
+  avatar: string;
+}
+
 export interface balanceStateType {
   refillBalanceRequest: {
     loading: boolean;
@@ -21,5 +32,13 @@ export interface balanceStateType {
     loading: boolean;
     error: string;
     data: BalanceCard;
+  };
+  refillsList: {
+    loading: boolean;
+    error: string;
+    data: {
+      refills: Refills[];
+      pageCount: number;
+    };
   };
 }
