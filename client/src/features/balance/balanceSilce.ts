@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getbalanceCardInfo, refillBalanceRequest } from './balanceThunk';
+import {
+  getbalanceCardInfo,
+  getRefillList,
+  refillBalanceRequest,
+} from './balanceThunk';
 import { balanceStateType } from '../../types/balance';
 
 const initialState: balanceStateType = {
@@ -19,6 +23,21 @@ const initialState: balanceStateType = {
     data: {
       balance: 0,
       name: '',
+    },
+  },
+  refillsList: {
+    loading: false,
+    error: '',
+    data: {
+      id: '',
+      amount: 0,
+      file: '',
+      status: 'pending',
+      createdAt: '',
+      updatedAt: '',
+      name: '',
+      email: '',
+      avatar: '',
     },
   },
 };
@@ -58,6 +77,22 @@ const balanceSlice = createSlice({
       .addCase(getbalanceCardInfo.rejected, (state, action) => {
         state.balanceCard.loading = false;
         state.balanceCard.error = action.payload as string;
+      })
+
+      .addCase(getRefillList.pending, (state) => {
+        state.refillsList.loading = true;
+        state.refillsList.error = '';
+      })
+
+      .addCase(getRefillList.fulfilled, (state, action) => {
+        state.refillsList.loading = false;
+        state.refillsList.error = '';
+        state.refillsList.data = action.payload;
+      })
+
+      .addCase(getRefillList.rejected, (state, action) => {
+        state.refillsList.loading = false;
+        state.refillsList.error = action.payload as string;
       });
   },
 });
