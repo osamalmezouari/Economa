@@ -139,6 +139,8 @@ export const stockTransaction = async (page: number) => {
     throw error.response?.data || new Error('Failed to fetch transaction');
   }
 };
+
+
 export const AddStockTransaction = async (data: addStockTransaction) => {
   try {
     const response = await apiClient.post(`products/addStockTransaction`, data);
@@ -147,3 +149,5 @@ export const AddStockTransaction = async (data: addStockTransaction) => {
     throw error.response?.data || new Error('Failed to add Transaction');
   }
 };
+
+
