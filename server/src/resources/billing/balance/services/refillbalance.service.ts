@@ -430,13 +430,13 @@ export class RefillBalanceService {
   }
 
   async findAllRefillRequests(page: number = 1) {
-    const take = 10;
-    const skip = (page - 1) * take;
+    const take = 7;
+    const skip = (page - 1) * take; // Ensure skip is always an integer
 
     const refillBalanceRequests =
       await this.prisma.refillBalanceRequest.findMany({
         take,
-        skip,
+        skip: skip || 0, // Ensure skip is always included
         include: {
           user: {
             select: {
