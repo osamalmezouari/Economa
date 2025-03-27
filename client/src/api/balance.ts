@@ -32,7 +32,7 @@ export const getbalanceCardInfo = async (): Promise<BalanceCard> => {
 
 export const getRefillsList = async (page: number) => {
   try {
-    const response = await apiClient.get(`/balance/manageRefills?page=${page}`);
+    const response = await apiClient.get(`/balance/refillbalancerequest?page=${page}`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
