@@ -29,15 +29,8 @@ const initialState: balanceStateType = {
     loading: false,
     error: '',
     data: {
-      id: '',
-      amount: 0,
-      file: '',
-      status: 'pending',
-      createdAt: '',
-      updatedAt: '',
-      name: '',
-      email: '',
-      avatar: '',
+      refills: [],
+      pageCount: 0,
     },
   },
 };
