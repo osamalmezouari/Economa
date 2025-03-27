@@ -74,7 +74,7 @@ export const menuItems: MenuItemType[] = [
   // label end
   {
     name: 'Manage Refills',
-    href: routes.widgets.cards,
+    href: '/Economa/Admin/Dashboard/ManageRefills',
     icon: <TbMailCog />,
   },
   {
