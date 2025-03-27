@@ -11,7 +11,7 @@ import UpdateCategoryDialog from '../../components/admin/extra/updateCategory';
 
 const ManageCategories = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { categories, pageCount } = useSelector(
+  const { categories } = useSelector(
     (state: RootState) => state.category.Categories.data
   );
   return (
@@ -32,7 +32,7 @@ const ManageCategories = () => {
           className="px-4 py-2 mr-2"
           startIcon={<Download />}
           onClick={() =>
-            exportToCSV(categories, `TransactionsCSV-${pageCount}`)
+            exportToCSV(categories, `TransactionsCSV`)
           }
         >
           Export
