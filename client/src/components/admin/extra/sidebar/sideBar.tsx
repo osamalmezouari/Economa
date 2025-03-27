@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { Link, useRouter } from '@tanstack/react-router';
 import {
-  Avatar,
   Box,
   Collapse,
   Drawer,
@@ -16,8 +15,6 @@ import {
 import { PiCaretDownBold } from 'react-icons/pi';
 import { menuItems, MenuItemType } from './menu-items';
 import Logo from '../../../icons/logo';
-import { ThreeDRotation } from '@mui/icons-material';
-import { RiSettingsLine } from 'react-icons/ri';
 
 const SidebarDrawer = styled(Drawer)(({ theme }) => ({
   width: 270,
@@ -65,8 +62,7 @@ export default function Sidebar() {
   };
 
   const isActive = (href?: string) => currentPath === href;
-  const isDropdownActive = (items?: never[]) =>
-    items?.some((item) => isActive(item.href));
+
 
   return (
     <SidebarDrawer variant="permanent">
@@ -86,8 +82,7 @@ export default function Sidebar() {
         <div className="h-full overflow-hidden group-hover:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 ">
           <List component="nav" sx={{ pt: 2 }}>
             {menuItems.map((item: MenuItemType, index) => {
-              const dropdownActive = isDropdownActive(item.dropdownItems);
-              const isOpen = openDropdowns[item.name] || dropdownActive;
+              const isOpen = openDropdowns[item.name] ;
 
               if (!item.href && !item.dropdownItems) {
                 return (
@@ -121,12 +116,9 @@ export default function Sidebar() {
                           mx: 1,
                           borderRadius: 1,
                           '&:hover': { backgroundColor: 'action.hover' },
-                          ...(dropdownActive && {
-                            color: 'primary.main',
-                          }),
+                          
                         }}
                       >
-                        {dropdownActive && <ActiveIndicator />}
 
                         {item.icon && (
                           <ListItemIcon
