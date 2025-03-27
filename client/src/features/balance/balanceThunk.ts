@@ -35,7 +35,7 @@ export const getbalanceCardInfo = createAsyncThunk(
 
 
 export const getRefillList = createAsyncThunk(
-  'balance/RefillsList/',
+  'balance/RefillsList',
   async (page: number, { rejectWithValue }) => {
     try {
       const RefillsList = await balanceApi.getRefillsList(page);
