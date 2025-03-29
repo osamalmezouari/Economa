@@ -27,6 +27,11 @@ import AddProductDialog from '../components/admin/extra/addproduct.tsx';
 import { StoreTransactionsRoute } from './stocktransactionsRoute.ts';
 import { ManageCategoriesRoute } from './managecategoriesRoute.ts';
 import AddCategoryDialog from '../components/admin/extra/addCategory.tsx';
+import { ManageRefillsRoute } from './manageRefillsRoute.ts';
+import ReactViewer from 'react-viewer';
+import { AppDispatch, RootState } from '../app/store.ts';
+import { useDispatch, useSelector } from 'react-redux';
+import { setVisible } from '../features/common/commonSlice.ts';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -65,6 +70,11 @@ export const adminRoute = createRoute({
 });
 
 function AdminRoute() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { visible, imagePreview } = useSelector(
+    (state: RootState) => state.common.imagePreviewState
+  );
+
   return (
     <Box display="flex" flexDirection="row" height="100vh">
       <Box
@@ -89,7 +99,11 @@ function AdminRoute() {
           <Outlet />
           <AddProductDialog />
           <AddCategoryDialog />
-          
+          <ReactViewer
+            visible={visible}
+            onClose={() => dispatch(setVisible(false))}
+            images={[{ src: imagePreview, alt: 'Preview' }]}
+          />
         </Box>
       </Box>
     </Box>
@@ -115,6 +129,7 @@ const routeTree = rootRoute.addChildren([
   ManageProductsRoute,
   StoreTransactionsRoute,
   ManageCategoriesRoute,
+  ManageRefillsRoute,
 ]);
 
 // Create the router
