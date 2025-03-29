@@ -439,7 +439,7 @@ export class ProductService {
     }
     const products = await this.prisma.product.findMany({
       skip: filters.page ? (filters.page - 1) * 6 : 0,
-      take: filters.page ? 6 : undefined,
+      take: 6,
       orderBy: orderBy,
       where: {
         ...filterConditions,
