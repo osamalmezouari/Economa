@@ -92,7 +92,7 @@ export class RefillBalanceService {
     };
   }
 
-  private storeFile(userId: string, file: Express.Multer.File): string {
+  /*   private storeFile(userId: string, file: Express.Multer.File): string {
     const documentsRoot = path.join(
       'D:\\Oussama\\PROJECTS\\Economa',
       'Ecommerce_payments_documents',
@@ -116,8 +116,50 @@ export class RefillBalanceService {
     } catch (error) {
       throw new Error(`Error while storing file: ${error.message}`);
     }
-  }
+  } */
 
+  private storeFile(userId: string, file: Express.Multer.File): string {
+    // Ensure the public directory is correctly located
+    const publicFolder = path.join(
+      __dirname,
+      '..',
+      '..',
+      '..',
+      '..',
+      '..',
+      'public',
+      'receipts',
+    ); // points to server/public/receipts
+    const userFolder = path.join(publicFolder, userId);
+    const currentYear = new Date().getFullYear().toString();
+    const yearFolder = path.join(userFolder, currentYear);
+
+    const fileExtension = path.extname(file.originalname).toLowerCase();
+    if (!['.png', '.jpg', '.jpeg'].includes(fileExtension)) {
+      throw new Error(`Unsupported file type: ${fileExtension}`);
+    }
+    const date = Date.now();
+    const fileName = `${userId}_${date}${fileExtension}`;
+    const filePath = path.join(yearFolder, fileName);
+
+    try {
+      // Ensure the directories exist before writing the file
+      if (!fs.existsSync(yearFolder)) {
+        fs.mkdirSync(yearFolder, { recursive: true });
+        console.log('Created directory:', yearFolder);
+      }
+
+      // Save the file correctly
+      fs.writeFileSync(filePath, file.buffer);
+      console.log('File saved at:', filePath);
+
+      // Return the relative URL for HTTP access
+      return `/receipts/${userId}/${currentYear}/${fileName}`;
+    } catch (error) {
+      console.error('Error storing file:', error);
+      throw new Error(`Error while storing file: ${error.message}`);
+    }
+  }
   TotalRefillBalanceRequestsStatCard = async () => {
     const now = new Date();
 
@@ -430,13 +472,23 @@ export class RefillBalanceService {
   }
 
   async findAllRefillRequests(page: number = 1) {
-    const take = 7;
-    const skip = (page - 1) * take; // Ensure skip is always an integer
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+
+    // Ensure `skip` is a valid number
+    if (isNaN(skip) || skip < 0) {
+      throw new Error('Invalid page number');
+    }
+
+    const refillsTotal = await this.prisma.refillBalanceRequest.count();
 
     const refillBalanceRequests =
       await this.prisma.refillBalanceRequest.findMany({
-        take,
-        skip: skip || 0, // Ensure skip is always included
+        take: pageSize,
+        skip: skip, // Ensure `skip` is always defined
+        orderBy: {
+          createdAt: 'desc',
+        },
         include: {
           user: {
             select: {
@@ -446,11 +498,21 @@ export class RefillBalanceService {
             },
           },
         },
-        orderBy: {
-          createdAt: 'desc',
-        },
       });
 
-    return refillBalanceRequests;
+    return {
+      refills: refillBalanceRequests.map((request) => ({
+        id: request.id,
+        amount: request.amount,
+        file: request.file,
+        status: request.status,
+        createdAt: request.createdAt.toISOString(),
+        updatedAt: request.updatedAt.toISOString(),
+        name: request.user.name,
+        email: request.user.email,
+        avatar: request.user.avatar,
+      })),
+      pageCount: Math.ceil(refillsTotal / pageSize),
+    };
   }
 }
