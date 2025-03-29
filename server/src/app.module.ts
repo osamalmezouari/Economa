@@ -16,6 +16,8 @@ import { CouponModule } from './resources/billing/coupon/coupon.module';
 import { CategoryModule } from './resources/core/category/category.module';
 import { BalanceModule } from './resources/billing/balance/balance.module';
 import { AnalyticsModule } from './resources/core/analytics/analytics.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import * as path from 'path';
 
 @Module({
   imports: [
