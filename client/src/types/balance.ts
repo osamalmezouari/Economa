@@ -13,7 +13,7 @@ export interface BalanceCard {
 export interface Refills {
   id: string;
   amount: number;
-  file: File | string;
+  file:  string;
   status: 'pending' | 'approved' | 'rejected';
   createdAt: string;
   updatedAt: string;
