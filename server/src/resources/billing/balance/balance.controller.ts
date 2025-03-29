@@ -38,7 +38,7 @@ export class BalanceController {
   }
 
   @Get('refillbalancerequest')
-  async findAllRefills(@Query() page: number) {
+  async findAllRefills(@Query('page') page: number) {
     return this.refillBalanceService.findAllRefillRequests(page);
   }
 
