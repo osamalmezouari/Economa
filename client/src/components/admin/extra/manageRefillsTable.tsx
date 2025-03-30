@@ -14,7 +14,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { useEffect, useState } from 'react';
-import { getRefillList } from '../../../features/balance/balanceThunk';
+import {
+  getRefillList,
+  UpdateRefillStatus,
+} from '../../../features/balance/balanceThunk';
 import { Refills } from '../../../types/balance';
 import DateCell from '../base/dateCell';
 import { HiOutlineViewfinderCircle } from 'react-icons/hi2';
@@ -22,11 +25,16 @@ import {
   setImagePreview,
   setVisible,
 } from '../../../features/common/commonSlice';
+import { IoCloseCircleOutline } from 'react-icons/io5';
+import { CiSquareCheck } from 'react-icons/ci';
 
 const ManageRefillsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { loading, data } = useSelector(
     (state: RootState) => state.balance.refillsList
+  );
+  const { loading: updateLoading } = useSelector(
+    (state: RootState) => state.balance.updateRefillStatus
   );
   const [currentPage, setCurrentPage] = useState(1);
   const handlePageChange = (
@@ -38,7 +46,7 @@ const ManageRefillsTable = () => {
 
   useEffect(() => {
     dispatch(getRefillList(currentPage));
-  }, [currentPage, dispatch]);
+  }, [currentPage, dispatch, updateLoading]);
   return (
     <>
       <Table className="mt-6">
@@ -130,6 +138,41 @@ const ManageRefillsTable = () => {
                     <HiOutlineViewfinderCircle
                       fontSize={''}
                       className="group-hover:text-primary-main"
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={` Approuve Request `} placement="top">
+                  <IconButton
+                    color="secondary"
+                    className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
+                    onClick={async () => {
+                      await dispatch(
+                        UpdateRefillStatus({
+                          requestId: refill.id,
+                          status: 'approved',
+                        })
+                      );
+                    }}
+                  >
+                    <CiSquareCheck className="group-hover:text-primary-main" />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={` Reject Request `} placement="top">
+                  <IconButton
+                    color="secondary"
+                    className="group rounded hover:bg-white hover:border-[1px] border-red-400"
+                    onClick={async () => {
+                      await dispatch(
+                        UpdateRefillStatus({
+                          requestId: refill.id,
+                          status: 'rejected',
+                        })
+                      );
+                    }}
+                  >
+                    <IoCloseCircleOutline
+                      fontSize={'20'}
+                      className="group-hover:text-red-400"
                     />
                   </IconButton>
                 </Tooltip>
