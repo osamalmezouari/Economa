@@ -126,9 +126,4 @@ export const menuItems: MenuItemType[] = [
     href: '/',
     icon: <BsQrCodeScan />,
   },
-  {
-    name: 'File Preview',
-    href: routes.profile,
-    icon: <PiCodesandboxLogoDuotone />,
-  },
 ];
