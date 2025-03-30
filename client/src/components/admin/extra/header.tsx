@@ -51,7 +51,7 @@ const Header = () => {
             <RingBellSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
         </IconButton>
-        <IconButton className="group !rounded !bg-white !drop-shadow-sm">
+{/*         <IconButton className="group !rounded !bg-white !drop-shadow-sm">
           <Badge
             badgeContent=""
             color="warning"
@@ -70,7 +70,7 @@ const Header = () => {
           >
             <ChatSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
-        </IconButton>
+        </IconButton> */}
         <IconButton className="group !rounded !bg-white !drop-shadow-sm">
           <Badge
             badgeContent=""
