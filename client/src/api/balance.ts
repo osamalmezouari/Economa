@@ -32,7 +32,9 @@ export const getbalanceCardInfo = async (): Promise<BalanceCard> => {
 
 export const getRefillsList = async (page: number) => {
   try {
-    const response = await apiClient.get(`/balance/refillbalancerequest?page=${page}`);
+    const response = await apiClient.get(
+      `/balance/refillbalancerequest?page=${page}`
+    );
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -42,4 +44,19 @@ export const getRefillsList = async (page: number) => {
   }
 };
 
-
+export const UpdateRefillStatus = async (
+  status: 'approved' | 'rejected',
+  requestId: string
+) => {
+  try {
+    const response = await apiClient.patch(
+      `/balance/refillbalancerequest/UpdateStatus/${requestId}`,{status}
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch Refill Requests');
+  }
+};
