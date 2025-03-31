@@ -30,12 +30,14 @@ export class BalanceService {
   }
 
   async verifyBalance({ userId, orderAmount }: verifyBalanceDto) {
-    const balance = await this.prisma.balance.findUnique({
-      where: {
-        userId: userId,
-      },
-    });
-    if (balance.Balance < orderAmount) {
+    const Prevamount = await this.prisma.balance
+      .findUnique({
+        where: {
+          userId: userId,
+        },
+      })
+      .then((data) => data.Balance);
+    if (Prevamount < orderAmount) {
       throw new BALANCE_SOLD_NOT_ENAUGH_Exception();
     }
     await this.prisma.balance.update({
@@ -43,9 +45,27 @@ export class BalanceService {
         userId: userId,
       },
       data: {
-        Balance: balance.Balance - orderAmount,
+        Balance: Prevamount - orderAmount,
       },
     });
     return true;
+  }
+
+  async addAmount(userId: string, amount: number) {
+    const Prevamount = await this.prisma.balance
+      .findUnique({
+        where: {
+          userId: userId,
+        },
+      })
+      .then((data) => data.Balance);
+    await this.prisma.balance.update({
+      where: {
+        userId: userId,
+      },
+      data: {
+        Balance: Prevamount + amount,
+      },
+    });
   }
 }
