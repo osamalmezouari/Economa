@@ -3,6 +3,7 @@ import {
   getbalanceCardInfo,
   getRefillList,
   refillBalanceRequest,
+  UpdateRefillStatus,
 } from './balanceThunk';
 import { balanceStateType } from '../../types/balance';
 
@@ -31,6 +32,15 @@ const initialState: balanceStateType = {
     data: {
       refills: [],
       pageCount: 0,
+    },
+  },
+
+  updateRefillStatus: {
+    loading: false,
+    error: '',
+    data: {
+      requestId: 'string',
+      userId: 'string',
     },
   },
 };
@@ -86,6 +96,22 @@ const balanceSlice = createSlice({
       .addCase(getRefillList.rejected, (state, action) => {
         state.refillsList.loading = false;
         state.refillsList.error = action.payload as string;
+      })
+
+      .addCase(UpdateRefillStatus.pending, (state) => {
+        state.updateRefillStatus.loading = true;
+        state.updateRefillStatus.error = '';
+      })
+
+      .addCase(UpdateRefillStatus.fulfilled, (state, action) => {
+        state.updateRefillStatus.loading = false;
+        state.updateRefillStatus.error = '';
+        state.updateRefillStatus.data = action.payload;
+      })
+
+      .addCase(UpdateRefillStatus.rejected, (state, action) => {
+        state.updateRefillStatus.loading = false;
+        state.updateRefillStatus.error = action.payload as string;
       });
   },
 });
