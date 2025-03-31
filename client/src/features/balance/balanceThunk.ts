@@ -33,12 +33,38 @@ export const getbalanceCardInfo = createAsyncThunk(
   }
 );
 
-
 export const getRefillList = createAsyncThunk(
   'balance/RefillsList',
   async (page: number, { rejectWithValue }) => {
     try {
       const RefillsList = await balanceApi.getRefillsList(page);
+      return RefillsList;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch RefillDaily');
+    }
+  }
+);
+
+export const UpdateRefillStatus = createAsyncThunk(
+  'balance/refill/updateStatus',
+  async (
+    {
+      requestId,
+      status,
+    }: {
+      requestId: string;
+      status: 'approved' | 'rejected';
+    },
+    { rejectWithValue }
+  ) => {
+    try {
+      const RefillsList = await balanceApi.UpdateRefillStatus(
+        status,
+        requestId
+      );
       return RefillsList;
     } catch (error: any) {
       if (error.response) {
