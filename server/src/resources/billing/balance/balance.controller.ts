@@ -7,6 +7,7 @@ import {
   UseInterceptors,
   UploadedFile,
   Query,
+  Patch,
 } from '@nestjs/common';
 import { BalanceService } from './services/balance.service';
 import { Express } from 'express';
@@ -14,6 +15,7 @@ import { CreateRefillbalancerequestDto } from './dto/create-refillbalancerequest
 import { FileInterceptor } from '@nestjs/platform-express';
 import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 import { RefillBalanceService } from './services/refillbalance.service';
+import { stat } from 'fs';
 
 @Controller('balance')
 export class BalanceController {
@@ -35,6 +37,14 @@ export class BalanceController {
       createRefillbalancerequestDto,
       userId,
     );
+  }
+
+  @Patch('refillbalancerequest/UpdateStatus/:requestId')
+  async UpdateRefillStatus(
+    @Param('requestId') requestId: string,
+    @Body('status') status: 'approved' | 'rejected',
+  ) {
+    return this.refillBalanceService.verifyRefillRequest(status, requestId);
   }
 
   @Get('refillbalancerequest')
