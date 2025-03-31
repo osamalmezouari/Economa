@@ -4,11 +4,14 @@ import { v4 as uuid } from 'uuid';
 import * as fs from 'fs';
 import * as path from 'path';
 import { CreateRefillbalancerequestDto } from '../dto/create-refillbalancerequest.dto';
-import { Unsupported_FILE_Exception } from 'src/common/exceptions/UNSPORTED_FILE.exception';
+import { BalanceService } from './balance.service';
 
 @Injectable()
 export class RefillBalanceService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly BalanceService: BalanceService,
+  ) {}
 
   async refilbalanceRequestcreate(
     createRefillbalancerequestDto: CreateRefillbalancerequestDto,
@@ -92,34 +95,7 @@ export class RefillBalanceService {
     };
   }
 
-  /*   private storeFile(userId: string, file: Express.Multer.File): string {
-    const documentsRoot = path.join(
-      'D:\\Oussama\\PROJECTS\\Economa',
-      'Ecommerce_payments_documents',
-    );
-    const userFolder = path.join(documentsRoot, userId);
-    const currentYear = new Date().getFullYear().toString();
-
-    const yearFolder = path.join(userFolder, currentYear);
-    const fileExtension = path.extname(file.originalname).toLowerCase();
-    if (!['.png', '.jpg', '.jpeg'].includes(fileExtension)) {
-      throw new Unsupported_FILE_Exception(fileExtension);
-    }
-    const fileName = `${userId}_${new Date().toISOString().replace(/:/g, '-')}${fileExtension}`;
-    const filePath = path.join(yearFolder, fileName);
-    try {
-      if (!fs.existsSync(yearFolder)) {
-        fs.mkdirSync(yearFolder, { recursive: true });
-      }
-      fs.writeFileSync(filePath, file.buffer);
-      return filePath;
-    } catch (error) {
-      throw new Error(`Error while storing file: ${error.message}`);
-    }
-  } */
-
   private storeFile(userId: string, file: Express.Multer.File): string {
-    // Ensure the public directory is correctly located
     const publicFolder = path.join(
       __dirname,
       '..',
@@ -129,7 +105,7 @@ export class RefillBalanceService {
       '..',
       'public',
       'receipts',
-    ); // points to server/public/receipts
+    );
     const userFolder = path.join(publicFolder, userId);
     const currentYear = new Date().getFullYear().toString();
     const yearFolder = path.join(userFolder, currentYear);
@@ -514,5 +490,50 @@ export class RefillBalanceService {
       })),
       pageCount: Math.ceil(refillsTotal / pageSize),
     };
+  }
+
+  async verifyRefillRequest(
+    status: 'approved' | 'rejected',
+    requestId: string,
+  ) {
+    if (status === 'approved') {
+      await this.prisma.refillBalanceRequestStatus.create({
+        data: {
+          id: uuid(),
+          status: 'rejected',
+          requestId: requestId,
+        },
+      });
+
+      const data = await this.prisma.refillBalanceRequest.update({
+        where: {
+          id: requestId,
+        },
+        data: {
+          status: 'approved',
+        },
+      });
+
+      await this.BalanceService.addAmount(data.userId, data.amount);
+    }
+    if (status === 'rejected') {
+      await this.prisma.refillBalanceRequestStatus.create({
+        data: {
+          id: uuid(),
+          status: 'rejected',
+          requestId: requestId,
+        },
+      });
+      return this.prisma.refillBalanceRequest.update({
+        where: {
+          id: requestId,
+        },
+        data: {
+          status: 'rejected',
+        },
+      });
+    } else {
+      throw new Error('Invalid status');
+    }
   }
 }
