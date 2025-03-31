@@ -13,7 +13,7 @@ export interface BalanceCard {
 export interface Refills {
   id: string;
   amount: number;
-  file:  string;
+  file: string;
   status: 'pending' | 'approved' | 'rejected';
   createdAt: string;
   updatedAt: string;
@@ -22,6 +22,14 @@ export interface Refills {
   avatar: string;
 }
 
+export interface updateRefillStatus {
+  data: {
+    requestId: string;
+    userId: string;
+  };
+  loading: boolean;
+  error: string;
+}
 export interface balanceStateType {
   refillBalanceRequest: {
     loading: boolean;
@@ -41,4 +49,5 @@ export interface balanceStateType {
       pageCount: number;
     };
   };
+  updateRefillStatus: updateRefillStatus;
 }
