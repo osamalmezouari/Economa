@@ -13,14 +13,14 @@ export class UsersTransfersService {
           select: {
             email: true,
             name: true,
-            avatar: true, // Assuming the `User` model has an avatar field
+            avatar: true, 
           },
         },
         receiver: {
           select: {
             email: true,
             name: true,
-            avatar: true, // Assuming the `User` model has an avatar field
+            avatar: true, 
           },
         },
       },
