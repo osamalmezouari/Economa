@@ -50,7 +50,22 @@ export const UpdateRefillStatus = async (
 ) => {
   try {
     const response = await apiClient.patch(
-      `/balance/refillbalancerequest/UpdateStatus/${requestId}`,{status}
+      `/balance/refillbalancerequest/UpdateStatus/${requestId}`,
+      { status }
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch Refill Requests');
+  }
+};
+
+export const getRequestStatus = async (requestId: string) => {
+  try {
+    const response = await apiClient.get(
+      `/balance/refillbalancerequest/status/${requestId}`
     );
     return response.data;
   } catch (error: any) {
