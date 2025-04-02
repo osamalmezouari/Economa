@@ -74,3 +74,18 @@ export const UpdateRefillStatus = createAsyncThunk(
     }
   }
 );
+
+export const getRequestStatus = createAsyncThunk(
+  'balance/refill/reuqestStatus',
+  async (requestId: string, { rejectWithValue }) => {
+    try {
+      const RefillStatus = await balanceApi.getRequestStatus(requestId);
+      return RefillStatus;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue('Failed to fetch RefillDaily');
+    }
+  }
+);
