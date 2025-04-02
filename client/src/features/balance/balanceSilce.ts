@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   getbalanceCardInfo,
   getRefillList,
+  getRequestStatus,
   refillBalanceRequest,
   UpdateRefillStatus,
 } from './balanceThunk';
@@ -43,14 +44,30 @@ const initialState: balanceStateType = {
       userId: 'string',
     },
   },
+  requestStatus: {
+    loading: false,
+    error: '',
+    data: [],
+  },
+  requestIdtoViewStatus: '',
+  openRefillStatusModal: false,
 };
 
 const balanceSlice = createSlice({
   name: 'balance',
   initialState,
   reducers: {
-    setRefillBalanceRequest: (state, action) => {
+    /*     setRefillBalanceRequest: (state, action) => {
       state.refillBalanceRequest.data = action.payload;
+    }, */
+    openRefillStatusModal: (state) => {
+      state.openRefillStatusModal = true;
+    },
+    closeRefillStatusModal: (state) => {
+      state.openRefillStatusModal = false;
+    },
+    setRequestIdToViewStatus: (state, action) => {
+      state.requestIdtoViewStatus = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -112,9 +129,28 @@ const balanceSlice = createSlice({
       .addCase(UpdateRefillStatus.rejected, (state, action) => {
         state.updateRefillStatus.loading = false;
         state.updateRefillStatus.error = action.payload as string;
+      })
+
+      .addCase(getRequestStatus.fulfilled, (state, action) => {
+        state.requestStatus.loading = false;
+        state.requestStatus.error = '';
+        state.requestStatus.data = action.payload;
+      })
+      .addCase(getRequestStatus.rejected, (state, action) => {
+        state.requestStatus.loading = false;
+        state.requestStatus.error = action.payload as string;
+      })
+      .addCase(getRequestStatus.pending, (state) => {
+        state.requestStatus.loading = true;
+        state.requestStatus.error = '';
       });
   },
 });
 
 export default balanceSlice.reducer;
 export const balanceReducer = balanceSlice.reducer;
+export const {
+  openRefillStatusModal,
+  closeRefillStatusModal,
+  setRequestIdToViewStatus,
+} = balanceSlice.actions;
