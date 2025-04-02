@@ -27,6 +27,13 @@ import {
 } from '../../../features/common/commonSlice';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { CiSquareCheck } from 'react-icons/ci';
+import {
+  openRefillStatusModal,
+  setRequestIdToViewStatus,
+} from '../../../features/balance/balanceSilce';
+
+import { LiaHistorySolid } from "react-icons/lia";
+
 
 const ManageRefillsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -173,6 +180,24 @@ const ManageRefillsTable = () => {
                     <IoCloseCircleOutline
                       fontSize={'20'}
                       className="group-hover:text-red-400"
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip
+                  title={`Refill Request Status History `}
+                  placement="top"
+                >
+                  <IconButton
+                    color="secondary"
+                    className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
+                    onClick={async () => {
+                      dispatch(setRequestIdToViewStatus(refill.id));
+                      dispatch(openRefillStatusModal());
+                    }}
+                  >
+                    <LiaHistorySolid
+                      fontSize={'20'}
+                      className="group-hover:text-primary-main"
                     />
                   </IconButton>
                 </Tooltip>
