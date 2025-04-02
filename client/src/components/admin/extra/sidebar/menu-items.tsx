@@ -18,7 +18,6 @@ import { GrTransaction } from 'react-icons/gr';
 import { RiUserSettingsLine } from 'react-icons/ri';
 import { TbMailCog, TbUserSquareRounded } from 'react-icons/tb';
 
-
 export interface MenuItemType {
   name: string;
   icon?: React.ReactNode;
@@ -77,12 +76,6 @@ export const menuItems: MenuItemType[] = [
     href: '/Economa/Admin/Dashboard/ManageRefills',
     icon: <TbMailCog />,
   },
-  {
-    name: 'Refills Status History',
-    href: routes.widgets.icons,
-    icon: <MdOutlineManageHistory />,
-  },
-
   {
     name: 'Orders',
   },
