@@ -30,6 +30,12 @@ export interface updateRefillStatus {
   loading: boolean;
   error: string;
 }
+
+export interface RequestStatus {
+  status: 'pending' | 'approved' | 'rejected';
+  createdAt: string;
+}
+[];
 export interface balanceStateType {
   refillBalanceRequest: {
     loading: boolean;
@@ -49,5 +55,12 @@ export interface balanceStateType {
       pageCount: number;
     };
   };
+  requestStatus: {
+    loading: boolean;
+    error: string;
+    data: RequestStatus[];
+  };
+  requestIdtoViewStatus: string;
   updateRefillStatus: updateRefillStatus;
+  openRefillStatusModal: boolean;
 }
