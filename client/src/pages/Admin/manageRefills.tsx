@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
 import ManageRefillsTable from '../../components/admin/extra/manageRefillsTable';
+import RefillstatusModel from '../../components/admin/extra/RefillStatusModel';
 
 const ManageRefills = () => {
   const Refills = useSelector(
@@ -32,6 +33,7 @@ const ManageRefills = () => {
         </Button>
       </PageHeader>
       <ManageRefillsTable />
+      <RefillstatusModel />
     </Box>
   );
 };
