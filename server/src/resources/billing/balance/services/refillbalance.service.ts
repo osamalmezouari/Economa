@@ -492,6 +492,23 @@ export class RefillBalanceService {
     };
   }
 
+  async RefillStatusHistory(requestId: string) {
+    const refillStatusHistory =
+      await this.prisma.refillBalanceRequestStatus.findMany({
+        where: {
+          requestId: requestId,
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
+
+    return refillStatusHistory.map((status) => ({
+      status: status.status,
+      createdAt: status.createdAt.toISOString(),
+    }));
+  }
+
   async verifyRefillRequest(
     status: 'approved' | 'rejected',
     requestId: string,
