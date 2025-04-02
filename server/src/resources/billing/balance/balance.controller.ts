@@ -51,6 +51,11 @@ export class BalanceController {
     return this.refillBalanceService.findAllRefillRequests(page);
   }
 
+  @Get('refillbalancerequest/status/:requestId')
+  async getRequestStatus(@Param('requestId') requestId: string) {
+    return this.refillBalanceService.RefillStatusHistory(requestId);
+  }
+
   @Get('CardInfo')
   getCardInfo(@activeUser('sub') userId: string) {
     return this.balanceService.getCardInfo(userId);
