@@ -32,7 +32,7 @@ const RefillstatusModel = () => {
     <Dialog open={open} onClose={() => dispatch(closeRefillStatusModal())}>
       <DialogTitle>{<p>Refill Request Status History</p>}</DialogTitle>
       <DialogContent>
-        <div className="flex flex-col gap-2">
+        <div className="">
           {data.map((item, index) => (
             <div key={index} className="flex flex-col gap-2">
               <p className="font-bold capitalize">{item.status}</p>
