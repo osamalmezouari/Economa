@@ -27,6 +27,11 @@ export class OrdersController {
     );
     return createdOrderID;
   }
+  @Get('History')
+  async getOrdersHistory(@Param('page') page: string) {
+    const orders = await this.ordersService.getOrderHistory(page);
+    return orders;
+  }
   /* @Post()
   async create(@Body() createOrderDto: CreateOrderDto) {
     const order = await this.ordersService.create(createOrderDto);
