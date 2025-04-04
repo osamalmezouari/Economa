@@ -563,6 +563,53 @@ export class OrdersService {
     );
   }
 
+  async getOrdersByUserId(userId: string) {
+    const orders = await this.prisma.order.findMany({
+      where: { userId },
+      include: {
+        orderItems: {
+          include: {
+            product: true,
+          },
+        },
+      },
+    });
+
+    return orders.map((order) => ({
+      ...order,
+      createdAt: this.convertToMoroccoTime(order.createdAt),
+    }));
+  }
+
+  async getOrderHistory(page: string) {
+    const pageNumber = parseInt(page, 10) || 1;
+    const pageSize = 10;
+
+    const orders = await this.prisma.order.findMany({
+      skip: (pageNumber - 1) * pageSize,
+      take: pageSize,
+      orderBy: { createdAt: 'desc' },
+      include: {
+        orderItems: {
+          include: {
+            product: true,
+          },
+        },
+      },
+    });
+
+    const totalOrders = await this.prisma.order.count();
+    const totalPages = Math.ceil(totalOrders / pageSize);
+
+    return {
+      orders: orders.map((order) => ({
+        ...order,
+        createdAt: this.convertToMoroccoTime(order.createdAt),
+      })),
+      pageCount: totalPages,
+    };
+  }
+
   private convertToMoroccoTime(date: Date): Date {
     const moroccoTimeZone = 'Africa/Casablanca';
     return toZonedTime(date, moroccoTimeZone); // Use toZonedTime to convert to Morocco time
