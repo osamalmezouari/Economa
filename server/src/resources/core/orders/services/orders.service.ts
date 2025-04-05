@@ -615,36 +615,5 @@ export class OrdersService {
     return toZonedTime(date, moroccoTimeZone); // Use toZonedTime to convert to Morocco time
   }
 
-  /*   async create(createOrderDto: CreateOrderDto) {
-    const order = await this.prisma.order.create({
-      data: { id: uuid(), ...createOrderDto },
-    });
-    return order;
-  }
 
-  async findAll() {
-    const order = await this.prisma.order.findMany();
-    return order;
-  }
-
-  async findOne(id: string) {
-    const order = await this.prisma.order.findUnique({ where: { id } });
-    if (order) return order;
-    throw new ORDER_NOT_FOUND_Exception(id);
-  }
-
-  async update(id: string, updateOrderDto: UpdateOrderDto) {
-    await this.findOne(id);
-    const order = await this.prisma.order.update({
-      where: { id },
-      data: updateOrderDto,
-    });
-    return order;
-  }
-
-  async remove(id: string) {
-    await this.findOne(id);
-    const order = await this.prisma.order.delete({ where: { id } });
-    return order;
-  } */
 }
