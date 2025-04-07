@@ -612,7 +612,7 @@ export class OrdersService {
 
   private convertToMoroccoTime(date: Date): Date {
     const moroccoTimeZone = 'Africa/Casablanca';
-    return toZonedTime(date, moroccoTimeZone); // Use toZonedTime to convert to Morocco time
+    return toZonedTime(date, moroccoTimeZone); 
   }
 
 
