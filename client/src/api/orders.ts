@@ -12,3 +12,17 @@ export const place_and_pay_order = async (data: place_and_pay_order_type) => {
     throw new Error('Failed to place and Pay the Order');
   }
 };
+
+export const getOrdersHistory = async (page: number, email: string) => {
+  try {
+    const response = await apiClient.get('orders/History', {
+      params: { page, email },
+    });
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to get Orders History');
+  }
+};
