@@ -2,6 +2,7 @@ import {
   Avatar,
   Box,
   CircularProgress,
+  IconButton,
   InputAdornment,
   Pagination,
   Table,
@@ -10,6 +11,7 @@ import {
   TableHead,
   TableRow,
   TextField,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +21,11 @@ import { BiSearch } from 'react-icons/bi';
 import { getUsersList } from '../../../../../features/user/userThunk';
 import DateCell from '../../../base/dateCell';
 import { UserDetails } from '../../../../../types/user';
+import {
+  openUpdateUserDialog,
+  setusertoEdit,
+} from '../../../../../features/user/userSlice';
+import { FiEdit3 } from 'react-icons/fi';
 
 const ManageCostumersTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -91,8 +98,8 @@ const ManageCostumersTable = () => {
             <TableCell className="py-2 h-6">Role</TableCell>
             <TableCell className="py-2 h-6">Phone</TableCell>
             <TableCell className="py-2 h-6">Address</TableCell>
-            <TableCell className="py-2 h-6">Last Login</TableCell>
             <TableCell className="py-2 h-6">Joined Date</TableCell>
+            <TableCell className="py-2 h-6"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -144,13 +151,25 @@ const ManageCostumersTable = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="body2" className="text-[12px]">
-                  <DateCell date={user.lastLogin} />
+                  <DateCell date={user.createdAt} />
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="body2" className="text-[12px]">
-                  <DateCell date={user.createdAt} />
-                </Typography>
+                <Tooltip title={`Edit ${user.name} info`} placement="top">
+                  <IconButton
+                    color="secondary"
+                    className="group rounded hover:bg-white hover:border-[1px] border-primary-main"
+                    onClick={() => {
+                      dispatch(setusertoEdit(user.id));
+                      dispatch(openUpdateUserDialog());
+                    }}
+                  >
+                    <FiEdit3
+                      fontSize={'small'}
+                      className="group-hover:text-primary-main"
+                    />
+                  </IconButton>
+                </Tooltip>
               </TableCell>
             </TableRow>
           ))}
