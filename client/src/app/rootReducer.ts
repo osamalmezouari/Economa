@@ -13,6 +13,7 @@ import { StoreAnalyticsReducer } from '../features/StoreAnalytics/StoreAnalytics
 import { RefillInsightsReducer } from '../features/RefillInsights/refillInsightsSlice';
 import { commonReducer } from '../features/common/commonSlice';
 import { PaymentsReducer } from '../features/payments/paymentSlice';
+import { RolesReducer } from '../features/role/roleSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   StoreAnalytics: StoreAnalyticsReducer,
   RefillInsights: RefillInsightsReducer,
   common: commonReducer,
-  payments : PaymentsReducer,
+  payments: PaymentsReducer,
+  roles: RolesReducer,
 });
 export default rootReducer;
