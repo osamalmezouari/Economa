@@ -2,19 +2,23 @@ import { Avatar, Badge, Box, IconButton } from '@mui/material';
 
 import { PiCommand, PiMagnifyingGlassBold } from 'react-icons/pi';
 import RingBellSolidIcon from '../../icons/ring-bell-solid';
-import ChatSolidIcon from '../../icons/chat-solid';
 import ScanQrCodeIcon from '../../icons/scanqrcode';
 import LanguageSwitcherIcon from '../../icons/langugaeSwitcher';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../app/store';
+import { setSearchDialogOpen } from '../../../features/common/commonSlice';
 
 const Header = () => {
-  /*
-  const router = useRouter();
-*/
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleOpenSearch = () => {
+    dispatch(setSearchDialogOpen(true));
+  };
   return (
     <Box className="fixed top-0 flex justify-between px-8 py-8 bg-gray-0/80 z-50 w-[calc(100%-290px)] h-20 bg-opacity-20 items-center backdrop-blur">
       <Box className={'w-4/12 hover:pt-[1px]'}>
         <button
-          /*   onClick={() => setOpen(true)} */
+          onClick={handleOpenSearch}
           className={
             'group inline-flex items-center group focus:outline-none active:translate-y-px xl:h-10 xl:w-full xl:max-w-sm xl:rounded-xl xl:border xl:border-gray-200 xl:py-2 xl:pe-2 xl:ps-3.5 xl:shadow-sm xl:backdrop-blur-md xl:transition-colors xl:duration-200 xl:hover:border-gray-900 xl:hover:outline-double xl:hover:outline-[0.5px] xl:hover:outline-gray-900 xl:focus-visible:border-gray-900 xl:focus-visible:outline-double xl:focus-visible:outline-[0.5px] xl:focus-visible:outline-gray-900'
             /* className */
@@ -51,7 +55,7 @@ const Header = () => {
             <RingBellSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
         </IconButton>
-{/*         <IconButton className="group !rounded !bg-white !drop-shadow-sm">
+        {/*         <IconButton className="group !rounded !bg-white !drop-shadow-sm">
           <Badge
             badgeContent=""
             color="warning"
