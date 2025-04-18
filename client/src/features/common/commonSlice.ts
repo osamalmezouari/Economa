@@ -8,6 +8,7 @@ interface ImagePreviewState {
 
 interface CommonState {
   imagePreviewState: ImagePreviewState;
+  isSearchDialogOpen: boolean;
 }
 
 const initialState: CommonState = {
@@ -15,6 +16,7 @@ const initialState: CommonState = {
     visible: false,
     imagePreview: '',
   },
+  isSearchDialogOpen: false,
 };
 
 const commonSlice = createSlice({
@@ -27,9 +29,12 @@ const commonSlice = createSlice({
     setImagePreview: (state, action: PayloadAction<string>) => {
       state.imagePreviewState.imagePreview = action.payload;
     },
+    setSearchDialogOpen: (state, action: PayloadAction<boolean>) => {
+      state.isSearchDialogOpen = action.payload;
+    },
   },
 });
 
-export const { setVisible, setImagePreview } = commonSlice.actions;
+export const { setVisible, setImagePreview, setSearchDialogOpen } = commonSlice.actions;
 export default commonSlice.reducer;
 export const commonReducer = commonSlice.reducer;
