@@ -81,21 +81,23 @@ const SearchDialog = () => {
       PaperProps={{
         sx: {
           borderRadius: '12px',
-          maxWidth: '450px',
+          maxWidth: '480px',
           maxHeight: '500px',
         },
       }}
     >
       <DialogContent sx={{ p: 0, position: 'relative' }}>
-        <Box sx={{ 
-          p: 2, 
-          borderBottom: '1px solid', 
-          borderColor: 'divider',
-          position: 'sticky',
-          top: 0,
-          zIndex: 10,
-          backgroundColor: 'background.paper'
-        }}>
+        <Box
+          sx={{
+            p: 2,
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+            position: 'sticky',
+            top: 0,
+            zIndex: 10,
+            backgroundColor: 'background.paper',
+          }}
+        >
           <TextField
             autoFocus
             fullWidth
@@ -127,7 +129,7 @@ const SearchDialog = () => {
         </Box>
 
         {filteredItems.length > 0 ? (
-          <List sx={{ py: 0 }} className="mt-24">
+          <List sx={{ py: 0 }} className="">
             {filteredItems.map((item, index) => (
               <ListItem
                 key={`${item.name}-${index}`}
