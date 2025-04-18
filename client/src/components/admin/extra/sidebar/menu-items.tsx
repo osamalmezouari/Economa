@@ -1,11 +1,18 @@
 import { routes } from '../../../../mock/routes';
 
 import {
+  PiCalendarDuotone,
   PiChartBarDuotone,
+  PiChartLineUpDuotone,
   PiCodesandboxLogoDuotone,
   PiCreditCardDuotone,
+  PiCurrencyDollarDuotone,
+  PiFolder,
   PiFolderLockDuotone,
+  PiFoldersLight,
+  PiNewspaperClippingDuotone,
   PiPackageDuotone,
+  PiUserGearDuotone,
 } from 'react-icons/pi';
 import {
   MdOutlineFolderCopy,
@@ -17,6 +24,8 @@ import { BsQrCodeScan } from 'react-icons/bs';
 import { GrTransaction } from 'react-icons/gr';
 import { RiUserSettingsLine } from 'react-icons/ri';
 import { TbMailCog, TbUserSquareRounded } from 'react-icons/tb';
+import AffiliateIcon from '../../../icons/affiliate';
+import ScanQrCodeIcon from '../../../icons/scanqrcode';
 
 export interface MenuItemType {
   name: string;
@@ -42,7 +51,7 @@ export const menuItems: MenuItemType[] = [
   {
     name: 'Refill Insights',
     href: '/Economa/Admin/Dashboard/RefillInsights',
-    icon: <PiCreditCardDuotone />,
+    icon: <PiCalendarDuotone />,
   },
 
   // label start
@@ -58,7 +67,7 @@ export const menuItems: MenuItemType[] = [
   {
     name: 'Stock Transactions',
     href: '/Economa/Admin/Dashboard/Stock_Transactions',
-    icon: <GrTransaction />,
+    icon: <PiChartLineUpDuotone />,
   },
   {
     name: 'Manage Categories',
@@ -74,7 +83,7 @@ export const menuItems: MenuItemType[] = [
   {
     name: 'Manage Refills',
     href: '/Economa/Admin/Dashboard/ManageRefills',
-    icon: <TbMailCog />,
+    icon: <PiFoldersLight />,
   },
   {
     name: 'Orders',
@@ -82,13 +91,13 @@ export const menuItems: MenuItemType[] = [
   // label end
   {
     name: 'Orders History',
-    href: routes.forms.profileSettings,
-    icon: <MdOutlineFolderCopy />,
+    href: '/Economa/Admin/Dashboard/OrdersHistory',
+    icon: <PiNewspaperClippingDuotone />,
   },
   {
-    name: 'Payments transactions',
-    href: routes.forms.personalInformation,
-    icon: <MdOutlinePayments />,
+    name: 'Payments Transactions',
+    href: '/Economa/Admin/Dashboard/PaymentsTransactions',
+    icon: <PiCreditCardDuotone />,
   },
   {
     name: 'Costumers',
@@ -96,17 +105,17 @@ export const menuItems: MenuItemType[] = [
   // label end
   {
     name: 'Manage Costumers',
-    href: routes.tables.basic,
-    icon: <RiUserSettingsLine />,
+    href: '/Economa/Admin/Dashboard/ManageCostumers',
+    icon: <PiUserGearDuotone />,
   },
-  {
+  /*   {
     name: 'Costumers Profile',
-    href: routes.tables.collapsible,
+    href: '/Economa/Admin/Dashboard/Rolesandpermessions',
     icon: <TbUserSquareRounded />,
-  },
+  }, */
   {
     name: 'Roles & Permissions',
-    href: routes.tables.collapsible,
+    href: '/Economa/Admin/Dashboard/RolesAndPermissions',
     icon: <PiFolderLockDuotone />,
   },
 
@@ -117,6 +126,6 @@ export const menuItems: MenuItemType[] = [
   {
     name: 'Order Verfication',
     href: '/',
-    icon: <BsQrCodeScan />,
+    icon: <ScanQrCodeIcon className='w-5 h-5' />,
   },
 ];
