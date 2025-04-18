@@ -3,9 +3,7 @@ import { CategoriesnamesandIds, CategoryType } from '../types/category';
 
 export const CategoryList = async (page: number): Promise<CategoryType[]> => {
   try {
-    const response = await apiClient.get<CategoryType[]>(
-      `/category?page=${page}`
-    );
+    const response = await apiClient.get(`/category?page=${page}`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -68,7 +66,7 @@ export const updateCategory = async (
     if (error.response) {
       throw error.response.data.message;
     }
-    throw new Error('Failed to Add Category');
+    throw new Error('Failed to update Category');
   }
 };
 
