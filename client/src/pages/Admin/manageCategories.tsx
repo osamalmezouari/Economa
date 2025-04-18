@@ -1,13 +1,13 @@
 import { Box, Button } from '@mui/material';
-import PageHeader from '../../components/admin/extra/pageheader/PageHeader';
+import PageHeader from '../../components/admin/base/pageheader/PageHeader';
 import { Download } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
-import ManageCateogryTable from '../../components/admin/extra/categorymanageTable';
+import ManageCateogryTable from '../../components/admin/extra/products/manageCategory/categorymanageTable';
 import { BiPlus } from 'react-icons/bi';
 import { OpenCreateCategoryDailog } from '../../features/category/categorySlice';
-import UpdateCategoryDialog from '../../components/admin/extra/updateCategory';
+import UpdateCategoryDialog from '../../components/admin/extra/products/manageCategory/updateCategory';
 
 const ManageCategories = () => {
   const dispatch = useDispatch<AppDispatch>();
