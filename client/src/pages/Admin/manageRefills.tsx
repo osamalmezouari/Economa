@@ -1,11 +1,11 @@
 import { Box, Button } from '@mui/material';
-import PageHeader from '../../components/admin/extra/pageheader/PageHeader';
+import PageHeader from '../../components/admin/base/pageheader/PageHeader';
 import { Download } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
-import ManageRefillsTable from '../../components/admin/extra/manageRefillsTable';
-import RefillstatusModel from '../../components/admin/extra/RefillStatusModel';
+import ManageRefillsTable from '../../components/admin/extra/refill_requests/manageRefills/manageRefillsTable';
+import RefillstatusModel from '../../components/admin/extra/refill_requests/manageRefills/RefillStatusModel';
 
 const ManageRefills = () => {
   const Refills = useSelector(
