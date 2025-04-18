@@ -1,10 +1,10 @@
 import { Box, Button } from '@mui/material';
-import PageHeader from '../../components/admin/extra/pageheader/PageHeader';
+import PageHeader from '../../components/admin/base/pageheader/PageHeader';
 import { Download } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
-import StockTransactionTable from '../../components/admin/extra/stockTransactionsTable';
+import StockTransactionTable from '../../components/admin/extra/products/stockTransactions/stockTransactionsTable';
 
 const StockTransaction = () => {
   const Transactions = useSelector(
