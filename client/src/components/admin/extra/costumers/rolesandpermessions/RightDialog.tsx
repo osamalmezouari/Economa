@@ -86,9 +86,13 @@ const EditRolePermessionsDialog: React.FC = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} className="mt-4">
             <Autocomplete
+              className=""
               multiple
               options={availablePermissions || []}
-              value={selectedPermissions}
+              value={selectedPermissions.filter(
+                (permission) =>
+                  !roleData.permissions?.some((p) => p.id === permission.id)
+              )}
               loading={permissionsLoading}
               getOptionLabel={(option) => option.name}
               onChange={(_, newValue) => setSelectedPermissions(newValue)}
@@ -149,7 +153,7 @@ const EditRolePermessionsDialog: React.FC = () => {
                 Current Permissions :
               </Typography>
               <Box display="flex" flexWrap="wrap" gap={1} mt={1}>
-                {selectedPermissions.map((permission) => (
+                {roleData?.permissions?.map((permission) => (
                   <Chip
                     key={permission.id}
                     label={permission.name}
