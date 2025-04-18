@@ -1,16 +1,15 @@
 import { Box, Button } from '@mui/material';
-import PageHeader from '../../components/admin/extra/pageheader/PageHeader';
+import PageHeader from '../../components/admin/base/pageheader/PageHeader';
 import { BiPlus } from 'react-icons/bi';
 import { Download } from '@mui/icons-material';
-import ManageProductsTable from '../../components/admin/extra/manageProductsTable';
-import ManageproductFilterBar from '../../components/admin/extra/productSideBarFilter';
+import ManageProductsTable from '../../components/admin/extra/products/manageProducts/manageProductsTable';
+import ManageproductFilterBar from '../../components/admin/extra/products/manageProducts/productSideBarFilter';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import exportToCSV from '../../utils/exportcsv';
-import AddProductDialog from '../../components/admin/extra/addproduct';
 import { openAddProductDialog } from '../../features/products/productSlice';
-import EditProductDialog from '../../components/admin/extra/updateproduct';
-import AddStockTransaction from '../../components/admin/extra/addStockTransaction';
+import EditProductDialog from '../../components/admin/extra/products/manageProducts/updateproduct';
+import AddStockTransaction from '../../components/admin/extra/products/manageProducts/addStockTransaction';
 const ManageProducts = () => {
   const { data } = useSelector(
     (state: RootState) => state.products.productsManage
@@ -51,7 +50,7 @@ const ManageProducts = () => {
       <ManageProductsTable />
       <ManageproductFilterBar />
       <EditProductDialog />
-      <AddStockTransaction/>
+      <AddStockTransaction />
     </Box>
   );
 };
