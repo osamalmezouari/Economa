@@ -23,15 +23,20 @@ import GlobalAlert from '../components/base/globalAlert.tsx';
 import Navbar from '../components/extra/Navbar.tsx';
 import { ManageProductsRoute } from './manageProductsRoote.ts';
 import Header from '../components/admin/extra/header.tsx';
-import AddProductDialog from '../components/admin/extra/addproduct.tsx';
+import AddProductDialog from '../components/admin/extra/products/manageProducts/addproduct.tsx';
 import { StoreTransactionsRoute } from './stocktransactionsRoute.ts';
 import { ManageCategoriesRoute } from './managecategoriesRoute.ts';
-import AddCategoryDialog from '../components/admin/extra/addCategory.tsx';
+import AddCategoryDialog from '../components/admin/extra/products/manageCategory/addCategory.tsx';
 import { ManageRefillsRoute } from './manageRefillsRoute.ts';
 import ReactViewer from 'react-viewer';
 import { AppDispatch, RootState } from '../app/store.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { setVisible } from '../features/common/commonSlice.ts';
+import { OrderHistoryRoute } from './ordersHistoryRoute.ts';
+import { PaymentsTransactionsRoute } from './paymentsTransactionsRoute.ts';
+import { ManageCostumersRoute } from './manageCostumersRoute.ts';
+import { RolesandpermessionsRoute } from './rolesnadpermessionsRoute.ts';
+import SearchDialog from '../components/admin/extra/search/SearchDialog.tsx';
 
 // Define the root route
 export const rootRoute = createRootRoute({
@@ -104,6 +109,7 @@ function AdminRoute() {
             onClose={() => dispatch(setVisible(false))}
             images={[{ src: imagePreview, alt: 'Preview' }]}
           />
+          <SearchDialog />
         </Box>
       </Box>
     </Box>
@@ -130,6 +136,10 @@ const routeTree = rootRoute.addChildren([
   StoreTransactionsRoute,
   ManageCategoriesRoute,
   ManageRefillsRoute,
+  OrderHistoryRoute,
+  PaymentsTransactionsRoute,
+  ManageCostumersRoute,
+  RolesandpermessionsRoute,
 ]);
 
 // Create the router
