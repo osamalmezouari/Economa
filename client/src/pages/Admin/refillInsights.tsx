@@ -1,9 +1,8 @@
 import { Grid2 as Grid } from '@mui/material';
-import RefillDaily from '../../components/admin/extra/RefillDaily';
-import UsersTransfers from '../../components/admin/extra/usertransfers';
-import RefillStatCard from '../../components/admin/extra/refillStatCard';
-import RefillYearlyChart from '../../components/admin/extra/refillYearlychart';
-
+import RefillDaily from '../../components/admin/extra/overview/Refill Insights/RefillDaily';
+import UsersTransfers from '../../components/admin/extra/overview/Refill Insights/usertransfers';
+import RefillStatCard from '../../components/admin/extra/overview/Refill Insights/refillStatCard';
+import RefillYearlyChart from '../../components/admin/extra/overview/Refill Insights/refillYearlychart';
 
 const RefillInsights = () => {
   return (
