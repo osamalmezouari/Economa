@@ -103,7 +103,7 @@ const ManageCostumersTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.users.map((user: UserDetails, index) => (
+          {data.users?.map((user: UserDetails, index) => (
             <TableRow key={index} className="hover:bg-gray-50">
               <TableCell>
                 <Typography className="text-[12px]">
