@@ -9,6 +9,7 @@ import {
   FormControl,
   FormHelperText,
   CircularProgress,
+  Alert,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,8 +31,8 @@ const AddRoleDialog = () => {
   const open = useSelector(
     (state: RootState) => state.roles.openAddRoleDialog || false
   );
-  const loading = useSelector(
-    (state: RootState) => state.roles.CreateRole.loading
+  const { loading, error } = useSelector(
+    (state: RootState) => state.roles.CreateRole
   );
 
   // Form state
@@ -134,9 +135,9 @@ const AddRoleDialog = () => {
               disabled={loading}
             />
           </FormControl>
+          <Alert severity="warning"> {error} </Alert>
         </Box>
       </DialogContent>
-
       <DialogActions>
         <Button onClick={handleClose} disabled={loading}>
           Cancel
