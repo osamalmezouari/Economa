@@ -1,7 +1,7 @@
 import { apiClient } from '../utils/apiClient';
 import { CategoriesnamesandIds, CategoryType } from '../types/category';
 
-export const CategoryList = async (page: number): Promise<CategoryType[]> => {
+export const CategoryList = async (page: number) => {
   try {
     const response = await apiClient.get(`/category?page=${page}`);
     return response.data;
