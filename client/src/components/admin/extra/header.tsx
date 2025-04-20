@@ -1,16 +1,18 @@
-import { Avatar, Badge, Box, IconButton } from '@mui/material';
+import { Badge, Box, IconButton } from '@mui/material';
 
 import { PiCommand, PiMagnifyingGlassBold } from 'react-icons/pi';
-import RingBellSolidIcon from '../../icons/ring-bell-solid';
 import ScanQrCodeIcon from '../../icons/scanqrcode';
 import LanguageSwitcherIcon from '../../icons/langugaeSwitcher';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
 import { setSearchDialogOpen } from '../../../features/common/commonSlice';
+import NotificationBellIcon from '../base/NotificationMenu';
+import ProfileMenu from '../base/ProfileMenu';
+import { useRouter } from '@tanstack/react-router';
 
 const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
-
+  const router = useRouter();
   const handleOpenSearch = () => {
     dispatch(setSearchDialogOpen(true));
   };
@@ -35,26 +37,7 @@ const Header = () => {
       </Box>
 
       <Box className={'flex items-center gap-5'}>
-        <IconButton className="group !rounded !bg-white !drop-shadow-sm">
-          <Badge
-            badgeContent=""
-            color="warning"
-            className=""
-            sx={{
-              '& .MuiBadge-badge': {
-                minWidth: '10px',
-                height: '10px',
-                padding: 0,
-                borderRadius: '50%',
-                border: '2px solid white',
-                right: '2px',
-                top: '4px',
-              },
-            }}
-          >
-            <RingBellSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
-          </Badge>
-        </IconButton>
+        <NotificationBellIcon />
         {/*         <IconButton className="group !rounded !bg-white !drop-shadow-sm">
           <Badge
             badgeContent=""
@@ -75,7 +58,14 @@ const Header = () => {
             <ChatSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
         </IconButton> */}
-        <IconButton className="group !rounded !bg-white !drop-shadow-sm">
+        <IconButton
+          className="group !rounded !bg-white !drop-shadow-sm"
+          onClick={() =>
+            router.navigate({
+              to: '/Economa/Admin/Dashboard/OrderVerification',
+            })
+          }
+        >
           <Badge
             badgeContent=""
             color="warning"
@@ -98,12 +88,7 @@ const Header = () => {
         <IconButton className="!bg-white !rounded !drop-shadow-sm">
           <LanguageSwitcherIcon className="h-[24px] w-auto" />
         </IconButton>
-        <IconButton className="!bg-white !drop-shadow-sm">
-          <Avatar
-            sx={{ width: 40, height: 40 }}
-            src="https://isomorphic-furyroad.vercel.app/avatar.webp"
-          />
-        </IconButton>
+        <ProfileMenu />
       </Box>
     </Box>
   );
