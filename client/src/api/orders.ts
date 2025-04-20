@@ -26,3 +26,15 @@ export const getOrdersHistory = async (page: number, email: string) => {
     throw new Error('Failed to get Orders History');
   }
 };
+
+export const getOrderById = async (id: string) => {
+  try {
+    const response = await apiClient.get(`orders/${id}`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to get Order Details');
+  }
+};
