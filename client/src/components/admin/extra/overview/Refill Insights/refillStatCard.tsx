@@ -41,8 +41,7 @@ const RefillStatCard = () => {
 
   return (
     <Grid container className="mt-4 justify-between">
-      {!loading && data.length > 0
-        ? data.map((stat, index) => (
+      {!loading ? data?.map((stat, index) => (
             <Grid2 size={2.9} key={stat.title}>
               <Card
                 className={cn(
