@@ -58,29 +58,19 @@ const RolesAndPermissions = () => {
         </Button>
       </PageHeader>
 
-      {loading ? (
-        <Box display="flex" justifyContent="center" my={4}>
-          <CircularProgress />
-        </Box>
-      ) : /* error ? (
-        <Box display="flex" justifyContent="center" my={4} color="error.main">
-          {error}
-        </Box>
-      ) :  */(
-        <Grid container spacing={2}>
-          {roles?.map((role) => (
-            <Grid item xs={12} sm={6} md={4} key={role.id}>
-              <RoleCard
-                roleName={role.name}
-                roleLvl={role.rolelvl || getRoleLvl(role.name)}
-                userTotal={role.userTotal || 0}
-                usersAvatars={role.usersAvatars || []}
-                id={role.id}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      )}
+      <Grid container spacing={2}>
+        {roles?.map((role) => (
+          <Grid item xs={12} sm={6} md={4} key={role.id}>
+            <RoleCard
+              roleName={role.name}
+              roleLvl={role.rolelvl || getRoleLvl(role.name)}
+              userTotal={role.userTotal || 0}
+              usersAvatars={role.usersAvatars || []}
+              id={role.id}
+            />
+          </Grid>
+        ))}
+      </Grid>
       <AddRoleDialog />
       <EditRoleDialog />
       <RightDialog />
