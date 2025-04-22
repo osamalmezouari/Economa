@@ -10,9 +10,7 @@ export const refillBalanceRequest = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -26,9 +24,7 @@ export const getbalanceCardInfo = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -41,7 +37,7 @@ export const getRefillList = createAsyncThunk(
       return RefillsList;
     } catch (error: any) {
       if (error.response) {
-        return rejectWithValue(error.response.data);
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch RefillDaily');
     }
@@ -67,8 +63,8 @@ export const UpdateRefillStatus = createAsyncThunk(
       );
       return RefillsList;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch RefillDaily');
     }
@@ -82,8 +78,8 @@ export const getRequestStatus = createAsyncThunk(
       const RefillStatus = await balanceApi.getRequestStatus(requestId);
       return RefillStatus;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch RefillDaily');
     }
