@@ -15,7 +15,7 @@ export const getRefillInsightsCardsStats = createAsyncThunk(
       return CardsStats;
     } catch (error: any) {
       if (error.response) {
-        return rejectWithValue(error.response.data);
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch refill stats');
     }
@@ -30,7 +30,7 @@ export const getRefillInsightsYearlyChart = createAsyncThunk(
       return YearlyChart;
     } catch (error: any) {
       if (error.response) {
-        return rejectWithValue(error.response.data);
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch refill chart');
     }
