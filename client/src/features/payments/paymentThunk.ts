@@ -14,9 +14,8 @@ export const getPaymentTransactions = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong',
-      });
+      return rejectWithValue('Something went wrong',
+      );
     }
   }
 );
