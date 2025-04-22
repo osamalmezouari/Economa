@@ -4,7 +4,7 @@ import { verfy_coupon_type } from '../../types/coupon';
 
 export const verfyCoupon = createAsyncThunk(
   'verfy_coupon',
-  async (data : verfy_coupon_type, { rejectWithValue }) => {
+  async (data: verfy_coupon_type, { rejectWithValue }) => {
     try {
       const coupon = await verfy_coupon(data);
       return coupon;
@@ -12,9 +12,7 @@ export const verfyCoupon = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
