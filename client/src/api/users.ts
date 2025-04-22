@@ -2,7 +2,7 @@ import { apiClient } from '../utils/apiClient';
 
 export const getUser = async () => {
   try {
-    const response = await apiClient.get(`/user/byEmail`);
+    const response = await apiClient.get(`/user/StoredUserFromToken`);
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -71,5 +71,26 @@ export const getUserById = async (id: string) => {
       return error.response.data.message;
     }
     throw new Error('Failed to fetch user');
+  }
+};
+
+
+export const ProfileUpdate = async ( userData: FormData) => {
+  try {
+    const response = await apiClient.patch(
+      `/user/ProfileUpdate`,
+      userData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      return error.response.data.message;
+    }
+    throw new Error('Failed to update user');
   }
 };
