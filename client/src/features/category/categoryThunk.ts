@@ -11,9 +11,7 @@ export const getCategoryList = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -28,9 +26,7 @@ export const getCategoryCards = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -45,9 +41,7 @@ export const getCategoriesNamesandIds = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -61,9 +55,7 @@ export const AddCategory = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -80,9 +72,7 @@ export const updateCategory = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -96,9 +86,7 @@ export const getCategoryById = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
