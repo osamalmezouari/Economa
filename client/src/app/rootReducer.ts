@@ -14,6 +14,7 @@ import { RefillInsightsReducer } from '../features/RefillInsights/refillInsights
 import { commonReducer } from '../features/common/commonSlice';
 import { PaymentsReducer } from '../features/payments/paymentSlice';
 import { RolesReducer } from '../features/role/roleSlice';
+import { notificationReducer } from '../features/notification/notificationSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
@@ -31,5 +32,6 @@ const rootReducer = combineReducers({
   common: commonReducer,
   payments: PaymentsReducer,
   roles: RolesReducer,
+  notification: notificationReducer,
 });
 export default rootReducer;
