@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getOrdersHistory, placeandpay } from './orderThunk';
-import { OrderStateType } from '../../types/order';
+import { getOrderById, getOrdersHistory, placeandpay } from './orderThunk';
+import { Order, OrderStateType } from '../../types/order';
 
 const initialState: OrderStateType = {
   placeandpay: {
@@ -17,6 +17,25 @@ const initialState: OrderStateType = {
       orders: [],
       pageCount: 0,
     },
+  },
+  OrderById: {
+    data: {
+      id: '',
+      userId: '',
+      couponId: null,
+      status: '',
+      totalAmount: 0,
+      createdAt: '',
+      updatedAt: '',
+      orderItems: [],
+      user: {
+        name: '',
+        avatar: '',
+        email: ''
+      }
+    },
+    loading: false,
+    error: '',
   },
 };
 
@@ -56,6 +75,19 @@ const OrderSlice = createSlice({
       .addCase(getOrdersHistory.rejected, (state, action) => {
         state.OrdersHistory.error = action.payload as string;
         state.OrdersHistory.loading = false;
+      })
+
+      .addCase(getOrderById.pending, (state) => {
+        state.OrderById.loading = true;
+        state.OrderById.error = '';
+      })
+      .addCase(getOrderById.fulfilled, (state, action) => {
+        state.OrderById.loading = false;
+        state.OrderById.data = action.payload;
+      })
+      .addCase(getOrderById.rejected, (state, action) => {
+        state.OrderById.loading = false;
+        state.OrderById.error = action.payload as string;
       });
   },
 });
