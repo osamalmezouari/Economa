@@ -21,7 +21,7 @@ const AddReview = ({ productId }: AddReviewProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [reviewText, setReviewText] = useState('');
-  const [rating, setRating] = useState<string>(''); // Use number | null for Rating component
+  const [rating, setRating] = useState<string>('');
   const dispatch = useDispatch<AppDispatch>();
 
   const { data } = useSelector(
@@ -40,7 +40,7 @@ const AddReview = ({ productId }: AddReviewProps) => {
       setName(data.name);
       setEmail(data.email);
     }
-  }, [data]);
+  }, [dispatch]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -158,8 +158,8 @@ const AddReview = ({ productId }: AddReviewProps) => {
             {addReviewLoading ? <CircularProgress color="inherit" /> : 'Submit'}
           </Button>
         </Grid>
-        {addReviewError?.statusCode === 409 ? (
-          <GlobalAlert message={addReviewError?.message} status="error" />
+        {addReviewError ? (
+          <GlobalAlert message={addReviewError} status="error" />
         ) : (
           ''
         )}
