@@ -1,4 +1,3 @@
-import { common } from '@mui/material/colors';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ImagePreviewState {
@@ -9,6 +8,8 @@ interface ImagePreviewState {
 interface CommonState {
   imagePreviewState: ImagePreviewState;
   isSearchDialogOpen: boolean;
+  isNotificationOpen: boolean;
+  isProfileMenuOpen: boolean;
 }
 
 const initialState: CommonState = {
@@ -17,6 +18,8 @@ const initialState: CommonState = {
     imagePreview: '',
   },
   isSearchDialogOpen: false,
+  isNotificationOpen: false,
+  isProfileMenuOpen: false,
 };
 
 const commonSlice = createSlice({
@@ -32,9 +35,15 @@ const commonSlice = createSlice({
     setSearchDialogOpen: (state, action: PayloadAction<boolean>) => {
       state.isSearchDialogOpen = action.payload;
     },
+    setNotificationOpen: (state, action: PayloadAction<boolean>) => {
+      state.isNotificationOpen = action.payload;
+    },
+    setProfileMenuOpen: (state, action: PayloadAction<boolean>) => {
+      state.isProfileMenuOpen = action.payload;
+    },
   },
 });
 
-export const { setVisible, setImagePreview, setSearchDialogOpen } = commonSlice.actions;
+export const { setVisible, setImagePreview, setSearchDialogOpen, setNotificationOpen, setProfileMenuOpen } = commonSlice.actions;
 export default commonSlice.reducer;
 export const commonReducer = commonSlice.reducer;
