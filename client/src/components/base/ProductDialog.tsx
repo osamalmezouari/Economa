@@ -114,7 +114,8 @@ export default function ProductDialog({
           </IconButton>
           <Grid container spacing={2}>
             <Grid item xs={12} md={5.5}>
-              <div
+              <Box
+                component={'div'}
                 className="relative w-full h-full border-2 bg-green-50 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${imageLink})`,
@@ -129,10 +130,10 @@ export default function ProductDialog({
                 )}
                 <div className="absolute top-1 left-2">
                   <Badge className="bg-primary-main text-white rounded-sm px-2 uppercase text-[12px]">
-                    1 {unit}
+                    {unit}
                   </Badge>
                 </div>
-              </div>
+              </Box>
             </Grid>
             <Grid item xs={12} md={6} className="p-4">
               <p
