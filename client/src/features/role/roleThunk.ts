@@ -12,6 +12,7 @@ export const getRolesList = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to fetch roles');
     }
   }
 );
@@ -26,6 +27,7 @@ export const getRolesWithUsers = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to fetch Roles With Users');
     }
   }
 );
@@ -40,6 +42,7 @@ export const createRole = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to create Role');
     }
   }
 );
@@ -54,6 +57,8 @@ export const getPermissions = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+
+      return rejectWithValue('Failed to fetch Permissions');
     }
   }
 );
@@ -68,6 +73,7 @@ export const getRoleById = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to get Role By Id');
     }
   }
 );
@@ -85,6 +91,7 @@ export const updateRole = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to update Role');
     }
   }
 );
@@ -105,6 +112,7 @@ export const updateRolePermissions = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to update Role Permissions');
     }
   }
 );
@@ -119,6 +127,7 @@ export const getRolePermissions = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
+      return rejectWithValue('Failed to get Role Permissions');
     }
   }
 );
