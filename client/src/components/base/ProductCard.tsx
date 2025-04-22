@@ -90,7 +90,7 @@ export default function ProductCard({
         )}
         <div className="absolute top-2 left-4">
           <Badge className="bg-primary-main text-white  rounded-sm px-2 uppercase text-[12px]">
-            1 {unit}
+            {unit}
           </Badge>
         </div>
       </CardMedia>
