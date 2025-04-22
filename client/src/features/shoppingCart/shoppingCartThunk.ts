@@ -11,9 +11,7 @@ export const getshoppingCart = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -28,9 +26,7 @@ export const createshoppingCart = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -51,9 +47,7 @@ export const updatequantity = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -69,9 +63,7 @@ export const removefromshoppingCart = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
