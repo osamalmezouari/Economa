@@ -85,11 +85,9 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
       >
         <Grid item lg={5}>
           <Box
-            component={'div'}
+            component={'img'}
+            src={`${productdetailsData.imageLink}`}
             className="bg-cover bg-center h-[420px] rounded border-[1px]"
-            style={{
-              backgroundImage: `url(${productdetailsData.imageLink})`,
-            }}
           ></Box>
         </Grid>
         <Grid item lg={6}>
