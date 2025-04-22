@@ -13,9 +13,7 @@ export const placeandpay = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -30,9 +28,23 @@ export const getOrdersHistory = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.',
+      );
+    }
+  }
+);
+
+
+export const getOrderById = createAsyncThunk(
+  'order/getOrderById',
+  async (orderId: string, { rejectWithValue }) => {
+    try {
+      const response = await ordersApi.getOrderById(orderId);
+      return response;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to fetch order details'
+      );
     }
   }
 );
