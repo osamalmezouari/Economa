@@ -13,6 +13,7 @@ import {
   CardHeader,
 } from '@mui/material';
 import { TopSellingProducts } from '../../../types/storeAnalytics';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const TopProductsBase = ({ products }: { products: TopSellingProducts[] }) => {
   return (
@@ -90,7 +91,7 @@ const TopProductsBase = ({ products }: { products: TopSellingProducts[] }) => {
                   />
                 </Box>
                 <Typography variant="body1" fontWeight="medium">
-                  ${product.totalSales.toFixed(2) || 0}
+                  {CURRENCY_SYMBOL}{product.totalSales.toFixed(2) || 0}
                 </Typography>
               </ListItem>
 
