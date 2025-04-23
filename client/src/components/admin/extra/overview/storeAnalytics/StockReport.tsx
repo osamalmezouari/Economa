@@ -26,6 +26,7 @@ import { AppDispatch, RootState } from '../../../../../app/store';
 import { getLowStockProducts } from '../../../../../features/StoreAnalytics/StoreAnalyticsThunk';
 import { Download } from '@mui/icons-material';
 import exportToCSV from '../../../../../utils/exportcsv';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const StockReport = () => {
   const [filters, setFilters] = useState({
@@ -229,7 +230,7 @@ const StockReport = () => {
                   <Typography variant="body2">{product.stock}</Typography>
                 </Box>
               </TableCell>
-              <TableCell>${product.costprice}</TableCell>
+              <TableCell>{CURRENCY_SYMBOL}{product.costprice}</TableCell>
               <TableCell>
                 <Box className="flex items-center gap-2">
                   <Rating size="small" value={product.rating} />
