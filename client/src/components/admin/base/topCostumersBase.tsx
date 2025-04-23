@@ -13,6 +13,7 @@ import {
   CardHeader,
 } from '@mui/material';
 import { TopCostumers } from '../../../types/storeAnalytics';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const TopCostumersBase = ({ costumers }: { costumers: TopCostumers[] }) => {
   return (
@@ -94,7 +95,7 @@ const TopCostumersBase = ({ costumers }: { costumers: TopCostumers[] }) => {
                   />
                 </Box>
                 <Typography variant="body1" fontWeight="medium">
-                  ${costumer.totalSpent.toFixed(2) || 0}
+                  {CURRENCY_SYMBOL}{costumer.totalSpent.toFixed(2) || 0}
                 </Typography>
               </ListItem>
 
