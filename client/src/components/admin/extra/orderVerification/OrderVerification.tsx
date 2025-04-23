@@ -15,10 +15,10 @@ import QRCodeScanner from './QRCodeScanner';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../app/store';
 import { getOrderById } from '../../../../features/order/orderThunk';
-import { FaCheckCircle, FaRegClock, FaShoppingBag } from 'react-icons/fa';
-import { format } from 'date-fns';
+import { FaCheckCircle, FaRegClock } from 'react-icons/fa';
 import DateCell from '../../base/dateCell';
 import { IoBagHandleOutline } from 'react-icons/io5';
+import { CURRENCY_SYMBOL } from '../../../../utils/constants';
 
 const OrderVerification: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -148,10 +148,10 @@ const OrderVerification: React.FC = () => {
                     </Box>
                     <Box className="text-right">
                       <Typography variant="body2" className="font-medium">
-                        ${(item.product.price * item.quantity).toFixed(2)}
+                      {CURRENCY_SYMBOL}{(item.product.price * item.quantity).toFixed(2)}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        ${item.product.price} × {item.quantity}
+                      {CURRENCY_SYMBOL}{item.product.price} × {item.quantity}
                       </Typography>
                     </Box>
                   </Box>
@@ -168,7 +168,7 @@ const OrderVerification: React.FC = () => {
                   variant="h6"
                   className="font-bold text-primary-main"
                 >
-                  ${orderDetails.totalAmount.toFixed(2)}
+                  {CURRENCY_SYMBOL}{orderDetails.totalAmount.toFixed(2)}
                 </Typography>
               </Box>
             </Paper>
