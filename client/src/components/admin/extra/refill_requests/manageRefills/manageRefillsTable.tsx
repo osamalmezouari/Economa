@@ -35,6 +35,7 @@ import {
   openRefillStatusModal,
   setRequestIdToViewStatus,
 } from '../../../../../features/balance/balanceSilce';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const ManageRefillsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -102,7 +103,7 @@ const ManageRefillsTable = () => {
               </TableCell>
               <TableCell className="">
                 <Typography variant="body2" className="text-[12px]">
-                  ${refill.amount}
+                {CURRENCY_SYMBOL}{refill.amount}
                 </Typography>
               </TableCell>
               <TableCell>
