@@ -18,7 +18,7 @@ import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
-import { FaBasketShopping, FaWallet } from 'react-icons/fa6';
+import { FaBasketShopping } from 'react-icons/fa6';
 import Logo from '../../icons/logo';
 
 const Desktop_nav_bar = () => {
@@ -101,16 +101,7 @@ const Desktop_nav_bar = () => {
               >
                 <FaBasketShopping className="h-6 w-4"></FaBasketShopping>
               </Button>
-              <Button
-                variant="contained"
-                startIcon={<FaWallet className="w-4 h-4" />}
-                onClick={() =>
-                  router.navigate({ to: '/Economa/Refill_Balance' })
-                }
-                sx={{ fontSize: '12px', borderRadius: '4px' }}
-              >
-                Refil balance
-              </Button>
+            
             </Grid>
           </Grid>
         </Container>
