@@ -26,6 +26,7 @@ import { addCompareItem } from '../../features/compare/compareSlice';
 import { useRouter } from '@tanstack/react-router';
 import { ProductCardType } from '../../types/product';
 import ProductDialog from './ProductDialog';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 export default function ProductCard({
   id,
@@ -187,12 +188,12 @@ export default function ProductCard({
           {priceWithDiscount && priceWithDiscount > 0 ? (
             <>
               <p className="text-secondary-main font-bold">
-                ${priceWithDiscount}
+              {CURRENCY_SYMBOL}{priceWithDiscount}
               </p>
-              <p className="line-through">${price}</p>
+              <p className="line-through">{CURRENCY_SYMBOL}{price}</p>
             </>
           ) : (
-            <p className="text-secondary-main font-bold">${price}</p>
+            <p className="text-secondary-main font-bold">{CURRENCY_SYMBOL}{price}</p>
           )}
         </Box>
       </CardContent>
