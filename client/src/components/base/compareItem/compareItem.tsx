@@ -13,6 +13,7 @@ import { removeCompareItem } from '../../../features/compare/compareSlice';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { getComparedProductDetails } from '../../../features/compare/compareThunk';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const CompareItem = ({
   svgLink,
@@ -104,7 +105,7 @@ const CompareItem = ({
         sx={{ fontWeight: 'light', color: '#7C8C94' }}
         className=" font-bold border-[1px] border-t-0 h-12 text-start border-l-0 flex items-center p-2"
       >
-        {price}$
+        {CURRENCY_SYMBOL}{price}
       </Typography>
       <Typography
         sx={{ fontWeight: 'light', color: '#7C8C94' }}
