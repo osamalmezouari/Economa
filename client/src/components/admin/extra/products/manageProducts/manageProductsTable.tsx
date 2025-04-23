@@ -38,6 +38,7 @@ import { PiTextColumns } from 'react-icons/pi';
 import { IoFilterCircleOutline } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
 import { HiOutlineInboxIn } from 'react-icons/hi';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const ManageProductsTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -250,14 +251,14 @@ const ManageProductsTable = () => {
               {columnVisibility.cost && (
                 <TableCell>
                   <Typography variant="body2" fontWeight={500}>
-                    ${product.costprice.toFixed(2)}
+                  {CURRENCY_SYMBOL}{product.costprice.toFixed(2)}
                   </Typography>
                 </TableCell>
               )}
               {columnVisibility.price && (
                 <TableCell>
                   <Typography variant="body2" fontWeight={500}>
-                    ${product.price.toFixed(2)}
+                  {CURRENCY_SYMBOL}{product.price.toFixed(2)}
                   </Typography>
                 </TableCell>
               )}
@@ -268,7 +269,7 @@ const ManageProductsTable = () => {
                     className="text-center"
                     fontWeight={500}
                   >
-                    ${product.priceWithDiscount.toFixed(2)}
+                    {CURRENCY_SYMBOL}{product.priceWithDiscount.toFixed(2)}
                   </Typography>
                 </TableCell>
               )}
