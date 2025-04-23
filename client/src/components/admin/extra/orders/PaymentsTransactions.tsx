@@ -19,6 +19,7 @@ import DateCell from '../../base/dateCell';
 import { BiSearch } from 'react-icons/bi';
 import { getPaymentTransactions } from '../../../../features/payments/paymentThunk';
 import { PaymentTransactionType } from '../../../../types/payments';
+import { CURRENCY_SYMBOL } from '../../../../utils/constants';
 
 const PaymentTransactionTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -128,7 +129,7 @@ const PaymentTransactionTable = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="body2" className="text-[12px]">
-                  ${payment.amount.toFixed(2)}
+                {CURRENCY_SYMBOL}{payment.amount.toFixed(2)}
                 </Typography>
               </TableCell>
               {/* <TableCell>
