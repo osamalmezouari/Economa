@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import cn from '../../../utils/class-names';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const metricCardClasses = {
   base: 'border border-gray-200 bg-gray-0 p-5 lg:p-6',
@@ -69,7 +70,7 @@ export default function MetricCard({
                 metricClassName
               )}
             >
-              {title === 'New Orders' ? metric : '$' + metric}
+              {title === 'New Orders' ? metric : CURRENCY_SYMBOL + ' ' + metric}
             </Typography>
 
             {info ? info : null}
