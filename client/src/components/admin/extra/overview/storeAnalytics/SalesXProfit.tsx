@@ -30,6 +30,7 @@ import { getsalesXProfit } from '../../../../../features/StoreAnalytics/StoreAna
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import cn from '../../../../../utils/class-names';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   '& .recharts-tooltip-cursor': {
@@ -187,7 +188,7 @@ export default function SalesXProfit({ className }: { className?: string }) {
                 <YAxis
                   axisLine={false}
                   tickLine={false}
-                  tick={<CustomYAxisTick prefix="$" />}
+                  tick={<CustomYAxisTick prefix={CURRENCY_SYMBOL} />}
                 />
                 <Tooltip
                   content={
