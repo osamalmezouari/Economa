@@ -1,5 +1,4 @@
 import { Typography, Stack, StackProps } from '@mui/material';
-import Image from '../image';
 
 interface EmptyContentProps extends StackProps {
   title: string;
@@ -20,13 +19,13 @@ export default function EmptyContent({ title, description, img, sx, ...other }: 
       }}
       {...other}
     >
-      <Image
+      {/* <Image
         disabledEffect
         alt="empty content"
         src={img ||'../../../../public/assets/illustrations/illustration_empty_content.svg'}
         sx={{ height: 240, mb: 3 }}
       />
-
+ */}
       <Typography variant="h5" gutterBottom>
         {title}
       </Typography>
