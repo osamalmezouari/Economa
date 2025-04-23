@@ -13,6 +13,7 @@ import { CustomYAxisTick } from '../../../../base/charts/custom-yaxis-tick';
 import { CustomTooltip } from '../../../../base/charts/custom-tooltip';
 import { formatNumber } from '../../../../../utils/format-number';
 import cn from '../../../../../utils/class-names';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 import {
   Typography,
   Card,
@@ -59,7 +60,7 @@ const CategorySales = ({ className }: { className?: string }) => {
             </Typography>
             <div className="flex items-center justify-between">
               <Typography variant="h3" className="me-2 font-semibold">
-                ${totalSales.toFixed(2)}
+                {CURRENCY_SYMBOL} {totalSales.toFixed(2)}
               </Typography>
               <Box className={'flex gap-4 mt-2'}>
                 <Box>
@@ -144,12 +145,12 @@ const CategorySales = ({ className }: { className?: string }) => {
                       value: formatNumber(Number(payload.value)),
                     };
                     return (
-                      <CustomYAxisTick prefix={'$'} payload={pl} {...rest} />
+                      <CustomYAxisTick prefix={CURRENCY_SYMBOL} payload={pl} {...rest} />
                     );
                   }}
                 />
                 <Tooltip
-                  content={<CustomTooltip formattedNumber={true} prefix="$" />}
+                  content={<CustomTooltip formattedNumber={true} prefix={CURRENCY_SYMBOL} />}
                 />
 
                 <defs>
