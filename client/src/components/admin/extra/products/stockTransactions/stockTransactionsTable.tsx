@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import { StockTransactionType } from '../../../../../types/product';
 import { StockTransaction } from '../../../../../features/products/productThunk';
 import DateCell from '../../../base/dateCell';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const StockTransactionsTable = () => {
   enum TransactionType {
@@ -137,7 +138,7 @@ const StockTransactionsTable = () => {
                 <DateCell date={transaction.date} />
               </TableCell>
               <TableCell>
-                ${transaction.unitCost ? transaction.unitCost : ''}
+              {CURRENCY_SYMBOL}{transaction.unitCost ? transaction.unitCost : ''}
               </TableCell>
             </TableRow>
           ))}
