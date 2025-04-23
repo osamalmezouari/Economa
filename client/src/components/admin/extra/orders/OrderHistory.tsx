@@ -20,6 +20,7 @@ import DateCell from '../../base/dateCell';
 import { Order } from '../../../../types/order';
 import { getOrdersHistory } from '../../../../features/order/orderThunk';
 import { BiSearch } from 'react-icons/bi';
+import { CURRENCY_SYMBOL } from '../../../../utils/constants';
 
 const OrderHistory = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -126,7 +127,7 @@ const OrderHistory = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="body2" className="text-[12px]">
-                  ${order.totalAmount.toFixed(2)}
+                {CURRENCY_SYMBOL}{order.totalAmount.toFixed(2)}
                 </Typography>
               </TableCell>
 
