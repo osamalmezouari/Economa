@@ -70,10 +70,19 @@ const EditRolePermessionsDialog: React.FC = () => {
   };
 
   const handleSave = async () => {
+    // Combine newly selected permissions with existing permissions
+    const existingPermissionIds = roleData?.permissions?.map(p => p.id) || [];
+    const newPermissionIds = selectedPermissions
+      .filter(permission => !existingPermissionIds.includes(permission.id))
+      .map(p => p.id);
+    
+    // Combine both arrays to keep existing permissions while adding new ones
+    const allPermissionIds = [...existingPermissionIds, ...newPermissionIds];
+    
     await dispatch(
       updateRolePermissions({
         roleId,
-        permissionIds: selectedPermissions.map((p) => p.id),
+        permissionIds: allPermissionIds,
       })
     );
     handleClose();
