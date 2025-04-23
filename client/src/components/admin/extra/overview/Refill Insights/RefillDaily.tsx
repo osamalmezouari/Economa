@@ -15,6 +15,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import DateCell from '../../../base/dateCell';
 import { AppDispatch, RootState } from '../../../../../app/store';
 import { getrefillDaily } from '../../../../../features/RefillInsights/refillInsightsThunk';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const RefillDaily = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -87,7 +88,7 @@ const RefillDaily = () => {
                 <Box className="flex flex-col gap-1 h-max">
                   <Box className="flex gap-2 items-center">
                     <Typography variant="body1" className="font-bold">
-                      ${request.amount}
+                    {CURRENCY_SYMBOL}{request.amount}
                     </Typography>
                     <span className="font-Inria">attended to</span>
                     <Typography
