@@ -20,7 +20,7 @@ import { Route as OverviewRouteImport } from './routes/overviewRoute'
 import { Route as LandingImport } from './routes/landingRoute'
 import { Route as CompareImport } from './routes/compareRoute'
 import { Route as AuthImport } from './routes/authRoute'
-import { Route as RefillBalanceRequestRouteImport } from './routes/RefillBalanceRequestRoute'
+import { Route as RefillBalanceRequestRouteImport } from './routes/MakeRefillRoute'
 import { Route as ProtectedRoutesAuthProtectedRouteImport } from './routes/protectedRoutes/AuthProtectedRoute'
 
 // Create/Update Routes
