@@ -26,6 +26,7 @@ import {
   setusertoEdit,
 } from '../../../../../features/user/userSlice';
 import { FiEdit3 } from 'react-icons/fi';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const ManageCostumersTable = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -131,7 +132,7 @@ const ManageCostumersTable = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="body2" className="text-[12px]">
-                  ${user.balance.Balance.toFixed(2)}
+                  {CURRENCY_SYMBOL}{user.balance.Balance.toFixed(2)}
                 </Typography>
               </TableCell>
               <TableCell>
