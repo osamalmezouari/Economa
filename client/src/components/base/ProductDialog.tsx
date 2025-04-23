@@ -26,6 +26,7 @@ import { AppDispatch, RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCreateError } from '../../features/shoppingCart/shoppingCartSlice';
 import { useRouter } from '@tanstack/react-router';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 export default function ProductDialog({
   open,
@@ -153,7 +154,7 @@ export default function ProductDialog({
               <Box className="flex gap-4 text-secondary-main pb-5">
                 {priceWithDiscount && priceWithDiscount > 0 && (
                   <p className="text-secondary-main font-extrabold text-2xl">
-                    ${priceWithDiscount}
+                    {CURRENCY_SYMBOL}{priceWithDiscount}
                   </p>
                 )}
                 <p
