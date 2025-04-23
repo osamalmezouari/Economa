@@ -11,11 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { setProfileMenuOpen } from '../../../features/common/commonSlice';
 
-interface ProfileMenuProps {
-  // You can add props if needed
-}
-
-const ProfileMenu: React.FC<ProfileMenuProps> = () => {
+const ProfileMenu = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
@@ -25,11 +21,9 @@ const ProfileMenu: React.FC<ProfileMenuProps> = () => {
   );
 
   // Mock user data - in a real app, this would come from your auth state
-  const user = {
-    name: 'Albert Flores',
-    email: 'flores@doe.io',
-    avatar: 'https://isomorphic-furyroad.vercel.app/avatar.webp',
-  };
+  const user = useSelector(
+    (state: RootState) => state.user.ShoortedUserInfo.data
+  );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
