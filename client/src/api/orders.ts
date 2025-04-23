@@ -38,3 +38,17 @@ export const getOrderById = async (id: string) => {
     throw new Error('Failed to get Order Details');
   }
 };
+
+export const getUserOrders = async (page: number) => {
+  try {
+    const response = await apiClient.get('orders/user', {
+      params: { page },
+    });
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to get user orders');
+  }
+};
