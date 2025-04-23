@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../../app/store';
 import { getusersTransfers } from '../../../../../features/RefillInsights/refillInsightsThunk';
 import { UserTransfer } from '../../../../../types/RefillInsights';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 const UsersTransfers = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -106,7 +107,7 @@ const UsersTransfers = () => {
               {/* Amount */}
               <TableCell>
                 <Typography variant="body1" fontWeight={500}>
-                  ${transfer.amount.toFixed(2)}
+                {CURRENCY_SYMBOL}{transfer.amount.toFixed(2)}
                 </Typography>
               </TableCell>
 
