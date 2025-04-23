@@ -1,4 +1,9 @@
-import { BalanceCard, RefillBalanceRequest } from '../types/balance';
+import {
+  BalanceCard,
+  RefillBalanceRequest,
+  TransferRequest,
+  Transfer,
+} from '../types/balance';
 import { apiClient } from '../utils/apiClient';
 
 export const refillBalance = async (
@@ -73,5 +78,45 @@ export const getRequestStatus = async (requestId: string) => {
       throw error.response.data.message;
     }
     throw new Error('Failed to Fetch Refill Requests');
+  }
+};
+
+export const getUserRefills = async (page: number) => {
+  try {
+    const response = await apiClient.get(
+      `/balance/user/refillbalancerequest?page=${page}`
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch User Refill Requests');
+  }
+};
+
+export const makeTransfer = async (
+  data: TransferRequest
+): Promise<TransferRequest> => {
+  try {
+    const response = await apiClient.post('/balance/transfers/make', data);
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Make Transfer');
+  }
+};
+
+export const getUserTransfers = async (): Promise<Transfer[]> => {
+  try {
+    const response = await apiClient.get('/balance/transfers/user');
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw error.response.data.message;
+    }
+    throw new Error('Failed to Fetch User Transfers');
   }
 };
