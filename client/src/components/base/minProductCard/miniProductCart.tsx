@@ -16,6 +16,7 @@ import {
   getshoppingCart,
 } from '../../../features/shoppingCart/shoppingCartThunk';
 import { useRouter } from '@tanstack/react-router';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
   name,
@@ -62,11 +63,11 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
         </Box>
         <Box className="product-price">
           <span className="new-price text-base">
-            ${priceWithDiscount.toFixed(2)}
+          {CURRENCY_SYMBOL}{priceWithDiscount.toFixed(2)}
           </span>
           {price && (
             <span className="old-price ml-1 text-sm text-gray-600 line-through">
-              ${price.toFixed(2)}
+              {CURRENCY_SYMBOL}{price.toFixed(2)}
             </span>
           )}
         </Box>
