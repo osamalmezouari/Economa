@@ -20,6 +20,7 @@ import { AppDispatch, RootState } from '../../../../../app/store';
 import { getRefillInsightsYearlyChart } from '../../../../../features/RefillInsights/refillInsightsThunk';
 import { formatNumber } from '../../../../../utils/format-number';
 import { CustomTooltip } from '../../../../base/charts/custom-tooltip';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 
 export default function RefillYearlyChart() {
   const dispatch = useDispatch<AppDispatch>();
@@ -50,7 +51,7 @@ export default function RefillYearlyChart() {
         <Typography variant="h6">Yearly Requests Overview</Typography>
         <div className="mb-4 mt-1 flex items-center gap-2">
           <Typography variant="h4" fontWeight="bold">
-            ${data.yearTotal}
+          {CURRENCY_SYMBOL}{data.yearTotal}
           </Typography>
           <span className="flex items-center gap-1 text-green-dark">
             <TrendingUpIcon className="h-auto w-5 text-primary-main" />
