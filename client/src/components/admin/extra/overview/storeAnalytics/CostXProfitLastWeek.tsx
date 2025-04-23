@@ -17,6 +17,7 @@ import {
 import { CustomYAxisTick } from '../../../../base/charts/custom-yaxis-tick';
 import { CustomTooltip } from '../../../../base/charts/custom-tooltip';
 import { formatNumber } from '../../../../../utils/format-number';
+import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
 import cn from '../../../../../utils/class-names';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../../app/store';
@@ -50,7 +51,7 @@ export default function CostXProfitLastWeek({
         </Typography>
         <div className="flex items-center justify-between">
           <Typography variant="h3" className="me-2 font-semibold">
-            ${totalProfitLastWeek.toFixed(2)}
+            {CURRENCY_SYMBOL} {totalProfitLastWeek.toFixed(2)}
           </Typography>
           <Box className={'flex gap-4 mt-2'}>
             <Box>
@@ -148,11 +149,11 @@ export default function CostXProfitLastWeek({
                     value: formatNumber(Number(payload.value)),
                   };
                   return (
-                    <CustomYAxisTick prefix={'$'} payload={pl} {...rest} />
+                    <CustomYAxisTick prefix={CURRENCY_SYMBOL} payload={pl} {...rest} />
                   );
                 }}
               />
-              <Tooltip content={<CustomTooltip formattedNumber prefix="$" />} />
+              <Tooltip content={<CustomTooltip formattedNumber prefix={CURRENCY_SYMBOL} />} />
               <Bar
                 dataKey="cost"
                 barSize={40}
