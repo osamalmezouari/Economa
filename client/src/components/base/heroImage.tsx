@@ -1,6 +1,7 @@
 import { KeyboardDoubleArrowRight } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
 import { useRouter } from '@tanstack/react-router';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 const HeroImage = () => {
   const router = useRouter();
   return (
@@ -18,7 +19,7 @@ const HeroImage = () => {
             className="-tracking-tighter font-secondary"
             color="primary"
           >
-            Starting at {`10.00`}$
+            Starting at {`10.00`}{CURRENCY_SYMBOL}
           </Typography>
           <Typography
             variant="h1"
