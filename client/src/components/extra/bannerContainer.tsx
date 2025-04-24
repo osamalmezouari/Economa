@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material';
-import { BannerCardProps } from '../../base/bannerCard/interface.ts';
-import BannerCard from '../../base/bannerCard/bannerCard.tsx';
+import { BannerCardProps } from '../base/bannerCard/interface';
+import BannerCard from '../base/bannerCard/bannerCard';
+
 
 const bannerData: BannerCardProps[] = [
   {
