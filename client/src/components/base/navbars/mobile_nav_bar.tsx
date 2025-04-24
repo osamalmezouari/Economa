@@ -1,5 +1,5 @@
 import { FaBars } from 'react-icons/fa6';
-import { Badge, Box, InputAdornment, TextField } from '@mui/material';
+import { Badge, Box, CircularProgress, InputAdornment, TextField } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import { FiHome } from 'react-icons/fi';
 import { BiStoreAlt } from 'react-icons/bi';
@@ -13,12 +13,14 @@ import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
 import { AppDispatch } from '../../../app/store';
 import { useDispatch } from 'react-redux';
-import useAuth from '../../../hooks/useAuth';
+import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
+import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
+import { useAuth } from '../../../context/AuthContext';
 
 const Mobile_nav_bar = () => {
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-/*   const { isAuthenticated, isLoading } = useAuth(); */
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
 
   const handleClick = () => {
@@ -40,30 +42,43 @@ const Mobile_nav_bar = () => {
 
         {/* Right Items */}
         <Box component={'div'} className="flex gap-6">
-          {/* Login */}
-          <IoPersonOutline
-            fontSize={24}
-            className="cursor-pointer"
-            onClick={() => router.navigate({ to:'/Economa/login' })}
-          />
+          {isLoading ? (
+            <CircularProgress size={20} color="primary" />
+          ) : isAuthenticated ? (
+            <>
+              {/* Profile when logged in */}
+              <IoPersonOutline
+                fontSize={24}
+                className="cursor-pointer"
+                onClick={() => router.navigate({ to:'/Economa' })}
+              />
+              
+              {/* Wishlist */}
+              <Badge badgeContent={3} color="primary">
+                <GrFavorite
+                  fontSize={24}
+                  className="cursor-pointer"
+                  onClick={() => dispatch(setDisplayWishlist())}
+                />
+              </Badge>
 
-          {/* Wishlist */}
-          <Badge badgeContent={3} color="primary">
-            <GrFavorite
+              {/* Cart */}
+              <Badge badgeContent={5} color="primary">
+                <TbShoppingBag
+                  fontSize={24}
+                  className="cursor-pointer"
+                  onClick={() => dispatch(setDisplayCart())}
+                />
+              </Badge>
+            </>
+          ) : (
+            /* Login when not authenticated */
+            <IoPersonOutline
               fontSize={24}
               className="cursor-pointer"
-              onClick={() => console.log('Open Wishlist')}
+              onClick={() => router.navigate({ to:'/Economa/login' })}
             />
-          </Badge>
-
-          {/* Cart */}
-          <Badge badgeContent={5} color="primary">
-            <TbShoppingBag
-              fontSize={24}
-              className="cursor-pointer"
-              onClick={() => console.log('Open Cart')}
-            />
-          </Badge>
+          )}
         </Box>
       </Box>
 
