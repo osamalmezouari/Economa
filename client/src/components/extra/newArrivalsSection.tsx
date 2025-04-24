@@ -1,11 +1,13 @@
-import ProductnewArrivalsContainer from "./productnewArrivalsContainer";
-import TitleTwo from "./Titles/TitleTwo";
-
+import ProductnewArrivalsContainer from './productnewArrivalsContainer';
+import HeroTitle from './Titles/HeroTitle';
 
 const NewArrivalsSection = () => {
   return (
     <>
-      <TitleTwo />
+      <HeroTitle
+        title={'New Arrivals'}
+        subtitle={'Shop online for new arrivals and get free shipping!'}
+      />
       <ProductnewArrivalsContainer />
     </>
   );
