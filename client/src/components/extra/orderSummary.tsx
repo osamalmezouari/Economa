@@ -15,6 +15,7 @@ import { useRouter } from '@tanstack/react-router';
 import { useState } from 'react';
 import { verfyCoupon } from '../../features/coupon/couponThunk';
 import { verfy_coupon_type } from '../../types/coupon';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 const OrderSummary = () => {
   const Router = useRouter();
@@ -73,11 +74,11 @@ const OrderSummary = () => {
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1 }}>
         <Typography variant="body2">Base Price</Typography>
-        <Typography variant="body2">${basePrice.toFixed(2)}</Typography>
+        <Typography variant="body2">{CURRENCY_SYMBOL} {basePrice.toFixed(2)}</Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
         <Typography variant="body2">Tax</Typography>
-        <Typography variant="body2">${vat.toFixed(2)}</Typography>
+        <Typography variant="body2">{CURRENCY_SYMBOL} {vat.toFixed(2)}</Typography>
       </Box>
       <TextField
         variant="outlined"
@@ -89,7 +90,7 @@ const OrderSummary = () => {
         helperText={
           data.verified && !error ? (
             <p className="text-primary-main">
-              {` - ${data.discount_value} ${data.discount_type === 'Percentage' ? '%' : '$'} discount was
+              {` - ${data.discount_value} ${data.discount_type === 'Percentage' ? '%' : CURRENCY_SYMBOL} discount was
               applied `}
             </p>
           ) : (
@@ -154,12 +155,16 @@ const OrderSummary = () => {
                 ${totalPrice.toFixed(2)}
               </Typography>
               <Typography variant="body2" fontWeight="bold">
-                {'$' + (totalPrice - data.discount_value).toFixed(2)}
+                {CURRENCY_SYMBOL + ' ' +
+                  (
+                    totalPrice -
+                    totalPrice * (data.discount_value / 100)
+                  ).toFixed(2)}
               </Typography>
             </Typography>
           )
         ) : !loading ? (
-          <Typography variant="body2">${totalPrice.toFixed(2)}</Typography>
+          <Typography variant="body2">{CURRENCY_SYMBOL} {totalPrice.toFixed(2)}</Typography>
         ) : (
           ''
         )}
