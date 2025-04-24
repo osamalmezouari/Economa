@@ -16,6 +16,7 @@ import { AppDispatch, RootState } from '../../../../../app/store';
 import { getusersTransfers } from '../../../../../features/RefillInsights/refillInsightsThunk';
 import { UserTransfer } from '../../../../../types/RefillInsights';
 import { CURRENCY_SYMBOL } from '../../../../../utils/constants';
+import DateCell from '../../../base/dateCell';
 
 const UsersTransfers = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -107,7 +108,8 @@ const UsersTransfers = () => {
               {/* Amount */}
               <TableCell>
                 <Typography variant="body1" fontWeight={500}>
-                {CURRENCY_SYMBOL}{transfer.amount.toFixed(2)}
+                  {CURRENCY_SYMBOL}
+                  {transfer.amount.toFixed(2)}
                 </Typography>
               </TableCell>
 
@@ -120,9 +122,7 @@ const UsersTransfers = () => {
 
               {/* Date */}
               <TableCell>
-                <Typography variant="body2">
-                  {new Date(transfer.createdAt).toLocaleDateString()}
-                </Typography>
+                <DateCell date={`${transfer.createdAt}`} />
               </TableCell>
             </TableRow>
           ))}
