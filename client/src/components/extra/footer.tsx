@@ -3,20 +3,7 @@ import { Container, Grid, Typography, IconButton, Snackbar, Alert } from "@mui/m
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
     const [openSnackbar, setOpenSnackbar] = useState(false);
-
-    const handleSubscribe = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError("Please enter a valid email address");
-            return;
-        }
-        setError("");
-        setOpenSnackbar(true);
-        setEmail("");
-    };
 
     const handleCloseSnackbar = () => {
         setOpenSnackbar(false);
