@@ -5,8 +5,10 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
+  Divider,
   Rating,
   Tooltip,
+  Typography,
 } from '@mui/material';
 import { GrView } from 'react-icons/gr';
 import { IoBagAdd, IoGitCompare, IoHeart } from 'react-icons/io5';
@@ -63,8 +65,8 @@ export default function ProductCard({
   return (
     <Card
       sx={{
-        maxWidth: 260,
-        maxHeight: 380,
+        maxWidth: 255,
+        maxHeight: 400,
         borderRadius: '2px',
         border: '1px solid #eeeeee',
         margin: 'auto',
@@ -74,8 +76,8 @@ export default function ProductCard({
       className="group relative overflow-hidden"
     >
       <CardMedia
-        sx={{ height: 240 }}
-        className="bg-cover bg-center border-b-2 relative group-hover:scale-105 transition-transform duration-300"
+        sx={{ height: 220, width: 160, margin: 'auto' }}
+        className="bg-contain bg-center transition-transform duration-300"
         image={imageLink}
         title={name}
       >
@@ -95,8 +97,8 @@ export default function ProductCard({
           </Badge>
         </div>
       </CardMedia>
-
-      <Box className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-7/12 flex h-max top-[240px] group-hover:top-[190px] hover:z-10 items-center mx-auto justify-between bg-slate-100 p-2 rounded-xl">
+      <Divider className="h-1" />
+      <Box className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 w-7/12 flex h-max top-[240px] group-hover:top-[170px] hover:z-10 items-center mx-auto justify-between bg-slate-100 p-2 rounded-xl">
         <Tooltip title="Add to cart">
           <Box
             component={'div'}
@@ -163,37 +165,51 @@ export default function ProductCard({
         </Tooltip>
       </Box>
 
-      <CardContent sx={{ padding: '5px 10px' }}>
-        <p className="my-1 text-secondary-lighter capitalize">
-          {categoryName} - {name}
-        </p>
-        <p
-          onClick={() =>
-            Router.navigate({
-              to: `/Economa/Store/${id}`,
-            })
-          }
-          className="text-secondary-main capitalize mb-3 max-h-6 overflow-hidden text-[14px] hover:text-primary-main cursor-pointer transition-colors duration-500"
-        >
-          {description} ...
-        </p>
-        <Rating
-          name="half-rating"
-          size="small"
-          value={productAvgRating}
-          precision={0.5}
+      <CardContent
+        sx={{ padding: '5px 10px' }}
+        className="flex flex-col gap-2 h-full"
+      >
+        <Typography
+          variant="body1"
           onClick={() => Router.navigate({ to: `/Economa/Store/${id}` })}
-        />
+          className="my-1 font-main text-secondary-main capitalize hover:text-primary-main cursor-pointer transition-colors duration-500"
+        >
+          {name}
+        </Typography>
+        <p className="text-secondary-main capitalize mb-3 max-h-6 overflow-hidden text-[14px] ">
+          {categoryName}
+        </p>
+        <Box className="flex items-center gap-0">
+          <Rating
+            name="half-rating"
+            size="small"
+            value={productAvgRating}
+            precision={0.5}
+            onClick={() => Router.navigate({ to: `/Economa/Store/${id}` })}
+            sx={{ transform: 'scale(0.75)', transformOrigin: 'left center' }}
+          />
+          <Typography variant="body2" className="mx-0 font-Inria -ml-5">
+            ( 3 )
+          </Typography>
+        </Box>
+
         <Box className="flex gap-8 text-secondary-main">
-          {priceWithDiscount && priceWithDiscount > 0 ? (
+          {priceWithDiscount < price && priceWithDiscount > 0 ? (
             <>
-              <p className="text-secondary-main font-bold">
-              {CURRENCY_SYMBOL}{priceWithDiscount}
+              <p className="text-primary-main font-bold">
+                {CURRENCY_SYMBOL}
+                {priceWithDiscount}
               </p>
-              <p className="line-through">{CURRENCY_SYMBOL}{price}</p>
+              <p className="line-through text-red-500">
+                {CURRENCY_SYMBOL}
+                {price}
+              </p>
             </>
           ) : (
-            <p className="text-secondary-main font-bold">{CURRENCY_SYMBOL}{price}</p>
+            <p className="text-primary-main font-bold">
+              {CURRENCY_SYMBOL}
+              {price}
+            </p>
           )}
         </Box>
       </CardContent>
