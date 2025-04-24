@@ -1,7 +1,6 @@
 import { Typography } from '@mui/material';
 import { WelcomeBannerTypes } from './interface';
 import cn from '../../../../../../utils/class-names';
-
 export default function WelcomeBanner({
   title,
   description,
