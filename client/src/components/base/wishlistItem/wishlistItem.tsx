@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
 import { RemoveCircleSharp } from '@mui/icons-material';
 import { getWishlist, removefromWishList } from '../../../features/wishlist/wishlistThunk';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const WishlistItem = ({
   id,
@@ -46,7 +47,7 @@ const WishlistItem = ({
           {productName}
         </Typography>
         <Typography variant="body2" color="#777" sx={{ mt: 1 }}>
-          <strong>${productPrice.toFixed(2)}</strong> x{' '}
+          <strong>{CURRENCY_SYMBOL}{productPrice.toFixed(2)}</strong> x{' '}
           <span className="text-black">{productunit}</span>
         </Typography>
       </Box>
