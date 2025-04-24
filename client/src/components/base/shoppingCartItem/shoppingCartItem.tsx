@@ -11,6 +11,7 @@ import {
   updatequantity,
 } from '../../../features/shoppingCart/shoppingCartThunk';
 import { useRouter } from '@tanstack/react-router';
+import { CURRENCY_SYMBOL } from '../../../utils/constants';
 
 const ShoppingCartItem = ({
   productName,
@@ -95,7 +96,7 @@ const ShoppingCartItem = ({
           {productName}
         </Typography>
         <Typography variant="body2" color="#777" sx={{ mt: 1 }}>
-          <strong>${productPrice.toFixed(2)}</strong> x{' '}
+          <strong>{CURRENCY_SYMBOL}{productPrice.toFixed(2)}</strong> x{' '}
           <span className="text-black">
             {newQuantity} {productunit}
           </span>
