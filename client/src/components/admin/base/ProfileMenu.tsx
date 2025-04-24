@@ -10,8 +10,12 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { setProfileMenuOpen } from '../../../features/common/commonSlice';
+import { useRouter } from '@tanstack/react-router';
+import useRoleLvl from '../../../hooks/useRolelvl';
+import { useAuth } from '../../../context/AuthContext';
 
 const ProfileMenu = () => {
+  const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
@@ -24,6 +28,7 @@ const ProfileMenu = () => {
   const user = useSelector(
     (state: RootState) => state.user.ShoortedUserInfo.data
   );
+  const { rolelvl } = useRoleLvl();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -35,9 +40,16 @@ const ProfileMenu = () => {
     dispatch(setProfileMenuOpen(false));
   };
 
+  // Import the useAuth hook
+  const { logout } = useAuth();
+
   const handleNavigation = (path: string) => {
-    // Handle navigation - in a real app, this would use your router
-    console.log(`Navigate to: ${path}`);
+    if (path === '/logout') {
+      logout(); // Use the logout function from AuthContext
+      router.navigate({ to: '/Economa' });
+    } else if (path !== '/logout') {
+      router.navigate({ to: path });
+    }
     handleClose();
   };
 
@@ -92,22 +104,20 @@ const ProfileMenu = () => {
           <Box className="py-1">
             <Box
               className="p-2 hover:bg-gray-50 cursor-pointer"
-              onClick={() => handleNavigation('/profile')}
+              onClick={() => handleNavigation('/Economa/User/Profile')}
             >
               <Typography variant="body2">My Profile</Typography>
             </Box>
-            <Box
-              className="p-2 hover:bg-gray-50 cursor-pointer"
-              onClick={() => handleNavigation('/settings')}
-            >
-              <Typography variant="body2">Account Settings</Typography>
-            </Box>
-            <Box
-              className="p-2 hover:bg-gray-50 cursor-pointer"
-              onClick={() => handleNavigation('/activity')}
-            >
-              <Typography variant="body2">Activity Log</Typography>
-            </Box>
+            {rolelvl < 3 ? (
+              <Box
+                className="p-2 hover:bg-gray-50 cursor-pointer"
+                onClick={() => handleNavigation('/Economa/admin/Dashboard')}
+              >
+                <Typography variant="body2">Dashboard</Typography>
+              </Box>
+            ) : (
+              ''
+            )}
           </Box>
 
           <Divider className="my-2" />
