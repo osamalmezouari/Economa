@@ -16,6 +16,7 @@ import { BiWallet } from 'react-icons/bi';
 import { placeandpay } from '../../features/order/orderThunk';
 import { FormEvent } from 'react';
 import { getshoppingCart } from '../../features/shoppingCart/shoppingCartThunk';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 const OrderValidationForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -80,7 +81,7 @@ const OrderValidationForm = () => {
             ? data.discount_type === 'Percentage'
               ? (totalPrice - totalPrice * (data.discount_value / 100)).toFixed(
                   2
-                ) + '$'
+                ) + `${CURRENCY_SYMBOL}`
               : (totalPrice - data.discount_value).toFixed(2) + '$'
             : !loading
               ? totalPrice.toFixed(2) + '$'
