@@ -4,10 +4,11 @@ import {useSelector } from 'react-redux';
 import {  RootState } from '../../app/store';
 import { FaXmark } from 'react-icons/fa6';
 import EmptyBox from '../base/empty-box';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 const OrderItem = () => {
   const Router = useRouter();
-  const { loading, error, data } = useSelector(
+  const { loading,  data } = useSelector(
     (state: RootState) => state.shoppingCart.shoppingCartWithProducts
   );
   const { loading: createloading } = useSelector(
@@ -51,7 +52,7 @@ const OrderItem = () => {
                     className=" text-secondary-main tracking-widest"
                     variant="body2"
                   >
-                    ${item.productPrice.toFixed(2)}
+                    {CURRENCY_SYMBOL}{item.productPrice.toFixed(2)}
                   </Typography>
                   <FaXmark fontSize={'10px'} />
                   <Typography
@@ -66,7 +67,7 @@ const OrderItem = () => {
                 className="!ml-auto w-max !font-Inria !font-bold text-primary-main"
                 variant="body1"
               >
-                $
+                {CURRENCY_SYMBOL}
                 {item.productPrice * item.quantity > 0 &&
                   (item.productPrice * item.quantity).toFixed(2)}
               </Typography>
