@@ -1,29 +1,36 @@
 import {
+  Box,
   Button,
   Container,
+  IconButton,
   InputAdornment,
   Stack,
   TextField,
+  Typography,
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { BiSearch, BiSolidUserCircle } from 'react-icons/bi';
+import { BiSearch } from 'react-icons/bi';
 import { FiHome } from 'react-icons/fi';
 import { BiStoreAlt } from 'react-icons/bi';
 import { RiDiscountPercentLine } from 'react-icons/ri';
 import { LuGitCompare } from 'react-icons/lu';
-import { IoBookmark } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../app/store';
 import { setDisplayCart } from '../../../features/shoppingCart/shoppingCartSlice';
 import { setDisplayWishlist } from '../../../features/wishlist/wishlistSlice';
 import { useRouter } from '@tanstack/react-router';
 import { setFilters } from '../../../features/products/productSlice';
-import { FaBasketShopping } from 'react-icons/fa6';
 import Logo from '../../icons/logo';
+import Account from '../../icons/Account';
+import ShoopingCart from '../../icons/shoopingCart';
+import Favorite from '../../icons/favorite';
+import { useAuth } from '../../../context/AuthContext';
+import ProfileMenu from '../../admin/base/ProfileMenu';
 
 const Desktop_nav_bar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const { isAuthenticated, isLoading } = useAuth();
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setFilters({ key: 'search', value: event.target.value }));
   };
@@ -32,18 +39,12 @@ const Desktop_nav_bar = () => {
     <>
       <Stack className={'border-b-2 bg-gray'}>
         <Container style={{ maxWidth: '1300px' }}>
-          <Grid
-            container
-            spacing={2}
-            className={' items-center justify-between h-24'}
-          >
-            {/* Logo */}
+          <Grid container spacing={2} className={' items-center h-24'}>
             <Grid size={2.5}>
               <Logo />
             </Grid>
 
-            {/* Search Bar */}
-            <Grid size={5.5}>
+            <Grid size={7}>
               <TextField
                 variant="outlined"
                 fullWidth
@@ -66,42 +67,56 @@ const Desktop_nav_bar = () => {
                 }}
               />
             </Grid>
-            <Grid size={4} className="flex justify-end gap-2 ">
-              {/* Login */}
-              <Button
-                variant="contained"
-                onClick={() =>
-                  router.navigate({
-                    to: '/Economa/login',
-                  })
-                }
-                className="rounded h-[40px] "
-              >
-                <BiSolidUserCircle className="h-4 w-4 "></BiSolidUserCircle>
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  dispatch({ type: 'setDisplayCart', payload: false });
-                  dispatch(setDisplayWishlist());
-                }}
-                className="rounded "
-              >
-                <IoBookmark className=" w-4 h-4  "></IoBookmark>
-              </Button>
+            <Grid size={2} className=" flex ml-8 gap-4 items-center">
+              {isLoading ? (
+                <Box className="ml-auto    flex items-center">
+                  <Typography variant="body2" className="font-Inria">
+                    Loading...
+                  </Typography>
+                </Box>
+              ) : isAuthenticated ? (
+                <>
+                  <ProfileMenu />
+                  <IconButton
+                    onClick={() => {
+                      dispatch({ type: 'setDisplayCart', payload: false });
+                      dispatch(setDisplayWishlist());
+                    }}
+                    className="  cursor-pointer p-2 text-primary-main w-10 h-10"
+                  >
+                    <Favorite className="h-6 w-6" />
+                  </IconButton>
 
-              {/* Cart */}
-              <Button
-                variant="contained"
-                onClick={() => {
-                  dispatch({ type: 'setDisplayWishlist', payload: false });
-                  dispatch(setDisplayCart());
-                }}
-                className="rounded "
-              >
-                <FaBasketShopping className="h-6 w-4"></FaBasketShopping>
-              </Button>
-            
+                  <IconButton
+                    onClick={() => {
+                      dispatch({ type: 'setDisplayWishlist', payload: false });
+                      dispatch(setDisplayCart());
+                    }}
+                    className="  cursor-pointer p-2 text-primary-main w-10 h-10"
+                  >
+                    <ShoopingCart className="h-6 w-6 " />
+                  </IconButton>
+                </>
+              ) : (
+                <Box
+                  onClick={() => {
+                    router.navigate({
+                      to: '/Economa/login',
+                    });
+                  }}
+                  className="ml-auto mr-4 cursor-pointer"
+                >
+                  <Box className={'flex flex-col items-center'}>
+                    <Account className="h-6 w-6" />
+                    <Typography
+                      variant="body2"
+                      className="font-bold font-Inria mt-1"
+                    >
+                      Account
+                    </Typography>
+                  </Box>
+                </Box>
+              )}
             </Grid>
           </Grid>
         </Container>
@@ -119,7 +134,6 @@ const Desktop_nav_bar = () => {
           borderStyle: 'solid',
         }}
       >
-        {' '}
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<FiHome />}
@@ -137,7 +151,6 @@ const Desktop_nav_bar = () => {
         <Button
           className="flex gap-2 w-28 bg-main-main ml-2 h-14"
           startIcon={<RiDiscountPercentLine />}
-          /* onClick={() => router.navigate({ to:'/Economa/offers' })} */
         >
           <p className="text-secondary-darker font-main">Offers</p>
         </Button>
