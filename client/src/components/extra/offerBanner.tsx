@@ -1,24 +1,33 @@
 import { Box } from '@mui/material';
-import PromoCard from '../base/PromoCard/PromoCard';
+import PromoCardlefttitle from '../base/PromoCard/PromoCard-LT';
 
 const OfferBanner = () => {
   return (
-    <Box className=" max-w-[1350px] mt-16 m-auto grid grid-cols-1 xl:grid-cols-2 gap-4">
+    <Box className=" max-w-[1300px] mt-4 m-auto grid grid-cols-3 gap-8 h-full">
       <Box className="w-full">
-        <PromoCard
-          image={'/assets/images/storebanner1.jpg'}
-          title={'Fresh Fruits'}
+        <PromoCardlefttitle
+          image={'/assets/images/banner-01.jpg'}
+          title={'We are here for shopping lovers'}
           subtitle={'Special flavor.'}
-          discountText={'Limited time: 10% off!'}
+          discountText={'Only this Week'}
           buttonText={'Shop now'}
         />
       </Box>
       <Box className="w-full">
-        <PromoCard
-          image={'/assets/images/storebanner2.jpg'}
-          title={'Fastfood'}
+        <PromoCardlefttitle
+          image={'/assets/images/banner-02.jpg'}
+          title={'Get pocket products with us'}
           subtitle={'Healthy meal.'}
-          discountText={'Limited time: 10% off!'}
+          discountText={'Only this Week'}
+          buttonText={'Shop now'}
+        />
+      </Box>
+      <Box className="w-full">
+        <PromoCardlefttitle
+          image={'/assets/images/banner-03.jpg'}
+          title={'Grocery store at the center  city'}
+          subtitle={'Healthy meal.'}
+          discountText={'Only this Week'}
           buttonText={'Shop now'}
         />
       </Box>
