@@ -26,7 +26,6 @@ const StoreFilter = () => {
 
   const handleWeightChange = (weight: string) => {
     dispatch(setFilters({ key: 'weight', value: weight }));
-
   };
 
   const handlePriceChange = (event: any, newValue: number | number[]) => {
@@ -34,17 +33,14 @@ const StoreFilter = () => {
       dispatch(setFilters({ key: 'Minprice', value: newValue[0] }));
       dispatch(setFilters({ key: 'Maxprice', value: newValue[1] }));
     }
-
   };
-
-
 
   return (
     <Grid
       item
       lg={3}
-      className="rounded border"
-      sx={{ marginTop: '20px', marginBottom: '20px', padding: '10px' }}
+      className="rounded border ml-[20px]"
+      sx={{ marginTop: '20px', marginBottom: '20px', padding: '20px' }}
     >
       <Box>
         <Typography variant="h6" color="secondary.main">
@@ -56,7 +52,6 @@ const StoreFilter = () => {
             placeholder="Search for a product"
             value={filters.search} // Set value from Redux store
             onChange={handleSearchChange}
-
           />
         </Typography>
       </Box>
@@ -176,6 +171,7 @@ const StoreFilter = () => {
           />
         </FormGroup>
       </Box>
+      <Divider />
       <Box className="py-2">
         <Typography variant="h6" className="pb-2" color="secondary.main">
           Price
@@ -187,7 +183,7 @@ const StoreFilter = () => {
             onChange={handlePriceChange}
             valueLabelDisplay="auto"
             min={0}
-            max={1000} 
+            max={1000}
           />
         </Box>
       </Box>
