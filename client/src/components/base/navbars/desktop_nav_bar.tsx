@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Container,
-  IconButton,
   InputAdornment,
   Stack,
   TextField,
@@ -44,7 +43,7 @@ const Desktop_nav_bar = () => {
               <Logo />
             </Grid>
 
-            <Grid size={7}>
+            <Grid size={6}>
               <TextField
                 variant="outlined"
                 fullWidth
@@ -77,25 +76,57 @@ const Desktop_nav_bar = () => {
               ) : isAuthenticated ? (
                 <>
                   <ProfileMenu />
-                  <IconButton
+                  <Box
                     onClick={() => {
                       dispatch({ type: 'setDisplayCart', payload: false });
                       dispatch(setDisplayWishlist());
                     }}
-                    className="  cursor-pointer p-2 text-primary-main w-10 h-10"
+                    className="ml-auto mr-4 cursor-pointer"
                   >
-                    <Favorite className="h-6 w-6" />
-                  </IconButton>
+                    <Box className={'flex items-center gap-4'}>
+                      <Favorite className="h-6 w-6" />
+                      <Box>
+                        <Typography
+                          variant="body2"
+                          className="font-main text-secondary-light my-0"
+                        >
+                          Saved
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          className="font-bold font-Inria mt-[1px]"
+                        >
+                          Wishlist
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
 
-                  <IconButton
+                  <Box
                     onClick={() => {
                       dispatch({ type: 'setDisplayWishlist', payload: false });
                       dispatch(setDisplayCart());
                     }}
-                    className="  cursor-pointer p-2 text-primary-main w-10 h-10"
+                    className="ml-auto mr-4 cursor-pointer"
                   >
-                    <ShoopingCart className="h-6 w-6 " />
-                  </IconButton>
+                    <Box className={'flex items-center gap-4'}>
+                      <ShoopingCart className="h-6 w-6" />
+                      <Box>
+                        <Typography
+                          variant="body2"
+                          className="font-main text-secondary-light my-0"
+                        >
+                          Cart
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          className="font-bold font-Inria mt-[1px]"
+                        >
+                          Shooping
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
                 </>
               ) : (
                 <Box
@@ -106,14 +137,22 @@ const Desktop_nav_bar = () => {
                   }}
                   className="ml-auto mr-4 cursor-pointer"
                 >
-                  <Box className={'flex flex-col items-center'}>
+                  <Box className={'flex items-center gap-4'}>
                     <Account className="h-6 w-6" />
-                    <Typography
-                      variant="body2"
-                      className="font-bold font-Inria mt-1"
-                    >
-                      Account
-                    </Typography>
+                    <Box>
+                      <Typography
+                        variant="body2"
+                        className="font-main text-secondary-light my-0"
+                      >
+                        Login
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        className="font-bold font-Inria mt-[1px]"
+                      >
+                        Account
+                      </Typography>
+                    </Box>
                   </Box>
                 </Box>
               )}
