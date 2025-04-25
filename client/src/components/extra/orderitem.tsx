@@ -1,14 +1,14 @@
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { useRouter } from '@tanstack/react-router';
-import {useSelector } from 'react-redux';
-import {  RootState } from '../../app/store';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 import { FaXmark } from 'react-icons/fa6';
 import EmptyBox from '../base/empty-box';
 import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 const OrderItem = () => {
   const Router = useRouter();
-  const { loading,  data } = useSelector(
+  const { loading, data } = useSelector(
     (state: RootState) => state.shoppingCart.shoppingCartWithProducts
   );
   const { loading: createloading } = useSelector(
@@ -28,22 +28,22 @@ const OrderItem = () => {
         data.length > 0 &&
         data.map((item) => {
           return (
-            <Box className="w-full m-auto h-max p-3 flex flex-row items-center   border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
+            <Box className="w-full m-auto h-max p-3 my-2 group flex flex-row items-center   border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
               <Box className="product-image mr-3 relative ">
                 <img
                   src={item.svgLink}
                   alt={''}
-                  className="w-[70px] h-[70px] rounded-md border border-solid border-gray-200 object-cover"
+                  className="min-w-[70px] min-h-[70px] p-2 bg-white rounded-md border border-solid border-gray-200 object-cover"
                 />
               </Box>
 
-              <Box className="flex flex-col justify-center  gap-x-2">
+              <Box className="flex flex-col justify-center group-hover: gap-x-2">
                 <Typography
                   onClick={() =>
                     Router.navigate({ to: `/Store/${item.productId}` })
                   }
                   variant={'body2'}
-                  className="cursor-pointer !font-main !font-bold hover:text-primary-main tracking-wide capitalize  mb-1"
+                  className="cursor-pointer !font-main !font-bold group-hover:text-primary-main tracking-wide capitalize  mb-1"
                 >
                   {item.productName}
                 </Typography>
@@ -52,7 +52,8 @@ const OrderItem = () => {
                     className=" text-secondary-main tracking-widest"
                     variant="body2"
                   >
-                    {CURRENCY_SYMBOL}{item.productPrice.toFixed(2)}
+                    {CURRENCY_SYMBOL}
+                    {item.productPrice.toFixed(2)}
                   </Typography>
                   <FaXmark fontSize={'10px'} />
                   <Typography
