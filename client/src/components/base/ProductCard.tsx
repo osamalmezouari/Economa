@@ -41,6 +41,7 @@ export default function ProductCard({
   priceWithDiscount,
   imageLink,
   unit,
+  reviewsCount,
 }: ProductCardType) {
   const dispatch = useDispatch<AppDispatch>();
   const { loading } = useSelector(
@@ -130,6 +131,7 @@ export default function ProductCard({
                 priceWithDiscount,
                 imageLink,
                 unit,
+                reviewsCount,
               })
             }
           >
@@ -189,7 +191,7 @@ export default function ProductCard({
             sx={{ transform: 'scale(0.75)', transformOrigin: 'left center' }}
           />
           <Typography variant="body2" className="mx-0 font-Inria -ml-5">
-            ( 3 )
+            ({reviewsCount})
           </Typography>
         </Box>
 
