@@ -140,7 +140,6 @@ export const stockTransaction = async (page: number) => {
   }
 };
 
-
 export const AddStockTransaction = async (data: addStockTransaction) => {
   try {
     const response = await apiClient.post(`products/addStockTransaction`, data);
@@ -150,4 +149,11 @@ export const AddStockTransaction = async (data: addStockTransaction) => {
   }
 };
 
-
+export const getProductsReviews = async () => {
+  try {
+    const response = await apiClient.get(`products/reviews`);
+    return response.data;
+  } catch (error: any) {
+    throw error.response?.data || new Error('Failed to add Transaction');
+  }
+};
