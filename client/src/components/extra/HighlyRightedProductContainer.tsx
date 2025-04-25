@@ -66,6 +66,8 @@ const HighlyRightedProductContainer = () => {
                 priceWithDiscount={productCard.priceWithDiscount}
                 unit={productCard.unit}
                 imageLink={productCard.imageLink}
+                reviewsCount={productCard.reviewsCount}
+
               />
             </div>
           ))}
