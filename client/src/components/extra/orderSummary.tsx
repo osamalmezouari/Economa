@@ -24,7 +24,7 @@ const OrderSummary = () => {
     code: '',
     orderAmountValue: 0,
   });
-  const handleCouponChange = (e) => {
+  const handleCouponChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setcoupon({
       ...coupon,
       code: e.target.value,
@@ -67,18 +67,20 @@ const OrderSummary = () => {
         </Typography>
       </Box>
       <Divider />
-      <Box
-        className={' flex  flex-col  py-2 h-[323px] px-2   overflow-y-scroll'}
-      >
+      <Box className={' flex  flex-col  py-2 h-[323px] px-2 overflow-y-scroll'}>
         <OrderItem />
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1 }}>
         <Typography variant="body2">Base Price</Typography>
-        <Typography variant="body2">{CURRENCY_SYMBOL} {basePrice.toFixed(2)}</Typography>
+        <Typography variant="body2">
+          {CURRENCY_SYMBOL} {basePrice.toFixed(2)}
+        </Typography>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
         <Typography variant="body2">Tax</Typography>
-        <Typography variant="body2">{CURRENCY_SYMBOL} {vat.toFixed(2)}</Typography>
+        <Typography variant="body2">
+          {CURRENCY_SYMBOL} {vat.toFixed(2)}
+        </Typography>
       </Box>
       <TextField
         variant="outlined"
@@ -155,7 +157,8 @@ const OrderSummary = () => {
                 ${totalPrice.toFixed(2)}
               </Typography>
               <Typography variant="body2" fontWeight="bold">
-                {CURRENCY_SYMBOL + ' ' +
+                {CURRENCY_SYMBOL +
+                  ' ' +
                   (
                     totalPrice -
                     totalPrice * (data.discount_value / 100)
@@ -164,7 +167,9 @@ const OrderSummary = () => {
             </Typography>
           )
         ) : !loading ? (
-          <Typography variant="body2">{CURRENCY_SYMBOL} {totalPrice.toFixed(2)}</Typography>
+          <Typography variant="body2">
+            {CURRENCY_SYMBOL} {totalPrice.toFixed(2)}
+          </Typography>
         ) : (
           ''
         )}
