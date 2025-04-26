@@ -3,42 +3,49 @@ import {
   createRoute,
   createRouter,
   Outlet,
+  redirect,
 } from '@tanstack/react-router';
-import Footer from '../components/extra/footer.tsx';
-import { LoginRoute, RegisterRoute } from './authRoute.ts';
-import { indexRoute } from './landingRoute.ts';
-import { compareRoute } from './compareRoute.ts';
-import { StoreRoute } from './storeRoute.ts';
-import Wishlist from '../components/extra/wishlist.tsx';
-import ShoppingCart from '../components/extra/shoopingCart.tsx';
-import { productdetailsRoute } from './productdetailsRoute.ts';
-import { RefillBalanceRequestRoute } from './RefillBalanceRequestRoute.ts';
-import { OrderRoute } from './placeOrderRoute.ts';
-import { OverviewRoute } from './overviewRoute.ts';
-import Sidebar from '../components/admin/extra/sidebar/sideBar.tsx';
+import { isTokenValid } from '../utils/verifyToken';
+import { LoginRoute, RegisterRoute } from './authRoute';
+import { indexRoute } from './landingRoute';
+import { compareRoute } from './compareRoute';
+import { StoreRoute } from './storeRoute';
+import Wishlist from '../components/extra/wishlist';
+import ShoppingCart from '../components/extra/shoopingCart';
+import { productdetailsRoute } from './productdetailsRoute';
+import { placeOrderRoute } from './placeOrderRoute';
+import { OverviewRoute } from './overviewRoute';
+import Sidebar from '../components/extra/sidebar/sideBar';
 import { Box } from '@mui/material';
-import { StoreAnalyticsRoute } from './storeAnalytcsRoute.ts';
-import { RefillInsightsRoute } from './refillInsightsRoute.ts';
-import GlobalAlert from '../components/base/globalAlert.tsx';
-import Navbar from '../components/extra/Navbar.tsx';
-import { ManageProductsRoute } from './manageProductsRoote.ts';
-import Header from '../components/admin/extra/header.tsx';
-import AddProductDialog from '../components/admin/extra/products/manageProducts/addproduct.tsx';
-import { StoreTransactionsRoute } from './stocktransactionsRoute.ts';
-import { ManageCategoriesRoute } from './managecategoriesRoute.ts';
-import AddCategoryDialog from '../components/admin/extra/products/manageCategory/addCategory.tsx';
-import { ManageRefillsRoute } from './manageRefillsRoute.ts';
+import { StoreAnalyticsRoute } from './storeAnalytcsRoute';
+import { RefillInsightsRoute } from './refillInsightsRoute';
+import GlobalAlert from '../components/base/globalAlert';
+import Navbar from '../components/extra/Navbar';
+import { ManageProductsRoute } from './manageProductsRoote';
+import Header from '../components/extra/Header/header';
+import AddProductDialog from '../components/admin/extra/products/manageProducts/addproduct';
+import { StoreTransactionsRoute } from './stocktransactionsRoute';
+import { ManageCategoriesRoute } from './managecategoriesRoute';
+import AddCategoryDialog from '../components/admin/extra/products/manageCategory/addCategory';
+import { ManageRefillsRoute } from './manageRefillsRoute';
 import ReactViewer from 'react-viewer';
-import { AppDispatch, RootState } from '../app/store.ts';
+import { AppDispatch, RootState } from '../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { setVisible } from '../features/common/commonSlice.ts';
-import { OrderHistoryRoute } from './ordersHistoryRoute.ts';
-import { PaymentsTransactionsRoute } from './paymentsTransactionsRoute.ts';
-import { ManageCostumersRoute } from './manageCostumersRoute.ts';
-import { RolesandpermessionsRoute } from './rolesnadpermessionsRoute.ts';
-import SearchDialog from '../components/admin/extra/search/SearchDialog.tsx';
+import { setVisible } from '../features/common/commonSlice';
+import { OrderHistoryRoute } from './ordersHistoryRoute';
+import { PaymentsTransactionsRoute } from './paymentsTransactionsRoute';
+import { ManageCostumersRoute } from './manageCostumersRoute';
+import { RolesandpermessionsRoute } from './rolesnadpermessionsRoute';
+import SearchDialog from '../components/extra/Header/SearchDialog';
+import { OrderVerficationRoute } from './OrderVerficationRoute';
+import { ManageProfileRoute } from './manageProfileRoute';
+import { OrdersRoute } from './OrderRoute';
+import { RefillsRoute } from './userRefillsRoute';
+import { MakeRefillRoute } from './MakeRefillRoute';
+import { MakeTransferRoute } from './MakeTransferRoute';
+import Footer from '../components/extra/footer';
 
-// Define the root route
+// --- Root Route ---
 export const rootRoute = createRootRoute({
   component: RootComponent,
 });
@@ -47,7 +54,7 @@ function RootComponent() {
   return <Outlet />;
 }
 
-// Define the main route
+// --- Main Route ---
 export const mainRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/Economa',
@@ -67,14 +74,23 @@ function MainComponent() {
   );
 }
 
-// Define the admin route
+// --- Admin Route ---
 export const adminRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'Economa/Admin/Dashboard',
-  component: AdminRoute,
+  component: AdminRouteComponent,
+  beforeLoad: async () => {
+    const TokenValid = await isTokenValid();
+    if (!TokenValid) {
+      throw redirect({
+        to: '/Economa',
+        replace: true,
+      });
+    }
+  },
 });
 
-function AdminRoute() {
+function AdminRouteComponent() {
   const dispatch = useDispatch<AppDispatch>();
   const { visible, imagePreview } = useSelector(
     (state: RootState) => state.common.imagePreviewState
@@ -82,24 +98,11 @@ function AdminRoute() {
 
   return (
     <Box display="flex" flexDirection="row" height="100vh">
-      <Box
-        sx={{
-          width: '288px', // Sidebar width
-          flexShrink: 0,
-        }}
-      >
+      <Box sx={{ width: '288px', flexShrink: 0 }}>
         <Sidebar />
       </Box>
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        <Box>
-          <Header />
-        </Box>
+      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        <Header />
         <Box p={2} flexGrow={1}>
           <Outlet />
           <AddProductDialog />
@@ -116,39 +119,90 @@ function AdminRoute() {
   );
 }
 
-export default AdminRoute;
-// Create the route tree
+// --- User Route ---
+export const UserRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: 'Economa/User/Profile',
+  component: UserRouteComponent,
+  beforeLoad: async () => {
+    const TokenValid = await isTokenValid();
+    if (!TokenValid) {
+      throw redirect({
+        to: '/Economa',
+        replace: true,
+      });
+    }
+  },
+});
+
+function UserRouteComponent() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { visible, imagePreview } = useSelector(
+    (state: RootState) => state.common.imagePreviewState
+  );
+
+  return (
+    <Box display="flex" flexDirection="row" height="100vh">
+      <Box sx={{ width: '288px', flexShrink: 0 }}>
+        <Sidebar />
+      </Box>
+      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        <Header />
+        <Box p={2} flexGrow={1}>
+          <Outlet />
+          <ReactViewer
+            visible={visible}
+            onClose={() => dispatch(setVisible(false))}
+            images={[{ src: imagePreview, alt: 'Preview' }]}
+          />
+          <SearchDialog />
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+// --- Route Tree ---
 const routeTree = rootRoute.addChildren([
-  mainRoute,
-  adminRoute,
-  RegisterRoute,
-  LoginRoute,
-  indexRoute,
-  compareRoute,
-  StoreRoute,
-  productdetailsRoute,
-  RefillBalanceRequestRoute,
-  OrderRoute,
-  OverviewRoute,
-  RefillInsightsRoute,
-  StoreAnalyticsRoute,
-  ManageProductsRoute,
-  StoreTransactionsRoute,
-  ManageCategoriesRoute,
-  ManageRefillsRoute,
-  OrderHistoryRoute,
-  PaymentsTransactionsRoute,
-  ManageCostumersRoute,
-  RolesandpermessionsRoute,
+  mainRoute.addChildren([
+    RegisterRoute,
+    LoginRoute,
+    indexRoute,
+    compareRoute,
+    StoreRoute,
+    productdetailsRoute,
+    placeOrderRoute,
+  ]),
+  adminRoute.addChildren([
+    OverviewRoute,
+    RefillInsightsRoute,
+    StoreAnalyticsRoute,
+    ManageProductsRoute,
+    StoreTransactionsRoute,
+    ManageCategoriesRoute,
+    ManageRefillsRoute,
+    OrderHistoryRoute,
+    PaymentsTransactionsRoute,
+    ManageCostumersRoute,
+    RolesandpermessionsRoute,
+    OrderVerficationRoute,
+  ]),
+  UserRoute.addChildren([
+    ManageProfileRoute,
+    OrdersRoute,
+    RefillsRoute,
+    MakeRefillRoute,
+    MakeTransferRoute,
+  ]),
 ]);
 
-// Create the router
+// --- Router ---
 export const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
 });
 
-// Register the router type
+// --- Type registration ---
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
