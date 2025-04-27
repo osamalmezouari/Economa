@@ -8,6 +8,7 @@ import {
   getproductsCards,
   getProductsDetails,
   getProductsNewArrivals,
+  getProductsReviews,
   getProductsStore,
   StockTransaction,
   UpdateProduct,
@@ -86,7 +87,7 @@ const initialState: ProductStateType = {
         categoryName: '',
         description: '',
         productAvgRating: 0,
-        price: '',
+        price: 0,
         priceWithDiscount: 0,
         unit: '',
         imageLink: '',
@@ -163,6 +164,11 @@ const initialState: ProductStateType = {
       productId: '',
       unitCost: 0,
     },
+    loading: false,
+    error: '',
+  },
+  testimonials: {
+    data: [],
     loading: false,
     error: '',
   },
@@ -394,6 +400,21 @@ const productsSlice = createSlice({
         state.stockTransactions.loading = false;
         state.stockTransactions.error = '';
         state.stockTransactions.data = action.payload;
+      })
+
+      // Testimonials
+      .addCase(getProductsReviews.pending, (state) => {
+        state.testimonials.loading = true;
+        state.testimonials.error = '';
+      })
+      .addCase(getProductsReviews.rejected, (state, action) => {
+        state.testimonials.loading = false;
+        state.testimonials.error = action.payload as string;
+      })
+      .addCase(getProductsReviews.fulfilled, (state, action) => {
+        state.testimonials.loading = false;
+        state.testimonials.error = '';
+        state.testimonials.data = action.payload;
       });
   },
 });
