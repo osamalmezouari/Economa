@@ -9,6 +9,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 import { BiHeart, BiMinus, BiPlus } from 'react-icons/bi';
 
 import React, { useEffect } from 'react';
@@ -106,7 +107,8 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
           </Box>
           <Box className={'flex item-center py-4 gap-4 '}>
             <p className="font-bold text-2xl text-secondary-dark">
-              ${productdetailsData.priceWithDiscount}
+              {CURRENCY_SYMBOL}
+              {productdetailsData.priceWithDiscount}
             </p>
             <p className="text-primary-main text-2xl font-bold">
               {productdetailsData.priceWithDiscount === productdetailsData.price
@@ -124,7 +126,7 @@ const ProductsDetails = ({ ProductId }: { ProductId: string }) => {
             >
               {productdetailsData.priceWithDiscount === productdetailsData.price
                 ? ''
-                : productdetailsData.price + '$'}
+                : productdetailsData.price + ' ' + CURRENCY_SYMBOL}
             </p>
             <p
               className={`font-bold text-xl ${productdetailsData.inStock ? 'text-primary-main' : 'text-red-400'}`}
