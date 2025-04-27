@@ -48,3 +48,17 @@ export const getOrderById = createAsyncThunk(
     }
   }
 );
+
+export const getUserOrders = createAsyncThunk(
+  'order/getUserOrders',
+  async (data: { page: number }, { rejectWithValue }) => {
+    try {
+      const response = await ordersApi.getUserOrders(data.page);
+      return response;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to fetch user orders'
+      );
+    }
+  }
+);
