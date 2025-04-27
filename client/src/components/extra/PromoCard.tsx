@@ -1,5 +1,5 @@
 import React from 'react';
-import PromoCard from '../base/PromoCard/PromoCard';
+import PromoCard from '../base/PromoCard/PromoCard-LT';
 
 const PromoCardWraper: React.FC = () => {
   return (
