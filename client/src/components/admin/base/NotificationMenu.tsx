@@ -23,6 +23,10 @@ import { getShoortedUserInfo } from '../../../features/user/userThunk';
 
 const getNotificationIcon = (type: string | undefined) => {
   switch (type) {
+    case 'Balance Refill Rejected':
+      return <Box className="p-2 bg-gray-100 rounded-md">❌</Box>; // Red Cross
+    case 'Balance Refill Approved':
+      return <Box className="p-2 bg-gray-100 rounded-md">✅</Box>; // Green Check
     case 'order':
       return <Box className="p-2 bg-gray-100 rounded-md">🛒</Box>;
     case 'system':
@@ -34,7 +38,9 @@ const getNotificationIcon = (type: string | undefined) => {
     case 'user':
       return <Box className="p-2 bg-gray-100 rounded-md">👤</Box>;
     case 'Refill Request':
-      return <Box className="p-2 bg-gray-100 rounded-md">⏳</Box>;
+      return <Box className="p-2 bg-gray-100 rounded-md">⏳</Box>; // Pending
+    default:
+      return <Box className="p-2 bg-gray-100 rounded-md">🔔</Box>; // Default bell
   }
 };
 
@@ -71,12 +77,20 @@ const NotificationBellIcon: React.FC = () => {
 
   useEffect(() => {
     if (!socket) return;
-    socket.on('new_notification', (notification: Notification) => {
+
+    const audio = new Audio('/assets/mp3/notification.mp3');
+
+    const handleNewNotification = () => {
       dispatch(getNotificationList());
-    });
+      audio.play().catch((err) => {
+        console.warn('Audio play failed:', err);
+      });
+    };
+
+    socket.on('new_notification', handleNewNotification);
 
     return () => {
-      socket.off('new_notification');
+      socket.off('new_notification', handleNewNotification);
     };
   }, [socket, dispatch]);
 
