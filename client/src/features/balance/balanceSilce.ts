@@ -3,6 +3,9 @@ import {
   getbalanceCardInfo,
   getRefillList,
   getRequestStatus,
+  getUserRefills,
+  getUserTransfers,
+  makeTransfer,
   refillBalanceRequest,
   UpdateRefillStatus,
 } from './balanceThunk';
@@ -35,7 +38,14 @@ const initialState: balanceStateType = {
       pageCount: 0,
     },
   },
-
+  userRefillsList: {
+    loading: false,
+    error: '',
+    data: {
+      refills: [],
+      pageCount: 0,
+    },
+  },
   updateRefillStatus: {
     loading: false,
     error: '',
@@ -51,6 +61,21 @@ const initialState: balanceStateType = {
   },
   requestIdtoViewStatus: '',
   openRefillStatusModal: false,
+  transferRequest: {
+    loading: false,
+    error: '',
+    data: {
+      receiverEmail: '',
+      amount: 0,
+      description: '',
+      reqStatus: { statusCode: null, message: null },
+    },
+  },
+  userTransfers: {
+    loading: false,
+    error: '',
+    data: [],
+  },
 };
 
 const balanceSlice = createSlice({
@@ -143,6 +168,45 @@ const balanceSlice = createSlice({
       .addCase(getRequestStatus.pending, (state) => {
         state.requestStatus.loading = true;
         state.requestStatus.error = '';
+      })
+      .addCase(getUserRefills.pending, (state) => {
+        state.userRefillsList.loading = true;
+        state.userRefillsList.error = '';
+      })
+      .addCase(getUserRefills.fulfilled, (state, action) => {
+        state.userRefillsList.loading = false;
+        state.userRefillsList.error = '';
+        state.userRefillsList.data = action.payload;
+      })
+      .addCase(getUserRefills.rejected, (state, action) => {
+        state.userRefillsList.loading = false;
+        state.userRefillsList.error = action.payload as string;
+      })
+      .addCase(makeTransfer.pending, (state) => {
+        state.transferRequest.loading = true;
+        state.transferRequest.error = '';
+      })
+      .addCase(makeTransfer.fulfilled, (state, action) => {
+        state.transferRequest.loading = false;
+        state.transferRequest.error = '';
+        state.transferRequest.data = action.payload;
+      })
+      .addCase(makeTransfer.rejected, (state, action) => {
+        state.transferRequest.loading = false;
+        state.transferRequest.error = action.payload as string;
+      })
+      .addCase(getUserTransfers.pending, (state) => {
+        state.userTransfers.loading = true;
+        state.userTransfers.error = '';
+      })
+      .addCase(getUserTransfers.fulfilled, (state, action) => {
+        state.userTransfers.loading = false;
+        state.userTransfers.error = '';
+        state.userTransfers.data = action.payload;
+      })
+      .addCase(getUserTransfers.rejected, (state, action) => {
+        state.userTransfers.loading = false;
+        state.userTransfers.error = action.payload as string;
       });
   },
 });
