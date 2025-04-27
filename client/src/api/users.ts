@@ -74,18 +74,13 @@ export const getUserById = async (id: string) => {
   }
 };
 
-
-export const ProfileUpdate = async ( userData: FormData) => {
+export const ProfileUpdate = async (userData: FormData) => {
   try {
-    const response = await apiClient.patch(
-      `/user/ProfileUpdate`,
-      userData,
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      }
-    );
+    const response = await apiClient.patch(`/user/ProfileUpdate`, userData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return response.data;
   } catch (error: any) {
     if (error.response) {
