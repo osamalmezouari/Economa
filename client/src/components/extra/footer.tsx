@@ -17,11 +17,11 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
-  FaCreditCard,
-  FaPaypal,
-  FaApplePay,
-  FaGooglePay,
-  FaAmazonPay,
+  FaMoneyBillWave,
+  FaQrcode,
+  FaReceipt,
+  FaStore,
+  FaTruck,
 } from 'react-icons/fa';
 import Logo from '../icons/logo';
 
@@ -51,9 +51,9 @@ const Footer = () => {
               <Logo />
             </Box>
             <Typography variant="body2" className="mb-4 max-w-md">
-              Your one-stop destination for quality products at competitive
-              prices. Shop with confidence and enjoy a seamless shopping
-              experience.
+              Your trusted destination for quality products with our unique payment system.
+              Transfer funds to our account, shop with your balance, and pick up in-store
+              or get delivery with QR code verification.
             </Typography>
             <Box className="flex space-x-2">
               <IconButton
@@ -250,22 +250,22 @@ const Footer = () => {
                 variant="body2"
                 className="text-gray-500 mr-2 self-center"
               >
-                Payment Methods:
+                Our System:
               </Typography>
-              <IconButton size="small" className="p-1">
-                <FaCreditCard size={20} />
+              <IconButton size="small" className="p-1" title="Money Transfer">
+                <FaMoneyBillWave size={20} />
               </IconButton>
-              <IconButton size="small" className="p-1">
-                <FaPaypal size={20} />
+              <IconButton size="small" className="p-1" title="Transfer Receipt">
+                <FaReceipt size={20} />
               </IconButton>
-              <IconButton size="small" className="p-1">
-                <FaApplePay size={20} />
+              <IconButton size="small" className="p-1" title="Store Balance">
+                <FaStore size={20} />
               </IconButton>
-              <IconButton size="small" className="p-1">
-                <FaGooglePay size={20} />
+              <IconButton size="small" className="p-1" title="QR Code Verification">
+                <FaQrcode size={20} />
               </IconButton>
-              <IconButton size="small" className="p-1">
-                <FaAmazonPay size={20} />
+              <IconButton size="small" className="p-1" title="Delivery Service">
+                <FaTruck size={20} />
               </IconButton>
             </Box>
           </Grid>
