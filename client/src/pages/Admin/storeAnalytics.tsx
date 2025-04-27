@@ -10,12 +10,15 @@ import TopProducts from '../../components/admin/extra/overview/storeAnalytics/To
 import TopCostumers from '../../components/admin/extra/overview/storeAnalytics/TopCostumers';
 import StockReport from '../../components/admin/extra/overview/storeAnalytics/StockReport';
 import WelcomeBanner from '../../components/admin/extra/overview/storeAnalytics/welcomebanner/welcomeBanner';
-import { AppDispatch } from '../../app/store';
-import { useDispatch } from 'react-redux';
+import { AppDispatch, RootState } from '../../app/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { openAddProductDialog } from '../../features/products/productSlice';
 
 const StoreAnalytics = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const user = useSelector(
+    (state: RootState) => state.user.ShoortedUserInfo.data
+  );
 
   return (
     <Grid container className={'mt-16'}>
@@ -23,8 +26,8 @@ const StoreAnalytics = () => {
         <WelcomeBanner
           title={
             <>
-              Good Morning, <br /> Cameron
-              <HandWaveIcon className="inline-flex h-8 w-8" />
+              Good Morning, <br /> {user.name} 
+              <HandWaveIcon className="inline-flex h-8 w-8 pl-2" />
             </>
           }
           description={
