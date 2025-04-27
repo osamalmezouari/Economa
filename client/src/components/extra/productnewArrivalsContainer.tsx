@@ -51,7 +51,7 @@ const ProductnewArrivalsContainer = () => {
   };
 
   return (
-    <div style={{ margin: 'auto', maxWidth: '1350px', padding: '20px' }}>
+    <div style={{ margin: 'auto', maxWidth: '1350px' }} className="px-[20px]">
       {loading ? (
         <Box className={'w-full flex justify-center items-center py-8'}>
           <CircularProgress className="" />
@@ -59,11 +59,11 @@ const ProductnewArrivalsContainer = () => {
       ) : (
         <>
           {/* First Slider - Group 1 */}
-          <Slider {...sliderSettings} className="mb-6">
+          <Slider {...sliderSettings} className="mb-1">
             {data?.slice(0, Math.ceil(data.length / 2)).map((product) => (
               <div key={product.id}>
                 <Grid container spacing={0}>
-                  <Grid item>
+                  <Grid item xl={12}>
                     <ProductCard
                       id={product.id}
                       discount={product.discount}
@@ -75,6 +75,7 @@ const ProductnewArrivalsContainer = () => {
                       priceWithDiscount={product.priceWithDiscount}
                       unit={product.unit}
                       imageLink={product.imageLink}
+                      reviewsCount={product.reviewsCount}
                     />
                   </Grid>
                 </Grid>
@@ -87,7 +88,7 @@ const ProductnewArrivalsContainer = () => {
               .map((product) => (
                 <div key={product.id}>
                   <Grid container spacing={2}>
-                    <Grid item>
+                    <Grid item xl={12}>
                       <ProductCard
                         id={product.id}
                         discount={product.discount}
@@ -99,6 +100,7 @@ const ProductnewArrivalsContainer = () => {
                         priceWithDiscount={product.priceWithDiscount}
                         unit={product.unit}
                         imageLink={product.imageLink}
+                        reviewsCount={product.reviewsCount}
                       />
                     </Grid>
                   </Grid>
