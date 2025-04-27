@@ -11,9 +11,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { Login } from '../../features/auth/authThunk';
 import { useRouter } from '@tanstack/react-router';
+import { useAuth } from '../../context/AuthContext';
 
 const LoginComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
+  const { login } = useAuth();
   const { loading, error, data } = useSelector(
     (state: RootState) => state.auth.Login
   );
@@ -24,9 +27,14 @@ const LoginComponent = () => {
       email: formData.get('email') as string,
       password: formData.get('password') as string,
     };
-    await dispatch(Login(loginData));
+    const result = await dispatch(Login(loginData));
+    if (result.payload) {
+      // Use the login function from AuthContext instead of reloading
+      login(result.payload as string);
+      router.navigate({ to: '/Economa' });
+    }
   };
-  const Router = useRouter();
+
 
   return (
     <>
@@ -92,7 +100,7 @@ const LoginComponent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <p
-              onClick={() => Router.navigate({ to: '/Economa/Register' })}
+              onClick={() => router.navigate({ to: '/Economa/Register' })}
               className="text-end font-light text-secondary-lighter text-[12px] hover:text-primary-main hover:cursor-pointer hover:underline"
             >
               Don't have an account? Register
