@@ -1,39 +1,40 @@
 import { Box } from '@mui/material';
-import { TbCircleDashedPercentage, TbTruckDelivery } from 'react-icons/tb';
-import { RiMoneyDollarCircleLine } from 'react-icons/ri';
-import { BiSupport } from 'react-icons/bi';
 import ServiceCard from '../base/service-card/ServiceCard';
+import PaymentDocument from '../icons/payment';
+import Discount from '../icons/discount';
+import Quality from '../icons/quality';
+import Dilevry from '../icons/dilevery';
 
 const ServicesContainer = () => {
   return (
-    <Box
-      className={'max-w-[1350px] p-2 flex gap-4 m-auto justify-around my-12'}
-    >
+    <Box className={'max-w-[1300px] flex justify-between gap-6 m-auto  my-12'}>
       <ServiceCard
-        icon={
-          <TbTruckDelivery className="w-12 my-2 h-12 font-light m-auto text-primary-main" />
+        icon={<PaymentDocument className="w-12  h-12 my-2" />}
+        title={'Secure Balance System'}
+        subtitle={
+          'Transfer money to our account and shop with your balance securely'
         }
-        title={'Free Shipping'}
-        subtitle={'Free on US orders over $200'}
       />
       <ServiceCard
-        icon={<BiSupport className="w-20 h-12 my-2 m-auto text-primary-main" />}
-        title={'24/7 Support'}
-        subtitle={'Available around the clock'}
+        icon={<Discount className="w-12 h-12 my-2 " />}
+        title={'QR Code Verification'}
+        subtitle={
+          'Unique QR codes for easy verification at checkout or delivery'
+        }
       />
       <ServiceCard
-        icon={
-          <TbCircleDashedPercentage className="w-20 h-12 my-2 m-auto text-primary-main" />
+        icon={<Quality className="w-12 h-12 my-2 " />}
+        title={'Quality Assurance'}
+        subtitle={
+          'Products verified at pickup or delivery to ensure order accuracy'
         }
-        title={'30-Day Returns'}
-        subtitle={'Easy returns within 30 days'}
       />
       <ServiceCard
-        icon={
-          <RiMoneyDollarCircleLine className="w-20 h-12 my-2 m-auto text-primary-main" />
+        icon={<Dilevry className="w-12 h-12 my-2" />}
+        title={'Flexible Pickup & Delivery'}
+        subtitle={
+          'In-store pickup or home delivery with verified service'
         }
-        title={'Secure Payments'}
-        subtitle={'Your transactions are protected'}
       />
     </Box>
   );
