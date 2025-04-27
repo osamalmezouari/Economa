@@ -29,14 +29,14 @@ const StoreProducts = () => {
 
   return (
     <>
-      <Grid container spacing={2} sx={{ marginTop: '0px' }} className="px-12">
-        {loading  ? (
+      <Grid container spacing={1} sx={{ marginTop: '0px' }} className="">
+        {loading ? (
           <Box className={'w-full flex justify-center items-center py-8'}>
             <CircularProgress />
           </Box>
         ) : (
           products.map((product) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={product.id}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
               <ProductCard
                 id={product.id}
                 discount={product.discount}
@@ -48,6 +48,7 @@ const StoreProducts = () => {
                 priceWithDiscount={product.priceWithDiscount}
                 unit={product.unit}
                 imageLink={product.imageLink}
+                reviewsCount={product.reviewsCount}
               />
             </Grid>
           ))
