@@ -23,6 +23,7 @@
     "@reduxjs/toolkit": "^2.3.0",
     "@shadcn/ui": "^0.0.4",
     "@tanstack/react-router": "^1.90.0",
+    "@tanstack/react-router-devtools": "^1.117.1",
     "@tanstack/router": "^0.0.1-beta.53",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.7",
