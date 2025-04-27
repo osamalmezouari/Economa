@@ -6,7 +6,7 @@ const initialState: AuthState = {
   Login: {
     loading: false,
     error: '',
-    data: [],
+    data: '',
   },
   Register: {
     loading: false,
@@ -43,7 +43,8 @@ const authSlice = createSlice({
           state.Login.loading = false;
           state.Login.error = '';
           state.Login.data = action.payload;
-          localStorage.setItem('token', action.payload);
+          // Token is now handled by AuthContext
+          // localStorage.setItem('token', action.payload);
         })
         .addCase(Login.rejected, (state, action) => {
           state.Login.loading = false;
