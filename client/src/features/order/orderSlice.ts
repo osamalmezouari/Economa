@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getOrderById, getOrdersHistory, placeandpay } from './orderThunk';
+import {
+  getOrderById,
+  getOrdersHistory,
+  getUserOrders,
+  placeandpay,
+} from './orderThunk';
 import { Order, OrderStateType } from '../../types/order';
 
 const initialState: OrderStateType = {
@@ -31,8 +36,16 @@ const initialState: OrderStateType = {
       user: {
         name: '',
         avatar: '',
-        email: ''
-      }
+        email: '',
+      },
+    },
+    loading: false,
+    error: '',
+  },
+  UserOrders: {
+    data: {
+      orders: [],
+      pageCount: 1,
     },
     loading: false,
     error: '',
@@ -88,6 +101,19 @@ const OrderSlice = createSlice({
       .addCase(getOrderById.rejected, (state, action) => {
         state.OrderById.loading = false;
         state.OrderById.error = action.payload as string;
+      })
+
+      .addCase(getUserOrders.pending, (state) => {
+        state.UserOrders.loading = true;
+        state.UserOrders.error = '';
+      })
+      .addCase(getUserOrders.fulfilled, (state, action) => {
+        state.UserOrders.loading = false;
+        state.UserOrders.data = action.payload;
+      })
+      .addCase(getUserOrders.rejected, (state, action) => {
+        state.UserOrders.loading = false;
+        state.UserOrders.error = action.payload as string;
       });
   },
 });
