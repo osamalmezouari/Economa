@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../app/store';
 import AddReview from '../../base/addReview/addReview';
 import { reviewContainerProps } from './interface';
-import useAuth from '../../../hooks/useAuth';
 import ReviewCard from '../../base/reviewCard';
+import { useAuth } from '../../../context/AuthContext';
 
 const ReviewContainer = ({ productId }: reviewContainerProps) => {
   /*   const dispatch = useDispatch()
    */
 
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   const reviews = useSelector(
     (state: RootState) => state.products.productsDetails.data.reviews
