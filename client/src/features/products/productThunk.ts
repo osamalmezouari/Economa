@@ -19,8 +19,7 @@ export const getProductsStore = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue('Something went wrong.',
-      );
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -35,8 +34,7 @@ export const getproductsCards = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue('Something went wrong.',
-      );
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -51,8 +49,7 @@ export const getProductsNewArrivals = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue( 'Something went wrong.',
-      );
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -67,8 +64,7 @@ export const getProductsDetails = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue('Something went wrong.',
-      );
+      return rejectWithValue('Something went wrong.');
     }
   }
 );
@@ -83,8 +79,7 @@ export const addReview = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue('Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
     }
   }
 );
@@ -100,8 +95,7 @@ export const getManageProductsTable = createAsyncThunk<
     if (error) {
       return rejectWithValue(error);
     }
-    return rejectWithValue('Something went wrong',
-    );
+    return rejectWithValue('Something went wrong');
   }
 });
 
@@ -115,8 +109,7 @@ export const CreateProduct = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue( 'Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
     }
   }
 );
@@ -134,8 +127,7 @@ export const UpdateProduct = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue( 'Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
     }
   }
 );
@@ -150,8 +142,7 @@ export const getProductById = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue( 'Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
     }
   }
 );
@@ -166,8 +157,7 @@ export const StockTransaction = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue( 'Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
     }
   }
 );
@@ -182,8 +172,22 @@ export const AddStockTransaction = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue('Something went wrong',
-      );
+      return rejectWithValue('Something went wrong');
+    }
+  }
+);
+
+export const getProductsReviews = createAsyncThunk(
+  '/products/reviews',
+  async (_,{ rejectWithValue }) => {
+    try {
+      const product = await productsApi.getProductsReviews();
+      return product;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue('Something went wrong');
     }
   }
 );
