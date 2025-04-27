@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as userApi from '../../api/users';
 
 export const getShoortedUserInfo = createAsyncThunk(
-  '/user/byEmail',
+  '/user/StoredUserFromToken',
   async (_, { rejectWithValue }) => {
     try {
       const user = await userApi.getUser();
@@ -11,9 +11,7 @@ export const getShoortedUserInfo = createAsyncThunk(
       if (error) {
         rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: 'failed to fetch user shooreted info',
-      });
+      return rejectWithValue('failed to fetch user shooreted info');
     }
   }
 );
@@ -28,9 +26,7 @@ export const getUsersList = createAsyncThunk(
       if (error) {
         rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: 'failed to fetch user list',
-      });
+      return rejectWithValue('failed to fetch user list');
     }
   }
 );
@@ -45,9 +41,7 @@ export const adminCreate = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: 'Failed to create user',
-      });
+      return rejectWithValue('Failed to create user');
     }
   }
 );
@@ -62,9 +56,22 @@ export const adminUpdate = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: 'Failed to update user',
-      });
+      return rejectWithValue('Failed to update user');
+    }
+  }
+);
+
+export const profileUpdate = createAsyncThunk(
+  '/user/ProfileUpdate',
+  async (userData: FormData, { rejectWithValue }) => {
+    try {
+      const user = await userApi.ProfileUpdate(userData);
+      return user;
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue('Failed to update user');
     }
   }
 );
@@ -79,9 +86,7 @@ export const getUserById = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: 'Failed to fetch user',
-      });
+      return rejectWithValue('Failed to fetch user');
     }
   }
 );
