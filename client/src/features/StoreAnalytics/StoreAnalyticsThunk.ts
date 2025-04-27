@@ -16,8 +16,8 @@ export const getCardsStats = createAsyncThunk(
       const CardsStats = await getCardStats();
       return CardsStats;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch card stats');
     }
@@ -31,8 +31,8 @@ export const getsalesXProfit = createAsyncThunk(
       const SalesXProfit = await getSalesXProfit(year);
       return SalesXProfit;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch sales profit analytics');
     }
@@ -46,8 +46,8 @@ export const getCostXProfitLastWeek = createAsyncThunk(
       const CostXProfitLastWeek = await getcostXProfitLastWeek();
       return CostXProfitLastWeek;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue(
         'Failed to fetch sales profit last week analytics'
@@ -63,8 +63,8 @@ export const getSalesXProfitCategory = createAsyncThunk(
       const SalesXProfitCategory = await getsalesXProfitCategory();
       return SalesXProfitCategory;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue(
         'Failed to fetch sales profit last week analytics'
@@ -80,8 +80,8 @@ export const getTopSellingProducts = createAsyncThunk(
       const TopsellingProducts = await getTopsellingProducts();
       return TopsellingProducts;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch TopsellingProducts');
     }
@@ -95,8 +95,8 @@ export const getTopCostumers = createAsyncThunk(
       const Topcostumers = await getTopcostumers();
       return Topcostumers;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch Topcostumers');
     }
@@ -116,8 +116,8 @@ export const getLowStockProducts = createAsyncThunk(
       });
       return Topcostumers;
     } catch (error: any) {
-      if (error.response) {
-        return rejectWithValue(error.response.data);
+      if (error) {
+        return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch low Stock products');
     }
