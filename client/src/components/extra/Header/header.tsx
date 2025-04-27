@@ -9,10 +9,12 @@ import { setSearchDialogOpen } from '../../../features/common/commonSlice';
 import NotificationBellIcon from '../../admin/base/NotificationMenu';
 import ProfileMenu from '../../admin/base/ProfileMenu';
 import { useRouter } from '@tanstack/react-router';
+import useRoleLvl from '../../../hooks/useRolelvl';
 
 const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const { rolelvl } = useRoleLvl();
   const handleOpenSearch = () => {
     dispatch(setSearchDialogOpen(true));
   };
@@ -58,33 +60,35 @@ const Header = () => {
             <ChatSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
         </IconButton> */}
-        <IconButton
-          className="group !rounded !bg-white !drop-shadow-sm"
-          onClick={() =>
-            router.navigate({
-              to: '/Economa/Admin/Dashboard/OrderVerification',
-            })
-          }
-        >
-          <Badge
-            badgeContent=""
-            color="warning"
-            className=""
-            sx={{
-              '& .MuiBadge-badge': {
-                minWidth: '10px',
-                height: '10px',
-                padding: 0,
-                borderRadius: '50%',
-                border: '2px solid white',
-                right: '2px',
-                top: '4px',
-              },
-            }}
+        {rolelvl < 3 && (
+          <IconButton
+            className="group !rounded !bg-white !drop-shadow-sm"
+            onClick={() =>
+              router.navigate({
+                to: '/Economa/Admin/Dashboard/OrderVerification',
+              })
+            }
           >
-            <ScanQrCodeIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
-          </Badge>
-        </IconButton>
+            <Badge
+              badgeContent=""
+              color="warning"
+              className=""
+              sx={{
+                '& .MuiBadge-badge': {
+                  minWidth: '10px',
+                  height: '10px',
+                  padding: 0,
+                  borderRadius: '50%',
+                  border: '2px solid white',
+                  right: '2px',
+                  top: '4px',
+                },
+              }}
+            >
+              <ScanQrCodeIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
+            </Badge>
+          </IconButton>
+        )}
         <IconButton className="!bg-white !rounded !drop-shadow-sm">
           <LanguageSwitcherIcon className="h-[24px] w-auto" />
         </IconButton>
