@@ -11,13 +11,14 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  CircularProgress,
 } from '@mui/material';
 import { PiCommand, PiMagnifyingGlassBold } from 'react-icons/pi';
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
 import { useRouter } from '@tanstack/react-router';
-import useMenuItems from '../sidebar/menu-items';
+import useMenuItems from '../../../hooks/useMenuitems';
 
 const SearchDialog = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,7 +44,7 @@ const SearchDialog = () => {
       );
       setFilteredItems(filtered);
     }
-  }, [searchQuery]);
+  }, [searchQuery, menu]);
 
   // Handle keyboard shortcut (Window + K)
   useEffect(() => {
@@ -129,7 +130,18 @@ const SearchDialog = () => {
           />
         </Box>
 
-        {filteredItems.length > 0 ? (
+        {loading ? (
+          <Box
+            sx={{
+              p: 4,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <CircularProgress size={24} />
+          </Box>
+        ) : filteredItems.length > 0 ? (
           <List sx={{ py: 0 }} className="">
             {filteredItems.map((item, index) => (
               <ListItem
