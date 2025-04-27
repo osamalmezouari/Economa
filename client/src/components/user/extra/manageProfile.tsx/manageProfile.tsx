@@ -177,7 +177,6 @@ const ManageProfileComponent = () => {
       setSnackbarSeverity('success');
       setOpenSnackbar(true);
 
-      // Refresh user data
       dispatch(getUserById(userData.id));
     } catch (error) {
       setSnackbarMessage('Failed to update profile');
@@ -191,14 +190,6 @@ const ManageProfileComponent = () => {
   const handleSnackbarClose = () => {
     setOpenSnackbar(false);
   };
-
-  if (loading || detailsLoading) {
-    return (
-      <Box className="flex justify-center items-center h-[400px]">
-        <CircularProgress />
-      </Box>
-    );
-  }
 
   return (
     <Box className={''}>
@@ -249,7 +240,6 @@ const ManageProfileComponent = () => {
                 className="mb-4"
                 error={!!errors.name}
                 helperText={errors.name}
-                required
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -264,7 +254,6 @@ const ManageProfileComponent = () => {
                 className="mb-4"
                 error={!!errors.email}
                 helperText={errors.email}
-                required
               />
             </Grid>
             <Grid item xs={12} md={6}>
