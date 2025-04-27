@@ -1,34 +1,29 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import PathBar from '../base/pathbar';
-import PromoCard from '../base/PromoCard/PromoCard';
 import CategoryCardContainer from './categoryCardContainer';
+import { Box } from '@mui/material';
+import PromoCardlefttitlelarge from '../base/PromoCard/PromoCard-LTL';
+import PageHeader from '../admin/base/pageheader/PageHeader';
 
 const StoreTopSection: React.FC = () => {
   return (
     <>
-      <PathBar path={'Home > Store'} />
-      <Box className=" max-w-[1200px] mt-8 m-auto grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <Box className="w-full">
-          <PromoCard
-            image={'/assets/images/storebanner1.jpg'}
-            title={'Fresh Fruits'}
-            subtitle={'Special flavor.'}
-            discountText={'Limited time: 10% off!'}
-            buttonText={'Shop now'}
-          />
-        </Box>
-        <Box className="w-full">
-          <PromoCard
-            image={'/assets/images/storebanner2.jpg'}
-            title={'Fastfood'}
-            subtitle={'Healthy meal.'}
-            discountText={'Limited time: 10% off!'}
-            buttonText={'Shop now'}
-          />
-        </Box>
+      <PageHeader
+        title=""
+        breadcrumb={[
+          { name: 'Home', href: '/' },
+          { name: 'Store', href: '/store' },
+        ]}
+        className="px-4 my-2"
+      />
+      <Box>
+        <PromoCardlefttitlelarge
+          image="/assets/images/banner-08.jpg"
+          title="Fresh Groceries Delivered!"
+          subtitle="Get the best quality fruits, veggies, and more"
+          discountText="Up to 30% Off This Week"
+          buttonText="Shop Now"
+        />
       </Box>
-
       <CategoryCardContainer />
     </>
   );
