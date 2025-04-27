@@ -11,9 +11,8 @@ export const getWishlist = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.',
+      );
     }
   }
 );
@@ -28,9 +27,8 @@ export const createWishList = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue( 'Something went wrong.',
+      );
     }
   }
 );
@@ -45,9 +43,8 @@ export const removefromWishList = createAsyncThunk(
       if (error) {
         return rejectWithValue(error);
       }
-      return rejectWithValue({
-        message: error.message || 'Something went wrong.',
-      });
+      return rejectWithValue('Something went wrong.',
+      );
     }
   }
 );
