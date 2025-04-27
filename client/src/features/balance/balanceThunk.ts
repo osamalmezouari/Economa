@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as balanceApi from '../../api/balance';
+import { TransferRequest } from '../../types/balance';
 
 export const refillBalanceRequest = createAsyncThunk(
   'balance/refillbalancerequest',
@@ -82,6 +83,50 @@ export const getRequestStatus = createAsyncThunk(
         return rejectWithValue(error);
       }
       return rejectWithValue('Failed to fetch RefillDaily');
+    }
+  }
+);
+
+export const getUserRefills = createAsyncThunk(
+  'balance/userRefillsList',
+  async (page: number, { rejectWithValue }) => {
+    try {
+      const userRefills = await balanceApi.getUserRefills(page);
+      return userRefills;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue('Failed to fetch user refills');
+    }
+  }
+);
+
+export const makeTransfer = createAsyncThunk(
+  'balance/makeTransfer',
+  async (data: TransferRequest, { rejectWithValue }) => {
+    try {
+      return await balanceApi.makeTransfer(data);
+    } catch (error: any) {
+      if (error) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue('Failed to make transfer');
+    }
+  }
+);
+
+export const getUserTransfers = createAsyncThunk(
+  'balance/userTransfers',
+  async (_, { rejectWithValue }) => {
+    try {
+      const userTransfers = await balanceApi.getUserTransfers();
+      return userTransfers;
+    } catch (error: any) {
+      if (error.response) {
+        return rejectWithValue(error);
+      }
+      return rejectWithValue('Failed to fetch user transfers');
     }
   }
 );
