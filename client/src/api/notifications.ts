@@ -7,7 +7,7 @@ import { apiClient } from '../utils/apiClient';
  */
 export const getNotificationList = async (): Promise<Notification[]> => {
   try {
-    const response = await apiClient.get('/notifications');
+    const response = await apiClient.get('/notifications/user/list');
     return response.data;
   } catch (error: any) {
     if (error.response) {
