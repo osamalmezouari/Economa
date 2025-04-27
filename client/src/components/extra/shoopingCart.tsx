@@ -19,6 +19,7 @@ import ShoppingCartItem from '../base/shoppingCartItem/shoppingCartItem';
 import EmptyBox from '../base/empty-box';
 import { useRouter } from '@tanstack/react-router';
 import GlobalAlert from '../base/globalAlert';
+import { CURRENCY_SYMBOL } from '../../utils/constants';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -128,7 +129,7 @@ const ShoppingCart = () => {
                   Base price :{' '}
                 </Typography>
                 <Typography align="right" sx={{ fontWeight: 'bold' }}>
-                  ${basePrice?.toFixed(2)}
+                {CURRENCY_SYMBOL}{basePrice?.toFixed(2)}
                 </Typography>
               </TableRow>
               <TableRow className="items-center !flex justify-between p-2">
@@ -143,7 +144,7 @@ const ShoppingCart = () => {
                   VAT (20%) :
                 </Typography>
                 <Typography align="right" sx={{ fontWeight: 'bold' }}>
-                  ${vat?.toFixed(2)}
+                {CURRENCY_SYMBOL}{vat?.toFixed(2)}
                 </Typography>
               </TableRow>
               <TableRow className="items-center !flex justify-between p-2">
@@ -161,7 +162,7 @@ const ShoppingCart = () => {
                   align="right"
                   sx={{ color: 'primary.main', fontWeight: 'bold' }}
                 >
-                  ${totalPrice?.toFixed(2)}
+                  {CURRENCY_SYMBOL}{totalPrice?.toFixed(2)}
                 </Typography>
               </TableRow>
             </TableBody>
