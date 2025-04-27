@@ -2,8 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   createUser,
   updateUser,
+  User,
   UserDetails,
   userStateType,
+  UserWithRoleLvl,
 } from '../../types/user';
 import {
   adminCreate,
@@ -11,14 +13,12 @@ import {
   getShoortedUserInfo,
   getUserById,
   getUsersList,
+  profileUpdate,
 } from './userThunk';
 
 const initialState: userStateType = {
   ShoortedUserInfo: {
-    data: {
-      email: '',
-      name: '',
-    },
+    data: {} as UserWithRoleLvl,
     loading: false,
     error: '',
   },
@@ -42,6 +42,11 @@ const initialState: userStateType = {
   },
   updateUser: {
     data: {} as updateUser,
+    loading: false,
+    error: '',
+  },
+  ProfileUpdate: {
+    data: {} as User,
     loading: false,
     error: '',
   },
@@ -140,6 +145,20 @@ const UserStore = createSlice({
       .addCase(adminUpdate.rejected, (state, action) => {
         state.updateUser.loading = false;
         state.updateUser.error = action.payload as string;
+      })
+
+      .addCase(profileUpdate.pending, (state) => {
+        state.ProfileUpdate.loading = true;
+        state.ProfileUpdate.error = '';
+      })
+      .addCase(profileUpdate.fulfilled, (state, action) => {
+        state.ProfileUpdate.loading = false;
+        state.ProfileUpdate.error = '';
+        state.ProfileUpdate.data = action.payload;
+      })
+      .addCase(profileUpdate.rejected, (state, action) => {
+        state.ProfileUpdate.loading = false;
+        state.ProfileUpdate.error = action.payload as string;
       });
   },
 });
@@ -149,7 +168,7 @@ export const {
   closeAddUserDialog,
   openUpdateUserDialog,
   closeUpdateUserDialog,
-  setusertoEdit
+  setusertoEdit,
 } = UserStore.actions;
 export default UserStore.reducer;
 export const UserReducer = UserStore.reducer;
