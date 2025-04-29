@@ -6,7 +6,7 @@ import {
   redirect,
 } from '@tanstack/react-router';
 import { isTokenValid } from '../utils/verifyToken';
-import { LoginRoute, RegisterRoute } from './authRoute';
+import { LoginRoute } from './authRoute';
 import { indexRoute } from './landingRoute';
 import { compareRoute } from './compareRoute';
 import { StoreRoute } from './storeRoute';
@@ -80,8 +80,8 @@ export const adminRoute = createRoute({
   path: 'Economa/Admin/Dashboard',
   component: AdminRouteComponent,
   beforeLoad: async () => {
-    const TokenValid = await isTokenValid();
-    if (!TokenValid) {
+    const { verfied, rolelvl } = await isTokenValid();
+    if (!verfied || !rolelvl || rolelvl >= 3) {
       throw redirect({
         to: '/Economa',
         replace: true,
@@ -125,8 +125,8 @@ export const UserRoute = createRoute({
   path: 'Economa/User/Profile',
   component: UserRouteComponent,
   beforeLoad: async () => {
-    const TokenValid = await isTokenValid();
-    if (!TokenValid) {
+    const { verfied } = await isTokenValid();
+    if (!verfied) {
       throw redirect({
         to: '/Economa',
         replace: true,
@@ -165,8 +165,8 @@ function UserRouteComponent() {
 // --- Route Tree ---
 const routeTree = rootRoute.addChildren([
   mainRoute.addChildren([
-    RegisterRoute,
-    LoginRoute,
+    /*     RegisterRoute,
+     */ LoginRoute,
     indexRoute,
     compareRoute,
     StoreRoute,
