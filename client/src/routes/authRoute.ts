@@ -9,8 +9,9 @@ export const LoginRoute = createRoute({
   component: LoginComponent,
 });
 
-export const RegisterRoute = createRoute({
+/* export const RegisterRoute = createRoute({
   getParentRoute: () => mainRoute,
-  path: '/Register',
+  path: '/',
   component: RegisterComponent,
 });
+ */
