@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { BALANCE_SOLD_NOT_ENAUGH_Exception } from 'src/common/exceptions/BALANCE_SOLD_NOT_ENAUGH.exception';
 import { verifyBalanceDto } from '../dto/verifyBalance';
-
+import { v4 as uuid } from 'uuid';
 @Injectable()
 export class BalanceService {
   constructor(private readonly prisma: PrismaService) {}
@@ -65,6 +65,17 @@ export class BalanceService {
       },
       data: {
         Balance: Prevamount + amount,
+      },
+    });
+  }
+
+  async initializeBalance(userId: string) {
+    return await this.prisma.balance.create({
+      data: {
+        id: uuid(),
+        userId: userId,
+        Balance: 0,
+        type: '',
       },
     });
   }
