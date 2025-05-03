@@ -1,5 +1,4 @@
-import { Box, Grid, Dialog, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Box, Grid } from '@mui/material';
 import OrderValidationForm from '../components/extra/orderValidationForm';
 import OrderSummary from '../components/extra/orderSummary';
 import { AppDispatch, RootState } from '../app/store';
@@ -79,18 +78,11 @@ const Order = () => {
 
       {/* QR Code Dialog */}
       {!loading && data.orderId && (
-        <Dialog open={openQrDialog} onClose={handleCloseQrDialog}>
-          <Box sx={{ position: 'relative', padding: 6 }}>
-            <IconButton
-              onClick={handleCloseQrDialog}
-              sx={{ position: 'absolute', top: 8, right: 8 }}
-              className="!hover:bg-red-400"
-            >
-              <CloseIcon />
-            </IconButton>
-            <QRCodeGenerator orderId={data.orderId} />
-          </Box>
-        </Dialog>
+        <QRCodeGenerator 
+          orderId={data.orderId} 
+          open={openQrDialog} 
+          onClose={handleCloseQrDialog} 
+        />
       )}
     </Grid>
   );
