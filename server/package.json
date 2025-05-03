@@ -31,7 +31,9 @@
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.4.15",
+    "@nestjs/platform-socket.io": "^11.0.20",
     "@nestjs/serve-static": "^5.0.3",
+    "@nestjs/websockets": "^11.0.20",
     "@prisma/client": "^5.22.0",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
@@ -41,9 +43,11 @@
     "dayjs": "^1.11.13",
     "dayjs-plugin-utc": "^0.1.2",
     "dotenv": "^16.4.5",
+    "express": "^5.1.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "simplebar-react": "^3.3.0",
+    "socket.io": "^4.8.1",
     "uuid": "^11.0.2"
   },
   "devDependencies": {
