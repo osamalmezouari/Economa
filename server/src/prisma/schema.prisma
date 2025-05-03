@@ -33,7 +33,7 @@ enum TransactionType {
 model Category {
   id          String    @id
   name        String    @unique
-  svgLink     String    
+  svgLink     String
   description String?
   products    Product[]
 }
@@ -105,6 +105,7 @@ model Role {
   id          String           @id
   name        String           @unique
   description String?
+  rolelvl     Int?
   users       User[]
   permissions RolePermission[]
 }
@@ -131,7 +132,6 @@ model User {
   roleId               String
   avatar               String
   role                 Role                   @relation(fields: [roleId], references: [id])
-  notifications        Notification[]
   orders               Order[]
   reviews              ProductReview[]
   shoppingCart         ShoppingCart[]
@@ -141,6 +141,7 @@ model User {
   Coupon               Coupon[]               @relation("UsersCoupons")
   sentTransfers        UserTransfers[]        @relation("SenderTransfers")
   receivedTransfers    UserTransfers[]        @relation("ReceiverTransfers")
+  UserNotification     UserNotification[]
 }
 
 model UserTransfers {
@@ -186,13 +187,23 @@ model refillBalanceRequestStatus {
 }
 
 model Notification {
-  id        String   @id
-  userId    String?
-  type      String?
-  message   String?
-  isRead    Boolean  @default(false)
-  createdAt DateTime @default(now())
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id               String             @id
+  type             String?
+  message          String?
+  isRead           Boolean            @default(false)
+  createdAt        DateTime           @default(now())
+  UserNotification UserNotification[]
+}
+
+model UserNotification {
+  id             String       @id @default(uuid())
+  user           User         @relation(fields: [userId], references: [id])
+  userId         String
+  notification   Notification @relation(fields: [notificationId], references: [id])
+  notificationId String
+  isRead         Boolean      @default(false)
+
+  @@unique([userId, notificationId])
 }
 
 model Order {
@@ -226,6 +237,8 @@ model Payment {
   paymentDate   DateTime @default(now())
   paymentStatus String   @default("paid")
   order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model ProductReview {
