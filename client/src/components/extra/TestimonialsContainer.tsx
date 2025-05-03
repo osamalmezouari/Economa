@@ -1,42 +1,12 @@
 import { useEffect } from 'react';
 import Slider from 'react-slick';
 import { Box, Typography, Avatar, Container, Rating } from '@mui/material';
-import { styled } from '@mui/material/styles';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../app/store';
 import { getProductsReviews } from '../../features/products/productThunk';
-
-const TestimonialCard = styled(Box)(() => ({
-  backgroundColor: '#fff',
-  borderRadius: '8px',
-  padding: '24px',
-  boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.05)',
-  margin: '10px',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-}));
-
-const CustomArrow = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  zIndex: 1,
-  cursor: 'pointer',
-  width: '40px',
-  height: '40px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: theme.palette.primary.main,
-  color: '#fff',
-  borderRadius: '50%',
-  '&:hover': {
-    backgroundColor: theme.palette.primary.dark,
-  },
-}));
+import { StyledCard, CustomArrow } from '../shared/CardStyles';
 
 const TestimonialsContainer = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -103,8 +73,8 @@ const TestimonialsContainer = () => {
 
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
-            <Box key={testimonial.id} className={''}>
-              <TestimonialCard>
+            <Box key={testimonial.id}>
+              <StyledCard>
                 <Rating
                   className="my-2"
                   name="half-rating"
@@ -138,7 +108,7 @@ const TestimonialsContainer = () => {
                     </Typography>
                   </Box>
                 </Box>
-              </TestimonialCard>
+              </StyledCard>
             </Box>
           ))}
         </Slider>
