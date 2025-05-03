@@ -54,10 +54,11 @@ export interface ProductCardType {
   categoryName: string;
   description: string;
   productAvgRating: number;
-  price: string;
+  price: number;
   priceWithDiscount: number;
   unit: string;
   imageLink: string;
+  reviewsCount: number;
 }
 
 export default interface ProductDetails {
@@ -68,7 +69,7 @@ export default interface ProductDetails {
     categoryName: string;
     description: string;
     productAvgRating: number;
-    price: string;
+    price: number;
     priceWithDiscount: number;
     unit: string;
     imageLink: string;
@@ -142,7 +143,7 @@ export interface StockTransactionType {
   imageUrl: string;
   unitName: string;
   quantity: number;
-  Type: string;
+  Type: 'purchase' | 'sale' | 'adjustment';
   date: string; // Assuming date is in string format (ISO or other)
   unitCost: number;
 }
@@ -150,6 +151,17 @@ export interface StockTransactionType {
 export interface StockTransactionResponse {
   pageCount: number;
   stockTransactions: StockTransactionType[];
+}
+
+export interface Testimonial {
+  id: string;
+  rating: number;
+  reviewText: string;
+  user: {
+    email: string;
+    name: string;
+    avatar: string;
+  };
 }
 
 export interface ProductStateType {
@@ -205,13 +217,18 @@ export interface ProductStateType {
     error: string;
   };
 
-  stockTransactions : {
-    data : StockTransactionResponse,
-    loading : boolean,
-    error : string
-  }
+  stockTransactions: {
+    data: StockTransactionResponse;
+    loading: boolean;
+    error: string;
+  };
   createTransaction: {
     data: addStockTransaction;
+    loading: boolean;
+    error: string;
+  };
+  testimonials: {
+    data: Testimonial[];
     loading: boolean;
     error: string;
   };
