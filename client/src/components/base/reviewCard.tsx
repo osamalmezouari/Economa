@@ -1,7 +1,10 @@
-import { Avatar, Grid, Rating } from '@mui/material';
-import { Review } from '../../types/review';
+import { Avatar, Box, Rating, Typography } from '@mui/material';
+import { CustomArrow, StyledCard } from '../shared/CardStyles';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
+import Slider from 'react-slick';
 
-const ReviewCard = ({ user, rating, reviewText, createdAt }: Review) => {
+const ReviewCards = () => {
   const formatDateTime = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('En-MA', {
@@ -11,40 +14,97 @@ const ReviewCard = ({ user, rating, reviewText, createdAt }: Review) => {
     });
   };
 
+  const reviews = useSelector(
+    (state: RootState) => state.products.productsDetails.data.reviews
+  );
+
+  const NextArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <CustomArrow onClick={onClick} sx={{ right: { xs: '5px', md: '-20px' } }}>
+        ›
+      </CustomArrow>
+    );
+  };
+
+  const PrevArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <CustomArrow onClick={onClick} sx={{ left: { xs: '5px', md: '-20px' } }}>
+        ‹
+      </CustomArrow>
+    );
+  };
+
+  const settings = {
+    dots: false,
+    infinite: false ,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
-    <Grid
-      container
-      gap={2}
-      className="review-card flex rounded  p-4 border-[1px] my-2 border-solid border-gray-200 max-w-[1150px] mx-auto"
-    >
-      <Grid item lg={1} className="flex items-center justify-center">
-        <Avatar
-          src={user.name || ''}
-          alt={user.name || user.name.trim().charAt(0).toUpperCase()}
-          sx={{
-            width: 70,
-            height: 70,
-          }}
-        />
-      </Grid>
-      <Grid item lg={10}>
-        <Grid item lg={12}>
-          <p>{user.name || 'Anonymous'}</p>
-        </Grid>
-        <Grid item lg={12} className="flex items-center gap-2">
-          <Rating size="small" value={rating || 0} disabled />
-          <p className="text-secondary-light py-2 text-[12px]">
-            {createdAt ? formatDateTime(createdAt) : ''}
-          </p>
-        </Grid>
-        <Grid item lg={12}>
-          <p className="text-secondary-main text-[14px] w-11/12">
-            {reviewText || 'No review text provided.'}
-          </p>
-        </Grid>
-      </Grid>
-    </Grid>
+    <>
+      <Slider {...settings} className='mb-8'>
+        {reviews.map((review) => (
+          <Box key={review.id} className={''}>
+            <StyledCard>
+              <Rating
+                className="my-2"
+                name="half-rating"
+                size="small"
+                value={review.rating || 0}
+                precision={0.5}
+                readOnly
+                sx={{
+                  transform: 'scale(0.75)',
+                  transformOrigin: 'left center',
+                }}
+              />
+              <Typography
+                variant="body2"
+                className="font-Inria"
+                sx={{ mb: 3, flexGrow: 1 }}
+              >
+                {review.reviewText || 'No review text provided.'}
+              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Avatar
+                  src={review.user.avatar}
+                  alt={review.user.name || 'A'}
+                  sx={{ mr: 2 }}
+                />
+                <Box>
+                  <Typography variant="body1" className={'font-main'}>
+                    {review.user.name || 'Anonymous'}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {review.createdAt ? formatDateTime(review.createdAt) : ''}
+                  </Typography>
+                </Box>
+              </Box>
+            </StyledCard>
+          </Box>
+        ))}
+      </Slider>
+    </>
   );
 };
 
-export default ReviewCard;
+export default ReviewCards;
