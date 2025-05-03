@@ -9,22 +9,57 @@ import { ROLE_NOT_FOUND_Exception } from 'src/common/exceptions/Role_not_found.e
 export class RoleService {
   constructor(private readonly prisma: PrismaService) {}
 
+  async findAll() {
+    const roles = await this.prisma.role.findMany();
+    return roles;
+  }
+  async findOne(id: string) {
+    const role = await this.prisma.role.findUnique({
+      where: { id },
+      include: {
+        permissions: {
+          include: {
+            permission: true,
+          },
+        },
+      },
+    });
+    if (!role) throw new ROLE_NOT_FOUND_Exception(id);
+
+    return {
+      ...role,
+      permissions: role.permissions.map((rp) => rp.permission),
+    };
+  }
+
+  async findAllWithUsers() {
+    const roles = await this.prisma.role.findMany({
+      include: {
+        users: {
+          select: {
+            id: true,
+            name: true,
+            avatar: true,
+          },
+        },
+      },
+    });
+
+    return roles.map((role) => ({
+      id: role.id,
+      name: role.name,
+      description: role.description,
+      userTotal: role.users.length,
+      usersAvatars: role.users.map((user) => user.avatar),
+      rolelvl: role.rolelvl,
+    }));
+  }
+
   async create(createRoleDto: CreateRoleDto) {
     const role = await this.prisma.role.create({
       data: { id: uuid(), ...createRoleDto },
     });
     return role;
-  }
-
-  async findAll() {
-    const roles = await this.prisma.role.findMany();
-    return roles;
-  }
-
-  async findOne(id: string) {
-    const role = await this.prisma.role.findUnique({ where: { id } });
-    if (role) return role;
-    throw new ROLE_NOT_FOUND_Exception(id);
   }
 
   async update(id: string, updateRoleDto: UpdateRoleDto) {
@@ -36,9 +71,20 @@ export class RoleService {
     return updatedRole;
   }
 
-  async remove(id: string) {
-    await this.findOne(id);
-    const deletedRole = await this.prisma.role.delete({ where: { id } });
-    return deletedRole;
+  async updateRolePermissions(roleId: string, permissionIds: string[]) {
+    await this.findOne(roleId);
+
+    await this.prisma.rolePermission.deleteMany({
+      where: { roleId },
+    });
+
+    await this.prisma.rolePermission.createMany({
+      data: permissionIds.map((permissionId) => ({
+        roleId,
+        permissionId,
+      })),
+    });
+
+    return this.findOne(roleId);
   }
 }
