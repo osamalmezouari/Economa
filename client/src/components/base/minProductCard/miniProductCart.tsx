@@ -32,23 +32,26 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
   );
   const Router = useRouter();
   return (
-    <Box className=" mini-product-card h-full p-3 flex flex-row  border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative">
+    <Box
+      onClick={() => Router.navigate({ to: `/Economa/Store/${productId}` })}
+      className="cursor-pointer mini-product-card group h-full p-3 flex flex-row  border-[2px]  border-solid border-transparent rounded-lg bg-gray-50 hover:border-primary-main duration-500 transition-all relative"
+    >
       <p className="add-to-cart-btn py-1 px-2 absolute top-1 right-1 opacity-0 transition-all duration-300 ease-in-out text-sm font-medium bg-green-600 text-white text-center rounded-md hover:bg-gray-600 hover:text-white">
         <GiShoppingCart className="inline-block" />
       </p>
 
-      <Box className="product-image mr-3 relative ">
+      <Box className="product-image bg-white mr-3 relative ">
         <img
           src={svgLink}
           alt={name}
-          className="w-[70px] h-[70px] rounded-md border border-solid border-gray-200 object-cover"
+          className="w-[70px] p-3 h-[70px] rounded-md border border-solid border-gray-200 object-cover"
         />
       </Box>
 
       <Box className="product-info flex flex-col">
         <Typography
-          onClick={() => Router.navigate({ to: `/Economa/Store/${productId}` })}
-          className="cursor-pointer hover:text-primary-main text-[12px] product-name text-gray-600 block text-sm leading-5 font-medium tracking-wide capitalize  mb-1"
+          variant="body1"
+          className=" group-hover:text-primary-main font-Inria product-name text-gray-600 block  capitalize  mb-1"
         >
           {name}
         </Typography>
@@ -59,15 +62,18 @@ const MiniProductCard: React.FC<MiniProductCardTypeProps> = ({
             precision={0.5}
             readOnly
             size={'small'}
+            className="scale-90"
           />
         </Box>
         <Box className="product-price">
-          <span className="new-price text-base">
-          {CURRENCY_SYMBOL}{priceWithDiscount.toFixed(2)}
+          <span className="new-price text-[12px] text-primary-main">
+            {CURRENCY_SYMBOL}
+            {priceWithDiscount.toFixed(2)}
           </span>
           {price && (
-            <span className="old-price ml-1 text-sm text-gray-600 line-through">
-              {CURRENCY_SYMBOL}{price.toFixed(2)}
+            <span className="old-price ml-1 text-[12px] text-red-500 line-through">
+              {CURRENCY_SYMBOL}
+              {price.toFixed(2)}
             </span>
           )}
         </Box>
