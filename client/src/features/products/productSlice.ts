@@ -108,7 +108,7 @@ const initialState: ProductStateType = {
       productId: '',
       reviewText: '',
       email: '',
-      mame: '',
+      name: '',
       rating: 0,
     },
     loading: false,
