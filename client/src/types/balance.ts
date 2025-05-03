@@ -36,6 +36,30 @@ export interface RequestStatus {
   createdAt: string;
 }
 [];
+export interface TransferRequest {
+  receiverEmail: string;
+  amount: number;
+  description: string;
+  reqStatus: { statusCode: number | null; message: string | null };
+}
+
+export interface Transfer {
+  id: string;
+  amount: number;
+  description: string;
+  createdAt: string;
+  sender: {
+    email: string;
+    name: string;
+    avatar: string | null;
+  };
+  receiver: {
+    email: string;
+    name: string;
+    avatar: string | null;
+  };
+}
+
 export interface balanceStateType {
   refillBalanceRequest: {
     loading: boolean;
@@ -55,6 +79,14 @@ export interface balanceStateType {
       pageCount: number;
     };
   };
+  userRefillsList: {
+    loading: boolean;
+    error: string;
+    data: {
+      refills: Refills[];
+      pageCount: number;
+    };
+  };
   requestStatus: {
     loading: boolean;
     error: string;
@@ -63,4 +95,17 @@ export interface balanceStateType {
   requestIdtoViewStatus: string;
   updateRefillStatus: updateRefillStatus;
   openRefillStatusModal: boolean;
+  transferRequest: {
+    loading: boolean;
+    error: string;
+    data: TransferRequest;
+  };
+  userTransfers: {
+    loading: boolean;
+    error: string;
+    data:{
+      transfers : Transfer[] ,
+      pageCount : number
+    } ;
+  };
 }
