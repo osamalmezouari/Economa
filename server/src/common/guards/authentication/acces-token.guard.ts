@@ -33,7 +33,7 @@ export class AccesTokenGuard implements CanActivate {
       request[REQUEST_USER_KEY] = payload;
     } catch (error) {
       throw new ForbiddenException({
-        message: error,
+        message: error.message || 'Token verification failed',
       });
     }
     return true;
