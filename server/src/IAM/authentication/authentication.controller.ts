@@ -4,6 +4,8 @@ import {
   HttpCode,
   HttpStatus,
   Post,
+  UnauthorizedException,
+  NotFoundException,
   // Res,
 } from '@nestjs/common';
 import { AuthenticationService } from './authentication.service';
@@ -11,7 +13,6 @@ import { SignInDto } from './dto/sign-in.dto';
 import { SignUpDto } from './dto/sign-up.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
-// import { Response } from 'express';
 
 @Controller('auth')
 export class AuthenticationController {
@@ -23,6 +24,7 @@ export class AuthenticationController {
   async SignIn(@Body() signInDto: SignInDto) {
     return this.authenticationService.SignIn(signInDto);
   }
+
   // @HttpCode(HttpStatus.OK)
   // @Post('SignIn')
   // async SignIn(
