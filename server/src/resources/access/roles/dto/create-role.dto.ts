@@ -1,4 +1,5 @@
-import { IsString, IsOptional } from 'class-validator';
+import { Transform } from 'class-transformer';
+import { IsString, IsOptional, IsNumber } from 'class-validator';
 
 export class CreateRoleDto {
   @IsString()
@@ -7,4 +8,9 @@ export class CreateRoleDto {
   @IsOptional()
   @IsString()
   description?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @Transform(({ value }) => parseInt(value))
+  rolelvl?: number;
 }
