@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { WebsocketsModule } from './common/websockets/websockets.module';
 import { IamModule } from './IAM/iam.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
@@ -11,13 +12,11 @@ import { RolesModule } from './resources/access/roles/roles.module';
 import { OrdersModule } from './resources/core/orders/orders.module';
 import { PermissionModule } from './resources/access/permission/permission.module';
 import { PaymentModule } from './resources/billing/payment/payment.module';
-import { GalleryModule } from './resources/media/gallery/gallery.module';
 import { CouponModule } from './resources/billing/coupon/coupon.module';
 import { CategoryModule } from './resources/core/category/category.module';
 import { BalanceModule } from './resources/billing/balance/balance.module';
 import { AnalyticsModule } from './resources/core/analytics/analytics.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import * as path from 'path';
+
 
 @Module({
   imports: [
@@ -34,11 +33,11 @@ import * as path from 'path';
     PermissionModule,
     PaymentModule,
     PrismaModule,
-    GalleryModule,
     CouponModule,
     CategoryModule,
     BalanceModule,
     AnalyticsModule,
+  WebsocketsModule,
   ],
   controllers: [],
   providers: [],
