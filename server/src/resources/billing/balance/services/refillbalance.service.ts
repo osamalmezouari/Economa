@@ -5,80 +5,18 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { CreateRefillbalancerequestDto } from '../dto/create-refillbalancerequest.dto';
 import { BalanceService } from './balance.service';
+import { NotificationService } from 'src/resources/notifications/notification/notification.service';
+import { EventsService } from 'src/common/websockets/events.service';
+import { userInfo } from 'os';
 
 @Injectable()
 export class RefillBalanceService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly BalanceService: BalanceService,
+    private readonly notificationService: NotificationService,
+    private readonly eventsService: EventsService,
   ) {}
-
-  async refilbalanceRequestcreate(
-    createRefillbalancerequestDto: CreateRefillbalancerequestDto,
-    userId: string,
-  ) {
-    try {
-      if (!createRefillbalancerequestDto.file) {
-        const refillbalancerequest =
-          await this.prisma.refillBalanceRequest.create({
-            data: {
-              id: uuid(),
-              amount: createRefillbalancerequestDto.amount,
-              status: 'pending',
-              userId: userId,
-              file: 'no file',
-            },
-          });
-        await this.prisma.refillBalanceRequestStatus.create({
-          data: {
-            id: uuid(),
-            status: 'pending',
-            requestId: refillbalancerequest.id,
-          },
-        });
-        return {
-          reqStatus: {
-            statusCode: 201,
-            message: 'Refill balance Registred successfully',
-          },
-          ...refillbalancerequest,
-        };
-      }
-      const filePath = this.storeFile(
-        userId,
-        createRefillbalancerequestDto.file,
-      );
-      const refillbalancerequest =
-        await this.prisma.refillBalanceRequest.create({
-          data: {
-            id: uuid(),
-            amount: createRefillbalancerequestDto.amount,
-            status: 'pending',
-            userId: userId,
-            file: filePath,
-          },
-        });
-
-      await this.prisma.refillBalanceRequestStatus.create({
-        data: {
-          id: uuid(),
-          status: 'pending',
-          requestId: refillbalancerequest.id,
-        },
-      });
-      return {
-        reqStatus: {
-          statusCode: 201,
-          message: 'Refill balance Registred successfully',
-        },
-        ...refillbalancerequest,
-      };
-    } catch (error) {
-      throw new Error(
-        `Error while creating refill balance request: ${error.message}`,
-      );
-    }
-  }
 
   async getCardInfo(userId: string) {
     const userCardInfo = await this.prisma.user.findUnique({
@@ -513,7 +451,48 @@ export class RefillBalanceService {
     status: 'approved' | 'rejected',
     requestId: string,
   ) {
+    // Get request data with user information
+    const request = await this.prisma.refillBalanceRequest.findUnique({
+      where: { id: requestId },
+      include: { user: { select: { id: true, name: true } } },
+    });
+
+    if (!request) {
+      throw new Error('Refill request not found');
+    }
+
     if (status === 'approved') {
+      await this.prisma.refillBalanceRequestStatus.create({
+        data: {
+          id: uuid(),
+          status: 'approved', // Fixed: was incorrectly set to 'rejected'
+          requestId: requestId,
+        },
+      });
+
+      const data = await this.prisma.refillBalanceRequest.update({
+        where: {
+          id: requestId,
+        },
+        data: {
+          status: 'approved',
+        },
+      });
+      await this.BalanceService.addAmount(data.userId, data.amount);
+      const notification =
+        await this.notificationService.createPermissionBasedNotification(
+          [{ id: data.userId }],
+          `Your balance refill request of $${data.amount} has been approved.`,
+          'Balance Refill Approved',
+        );
+
+      this.eventsService.sendMessageToAll('new_notification', {
+        ...notification,
+      });
+
+      return data;
+    }
+    if (status === 'rejected') {
       await this.prisma.refillBalanceRequestStatus.create({
         data: {
           id: uuid(),
@@ -527,30 +506,172 @@ export class RefillBalanceService {
           id: requestId,
         },
         data: {
-          status: 'approved',
+          status: 'rejected',
         },
       });
 
-      await this.BalanceService.addAmount(data.userId, data.amount);
-    }
-    if (status === 'rejected') {
-      await this.prisma.refillBalanceRequestStatus.create({
-        data: {
-          id: uuid(),
-          status: 'rejected',
-          requestId: requestId,
-        },
+      const notification =
+        await this.notificationService.createPermissionBasedNotification(
+          [{ id: data.userId }],
+          `Your balance refill request of $${data.amount} has been Rejected.`,
+          'Balance Refill Rejected',
+        );
+
+      this.eventsService.sendMessageToAll('new_notification', {
+        ...notification,
       });
-      return this.prisma.refillBalanceRequest.update({
-        where: {
-          id: requestId,
-        },
-        data: {
-          status: 'rejected',
-        },
-      });
+      return data;
     } else {
       throw new Error('Invalid status');
     }
+  }
+
+  async refilbalanceRequestcreate(
+    createRefillbalancerequestDto: CreateRefillbalancerequestDto,
+    userId: string,
+  ) {
+    try {
+      // Get user information for the notification
+      const user = await this.prisma.user.findUnique({
+        where: { id: userId },
+        select: { name: true, email: true },
+      });
+
+      let refillbalancerequest;
+
+      if (!createRefillbalancerequestDto.file) {
+        refillbalancerequest = await this.prisma.refillBalanceRequest.create({
+          data: {
+            id: uuid(),
+            amount: createRefillbalancerequestDto.amount,
+            status: 'pending',
+            userId: userId,
+            file: 'no file',
+          },
+        });
+        await this.prisma.refillBalanceRequestStatus.create({
+          data: {
+            id: uuid(),
+            status: 'pending',
+            requestId: refillbalancerequest.id,
+          },
+        });
+      } else {
+        const filePath = this.storeFile(
+          userId,
+          createRefillbalancerequestDto.file,
+        );
+        refillbalancerequest = await this.prisma.refillBalanceRequest.create({
+          data: {
+            id: uuid(),
+            amount: createRefillbalancerequestDto.amount,
+            status: 'pending',
+            userId: userId,
+            file: filePath,
+          },
+        });
+
+        await this.prisma.refillBalanceRequestStatus.create({
+          data: {
+            id: uuid(),
+            status: 'pending',
+            requestId: refillbalancerequest.id,
+          },
+        });
+      }
+
+      const requiredPermissions = ['balance:refill:read'];
+      const users_with_required_permissions = await this.prisma.user.findMany({
+        where: {
+          role: {
+            permissions: {
+              some: {
+                permission: {
+                  name: {
+                    in: requiredPermissions,
+                  },
+                },
+              },
+            },
+          },
+        },
+        select: {
+          id: true,
+        },
+      });
+      const notification =
+        await this.notificationService.createPermissionBasedNotification(
+          users_with_required_permissions,
+          `${user.email} has requested a balance refill of ${createRefillbalancerequestDto.amount}$`,
+          'Refill Request',
+        );
+      this.eventsService.sendMessageToAll('new_notification', {
+        ...notification,
+      });
+
+      return {
+        reqStatus: {
+          statusCode: 201,
+          message: 'Refill balance Registred successfully',
+        },
+        ...refillbalancerequest,
+      };
+    } catch (error) {
+      throw new Error(
+        `Error while creating refill balance request: ${error.message}`,
+      );
+    }
+  }
+
+  async UserRefillsRequest(userId: string, page: number = 1) {
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+
+    // Ensure `skip` is a valid number
+    if (isNaN(skip) || skip < 0) {
+      throw new Error('Invalid page number');
+    }
+
+    const refillsTotal = await this.prisma.refillBalanceRequest.count({
+      where: {
+        userId: userId,
+      },
+    });
+
+    const refillBalanceRequests =
+      await this.prisma.refillBalanceRequest.findMany({
+        where: {
+          userId: userId,
+        },
+        take: pageSize,
+        skip: skip,
+        orderBy: {
+          createdAt: 'desc',
+        },
+        include: {
+          user: {
+            select: {
+              name: true,
+              email: true,
+              avatar: true,
+            },
+          },
+        },
+      });
+
+    return {
+      refills: refillBalanceRequests.map((request) => ({
+        id: request.id,
+        amount: request.amount,
+        file: request.file,
+        status: request.status,
+        createdAt: request.createdAt.toISOString(),
+        updatedAt: request.updatedAt.toISOString(),
+        name: request.user.name,
+        email: request.user.email,
+        avatar: request.user.avatar,
+      })),
+      pageCount: Math.ceil(refillsTotal / pageSize),
+    };
   }
 }
