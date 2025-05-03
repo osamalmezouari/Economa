@@ -1,39 +1,29 @@
-import { Divider, Grid } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../app/store';
+import { Box, Container,  Typography } from '@mui/material';
 import AddReview from '../../base/addReview/addReview';
 import { reviewContainerProps } from './interface';
-import ReviewCard from '../../base/reviewCard';
 import { useAuth } from '../../../context/AuthContext';
+import ReviewCards from '../../base/reviewCard';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const ReviewContainer = ({ productId }: reviewContainerProps) => {
-  /*   const dispatch = useDispatch()
-   */
-
   const { isAuthenticated } = useAuth();
 
-  const reviews = useSelector(
-    (state: RootState) => state.products.productsDetails.data.reviews
-  );
-
   return (
-    <Grid
-      container
-      className="mx-auto p-4 border-[1px] rounded mb-6"
-      maxWidth={'1200px'}
-    >
-      {reviews.map((review) => {
-        return (
-          <>
-            <ReviewCard {...review} />
-          </>
-        );
-      })}
-      <Divider className="h-2" />
-      <Grid item lg={12} className="">
-        {isAuthenticated && <AddReview productId={productId} />}
-      </Grid>
-    </Grid>
+    <Box sx={{ py: 4, mt: 4, backgroundColor: '#f5f7fa' }} className="mb-6">
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Typography variant="h4" component="h2" gutterBottom>
+            Customers Reviews
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            See what our customers are saying about this product
+          </Typography>
+        </Box>
+        <ReviewCards />
+        <Box>{isAuthenticated && <AddReview productId={productId} />}</Box>
+      </Container>
+    </Box>
   );
 };
 
