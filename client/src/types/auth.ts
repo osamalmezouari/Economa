@@ -1,8 +1,5 @@
 
-export interface LoginPayload {
-  email: string;
-  password: string;
-}
+
 export interface RegisterPayload {
   name: string;
   email: string;
@@ -15,7 +12,7 @@ export interface AuthState {
   Login: {
     loading: boolean;
     error: string 
-    data: LoginPayload[];
+    data: string;
   };
   Register: {
     loading: boolean;
