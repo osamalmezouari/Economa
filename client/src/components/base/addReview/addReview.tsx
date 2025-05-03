@@ -6,7 +6,11 @@ import {
   Grid,
   Rating,
   TextField,
+  Typography,
+  Paper,
+  Fade,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { AddReviewProps } from './interface';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../app/store';
@@ -16,12 +20,13 @@ import {
   getProductsDetails,
 } from '../../../features/products/productThunk';
 import GlobalAlert from '../globalAlert';
+import { AddReview as AddReviewType } from '../../../types/review';
 
 const AddReview = ({ productId }: AddReviewProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [reviewText, setReviewText] = useState('');
-  const [rating, setRating] = useState<string>('');
+  const [rating, setRating] = useState<number>(0);
   const dispatch = useDispatch<AppDispatch>();
 
   const { data } = useSelector(
@@ -40,11 +45,11 @@ const AddReview = ({ productId }: AddReviewProps) => {
       setName(data.name);
       setEmail(data.email);
     }
-  }, [dispatch]);
+  }, [data]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const reviewData = {
+    const reviewData: AddReviewType = {
       productId: productId,
       name,
       email,
@@ -53,118 +58,143 @@ const AddReview = ({ productId }: AddReviewProps) => {
     };
     await dispatch(addReview(reviewData));
     await dispatch(getProductsDetails(productId));
-    console.log(reviewData);
+  };
+
+  const StyledRating = styled(Rating)(({ theme }) => ({}));
+  const handleReviewTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setReviewText(value);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p className="text-2xl font-bold my-2 font-main text-primary-main">
-        Add a review
-      </p>
-      <Box className="flex gap-2 mb-6 ">
-        <p className="capitalize text-secondary-main pl-1">your rating : </p>
-        <Rating
-          value={rating}
-          size="small"
-          precision={0.5}
-          aria-required
-          onChange={(e) => setRating(e.target.value)}
-        />
-      </Box>
-      <Grid container spacing={2} className="pl-4 mb-6">
-        <Grid item xs={12} sm={12} md={12} lg={6}>
-          <TextField
-            variant="outlined"
-            fullWidth
-            label="Your name"
-            placeholder="name"
-            className="mb-4"
-            name="name"
-            disabled
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required={true}
+    <Fade in={true} timeout={500}>
+      <Paper
+        elevation={0}
+        sx={{
+          p: 4,
+          borderRadius: '5px',
+          border: '1px solid',
+          borderColor: 'grey.200',
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <Typography
+            variant="h5"
+            component="h2"
             sx={{
-              '& .MuiOutlinedInput-root': {
-                '&.Mui-focused fieldset': {
-                  borderColor: (theme) => theme.palette.primary.light,
-                },
-                '&:hover fieldset': {
-                  borderColor: (theme) => theme.palette.primary.main,
-                },
+              fontWeight: 700,
+              mb: 3,
+              color: 'primary.main',
+              position: 'relative',
+              '&:after': {
+                content: '""',
+                position: 'absolute',
+                bottom: '-8px',
+                left: 0,
+                width: '40px',
+                height: '3px',
+                backgroundColor: 'primary.main',
+                borderRadius: '2px',
               },
             }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={6}>
-          <TextField
-            variant="outlined"
-            fullWidth
-            label="Email"
-            placeholder="Email"
-            className="mb-4"
-            name="email"
-            value={email}
-            disabled
-            onChange={(e) => setEmail(e.target.value)}
-            required={true}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '&.Mui-focused fieldset': {
-                  borderColor: (theme) => theme.palette.primary.light,
-                },
-                '&:hover fieldset': {
-                  borderColor: (theme) => theme.palette.primary.main,
-                },
-              },
-            }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12}>
-          <TextField
-            variant="outlined"
-            fullWidth
-            label="Enter Your Comment"
-            placeholder="Enter Your Comment"
-            className="mb-4"
-            name="reviewText"
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-            required={true}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '&.Mui-focused fieldset': {
-                  borderColor: (theme) => theme.palette.primary.light,
-                },
-                '&:hover fieldset': {
-                  borderColor: (theme) => theme.palette.primary.main,
-                },
-              },
-            }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={12} md={2} lg={1.5}>
-          <Button
-            variant="contained"
-            fullWidth
-            className={
-              addReviewLoading
-                ? 'mt-4 bg-secondary-light'
-                : 'mt-4 bg-primary-main'
-            }
-            type="submit"
-            disabled={addReviewLoading || rating === ''}
           >
-            {addReviewLoading ? <CircularProgress color="inherit" /> : 'Submit'}
-          </Button>
-        </Grid>
-        {addReviewError ? (
-          <GlobalAlert message={addReviewError} status="error" />
-        ) : (
-          ''
-        )}
-      </Grid>
-    </form>
+            Add a Review
+          </Typography>
+
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
+            <Typography
+              variant="body1"
+              sx={{ color: 'text.secondary', fontWeight: 500 }}
+            >
+              Your rating:
+            </Typography>
+            <StyledRating
+              value={rating}
+              size="small"
+              precision={0.5}
+              onChange={(_, newValue) => setRating(newValue || 0)}
+            />
+          </Box>
+
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Your name"
+                placeholder="name"
+                name="name"
+                disabled
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Email"
+                placeholder="Email"
+                name="email"
+                value={email}
+                disabled
+                onChange={(e) => setEmail(e.target.value)}
+                required={true}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Enter Your Comment"
+                placeholder="Share your experience with this product..."
+                name="reviewText"
+                value={reviewText}
+                onChange={handleReviewTextChange}
+                required={true}
+                multiline
+                rows={4}
+                inputProps={{ maxLength: 150 }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Button
+                variant="contained"
+                fullWidth
+                color="primary"
+                type="submit"
+                disabled={addReviewLoading || !rating}
+                sx={{
+                  backgroundColor: addReviewLoading
+                    ? 'secondary.light'
+                    : 'primary.main',
+                }}
+              >
+                {addReviewLoading ? (
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <CircularProgress
+                      size={20}
+                      color="inherit"
+                      sx={{ mr: 1 }}
+                    />
+                    <span>Submitting...</span>
+                  </Box>
+                ) : (
+                  'Submit Review'
+                )}
+              </Button>
+            </Grid>
+          </Grid>
+
+          {addReviewError && (
+            <Box sx={{ mt: 2 }}>
+              <GlobalAlert message={addReviewError} status="error" />
+            </Box>
+          )}
+        </form>
+      </Paper>
+    </Fade>
   );
 };
 
