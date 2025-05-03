@@ -5,8 +5,8 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface QRCodeGeneratorProps {
   orderId: string;
-  open: boolean;
-  onClose: () => void;
+  open?: boolean;
+  onClose?: () => void;
 }
 
 const QRCodeGenerator = ({ orderId, open, onClose }: QRCodeGeneratorProps) => {
@@ -23,14 +23,12 @@ const QRCodeGenerator = ({ orderId, open, onClose }: QRCodeGeneratorProps) => {
     }
   };
 
-  return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      aria-labelledby="qr-code-modal"
-      className="flex items-center justify-center"
-    >
-      <Paper className="max-w-md w-full mx-auto p-6 relative">
+  // If open and onClose are provided, render with Modal wrapper
+  // Otherwise, render just the content for use within an existing Dialog
+  const content = (
+    <Paper className="max-w-md w-full mx-auto p-6 relative">
+      {/* Only show close button if onClose is provided */}
+      {onClose && (
         <IconButton 
           onClick={onClose}
           className="absolute right-2 top-2"
@@ -38,6 +36,8 @@ const QRCodeGenerator = ({ orderId, open, onClose }: QRCodeGeneratorProps) => {
         >
           <CloseIcon />
         </IconButton>
+      )}
+
         
         <Typography variant="h6" className="!font-Inria text-center mb-4">
           Order QR Code
@@ -78,8 +78,20 @@ const QRCodeGenerator = ({ orderId, open, onClose }: QRCodeGeneratorProps) => {
           </Button>
         </Box>
       </Paper>
-    </Modal>
   );
+
+  // If open and onClose are provided, wrap content in Modal
+  // Otherwise, return just the content
+  return open !== undefined && onClose ? (
+    <Modal
+      open={open}
+      onClose={onClose}
+      aria-labelledby="qr-code-modal"
+      className="flex items-center justify-center"
+    >
+      {content}
+    </Modal>
+  ) : content;
 };
 
 export default QRCodeGenerator;
