@@ -4,6 +4,7 @@ export interface Review {
   user: {
     name: string;
     email: string;
+    avatar : string
   };
   productId: string;
   rating: number;
@@ -13,7 +14,7 @@ export interface Review {
 
 export interface AddReview {
   email: string;
-  mame: string;
+  name: string;
   productId: string;
   rating: number;
   reviewText?: string;
