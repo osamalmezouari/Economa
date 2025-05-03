@@ -23,6 +23,7 @@ const StoreProducts = () => {
     dispatch(setFilters({ key: 'page', value: value }));
     await dispatch(getProductsStore(filters));
   };
+   
   useEffect(() => {
     dispatch(getProductsStore(filters));
   }, [dispatch, filters]);
