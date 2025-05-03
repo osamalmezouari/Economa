@@ -29,7 +29,7 @@ const BalanceCard = () => {
       </Box>
       <Box
         className={
-          'absolute bottom-[12%] left-[10%] text-white capitalize font-Inria'
+          'absolute bottom-[9%] left-[15%] text-white capitalize font-Inria'
         }
       >
         <span className="text-[28px]">
