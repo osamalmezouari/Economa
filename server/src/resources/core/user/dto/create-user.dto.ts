@@ -15,11 +15,9 @@ export class CreateUserDto {
   password: string;
   @IsUUID()
   roleId: string;
-  @IsPhoneNumber()
+  @IsString()
   phoneNumber: string;
   @IsString()
   address: string;
-
-  @IsString()
-  avatar: string;
+  file: Express.Multer.File;
 }
