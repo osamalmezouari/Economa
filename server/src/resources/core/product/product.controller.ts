@@ -5,7 +5,6 @@ import {
   Body,
   Patch,
   Param,
-  Delete,
   Query,
   UseInterceptors,
   UploadedFile,
@@ -16,13 +15,14 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 import { AuthenticationType } from 'src/common/enums/authentication';
 import { ParseIdsPipe } from 'src/common/pipes/ParseIdsPipe.pipe';
-import { StoreFiltersDto } from 'src/resources/core/product/dto/storeFilters.dto';
 import { CreateProductReviewDto } from './dto/create-product-review.dto';
 import { ProductReviewService } from './services/product-review.service';
 import { ProductStockService } from './services/product-stock.service';
 import { ManageProductsTableDto } from './dto/manageProductsTable.dto';
-import { AnyFilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { CreateStockTransactionDto } from './dto/create-stock-transaction.dto';
+import { SET_PERMESSIONS } from 'src/common/decorators/meta/authorization.decorator';
+import { Permissions_TYPE } from 'src/common/enums/permissions';
 
 @Controller('products')
 export class ProductController {
@@ -33,13 +33,8 @@ export class ProductController {
   ) {}
 
   @AUTH(AuthenticationType.None)
-  @Get()
-  async findAll() {
-    const product = await this.productService.findAll();
-    return product;
-  }
-
-  @AUTH(AuthenticationType.None)
+  /*   @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_STORE_READ)
+   */
   @Get('store')
   async getStoreProducts(
     @Query('page') page: number,
@@ -50,13 +45,6 @@ export class ProductController {
     @Query('Maxprice') Maxprice: number,
     @Query('sort') sort: string,
   ) {
-    /*     console.log('Page:', page);
-    console.log('Category:', category);
-    console.log('Search:', search);
-    console.log('Weight:', weight);
-    console.log('Minprice:', Minprice);
-    console.log('Maxprice:', Maxprice);
-    console.log('Sort:', sort); */
     return this.productService.getStoreProducts({
       page,
       category,
@@ -67,55 +55,75 @@ export class ProductController {
       sort,
     });
   }
+
+  @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_STOCK_READ)
   @Get('StockTransactions')
   async StockTransaction(@Query('page') page: number) {
     page = page || 1;
     return this.productstockService.getStockTransactions(page);
   }
   @AUTH(AuthenticationType.None)
+  /*   @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_CARDS_READ)
+   */
   @Get('cards')
   async getAllProductCards() {
     return this.productService.getAllProductCards();
   }
 
   @AUTH(AuthenticationType.None)
+  /*   @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_NEW_ARRIVALS_READ)
+   */
   @Get('newArrivals')
   async getnewArrivals() {
     return this.productService.getnewArrivals();
   }
 
   @AUTH(AuthenticationType.None)
+  @Get('reviews')
+  async getReviews() {
+    const reviews = await this.productreviewService.getReviews();
+    return reviews;
+  }
+
+  @AUTH(AuthenticationType.None)
+  /*   @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_COMPARE_READ)
+   */
   @Get('ComparedProductDetails/:ids')
   async getComparedProductDetails(@Param('ids', ParseIdsPipe) ids: string[]) {
     console.log('ids', ids);
     const product = await this.productService.getComparedProductDetails(ids);
-    console.log('Product Details:', product); // Log the data returned from the service
     return product;
   }
 
   @AUTH(AuthenticationType.None)
+  /*   @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_DETAILS_READ)
+   */
   @Get('productdetails/:id')
   async getProductDetails(@Param('id') id: string) {
     const product = await this.productService.getProductDetails(id);
     return product;
   }
 
+  @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_MANAGE_TABLE_READ)
   @Get('manageProductsTable')
   async getManageProductsTable(@Query() query: ManageProductsTableDto) {
     const products = this.productService.ManageProductsTable(query);
-    console.log('products', products);
     return products;
   }
 
   @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_READ)
   @Get(':productId')
   async findOne(@Param('productId') productId: string) {
     const product = await this.productService.findOne(productId);
     return product;
   }
 
-  @UseInterceptors(FileInterceptor('file'))
   @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_CREATE)
+  @UseInterceptors(FileInterceptor('file'))
   @Post()
   async create(
     @Body() createProductDto: CreateProductDto,
@@ -128,6 +136,7 @@ export class ProductController {
 
   @UseInterceptors(FileInterceptor('file'))
   @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_UPDATE)
   @Patch(':productId')
   async update(
     @Body() updateProductDto: UpdateProductDto,
@@ -145,6 +154,7 @@ export class ProductController {
   }
 
   @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_REVIEW_CREATE)
   @Post('addReview')
   async addProductReview(
     @Body() createProductReviewDto: CreateProductReviewDto,
@@ -155,6 +165,8 @@ export class ProductController {
     return review;
   }
 
+  @AUTH(AuthenticationType.bearer)
+  @SET_PERMESSIONS(Permissions_TYPE.PRODUCT_STOCK_CREATE)
   @Post('addStockTransaction')
   async addStockTransaction(
     @Body() createStockTransaction: CreateStockTransactionDto,
