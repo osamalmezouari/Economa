@@ -9,6 +9,8 @@ import { PaymentService } from 'src/resources/billing/payment/payment.service';
 import { endOfMonth, startOfMonth, subDays, subMonths } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
 import { OrderItemService } from './order-item.service';
+import { AuthenticationType } from 'src/common/enums/authentication';
+import { AUTH } from 'src/common/decorators/meta/authentication.decorator';
 
 @Injectable()
 export class OrdersService {
@@ -117,6 +119,7 @@ export class OrdersService {
       };
     }
   }
+
 
   async getOrdersStatsData() {
     const endDate = new Date();
@@ -563,42 +566,58 @@ export class OrdersService {
     );
   }
 
-  async getOrdersByUserId(userId: string) {
-    const orders = await this.prisma.order.findMany({
-      where: { userId },
-      include: {
-        orderItems: {
-          include: {
-            product: true,
-          },
-        },
-      },
-    });
-
-    return orders.map((order) => ({
-      ...order,
-      createdAt: this.convertToMoroccoTime(order.createdAt),
-    }));
-  }
-
-  async getOrderHistory(page: string) {
-    const pageNumber = parseInt(page, 10) || 1;
+  async getOrderHistory(page: number, useremail: string) {
+    const pageNumber = page || 1;
     const pageSize = 10;
+
+    const whereClause = useremail
+      ? {
+          user: {
+            email: {
+              contains: useremail,
+            },
+          },
+        }
+      : {};
 
     const orders = await this.prisma.order.findMany({
       skip: (pageNumber - 1) * pageSize,
       take: pageSize,
+      where: whereClause,
       orderBy: { createdAt: 'desc' },
+
       include: {
         orderItems: {
-          include: {
-            product: true,
+          select: {
+            quantity: true,
+            product: {
+              select: {
+                name: true,
+                gallery: {
+                  select: {
+                    imageUrl: true,
+                  },
+                },
+                Units: {
+                  select: {
+                    name: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        user: {
+          select: {
+            name: true,
+            avatar: true,
+            email: true,
           },
         },
       },
     });
 
-    const totalOrders = await this.prisma.order.count();
+    const totalOrders = await this.prisma.order.count({ where: whereClause });
     const totalPages = Math.ceil(totalOrders / pageSize);
 
     return {
@@ -610,10 +629,111 @@ export class OrdersService {
     };
   }
 
-  private convertToMoroccoTime(date: Date): Date {
-    const moroccoTimeZone = 'Africa/Casablanca';
-    return toZonedTime(date, moroccoTimeZone); 
+  async getOrderById(orderId: string) {
+    await this.prisma.order.update({
+      where: {
+        id: orderId,
+      },
+      data: {
+        status: 'completed',
+      },
+    });
+    const order = await this.prisma.order.findUnique({
+      where: {
+        id: orderId,
+      },
+
+      include: {
+        orderItems: {
+          select: {
+            quantity: true,
+            product: {
+              select: {
+                name: true,
+                gallery: {
+                  select: {
+                    imageUrl: true,
+                  },
+                },
+                price: true,
+                Units: {
+                  select: {
+                    name: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        user: {
+          select: {
+            name: true,
+            avatar: true,
+            email: true,
+          },
+        },
+      },
+    });
+
+    return {
+      ...order,
+      createdAt: this.convertToMoroccoTime(order.createdAt),
+    };
   }
 
+  async getOrderByUserId(userId: string, page: number) {
+    const pageNumber = page || 1;
+    const pageSize = 10;
 
+    const orders = await this.prisma.order.findMany({
+      skip: (pageNumber - 1) * pageSize,
+      take: pageSize,
+      where: {
+        userId: userId
+      },
+      orderBy: { createdAt: 'desc' },
+      include: {
+        orderItems: {
+          select: {
+            quantity: true,
+            product: {
+              select: {
+                name: true,
+                gallery: {
+                  select: {
+                    imageUrl: true,
+                  },
+                },
+                price: true,
+                Units: {
+                  select: {
+                    name: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const totalOrders = await this.prisma.order.count({
+      where: {
+        userId: userId
+      }
+    });
+    const totalPages = Math.ceil(totalOrders / pageSize);
+
+    return {
+      orders: orders.map((order) => ({
+        ...order,
+        createdAt: this.convertToMoroccoTime(order.createdAt),
+      })),
+      pageCount: totalPages,
+    };
+  }
+  private convertToMoroccoTime(date: Date): Date {
+    const moroccoTimeZone = 'Africa/Casablanca';
+    return toZonedTime(date, moroccoTimeZone);
+  }
 }
