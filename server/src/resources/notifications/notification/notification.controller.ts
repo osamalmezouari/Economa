@@ -10,31 +10,24 @@ import {
 import { NotificationService } from './notification.service';
 import { CreateNotificationDto } from './dto/create-notification.dto';
 import { UpdateNotificationDto } from './dto/update-notification.dto';
+import { SET_PERMESSIONS } from 'src/common/decorators/meta/authorization.decorator';
+import { Permissions_TYPE } from 'src/common/enums/permissions';
+import { sub } from 'date-fns';
+import { activeUser } from 'src/common/decorators/params/activeUser.decorator';
 
 @Controller('notifications')
 export class NotificationController {
   constructor(private readonly notificationService: NotificationService) {}
 
-  @Post()
-  async create(@Body() createNotificationDto: CreateNotificationDto) {
-    const notification = await this.notificationService.create(
-      createNotificationDto,
-    );
-    return notification;
-  }
 
-  @Get()
-  async findAll() {
-    const notifications = await this.notificationService.findAll();
+  @SET_PERMESSIONS(Permissions_TYPE.NOTIFICATION_READ)
+  @Get('user/list')
+  async getNotificationList(@activeUser('sub') userId : string) {
+    const notifications = await this.notificationService.getNotificationList(userId);
     return notifications;
   }
 
-  @Get(':id')
-  async findOne(@Param('id') id: string) {
-    const notification = await this.notificationService.findOne(id);
-    return notification;
-  }
-
+  @SET_PERMESSIONS(Permissions_TYPE.NOTIFICATION_UPDATE)
   @Patch(':id')
   async update(
     @Param('id') id: string,
@@ -44,12 +37,6 @@ export class NotificationController {
       id,
       updateNotificationDto,
     );
-    return notification;
-  }
-
-  @Delete(':id')
-  async remove(@Param('id') id: string) {
-    const notification = await this.notificationService.remove(id);
     return notification;
   }
 }
