@@ -43,7 +43,22 @@ export class ProductReviewService {
     return productReview;
   }
 
+  
+  async countReviews(productId: string): Promise<number> {
+    const reviewsCount = await this.prisma.productReview.count({
+      where: {
+        productId: productId,
+      },
+    });
+    return reviewsCount ?? 0;
+  }
+
   async getProductAvgRating(productId: string): Promise<number> {
+    const prevresult = await this.prisma.productReview.findFirst({
+      where: { productId },
+      select: { id: true },
+    });
+    if (!prevresult?.id) return 0;
     const result = await this.prisma.productReview.aggregate({
       where: { productId },
       _avg: { rating: true },
@@ -53,6 +68,26 @@ export class ProductReviewService {
       return 0;
     }
     return result._avg.rating;
+  }
+
+  async getReviews() {
+    const reviews = await this.prisma.productReview.findMany({
+      take: 5,
+      skip: 0,
+      orderBy: {
+        createdAt: 'desc',
+      },
+      include: {
+        user: {
+          select: {
+            name: true,
+            email: true,
+            avatar: true,
+          },
+        },
+      },
+    });
+    return reviews;
   }
 
   /*   async findAll() {
