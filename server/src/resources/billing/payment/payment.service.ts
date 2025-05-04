@@ -41,6 +41,85 @@ export class PaymentService {
     return payment;
   }
 
+  async getPaymentTransactions(page: number, search: string) {
+    const pageSize = 10;
+    const skip = (page - 1) * pageSize;
+
+    const payments = await this.prisma.payment.findMany({
+      where: {
+        OR: [
+          {
+            order: {
+              id: {
+                contains: search,
+              },
+            },
+          },
+          {
+            order: {
+              user: {
+                OR: [
+                  { name: { contains: search } },
+                  { email: { contains: search } },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      include: {
+        order: {
+          select: {
+            id: true,
+            user: {
+              select: {
+                name: true,
+                email: true,
+                avatar: true,
+              },
+            },
+          },
+        },
+      },
+      skip,
+      take: pageSize,
+      orderBy: {
+        order: {
+          createdAt: 'desc',
+        },
+      },
+    });
+
+    const totalCount = await this.prisma.payment.count({
+      where: {
+        OR: [
+          {
+            order: {
+              id: {
+                contains: search,
+              },
+            },
+          },
+          {
+            order: {
+              user: {
+                OR: [
+                  { name: { contains: search } },
+                  { email: { contains: search } },
+                ],
+              },
+            },
+          },
+        ],
+      },
+    });
+
+    return {
+      payments,
+      pageCount: Math.ceil(totalCount / pageSize),
+    };
+  }
+
   async update(id: string, updatePaymentDto: UpdatePaymentDto) {
     await this.findOne(id);
     const payment = await this.prisma.payment.update({
