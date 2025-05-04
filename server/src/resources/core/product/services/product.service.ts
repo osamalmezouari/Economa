@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateProductDto } from '../dto/create-product.dto';
 import { UpdateProductDto } from '../dto/update-product.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -10,8 +10,9 @@ import { Unsupported_FILE_Exception } from 'src/common/exceptions/UNSPORTED_FILE
 import * as fs from 'fs';
 import * as path from 'path';
 import { v4 as uuid } from 'uuid';
+import { GalleryService } from './gallery.service';
+import { contains } from 'class-validator';
 
-import { GalleryService } from 'src/resources/media/gallery/gallery.service';
 @Injectable()
 export class ProductService {
   constructor(
@@ -194,6 +195,10 @@ export class ProductService {
           gt: 0,
         },
       },
+      take: 10,
+      orderBy: {
+        created_at: 'desc',
+      },
       select: {
         id: true,
         name: true,
@@ -223,31 +228,32 @@ export class ProductService {
       },
     });
 
-    const productsWithAvgRating = productsWithDiscount.map((product) => {
-      /* const totalRating = product.reviews.reduce((total, review) => {
-        return total + (review.rating || 0);
-      }, 0);
-      const avgRating = totalRating / product.reviews.length;
-      const cappedAvgRating = Math.min(avgRating, 5); */
-      const cappedAvgRating = this.reviewService.getProductAvgRating(
-        product.id,
-      );
+    const productsWithAvgRating = await Promise.all(
+      productsWithDiscount.map(async (product) => {
+        const cappedAvgRating = await this.reviewService.getProductAvgRating(
+          product.id,
+        );
+        const reviewsCount = await this.reviewService.countReviews(product.id);
 
-      return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        discount: product.discount,
-        description: product.description,
-        productAvgRating: cappedAvgRating || 0,
-        priceWithDiscount: parseFloat(
-          (product.price - (product.price * product.discount) / 100).toFixed(2),
-        ),
-        categoryName: product.category.name,
-        unit: product.Units.name,
-        imageLink: product.gallery[0].imageUrl,
-      };
-    });
+        return {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          discount: product.discount,
+          description: product.description,
+          productAvgRating: cappedAvgRating || 0,
+          priceWithDiscount: parseFloat(
+            (product.price - (product.price * product.discount) / 100).toFixed(
+              2,
+            ),
+          ),
+          categoryName: product.category.name,
+          unit: product.Units.name,
+          imageLink: product.gallery[0].imageUrl,
+          reviewsCount: reviewsCount,
+        };
+      }),
+    );
 
     return productsWithAvgRating;
   }
@@ -261,6 +267,10 @@ export class ProductService {
           gt: oneMonthAgo,
         },
       },
+      take: 10,
+      orderBy: {
+        created_at: 'desc',
+      },
       select: {
         id: true,
         name: true,
@@ -290,32 +300,36 @@ export class ProductService {
       },
     });
 
-    const productsWithAvgRating = productsWithDiscount.map((product) => {
-      /* const totalRating = product.reviews.reduce((total, review) => {
+    const productsWithAvgRating = await Promise.all(
+      productsWithDiscount.map(async (product) => {
+        /* const totalRating = product.reviews.reduce((total, review) => {
         return total + (review.rating || 0);
       }, 0);
       const avgRating = totalRating / product.reviews.length;
       const cappedAvgRating = Math.min(avgRating, 5); */
 
-      const cappedAvgRating = this.reviewService.getProductAvgRating(
-        product.id,
-      );
-
-      return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        discount: product.discount,
-        description: product.description,
-        productAvgRating: cappedAvgRating || 0,
-        priceWithDiscount: parseFloat(
-          (product.price - (product.price * product.discount) / 100).toFixed(2),
-        ),
-        categoryName: product.category.name,
-        unit: product.Units.name,
-        imageLink: product.gallery[0].imageUrl,
-      };
-    });
+        const cappedAvgRating =
+          (await this.reviewService.getProductAvgRating(product.id)) || 0;
+        const reviewsCount = await this.reviewService.countReviews(product.id);
+        return {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          discount: product.discount,
+          description: product.description,
+          productAvgRating: cappedAvgRating || 0,
+          priceWithDiscount: parseFloat(
+            (product.price - (product.price * product.discount) / 100).toFixed(
+              2,
+            ),
+          ),
+          categoryName: product.category.name,
+          unit: product.Units.name,
+          imageLink: product.gallery[0].imageUrl,
+          reviewsCount: reviewsCount,
+        };
+      }),
+    );
 
     return productsWithAvgRating;
   }
@@ -394,6 +408,7 @@ export class ProductService {
   async getStoreProducts(filters: StoreFiltersDto) {
     const filterConditions: any = {};
     let orderBy: any = {};
+
     switch (filters.sort) {
       case 'price-asc':
         orderBy = { price: 'asc' };
@@ -412,12 +427,18 @@ export class ProductService {
     }
 
     if (filters.search) {
-      filterConditions.name = {
-        contains: filters.search,
-      };
-      filterConditions.description = {
-        contains: filters.search,
-      };
+      filterConditions.OR = [
+        {
+          name: {
+            contains: filters.search,
+          },
+        },
+        {
+          description: {
+            contains: filters.search,
+          },
+        },
+      ];
     }
     if (filters.category) {
       filterConditions.category = {
@@ -425,7 +446,9 @@ export class ProductService {
       };
     }
     if (filters.weight) {
-      filterConditions.weight = filters.weight;
+      filterConditions.Units = {
+        name: filters.weight,
+      };
     }
     if (filters.Minprice) {
       filterConditions.price = {
@@ -437,81 +460,96 @@ export class ProductService {
       if (!filterConditions.price) filterConditions.price = {};
       filterConditions.price.lte = filters.Maxprice;
     }
-    const products = await this.prisma.product.findMany({
-      skip: filters.page ? (filters.page - 1) * 6 : 0,
-      take: 6,
-      orderBy: orderBy,
-      where: {
-        ...filterConditions,
-      },
-      select: {
-        id: true,
-        name: true,
-        price: true,
-        description: true,
-        discount: true,
-        gallery: {
-          select: {
-            imageUrl: true,
-          },
-        },
-        category: {
-          select: {
-            name: true,
-          },
-        },
-        reviews: {
-          select: {
-            rating: true,
-          },
-        },
-        Units: {
-          select: {
-            name: true,
-          },
-        },
-      },
-    });
 
-    const productPageCount = await this.prisma.product
-      .count({
-        where: filterConditions,
-      })
-      .then((count) => Math.ceil(count / 6));
-    const productsWithAvgRating = products.map((product) => {
-      const totalRating = product.reviews.reduce((total, review) => {
-        return total + (review.rating || 0);
-      }, 0);
-      const avgRating = totalRating / product.reviews.length;
-      const cappedAvgRating = Math.min(avgRating, 5);
+    try {
+      const products = await this.prisma.product.findMany({
+        skip: filters.page ? (filters.page - 1) * 12 : 0,
+        take: 12,
+        orderBy: orderBy,
+        where: {
+          ...filterConditions,
+        },
+
+        select: {
+          id: true,
+          name: true,
+          price: true,
+          description: true,
+          discount: true,
+          gallery: {
+            select: {
+              imageUrl: true,
+            },
+          },
+          category: {
+            select: {
+              name: true,
+            },
+          },
+          reviews: {
+            select: {
+              rating: true,
+            },
+          },
+          Units: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      });
+
+      const productPageCount = await this.prisma.product
+        .count({
+          where: {
+            ...filterConditions,
+          },
+        })
+        .then((count) => Math.ceil(count / 12));
+      const productsWithAvgRating = await Promise.all(
+        products.map(async (product) => {
+          const cappedAvgRating =
+            (await this.reviewService.getProductAvgRating(product.id)) || 0;
+          const reviewsCount = await this.reviewService.countReviews(
+            product.id,
+          );
+
+          return {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            discount: product.discount || 0,
+            description: product.description,
+            productAvgRating: cappedAvgRating || 0,
+            priceWithDiscount: parseFloat(
+              (
+                product.price -
+                (product.price * product.discount) / 100
+              ).toFixed(2),
+            ),
+            categoryName: product.category.name,
+            unit: product.Units.name,
+            imageLink: product.gallery[0]?.imageUrl || '',
+            reviewsCount: reviewsCount,
+          };
+        }),
+      );
+      if (filters.sort === 'rating-asc' || filters.sort === 'rating-desc') {
+        productsWithAvgRating.sort((a, b) =>
+          filters.sort === 'rating-asc'
+            ? a.productAvgRating - b.productAvgRating
+            : b.productAvgRating - a.productAvgRating,
+        );
+      }
 
       return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        discount: product.discount || 0,
-        description: product.description,
-        productAvgRating: cappedAvgRating || 0,
-        priceWithDiscount: parseFloat(
-          (product.price - (product.price * product.discount) / 100).toFixed(2),
-        ),
-        categoryName: product.category.name,
-        unit: product.Units.name,
-        imageLink: product.gallery[0].imageUrl,
+        productPageCount,
+        products: productsWithAvgRating,
       };
-    });
-    if (filters.sort === 'rating-asc' || filters.sort === 'rating-desc') {
-      productsWithAvgRating.sort((a, b) =>
-        filters.sort === 'rating-asc'
-          ? a.productAvgRating - b.productAvgRating
-          : b.productAvgRating - a.productAvgRating,
-      );
+    } catch (error) {
+      console.log(error);
+      throw new HttpException(error, HttpStatus.BAD_REQUEST);
     }
-
-    return {
-      productPageCount,
-      products: productsWithAvgRating,
-    };
   }
 
   async getProductDetails(productId: string) {
@@ -543,6 +581,7 @@ export class ProductService {
               select: {
                 name: true,
                 email: true,
+                avatar: true,
               },
             },
           },
