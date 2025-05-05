@@ -580,7 +580,7 @@ export class RefillBalanceService {
         });
       }
 
-      const requiredPermissions = ['balance:refill:read'];
+      const requiredPermissions = ['balance:refills:read'];
       const users_with_required_permissions = await this.prisma.user.findMany({
         where: {
           role: {
