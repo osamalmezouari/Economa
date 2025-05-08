@@ -1,1 +1,234 @@
-Economa
+# Economa
+
+## Project Overview
+
+Economa is a comprehensive e-commerce platform designed to provide a complete solution for online retail businesses. The platform features user management, product catalog, shopping cart functionality, order processing, payment handling, and balance management systems.
+
+## Key Features
+
+- **User Management**: Registration, authentication, and role-based access control
+- **Product Management**: Create, read, update, and delete products with categories
+- **Shopping Cart**: Add products to cart, update quantities, and checkout
+- **Order Processing**: Create and manage orders with status tracking
+- **Payment System**: Process payments and maintain payment records
+- **Balance Management**: User balance system with refill requests and transfers
+- **Wishlist**: Save products for future purchase
+- **Reviews**: Product rating and review system
+- **Coupon System**: Apply discounts with various coupon types
+- **Notification System**: Keep users informed about important events
+
+## Database Model
+
+### Core Entities
+
+#### User
+Stores user information, authentication details, and role assignments.
+
+#### Product
+Contains product details including name, description, price, stock levels, and category association.
+
+#### Category
+Organizes products into logical groups with descriptive information.
+
+#### Order
+Tracks customer purchases with status, total amount, and associated items.
+
+#### Payment
+Records payment information for completed orders.
+
+### Supporting Entities
+
+#### Role & Permission
+Implements role-based access control with granular permissions.
+
+#### Balance
+Manages user account balance for purchases.
+
+#### ShoppingCart
+Temporary storage for items before checkout.
+
+#### Wishlist
+Saves products users are interested in.
+
+#### Coupon
+Defines discount rules and usage limitations.
+
+#### Notification
+Stores system messages for users.
+
+## Entity Relationship Diagram
+
+```
+┌─────────────┐     ┌───────────────┐     ┌─────────────┐
+│    User     │     │     Role      │     │ Permission  │
+├─────────────┤     ├───────────────┤     ├─────────────┤
+│ id          │────>│ id            │<────│ id          │
+│ name        │     │ name          │     │ name        │
+│ email       │     │ description   │     │ description │
+│ password    │     │ rolelvl       │     └─────────────┘
+│ phoneNumber │     └───────────────┘            ▲
+│ address     │              ▲                   │
+│ roleId      │              │                   │
+└─────────────┘              │                   │
+      ▲  ▲                   └───────────────────┘
+      │  │                   RolePermission
+      │  │
+      │  │     ┌─────────────┐     ┌─────────────┐
+      │  │     │   Product   │     │  Category   │
+      │  │     ├─────────────┤     ├─────────────┤
+      │  │     │ id          │     │ id          │
+      │  │     │ name        │     │ name        │
+      │  │     │ description │<────│ svgLink     │
+      │  │     │ price       │     │ description │
+      │  │     │ categoryId  │     └─────────────┘
+      │  │     │ stock       │
+      │  │     └─────────────┘
+      │  │            ▲
+      │  │            │
+      │  │            │
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   Balance   │     │ ShoppingCart│     │   Order     │
+├─────────────┤     ├─────────────┤     ├─────────────┤
+│ id          │     │ id          │     │ id          │
+│ userId      │     │ userId      │     │ userId      │
+│ Balance     │     │ productId   │     │ couponId    │
+│ type        │     │ quantity    │     │ status      │
+└─────────────┘     └─────────────┘     │ totalAmount │
+                                         └─────────────┘
+                                                ▲
+                                                │
+                                         ┌─────────────┐
+                                         │  Payment    │
+                                         ├─────────────┤
+                                         │ id          │
+                                         │ orderId     │
+                                         │ amount      │
+                                         │ paymentDate │
+                                         └─────────────┘
+```
+
+## Business Process Model and Notation (BPMN)
+
+### Order Processing Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         Order Processing                             │
+├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
+│  Start   │────────>│  Create  │────────>│  Process │────────>│ Complete │
+│  Order   │         │  Order   │         │  Payment │         │  Order   │
+└─────────┘         └─────────┘         └─────────┘         └─────────┘
+     ▲                                        │
+     │                                        │
+     │                                        ▼
+┌─────────┐                             ┌─────────┐
+│ Shopping │                             │ Update  │
+│   Cart   │                             │ Balance │
+└─────────┘                             └─────────┘
+```
+
+### User Balance Management Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Balance Management                              │
+├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
+│ Request  │───────>│ Upload  │──────>│  Admin    │──────>  │ Update  │
+│  Refill  │        │ Receipt │       │  Review   │         │ Balance │
+└─────────┘         └─────────┘         └─────────┘         └─────────┘
+                                             │
+                                             │
+                                             ▼
+                                        ┌─────────┐
+                                        │  Reject │
+                                        │ Request │
+                                        └─────────┘
+```
+
+## Interaction Flow Modeling Language (IFML)
+
+### Product Browsing and Purchase Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         User Interface Flow                         │
+├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
+│  Browse │────────>│  View   │──────>  │  Add to │────────>│ Checkout│
+│ Products│         │ Details │         │   Cart  │         │         │
+└─────────┘         └─────────┘         └─────────┘         └─────────┘
+     ▲                    │                   ▲                   │
+     │                    │                   │                   │
+     │                    ▼                   │                   ▼
+┌─────────┐         ┌─────────┐         ┌─────────┐          ┌─────────┐
+│ Category│         │   Add   │         │  Update │          │ Payment │
+│  Filter │         │ to Wish │         │ Quantity│          │  Method │
+└─────────┘         │   List  │         └─────────┘          └─────────┘
+                    └─────────┘
+```
+
+## Installation
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MySQL database
+- npm or yarn package manager
+
+### Server Setup
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/economa.git
+   cd economa
+   ```
+
+2. Install server dependencies
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. Configure environment variables
+   - Create a `.env` file in the server directory
+   - Add the following variables:
+     ```
+     DATABASE_URL="mysql://username:password@localhost:3306/economa"
+     JWT_SECRET="your-secret-key"
+     PORT=3000
+     ```
+
+4. Run database migrations
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. Start the server
+   ```bash
+   npm run start:dev
+   ```
+
+### Client Setup
+
+1. Install client dependencies
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+2. Configure environment variables
+   - Create a `.env` file in the client directory
+   - Add the following variables:
+     ```
+     VITE_API_URL=http://localhost:3000
+     ```
+
+3. Start the client application
+   ```bash
+   npm run dev
+   ```
+
+4. Access the application at `http://localhost:5173`
+
+## License
+
+MIT
