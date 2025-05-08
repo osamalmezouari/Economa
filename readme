@@ -113,17 +113,17 @@ Stores system messages for users.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         Order Processing                             │
+│                         Order Processing                            │
 ├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
-│  Start   │────────>│  Create  │────────>│  Process │────────>│ Complete │
-│  Order   │         │  Order   │         │  Payment │         │  Order   │
+│  Start  │────────>│  Create │────────>│  Process│─────>   │ Complete│
+│  Order  │         │  Order  │         │  Payment│         │  Order  │
 └─────────┘         └─────────┘         └─────────┘         └─────────┘
      ▲                                        │
      │                                        │
      │                                        ▼
 ┌─────────┐                             ┌─────────┐
-│ Shopping │                             │ Update  │
-│   Cart   │                             │ Balance │
+│ Shopping│                             │ Update  │
+│   Cart  │                             │ Balance │
 └─────────┘                             └─────────┘
 ```
 
@@ -131,10 +131,10 @@ Stores system messages for users.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      Balance Management                              │
+│                      Balance Management                             │
 ├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
-│ Request  │───────>│ Upload  │──────>│  Admin    │──────>  │ Update  │
-│  Refill  │        │ Receipt │       │  Review   │         │ Balance │
+│ Request  │───────>│ Upload  │──────>  │Admin    │──────>  │ Update  │
+│  Refill  │        │ Receipt │         │Review   │         │ Balance │
 └─────────┘         └─────────┘         └─────────┘         └─────────┘
                                              │
                                              │
