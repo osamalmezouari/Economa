@@ -94,7 +94,7 @@ Stores system messages for users.
 │ Balance     │     │ productId   │     │ couponId    │
 │ type        │     │ quantity    │     │ status      │
 └─────────────┘     └─────────────┘     │ totalAmount │
-                                         └─────────────┘
+                                        └─────────────┘
                                                 ▲
                                                 │
                                          ┌─────────────┐
