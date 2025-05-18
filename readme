@@ -133,8 +133,8 @@ Stores system messages for users.
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      Balance Management                             │
 ├─────────┐         ┌─────────┐         ┌─────────┐         ┌─────────┤
-│ Request  │───────>│ Upload  │──────>  │Admin    │──────>  │ Update  │
-│  Refill  │        │ Receipt │         │Review   │         │ Balance │
+│ Request │───────> │ Upload  │──────>  │Admin    │──────>  │ Update  │
+│  Refill │         │ Receipt │         │Review   │         │ Balance │
 └─────────┘         └─────────┘         └─────────┘         └─────────┘
                                              │
                                              │
