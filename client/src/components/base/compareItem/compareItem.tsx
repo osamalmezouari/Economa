@@ -43,7 +43,7 @@ const CompareItem = ({
           onMouseEnter={() => setToggleActions(true)}
           onMouseLeave={() => setToggleActions(false)}
           style={{
-            backgroundImage: `url(${svgLink})`,
+            backgroundImage: `url('${svgLink}')`,
           }}
           className="w-full h-full flex items-center justify-center bg-cover bg-center gap-2 relative"
         >

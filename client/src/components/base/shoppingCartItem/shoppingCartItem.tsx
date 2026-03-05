@@ -70,7 +70,8 @@ const ShoppingCartItem = ({
         display: 'flex',
         alignItems: 'center',
         mb: 2,
-        p: 2,
+        p: 3, // Increased padding
+        minHeight: '120px', // Added minHeight
         border: '1px solid #eee',
         borderRadius: 1,
       }}

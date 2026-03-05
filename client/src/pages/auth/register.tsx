@@ -17,14 +17,33 @@ import { AppDispatch, RootState } from '../../app/store';
 import { Register } from '../../features/auth/authThunk';
 import { useRouter } from '@tanstack/react-router';
 import { MdEmail, MdLock, MdPerson, MdPhone, MdHome, MdVisibility, MdVisibilityOff } from 'react-icons/md';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { clearAuthError } from '../../features/auth/authSlice';
 
 const RegisterComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { loading, error, data } = useSelector(
     (state: RootState) => state.auth.Register
   );
+  const Router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+
+  // Clear stale errors when mounting the register page
+  useEffect(() => {
+    dispatch(clearAuthError());
+  }, [dispatch]);
+
+  // Handle successful registration redirection
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const timer = setTimeout(() => {
+        dispatch(clearAuthError()); // clear the success message state via this reducer
+        Router.navigate({ to: '/Economa/login' });
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [data, Router, dispatch]);
+
   const HandleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -37,7 +56,6 @@ const RegisterComponent = () => {
     };
     await dispatch(Register(newRegistredUser));
   };
-  const Router = useRouter();
   return (
     <>
       <Box

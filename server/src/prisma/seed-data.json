@@ -1,0 +1,4242 @@
+{
+  "units": [
+    {
+      "id": "1",
+      "name": "Piece"
+    },
+    {
+      "id": "2",
+      "name": "Pack"
+    },
+    {
+      "id": "3",
+      "name": "Kg"
+    },
+    {
+      "id": "4",
+      "name": "L"
+    }
+  ],
+  "categories": [
+    {
+      "id": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "name": "Seafood",
+      "svgLink": "/assets/categories/Meats & Seafood.jpg",
+      "description": "Fresh or frozen fish, shellfish, and other marine life"
+    },
+    {
+      "id": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "name": "Vegetables",
+      "svgLink": "/assets/categories/Fruits & Vegetables.jpg",
+      "description": "Nutrient-rich plants, including leafy greens and root vegetables"
+    },
+    {
+      "id": "745d77d1-6d3e-41cc-905f-8129a5b63843",
+      "name": "Milk & Diary",
+      "svgLink": "/assets/categories/Breaksfast & Dairy.png",
+      "description": "Fresh and processed products derived from milk"
+    },
+    {
+      "id": "76fdf1a4-e766-4acf-ada8-2fcb215da8c4",
+      "name": "Bakery",
+      "svgLink": "/assets/categories/Breads & Bakery.jpg",
+      "description": "Freshly baked goods like bread, cakes, and pastries"
+    },
+    {
+      "id": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "name": "Fruits",
+      "svgLink": "/assets/categories/Fruits & Vegetables.jpg",
+      "description": "Fresh, ripe, and delicious fruits"
+    },
+    {
+      "id": "967fdc3d-3c94-475a-ab0f-ee515cea5dc6",
+      "name": "Fastfood",
+      "svgLink": "/assets/categories/Biscuits & Snacks.jpg",
+      "description": "Quick and convenient meals"
+    },
+    {
+      "id": "ce8e1158-3524-4773-80e1-eefb993a4d04",
+      "name": "Baby & Pregnancy",
+      "svgLink": "/assets/categories/Baby & Pregnancy.jpg",
+      "description": "Essential products for babies and mothers-to-be"
+    },
+    {
+      "id": "32676a05-52c3-48ff-bd93-f272c19e92e0",
+      "name": "Frozen Foods",
+      "svgLink": "/assets/categories/Frozen Foods.png",
+      "description": "Long-lasting frozen meals, vegetables, and snacks"
+    },
+    {
+      "id": "c793fac8-1463-4eb9-9da8-fee6d72c0c71",
+      "name": "Grocery & Staples",
+      "svgLink": "/assets/categories/Grocery & Staples.png",
+      "description": "Daily essentials like rice, flour, oil, and spices"
+    },
+    {
+      "id": "86e155f3-716e-4fbd-9c95-7ff95b6d21b1",
+      "name": "Household Needs",
+      "svgLink": "/assets/categories/Household Needs.png",
+      "description": "Cleaning supplies, tissues, and other home essentials"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "6a4c1280-581a-43c2-bd15-006524acf8c3",
+      "name": "user:create",
+      "description": "Permission for user:create"
+    },
+    {
+      "id": "86e818aa-e0b2-402d-ab58-2ac3d8ea9171",
+      "name": "user:read",
+      "description": "Permission for user:read"
+    },
+    {
+      "id": "7153fe37-fc7e-4e89-9cba-0360e0e851ba",
+      "name": "users:read",
+      "description": "Permission for users:read"
+    },
+    {
+      "id": "a37ad797-c933-4abc-b42d-b47b00612348",
+      "name": "user:profile:update",
+      "description": "Permission for user:profile:update"
+    },
+    {
+      "id": "6c0f3c5d-02e2-4b32-ac19-dd3535469ca1",
+      "name": "user:update",
+      "description": "Permission for user:update"
+    },
+    {
+      "id": "8c6e63fb-73d5-453a-9327-7a65fa5201a2",
+      "name": "user:delete",
+      "description": "Permission for user:delete"
+    },
+    {
+      "id": "ece276fb-605c-4fa8-a75f-f67111262a1f",
+      "name": "category:create",
+      "description": "Permission for category:create"
+    },
+    {
+      "id": "27e64a87-1bba-438d-b109-11b5786e6635",
+      "name": "categories:read",
+      "description": "Permission for categories:read"
+    },
+    {
+      "id": "41b2431a-ccfc-415e-a358-1c53fb97aca1",
+      "name": "category:namesandids:read",
+      "description": "Permission for category:namesandids:read"
+    },
+    {
+      "id": "3f7c43b4-7036-48da-bd58-12073ddf1367",
+      "name": "category:cards:read",
+      "description": "Permission for category:cards:read"
+    },
+    {
+      "id": "87c47e0a-fc42-438d-bbff-eedfeff02611",
+      "name": "category:read",
+      "description": "Permission for category:read"
+    },
+    {
+      "id": "8431cc89-2903-4e5b-85c4-dc7bf71675e2",
+      "name": "category:update",
+      "description": "Permission for category:update"
+    },
+    {
+      "id": "a2c678ca-a49d-4108-9f58-a079a193f53d",
+      "name": "category:delete",
+      "description": "Permission for category:delete"
+    },
+    {
+      "id": "c7decf31-5115-4cdc-b0e8-b1b20e5fefb4",
+      "name": "wishlist:create",
+      "description": "Permission for wishlist:create"
+    },
+    {
+      "id": "7cd94aa8-502c-4aed-ab1a-c6709b24a0b4",
+      "name": "wishlist:read",
+      "description": "Permission for wishlist:read"
+    },
+    {
+      "id": "2628bd9c-8473-41c1-9820-4620c00c28e2",
+      "name": "wishlist:delete",
+      "description": "Permission for wishlist:delete"
+    },
+    {
+      "id": "88c33a5f-8860-41fe-b09a-0de7091f9339",
+      "name": "analytics:store:read",
+      "description": "Permission for analytics:store:read"
+    },
+    {
+      "id": "b3d975f2-92ec-44af-9720-d7d11227d2f3",
+      "name": "analytics:refill:read",
+      "description": "Permission for analytics:refill:read"
+    },
+    {
+      "id": "ccf72ecd-f4df-4d38-a0a2-9db0109e83a8",
+      "name": "product:read",
+      "description": "Permission for product:read"
+    },
+    {
+      "id": "21f04d21-eb0e-404d-a6ea-8bf1362a574d",
+      "name": "product:store:read",
+      "description": "Permission for product:store:read"
+    },
+    {
+      "id": "35180514-545d-4a29-8c37-eabd3d131ca0",
+      "name": "product:stock:read",
+      "description": "Permission for product:stock:read"
+    },
+    {
+      "id": "f752fc7c-b0e6-41e0-a8f8-206b3919933a",
+      "name": "product:manageTable:read",
+      "description": "Permission for product:manageTable:read"
+    },
+    {
+      "id": "4d22fe7a-fdba-427c-9926-6632404099fe",
+      "name": "product:create",
+      "description": "Permission for product:create"
+    },
+    {
+      "id": "8ca7764d-4c83-4e14-80e9-2f3297c421b4",
+      "name": "product:update",
+      "description": "Permission for product:update"
+    },
+    {
+      "id": "8603e52c-d5bd-45f8-af80-641e1d9fb5f0",
+      "name": "product:review:create",
+      "description": "Permission for product:review:create"
+    },
+    {
+      "id": "ec9ff188-3073-4669-a9e1-59440bb5de6b",
+      "name": "product:stock:create",
+      "description": "Permission for product:stock:create"
+    },
+    {
+      "id": "010b1078-87a8-4f5a-8147-9b807de2238a",
+      "name": "order:create",
+      "description": "Permission for order:create"
+    },
+    {
+      "id": "4c469d76-5ce7-4b99-9374-889d445b767d",
+      "name": "order:read",
+      "description": "Permission for order:read"
+    },
+    {
+      "id": "a46c9645-10ef-4d12-865f-41c468e69c4d",
+      "name": "permissions:read",
+      "description": "Permission for permissions:read"
+    },
+    {
+      "id": "3d2ae45e-6ccb-4ca5-b854-e2c1113dfc1e",
+      "name": "balance:refill:create",
+      "description": "Permission for balance:refill:create"
+    },
+    {
+      "id": "0bf07fc9-5ab8-4dfb-81e4-eddbdca63a03",
+      "name": "balance:refill:update",
+      "description": "Permission for balance:refill:update"
+    },
+    {
+      "id": "4569779b-aeba-46b9-8af3-0e9f727f876c",
+      "name": "balance:refill:read",
+      "description": "Permission for balance:refill:read"
+    },
+    {
+      "id": "04bfe2d0-be2f-4c56-bac0-bbe53cd7b1cc",
+      "name": "balance:refill:status:read",
+      "description": "Permission for balance:refill:status:read"
+    },
+    {
+      "id": "13e0b591-e76b-404c-b7f0-5a1497e9ca64",
+      "name": "balance:cardinfo:read",
+      "description": "Permission for balance:cardinfo:read"
+    },
+    {
+      "id": "3db179b2-18d4-46d9-a62c-2d290fb58eba",
+      "name": "balance:read",
+      "description": "Permission for balance:read"
+    },
+    {
+      "id": "3df471dd-4eca-48c5-b6a5-567360e26dd3",
+      "name": "balance:refills:read",
+      "description": "Permission for balance:refills:read"
+    },
+    {
+      "id": "a41a5c64-7dc8-492e-991e-461a3b4409c6",
+      "name": "balance:transfer",
+      "description": "Permission for balance:transfer"
+    },
+    {
+      "id": "79af366b-7e26-422a-8ddc-86373da15ca1",
+      "name": "balance:transfer:read",
+      "description": "Permission for balance:transfer:read"
+    },
+    {
+      "id": "fdc72b39-fdcc-4e7f-950e-f1c315ce2abe",
+      "name": "cart:read",
+      "description": "Permission for cart:read"
+    },
+    {
+      "id": "495c852d-d7df-4460-897d-450dcb3b776a",
+      "name": "cart:create",
+      "description": "Permission for cart:create"
+    },
+    {
+      "id": "818cf90b-0198-4321-95b3-2306a6672a48",
+      "name": "cart:update",
+      "description": "Permission for cart:update"
+    },
+    {
+      "id": "1fd42b26-9b3c-4965-b24e-913eb8f58967",
+      "name": "cart:delete",
+      "description": "Permission for cart:delete"
+    },
+    {
+      "id": "0dec9bf2-2ed0-4fbc-914a-c0da50f9b573",
+      "name": "roles:read",
+      "description": "Permission for roles:read"
+    },
+    {
+      "id": "573acc2a-a522-4fdd-8d0e-1a80981a8365",
+      "name": "role:read",
+      "description": "Permission for role:read"
+    },
+    {
+      "id": "de7803f2-ec00-439c-8e20-3610cb655d41",
+      "name": "role:create",
+      "description": "Permission for role:create"
+    },
+    {
+      "id": "589d4352-366c-45fd-a579-47b9ce43185e",
+      "name": "role:update",
+      "description": "Permission for role:update"
+    },
+    {
+      "id": "99d94932-5c74-4a75-b3ed-2c80029988e8",
+      "name": "role:permissions:update",
+      "description": "Permission for role:permissions:update"
+    },
+    {
+      "id": "bf6de1cc-c23e-496e-a557-dd02f6515dab",
+      "name": "payment:create",
+      "description": "Permission for payment:create"
+    },
+    {
+      "id": "f041faa8-1ba2-46fa-8540-8752bbc2cd94",
+      "name": "payment:read",
+      "description": "Permission for payment:read"
+    },
+    {
+      "id": "12e20647-ba24-430f-af5f-be95cf9dc791",
+      "name": "payment:update",
+      "description": "Permission for payment:update"
+    },
+    {
+      "id": "3a4c1ed0-4ae1-4fdc-860b-88e278d6e35b",
+      "name": "payment:delete",
+      "description": "Permission for payment:delete"
+    },
+    {
+      "id": "314e806b-f686-4136-a20e-10feeaab4ffe",
+      "name": "coupon:verify",
+      "description": "Permission for coupon:verify"
+    },
+    {
+      "id": "07b88520-d7dd-44f1-b420-1b4d59ff5254",
+      "name": "coupon:create",
+      "description": "Permission for coupon:create"
+    },
+    {
+      "id": "f9f3db48-dcd4-4b42-b84e-9f1137cd6b4a",
+      "name": "coupon:read",
+      "description": "Permission for coupon:read"
+    },
+    {
+      "id": "9ca40dd3-441a-4a5a-8967-3194aa9c582b",
+      "name": "coupon:update",
+      "description": "Permission for coupon:update"
+    },
+    {
+      "id": "357da536-f7a4-49fa-bb3b-f62a7fd6dfe2",
+      "name": "coupon:delete",
+      "description": "Permission for coupon:delete"
+    },
+    {
+      "id": "f981a14e-2a23-4fcc-8d8b-8eda73e556cd",
+      "name": "notification:create",
+      "description": "Permission for notification:create"
+    },
+    {
+      "id": "684fb8a2-f6a1-4de8-810d-f0cc2c6f5be2",
+      "name": "notification:read",
+      "description": "Permission for notification:read"
+    },
+    {
+      "id": "3f841099-d027-446f-bdf0-a3ca6ae55cff",
+      "name": "notification:update",
+      "description": "Permission for notification:update"
+    },
+    {
+      "id": "51e0fc7f-637c-4147-a9cb-95622cbd0cab",
+      "name": "notification:delete",
+      "description": "Permission for notification:delete"
+    }
+  ],
+  "roles": [
+    {
+      "id": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "name": "costumer",
+      "description": "Default role for registered user",
+      "rolelvl": 1
+    },
+    {
+      "id": "409cd4d3-1325-4acd-b44f-156436259374",
+      "name": "cashier",
+      "description": "Cashier role to manage orders and payments",
+      "rolelvl": 3
+    },
+    {
+      "id": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "name": "manager",
+      "description": "Manager role with escalated access",
+      "rolelvl": 5
+    },
+    {
+      "id": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "name": "admin",
+      "description": "Administrator with full access",
+      "rolelvl": 10
+    }
+  ],
+  "rolePermissions": [
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "6a4c1280-581a-43c2-bd15-006524acf8c3"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "6a4c1280-581a-43c2-bd15-006524acf8c3"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "86e818aa-e0b2-402d-ab58-2ac3d8ea9171"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "86e818aa-e0b2-402d-ab58-2ac3d8ea9171"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "86e818aa-e0b2-402d-ab58-2ac3d8ea9171"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "7153fe37-fc7e-4e89-9cba-0360e0e851ba"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "7153fe37-fc7e-4e89-9cba-0360e0e851ba"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "7153fe37-fc7e-4e89-9cba-0360e0e851ba"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "a37ad797-c933-4abc-b42d-b47b00612348"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "a37ad797-c933-4abc-b42d-b47b00612348"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "a37ad797-c933-4abc-b42d-b47b00612348"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "6c0f3c5d-02e2-4b32-ac19-dd3535469ca1"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "6c0f3c5d-02e2-4b32-ac19-dd3535469ca1"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "8c6e63fb-73d5-453a-9327-7a65fa5201a2"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "8c6e63fb-73d5-453a-9327-7a65fa5201a2"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "ece276fb-605c-4fa8-a75f-f67111262a1f"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "ece276fb-605c-4fa8-a75f-f67111262a1f"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "27e64a87-1bba-438d-b109-11b5786e6635"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "27e64a87-1bba-438d-b109-11b5786e6635"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "27e64a87-1bba-438d-b109-11b5786e6635"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "41b2431a-ccfc-415e-a358-1c53fb97aca1"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "41b2431a-ccfc-415e-a358-1c53fb97aca1"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "41b2431a-ccfc-415e-a358-1c53fb97aca1"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3f7c43b4-7036-48da-bd58-12073ddf1367"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3f7c43b4-7036-48da-bd58-12073ddf1367"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "3f7c43b4-7036-48da-bd58-12073ddf1367"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "87c47e0a-fc42-438d-bbff-eedfeff02611"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "87c47e0a-fc42-438d-bbff-eedfeff02611"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "87c47e0a-fc42-438d-bbff-eedfeff02611"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "8431cc89-2903-4e5b-85c4-dc7bf71675e2"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "8431cc89-2903-4e5b-85c4-dc7bf71675e2"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "a2c678ca-a49d-4108-9f58-a079a193f53d"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "a2c678ca-a49d-4108-9f58-a079a193f53d"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "c7decf31-5115-4cdc-b0e8-b1b20e5fefb4"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "c7decf31-5115-4cdc-b0e8-b1b20e5fefb4"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "c7decf31-5115-4cdc-b0e8-b1b20e5fefb4"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "7cd94aa8-502c-4aed-ab1a-c6709b24a0b4"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "7cd94aa8-502c-4aed-ab1a-c6709b24a0b4"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "7cd94aa8-502c-4aed-ab1a-c6709b24a0b4"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "7cd94aa8-502c-4aed-ab1a-c6709b24a0b4"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "2628bd9c-8473-41c1-9820-4620c00c28e2"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "2628bd9c-8473-41c1-9820-4620c00c28e2"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "2628bd9c-8473-41c1-9820-4620c00c28e2"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "88c33a5f-8860-41fe-b09a-0de7091f9339"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "88c33a5f-8860-41fe-b09a-0de7091f9339"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "b3d975f2-92ec-44af-9720-d7d11227d2f3"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "b3d975f2-92ec-44af-9720-d7d11227d2f3"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "ccf72ecd-f4df-4d38-a0a2-9db0109e83a8"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "ccf72ecd-f4df-4d38-a0a2-9db0109e83a8"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "ccf72ecd-f4df-4d38-a0a2-9db0109e83a8"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "ccf72ecd-f4df-4d38-a0a2-9db0109e83a8"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "21f04d21-eb0e-404d-a6ea-8bf1362a574d"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "21f04d21-eb0e-404d-a6ea-8bf1362a574d"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "21f04d21-eb0e-404d-a6ea-8bf1362a574d"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "21f04d21-eb0e-404d-a6ea-8bf1362a574d"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "35180514-545d-4a29-8c37-eabd3d131ca0"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "35180514-545d-4a29-8c37-eabd3d131ca0"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "35180514-545d-4a29-8c37-eabd3d131ca0"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "f752fc7c-b0e6-41e0-a8f8-206b3919933a"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "f752fc7c-b0e6-41e0-a8f8-206b3919933a"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "f752fc7c-b0e6-41e0-a8f8-206b3919933a"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "4d22fe7a-fdba-427c-9926-6632404099fe"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "4d22fe7a-fdba-427c-9926-6632404099fe"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "8ca7764d-4c83-4e14-80e9-2f3297c421b4"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "8ca7764d-4c83-4e14-80e9-2f3297c421b4"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "8603e52c-d5bd-45f8-af80-641e1d9fb5f0"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "8603e52c-d5bd-45f8-af80-641e1d9fb5f0"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "ec9ff188-3073-4669-a9e1-59440bb5de6b"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "ec9ff188-3073-4669-a9e1-59440bb5de6b"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "010b1078-87a8-4f5a-8147-9b807de2238a"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "010b1078-87a8-4f5a-8147-9b807de2238a"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "010b1078-87a8-4f5a-8147-9b807de2238a"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "010b1078-87a8-4f5a-8147-9b807de2238a"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "4c469d76-5ce7-4b99-9374-889d445b767d"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "4c469d76-5ce7-4b99-9374-889d445b767d"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "4c469d76-5ce7-4b99-9374-889d445b767d"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "a46c9645-10ef-4d12-865f-41c468e69c4d"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "a46c9645-10ef-4d12-865f-41c468e69c4d"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3d2ae45e-6ccb-4ca5-b854-e2c1113dfc1e"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3d2ae45e-6ccb-4ca5-b854-e2c1113dfc1e"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "0bf07fc9-5ab8-4dfb-81e4-eddbdca63a03"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "0bf07fc9-5ab8-4dfb-81e4-eddbdca63a03"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "4569779b-aeba-46b9-8af3-0e9f727f876c"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "4569779b-aeba-46b9-8af3-0e9f727f876c"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "4569779b-aeba-46b9-8af3-0e9f727f876c"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "04bfe2d0-be2f-4c56-bac0-bbe53cd7b1cc"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "04bfe2d0-be2f-4c56-bac0-bbe53cd7b1cc"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "04bfe2d0-be2f-4c56-bac0-bbe53cd7b1cc"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "13e0b591-e76b-404c-b7f0-5a1497e9ca64"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "13e0b591-e76b-404c-b7f0-5a1497e9ca64"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "13e0b591-e76b-404c-b7f0-5a1497e9ca64"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3db179b2-18d4-46d9-a62c-2d290fb58eba"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3db179b2-18d4-46d9-a62c-2d290fb58eba"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "3db179b2-18d4-46d9-a62c-2d290fb58eba"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "3db179b2-18d4-46d9-a62c-2d290fb58eba"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3df471dd-4eca-48c5-b6a5-567360e26dd3"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3df471dd-4eca-48c5-b6a5-567360e26dd3"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "3df471dd-4eca-48c5-b6a5-567360e26dd3"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "a41a5c64-7dc8-492e-991e-461a3b4409c6"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "a41a5c64-7dc8-492e-991e-461a3b4409c6"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "a41a5c64-7dc8-492e-991e-461a3b4409c6"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "79af366b-7e26-422a-8ddc-86373da15ca1"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "79af366b-7e26-422a-8ddc-86373da15ca1"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "79af366b-7e26-422a-8ddc-86373da15ca1"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "fdc72b39-fdcc-4e7f-950e-f1c315ce2abe"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "fdc72b39-fdcc-4e7f-950e-f1c315ce2abe"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "fdc72b39-fdcc-4e7f-950e-f1c315ce2abe"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "fdc72b39-fdcc-4e7f-950e-f1c315ce2abe"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "495c852d-d7df-4460-897d-450dcb3b776a"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "495c852d-d7df-4460-897d-450dcb3b776a"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "495c852d-d7df-4460-897d-450dcb3b776a"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "495c852d-d7df-4460-897d-450dcb3b776a"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "818cf90b-0198-4321-95b3-2306a6672a48"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "818cf90b-0198-4321-95b3-2306a6672a48"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "818cf90b-0198-4321-95b3-2306a6672a48"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "818cf90b-0198-4321-95b3-2306a6672a48"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "1fd42b26-9b3c-4965-b24e-913eb8f58967"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "1fd42b26-9b3c-4965-b24e-913eb8f58967"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "1fd42b26-9b3c-4965-b24e-913eb8f58967"
+    },
+    {
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "permissionId": "1fd42b26-9b3c-4965-b24e-913eb8f58967"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "0dec9bf2-2ed0-4fbc-914a-c0da50f9b573"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "0dec9bf2-2ed0-4fbc-914a-c0da50f9b573"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "573acc2a-a522-4fdd-8d0e-1a80981a8365"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "573acc2a-a522-4fdd-8d0e-1a80981a8365"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "de7803f2-ec00-439c-8e20-3610cb655d41"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "589d4352-366c-45fd-a579-47b9ce43185e"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "99d94932-5c74-4a75-b3ed-2c80029988e8"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "bf6de1cc-c23e-496e-a557-dd02f6515dab"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "bf6de1cc-c23e-496e-a557-dd02f6515dab"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "bf6de1cc-c23e-496e-a557-dd02f6515dab"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "f041faa8-1ba2-46fa-8540-8752bbc2cd94"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "f041faa8-1ba2-46fa-8540-8752bbc2cd94"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "f041faa8-1ba2-46fa-8540-8752bbc2cd94"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "12e20647-ba24-430f-af5f-be95cf9dc791"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "12e20647-ba24-430f-af5f-be95cf9dc791"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "12e20647-ba24-430f-af5f-be95cf9dc791"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3a4c1ed0-4ae1-4fdc-860b-88e278d6e35b"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3a4c1ed0-4ae1-4fdc-860b-88e278d6e35b"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "3a4c1ed0-4ae1-4fdc-860b-88e278d6e35b"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "314e806b-f686-4136-a20e-10feeaab4ffe"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "314e806b-f686-4136-a20e-10feeaab4ffe"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "07b88520-d7dd-44f1-b420-1b4d59ff5254"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "07b88520-d7dd-44f1-b420-1b4d59ff5254"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "f9f3db48-dcd4-4b42-b84e-9f1137cd6b4a"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "f9f3db48-dcd4-4b42-b84e-9f1137cd6b4a"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "f9f3db48-dcd4-4b42-b84e-9f1137cd6b4a"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "9ca40dd3-441a-4a5a-8967-3194aa9c582b"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "9ca40dd3-441a-4a5a-8967-3194aa9c582b"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "357da536-f7a4-49fa-bb3b-f62a7fd6dfe2"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "357da536-f7a4-49fa-bb3b-f62a7fd6dfe2"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "f981a14e-2a23-4fcc-8d8b-8eda73e556cd"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "f981a14e-2a23-4fcc-8d8b-8eda73e556cd"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "684fb8a2-f6a1-4de8-810d-f0cc2c6f5be2"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "684fb8a2-f6a1-4de8-810d-f0cc2c6f5be2"
+    },
+    {
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "permissionId": "684fb8a2-f6a1-4de8-810d-f0cc2c6f5be2"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "3f841099-d027-446f-bdf0-a3ca6ae55cff"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "3f841099-d027-446f-bdf0-a3ca6ae55cff"
+    },
+    {
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "permissionId": "51e0fc7f-637c-4147-a9cb-95622cbd0cab"
+    },
+    {
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "permissionId": "51e0fc7f-637c-4147-a9cb-95622cbd0cab"
+    }
+  ],
+  "users": [
+    {
+      "id": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "name": "costumer",
+      "email": "costumer@gmail.com",
+      "password": "costumer1234",
+      "phoneNumber": "+212 600 000000",
+      "address": "123 Elm Street Springfield, IL 62701 USA",
+      "createdAt": "2026-01-10T17:30:37.968Z",
+      "updatedAt": "2026-03-05T10:00:00.000Z",
+      "lastLogin": "2026-03-05T09:00:00.000Z",
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "avatar": "/assets/avatars/07302aa5-c12a-48ae-8031-b2a616fe2e67.png"
+    },
+    {
+      "id": "1c37e7d8-599f-5f00-91c8-b9dbe1f10f4c",
+      "name": "Admin",
+      "email": "admin@economa.com",
+      "password": "admin1234",
+      "phoneNumber": "+212 611 111111",
+      "address": "Admin HQ 456 Oak Avenue, NY 10001 USA",
+      "createdAt": "2026-01-05T10:00:00.000Z",
+      "updatedAt": "2026-03-05T10:00:00.000Z",
+      "lastLogin": "2026-03-05T10:00:00.000Z",
+      "roleId": "b53ec15e-a02a-5cb0-b494-28cd96f09e19",
+      "avatar": "/assets/avatars/25749f0a-6d12-4dbf-9302-637a8a4680f6.png"
+    },
+    {
+      "id": "24b231d2-6903-484e-8752-762ec520f685",
+      "name": "Cashier",
+      "email": "cashier@economa.com",
+      "password": "cashier1234",
+      "phoneNumber": "+212 622 222222",
+      "address": "Store Front Desk",
+      "createdAt": "2026-03-05T19:38:40.206Z",
+      "updatedAt": "2026-03-05T19:38:40.207Z",
+      "lastLogin": "2026-03-05T19:38:40.207Z",
+      "roleId": "409cd4d3-1325-4acd-b44f-156436259374",
+      "avatar": "/assets/avatars/4281e6f7-2abe-49b4-a590-f7e8d3af1974.png"
+    },
+    {
+      "id": "75c98d73-baf9-428d-9aa8-b1791a78e929",
+      "name": "Manager",
+      "email": "manager@economa.com",
+      "password": "manager1234",
+      "phoneNumber": "+212 633 333333",
+      "address": "Back Office",
+      "createdAt": "2026-03-05T19:38:40.207Z",
+      "updatedAt": "2026-03-05T19:38:40.207Z",
+      "lastLogin": "2026-03-05T19:38:40.207Z",
+      "roleId": "2266d42b-e1e3-4928-805f-c800709ef2ae",
+      "avatar": "/assets/avatars/81bae0d7-b133-4559-8025-18c6c5232f64.png"
+    },
+    {
+      "id": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "name": "Test Customer",
+      "email": "testcustomer@economa.com",
+      "password": "password123",
+      "phoneNumber": "+212 655 555555",
+      "address": "123 Customer Ave",
+      "createdAt": "2026-03-05T21:06:46.378Z",
+      "updatedAt": "2026-03-05T21:06:46.379Z",
+      "lastLogin": "2026-03-05T21:06:46.379Z",
+      "roleId": "a42db04f-f91f-4ba9-ac83-17be85de98d8",
+      "avatar": "https://ui-avatars.com/api/?name=Test+Customer&background=E53935&color=fff&size=128"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "40000000-0000-4000-a000-000000000001",
+      "code": "SAVE10",
+      "description": "10% off your entire order",
+      "discount_type": "Percentage",
+      "discount_value": 10,
+      "max_usage": 100,
+      "expiration_date": "2026-12-31T23:59:59.000Z",
+      "minimum_order_value": 20,
+      "created_at": "2026-01-15T10:00:00.000Z",
+      "updated_at": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "40000000-0000-4000-a000-000000000002",
+      "code": "FLAT20",
+      "description": "$20 off orders over $50",
+      "discount_type": "Flat",
+      "discount_value": 20,
+      "max_usage": 50,
+      "expiration_date": "2026-12-31T23:59:59.000Z",
+      "minimum_order_value": 50,
+      "created_at": "2026-01-15T10:00:00.000Z",
+      "updated_at": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "40000000-0000-4000-a000-000000000003",
+      "code": "WELCOME15",
+      "description": "15% off for new customers",
+      "discount_type": "Percentage",
+      "discount_value": 15,
+      "max_usage": 200,
+      "expiration_date": "2026-06-30T23:59:59.000Z",
+      "minimum_order_value": 15,
+      "created_at": "2026-01-15T10:00:00.000Z",
+      "updated_at": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "40000000-0000-4000-a000-000000000004",
+      "code": "SPRING25",
+      "description": "25% off spring sale",
+      "discount_type": "Percentage",
+      "discount_value": 25,
+      "max_usage": 30,
+      "expiration_date": "2026-05-31T23:59:59.000Z",
+      "minimum_order_value": 30,
+      "created_at": "2026-02-01T10:00:00.000Z",
+      "updated_at": "2026-02-01T10:00:00.000Z"
+    },
+    {
+      "id": "40000000-0000-4000-a000-000000000005",
+      "code": "FREESHIP",
+      "description": "$5 off shipping",
+      "discount_type": "Flat",
+      "discount_value": 5,
+      "max_usage": 500,
+      "expiration_date": "2026-12-31T23:59:59.000Z",
+      "minimum_order_value": null,
+      "created_at": "2026-01-20T10:00:00.000Z",
+      "updated_at": "2026-01-20T10:00:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "50000000-0000-4000-a000-000000000001",
+      "type": "order",
+      "message": "Your order has been placed successfully!",
+      "isRead": true,
+      "createdAt": "2026-02-16T22:25:06.442Z"
+    },
+    {
+      "id": "50000000-0000-4000-a000-000000000002",
+      "type": "order",
+      "message": "Your order has been shipped!",
+      "isRead": true,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "50000000-0000-4000-a000-000000000003",
+      "type": "promotion",
+      "message": "Spring sale is here! Use code SPRING25 for 25% off!",
+      "isRead": false,
+      "createdAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "50000000-0000-4000-a000-000000000004",
+      "type": "order",
+      "message": "Your order has been delivered!",
+      "isRead": false,
+      "createdAt": "2026-01-09T02:26:41.809Z"
+    },
+    {
+      "id": "50000000-0000-4000-a000-000000000005",
+      "type": "system",
+      "message": "Welcome to Economa! Start shopping today.",
+      "isRead": true,
+      "createdAt": "2025-11-17T17:57:13.433Z"
+    },
+    {
+      "id": "54f9da31-5bae-4b14-a470-ce9af7a74252",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-06-30T17:49:38.178Z"
+    },
+    {
+      "id": "cdc93a67-aa62-4ccf-892a-4106a4e79123",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-01-30T00:02:20.724Z"
+    },
+    {
+      "id": "18f742e6-85cd-4fbe-b1aa-98f4c9df2a53",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-04-06T00:26:39.468Z"
+    },
+    {
+      "id": "14c93bac-cefa-4a8b-8cb4-270fafba376c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-04-25T05:25:00.750Z"
+    },
+    {
+      "id": "220ff2cc-7f0e-472e-b347-322ea4ee6725",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-04-11T14:54:22.723Z"
+    },
+    {
+      "id": "593d15a8-2664-419d-a6dd-eb59e3f6f2ac",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-05-24T11:46:27.200Z"
+    },
+    {
+      "id": "538bbe2a-efd3-4358-8b71-e6e196e378df",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-01-03T14:38:55.938Z"
+    },
+    {
+      "id": "820eec17-f781-4589-9461-67bf5552d56c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-20T07:43:27.854Z"
+    },
+    {
+      "id": "50c9d6e9-157a-49f8-9226-1ae307735bd7",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-06-29T22:38:15.663Z"
+    },
+    {
+      "id": "2ca61a28-38f4-4687-80fc-1c8010672bba",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "6bf7418d-0166-49db-8121-213120d84f1d",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-01-03T00:40:00.673Z"
+    },
+    {
+      "id": "dbed11ac-dbbf-411a-9841-0b611961e3e1",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-12-13T03:43:30.516Z"
+    },
+    {
+      "id": "8f974bd1-280a-47e5-89f8-4155511c8396",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "0bc674b7-5f9b-4d0c-90dc-0159a92ecc5b",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-09-05T20:01:05.035Z"
+    },
+    {
+      "id": "2f73c201-abee-49ce-b3b8-78cc3cab0e03",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "6760fbb8-3f44-48a5-8b4e-70ebef7d0b3b",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-07-23T19:52:36.879Z"
+    },
+    {
+      "id": "f470d05a-6dea-4c15-9ae5-bbc0d4ad87a8",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-09-23T13:57:04.622Z"
+    },
+    {
+      "id": "ca5f8ea4-18ce-46e4-ab41-87885dbeab92",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-12-17T15:38:51.762Z"
+    },
+    {
+      "id": "6e00d5d7-e95c-4c8e-a575-8e1e74b14791",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "9cae73d5-698c-4d8b-89fc-02aadce2d6c1",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-03-19T18:04:18.687Z"
+    },
+    {
+      "id": "b8e9ac2b-d2d6-4f29-b225-b7166ac1bed9",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "ad684bfa-0317-441d-8d70-98a47dfb8812",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-03-11T03:00:32.562Z"
+    },
+    {
+      "id": "cfc101bb-f22e-4e3e-ae41-714e4d320319",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-15T23:03:11.995Z"
+    },
+    {
+      "id": "2ac868cb-be71-4cbb-8411-28b20f179fe1",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-04-05T09:32:07.669Z"
+    },
+    {
+      "id": "29e772c2-0959-4287-8021-081680210c69",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-10-16T08:19:34.555Z"
+    },
+    {
+      "id": "c6dfecc1-5938-424a-8881-0a0154389c32",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-12-04T08:00:10.338Z"
+    },
+    {
+      "id": "7594cd01-a677-4a16-b9f5-0539c00d4332",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-06-02T03:38:07.544Z"
+    },
+    {
+      "id": "c62ea5e1-72e5-472d-9aaf-0eba85467dd7",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "c7fc9171-42c0-4766-929d-e588db775bbb",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-09-28T11:05:53.163Z"
+    },
+    {
+      "id": "f22e6442-a9dc-47f7-80a1-9007108fc5bb",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "5c973967-b22c-4bd1-a5c4-3264e021a6d5",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-11-02T23:33:05.205Z"
+    },
+    {
+      "id": "c6469296-7fba-4b05-88c9-f94d42b64f74",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "83478e25-6fd1-4cd1-a418-25596c82193a",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-12-08T18:17:53.692Z"
+    },
+    {
+      "id": "1ee7e3ec-b52a-4e35-b260-9ff18d106a8b",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-08-02T08:11:35.825Z"
+    },
+    {
+      "id": "7525bbc1-4fd1-4418-ab01-684b70ba1398",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-09-25T03:08:03.917Z"
+    },
+    {
+      "id": "de99d0d5-cd06-4e7c-ae14-92625a2d942c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-06-19T00:23:12.969Z"
+    },
+    {
+      "id": "f4bbb9ab-3f04-429b-a5d0-10b1a185cf79",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-12-27T13:04:42.158Z"
+    },
+    {
+      "id": "7bdebb57-5c44-438e-816f-132374339fa9",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-11T14:22:55.592Z"
+    },
+    {
+      "id": "8a41a3ae-fc4a-4de4-83d1-148a65684ef3",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-06-25T06:06:58.632Z"
+    },
+    {
+      "id": "d43c2711-9306-49e9-b4a9-3a66cd0137bd",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-10-13T19:22:04.659Z"
+    },
+    {
+      "id": "f573910d-7792-45cb-9ec9-3a9efee9b566",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-09-05T12:00:09.084Z"
+    },
+    {
+      "id": "3a7ee9c1-56f5-4bea-9213-2acf2f8a31a2",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-16T02:42:08.305Z"
+    },
+    {
+      "id": "8a5222ca-f8d9-4811-ba1f-2d59c1b42122",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "f8cb5514-3f5e-4d8a-a16f-938c24182fbd",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-05-12T00:28:27.703Z"
+    },
+    {
+      "id": "87ab26e4-5a2d-4e78-a245-66acb6dcd0ba",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-11-20T04:38:50.208Z"
+    },
+    {
+      "id": "c218447c-9e89-4e96-aa9e-bf5a692f35ed",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "5b638b7c-a987-4966-a636-bfb82c61d240",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-05-11T06:51:55.865Z"
+    },
+    {
+      "id": "5c880ff0-d365-4c97-98af-91b6f4bba364",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-07-12T20:24:18.495Z"
+    },
+    {
+      "id": "a4c27013-6ff9-4b24-a6b3-3c5dbea4f5f2",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-11-09T16:03:15.795Z"
+    },
+    {
+      "id": "1d91785d-15c8-44d0-9364-202d88aa0172",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-08-18T18:15:05.922Z"
+    },
+    {
+      "id": "22fb269e-f194-47d4-a902-a59142894577",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "da0a5209-1916-46be-8877-afbe0ec6e045",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-05-27T11:41:44.258Z"
+    },
+    {
+      "id": "81ba7352-c2de-455d-a5aa-29371b56bed1",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "dbbcf8dc-edfc-4dc3-8b37-b74b6451f9be",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-09-03T15:06:38.858Z"
+    },
+    {
+      "id": "2c9149ea-01ee-4019-ae7d-c0a71bd3f1e4",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-08-23T11:36:05.664Z"
+    },
+    {
+      "id": "528e87a3-5923-447d-be2d-b8db124fe7f5",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-08T11:35:33.658Z"
+    },
+    {
+      "id": "2b8c585e-39b0-4e54-9064-3f819efa5dca",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-03-27T23:56:21.745Z"
+    },
+    {
+      "id": "bde24302-d67c-47e4-93b8-44d5cb738b0a",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "a03b944a-2b78-4858-9649-cac9ed31add6",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "47c4d4d6-a55f-46e1-b2d4-551025a09c2b",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-07-07T11:37:39.539Z"
+    },
+    {
+      "id": "ffeb825d-65f5-4824-94b8-efe8acc94250",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-04-29T18:21:10.540Z"
+    },
+    {
+      "id": "01544556-2bb9-43b2-b7d9-3fe31c6cac5b",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "67f3f37e-afe1-4e48-8350-cb56bf21cd0c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "b7ea43e4-ef1a-49ed-adfd-4a8d8ce0eddc",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-05-24T11:39:43.574Z"
+    },
+    {
+      "id": "322e87f9-196b-4b9f-8250-27f03a429327",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-03-10T09:16:48.888Z"
+    },
+    {
+      "id": "60a1ae48-9215-47b5-92b7-23c045d14d15",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "43056f7e-f99f-42e5-bb4a-40f97257e534",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-04-04T04:31:23.655Z"
+    },
+    {
+      "id": "a236684b-dd74-4944-9d75-c7b4cf91ea06",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-04-25T11:22:44.665Z"
+    },
+    {
+      "id": "5029b82b-58a6-42c7-9532-51904b33d2dd",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-03T04:26:40.063Z"
+    },
+    {
+      "id": "2f3e34db-986f-4e1e-b969-cd4fc1c339ea",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "13c97b58-9847-43ae-8565-a79cb12c5947",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-03-30T09:54:21.629Z"
+    },
+    {
+      "id": "aa7608d8-9b56-4542-8992-db9493dc7b75",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-06-08T08:24:23.183Z"
+    },
+    {
+      "id": "787205f2-7145-43da-95b9-62fe303c10f8",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-11-06T00:00:08.870Z"
+    },
+    {
+      "id": "124d884b-fb3b-4ca9-a2d4-284698ef6e4c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-03-28T07:29:09.659Z"
+    },
+    {
+      "id": "b3d2a505-9ad2-4ef8-8261-8478937bd917",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "9f60f75e-8755-4d58-a1a5-4220c2536508",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-10-16T01:38:43.554Z"
+    },
+    {
+      "id": "0fa58c62-8618-4e35-aead-622a3dcb31f4",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-12-28T10:19:00.455Z"
+    },
+    {
+      "id": "e2102f0e-eb9f-4fa3-a870-b17729f74159",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-12-28T08:05:43.066Z"
+    },
+    {
+      "id": "50363365-4e97-4de0-9386-b506f0b0fb7c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-04-07T18:03:04.548Z"
+    },
+    {
+      "id": "02c4c154-0ea9-402e-a80e-5d43d7e5b2c0",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-01-22T12:10:07.606Z"
+    },
+    {
+      "id": "90d6668f-1622-4a13-b2f9-e5c8a4470aa5",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "75db0e61-a952-4a86-aded-ae68cab825df",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-04-17T04:03:21.489Z"
+    },
+    {
+      "id": "2aa3717c-4697-4675-b81c-fa711a84e5a7",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "10a2a07c-bc96-48e2-afad-15b4130697d7",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-11-10T11:09:35.238Z"
+    },
+    {
+      "id": "7b90f641-8ff0-47d4-924f-782753d7fbee",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-10-23T01:14:55.132Z"
+    },
+    {
+      "id": "0f7c91ee-4501-43fd-90ae-d7790cc1d683",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-07-11T21:07:43.230Z"
+    },
+    {
+      "id": "fbb66caa-afee-4901-bdb7-38b7bf30b731",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-11-25T18:31:52.664Z"
+    },
+    {
+      "id": "2933da68-d0f3-4d14-813d-bd7f0d199742",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-06-16T13:57:45.796Z"
+    },
+    {
+      "id": "0b386930-3926-4f03-aef5-c2d7e38404f6",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "9bf42680-13ad-4634-9024-2bf617d5e2c1",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-04T16:16:31.726Z"
+    },
+    {
+      "id": "4dad7cba-bfec-46b3-8937-a475eb4dc2dc",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-10-01T15:48:44.901Z"
+    },
+    {
+      "id": "3940b02f-6d2e-451a-a36b-f8d7236cfb0c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-12-05T01:30:26.800Z"
+    },
+    {
+      "id": "77b1ac20-6b7d-453d-8735-2da08fafb17c",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-22T11:44:54.472Z"
+    },
+    {
+      "id": "001e428e-bf07-4d85-9a24-571b043a38e5",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-10-17T23:59:47.780Z"
+    },
+    {
+      "id": "990e8e22-4d3a-4fd7-9912-f78a996bafc8",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2025-05-08T13:32:52.272Z"
+    },
+    {
+      "id": "e94531a5-4741-495c-bdee-4bf349cb9116",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "505a17ba-85d6-4a77-9eb0-16573b89a9f5",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-06T17:49:33.456Z"
+    },
+    {
+      "id": "bd820d07-18df-4471-96a2-ef866484d5cd",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": false,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "9c604e65-0dd4-4866-850d-e6aab30c81f7",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2025-11-06T03:47:08.496Z"
+    },
+    {
+      "id": "e432c346-bd3e-4010-bf7b-40d53e9a7399",
+      "type": "system",
+      "message": "New mock activity detected on your account.",
+      "isRead": true,
+      "createdAt": "2026-01-11T03:44:50.093Z"
+    },
+    {
+      "id": "162454af-2a30-42b3-82fe-96f31ab5ceaa",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-01-26T13:03:56.195Z"
+    },
+    {
+      "id": "3eab3d96-262e-4f46-98f8-8a8b3d143380",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-04-25T22:39:31.455Z"
+    },
+    {
+      "id": "413a4d76-3b11-4a5a-a431-7fc3ec667f64",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-10-23T03:20:55.441Z"
+    },
+    {
+      "id": "7579d201-a38b-4c2f-ab69-5548ee3c0cd6",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-09-03T23:32:50.960Z"
+    },
+    {
+      "id": "23987dec-7382-4e6e-8a69-4daf50246fd9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-14T05:41:52.451Z"
+    },
+    {
+      "id": "1bd9d1e4-5768-4f27-b24d-daa2a13824e6",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-04-16T05:23:18.199Z"
+    },
+    {
+      "id": "d851925f-058a-4f01-9db7-251725f7cfda",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-06-14T08:37:09.203Z"
+    },
+    {
+      "id": "c24c1dfd-3129-41e0-bbec-c5005a179c91",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-24T08:10:52.570Z"
+    },
+    {
+      "id": "91a38aac-2907-4576-8206-97fe1cfff060",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-10-29T18:16:12.430Z"
+    },
+    {
+      "id": "5f535363-8866-4008-989c-663e579b682e",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "2e2dd221-67f1-4428-b6de-98aef7db456a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "e5b15855-071d-4cbf-8324-31de74932737",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-04T00:40:00.317Z"
+    },
+    {
+      "id": "fb95af17-fc42-4e88-abe6-e69b7797d796",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-23T06:09:49.146Z"
+    },
+    {
+      "id": "c2799ec1-b4a1-4132-a539-ce4929b9c6f8",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-16T03:03:54.680Z"
+    },
+    {
+      "id": "8fa1d52f-1099-4817-88a2-69dd51372fbc",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-03T15:44:02.837Z"
+    },
+    {
+      "id": "2947fe34-2b29-4171-8b5d-9685bd91ef01",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-11-02T00:00:17.847Z"
+    },
+    {
+      "id": "da81678b-22c8-442a-b95a-2fb341b7de59",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "9ad99f37-02d7-4f37-9827-3b20d63dcdb0",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "6d3b0167-5d25-4948-92c0-0730414b1b85",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-12-19T04:17:22.744Z"
+    },
+    {
+      "id": "45257f83-dd13-4b81-889b-dd63c2158eea",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-08-18T06:40:34.434Z"
+    },
+    {
+      "id": "65fed682-795c-4148-8395-dc853b9fb0c9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "9eda2543-16ef-408e-a02a-f8ee9ced4258",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "d1dae747-e3d7-4392-841c-d09fd7df4f7d",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-09-07T21:24:52.251Z"
+    },
+    {
+      "id": "5882312d-e0dc-416c-9ced-38a7779bac9f",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-07-06T11:23:15.052Z"
+    },
+    {
+      "id": "a95e7f42-c1c6-4807-9a56-e975a0ba15d9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-11-13T05:24:43.085Z"
+    },
+    {
+      "id": "358e3d5b-d6a2-45c4-8e08-e8fc0e88319d",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-10-17T06:38:21.510Z"
+    },
+    {
+      "id": "8e48b47c-9b3e-4945-8729-afd716a2898c",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-08-19T19:50:56.734Z"
+    },
+    {
+      "id": "228d7e20-54ea-4ca3-9411-d22467a88e55",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-26T17:28:19.795Z"
+    },
+    {
+      "id": "9889b66b-d666-4a8a-b879-9f22948edd77",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-05-19T21:20:32.592Z"
+    },
+    {
+      "id": "3590d3e9-80d7-4b74-b154-fd407f271b11",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-09T13:12:07.193Z"
+    },
+    {
+      "id": "2fe78be4-22f3-4c63-8ed0-8bff23e1bdb4",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-08-01T14:38:37.066Z"
+    },
+    {
+      "id": "f72bef23-c989-4f2a-a152-c32bf2c4731f",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-07-05T19:29:23.672Z"
+    },
+    {
+      "id": "a4a1ab48-8d28-404a-b0c3-ab305824422a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-03T15:29:28.348Z"
+    },
+    {
+      "id": "e7d65c22-301d-42d6-b90e-57d8f4f5aeea",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-10-15T01:46:32.877Z"
+    },
+    {
+      "id": "8399867c-4893-4a62-ab7a-04f4de8a6fbd",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "f3d455bf-3672-4a65-bd00-24e892f0bc46",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-01T23:39:04.723Z"
+    },
+    {
+      "id": "08f4e5bd-ad2f-4bcb-a6a9-f9bb953da707",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-08-13T09:36:11.360Z"
+    },
+    {
+      "id": "e6bc760b-fa24-4257-bcab-c8cff080fb89",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-10-15T01:55:08.224Z"
+    },
+    {
+      "id": "0618d549-6bf7-49fe-9a32-08b3527564bc",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-08-20T09:09:04.131Z"
+    },
+    {
+      "id": "801e88e9-33b5-40a3-882b-632b96098565",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-07-19T23:13:58.587Z"
+    },
+    {
+      "id": "c9567ddb-5606-4a61-8258-7ae00afb63c4",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-12-12T23:15:02.370Z"
+    },
+    {
+      "id": "ec902b81-bac8-484c-949f-05d5069e5bd3",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-01-14T05:54:53.243Z"
+    },
+    {
+      "id": "fa506bdf-a13f-4e09-8f8c-ae00ad883f77",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-01T17:36:30.399Z"
+    },
+    {
+      "id": "d2a3f415-684d-46b3-863f-b171ab96251e",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-06-07T07:03:38.829Z"
+    },
+    {
+      "id": "de62a388-e946-4c9e-91b7-79a6cff7aeb6",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-10-31T06:10:41.806Z"
+    },
+    {
+      "id": "ee1ba1df-0c99-43d1-bd24-ebbde78d28ef",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-11-21T02:12:48.094Z"
+    },
+    {
+      "id": "c2a4c56a-b971-48d9-b880-dda6bbb581f9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-07-18T22:38:27.513Z"
+    },
+    {
+      "id": "58fefa6e-bf87-46ec-8d08-9c94ddee4acb",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-03T02:51:32.471Z"
+    },
+    {
+      "id": "c77cbae9-1b4e-4bb8-a08a-8634b63890d3",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-06-06T15:38:57.596Z"
+    },
+    {
+      "id": "712f12f6-e071-4f19-8c93-f10856fb876c",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-10-25T00:11:35.800Z"
+    },
+    {
+      "id": "f1d1613a-2b02-4fa1-b3b9-195994772405",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-04-25T21:31:39.979Z"
+    },
+    {
+      "id": "1912be4a-a018-4b7e-87ca-962eba68485b",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-07-26T21:48:53.725Z"
+    },
+    {
+      "id": "3984efe2-c1bc-4946-af67-e263f30e524a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-07-06T23:32:05.563Z"
+    },
+    {
+      "id": "803323ec-ca63-402c-b0f1-0ff244ff3319",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-08-05T02:12:55.334Z"
+    },
+    {
+      "id": "6e166eb4-accf-454b-bb8d-6a878bc54573",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "ed3f69fd-96d9-461b-90cc-73f61079fddb",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-10-18T03:15:44.111Z"
+    },
+    {
+      "id": "44b97088-bc83-4499-bb03-a8d92d3e814b",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "138f2b2e-72a4-417d-a6f1-fe9b496e9aac",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-11-22T10:14:12.980Z"
+    },
+    {
+      "id": "a2446dff-4a1a-4b9b-9701-e298be34e1da",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "341c3b0a-7b4f-4341-a053-29523d0d1d67",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-10-14T08:32:21.933Z"
+    },
+    {
+      "id": "0355a814-3f2f-4f0c-9310-25d15da4c79a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "1782abae-d41c-4fed-9978-e24585a7c30f",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "a16c1ddb-bbc2-4de0-8b08-df3b49a88199",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-11-10T00:18:00.534Z"
+    },
+    {
+      "id": "2eb1e5a0-83f6-47f9-85bb-4b0e87e98fc1",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-12-27T04:25:08.620Z"
+    },
+    {
+      "id": "e8644f66-02b0-4976-964a-988e2cfc49eb",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-08-31T07:24:48.385Z"
+    },
+    {
+      "id": "fa2adb67-7701-43bb-916c-f6b713d0ece4",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-06-08T23:02:03.131Z"
+    },
+    {
+      "id": "6e588e9a-0e69-4c0f-9834-ae603b94260e",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-11-21T21:54:23.742Z"
+    },
+    {
+      "id": "8d9d4b10-1adf-43f7-8880-0c5073c393a8",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-08-28T01:33:34.581Z"
+    },
+    {
+      "id": "0a1f225d-4946-4a11-87f7-4e37e9b21f66",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "8e81b9d5-c8eb-44ef-ad87-26d5a511376a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-07-05T17:25:54.203Z"
+    },
+    {
+      "id": "6f918840-0d56-4e38-b667-bb08a07d6414",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-05-29T04:44:42.040Z"
+    },
+    {
+      "id": "0f16e9f2-1d4d-41bd-b320-590b552898c8",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-06-20T19:06:15.715Z"
+    },
+    {
+      "id": "90ccf56f-166d-4f56-970c-b18c082221b0",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-09-08T15:04:47.406Z"
+    },
+    {
+      "id": "26c4b374-ed16-4bd8-a247-4c8dadc2d4ae",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-09-18T16:28:28.210Z"
+    },
+    {
+      "id": "01df6da0-bce7-4495-863e-178bc416aa09",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "c468d96e-124b-4fab-976b-f03a6b6f92a9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-22T22:04:46.403Z"
+    },
+    {
+      "id": "84c9cca1-2b5d-44e4-8f4d-4a4e3205ec22",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-03T04:51:38.195Z"
+    },
+    {
+      "id": "a7aac425-4f0c-4781-88c8-8d8b2977b4c4",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-13T06:05:11.207Z"
+    },
+    {
+      "id": "3d3dea86-b4cd-4ad1-9dd8-2b6f03dc6110",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-01-18T10:19:43.003Z"
+    },
+    {
+      "id": "d65d1f15-583b-49bd-ae33-e6eff2bd9638",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-05-31T00:59:00.502Z"
+    },
+    {
+      "id": "3200707d-f8d9-4285-92d3-8cb4f0ba23bb",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "f2251df5-c234-41ff-8693-c19a8bb8ef56",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "898ca685-7f66-4f97-b216-55accdb7e1a3",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-18T08:51:02.855Z"
+    },
+    {
+      "id": "4058c339-7ada-4401-90b0-383b202de0ce",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "29b3c385-6e13-4814-b549-d9a7b3b7164a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-09-17T08:26:51.782Z"
+    },
+    {
+      "id": "346e01cf-c5e2-4922-b443-c6941d7daab7",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-09-07T00:20:14.996Z"
+    },
+    {
+      "id": "f987703b-6ebb-40f0-9955-d6565ee99ae9",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-20T10:20:10.486Z"
+    },
+    {
+      "id": "648ce49f-abf2-4e60-b58d-3181cdf57480",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-04-16T17:20:30.813Z"
+    },
+    {
+      "id": "9f3708f7-7a11-49b1-81de-b8caec8cabe7",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-25T09:28:31.414Z"
+    },
+    {
+      "id": "25a79260-f10a-49a3-a242-c5fbf05a80a0",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "ec87dada-f045-4540-a776-ba9cfd50d2bb",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-20T15:04:07.925Z"
+    },
+    {
+      "id": "442075c6-f3e1-4225-8134-edfb05fcfbd2",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-11-05T09:47:08.781Z"
+    },
+    {
+      "id": "b1a50f15-0236-470e-90d7-85c12752b54a",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-23T05:50:53.081Z"
+    },
+    {
+      "id": "87141467-6ad6-450f-bd79-e14240621967",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "97c6cd7a-8414-40cc-87a8-f4a5831df05c",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2025-11-21T02:46:45.441Z"
+    },
+    {
+      "id": "ff60b7c5-85bc-4c48-9f88-6c1d2a149734",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": true,
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "f092d362-39ba-4fa1-89ed-fc8821963f44",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-03-09T20:28:50.960Z"
+    },
+    {
+      "id": "3650f499-c6cc-4aab-8a48-dd7eab740673",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-06-13T13:42:36.108Z"
+    },
+    {
+      "id": "e58a5dd1-dadc-4979-9956-b08bc38eac72",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2025-04-14T23:42:40.662Z"
+    },
+    {
+      "id": "6a2f991e-bcdf-4c03-a614-46836dc4924c",
+      "type": "system",
+      "message": "New activity detected.",
+      "isRead": false,
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    }
+  ],
+  "balances": [
+    {
+      "id": "6c7cadbc-11e7-4791-8da8-607d9c3481c8",
+      "userId": "1c37e7d8-599f-5f00-91c8-b9dbe1f10f4c",
+      "Balance": 0,
+      "type": "wallet",
+      "createdAt": "2026-03-05T21:40:00.558Z",
+      "updatedAt": "2026-03-05T21:40:00.558Z"
+    },
+    {
+      "id": "35502d91-20ca-4018-853b-80c5284d5e17",
+      "userId": "24b231d2-6903-484e-8752-762ec520f685",
+      "Balance": 0,
+      "type": "wallet",
+      "createdAt": "2026-03-05T21:40:00.558Z",
+      "updatedAt": "2026-03-05T21:40:00.558Z"
+    },
+    {
+      "id": "65e9eec5-e73c-44e4-bfd0-c75c2680f0af",
+      "userId": "75c98d73-baf9-428d-9aa8-b1791a78e929",
+      "Balance": 0,
+      "type": "wallet",
+      "createdAt": "2026-03-05T21:40:00.558Z",
+      "updatedAt": "2026-03-05T21:40:00.558Z"
+    },
+    {
+      "id": "7a3c292e-004e-4fcf-b655-5790cd0ab7a5",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "Balance": 31876.710000000003,
+      "type": "wallet",
+      "createdAt": "2026-03-05T21:38:08.239Z",
+      "updatedAt": "2026-03-05T21:38:08.239Z"
+    },
+    {
+      "id": "15c6bbfa-102f-4821-b2c7-959079c43e03",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "Balance": 31221.5,
+      "type": "wallet",
+      "createdAt": "2026-03-05T21:38:08.239Z",
+      "updatedAt": "2026-03-05T21:38:08.239Z"
+    }
+  ],
+  "refillBalanceRequest": [
+    {
+      "id": "f39e0550-fead-481c-bc26-6325d1063a26",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3397,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-03-04T17:01:26.096Z",
+      "updatedAt": "2025-08-17T04:55:18.514Z"
+    },
+    {
+      "id": "4977ef8a-7a29-402c-8e65-91623ff037f7",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2962,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-05T13:19:26.096Z",
+      "updatedAt": "2025-05-03T16:32:11.812Z"
+    },
+    {
+      "id": "c2183203-9b79-42cf-a86b-582c08ed8edd",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5050,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-03-01T00:35:26.096Z",
+      "updatedAt": "2025-11-21T22:22:23.454Z"
+    },
+    {
+      "id": "8f4701ab-397b-4ebf-8bcb-2112e33093ec",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1629,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-02-28T08:59:26.096Z",
+      "updatedAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "e8aa26d8-10a3-4ec3-803c-6a0342cbe902",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2918,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-01T12:53:26.096Z",
+      "updatedAt": "2025-08-29T18:37:42.982Z"
+    },
+    {
+      "id": "06f38355-c380-4764-a384-51561563de51",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2129,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-01T11:36:26.096Z",
+      "updatedAt": "2025-09-01T19:12:08.605Z"
+    },
+    {
+      "id": "333a721e-3620-4928-83ec-d8f717a6d7eb",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1918,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-02-28T10:44:26.096Z",
+      "updatedAt": "2025-07-02T04:38:09.326Z"
+    },
+    {
+      "id": "f2cb78d1-764a-4ce6-9137-e0cd91c270d3",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5021,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-03-02T09:57:26.096Z",
+      "updatedAt": "2025-05-15T21:20:14.973Z"
+    },
+    {
+      "id": "82776e3a-23c5-459a-8408-3efc5d737d30",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3294,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-02-27T03:35:26.096Z",
+      "updatedAt": "2025-03-14T17:06:07.488Z"
+    },
+    {
+      "id": "745b8bf3-e90e-4139-aadd-b0ad79a6ca8a",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5238,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-02-28T01:46:26.096Z",
+      "updatedAt": "2025-05-22T16:22:01.965Z"
+    },
+    {
+      "id": "74949708-c5db-4bf7-b938-ed25505f9a42",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3282,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-03-01T02:15:26.096Z",
+      "updatedAt": "2026-02-15T01:38:46.860Z"
+    },
+    {
+      "id": "50762832-8da0-4779-9a6b-9be061ec7e7e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1850,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-03-04T22:27:26.096Z",
+      "updatedAt": "2025-10-25T17:26:00.073Z"
+    },
+    {
+      "id": "06412f75-1378-48e1-abe2-d9e0169feec3",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3498,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-01T10:55:26.096Z",
+      "updatedAt": "2025-12-20T00:20:30.320Z"
+    },
+    {
+      "id": "a105f062-4ed8-4756-87a7-4aecc15bdcc7",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5140,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-02T05:21:26.096Z",
+      "updatedAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "4b941837-f15e-4c5d-a64e-708eef6a66d6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3483,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-03-04T08:05:26.096Z",
+      "updatedAt": "2025-03-11T19:51:50.262Z"
+    },
+    {
+      "id": "67e2cb14-0efe-4824-be71-0c30fbcae5e4",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4134,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-02-27T01:09:26.096Z",
+      "updatedAt": "2025-04-24T07:24:22.412Z"
+    },
+    {
+      "id": "a2316e6c-a6bb-4934-be53-20ce535370e5",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4734,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-03-05T07:48:26.096Z",
+      "updatedAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "000fa188-519b-4da9-b86e-4ed2bf5539c7",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 537,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-03T22:36:26.096Z",
+      "updatedAt": "2025-10-12T19:54:13.997Z"
+    },
+    {
+      "id": "b05cbea0-87e7-44c0-8e2f-9763b7feb61e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4984,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-03-04T05:48:26.096Z",
+      "updatedAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "3818f9ef-efb7-43d1-baa9-51eefe0addda",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4212,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-02-28T12:10:26.096Z",
+      "updatedAt": "2025-10-03T00:55:55.403Z"
+    },
+    {
+      "id": "7265745f-c6c3-41e1-891b-24eb0111e0fe",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3697,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-03-18T08:47:36.139Z",
+      "updatedAt": "2025-05-19T23:29:43.394Z"
+    },
+    {
+      "id": "1c735575-0c8b-41d1-88f7-a2349804c087",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1220,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-10-15T16:11:54.640Z",
+      "updatedAt": "2026-01-05T22:32:11.788Z"
+    },
+    {
+      "id": "31390a1d-3ea7-4a7d-a596-abac597882e7",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5306,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-07-29T11:49:31.308Z",
+      "updatedAt": "2025-09-23T16:09:21.048Z"
+    },
+    {
+      "id": "90c24e08-1c03-469b-a335-452d4d529b79",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2898,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-08-22T09:40:37.868Z",
+      "updatedAt": "2025-08-30T18:30:42.688Z"
+    },
+    {
+      "id": "df8768d3-65e7-4cd7-b9c0-6f2476cdbfb4",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2655,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-03-10T05:17:35.933Z",
+      "updatedAt": "2026-03-01T22:19:49.394Z"
+    },
+    {
+      "id": "d1a0b664-f3a8-435c-b816-e178d386f2af",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2868,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-21T08:09:04.740Z",
+      "updatedAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "92a0e2b6-f634-46e2-a9bf-16dd434179cb",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 557,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-10-19T16:17:00.694Z",
+      "updatedAt": "2025-10-09T09:36:05.531Z"
+    },
+    {
+      "id": "bfd11181-f19e-4150-bfbb-cf79d4dbd54d",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3347,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-10-04T09:27:32.111Z",
+      "updatedAt": "2025-10-22T21:45:28.506Z"
+    },
+    {
+      "id": "6fd6fb24-6aed-4224-a137-07123618ae2b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5092,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-12-17T02:33:26.962Z",
+      "updatedAt": "2025-11-05T01:17:56.810Z"
+    },
+    {
+      "id": "d4ebcc5c-3fc4-4bdd-9b79-8aea684859d6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4133,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-10-06T11:56:48.150Z",
+      "updatedAt": "2025-11-23T22:58:49.661Z"
+    },
+    {
+      "id": "a0b04ddf-95ac-4a3d-88c3-fd14cc2f797d",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2305,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-02-08T05:01:49.543Z",
+      "updatedAt": "2025-04-03T22:04:46.723Z"
+    },
+    {
+      "id": "7b81e496-f178-4a95-bcc7-723119c98e61",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3558,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-16T04:53:25.897Z",
+      "updatedAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "53dd9c8a-b9e9-4cd2-8977-ded4957493aa",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2464,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-12-25T07:53:58.423Z",
+      "updatedAt": "2025-09-21T16:23:42.722Z"
+    },
+    {
+      "id": "75758457-1bcf-45c9-9c08-120e66644c38",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4126,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-07-10T09:22:35.023Z",
+      "updatedAt": "2025-08-05T23:56:32.148Z"
+    },
+    {
+      "id": "9e65be5e-4d3f-41fe-a57e-773821a803b2",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 798,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-03-09T22:03:51.624Z",
+      "updatedAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "a271fb1a-388c-4dee-9cc0-c54a7879dad7",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2951,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-25T08:26:33.159Z",
+      "updatedAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "643b80a1-6ef9-43a9-9d22-f8f4266216a0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 2935,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-11-19T18:28:35.476Z",
+      "updatedAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "fbb0a1fc-8e2a-4ef2-b541-923cf069778b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5368,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-09-30T17:39:08.640Z",
+      "updatedAt": "2025-04-05T13:18:38.095Z"
+    },
+    {
+      "id": "f9ebee84-9673-4761-a623-ce648a37aa8c",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4666,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2026-03-05T07:39:24.219Z",
+      "updatedAt": "2026-02-24T00:33:54.184Z"
+    },
+    {
+      "id": "a5b78530-90ac-4988-b0ad-c72db1a62131",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1202,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-29T08:04:45.663Z",
+      "updatedAt": "2025-11-21T03:24:57.998Z"
+    },
+    {
+      "id": "dc5a112e-2dcb-467a-8e6a-20e46dc76a34",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 544,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-03-23T15:05:22.619Z",
+      "updatedAt": "2025-06-06T05:35:19.272Z"
+    },
+    {
+      "id": "a8f1e69c-80e7-4aa1-97a8-4717d48097dc",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3874,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-06-23T00:33:29.162Z",
+      "updatedAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "086a6836-8caf-455c-8705-d4a7f236df7e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3361,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-01-25T05:30:15.434Z",
+      "updatedAt": "2025-06-23T19:33:43.976Z"
+    },
+    {
+      "id": "a7c0c363-82d7-4956-bfd9-e253e14d159f",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 5336,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-06-06T19:31:13.504Z",
+      "updatedAt": "2026-01-02T14:00:21.945Z"
+    },
+    {
+      "id": "119d2030-3243-4eb2-9225-47eafd1b4c18",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 1924,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-10-30T13:36:46.281Z",
+      "updatedAt": "2025-10-11T09:55:23.203Z"
+    },
+    {
+      "id": "726dcab0-82c5-4bc0-af33-1c38dfc1a8a8",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4208,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-03-27T13:22:43.153Z",
+      "updatedAt": "2025-04-23T00:55:35.584Z"
+    },
+    {
+      "id": "711423a6-f4cd-42dd-91b5-87abc9e10a97",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 577,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-10-17T07:30:42.242Z",
+      "updatedAt": "2025-11-21T21:00:48.008Z"
+    },
+    {
+      "id": "8324fc87-c2a7-409b-98a5-40571f89c688",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3497,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-06-16T06:39:19.720Z",
+      "updatedAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "3f082843-6f1b-4ae3-a049-1af8566f0570",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 3573,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-03-25T08:25:53.899Z",
+      "updatedAt": "2025-11-07T09:38:18.497Z"
+    },
+    {
+      "id": "89085226-d5f2-44f8-b6b8-acf1220a96fa",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 4031,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-05-19T11:48:13.003Z",
+      "updatedAt": "2025-09-28T18:10:29.853Z"
+    },
+    {
+      "id": "027e5432-e9d1-4742-b268-f4cd293dcec9",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2666,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-12-05T01:04:25.140Z",
+      "updatedAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "041da7cd-ba85-49d6-b727-674c4aa7de56",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 4699,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-03-23T22:01:27.137Z",
+      "updatedAt": "2025-09-03T03:56:05.686Z"
+    },
+    {
+      "id": "fe5e29cc-3a05-4247-8951-7b188a527545",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 4755,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-08-27T06:08:16.294Z",
+      "updatedAt": "2025-10-15T07:45:56.720Z"
+    },
+    {
+      "id": "feb0e52a-0d2f-4f92-b679-a4ab6f4d0e21",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1492,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-05-24T13:33:26.224Z",
+      "updatedAt": "2026-02-15T16:46:00.845Z"
+    },
+    {
+      "id": "73e10766-b0cb-4a43-b3d9-54c37c951a7c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3548,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-08-31T20:55:19.873Z",
+      "updatedAt": "2025-12-16T08:35:38.253Z"
+    },
+    {
+      "id": "c9a8e821-b688-40c8-a01c-5cc63141a247",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1003,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-27T12:29:51.744Z",
+      "updatedAt": "2025-06-01T23:00:30.141Z"
+    },
+    {
+      "id": "6dac2c4f-ad42-46c7-abfc-9774f3d0c63a",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3254,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-21T22:46:12.688Z",
+      "updatedAt": "2025-07-07T14:49:10.903Z"
+    },
+    {
+      "id": "9b9b7fc0-a712-44fe-ab2f-460d10a37799",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3870,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-03-13T19:18:32.404Z",
+      "updatedAt": "2025-08-25T20:42:02.327Z"
+    },
+    {
+      "id": "6f412d80-08d9-40b8-bc8d-123a7b1f7c63",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 4524,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-12-15T12:56:53.224Z",
+      "updatedAt": "2025-08-27T04:39:19.516Z"
+    },
+    {
+      "id": "cc7bf7da-5423-40c2-9cf1-3fcc4a0787e2",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1724,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-02-19T20:58:43.382Z",
+      "updatedAt": "2025-06-13T00:25:27.985Z"
+    },
+    {
+      "id": "a0b709f0-41a0-478f-ae06-27684a6d5550",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3732,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-09-01T03:47:40.779Z",
+      "updatedAt": "2025-03-10T19:38:00.126Z"
+    },
+    {
+      "id": "4107e4c9-6a1c-4cda-b8c1-b2ee23f0dfe5",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2493,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-08-29T23:12:09.436Z",
+      "updatedAt": "2025-11-21T15:02:54.581Z"
+    },
+    {
+      "id": "b23f9b31-6114-47f9-908d-61b0c7cf1e1d",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 5199,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-02-20T16:34:19.810Z",
+      "updatedAt": "2025-06-12T01:45:25.843Z"
+    },
+    {
+      "id": "e73e5e69-0634-4791-b7ea-8be3adb7c291",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 5227,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-11-30T10:50:36.733Z",
+      "updatedAt": "2025-04-09T02:58:40.698Z"
+    },
+    {
+      "id": "997857dc-25c2-46ae-bd9e-1a087230d6d3",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2134,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-10-13T02:46:54.311Z",
+      "updatedAt": "2025-07-13T14:54:11.337Z"
+    },
+    {
+      "id": "c0ad110c-b781-459b-9fe6-30338082fd56",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3325,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-08-06T18:50:24.809Z",
+      "updatedAt": "2025-08-28T15:00:22.740Z"
+    },
+    {
+      "id": "d0750305-6bcc-48ba-9892-43dd9a5c5990",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1461,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-05-29T08:42:05.478Z",
+      "updatedAt": "2025-03-28T19:58:10.548Z"
+    },
+    {
+      "id": "b1694f45-dd6f-4e2f-99dd-fdc3f8131c69",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2173,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-09T23:55:59.098Z",
+      "updatedAt": "2025-07-04T12:18:38.448Z"
+    },
+    {
+      "id": "d5963467-fb5b-4cea-9e7c-47c28be264f4",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 4165,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-01-28T05:31:27.863Z",
+      "updatedAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "5c304755-7f6c-48a7-97d2-7f0ebf915623",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3089,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-10T13:13:22.065Z",
+      "updatedAt": "2025-11-15T09:45:46.639Z"
+    },
+    {
+      "id": "a16a8b1a-8cc8-4260-90e1-99669d42a294",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3712,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-01-08T10:32:18.671Z",
+      "updatedAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "2fb95144-cdac-4d09-b66e-3f846e98c070",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1605,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-03-08T08:14:57.465Z",
+      "updatedAt": "2025-03-09T14:23:53.210Z"
+    },
+    {
+      "id": "3253697d-0182-4e93-8a19-788cc5ca9e6f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3812,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-08-01T02:32:24.117Z",
+      "updatedAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "0ef98f02-d8ea-4569-ade3-6e8ede59aeaa",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2402,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-08-05T14:50:19.733Z",
+      "updatedAt": "2025-06-08T02:09:17.236Z"
+    },
+    {
+      "id": "cfd79a7a-a803-4d02-a784-87ee47e295cd",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3664,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-20T17:23:06.254Z",
+      "updatedAt": "2025-03-07T12:15:12.304Z"
+    },
+    {
+      "id": "eade6e7f-c610-449f-b49d-590e074eb473",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2838,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-07-09T04:57:06.739Z",
+      "updatedAt": "2025-05-27T15:37:35.346Z"
+    },
+    {
+      "id": "9a0c3e51-e889-4b9a-ae14-ae526d9d3a44",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 5400,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-17T02:33:59.355Z",
+      "updatedAt": "2025-12-22T17:26:54.052Z"
+    },
+    {
+      "id": "3cb40eec-c402-4ebd-99c0-fffa453f799d",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2040,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-02T22:30:20.026Z",
+      "updatedAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "da05c921-cd83-44c7-9836-379d9773c7de",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1349,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-06-16T06:41:41.021Z",
+      "updatedAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "2fa88c0f-c802-4e6b-b021-3cddbcbcb503",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2740,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-05-26T02:59:40.785Z",
+      "updatedAt": "2025-05-09T13:13:43.461Z"
+    },
+    {
+      "id": "adc2ae1c-9460-477a-a2ed-e0982cc891ce",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 5038,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-12-10T17:31:42.946Z",
+      "updatedAt": "2025-06-11T10:29:01.251Z"
+    },
+    {
+      "id": "0cd0d071-685b-4fd6-9e1f-4e3c8476512c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 5439,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-04-19T10:17:25.760Z",
+      "updatedAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "eb0d637e-aafb-462a-bb4b-5dc66e396e51",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1864,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-02-03T16:28:35.899Z",
+      "updatedAt": "2025-11-18T08:04:07.982Z"
+    },
+    {
+      "id": "ea42e606-6bfb-4199-aff4-bc82fcb2402f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 501,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-11-18T19:38:25.370Z",
+      "updatedAt": "2025-09-09T20:13:12.484Z"
+    },
+    {
+      "id": "d76d476a-ed76-49a3-8ca3-42fa75eb9e27",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3297,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-12-20T11:23:32.709Z",
+      "updatedAt": "2026-03-05T22:19:49.394Z"
+    },
+    {
+      "id": "6611fffa-45b5-4e58-b62d-30173c74fd6d",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3524,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-09-05T05:07:44.330Z",
+      "updatedAt": "2025-10-21T13:14:58.054Z"
+    },
+    {
+      "id": "9daa1d7c-4fe2-4240-be0a-155d76134d2e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2386,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-07-27T05:58:13.242Z",
+      "updatedAt": "2025-10-13T20:42:13.426Z"
+    },
+    {
+      "id": "32beffaa-d254-4765-bffb-c1ccb24ffb02",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 996,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-09-11T19:16:26.903Z",
+      "updatedAt": "2025-10-23T06:46:15.000Z"
+    },
+    {
+      "id": "cef71929-07ef-444c-a42b-e69a5b892fae",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1967,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-12-15T14:09:42.614Z",
+      "updatedAt": "2026-01-20T06:47:01.874Z"
+    },
+    {
+      "id": "1f860fe0-4ee0-49e6-b33a-55432061bc09",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2705,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-03-29T11:32:50.823Z",
+      "updatedAt": "2025-11-05T23:58:31.375Z"
+    },
+    {
+      "id": "b4c74840-868d-40b5-8812-dbdd556dbe8a",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1466,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-12-09T16:02:40.246Z",
+      "updatedAt": "2025-05-24T23:51:34.832Z"
+    },
+    {
+      "id": "e6e9d25f-0dd7-44b1-8ef0-00cdcb89ff24",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2029,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-09-25T15:49:52.803Z",
+      "updatedAt": "2025-11-17T01:09:35.140Z"
+    },
+    {
+      "id": "b8694d4f-6b3e-4dcb-bfe0-20aa59a06596",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 3544,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2026-01-02T06:13:41.345Z",
+      "updatedAt": "2026-02-20T17:04:37.458Z"
+    },
+    {
+      "id": "1638e6b9-1908-4a22-b8f3-6e12bef5a50e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1014,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2025-11-06T14:46:21.230Z",
+      "updatedAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "4a6cfeb0-cd43-497b-977f-31ffbbd97e92",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 1532,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-10-15T07:04:06.973Z",
+      "updatedAt": "2026-01-06T00:27:56.263Z"
+    },
+    {
+      "id": "a84a9ac8-bcb6-4a6c-8d42-cd8547d37d16",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 596,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-07-15T01:12:53.331Z",
+      "updatedAt": "2025-10-25T07:16:52.506Z"
+    },
+    {
+      "id": "5bb6cbc3-5bde-4d8a-bb23-99f5c47e041c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2494,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-07-26T23:17:44.962Z",
+      "updatedAt": "2025-12-21T22:27:05.414Z"
+    },
+    {
+      "id": "3f5dd136-b6bc-4fe9-ab21-061c8cc87577",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 603,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "rejected",
+      "createdAt": "2025-04-28T12:51:10.623Z",
+      "updatedAt": "2025-05-16T04:41:59.680Z"
+    },
+    {
+      "id": "615750fe-017d-472b-b38e-f8ef84da6962",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2514,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "pending",
+      "createdAt": "2025-12-25T16:01:50.163Z",
+      "updatedAt": "2026-01-15T00:25:00.829Z"
+    },
+    {
+      "id": "5c00cd50-e5f6-445b-b9ee-cd85ef1894f1",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "amount": 2503,
+      "file": "/assets/receipts/mock-receipt.jpg",
+      "status": "approved",
+      "createdAt": "2026-02-12T01:07:38.681Z",
+      "updatedAt": "2026-01-09T12:22:16.196Z"
+    }
+  ],
+  "userTransfers": [
+    {
+      "id": "d18b42be-b593-429f-b092-d0e295243c07",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 151,
+      "description": "Friendly transfer",
+      "createdAt": "2025-11-16T23:59:53.655Z",
+      "updatedAt": "2025-11-16T23:59:53.655Z"
+    },
+    {
+      "id": "e32b7935-eedb-4b7c-9361-1e7d49464949",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 126,
+      "description": "Friendly transfer",
+      "createdAt": "2025-11-16T14:36:02.327Z",
+      "updatedAt": "2025-11-16T14:36:02.327Z"
+    },
+    {
+      "id": "898dd247-72f8-428d-8223-8b67e2e2adde",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 109,
+      "description": "Friendly transfer",
+      "createdAt": "2025-11-21T21:50:38.049Z",
+      "updatedAt": "2025-11-21T21:50:38.049Z"
+    },
+    {
+      "id": "6b0fa7aa-3c79-42a2-b615-3d3d6bf4295d",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 54,
+      "description": "Friendly transfer",
+      "createdAt": "2025-06-30T05:16:24.794Z",
+      "updatedAt": "2025-06-30T05:16:24.794Z"
+    },
+    {
+      "id": "1ccf88bd-7c5f-40b3-93c8-03cbc170a291",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 20,
+      "description": "Friendly transfer",
+      "createdAt": "2025-09-24T00:58:39.167Z",
+      "updatedAt": "2025-09-24T00:58:39.167Z"
+    },
+    {
+      "id": "d601eb42-4152-4e0e-b67a-764da9936f7a",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 100,
+      "description": "Friendly transfer",
+      "createdAt": "2026-01-25T08:03:56.013Z",
+      "updatedAt": "2026-01-25T08:03:56.013Z"
+    },
+    {
+      "id": "b7e0b943-26e8-4ce4-bf49-688d67351391",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 60,
+      "description": "Friendly transfer",
+      "createdAt": "2026-02-27T22:19:49.394Z",
+      "updatedAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "22a5d134-68c8-4edf-830b-cfa7b7bdec31",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 84,
+      "description": "Friendly transfer",
+      "createdAt": "2026-02-25T22:19:49.394Z",
+      "updatedAt": "2026-02-25T22:19:49.394Z"
+    },
+    {
+      "id": "fbde9f61-82a0-42e9-a08a-4f93b5e2b375",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 152,
+      "description": "Friendly transfer",
+      "createdAt": "2026-01-20T05:36:39.233Z",
+      "updatedAt": "2026-01-20T05:36:39.233Z"
+    },
+    {
+      "id": "9af4cf82-ff8a-4110-8ce1-b257d9d99d37",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 207,
+      "description": "Friendly transfer",
+      "createdAt": "2025-07-03T21:29:51.015Z",
+      "updatedAt": "2025-07-03T21:29:51.015Z"
+    },
+    {
+      "id": "15ade3a3-a0c9-498f-a378-a96a6f0acd1f",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 27,
+      "description": "Friendly transfer",
+      "createdAt": "2025-10-31T23:58:42.294Z",
+      "updatedAt": "2025-10-31T23:58:42.294Z"
+    },
+    {
+      "id": "d85ee630-773e-4080-801e-11721ba43914",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 123,
+      "description": "Friendly transfer",
+      "createdAt": "2025-03-13T11:05:30.447Z",
+      "updatedAt": "2025-03-13T11:05:30.447Z"
+    },
+    {
+      "id": "262578a3-02e3-4d07-aa0d-d50a3a42caed",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 73,
+      "description": "Friendly transfer",
+      "createdAt": "2025-05-22T12:20:09.848Z",
+      "updatedAt": "2025-05-22T12:20:09.848Z"
+    },
+    {
+      "id": "011a3c62-7fd4-4f20-9019-5518f1a19237",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 98,
+      "description": "Friendly transfer",
+      "createdAt": "2026-03-04T22:19:49.394Z",
+      "updatedAt": "2026-03-04T22:19:49.394Z"
+    },
+    {
+      "id": "96706fb2-6aac-4cf7-88ba-613ff3b52ee5",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 164,
+      "description": "Friendly transfer",
+      "createdAt": "2026-01-14T20:04:01.612Z",
+      "updatedAt": "2026-01-14T20:04:01.612Z"
+    },
+    {
+      "id": "16da0d91-2a38-4623-a8df-57eb70854349",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 20,
+      "description": "Friendly transfer",
+      "createdAt": "2026-02-26T22:19:49.394Z",
+      "updatedAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "64646d08-e085-4cb1-bbc9-7802da71385b",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 171,
+      "description": "Friendly transfer",
+      "createdAt": "2025-08-01T21:19:30.720Z",
+      "updatedAt": "2025-08-01T21:19:30.720Z"
+    },
+    {
+      "id": "7b18a4b9-4889-474a-bdbe-da977a704620",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 92,
+      "description": "Friendly transfer",
+      "createdAt": "2025-12-28T05:35:14.781Z",
+      "updatedAt": "2025-12-28T05:35:14.781Z"
+    },
+    {
+      "id": "93388322-7f07-487e-97d8-4ee6cb9c4a3e",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 197,
+      "description": "Friendly transfer",
+      "createdAt": "2025-05-28T12:19:21.984Z",
+      "updatedAt": "2025-05-28T12:19:21.984Z"
+    },
+    {
+      "id": "51c7189e-e902-47cc-9aa2-2c0500e6c04c",
+      "senderId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "receiverId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "amount": 20,
+      "description": "Friendly transfer",
+      "createdAt": "2025-05-31T18:49:13.634Z",
+      "updatedAt": "2025-05-31T18:49:13.634Z"
+    }
+  ],
+  "userNotifications": [
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "162454af-2a30-42b3-82fe-96f31ab5ceaa",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "3eab3d96-262e-4f46-98f8-8a8b3d143380",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "413a4d76-3b11-4a5a-a431-7fc3ec667f64",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "7579d201-a38b-4c2f-ab69-5548ee3c0cd6",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "23987dec-7382-4e6e-8a69-4daf50246fd9",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "1bd9d1e4-5768-4f27-b24d-daa2a13824e6",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "d851925f-058a-4f01-9db7-251725f7cfda",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "c24c1dfd-3129-41e0-bbec-c5005a179c91",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "91a38aac-2907-4576-8206-97fe1cfff060",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "5f535363-8866-4008-989c-663e579b682e",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "2e2dd221-67f1-4428-b6de-98aef7db456a",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "e5b15855-071d-4cbf-8324-31de74932737",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "fb95af17-fc42-4e88-abe6-e69b7797d796",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "c2799ec1-b4a1-4132-a539-ce4929b9c6f8",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "8fa1d52f-1099-4817-88a2-69dd51372fbc",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "2947fe34-2b29-4171-8b5d-9685bd91ef01",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "da81678b-22c8-442a-b95a-2fb341b7de59",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "9ad99f37-02d7-4f37-9827-3b20d63dcdb0",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "6d3b0167-5d25-4948-92c0-0730414b1b85",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "45257f83-dd13-4b81-889b-dd63c2158eea",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "65fed682-795c-4148-8395-dc853b9fb0c9",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "9eda2543-16ef-408e-a02a-f8ee9ced4258",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "d1dae747-e3d7-4392-841c-d09fd7df4f7d",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "5882312d-e0dc-416c-9ced-38a7779bac9f",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "a95e7f42-c1c6-4807-9a56-e975a0ba15d9",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "358e3d5b-d6a2-45c4-8e08-e8fc0e88319d",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "8e48b47c-9b3e-4945-8729-afd716a2898c",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "228d7e20-54ea-4ca3-9411-d22467a88e55",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "9889b66b-d666-4a8a-b879-9f22948edd77",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "3590d3e9-80d7-4b74-b154-fd407f271b11",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "2fe78be4-22f3-4c63-8ed0-8bff23e1bdb4",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "f72bef23-c989-4f2a-a152-c32bf2c4731f",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "a4a1ab48-8d28-404a-b0c3-ab305824422a",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "e7d65c22-301d-42d6-b90e-57d8f4f5aeea",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "8399867c-4893-4a62-ab7a-04f4de8a6fbd",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "f3d455bf-3672-4a65-bd00-24e892f0bc46",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "08f4e5bd-ad2f-4bcb-a6a9-f9bb953da707",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "e6bc760b-fa24-4257-bcab-c8cff080fb89",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "0618d549-6bf7-49fe-9a32-08b3527564bc",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "801e88e9-33b5-40a3-882b-632b96098565",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "c9567ddb-5606-4a61-8258-7ae00afb63c4",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "ec902b81-bac8-484c-949f-05d5069e5bd3",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "fa506bdf-a13f-4e09-8f8c-ae00ad883f77",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "d2a3f415-684d-46b3-863f-b171ab96251e",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "de62a388-e946-4c9e-91b7-79a6cff7aeb6",
+      "isRead": false
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "ee1ba1df-0c99-43d1-bd24-ebbde78d28ef",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "c2a4c56a-b971-48d9-b880-dda6bbb581f9",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "58fefa6e-bf87-46ec-8d08-9c94ddee4acb",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "c77cbae9-1b4e-4bb8-a08a-8634b63890d3",
+      "isRead": true
+    },
+    {
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "notificationId": "712f12f6-e071-4f19-8c93-f10856fb876c",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "f1d1613a-2b02-4fa1-b3b9-195994772405",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "1912be4a-a018-4b7e-87ca-962eba68485b",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "3984efe2-c1bc-4946-af67-e263f30e524a",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "803323ec-ca63-402c-b0f1-0ff244ff3319",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "6e166eb4-accf-454b-bb8d-6a878bc54573",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "ed3f69fd-96d9-461b-90cc-73f61079fddb",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "44b97088-bc83-4499-bb03-a8d92d3e814b",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "138f2b2e-72a4-417d-a6f1-fe9b496e9aac",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "a2446dff-4a1a-4b9b-9701-e298be34e1da",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "341c3b0a-7b4f-4341-a053-29523d0d1d67",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "0355a814-3f2f-4f0c-9310-25d15da4c79a",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "1782abae-d41c-4fed-9978-e24585a7c30f",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "a16c1ddb-bbc2-4de0-8b08-df3b49a88199",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "2eb1e5a0-83f6-47f9-85bb-4b0e87e98fc1",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "e8644f66-02b0-4976-964a-988e2cfc49eb",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "fa2adb67-7701-43bb-916c-f6b713d0ece4",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "6e588e9a-0e69-4c0f-9834-ae603b94260e",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "8d9d4b10-1adf-43f7-8880-0c5073c393a8",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "0a1f225d-4946-4a11-87f7-4e37e9b21f66",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "8e81b9d5-c8eb-44ef-ad87-26d5a511376a",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "6f918840-0d56-4e38-b667-bb08a07d6414",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "0f16e9f2-1d4d-41bd-b320-590b552898c8",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "90ccf56f-166d-4f56-970c-b18c082221b0",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "26c4b374-ed16-4bd8-a247-4c8dadc2d4ae",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "01df6da0-bce7-4495-863e-178bc416aa09",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "c468d96e-124b-4fab-976b-f03a6b6f92a9",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "84c9cca1-2b5d-44e4-8f4d-4a4e3205ec22",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "a7aac425-4f0c-4781-88c8-8d8b2977b4c4",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "3d3dea86-b4cd-4ad1-9dd8-2b6f03dc6110",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "d65d1f15-583b-49bd-ae33-e6eff2bd9638",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "3200707d-f8d9-4285-92d3-8cb4f0ba23bb",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "f2251df5-c234-41ff-8693-c19a8bb8ef56",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "898ca685-7f66-4f97-b216-55accdb7e1a3",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "4058c339-7ada-4401-90b0-383b202de0ce",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "29b3c385-6e13-4814-b549-d9a7b3b7164a",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "346e01cf-c5e2-4922-b443-c6941d7daab7",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "f987703b-6ebb-40f0-9955-d6565ee99ae9",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "648ce49f-abf2-4e60-b58d-3181cdf57480",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "9f3708f7-7a11-49b1-81de-b8caec8cabe7",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "25a79260-f10a-49a3-a242-c5fbf05a80a0",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "ec87dada-f045-4540-a776-ba9cfd50d2bb",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "442075c6-f3e1-4225-8134-edfb05fcfbd2",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "b1a50f15-0236-470e-90d7-85c12752b54a",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "87141467-6ad6-450f-bd79-e14240621967",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "97c6cd7a-8414-40cc-87a8-f4a5831df05c",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "ff60b7c5-85bc-4c48-9f88-6c1d2a149734",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "f092d362-39ba-4fa1-89ed-fc8821963f44",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "3650f499-c6cc-4aab-8a48-dd7eab740673",
+      "isRead": false
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "e58a5dd1-dadc-4979-9956-b08bc38eac72",
+      "isRead": true
+    },
+    {
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "notificationId": "6a2f991e-bcdf-4c03-a614-46836dc4924c",
+      "isRead": true
+    }
+  ]
+}

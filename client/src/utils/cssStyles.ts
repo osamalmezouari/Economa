@@ -19,7 +19,7 @@ export function bgBlur(props?: BgBlurProps) {
   if (imgUrl) {
     return {
       position: 'relative',
-      backgroundImage: `url(${imgUrl})`,
+      backgroundImage: `url('${imgUrl}')`,
       '&:before': {
         position: 'absolute',
         top: 0,

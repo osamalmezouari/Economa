@@ -98,7 +98,7 @@ const HeroImage = () => {
                 'rounded bg-cover items-center bg-center h-[400px] p-4 sm:px-24 sm:pt-4'
               }
               component={'div'}
-              style={{ backgroundImage: `url(${slide.image})` }}
+              style={{ backgroundImage: `url('${slide.image}')` }}
             >
               <Grid2 size={{ xl: 7 }}></Grid2>
               <Grid2 size={{ xl: 4 }} className=" ">

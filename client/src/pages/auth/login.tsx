@@ -16,7 +16,8 @@ import { Login } from '../../features/auth/authThunk';
 import { useRouter } from '@tanstack/react-router';
 import { useAuth } from '../../context/AuthContext';
 import { MdEmail, MdLock, MdVisibility, MdVisibilityOff } from 'react-icons/md';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { clearAuthError } from '../../features/auth/authSlice';
 
 const LoginComponent = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -26,6 +27,11 @@ const LoginComponent = () => {
     (state: RootState) => state.auth.Login
   );
   const [showPassword, setShowPassword] = useState(false);
+
+  // Clear stale errors when mounting the login page
+  useEffect(() => {
+    dispatch(clearAuthError());
+  }, [dispatch]);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -199,25 +205,25 @@ const LoginComponent = () => {
                   }}
                 />
               </Grid>
-              {/*           <Grid item xs={12}>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
-              <Typography
-                variant="body2"
-                onClick={() => router.navigate({ to: '/Economa/Register' })}
-                sx={{
-                  color: 'text.secondary',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                  '&:hover': {
-                    color: 'primary.main',
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Don't have an account? Register
-              </Typography>
-            </Box>
-          </Grid> */}
+              <Grid item xs={12}>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+                  <Typography
+                    variant="body2"
+                    onClick={()=>console.log()}
+                    sx={{
+                      color: 'text.secondary',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      '&:hover': {
+                        color: 'primary.main',
+                        textDecoration: 'underline',
+                      },
+                    }}
+                  >
+                    Don't have an account? Register
+                  </Typography>
+                </Box>
+              </Grid>
               <Grid item xs={12}>
                 {error && (
                   <Alert severity="error" sx={{ mb: 2, borderRadius: '8px' }}>

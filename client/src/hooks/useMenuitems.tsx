@@ -156,15 +156,10 @@ export const useMenuItems = () => {
   ];
 
   useEffect(() => {
-    if (
-      (rolelvl < 3 && pathname.startsWith('/Economa/admin/Dashboard')) ||
-      pathname.startsWith('/Economa/Admin/Dashboard')
-    ) {
+    const pathLower = pathname.toLowerCase();
+    if (rolelvl >= 3 && pathLower.startsWith('/economa/admin/dashboard')) {
       setmenu(MenuItemsForAdmins);
-    } else if (
-      pathname.startsWith('/Economa/User/Profile') ||
-      pathname.startsWith('/Economa/user/Profile')
-    ) {
+    } else if (pathLower.startsWith('/economa/user/profile')) {
       setmenu(MenuItemsForUsers);
     }
   }, [rolelvl, pathname]);

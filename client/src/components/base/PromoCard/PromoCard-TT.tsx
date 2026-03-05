@@ -14,7 +14,7 @@ const PromoCardtoptitle: React.FC<PromoCardProps> = ({
     <div>
       <Box
         component="div"
-        style={{ backgroundImage: `url(${image})`, backgroundColor: '' }}
+        style={{ backgroundImage: `url('${image}')`, backgroundColor: '' }}
         className="flex flex-col justify-start bg-cover bg-center  w-full h-[400px] relative px-4 py-6  rounded"
       >
         <Box

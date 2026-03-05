@@ -1,0 +1,5759 @@
+{
+  "products": [
+    {
+      "id": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "name": "ginger",
+      "description": "Fresh ginger adds a spicy kick",
+      "price": 12.51,
+      "stock": 100,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 7.5,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "4ee72a4b-a330-45f7-8861-c9f8f7c7bf99",
+      "imageUrl": "/assets/products/Meats & Seafood/43a3d2be-ab82-4ff1-863f-864a3b851d30.jpg"
+    },
+    {
+      "id": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "name": "Yogulleavert",
+      "description": "Rich, thick, and creamy yogurt",
+      "price": 15,
+      "stock": 100,
+      "categoryId": "745d77d1-6d3e-41cc-905f-8129a5b63843",
+      "cost_price": 9,
+      "discount": 0,
+      "unitId": "4",
+      "galleryId": "b0335e6b-fe43-48c2-b4cc-a7c6d8c9ffd0",
+      "imageUrl": "/assets/products/Meats & Seafood/cedb34c3-9890-4062-ab73-454da3edeaf6.jpg"
+    },
+    {
+      "id": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "name": "Popcorn",
+      "description": "Crispy, light, and perfectly salted popcorn",
+      "price": 2.66,
+      "stock": 500,
+      "categoryId": "967fdc3d-3c94-475a-ab0f-ee515cea5dc6",
+      "cost_price": 1.3,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "343fa737-327f-4fb0-8a81-d034db9b320a",
+      "imageUrl": "/assets/products/Fruits & Vegetables/ccff1524-f431-4f54-a87f-8c15c9f71998.jpg"
+    },
+    {
+      "id": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "name": "Pineapple",
+      "description": "Tangy and sweet pineapples",
+      "price": 13.3,
+      "stock": 500,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 8,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "e847524a-d109-4db6-b490-79df8826acdd",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/f2222032-9dea-4580-a9da-6aa7d07e6a84.jpg"
+    },
+    {
+      "id": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "name": "corn",
+      "description": "Fresh and sweet corn",
+      "price": 1.22,
+      "stock": 400,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 0.6,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "4ecb8ff6-4fe6-44b4-ac8d-179313d25e8b",
+      "imageUrl": "/assets/products/Fruits & Vegetables/21dc43c8-4145-49f4-b478-366079ecd3e0.jpg"
+    },
+    {
+      "id": "44813c69-504f-4893-b3c0-ebf072532787",
+      "name": "Muffin Magic",
+      "description": "Moist, fluffy muffins",
+      "price": 15.3,
+      "stock": 100,
+      "categoryId": "76fdf1a4-e766-4acf-ada8-2fcb215da8c4",
+      "cost_price": 8.5,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "a87c8c44-5c55-4cd0-af19-579c5c54bc2c",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/58d3feea-80aa-4910-bff1-2a6dbeb4eaea.jpg"
+    },
+    {
+      "id": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "name": "juicy burger",
+      "description": "Juicy, savory burgers",
+      "price": 10.3,
+      "stock": 500,
+      "categoryId": "967fdc3d-3c94-475a-ab0f-ee515cea5dc6",
+      "cost_price": 5.5,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "2bf3b0ff-6d2d-43c6-95ab-96ebd6b9b5e9",
+      "imageUrl": "/assets/products/Meats & Seafood/f3297d1b-35b6-4d2f-85f0-fa31c3ae1919.jpg"
+    },
+    {
+      "id": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "name": "CrabMaster",
+      "description": "Premium crab meat",
+      "price": 18.55,
+      "stock": 100,
+      "categoryId": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "cost_price": 11,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "449d4f66-2d8c-4965-8abb-5febed8cd9ba",
+      "imageUrl": "/assets/products/Fruits & Vegetables/85c15e39-c068-4306-aa3c-18dd78103696.jpg"
+    },
+    {
+      "id": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "name": "parsley",
+      "description": "Fresh aromatic parsley",
+      "price": 2.26,
+      "stock": 2000,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 1.1,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "81056d8a-6eb0-4ea9-a3aa-52daf3763876",
+      "imageUrl": "/assets/products/Fruits & Vegetables/820f1927-efc0-47ee-beb7-80b18a57af2b.jpg"
+    },
+    {
+      "id": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "name": "Freshly Caught",
+      "description": "Golden Bay Prawns",
+      "price": 30.55,
+      "stock": 150,
+      "categoryId": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "cost_price": 18,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "44a00550-c90e-4472-9294-75d137c1c39b",
+      "imageUrl": "/assets/products/Meats & Seafood/be02b8cb-4f15-4229-8a92-8db6e7020471.jpg"
+    },
+    {
+      "id": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "name": "FreshCatch",
+      "description": "Smoked Salmon",
+      "price": 45.55,
+      "stock": 100,
+      "categoryId": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "cost_price": 27,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "ce5fb9b5-4ab4-4ef7-b8fe-2b7cdc07c657",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/5376cc29-3362-403b-b800-bf864ac56bb3.jpg"
+    },
+    {
+      "id": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "name": "Treats Cookie",
+      "description": "Soft, chewy cookies",
+      "price": 15.3,
+      "stock": 100,
+      "categoryId": "76fdf1a4-e766-4acf-ada8-2fcb215da8c4",
+      "cost_price": 8.5,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "23ddefa4-7882-40a1-8663-580bfd0c7ead",
+      "imageUrl": "/assets/products/Meats & Seafood/0101ba88-1681-4ff9-9adc-d8a1839ffb29.jpg"
+    },
+    {
+      "id": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "name": "Pure Milk",
+      "description": "Fresh, creamy milk",
+      "price": 4,
+      "stock": 100,
+      "categoryId": "745d77d1-6d3e-41cc-905f-8129a5b63843",
+      "cost_price": 2,
+      "discount": 0,
+      "unitId": "4",
+      "galleryId": "09c24e2e-3651-45e1-a571-b27f10c40123",
+      "imageUrl": "/assets/products/Fruits & Vegetables/752e6ccc-fb21-444b-a498-91cfc0da82aa.jpg"
+    },
+    {
+      "id": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "name": "potato",
+      "description": "Fresh potatoes",
+      "price": 8.54,
+      "stock": 40,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 5,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "e541bd8e-518f-4a46-8673-da39413c8a7c",
+      "imageUrl": "/assets/products/Fruits & Vegetables/f5bac113-9f2a-49f1-9b49-0779ba60d6ed.jpg"
+    },
+    {
+      "id": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "name": "Ocean's Bounty",
+      "description": "Premium frozen seafood",
+      "price": 35.55,
+      "stock": 150,
+      "categoryId": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "cost_price": 21,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "bb9f0487-afa7-4b48-a057-c3a1a630767b",
+      "imageUrl": "/assets/products/Fruits & Vegetables/6175799a-5507-4adb-ac29-4923234caf2c.jpg"
+    },
+    {
+      "id": "9fc54179-d314-4d3b-941e-215b67223653",
+      "name": "Cheese Mozzzell",
+      "description": "Smooth, creamy mozzarella",
+      "price": 18.3,
+      "stock": 100,
+      "categoryId": "745d77d1-6d3e-41cc-905f-8129a5b63843",
+      "cost_price": 10.5,
+      "discount": 20,
+      "unitId": "1",
+      "galleryId": "b1713971-f3cc-4736-b462-d17e36c4db69",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/5376cc29-3362-403b-b800-bf864ac56bb3.jpg"
+    },
+    {
+      "id": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "name": "Lychee",
+      "description": "Juicy lychees",
+      "price": 35.3,
+      "stock": 300,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 21,
+      "discount": 10,
+      "unitId": "3",
+      "galleryId": "61cdc9bd-f91c-4dcc-98c7-e041ab11c549",
+      "imageUrl": "/assets/products/Fruits & Vegetables/9e6fab90-0c5c-4bb6-b7c0-75f577db1005.jpg"
+    },
+    {
+      "id": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "name": "onion",
+      "description": "Rich flavorful onions",
+      "price": 2.99,
+      "stock": 80,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 1.5,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "1def01d5-cc6a-4fc9-8bfd-8617603561fe",
+      "imageUrl": "/assets/products/Meats & Seafood/29221235-acaa-4f0f-b43b-a185d63228f6.jpg"
+    },
+    {
+      "id": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "name": "Nugget Bites",
+      "description": "Crispy nugget bites",
+      "price": 12.66,
+      "stock": 500,
+      "categoryId": "967fdc3d-3c94-475a-ab0f-ee515cea5dc6",
+      "cost_price": 7,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "3a919433-513e-4fc4-b51b-af270969cd49",
+      "imageUrl": "/assets/products/Fruits & Vegetables/9a92738e-0352-436a-8f5e-4e1b327e28f1.jpg"
+    },
+    {
+      "id": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "name": "golden bake",
+      "description": "Fresh croissants and pastries",
+      "price": 10,
+      "stock": 100,
+      "categoryId": "76fdf1a4-e766-4acf-ada8-2fcb215da8c4",
+      "cost_price": 5.5,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "3f640803-6670-4ecf-be70-c474997ce330",
+      "imageUrl": "/assets/products/Fruits & Vegetables/e7e303a7-edc4-4903-8b15-840404ebb01f.jpg"
+    },
+    {
+      "id": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "name": "Blueberries",
+      "description": "Sweet and tangy blueberries",
+      "price": 25.3,
+      "stock": 300,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 15,
+      "discount": 10,
+      "unitId": "3",
+      "galleryId": "4ac3b8c9-deb9-409c-b6a0-4aec5f043884",
+      "imageUrl": "/assets/products/Meats & Seafood/43a3d2be-ab82-4ff1-863f-864a3b851d30.jpg"
+    },
+    {
+      "id": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "name": "dragon fruit",
+      "description": "Exotic dragon fruit",
+      "price": 16.3,
+      "stock": 300,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 9.5,
+      "discount": 5,
+      "unitId": "3",
+      "galleryId": "20f58411-457f-44c3-84c0-3bbe89117909",
+      "imageUrl": "/assets/products/Fruits & Vegetables/c946451e-9de9-4c79-8c57-d0d15dc5c6ed.jpg"
+    },
+    {
+      "id": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "name": "Paris Sweets",
+      "description": "Elegant handcrafted pastries",
+      "price": 18.3,
+      "stock": 100,
+      "categoryId": "76fdf1a4-e766-4acf-ada8-2fcb215da8c4",
+      "cost_price": 10.5,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "edb2b0d9-6cca-45cd-956a-b2af10c3ea96",
+      "imageUrl": "/assets/products/Fruits & Vegetables/9a92738e-0352-436a-8f5e-4e1b327e28f1.jpg"
+    },
+    {
+      "id": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "name": "Apple",
+      "description": "Juicy, crisp apples",
+      "price": 10.55,
+      "stock": 300,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 6,
+      "discount": 5,
+      "unitId": "3",
+      "galleryId": "8bd06b8a-c1f7-4ea8-a9b1-1d32b2a0df64",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/5376cc29-3362-403b-b800-bf864ac56bb3.jpg"
+    },
+    {
+      "id": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "name": "sweet peppers",
+      "description": "Fresh sweet peppers",
+      "price": 7.65,
+      "stock": 150,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 4,
+      "discount": 30,
+      "unitId": "3",
+      "galleryId": "1e1fe988-327a-4ea8-a93e-b91be114cb40",
+      "imageUrl": "/assets/products/Fruits & Vegetables/854fa531-8f72-44af-9d1a-2a4f9c6a3bf5.jpg"
+    },
+    {
+      "id": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "name": "Mango",
+      "description": "Sweet tropical mangoes",
+      "price": 13.3,
+      "stock": 500,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 8,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "b1fe9442-d163-4f1c-9b1a-a0e6352ecc35",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/58d3feea-80aa-4910-bff1-2a6dbeb4eaea.jpg"
+    },
+    {
+      "id": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "name": "Guava",
+      "description": "Sweet fragrant guava",
+      "price": 35.3,
+      "stock": 500,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 21,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "e8ff6771-f069-4c31-a274-fcd2149e1619",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/f2222032-9dea-4580-a9da-6aa7d07e6a84.jpg"
+    },
+    {
+      "id": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "name": "Crispy Fries",
+      "description": "Golden crispy fries",
+      "price": 5.3,
+      "stock": 500,
+      "categoryId": "967fdc3d-3c94-475a-ab0f-ee515cea5dc6",
+      "cost_price": 2.5,
+      "discount": 0,
+      "unitId": "1",
+      "galleryId": "81313ff2-5afc-4d3b-b257-c3f65a0e9e50",
+      "imageUrl": "/assets/products/Meats & Seafood/f3297d1b-35b6-4d2f-85f0-fa31c3ae1919.jpg"
+    },
+    {
+      "id": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "name": "Orange",
+      "description": "Juicy refreshing oranges",
+      "price": 35.3,
+      "stock": 500,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 21,
+      "discount": 0,
+      "unitId": "3",
+      "galleryId": "986b2a89-d57a-4b2c-85c3-ba93d1de17c3",
+      "imageUrl": "/assets/products/Breaksfast & Dairy/53ba01ff-0e6a-44bc-8d45-dcd00142abf8.jpg"
+    },
+    {
+      "id": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "name": "tomato",
+      "description": "Fresh vibrant tomatoes",
+      "price": 6.22,
+      "stock": 20,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 3.5,
+      "discount": 20,
+      "unitId": "3",
+      "galleryId": "786c6c3d-7701-4cc0-b606-c46cf64a8636",
+      "imageUrl": "/assets/products/Meats & Seafood/f483b71e-cf6a-42b4-a8ac-4c6ad7b9edfd.jpg"
+    },
+    {
+      "id": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "name": "Cherries",
+      "description": "Juicy sweet cherries",
+      "price": 25.3,
+      "stock": 300,
+      "categoryId": "7740708f-5623-4cf5-a45a-bfdf36bfd4db",
+      "cost_price": 15,
+      "discount": 25,
+      "unitId": "3",
+      "galleryId": "8d85e782-53bd-4acc-872d-78210796f518",
+      "imageUrl": "/assets/products/Meats & Seafood/43a3d2be-ab82-4ff1-863f-864a3b851d30.jpg"
+    },
+    {
+      "id": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "name": "broccoli",
+      "description": "Fresh broccoli packed with vitamins",
+      "price": 20.55,
+      "stock": 100,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 12,
+      "discount": 10,
+      "unitId": "3",
+      "galleryId": "cca8003e-afa2-4e27-bb55-3e7a5e77f4ee",
+      "imageUrl": "/assets/products/Meats & Seafood/de42f063-8b3d-4f57-8622-48006337e035.jpg"
+    },
+    {
+      "id": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "name": "Sea Fresh",
+      "description": "Premium ocean-caught seafood",
+      "price": 15.55,
+      "stock": 150,
+      "categoryId": "305ecc35-68d1-463d-a960-d4ca4f8502e6",
+      "cost_price": 9,
+      "discount": 10,
+      "unitId": "1",
+      "galleryId": "80992e7f-c928-4d93-b5dc-a3e9a888c494",
+      "imageUrl": "/assets/products/Meats & Seafood/29221235-acaa-4f0f-b43b-a185d63228f6.jpg"
+    },
+    {
+      "id": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "name": "beetroot",
+      "description": "Fresh beetroot",
+      "price": 15.35,
+      "stock": 100,
+      "categoryId": "5d577fe5-0944-4f3c-88e2-5db4fdfd5c38",
+      "cost_price": 9,
+      "discount": 10,
+      "unitId": "3",
+      "galleryId": "36f1784c-2dbf-4ebf-9328-f83942effae8",
+      "imageUrl": "/assets/products/Fruits & Vegetables/752e6ccc-fb21-444b-a498-91cfc0da82aa.jpg"
+    },
+    {
+      "id": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "name": "NuttyFresh Almond Milk",
+      "description": "Smooth dairy-free almond milk",
+      "price": 20.55,
+      "stock": 100,
+      "categoryId": "745d77d1-6d3e-41cc-905f-8129a5b63843",
+      "cost_price": 12,
+      "discount": 0,
+      "unitId": "4",
+      "galleryId": "1e78aff3-4ba8-4019-9a3f-2ca84b589081",
+      "imageUrl": "/assets/products/Meats & Seafood/f3297d1b-35b6-4d2f-85f0-fa31c3ae1919.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "cf5a7aaf-21e7-4f3d-8533-564abc030bc9",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 316.55,
+      "createdAt": "2026-03-05T03:52:26.096Z",
+      "updatedAt": "2026-03-05T03:52:26.096Z",
+      "items": [
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 5,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 5,
+          "unitPrice": 12.66
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 3,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 5,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 1,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "74813ad0-d8aa-4582-b668-3993ab48b8db",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 54.92,
+      "createdAt": "2026-03-05T20:27:26.096Z",
+      "updatedAt": "2026-03-05T20:27:26.096Z",
+      "items": [
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 4,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 4,
+          "unitPrice": 12.51
+        }
+      ]
+    },
+    {
+      "id": "2da0b106-64de-43d9-b531-555602bbe828",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 96.5,
+      "createdAt": "2026-03-05T18:15:26.096Z",
+      "updatedAt": "2026-03-05T18:15:26.096Z",
+      "items": [
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 5,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 2,
+          "unitPrice": 15
+        }
+      ]
+    },
+    {
+      "id": "bbfc21cc-499e-4b47-ab5e-ed39bb41de2f",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 36.6,
+      "createdAt": "2026-03-04T03:58:26.096Z",
+      "updatedAt": "2026-03-04T03:58:26.096Z",
+      "items": [
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 2,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "2f331c91-d26e-4f79-bcbb-56d0604749f1",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 259.25,
+      "createdAt": "2026-03-04T13:01:26.096Z",
+      "updatedAt": "2026-03-04T13:01:26.096Z",
+      "items": [
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 4,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 1,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 5,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "e876f4b9-c426-4343-8eec-74c61964fe6e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 122.5,
+      "createdAt": "2026-03-04T15:06:26.096Z",
+      "updatedAt": "2026-03-04T15:06:26.096Z",
+      "items": [
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 3,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 3,
+          "unitPrice": 4
+        },
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 5,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 4,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 3,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "a8d6e0a0-a74d-4a3c-98d3-d32e566a9827",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 58.699999999999996,
+      "createdAt": "2026-03-03T21:28:26.096Z",
+      "updatedAt": "2026-03-03T21:28:26.096Z",
+      "items": [
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 5,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 4,
+          "unitPrice": 4
+        }
+      ]
+    },
+    {
+      "id": "f3c8f9ff-903b-4808-adef-f788b70d7298",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 86.41,
+      "createdAt": "2026-03-03T23:52:26.096Z",
+      "updatedAt": "2026-03-03T23:52:26.096Z",
+      "items": [
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 4,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 1,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 1,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "04e02156-9713-42a4-8ca8-4cf456f00f1b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 67.22,
+      "createdAt": "2026-03-03T16:22:26.096Z",
+      "updatedAt": "2026-03-03T16:22:26.096Z",
+      "items": [
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 2,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 4,
+          "unitPrice": 10.55
+        }
+      ]
+    },
+    {
+      "id": "84e3cafd-03f5-4454-a899-2ac6ce5665e3",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 72.10000000000001,
+      "createdAt": "2026-03-02T11:18:26.096Z",
+      "updatedAt": "2026-03-02T11:18:26.096Z",
+      "items": [
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 2,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 3,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 3,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 3,
+          "unitPrice": 2.26
+        }
+      ]
+    },
+    {
+      "id": "8ca1c720-9087-494c-927c-3193288d9d8e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 171.79999999999998,
+      "createdAt": "2026-03-02T13:19:26.096Z",
+      "updatedAt": "2026-03-02T13:19:26.096Z",
+      "items": [
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 4,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 2,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "db460507-0f58-4f27-8b1f-4dce91776c9f",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 309.1,
+      "createdAt": "2026-03-02T02:15:26.096Z",
+      "updatedAt": "2026-03-02T02:15:26.096Z",
+      "items": [
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 3,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 5,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 1,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 1,
+          "unitPrice": 4
+        },
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 5,
+          "unitPrice": 6.22
+        }
+      ]
+    },
+    {
+      "id": "e9e26d80-85c0-4cc7-990e-04d29dd5be42",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 173.05,
+      "createdAt": "2026-03-01T02:27:26.096Z",
+      "updatedAt": "2026-03-01T02:27:26.096Z",
+      "items": [
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 4,
+          "unitPrice": 15
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 2,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 4,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 1,
+          "unitPrice": 10.55
+        }
+      ]
+    },
+    {
+      "id": "4b479c1c-3760-418d-a07e-32124304f930",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 89.63000000000001,
+      "createdAt": "2026-03-01T00:44:26.096Z",
+      "updatedAt": "2026-03-01T00:44:26.096Z",
+      "items": [
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 1,
+          "unitPrice": 5.3
+        },
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 3,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 3,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 3,
+          "unitPrice": 2.26
+        }
+      ]
+    },
+    {
+      "id": "b1857e42-3840-42cd-a355-aeec945ef65d",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 120.47999999999999,
+      "createdAt": "2026-03-01T12:24:26.096Z",
+      "updatedAt": "2026-03-01T12:24:26.096Z",
+      "items": [
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 5,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 2,
+          "unitPrice": 15
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 3,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 2,
+          "unitPrice": 5.3
+        },
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 4,
+          "unitPrice": 6.22
+        }
+      ]
+    },
+    {
+      "id": "7d9075a5-252b-4841-863a-dd23f42f8ee6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 131.8,
+      "createdAt": "2026-02-28T22:35:26.096Z",
+      "updatedAt": "2026-02-28T22:35:26.096Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 4,
+          "unitPrice": 10
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 1,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 5,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "a0311cd4-8fee-4b14-bc31-a64808181844",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 255.42,
+      "createdAt": "2026-02-28T06:08:26.096Z",
+      "updatedAt": "2026-02-28T06:08:26.096Z",
+      "items": [
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 5,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 5,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 4,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 3,
+          "unitPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": "6628e47a-1f9a-48f8-b8e0-34cd4add523b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 149.7,
+      "createdAt": "2026-02-28T11:00:26.096Z",
+      "updatedAt": "2026-02-28T11:00:26.096Z",
+      "items": [
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 5,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "c0ceb7f7-5fc8-4778-866f-e924e838d7c6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 44.95,
+      "createdAt": "2026-02-27T19:05:26.096Z",
+      "updatedAt": "2026-02-27T19:05:26.096Z",
+      "items": [
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 3,
+          "unitPrice": 10.55
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 1,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "0e8b3c6f-700f-43c3-84f7-bc3e4e3762d3",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 55.849999999999994,
+      "createdAt": "2026-02-27T18:12:26.096Z",
+      "updatedAt": "2026-02-27T18:12:26.096Z",
+      "items": [
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 1,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 1,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "8d977df6-0fba-4023-b441-26aa12ee8e18",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 101.6,
+      "createdAt": "2026-02-27T16:48:26.096Z",
+      "updatedAt": "2026-02-27T16:48:26.096Z",
+      "items": [
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 2,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+          "quantity": 3,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 4,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "c1a23d60-0481-4fe4-ae6d-780c030f76f6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 131.28,
+      "createdAt": "2025-07-03T20:02:37.325Z",
+      "updatedAt": "2025-07-03T20:02:37.325Z",
+      "items": [
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 4,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 1,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 1,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 4,
+          "unitPrice": 12.51
+        }
+      ]
+    },
+    {
+      "id": "940e47bc-9972-4d7b-b322-29f2131d855e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 71.7,
+      "createdAt": "2025-06-29T05:00:54.378Z",
+      "updatedAt": "2025-06-29T05:00:54.378Z",
+      "items": [
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 2,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 4,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "55768ae3-b602-4c4a-b85e-113b31748de0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 134.85000000000002,
+      "createdAt": "2025-10-02T01:36:48.092Z",
+      "updatedAt": "2025-10-02T01:36:48.092Z",
+      "items": [
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 3,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "d7a91053-f950-42f5-bf6d-f242f51f4198",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 244.57,
+      "createdAt": "2025-09-02T13:34:27.239Z",
+      "updatedAt": "2025-09-02T13:34:27.239Z",
+      "items": [
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 4,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 2,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 1,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+          "quantity": 5,
+          "unitPrice": 25.3
+        }
+      ]
+    },
+    {
+      "id": "c4705603-2656-442b-bd07-ed03fe21d0d2",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 116.85000000000001,
+      "createdAt": "2025-04-12T22:20:53.450Z",
+      "updatedAt": "2025-04-12T22:20:53.450Z",
+      "items": [
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 3,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 4,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "6001de5a-e424-459b-a304-9e9bdadb9f43",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 91.55000000000001,
+      "createdAt": "2026-01-26T07:32:16.362Z",
+      "updatedAt": "2026-01-26T07:32:16.362Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 2,
+          "unitPrice": 10
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 3,
+          "unitPrice": 10.55
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 3,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "f4e1ad2d-771e-4683-9abe-74649136a3d0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 202.95,
+      "createdAt": "2025-09-05T20:38:58.169Z",
+      "updatedAt": "2025-09-05T20:38:58.169Z",
+      "items": [
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 3,
+          "unitPrice": 45.55
+        },
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 5,
+          "unitPrice": 10
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 1,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "c5511ca3-47ea-4e71-931a-9f693f005f0b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 228.65,
+      "createdAt": "2025-03-15T07:22:12.881Z",
+      "updatedAt": "2025-03-15T07:22:12.881Z",
+      "items": [
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 3,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 5,
+          "unitPrice": 30.55
+        }
+      ]
+    },
+    {
+      "id": "49b3efb4-be77-46de-a5ee-f8a62da1ade4",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 169.1,
+      "createdAt": "2025-06-30T00:03:38.223Z",
+      "updatedAt": "2025-06-30T00:03:38.223Z",
+      "items": [
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 3,
+          "unitPrice": 4
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 2,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+          "quantity": 5,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 4,
+          "unitPrice": 10
+        }
+      ]
+    },
+    {
+      "id": "a0cf852f-2f4c-46b4-b3f3-11cb42df6407",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 166.7,
+      "createdAt": "2025-09-27T18:47:47.353Z",
+      "updatedAt": "2025-09-27T18:47:47.353Z",
+      "items": [
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 5,
+          "unitPrice": 15
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 2,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 2,
+          "unitPrice": 30.55
+        }
+      ]
+    },
+    {
+      "id": "bc90c85a-e340-46a1-bcdd-cc554d0337fe",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 287.7,
+      "createdAt": "2025-09-19T11:50:46.460Z",
+      "updatedAt": "2025-09-19T11:50:46.460Z",
+      "items": [
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 2,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 5,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 5,
+          "unitPrice": 12.66
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 2,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 4,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "3ebf35c8-811e-45dc-ac40-35170ef153d0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 177.74,
+      "createdAt": "2025-08-14T08:24:44.409Z",
+      "updatedAt": "2025-08-14T08:24:44.409Z",
+      "items": [
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 3,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 4,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 3,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 2,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 3,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "fc0d6684-0f7a-4ee3-886b-06b2765ed8fc",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 290.3,
+      "createdAt": "2025-06-30T03:45:48.340Z",
+      "updatedAt": "2025-06-30T03:45:48.340Z",
+      "items": [
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 1,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 5,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 1,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 4,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 5,
+          "unitPrice": 10.3
+        }
+      ]
+    },
+    {
+      "id": "f6cf69bf-9120-4c70-b8c0-be0096d26444",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 49.940000000000005,
+      "createdAt": "2025-08-28T06:44:44.822Z",
+      "updatedAt": "2025-08-28T06:44:44.822Z",
+      "items": [
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 4,
+          "unitPrice": 2.99
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 3,
+          "unitPrice": 12.66
+        }
+      ]
+    },
+    {
+      "id": "c957c70c-218c-48af-a668-09ce59bc25a0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 268.75,
+      "createdAt": "2025-11-27T16:54:19.244Z",
+      "updatedAt": "2025-11-27T16:54:19.244Z",
+      "items": [
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 5,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 1,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 5,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 4,
+          "unitPrice": 45.55
+        }
+      ]
+    },
+    {
+      "id": "b27402a9-83d4-43cb-b953-2530ddfe505b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 60.11,
+      "createdAt": "2026-01-09T02:24:56.152Z",
+      "updatedAt": "2026-01-09T02:24:56.152Z",
+      "items": [
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 3,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 5,
+          "unitPrice": 5.3
+        },
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 5,
+          "unitPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": "99d04b48-ad69-47cc-bba4-692779a1c182",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 81.5,
+      "createdAt": "2025-04-21T13:46:02.246Z",
+      "updatedAt": "2025-04-21T13:46:02.246Z",
+      "items": [
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 5,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "d770ab51-bf43-4b98-bcff-8b499bf22d6e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 112.49999999999999,
+      "createdAt": "2025-12-21T14:18:10.610Z",
+      "updatedAt": "2025-12-21T14:18:10.610Z",
+      "items": [
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 3,
+          "unitPrice": 15
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 4,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 2,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 1,
+          "unitPrice": 10.3
+        }
+      ]
+    },
+    {
+      "id": "72ffe983-9d29-4fd5-a880-e601fe25a7b4",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 207.24999999999997,
+      "createdAt": "2025-12-21T17:40:10.584Z",
+      "updatedAt": "2025-12-21T17:40:10.584Z",
+      "items": [
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 3,
+          "unitPrice": 45.55
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 2,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "98eb642c-c8f4-4854-86c6-1516a6f2dc70",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 250.05,
+      "createdAt": "2025-12-13T14:04:06.527Z",
+      "updatedAt": "2025-12-13T14:04:06.527Z",
+      "items": [
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 5,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 5,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 1,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "26590e6c-5dcf-406e-ba03-519290855160",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 35.07,
+      "createdAt": "2025-10-22T19:33:45.615Z",
+      "updatedAt": "2025-10-22T19:33:45.615Z",
+      "items": [
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 2,
+          "unitPrice": 2.26
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 1,
+          "unitPrice": 30.55
+        }
+      ]
+    },
+    {
+      "id": "37e0db81-5084-4511-a769-9fe24bdf2188",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 169.54,
+      "createdAt": "2025-08-23T11:57:24.711Z",
+      "updatedAt": "2025-08-23T11:57:24.711Z",
+      "items": [
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 2,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 3,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 4,
+          "unitPrice": 12.51
+        }
+      ]
+    },
+    {
+      "id": "6a57c4ba-ee88-4a48-9fa5-ce0596fa0bfc",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 249.7,
+      "createdAt": "2025-09-21T02:17:49.124Z",
+      "updatedAt": "2025-09-21T02:17:49.124Z",
+      "items": [
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 5,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 4,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "f2bb24c3-46fb-4ccb-acac-fb4a6163a4f6",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 187.61,
+      "createdAt": "2025-07-01T15:41:31.494Z",
+      "updatedAt": "2025-07-01T15:41:31.494Z",
+      "items": [
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 2,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 3,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 4,
+          "unitPrice": 2.66
+        },
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 1,
+          "unitPrice": 45.55
+        },
+        {
+          "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+          "quantity": 5,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "1aad2d7a-31bf-43a2-9110-78c4172b8bb9",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 129.94,
+      "createdAt": "2026-02-10T08:54:37.673Z",
+      "updatedAt": "2026-02-10T08:54:37.673Z",
+      "items": [
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 2,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 1,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 4,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "09490590-3596-443a-83dd-ec3810c83fb1",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 5.98,
+      "createdAt": "2025-08-31T15:13:23.265Z",
+      "updatedAt": "2025-08-31T15:13:23.265Z",
+      "items": [
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 2,
+          "unitPrice": 2.99
+        }
+      ]
+    },
+    {
+      "id": "1e28da6b-af0b-48e2-a4e7-f30da7af0cba",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 75.9,
+      "createdAt": "2025-10-19T16:47:53.938Z",
+      "updatedAt": "2025-10-19T16:47:53.938Z",
+      "items": [
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 3,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 2,
+          "unitPrice": 15
+        }
+      ]
+    },
+    {
+      "id": "1a3340f5-271d-4b38-aa50-b11abc423cc2",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 264.08,
+      "createdAt": "2025-09-15T01:01:58.231Z",
+      "updatedAt": "2025-09-15T01:01:58.231Z",
+      "items": [
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 2,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 2,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 4,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "e407cca6-1b37-491f-a3ce-962497aad4c0",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 16.3,
+      "createdAt": "2026-01-24T23:59:19.643Z",
+      "updatedAt": "2026-01-24T23:59:19.643Z",
+      "items": [
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 1,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "aee7aeb4-ba12-406c-9ecb-2a1f63a0fd7b",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 12.66,
+      "createdAt": "2025-06-21T07:58:59.676Z",
+      "updatedAt": "2025-06-21T07:58:59.676Z",
+      "items": [
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 1,
+          "unitPrice": 12.66
+        }
+      ]
+    },
+    {
+      "id": "3d759d28-23e1-463b-80ce-bd69ab521272",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 289.75,
+      "createdAt": "2025-09-21T15:45:36.152Z",
+      "updatedAt": "2025-09-21T15:45:36.152Z",
+      "items": [
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 5,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 1,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 5,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 2,
+          "unitPrice": 10
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 4,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "db3c95d6-b0c9-4555-a0fc-0504b9e88263",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 224.79999999999998,
+      "createdAt": "2025-07-09T16:21:02.336Z",
+      "updatedAt": "2025-07-09T16:21:02.336Z",
+      "items": [
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 5,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 2,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+          "quantity": 4,
+          "unitPrice": 35.55
+        }
+      ]
+    },
+    {
+      "id": "6e5ae731-2761-4f00-a8b9-7cab87b52260",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 203.00000000000003,
+      "createdAt": "2025-08-23T10:54:06.137Z",
+      "updatedAt": "2025-08-23T10:54:06.137Z",
+      "items": [
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 3,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 1,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 5,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "4f7f710d-7d45-4ec0-85fb-270dabb47c76",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 73.38000000000001,
+      "createdAt": "2025-03-31T15:01:59.442Z",
+      "updatedAt": "2025-03-31T15:01:59.442Z",
+      "items": [
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 4,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 4,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 2,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "4fdccc7b-66d8-4c50-80f3-3acc48da438f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 97.78000000000002,
+      "createdAt": "2025-09-25T08:02:33.644Z",
+      "updatedAt": "2025-09-25T08:02:33.644Z",
+      "items": [
+        {
+          "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+          "quantity": 2,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 2,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 2,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 3,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "ee41d6e8-55ff-41b7-95b7-e0fa1e8482c9",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 236.03,
+      "createdAt": "2025-05-17T22:34:35.444Z",
+      "updatedAt": "2025-05-17T22:34:35.444Z",
+      "items": [
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 4,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 3,
+          "unitPrice": 2.26
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 5,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 3,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "8f958017-ed2a-4c9f-b4f2-8cb044001c5c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 260.13,
+      "createdAt": "2025-10-21T10:37:25.024Z",
+      "updatedAt": "2025-10-21T10:37:25.024Z",
+      "items": [
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 3,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 2,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 5,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 3,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 3,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "69678d91-073e-47a5-bf58-6eec6748ca69",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 183.97,
+      "createdAt": "2025-07-22T22:05:27.616Z",
+      "updatedAt": "2025-07-22T22:05:27.616Z",
+      "items": [
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 2,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 5,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 3,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 1,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 2,
+          "unitPrice": 12.66
+        }
+      ]
+    },
+    {
+      "id": "3fca908c-fab5-44ad-a2d9-76d8545aaff5",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 61.4,
+      "createdAt": "2025-03-24T06:09:54.657Z",
+      "updatedAt": "2025-03-24T06:09:54.657Z",
+      "items": [
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 4,
+          "unitPrice": 15.35
+        }
+      ]
+    },
+    {
+      "id": "c896a60d-b2e4-4a9a-9dde-0cfffdabf3a5",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 177.75,
+      "createdAt": "2026-02-23T21:57:08.740Z",
+      "updatedAt": "2026-02-23T21:57:08.740Z",
+      "items": [
+        {
+          "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+          "quantity": 5,
+          "unitPrice": 35.55
+        }
+      ]
+    },
+    {
+      "id": "6a0b7ad1-95a5-4bbf-b6be-af7bb3f58b0e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 71.71,
+      "createdAt": "2025-07-07T15:30:09.674Z",
+      "updatedAt": "2025-07-07T15:30:09.674Z",
+      "items": [
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 5,
+          "unitPrice": 10.55
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 1,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 3,
+          "unitPrice": 1.22
+        }
+      ]
+    },
+    {
+      "id": "fc02f70c-213c-4a20-849f-76869ab98ff2",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 105.49000000000001,
+      "createdAt": "2025-04-16T10:58:47.979Z",
+      "updatedAt": "2025-04-16T10:58:47.979Z",
+      "items": [
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 3,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 1,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 4,
+          "unitPrice": 2.26
+        }
+      ]
+    },
+    {
+      "id": "c8969641-ed46-45e8-b8d1-737b0504c313",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 222.19000000000003,
+      "createdAt": "2025-07-18T23:42:42.504Z",
+      "updatedAt": "2025-07-18T23:42:42.504Z",
+      "items": [
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 5,
+          "unitPrice": 4
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 4,
+          "unitPrice": 10.55
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 4,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 3,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 1,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "b6f6641d-e038-4f4f-8b9a-19da25439df3",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 98.12,
+      "createdAt": "2025-12-13T04:45:34.441Z",
+      "updatedAt": "2025-12-13T04:45:34.441Z",
+      "items": [
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 3,
+          "unitPrice": 2.99
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 5,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 1,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "f74c6286-19b3-416d-b332-25f9eb62e55f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 38.75,
+      "createdAt": "2025-04-25T09:16:08.718Z",
+      "updatedAt": "2025-04-25T09:16:08.718Z",
+      "items": [
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 5,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 1,
+          "unitPrice": 7.65
+        }
+      ]
+    },
+    {
+      "id": "4acfcd94-1f65-4dd2-a4bf-9f4b62d600c6",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 324.85,
+      "createdAt": "2025-11-11T18:51:42.544Z",
+      "updatedAt": "2025-11-11T18:51:42.544Z",
+      "items": [
+        {
+          "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+          "quantity": 5,
+          "unitPrice": 35.55
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 2,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 5,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "b8da807a-edd9-41ef-a18a-95900fdb6f03",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 285.37,
+      "createdAt": "2025-05-26T14:00:50.885Z",
+      "updatedAt": "2025-05-26T14:00:50.885Z",
+      "items": [
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 3,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 2,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+          "quantity": 2,
+          "unitPrice": 1.22
+        },
+        {
+          "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+          "quantity": 4,
+          "unitPrice": 35.55
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 3,
+          "unitPrice": 12.66
+        }
+      ]
+    },
+    {
+      "id": "c4e7e99d-a6c7-4639-ba36-959d65b2db23",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 86.91000000000001,
+      "createdAt": "2025-12-01T08:28:05.876Z",
+      "updatedAt": "2025-12-01T08:28:05.876Z",
+      "items": [
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 1,
+          "unitPrice": 13.3
+        },
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 1,
+          "unitPrice": 12.66
+        },
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 3,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 1,
+          "unitPrice": 5.3
+        }
+      ]
+    },
+    {
+      "id": "d1f288f9-f9a6-48b9-85bf-92fc0a1f683e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 251.35,
+      "createdAt": "2025-09-02T11:09:17.647Z",
+      "updatedAt": "2025-09-02T11:09:17.647Z",
+      "items": [
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 1,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 4,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 3,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 2,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 3,
+          "unitPrice": 15
+        }
+      ]
+    },
+    {
+      "id": "b99e2fd5-e58e-4888-8e4f-717422d50c51",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 91.5,
+      "createdAt": "2025-08-05T18:43:04.358Z",
+      "updatedAt": "2025-08-05T18:43:04.358Z",
+      "items": [
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 2,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 3,
+          "unitPrice": 18.3
+        }
+      ]
+    },
+    {
+      "id": "2c57ce3c-56ad-4ff2-b9e1-a0364798fa04",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 180.5,
+      "createdAt": "2025-06-02T21:45:15.615Z",
+      "updatedAt": "2025-06-02T21:45:15.615Z",
+      "items": [
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 5,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 5,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "9fa857ca-fca6-4efb-850e-793ea4294134",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 7.98,
+      "createdAt": "2025-06-27T03:23:59.700Z",
+      "updatedAt": "2025-06-27T03:23:59.700Z",
+      "items": [
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 3,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "9fbe208d-ee4a-40cf-89ab-c59343804829",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 76.5,
+      "createdAt": "2025-12-26T16:55:15.775Z",
+      "updatedAt": "2025-12-26T16:55:15.775Z",
+      "items": [
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 5,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "14a3c458-8ca6-4e60-a212-beaf31743861",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 326.63,
+      "createdAt": "2026-02-21T12:13:59.617Z",
+      "updatedAt": "2026-02-21T12:13:59.617Z",
+      "items": [
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 5,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 3,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 5,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 4,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 3,
+          "unitPrice": 12.51
+        }
+      ]
+    },
+    {
+      "id": "f325e720-65e8-4382-a114-2054b8115508",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 231.60000000000002,
+      "createdAt": "2025-04-11T07:51:00.616Z",
+      "updatedAt": "2025-04-11T07:51:00.616Z",
+      "items": [
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 4,
+          "unitPrice": 5.3
+        },
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 2,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 5,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+          "quantity": 1,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "b7d25d26-1e4a-4edb-a673-83debdf935e0",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 282,
+      "createdAt": "2025-12-04T12:54:14.559Z",
+      "updatedAt": "2025-12-04T12:54:14.559Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 1,
+          "unitPrice": 10
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 4,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 3,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+          "quantity": 3,
+          "unitPrice": 25.3
+        }
+      ]
+    },
+    {
+      "id": "713bfbea-7908-42e7-b885-d884b0ac25f5",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 45.900000000000006,
+      "createdAt": "2025-04-16T06:53:00.024Z",
+      "updatedAt": "2025-04-16T06:53:00.024Z",
+      "items": [
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 3,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "b267c65e-7632-4876-a314-7a7375974773",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 182.05,
+      "createdAt": "2025-08-13T14:19:48.437Z",
+      "updatedAt": "2025-08-13T14:19:48.437Z",
+      "items": [
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 1,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 4,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 2,
+          "unitPrice": 10
+        },
+        {
+          "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+          "quantity": 1,
+          "unitPrice": 15.55
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 5,
+          "unitPrice": 10.55
+        }
+      ]
+    },
+    {
+      "id": "4af68b5b-8af4-4065-8bf3-fa87ab9ffb71",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 349.6,
+      "createdAt": "2025-11-07T23:53:48.109Z",
+      "updatedAt": "2025-11-07T23:53:48.109Z",
+      "items": [
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 5,
+          "unitPrice": 2.26
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 5,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 5,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 3,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "43389520-cf60-4e3e-a1e5-93196b34aeb8",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 5.3,
+      "createdAt": "2025-03-09T21:08:48.228Z",
+      "updatedAt": "2025-03-09T21:08:48.228Z",
+      "items": [
+        {
+          "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+          "quantity": 1,
+          "unitPrice": 5.3
+        }
+      ]
+    },
+    {
+      "id": "b60b4b1c-6366-41de-b66b-222ed8b27bc0",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 39.900000000000006,
+      "createdAt": "2026-02-07T19:34:00.343Z",
+      "updatedAt": "2026-02-07T19:34:00.343Z",
+      "items": [
+        {
+          "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+          "quantity": 3,
+          "unitPrice": 13.3
+        }
+      ]
+    },
+    {
+      "id": "7ca7c416-2bfc-4209-b4a5-2d0cc0832a3e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 168.49,
+      "createdAt": "2025-04-30T04:27:35.366Z",
+      "updatedAt": "2025-04-30T04:27:35.366Z",
+      "items": [
+        {
+          "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+          "quantity": 1,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 1,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 4,
+          "unitPrice": 4
+        },
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 1,
+          "unitPrice": 2.99
+        },
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 3,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "2e42cf89-34c9-47f8-9fb3-fe1697997cda",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 70.6,
+      "createdAt": "2025-05-27T05:41:53.966Z",
+      "updatedAt": "2025-05-27T05:41:53.966Z",
+      "items": [
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 2,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "706f17d6-7bee-4842-afb4-a48d47a553d2",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 193.89,
+      "createdAt": "2025-05-28T20:58:13.878Z",
+      "updatedAt": "2025-05-28T20:58:13.878Z",
+      "items": [
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 1,
+          "unitPrice": 8.54
+        },
+        {
+          "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+          "quantity": 5,
+          "unitPrice": 30.55
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 2,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "d039031a-49af-48cc-8fa1-548bb5af3c0d",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 227.1,
+      "createdAt": "2025-09-18T18:02:03.551Z",
+      "updatedAt": "2025-09-18T18:02:03.551Z",
+      "items": [
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 4,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+          "quantity": 3,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+          "quantity": 5,
+          "unitPrice": 4
+        }
+      ]
+    },
+    {
+      "id": "3eebe07b-851d-4b79-a05d-14c0c5618047",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 315.79999999999995,
+      "createdAt": "2026-01-04T00:11:53.990Z",
+      "updatedAt": "2026-01-04T00:11:53.990Z",
+      "items": [
+        {
+          "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+          "quantity": 1,
+          "unitPrice": 15
+        },
+        {
+          "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+          "quantity": 5,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 1,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+          "quantity": 4,
+          "unitPrice": 2.26
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 5,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "63cf4d6a-2e52-4216-8a49-6e470f979839",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 205.73,
+      "createdAt": "2026-02-06T21:53:17.175Z",
+      "updatedAt": "2026-02-06T21:53:17.175Z",
+      "items": [
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 4,
+          "unitPrice": 12.66
+        },
+        {
+          "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+          "quantity": 2,
+          "unitPrice": 7.65
+        },
+        {
+          "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+          "quantity": 1,
+          "unitPrice": 2.99
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 3,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 3,
+          "unitPrice": 10.3
+        }
+      ]
+    },
+    {
+      "id": "43af5ee1-7b45-46c9-92c1-6c9a52df3d9b",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 267.2,
+      "createdAt": "2025-10-09T11:21:02.930Z",
+      "updatedAt": "2025-10-09T11:21:02.930Z",
+      "items": [
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 5,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+          "quantity": 4,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 2,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 3,
+          "unitPrice": 35.3
+        }
+      ]
+    },
+    {
+      "id": "31b31a5b-d024-40f2-8cc0-8a0928faef60",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 405.65,
+      "createdAt": "2025-08-25T10:19:13.805Z",
+      "updatedAt": "2025-08-25T10:19:13.805Z",
+      "items": [
+        {
+          "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+          "quantity": 4,
+          "unitPrice": 10.3
+        },
+        {
+          "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+          "quantity": 5,
+          "unitPrice": 35.3
+        },
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 1,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 2,
+          "unitPrice": 45.55
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 5,
+          "unitPrice": 16.3
+        }
+      ]
+    },
+    {
+      "id": "557608a9-a278-41d3-8aad-4c75fb9df258",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 12.66,
+      "createdAt": "2025-12-23T10:33:36.975Z",
+      "updatedAt": "2025-12-23T10:33:36.975Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 1,
+          "unitPrice": 10
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 1,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "7a4f1778-af07-40fb-94ec-3fc93eb8cca0",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 259.85,
+      "createdAt": "2025-03-12T05:48:01.669Z",
+      "updatedAt": "2025-03-12T05:48:01.669Z",
+      "items": [
+        {
+          "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+          "quantity": 5,
+          "unitPrice": 18.55
+        },
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 3,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 1,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+          "quantity": 3,
+          "unitPrice": 25.3
+        }
+      ]
+    },
+    {
+      "id": "52a3e0d5-4dae-4fcf-8126-ffd48d9dfb6a",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 95.9,
+      "createdAt": "2025-07-20T05:10:35.430Z",
+      "updatedAt": "2025-07-20T05:10:35.430Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 5,
+          "unitPrice": 10
+        },
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 3,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "f8698c62-2988-4f5e-b8b9-671b2de75fef",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 68.94,
+      "createdAt": "2025-03-17T14:42:56.265Z",
+      "updatedAt": "2025-03-17T14:42:56.265Z",
+      "items": [
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 1,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+          "quantity": 2,
+          "unitPrice": 12.51
+        },
+        {
+          "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+          "quantity": 3,
+          "unitPrice": 8.54
+        }
+      ]
+    },
+    {
+      "id": "835efe5a-7b63-464b-9dd1-e78b63cbd34c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 76,
+      "createdAt": "2025-08-21T19:06:06.582Z",
+      "updatedAt": "2025-08-21T19:06:06.582Z",
+      "items": [
+        {
+          "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+          "quantity": 1,
+          "unitPrice": 15.3
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 1,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+          "quantity": 5,
+          "unitPrice": 6.22
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 5,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "20e62a1f-b434-4f50-9737-f2c88581aa6c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 118.84,
+      "createdAt": "2025-11-11T23:39:57.665Z",
+      "updatedAt": "2025-11-11T23:39:57.665Z",
+      "items": [
+        {
+          "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+          "quantity": 4,
+          "unitPrice": 12.66
+        },
+        {
+          "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+          "quantity": 3,
+          "unitPrice": 18.3
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 5,
+          "unitPrice": 2.66
+        }
+      ]
+    },
+    {
+      "id": "395bd928-3c8e-4dda-9786-0aa4c052209d",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 213.35000000000002,
+      "createdAt": "2025-08-06T23:44:21.438Z",
+      "updatedAt": "2025-08-06T23:44:21.438Z",
+      "items": [
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 3,
+          "unitPrice": 10.55
+        },
+        {
+          "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+          "quantity": 3,
+          "unitPrice": 16.3
+        },
+        {
+          "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+          "quantity": 2,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+          "quantity": 4,
+          "unitPrice": 20.55
+        }
+      ]
+    },
+    {
+      "id": "8e39b4bc-b5dd-4069-9a3d-e715a16b0d42",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 239.8,
+      "createdAt": "2025-12-11T20:39:21.849Z",
+      "updatedAt": "2025-12-11T20:39:21.849Z",
+      "items": [
+        {
+          "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+          "quantity": 5,
+          "unitPrice": 25.3
+        },
+        {
+          "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+          "quantity": 5,
+          "unitPrice": 20.55
+        },
+        {
+          "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+          "quantity": 1,
+          "unitPrice": 10.55
+        }
+      ]
+    },
+    {
+      "id": "3ed0102d-28c8-45b5-b4be-d198634732ef",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 55.3,
+      "createdAt": "2025-11-08T18:24:16.668Z",
+      "updatedAt": "2025-11-08T18:24:16.668Z",
+      "items": [
+        {
+          "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+          "quantity": 4,
+          "unitPrice": 10
+        },
+        {
+          "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+          "quantity": 1,
+          "unitPrice": 15.3
+        }
+      ]
+    },
+    {
+      "id": "bd0d183a-425f-4e86-83ab-bb6527420a10",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "couponId": null,
+      "status": "Completed",
+      "totalAmount": 373.55,
+      "createdAt": "2025-07-02T05:05:32.484Z",
+      "updatedAt": "2025-07-02T05:05:32.484Z",
+      "items": [
+        {
+          "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+          "quantity": 4,
+          "unitPrice": 15.35
+        },
+        {
+          "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+          "quantity": 5,
+          "unitPrice": 45.55
+        },
+        {
+          "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+          "quantity": 2,
+          "unitPrice": 35.55
+        },
+        {
+          "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+          "quantity": 5,
+          "unitPrice": 2.66
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "72ec4d54-7957-42c4-b690-d3cc8349e70d",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "rating": 3,
+      "reviewText": "This Guava is amazing!",
+      "createdAt": "2025-04-05T07:03:25.529Z"
+    },
+    {
+      "id": "408e0b9b-c455-4a7e-b7c5-05d25a744b6c",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "rating": 5,
+      "reviewText": "This Mango is amazing!",
+      "createdAt": "2025-05-30T14:30:10.525Z"
+    },
+    {
+      "id": "6f241a03-573d-4464-80fa-b7fc9f2d775c",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "rating": 3,
+      "reviewText": "This FreshCatch is amazing!",
+      "createdAt": "2025-06-20T06:05:04.412Z"
+    },
+    {
+      "id": "8fd7abc8-077b-4d8e-80a4-56cdc263f0dd",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "rating": 3,
+      "reviewText": "This Blueberries is amazing!",
+      "createdAt": "2025-08-28T08:03:45.332Z"
+    },
+    {
+      "id": "59aaae2f-c38b-4847-bb33-c98b90e48f9b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "rating": 4,
+      "reviewText": "This sweet peppers is amazing!",
+      "createdAt": "2026-02-26T13:38:02.697Z"
+    },
+    {
+      "id": "b365954b-503f-46c2-b14c-c5bd9e5968f4",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "rating": 5,
+      "reviewText": "This Sea Fresh is amazing!",
+      "createdAt": "2025-03-31T11:31:46.018Z"
+    },
+    {
+      "id": "e62b98d4-5687-4061-bfc2-54e8a13824ed",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "rating": 4,
+      "reviewText": "This Orange is amazing!",
+      "createdAt": "2025-11-21T00:52:05.309Z"
+    },
+    {
+      "id": "6bad37b8-60aa-45e7-a1f1-0ffcf1423e77",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "rating": 4,
+      "reviewText": "This Pure Milk is amazing!",
+      "createdAt": "2025-04-06T00:26:52.922Z"
+    },
+    {
+      "id": "1ac93dfe-10e0-4ea8-a30a-aa78d3855314",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "rating": 4,
+      "reviewText": "This Apple is amazing!",
+      "createdAt": "2025-05-02T00:11:19.973Z"
+    },
+    {
+      "id": "34d7fb1f-69b6-458f-8b4f-9a24397267db",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "rating": 4,
+      "reviewText": "This Cheese Mozzzell is amazing!",
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "54801a4a-bd9b-455c-acda-4fdd8ba57d4c",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "rating": 4,
+      "reviewText": "This CrabMaster is amazing!",
+      "createdAt": "2025-12-27T06:07:31.025Z"
+    },
+    {
+      "id": "e2b28f35-b0ce-40c2-92c6-2faaaa5159b3",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "rating": 4,
+      "reviewText": "This Cherries is amazing!",
+      "createdAt": "2025-03-13T08:29:43.101Z"
+    },
+    {
+      "id": "85c7cb38-7920-4f74-a56c-c4cae0977ded",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "rating": 5,
+      "reviewText": "This Muffin Magic is amazing!",
+      "createdAt": "2025-03-20T15:29:26.816Z"
+    },
+    {
+      "id": "bc4cc531-a901-43e8-93d1-17a3b64102dd",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "rating": 3,
+      "reviewText": "This ginger is amazing!",
+      "createdAt": "2025-04-14T23:43:36.176Z"
+    },
+    {
+      "id": "ced0a98a-f0b6-47c4-9533-91acfbb6105e",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "rating": 3,
+      "reviewText": "This beetroot is amazing!",
+      "createdAt": "2025-09-19T11:32:44.610Z"
+    },
+    {
+      "id": "80a29dea-a46e-4534-9659-60d99dcf2e37",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "rating": 3,
+      "reviewText": "This Lychee is amazing!",
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "08b9daac-ec09-4abc-9cef-53cd51097650",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "rating": 4,
+      "reviewText": "This corn is amazing!",
+      "createdAt": "2025-07-30T07:42:38.950Z"
+    },
+    {
+      "id": "ab88d0c0-6105-4dd7-ab5a-38ef5023d421",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "rating": 3,
+      "reviewText": "This Treats Cookie is amazing!",
+      "createdAt": "2025-05-29T04:42:22.135Z"
+    },
+    {
+      "id": "588e5f49-8dbb-4e16-8931-975bd5953bc8",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "rating": 5,
+      "reviewText": "This onion is amazing!",
+      "createdAt": "2025-10-24T11:00:40.926Z"
+    },
+    {
+      "id": "3525285d-ef6c-4ec8-bf24-173a4907a9bf",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "rating": 5,
+      "reviewText": "This Popcorn is amazing!",
+      "createdAt": "2025-08-06T23:04:00.216Z"
+    },
+    {
+      "id": "99a5dfce-b808-4965-bbaa-57f18986c5cf",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "rating": 3,
+      "reviewText": "This juicy burger is amazing!",
+      "createdAt": "2026-03-03T22:19:49.394Z"
+    },
+    {
+      "id": "319a9a2e-7f83-4117-b1df-d58aef72f5fe",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "rating": 5,
+      "reviewText": "This Pineapple is amazing!",
+      "createdAt": "2025-08-28T07:23:24.417Z"
+    },
+    {
+      "id": "b72bd55c-18f0-46a4-891c-44484bea8c5b",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "rating": 4,
+      "reviewText": "This golden bake is amazing!",
+      "createdAt": "2026-01-15T06:52:41.472Z"
+    },
+    {
+      "id": "976a0eea-1992-4960-96f2-b7a9b1b8f19c",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "rating": 3,
+      "reviewText": "This broccoli is amazing!",
+      "createdAt": "2025-06-28T04:29:05.743Z"
+    },
+    {
+      "id": "4aa16ac6-99d6-4983-a4dd-55c51cf6d905",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "rating": 5,
+      "reviewText": "This Ocean's Bounty is amazing!",
+      "createdAt": "2025-04-10T16:10:11.326Z"
+    },
+    {
+      "id": "3016bef8-f37d-45f7-85cc-6e955f75e97a",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "rating": 3,
+      "reviewText": "This Nugget Bites is amazing!",
+      "createdAt": "2025-07-26T05:04:25.379Z"
+    },
+    {
+      "id": "a46cf5ee-8654-4ffa-8846-028a55f4692d",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "rating": 5,
+      "reviewText": "This Yogulleavert is amazing!",
+      "createdAt": "2025-08-20T21:32:30.985Z"
+    },
+    {
+      "id": "f3ea71c7-ef7f-45cb-a769-90e441adee65",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "rating": 5,
+      "reviewText": "This tomato is amazing!",
+      "createdAt": "2025-07-16T21:52:38.150Z"
+    },
+    {
+      "id": "89133ed2-872d-423b-a0ff-3910c3976338",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "rating": 4,
+      "reviewText": "This parsley is amazing!",
+      "createdAt": "2025-08-27T22:07:05.221Z"
+    },
+    {
+      "id": "ae561bce-0d67-4444-9744-97dbec3f4f13",
+      "userId": "0b26d6c7-488e-4fef-80b7-a88c0ad9368b",
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "rating": 4,
+      "reviewText": "This potato is amazing!",
+      "createdAt": "2026-01-08T10:44:55.921Z"
+    },
+    {
+      "id": "0f398ede-e451-4a94-b9d4-58ac8da0a02e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "rating": 4,
+      "reviewText": "This Treats Cookie is amazing!",
+      "createdAt": "2026-02-28T22:19:49.394Z"
+    },
+    {
+      "id": "aa955795-c9c8-425c-9ea0-9dc86f913790",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "rating": 3,
+      "reviewText": "This Cherries is amazing!",
+      "createdAt": "2025-07-07T15:48:08.019Z"
+    },
+    {
+      "id": "dc442379-25b0-41c6-a551-22279e18d31c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "rating": 3,
+      "reviewText": "This dragon fruit is amazing!",
+      "createdAt": "2025-05-27T10:08:53.571Z"
+    },
+    {
+      "id": "9287bbd0-4be3-4075-8ae2-7b73d0f98fa5",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "rating": 5,
+      "reviewText": "This tomato is amazing!",
+      "createdAt": "2026-03-02T22:19:49.394Z"
+    },
+    {
+      "id": "affeb282-2613-43f9-a7ae-36ff38f2702c",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "rating": 5,
+      "reviewText": "This Freshly Caught is amazing!",
+      "createdAt": "2025-11-06T22:15:35.426Z"
+    },
+    {
+      "id": "4ce8aa47-c852-42e0-8c3d-9cb2f5d39169",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "rating": 5,
+      "reviewText": "This Guava is amazing!",
+      "createdAt": "2025-10-15T19:26:47.179Z"
+    },
+    {
+      "id": "050e1d92-aed0-44ae-8659-127deb827763",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "rating": 4,
+      "reviewText": "This CrabMaster is amazing!",
+      "createdAt": "2025-07-30T13:27:41.118Z"
+    },
+    {
+      "id": "eb0bf6ec-ddb9-477e-bc39-38b1a4936d66",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "rating": 3,
+      "reviewText": "This Yogulleavert is amazing!",
+      "createdAt": "2025-04-30T16:56:24.311Z"
+    },
+    {
+      "id": "c5a093ac-7884-4d82-a29a-c555995a6f5b",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "rating": 4,
+      "reviewText": "This Popcorn is amazing!",
+      "createdAt": "2025-11-22T05:33:33.726Z"
+    },
+    {
+      "id": "a6a45f06-ee28-47de-bebb-be52575041bf",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "rating": 4,
+      "reviewText": "This Apple is amazing!",
+      "createdAt": "2025-05-11T10:13:24.288Z"
+    },
+    {
+      "id": "fc4f912c-8519-44d8-a13b-04d124374a0f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "rating": 4,
+      "reviewText": "This parsley is amazing!",
+      "createdAt": "2026-02-26T22:19:49.394Z"
+    },
+    {
+      "id": "bc68b463-c7ae-4e2f-87e0-3db6089fc2b6",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "rating": 3,
+      "reviewText": "This sweet peppers is amazing!",
+      "createdAt": "2025-11-10T15:39:41.230Z"
+    },
+    {
+      "id": "2e6ad839-32f2-48ad-86d6-9daecc291311",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "rating": 3,
+      "reviewText": "This potato is amazing!",
+      "createdAt": "2025-11-01T11:34:01.885Z"
+    },
+    {
+      "id": "9704c43e-ce0d-402e-8857-5f5e4d23fb97",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "rating": 4,
+      "reviewText": "This Ocean's Bounty is amazing!",
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "22d3a021-dc19-41ca-a65d-48dc74ae838e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "rating": 5,
+      "reviewText": "This corn is amazing!",
+      "createdAt": "2026-02-27T22:19:49.394Z"
+    },
+    {
+      "id": "70fdde56-3de1-4ca4-87f0-6a6696f1c583",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "rating": 4,
+      "reviewText": "This Paris Sweets is amazing!",
+      "createdAt": "2026-03-01T04:41:21.695Z"
+    },
+    {
+      "id": "f79fd48c-ab7d-4088-9f43-b4878d7c7b6b",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "rating": 3,
+      "reviewText": "This Orange is amazing!",
+      "createdAt": "2025-12-29T01:47:37.441Z"
+    },
+    {
+      "id": "82442109-b097-4781-88bd-2906b9bd9397",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "rating": 4,
+      "reviewText": "This Pineapple is amazing!",
+      "createdAt": "2025-04-11T16:51:17.720Z"
+    },
+    {
+      "id": "56981318-967a-46a6-b96e-ce3c57cd2935",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "rating": 3,
+      "reviewText": "This FreshCatch is amazing!",
+      "createdAt": "2025-10-06T03:32:52.686Z"
+    },
+    {
+      "id": "6f05cf84-68cb-4b23-8fcd-649fc2ed2677",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "rating": 3,
+      "reviewText": "This NuttyFresh Almond Milk is amazing!",
+      "createdAt": "2026-02-17T03:54:13.672Z"
+    },
+    {
+      "id": "cd9edd86-43e0-45ee-8a91-ce5cc3f8ac88",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "rating": 4,
+      "reviewText": "This Pure Milk is amazing!",
+      "createdAt": "2025-09-03T10:03:14.537Z"
+    },
+    {
+      "id": "d54db323-0fa6-49da-a94d-f1b0a80659a9",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "rating": 5,
+      "reviewText": "This Crispy Fries is amazing!",
+      "createdAt": "2025-12-01T23:29:07.602Z"
+    },
+    {
+      "id": "f81c9ba0-2047-4136-bf59-706d79e6a250",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "rating": 4,
+      "reviewText": "This onion is amazing!",
+      "createdAt": "2026-02-24T22:19:49.394Z"
+    },
+    {
+      "id": "177063ee-f5c0-4627-8564-bda63bdfb661",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "rating": 3,
+      "reviewText": "This beetroot is amazing!",
+      "createdAt": "2025-09-09T16:22:11.253Z"
+    },
+    {
+      "id": "ce844e1f-df5b-4ec1-99e2-ff279931ce3a",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "rating": 5,
+      "reviewText": "This Mango is amazing!",
+      "createdAt": "2025-07-04T01:31:51.273Z"
+    },
+    {
+      "id": "1c52c351-f7a1-4a17-b6b8-54fc1ff8a424",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "rating": 5,
+      "reviewText": "This golden bake is amazing!",
+      "createdAt": "2025-06-19T11:51:25.064Z"
+    },
+    {
+      "id": "a6aee98d-fad1-4e99-8493-d646fd327fba",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "rating": 4,
+      "reviewText": "This broccoli is amazing!",
+      "createdAt": "2025-06-07T13:25:43.543Z"
+    },
+    {
+      "id": "51a21b36-7a23-476f-a860-351368f14adb",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "rating": 3,
+      "reviewText": "This Cheese Mozzzell is amazing!",
+      "createdAt": "2025-04-06T00:01:55.507Z"
+    },
+    {
+      "id": "95fffc3a-3485-476e-8b9a-3f25f5c11e0f",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "rating": 4,
+      "reviewText": "This Muffin Magic is amazing!",
+      "createdAt": "2025-03-06T10:28:59.468Z"
+    },
+    {
+      "id": "37da2cc5-6ef9-459e-95fa-c51c4e86903e",
+      "userId": "f8e1217a-0bb1-4314-87c8-911e379e7ea6",
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "rating": 3,
+      "reviewText": "This juicy burger is amazing!",
+      "createdAt": "2025-11-07T23:00:27.617Z"
+    }
+  ],
+  "stockTransactions": [
+    {
+      "id": 1,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "purchase",
+      "quantity": 55,
+      "unitCost": 8.757,
+      "transactionDate": "2026-03-04T17:24:26.096Z"
+    },
+    {
+      "id": 2,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "sale",
+      "quantity": 29,
+      "unitCost": null,
+      "transactionDate": "2026-02-27T22:24:26.096Z"
+    },
+    {
+      "id": 3,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "purchase",
+      "quantity": 36,
+      "unitCost": 8.757,
+      "transactionDate": "2026-02-28T22:03:26.096Z"
+    },
+    {
+      "id": 4,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "purchase",
+      "quantity": 42,
+      "unitCost": 8.757,
+      "transactionDate": "2026-03-01T02:41:26.096Z"
+    },
+    {
+      "id": 5,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "sale",
+      "quantity": 59,
+      "unitCost": null,
+      "transactionDate": "2026-02-25T18:54:26.096Z"
+    },
+    {
+      "id": 6,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "sale",
+      "quantity": 36,
+      "unitCost": null,
+      "transactionDate": "2026-03-04T01:11:26.096Z"
+    },
+    {
+      "id": 7,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "sale",
+      "quantity": 56,
+      "unitCost": null,
+      "transactionDate": "2026-03-02T08:42:26.096Z"
+    },
+    {
+      "id": 8,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "sale",
+      "quantity": 14,
+      "unitCost": null,
+      "transactionDate": "2026-03-04T22:40:26.096Z"
+    },
+    {
+      "id": 9,
+      "productId": "0c952488-af86-4e2f-9692-4f23aef911af",
+      "transactionType": "purchase",
+      "quantity": 29,
+      "unitCost": 8.757,
+      "transactionDate": "2026-02-28T17:31:26.096Z"
+    },
+    {
+      "id": 10,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "sale",
+      "quantity": 55,
+      "unitCost": null,
+      "transactionDate": "2026-02-25T08:15:26.096Z"
+    },
+    {
+      "id": 11,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 10.5,
+      "transactionDate": "2026-03-02T12:36:26.096Z"
+    },
+    {
+      "id": 12,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 19,
+      "unitCost": 10.5,
+      "transactionDate": "2026-02-24T19:30:26.096Z"
+    },
+    {
+      "id": 13,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "sale",
+      "quantity": 30,
+      "unitCost": null,
+      "transactionDate": "2026-02-28T12:28:26.096Z"
+    },
+    {
+      "id": 14,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 24,
+      "unitCost": 10.5,
+      "transactionDate": "2026-03-05T06:10:26.096Z"
+    },
+    {
+      "id": 15,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 49,
+      "unitCost": 10.5,
+      "transactionDate": "2026-02-24T15:48:26.096Z"
+    },
+    {
+      "id": 16,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "sale",
+      "quantity": 34,
+      "unitCost": null,
+      "transactionDate": "2026-03-02T04:47:26.096Z"
+    },
+    {
+      "id": 17,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 10.5,
+      "transactionDate": "2026-03-04T11:17:26.096Z"
+    },
+    {
+      "id": 18,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 15,
+      "unitCost": 10.5,
+      "transactionDate": "2026-03-02T03:25:26.096Z"
+    },
+    {
+      "id": 19,
+      "productId": "28ada4f5-ec53-40f4-8dd3-e67da3d7e108",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 10.5,
+      "transactionDate": "2026-02-28T15:42:26.096Z"
+    },
+    {
+      "id": 20,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-24T22:55:26.096Z"
+    },
+    {
+      "id": 21,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-24T20:02:26.096Z"
+    },
+    {
+      "id": 22,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 41,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-27T02:14:26.096Z"
+    },
+    {
+      "id": 23,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 53,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-03-05T07:38:26.096Z"
+    },
+    {
+      "id": 24,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 44,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-27T18:21:26.096Z"
+    },
+    {
+      "id": 25,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-28T08:25:26.096Z"
+    },
+    {
+      "id": 26,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 42,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-24T17:00:26.096Z"
+    },
+    {
+      "id": 27,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 12,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-02-27T23:26:26.096Z"
+    },
+    {
+      "id": 28,
+      "productId": "29df0554-e942-46cf-a21a-084e54eed26a",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 1.8619999999999999,
+      "transactionDate": "2026-03-04T10:30:26.096Z"
+    },
+    {
+      "id": 29,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "purchase",
+      "quantity": 16,
+      "unitCost": 9.31,
+      "transactionDate": "2026-02-28T13:22:26.096Z"
+    },
+    {
+      "id": 30,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "sale",
+      "quantity": 45,
+      "unitCost": null,
+      "transactionDate": "2026-02-24T10:35:26.096Z"
+    },
+    {
+      "id": 31,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 9.31,
+      "transactionDate": "2026-02-25T11:16:26.096Z"
+    },
+    {
+      "id": 32,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "sale",
+      "quantity": 15,
+      "unitCost": null,
+      "transactionDate": "2026-02-25T14:36:26.096Z"
+    },
+    {
+      "id": 33,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "purchase",
+      "quantity": 32,
+      "unitCost": 9.31,
+      "transactionDate": "2026-03-03T17:06:26.096Z"
+    },
+    {
+      "id": 34,
+      "productId": "2bf92ea9-19b9-41ad-813d-222b9dca568c",
+      "transactionType": "sale",
+      "quantity": 15,
+      "unitCost": null,
+      "transactionDate": "2026-03-02T16:29:26.096Z"
+    },
+    {
+      "id": 35,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 47,
+      "unitCost": 0.854,
+      "transactionDate": "2026-03-01T01:54:26.096Z"
+    },
+    {
+      "id": 36,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 0.854,
+      "transactionDate": "2026-03-02T19:49:26.096Z"
+    },
+    {
+      "id": 37,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "sale",
+      "quantity": 45,
+      "unitCost": null,
+      "transactionDate": "2026-03-01T09:26:26.096Z"
+    },
+    {
+      "id": 38,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 34,
+      "unitCost": 0.854,
+      "transactionDate": "2026-02-26T14:42:26.096Z"
+    },
+    {
+      "id": 39,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 0.854,
+      "transactionDate": "2026-02-25T22:44:26.096Z"
+    },
+    {
+      "id": 40,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "sale",
+      "quantity": 14,
+      "unitCost": null,
+      "transactionDate": "2026-02-25T14:36:26.096Z"
+    },
+    {
+      "id": 41,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 0.854,
+      "transactionDate": "2026-02-27T18:39:26.096Z"
+    },
+    {
+      "id": 42,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 0.854,
+      "transactionDate": "2026-03-05T18:29:26.096Z"
+    },
+    {
+      "id": 43,
+      "productId": "2e7745ae-1dff-4b16-8ab2-00bd09991348",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 0.854,
+      "transactionDate": "2026-03-05T00:48:26.096Z"
+    },
+    {
+      "id": 44,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 27,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-02-24T20:58:26.096Z"
+    },
+    {
+      "id": 45,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 10,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-02-26T18:32:26.096Z"
+    },
+    {
+      "id": 46,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-02-27T22:33:26.096Z"
+    },
+    {
+      "id": 47,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 10,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-03-05T13:20:26.096Z"
+    },
+    {
+      "id": 48,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-03-03T23:33:26.096Z"
+    },
+    {
+      "id": 49,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "sale",
+      "quantity": 16,
+      "unitCost": null,
+      "transactionDate": "2026-03-01T17:37:26.096Z"
+    },
+    {
+      "id": 50,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "sale",
+      "quantity": 29,
+      "unitCost": null,
+      "transactionDate": "2026-02-26T23:50:26.096Z"
+    },
+    {
+      "id": 51,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 40,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-02-16T02:50:49.519Z"
+    },
+    {
+      "id": 52,
+      "productId": "44813c69-504f-4893-b3c0-ebf072532787",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-07-15T06:44:46.997Z"
+    },
+    {
+      "id": 53,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 38,
+      "unitCost": 7.21,
+      "transactionDate": "2025-10-14T18:45:51.299Z"
+    },
+    {
+      "id": 54,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 50,
+      "unitCost": 7.21,
+      "transactionDate": "2025-03-13T17:46:13.942Z"
+    },
+    {
+      "id": 55,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 54,
+      "unitCost": 7.21,
+      "transactionDate": "2025-05-04T13:11:19.878Z"
+    },
+    {
+      "id": 56,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 43,
+      "unitCost": 7.21,
+      "transactionDate": "2025-05-26T19:45:32.665Z"
+    },
+    {
+      "id": 57,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "sale",
+      "quantity": 56,
+      "unitCost": null,
+      "transactionDate": "2026-02-17T10:24:25.877Z"
+    },
+    {
+      "id": 58,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 50,
+      "unitCost": 7.21,
+      "transactionDate": "2025-09-04T04:04:35.581Z"
+    },
+    {
+      "id": 59,
+      "productId": "47aed3bd-7b21-48b2-be15-ca8d7fc62e23",
+      "transactionType": "purchase",
+      "quantity": 31,
+      "unitCost": 7.21,
+      "transactionDate": "2025-04-11T01:41:10.635Z"
+    },
+    {
+      "id": 60,
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "transactionType": "sale",
+      "quantity": 35,
+      "unitCost": null,
+      "transactionDate": "2025-06-10T06:50:01.806Z"
+    },
+    {
+      "id": 61,
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "transactionType": "purchase",
+      "quantity": 30,
+      "unitCost": 12.985,
+      "transactionDate": "2025-12-24T09:37:50.844Z"
+    },
+    {
+      "id": 62,
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "transactionType": "purchase",
+      "quantity": 58,
+      "unitCost": 12.985,
+      "transactionDate": "2025-06-23T17:19:25.858Z"
+    },
+    {
+      "id": 63,
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "transactionType": "purchase",
+      "quantity": 12,
+      "unitCost": 12.985,
+      "transactionDate": "2026-01-23T08:34:00.672Z"
+    },
+    {
+      "id": 64,
+      "productId": "5600ff4f-f924-4972-b821-a56f01384be4",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 12.985,
+      "transactionDate": "2025-09-28T02:33:06.288Z"
+    },
+    {
+      "id": 65,
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "transactionType": "purchase",
+      "quantity": 19,
+      "unitCost": 1.5819999999999999,
+      "transactionDate": "2025-03-18T14:35:46.432Z"
+    },
+    {
+      "id": 66,
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "transactionType": "sale",
+      "quantity": 21,
+      "unitCost": null,
+      "transactionDate": "2026-02-27T06:10:31.413Z"
+    },
+    {
+      "id": 67,
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 1.5819999999999999,
+      "transactionDate": "2025-10-15T15:56:47.530Z"
+    },
+    {
+      "id": 68,
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "transactionType": "sale",
+      "quantity": 35,
+      "unitCost": null,
+      "transactionDate": "2025-04-23T10:53:17.749Z"
+    },
+    {
+      "id": 69,
+      "productId": "57420e18-745a-4d2d-a90a-6301abda45c1",
+      "transactionType": "purchase",
+      "quantity": 12,
+      "unitCost": 1.5819999999999999,
+      "transactionDate": "2025-09-21T02:34:56.727Z"
+    },
+    {
+      "id": 70,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "sale",
+      "quantity": 51,
+      "unitCost": null,
+      "transactionDate": "2025-05-23T21:37:11.882Z"
+    },
+    {
+      "id": 71,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "sale",
+      "quantity": 29,
+      "unitCost": null,
+      "transactionDate": "2025-10-27T14:59:34.512Z"
+    },
+    {
+      "id": 72,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "purchase",
+      "quantity": 42,
+      "unitCost": 21.384999999999998,
+      "transactionDate": "2025-04-29T16:59:37.014Z"
+    },
+    {
+      "id": 73,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "purchase",
+      "quantity": 59,
+      "unitCost": 21.384999999999998,
+      "transactionDate": "2026-02-17T08:17:57.834Z"
+    },
+    {
+      "id": 74,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "purchase",
+      "quantity": 52,
+      "unitCost": 21.384999999999998,
+      "transactionDate": "2026-02-08T15:22:50.807Z"
+    },
+    {
+      "id": 75,
+      "productId": "66bb167d-5e02-4cc3-bc17-5e864bdee8b9",
+      "transactionType": "purchase",
+      "quantity": 25,
+      "unitCost": 21.384999999999998,
+      "transactionDate": "2025-10-04T15:42:39.749Z"
+    },
+    {
+      "id": 76,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "purchase",
+      "quantity": 34,
+      "unitCost": 31.884999999999994,
+      "transactionDate": "2025-03-29T06:28:43.143Z"
+    },
+    {
+      "id": 77,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "sale",
+      "quantity": 56,
+      "unitCost": null,
+      "transactionDate": "2025-06-11T01:03:29.115Z"
+    },
+    {
+      "id": 78,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "sale",
+      "quantity": 19,
+      "unitCost": null,
+      "transactionDate": "2025-04-17T04:21:33.863Z"
+    },
+    {
+      "id": 79,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "purchase",
+      "quantity": 10,
+      "unitCost": 31.884999999999994,
+      "transactionDate": "2025-04-25T01:10:10.031Z"
+    },
+    {
+      "id": 80,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 31.884999999999994,
+      "transactionDate": "2025-10-16T00:21:26.378Z"
+    },
+    {
+      "id": 81,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "purchase",
+      "quantity": 24,
+      "unitCost": 31.884999999999994,
+      "transactionDate": "2025-10-04T23:00:17.580Z"
+    },
+    {
+      "id": 82,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "purchase",
+      "quantity": 13,
+      "unitCost": 31.884999999999994,
+      "transactionDate": "2025-04-18T00:53:41.398Z"
+    },
+    {
+      "id": 83,
+      "productId": "66d1a0a4-1018-44f0-a1fa-53c3bbb336fa",
+      "transactionType": "sale",
+      "quantity": 54,
+      "unitCost": null,
+      "transactionDate": "2025-05-24T08:57:50.512Z"
+    },
+    {
+      "id": 84,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 21,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-05-01T08:54:25.752Z"
+    },
+    {
+      "id": 85,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 56,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-11-26T04:38:31.248Z"
+    },
+    {
+      "id": 86,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 45,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-11-15T09:28:55.569Z"
+    },
+    {
+      "id": 87,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 28,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-10-02T15:29:45.406Z"
+    },
+    {
+      "id": 88,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 13,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-06-09T21:51:49.606Z"
+    },
+    {
+      "id": 89,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 40,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2025-10-24T06:46:53.759Z"
+    },
+    {
+      "id": 90,
+      "productId": "6d26fa9f-4bc8-45a1-acc2-ffda8dc54415",
+      "transactionType": "purchase",
+      "quantity": 45,
+      "unitCost": 10.709999999999999,
+      "transactionDate": "2026-02-14T13:08:52.933Z"
+    },
+    {
+      "id": 91,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 44,
+      "unitCost": 2.8,
+      "transactionDate": "2025-06-02T15:22:38.038Z"
+    },
+    {
+      "id": 92,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "sale",
+      "quantity": 19,
+      "unitCost": null,
+      "transactionDate": "2025-09-21T13:49:15.381Z"
+    },
+    {
+      "id": 93,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 19,
+      "unitCost": 2.8,
+      "transactionDate": "2025-04-25T04:24:31.970Z"
+    },
+    {
+      "id": 94,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 17,
+      "unitCost": 2.8,
+      "transactionDate": "2025-08-26T08:21:46.082Z"
+    },
+    {
+      "id": 95,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 35,
+      "unitCost": 2.8,
+      "transactionDate": "2025-03-11T22:24:46.565Z"
+    },
+    {
+      "id": 96,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 20,
+      "unitCost": 2.8,
+      "transactionDate": "2025-09-28T03:03:24.633Z"
+    },
+    {
+      "id": 97,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 2.8,
+      "transactionDate": "2026-02-01T13:49:43.126Z"
+    },
+    {
+      "id": 98,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "sale",
+      "quantity": 57,
+      "unitCost": null,
+      "transactionDate": "2025-06-21T02:38:00.398Z"
+    },
+    {
+      "id": 99,
+      "productId": "8035cdba-7750-4d2c-a589-6dd2623b432a",
+      "transactionType": "sale",
+      "quantity": 25,
+      "unitCost": null,
+      "transactionDate": "2025-05-06T01:04:23.005Z"
+    },
+    {
+      "id": 100,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "purchase",
+      "quantity": 24,
+      "unitCost": 5.977999999999999,
+      "transactionDate": "2025-06-29T17:32:57.999Z"
+    },
+    {
+      "id": 101,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 5.977999999999999,
+      "transactionDate": "2025-10-08T21:39:43.239Z"
+    },
+    {
+      "id": 102,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "sale",
+      "quantity": 30,
+      "unitCost": null,
+      "transactionDate": "2025-03-29T18:41:53.318Z"
+    },
+    {
+      "id": 103,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "sale",
+      "quantity": 48,
+      "unitCost": null,
+      "transactionDate": "2025-06-15T22:55:31.006Z"
+    },
+    {
+      "id": 104,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "purchase",
+      "quantity": 59,
+      "unitCost": 5.977999999999999,
+      "transactionDate": "2025-03-24T02:41:06.717Z"
+    },
+    {
+      "id": 105,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "purchase",
+      "quantity": 21,
+      "unitCost": 5.977999999999999,
+      "transactionDate": "2025-08-12T05:58:55.182Z"
+    },
+    {
+      "id": 106,
+      "productId": "9d4de2ba-a0ff-4ae1-ae11-4888580b8ee3",
+      "transactionType": "sale",
+      "quantity": 27,
+      "unitCost": null,
+      "transactionDate": "2025-05-17T12:45:50.895Z"
+    },
+    {
+      "id": 107,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "sale",
+      "quantity": 18,
+      "unitCost": null,
+      "transactionDate": "2026-03-02T20:33:32.330Z"
+    },
+    {
+      "id": 108,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "purchase",
+      "quantity": 35,
+      "unitCost": 24.884999999999998,
+      "transactionDate": "2025-08-19T15:45:27.444Z"
+    },
+    {
+      "id": 109,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 24.884999999999998,
+      "transactionDate": "2025-11-03T04:40:56.662Z"
+    },
+    {
+      "id": 110,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "purchase",
+      "quantity": 29,
+      "unitCost": 24.884999999999998,
+      "transactionDate": "2025-06-26T11:53:00.798Z"
+    },
+    {
+      "id": 111,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 24.884999999999998,
+      "transactionDate": "2025-09-28T02:26:09.832Z"
+    },
+    {
+      "id": 112,
+      "productId": "9e7dacfd-8b85-4061-8bb2-2295e9786e5f",
+      "transactionType": "purchase",
+      "quantity": 14,
+      "unitCost": 24.884999999999998,
+      "transactionDate": "2025-09-12T03:48:39.780Z"
+    },
+    {
+      "id": 113,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 10,
+      "unitCost": 12.81,
+      "transactionDate": "2025-08-14T10:53:10.284Z"
+    },
+    {
+      "id": 114,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 29,
+      "unitCost": 12.81,
+      "transactionDate": "2026-02-11T09:31:48.175Z"
+    },
+    {
+      "id": 115,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 32,
+      "unitCost": 12.81,
+      "transactionDate": "2025-06-27T12:19:37.568Z"
+    },
+    {
+      "id": 116,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 28,
+      "unitCost": 12.81,
+      "transactionDate": "2026-03-02T04:01:13.587Z"
+    },
+    {
+      "id": 117,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 28,
+      "unitCost": 12.81,
+      "transactionDate": "2026-01-17T19:42:55.697Z"
+    },
+    {
+      "id": 118,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 17,
+      "unitCost": 12.81,
+      "transactionDate": "2025-12-11T16:14:33.960Z"
+    },
+    {
+      "id": 119,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "sale",
+      "quantity": 30,
+      "unitCost": null,
+      "transactionDate": "2025-12-20T07:23:27.628Z"
+    },
+    {
+      "id": 120,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "sale",
+      "quantity": 50,
+      "unitCost": null,
+      "transactionDate": "2025-07-08T23:11:57.186Z"
+    },
+    {
+      "id": 121,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 12.81,
+      "transactionDate": "2025-03-31T03:04:46.935Z"
+    },
+    {
+      "id": 122,
+      "productId": "9fc54179-d314-4d3b-941e-215b67223653",
+      "transactionType": "sale",
+      "quantity": 17,
+      "unitCost": null,
+      "transactionDate": "2025-11-18T05:52:01.696Z"
+    },
+    {
+      "id": 123,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-01-27T06:11:27.734Z"
+    },
+    {
+      "id": 124,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 43,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-09-10T16:27:05.074Z"
+    },
+    {
+      "id": 125,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "sale",
+      "quantity": 48,
+      "unitCost": null,
+      "transactionDate": "2025-04-12T00:24:23.163Z"
+    },
+    {
+      "id": 126,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 47,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-04-04T03:42:30.224Z"
+    },
+    {
+      "id": 127,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 41,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-03-01T19:12:45.733Z"
+    },
+    {
+      "id": 128,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 21,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-02-09T04:19:20.089Z"
+    },
+    {
+      "id": 129,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 52,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-07-30T22:07:48.992Z"
+    },
+    {
+      "id": 130,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 22,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-07-01T17:00:23.735Z"
+    },
+    {
+      "id": 131,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-07-20T14:13:33.599Z"
+    },
+    {
+      "id": 132,
+      "productId": "a2c948f9-db97-411b-b693-0239fefbd93c",
+      "transactionType": "sale",
+      "quantity": 51,
+      "unitCost": null,
+      "transactionDate": "2026-01-10T10:25:39.064Z"
+    },
+    {
+      "id": 133,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "purchase",
+      "quantity": 58,
+      "unitCost": 2.093,
+      "transactionDate": "2025-06-21T11:31:03.748Z"
+    },
+    {
+      "id": 134,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 2.093,
+      "transactionDate": "2025-08-19T09:07:35.974Z"
+    },
+    {
+      "id": 135,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "sale",
+      "quantity": 48,
+      "unitCost": null,
+      "transactionDate": "2026-02-18T13:22:35.352Z"
+    },
+    {
+      "id": 136,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "sale",
+      "quantity": 46,
+      "unitCost": null,
+      "transactionDate": "2025-04-11T08:10:27.763Z"
+    },
+    {
+      "id": 137,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "purchase",
+      "quantity": 54,
+      "unitCost": 2.093,
+      "transactionDate": "2025-07-16T11:49:57.932Z"
+    },
+    {
+      "id": 138,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 2.093,
+      "transactionDate": "2025-12-08T14:23:58.985Z"
+    },
+    {
+      "id": 139,
+      "productId": "aa7ce023-cf25-498d-84ff-76b596e553c5",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 2.093,
+      "transactionDate": "2025-07-04T20:40:24.707Z"
+    },
+    {
+      "id": 140,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 8.862,
+      "transactionDate": "2025-10-01T06:35:13.714Z"
+    },
+    {
+      "id": 141,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "sale",
+      "quantity": 36,
+      "unitCost": null,
+      "transactionDate": "2025-05-22T00:40:44.217Z"
+    },
+    {
+      "id": 142,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "sale",
+      "quantity": 24,
+      "unitCost": null,
+      "transactionDate": "2025-03-12T01:11:46.293Z"
+    },
+    {
+      "id": 143,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "sale",
+      "quantity": 55,
+      "unitCost": null,
+      "transactionDate": "2025-08-12T10:25:50.996Z"
+    },
+    {
+      "id": 144,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "purchase",
+      "quantity": 21,
+      "unitCost": 8.862,
+      "transactionDate": "2025-05-20T01:53:15.363Z"
+    },
+    {
+      "id": 145,
+      "productId": "ad902d69-ee8b-447f-ac8b-a645e4d65a79",
+      "transactionType": "purchase",
+      "quantity": 13,
+      "unitCost": 8.862,
+      "transactionDate": "2025-08-18T23:31:33.268Z"
+    },
+    {
+      "id": 146,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "purchase",
+      "quantity": 29,
+      "unitCost": 7,
+      "transactionDate": "2025-09-15T12:21:11.386Z"
+    },
+    {
+      "id": 147,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "purchase",
+      "quantity": 40,
+      "unitCost": 7,
+      "transactionDate": "2025-07-06T12:05:55.964Z"
+    },
+    {
+      "id": 148,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 7,
+      "transactionDate": "2025-07-25T10:58:26.267Z"
+    },
+    {
+      "id": 149,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "purchase",
+      "quantity": 28,
+      "unitCost": 7,
+      "transactionDate": "2025-11-24T03:27:20.086Z"
+    },
+    {
+      "id": 150,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "purchase",
+      "quantity": 52,
+      "unitCost": 7,
+      "transactionDate": "2025-11-12T20:43:05.391Z"
+    },
+    {
+      "id": 151,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "sale",
+      "quantity": 29,
+      "unitCost": null,
+      "transactionDate": "2025-10-01T09:37:35.727Z"
+    },
+    {
+      "id": 152,
+      "productId": "af8cca35-7cbb-4822-b17b-474035a69fbe",
+      "transactionType": "sale",
+      "quantity": 52,
+      "unitCost": null,
+      "transactionDate": "2025-08-13T15:35:39.161Z"
+    },
+    {
+      "id": 153,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 47,
+      "unitCost": 17.71,
+      "transactionDate": "2025-07-26T05:42:17.644Z"
+    },
+    {
+      "id": 154,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "sale",
+      "quantity": 17,
+      "unitCost": null,
+      "transactionDate": "2025-04-08T18:09:15.776Z"
+    },
+    {
+      "id": 155,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 12,
+      "unitCost": 17.71,
+      "transactionDate": "2025-10-07T15:02:18.197Z"
+    },
+    {
+      "id": 156,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 32,
+      "unitCost": 17.71,
+      "transactionDate": "2025-07-19T23:47:14.316Z"
+    },
+    {
+      "id": 157,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 17.71,
+      "transactionDate": "2025-06-01T02:49:41.566Z"
+    },
+    {
+      "id": 158,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 45,
+      "unitCost": 17.71,
+      "transactionDate": "2025-04-19T15:00:06.592Z"
+    },
+    {
+      "id": 159,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 16,
+      "unitCost": 17.71,
+      "transactionDate": "2025-10-05T21:28:45.299Z"
+    },
+    {
+      "id": 160,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "sale",
+      "quantity": 55,
+      "unitCost": null,
+      "transactionDate": "2025-10-07T16:36:55.731Z"
+    },
+    {
+      "id": 161,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "sale",
+      "quantity": 26,
+      "unitCost": null,
+      "transactionDate": "2025-05-10T19:41:24.180Z"
+    },
+    {
+      "id": 162,
+      "productId": "b7100eb2-53ac-41f3-a383-ffc39cffba9c",
+      "transactionType": "purchase",
+      "quantity": 16,
+      "unitCost": 17.71,
+      "transactionDate": "2026-01-31T05:39:45.919Z"
+    },
+    {
+      "id": 163,
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "transactionType": "purchase",
+      "quantity": 24,
+      "unitCost": 11.41,
+      "transactionDate": "2025-09-28T13:31:11.449Z"
+    },
+    {
+      "id": 164,
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "transactionType": "purchase",
+      "quantity": 32,
+      "unitCost": 11.41,
+      "transactionDate": "2025-12-12T12:34:52.561Z"
+    },
+    {
+      "id": 165,
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "transactionType": "purchase",
+      "quantity": 11,
+      "unitCost": 11.41,
+      "transactionDate": "2025-12-26T04:20:25.277Z"
+    },
+    {
+      "id": 166,
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "transactionType": "sale",
+      "quantity": 27,
+      "unitCost": null,
+      "transactionDate": "2025-06-11T15:26:36.710Z"
+    },
+    {
+      "id": 167,
+      "productId": "bbbf7af7-b1ee-4a65-8fd7-77117eae4901",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 11.41,
+      "transactionDate": "2026-01-11T13:26:51.199Z"
+    },
+    {
+      "id": 168,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 11,
+      "unitCost": 12.81,
+      "transactionDate": "2025-04-07T16:59:46.633Z"
+    },
+    {
+      "id": 169,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 12.81,
+      "transactionDate": "2025-04-25T19:25:44.585Z"
+    },
+    {
+      "id": 170,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "sale",
+      "quantity": 30,
+      "unitCost": null,
+      "transactionDate": "2025-05-08T08:23:46.020Z"
+    },
+    {
+      "id": 171,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 12.81,
+      "transactionDate": "2026-03-01T07:49:29.686Z"
+    },
+    {
+      "id": 172,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 12.81,
+      "transactionDate": "2025-09-22T00:00:13.556Z"
+    },
+    {
+      "id": 173,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "sale",
+      "quantity": 31,
+      "unitCost": null,
+      "transactionDate": "2025-10-13T16:54:27.888Z"
+    },
+    {
+      "id": 174,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "sale",
+      "quantity": 19,
+      "unitCost": null,
+      "transactionDate": "2026-01-16T16:11:38.506Z"
+    },
+    {
+      "id": 175,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 10,
+      "unitCost": 12.81,
+      "transactionDate": "2025-09-24T15:53:34.303Z"
+    },
+    {
+      "id": 176,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 12.81,
+      "transactionDate": "2025-10-30T16:42:17.658Z"
+    },
+    {
+      "id": 177,
+      "productId": "cba20795-52d4-4dce-ba0b-e75c2963b353",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 12.81,
+      "transactionDate": "2025-09-28T03:59:58.604Z"
+    },
+    {
+      "id": 178,
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "transactionType": "purchase",
+      "quantity": 22,
+      "unitCost": 7.385,
+      "transactionDate": "2025-03-09T00:15:04.225Z"
+    },
+    {
+      "id": 179,
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "transactionType": "purchase",
+      "quantity": 36,
+      "unitCost": 7.385,
+      "transactionDate": "2025-12-08T08:20:26.219Z"
+    },
+    {
+      "id": 180,
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 7.385,
+      "transactionDate": "2025-08-10T21:11:36.303Z"
+    },
+    {
+      "id": 181,
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "transactionType": "sale",
+      "quantity": 24,
+      "unitCost": null,
+      "transactionDate": "2025-08-15T05:22:50.753Z"
+    },
+    {
+      "id": 182,
+      "productId": "cc0ef72f-39b2-4ebc-8213-22b4f3f63e48",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 7.385,
+      "transactionDate": "2025-07-23T23:50:32.303Z"
+    },
+    {
+      "id": 183,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 36,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-07-21T11:36:23.366Z"
+    },
+    {
+      "id": 184,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 41,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-04-10T12:02:51.311Z"
+    },
+    {
+      "id": 185,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "sale",
+      "quantity": 17,
+      "unitCost": null,
+      "transactionDate": "2025-12-05T01:43:56.357Z"
+    },
+    {
+      "id": 186,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "sale",
+      "quantity": 45,
+      "unitCost": null,
+      "transactionDate": "2025-04-24T19:59:14.083Z"
+    },
+    {
+      "id": 187,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "sale",
+      "quantity": 42,
+      "unitCost": null,
+      "transactionDate": "2025-05-24T09:34:22.587Z"
+    },
+    {
+      "id": 188,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 54,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-10-23T19:25:16.437Z"
+    },
+    {
+      "id": 189,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 49,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-06-09T06:41:23.713Z"
+    },
+    {
+      "id": 190,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 31,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-04-12T16:57:31.311Z"
+    },
+    {
+      "id": 191,
+      "productId": "cd4ebbc2-c884-450e-81fb-2f5c09faa6ed",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 5.3549999999999995,
+      "transactionDate": "2025-07-11T10:13:20.047Z"
+    },
+    {
+      "id": 192,
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "transactionType": "purchase",
+      "quantity": 35,
+      "unitCost": 9.31,
+      "transactionDate": "2025-10-03T16:15:43.837Z"
+    },
+    {
+      "id": 193,
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "transactionType": "sale",
+      "quantity": 47,
+      "unitCost": null,
+      "transactionDate": "2025-10-31T01:44:59.375Z"
+    },
+    {
+      "id": 194,
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 9.31,
+      "transactionDate": "2025-11-12T23:43:51.567Z"
+    },
+    {
+      "id": 195,
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "transactionType": "sale",
+      "quantity": 34,
+      "unitCost": null,
+      "transactionDate": "2025-05-05T12:00:09.441Z"
+    },
+    {
+      "id": 196,
+      "productId": "cf74b208-3980-4203-acf9-d4c8ad40a40b",
+      "transactionType": "purchase",
+      "quantity": 14,
+      "unitCost": 9.31,
+      "transactionDate": "2025-10-13T15:40:35.908Z"
+    },
+    {
+      "id": 197,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "purchase",
+      "quantity": 53,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-05-11T01:51:43.785Z"
+    },
+    {
+      "id": 198,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "sale",
+      "quantity": 39,
+      "unitCost": null,
+      "transactionDate": "2025-10-15T14:05:26.083Z"
+    },
+    {
+      "id": 199,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "sale",
+      "quantity": 18,
+      "unitCost": null,
+      "transactionDate": "2025-03-10T03:27:59.332Z"
+    },
+    {
+      "id": 200,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "purchase",
+      "quantity": 23,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-02-05T09:01:22.508Z"
+    },
+    {
+      "id": 201,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "purchase",
+      "quantity": 50,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-09-12T03:08:49.066Z"
+    },
+    {
+      "id": 202,
+      "productId": "d5c58da3-4e63-49d4-b370-9d5dcd7176a1",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-01-19T12:24:46.925Z"
+    },
+    {
+      "id": 203,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "sale",
+      "quantity": 59,
+      "unitCost": null,
+      "transactionDate": "2026-02-13T07:43:07.862Z"
+    },
+    {
+      "id": 204,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "purchase",
+      "quantity": 43,
+      "unitCost": 3.7099999999999995,
+      "transactionDate": "2025-10-15T06:18:17.575Z"
+    },
+    {
+      "id": 205,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "sale",
+      "quantity": 39,
+      "unitCost": null,
+      "transactionDate": "2025-11-14T09:31:00.241Z"
+    },
+    {
+      "id": 206,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "sale",
+      "quantity": 17,
+      "unitCost": null,
+      "transactionDate": "2025-08-25T07:58:53.847Z"
+    },
+    {
+      "id": 207,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "purchase",
+      "quantity": 32,
+      "unitCost": 3.7099999999999995,
+      "transactionDate": "2025-11-21T16:44:09.701Z"
+    },
+    {
+      "id": 208,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "purchase",
+      "quantity": 46,
+      "unitCost": 3.7099999999999995,
+      "transactionDate": "2025-04-30T00:43:58.576Z"
+    },
+    {
+      "id": 209,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "purchase",
+      "quantity": 43,
+      "unitCost": 3.7099999999999995,
+      "transactionDate": "2025-03-19T01:14:45.083Z"
+    },
+    {
+      "id": 210,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "purchase",
+      "quantity": 38,
+      "unitCost": 3.7099999999999995,
+      "transactionDate": "2025-10-30T04:48:21.606Z"
+    },
+    {
+      "id": 211,
+      "productId": "d9f5086d-04e6-4bd3-8447-094a4e688e7b",
+      "transactionType": "sale",
+      "quantity": 34,
+      "unitCost": null,
+      "transactionDate": "2026-02-05T22:11:35.106Z"
+    },
+    {
+      "id": 212,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "sale",
+      "quantity": 27,
+      "unitCost": null,
+      "transactionDate": "2025-08-05T23:50:25.900Z"
+    },
+    {
+      "id": 213,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 51,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-12-31T05:38:01.164Z"
+    },
+    {
+      "id": 214,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-06-27T17:54:24.533Z"
+    },
+    {
+      "id": 215,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 38,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-03-25T05:14:02.323Z"
+    },
+    {
+      "id": 216,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 40,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-10-01T21:04:11.861Z"
+    },
+    {
+      "id": 217,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 53,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-08-24T04:35:04.773Z"
+    },
+    {
+      "id": 218,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 54,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-06-16T02:05:10.154Z"
+    },
+    {
+      "id": 219,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 47,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2026-01-08T03:49:36.184Z"
+    },
+    {
+      "id": 220,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-06-02T21:13:27.583Z"
+    },
+    {
+      "id": 221,
+      "productId": "db9a4d1c-fd28-4ce5-96ec-e236cae0de79",
+      "transactionType": "purchase",
+      "quantity": 55,
+      "unitCost": 24.709999999999997,
+      "transactionDate": "2025-03-10T21:59:20.306Z"
+    },
+    {
+      "id": 222,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 55,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-10-01T10:30:47.755Z"
+    },
+    {
+      "id": 223,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 40,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-12-05T07:19:41.386Z"
+    },
+    {
+      "id": 224,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-08-09T17:51:25.275Z"
+    },
+    {
+      "id": 225,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 35,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2026-03-04T13:54:27.761Z"
+    },
+    {
+      "id": 226,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 33,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-03-08T05:26:39.089Z"
+    },
+    {
+      "id": 227,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "sale",
+      "quantity": 52,
+      "unitCost": null,
+      "transactionDate": "2026-01-29T11:45:47.333Z"
+    },
+    {
+      "id": 228,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-09-22T13:45:27.475Z"
+    },
+    {
+      "id": 229,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "sale",
+      "quantity": 35,
+      "unitCost": null,
+      "transactionDate": "2025-04-20T15:43:25.160Z"
+    },
+    {
+      "id": 230,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "sale",
+      "quantity": 44,
+      "unitCost": null,
+      "transactionDate": "2025-09-09T23:25:10.835Z"
+    },
+    {
+      "id": 231,
+      "productId": "e69c3c95-5817-4bd2-91b7-250d38ef8a75",
+      "transactionType": "purchase",
+      "quantity": 35,
+      "unitCost": 4.353999999999999,
+      "transactionDate": "2025-07-21T04:41:41.177Z"
+    },
+    {
+      "id": 232,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "sale",
+      "quantity": 11,
+      "unitCost": null,
+      "transactionDate": "2025-12-25T06:10:16.386Z"
+    },
+    {
+      "id": 233,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "sale",
+      "quantity": 50,
+      "unitCost": null,
+      "transactionDate": "2025-06-06T15:32:26.575Z"
+    },
+    {
+      "id": 234,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "purchase",
+      "quantity": 15,
+      "unitCost": 17.71,
+      "transactionDate": "2025-10-08T14:32:05.125Z"
+    },
+    {
+      "id": 235,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "purchase",
+      "quantity": 18,
+      "unitCost": 17.71,
+      "transactionDate": "2026-03-04T16:30:46.827Z"
+    },
+    {
+      "id": 236,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "sale",
+      "quantity": 12,
+      "unitCost": null,
+      "transactionDate": "2026-02-14T04:45:09.466Z"
+    },
+    {
+      "id": 237,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 17.71,
+      "transactionDate": "2025-11-29T01:55:27.693Z"
+    },
+    {
+      "id": 238,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "purchase",
+      "quantity": 34,
+      "unitCost": 17.71,
+      "transactionDate": "2026-02-21T18:21:33.134Z"
+    },
+    {
+      "id": 239,
+      "productId": "e99f4b36-ce62-4594-9b8e-5253572b8384",
+      "transactionType": "purchase",
+      "quantity": 14,
+      "unitCost": 17.71,
+      "transactionDate": "2025-08-26T14:54:50.051Z"
+    },
+    {
+      "id": 240,
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 14.385,
+      "transactionDate": "2026-02-14T22:20:32.081Z"
+    },
+    {
+      "id": 241,
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "transactionType": "purchase",
+      "quantity": 24,
+      "unitCost": 14.385,
+      "transactionDate": "2025-04-16T16:16:20.111Z"
+    },
+    {
+      "id": 242,
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "transactionType": "purchase",
+      "quantity": 50,
+      "unitCost": 14.385,
+      "transactionDate": "2025-12-17T08:18:16.338Z"
+    },
+    {
+      "id": 243,
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "transactionType": "sale",
+      "quantity": 34,
+      "unitCost": null,
+      "transactionDate": "2025-07-07T01:52:21.734Z"
+    },
+    {
+      "id": 244,
+      "productId": "eb2f122d-83e0-428d-982d-de096e77c804",
+      "transactionType": "purchase",
+      "quantity": 52,
+      "unitCost": 14.385,
+      "transactionDate": "2025-09-24T07:19:59.686Z"
+    },
+    {
+      "id": 245,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "purchase",
+      "quantity": 12,
+      "unitCost": 10.885,
+      "transactionDate": "2025-11-13T12:32:57.648Z"
+    },
+    {
+      "id": 246,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 30,
+      "unitCost": null,
+      "transactionDate": "2025-07-11T12:01:37.731Z"
+    },
+    {
+      "id": 247,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 43,
+      "unitCost": null,
+      "transactionDate": "2025-10-22T16:04:57.899Z"
+    },
+    {
+      "id": 248,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "purchase",
+      "quantity": 36,
+      "unitCost": 10.885,
+      "transactionDate": "2025-10-20T06:25:50.039Z"
+    },
+    {
+      "id": 249,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "purchase",
+      "quantity": 13,
+      "unitCost": 10.885,
+      "transactionDate": "2025-08-25T10:45:45.606Z"
+    },
+    {
+      "id": 250,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 25,
+      "unitCost": null,
+      "transactionDate": "2025-06-09T19:30:55.586Z"
+    },
+    {
+      "id": 251,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 37,
+      "unitCost": null,
+      "transactionDate": "2025-12-30T14:24:05.205Z"
+    },
+    {
+      "id": 252,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 55,
+      "unitCost": null,
+      "transactionDate": "2025-10-27T20:25:27.460Z"
+    },
+    {
+      "id": 253,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "sale",
+      "quantity": 46,
+      "unitCost": null,
+      "transactionDate": "2025-03-23T21:34:43.802Z"
+    },
+    {
+      "id": 254,
+      "productId": "ee3651d5-ae43-447a-8ff3-fa611be41f1b",
+      "transactionType": "purchase",
+      "quantity": 50,
+      "unitCost": 10.885,
+      "transactionDate": "2025-12-24T20:55:27.889Z"
+    },
+    {
+      "id": 255,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 10.745,
+      "transactionDate": "2025-04-05T03:58:13.136Z"
+    },
+    {
+      "id": 256,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "sale",
+      "quantity": 36,
+      "unitCost": null,
+      "transactionDate": "2025-05-08T15:29:56.860Z"
+    },
+    {
+      "id": 257,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 55,
+      "unitCost": 10.745,
+      "transactionDate": "2025-04-29T11:04:26.639Z"
+    },
+    {
+      "id": 258,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "sale",
+      "quantity": 17,
+      "unitCost": null,
+      "transactionDate": "2026-02-25T21:46:27.320Z"
+    },
+    {
+      "id": 259,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 57,
+      "unitCost": 10.745,
+      "transactionDate": "2025-03-25T08:59:52.101Z"
+    },
+    {
+      "id": 260,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 42,
+      "unitCost": 10.745,
+      "transactionDate": "2026-02-24T00:21:54.700Z"
+    },
+    {
+      "id": 261,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 34,
+      "unitCost": 10.745,
+      "transactionDate": "2026-02-06T01:00:29.796Z"
+    },
+    {
+      "id": 262,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 10.745,
+      "transactionDate": "2025-03-14T13:40:32.713Z"
+    },
+    {
+      "id": 263,
+      "productId": "f5dc065d-91ac-4590-ad7d-088e7a34e7a9",
+      "transactionType": "purchase",
+      "quantity": 45,
+      "unitCost": 10.745,
+      "transactionDate": "2025-04-24T18:20:36.082Z"
+    },
+    {
+      "id": 264,
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "transactionType": "purchase",
+      "quantity": 15,
+      "unitCost": 14.385,
+      "transactionDate": "2025-11-22T13:58:50.902Z"
+    },
+    {
+      "id": 265,
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "transactionType": "purchase",
+      "quantity": 48,
+      "unitCost": 14.385,
+      "transactionDate": "2025-04-15T11:23:22.873Z"
+    },
+    {
+      "id": 266,
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "transactionType": "purchase",
+      "quantity": 37,
+      "unitCost": 14.385,
+      "transactionDate": "2025-09-22T13:13:41.610Z"
+    },
+    {
+      "id": 267,
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "transactionType": "purchase",
+      "quantity": 26,
+      "unitCost": 14.385,
+      "transactionDate": "2025-03-26T22:52:05.409Z"
+    },
+    {
+      "id": 268,
+      "productId": "f66248d8-e165-4067-9a6d-3ac4a5625402",
+      "transactionType": "purchase",
+      "quantity": 39,
+      "unitCost": 14.385,
+      "transactionDate": "2025-11-23T00:18:33.595Z"
+    }
+  ]
+}

@@ -60,7 +60,7 @@ const Header = () => {
             <ChatSolidIcon className="h-[20px] text-black w-auto group-hover:text-primary-main transition-all" />
           </Badge>
         </IconButton> */}
-        {rolelvl < 3 && (
+        {rolelvl >= 3 && (
           <IconButton
             className="group !rounded !bg-white !drop-shadow-sm"
             onClick={() =>

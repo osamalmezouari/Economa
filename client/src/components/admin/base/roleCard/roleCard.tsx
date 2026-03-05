@@ -18,16 +18,10 @@ import {
 import { AppDispatch } from '../../../../app/store';
 
 const getRoleColor = (level: number) => {
-  switch (level) {
-    case 1:
-      return '#10B981'; // Emerald
-    case 2:
-      return '#3B82F6'; // Blue
-    case 3:
-      return '#F59E0B'; // Amber
-    default:
-      return '#6B7280'; // Gray
-  }
+  if (level >= 10) return '#10B981'; // Emerald (Admin)
+  if (level >= 5) return '#3B82F6'; // Blue (Manager)
+  if (level >= 3) return '#F59E0B'; // Amber (Cashier)
+  return '#6B7280'; // Gray (Customer/default)
 };
 
 const RoleCard = ({

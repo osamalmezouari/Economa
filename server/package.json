@@ -21,7 +21,8 @@
     "prisma:all": "npm run prisma:migrate && npm run prisma:deploy && npm run prisma:generate",
     "prisma:generate": "npx prisma generate --schema=src/prisma/schema.prisma",
     "prisma:deploy": "npx prisma migrate deploy --schema=src/prisma/schema.prisma",
-    "prisma:migrate": "npx prisma migrate dev  --create-only --schema=src/prisma/schema.prisma"
+    "prisma:migrate": "npx prisma migrate dev  --create-only --schema=src/prisma/schema.prisma",
+    "prisma:seed": "npx prisma db seed"
   },
   "dependencies": {
     "@nest-middlewares/cors": "^10.0.0",
@@ -95,5 +96,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} src/prisma/seed.ts"
   }
 }

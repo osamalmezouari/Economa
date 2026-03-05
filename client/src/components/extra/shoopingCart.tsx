@@ -78,7 +78,7 @@ const ShoppingCart = () => {
           </button>
         </Box>
         <Box
-          className={`h-[400px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
+          className={`h-[550px] overflow-y-scroll px-4 ${(loading || error) && 'flex items-center justify-center'} `}
         >
           {(loading || createloading || removeloading) && (
             <CircularProgress color="primary" className="m-auto" />

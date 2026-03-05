@@ -108,7 +108,7 @@ const ProfileMenu = () => {
             >
               <Typography variant="body2">My Profile</Typography>
             </Box>
-            {rolelvl < 3 ? (
+            {rolelvl >= 3 ? (
               <Box
                 className="p-2 hover:bg-gray-50 cursor-pointer"
                 onClick={() => handleNavigation('/Economa/admin/Dashboard')}

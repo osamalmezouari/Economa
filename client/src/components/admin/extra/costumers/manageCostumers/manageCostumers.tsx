@@ -132,7 +132,7 @@ const ManageCostumersTable = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="body2" className="text-[12px]">
-                  {CURRENCY_SYMBOL}{user.balance.Balance.toFixed(2)}
+                  {CURRENCY_SYMBOL}{user.balance?.Balance?.toFixed(2) || '0.00'}
                 </Typography>
               </TableCell>
               <TableCell>

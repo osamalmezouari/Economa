@@ -26,13 +26,15 @@ const RolesAndPermissions = () => {
   // Function to determine role level based on role name or other criteria
   const getRoleLvl = (roleName: string): number => {
     const roleLevels: Record<string, number> = {
-      Administrator: 1,
-      Admin: 1,
-      Editor: 2,
+      Administrator: 10,
+      Admin: 10,
+      Manager: 5,
+      Editor: 5,
+      Cashier: 3,
       Viewer: 3,
-      User: 3,
+      User: 1,
     };
-    return roleLevels[roleName] || 3; // Default to level 3 if not found
+    return roleLevels[roleName] || 1; // Default to level 1 if not found
   };
 
   return (

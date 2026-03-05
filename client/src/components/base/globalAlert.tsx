@@ -19,7 +19,17 @@ const GlobalAlert = ({
   );
 
   useEffect(() => {
-    if (cart || wishlist) {
+    // Only trigger if data exists AND is not empty objects/arrays
+    const hasCartData =
+      cart &&
+      ((Array.isArray(cart) && cart.length > 0) ||
+        (typeof cart === 'object' && Object.keys(cart).length > 0));
+    const hasWishlistData =
+      wishlist &&
+      ((Array.isArray(wishlist) && wishlist.length > 0) ||
+        (typeof wishlist === 'object' && Object.keys(wishlist).length > 0));
+
+    if (hasCartData || hasWishlistData) {
       setOpen(true);
       const timer = setTimeout(() => {
         setOpen(false);

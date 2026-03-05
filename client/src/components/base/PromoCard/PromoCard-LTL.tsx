@@ -14,7 +14,7 @@ const PromoCardlefttitlelarge: React.FC<PromoCardProps> = ({
     <div className='w-[1300px] h-[250px]  m-auto'>
       <Box
         component="div"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url('${image}')` }}
 
         className="flex flex-col justify-center bg-cover bg-top  w-full h-full relative px-4 py-6  rounded"
       >

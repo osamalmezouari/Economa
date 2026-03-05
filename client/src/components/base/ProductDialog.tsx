@@ -119,7 +119,7 @@ export default function ProductDialog({
                 component={'div'}
                 className="relative w-full h-full border-2 bg-green-50 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(${imageLink})`,
+                  backgroundImage: `url('${imageLink}')`,
                 }}
               >
                 {discount > 0 && (

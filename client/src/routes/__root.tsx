@@ -81,7 +81,7 @@ export const adminRoute = createRoute({
   component: AdminRouteComponent,
   beforeLoad: async () => {
     const { verfied, rolelvl } = await isTokenValid();
-    if (!verfied || !rolelvl || rolelvl >= 3) {
+    if (!verfied || !rolelvl || rolelvl < 3) {
       throw redirect({
         to: '/Economa',
         replace: true,

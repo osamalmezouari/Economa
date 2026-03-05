@@ -138,19 +138,20 @@ export class OrdersService {
       select: { id: true, createdAt: true },
     });
 
-    const ordersData = ordersLastMonth.reduce(
-      (acc, order) => {
-        const orderDateInMorocco = this.convertToMoroccoTime(order.createdAt);
-        const formattedDate = orderDateInMorocco.toISOString().slice(0, 10);
+    const ordersData: Record<string, { day: string; orders: number }> = {};
+    for (let i = 6; i >= 0; i--) {
+      const d = subDays(endDateInMorocco, i);
+      const formatted = d.toISOString().slice(0, 10);
+      ordersData[formatted] = { day: formatted, orders: 0 };
+    }
 
-        if (!acc[formattedDate])
-          acc[formattedDate] = { day: formattedDate, orders: 0 };
-        acc[formattedDate].orders += 1;
-
-        return acc;
-      },
-      {} as Record<string, { day: string; orders: number }>,
-    );
+    ordersLastMonth.forEach((order) => {
+      const orderDateInMorocco = this.convertToMoroccoTime(order.createdAt);
+      const formattedDate = orderDateInMorocco.toISOString().slice(0, 10);
+      if (ordersData[formattedDate]) {
+        ordersData[formattedDate].orders += 1;
+      }
+    });
 
     const currentMonthOrders = await this.prisma.order.findMany({
       where: {
@@ -254,26 +255,23 @@ export class OrdersService {
           ? 100
           : 0;
 
-    const ordersData = ordersLastWeek.reduce(
-      (acc, order) => {
-        const orderDateInMorocco = this.convertToMoroccoTime(order.createdAt);
-        const dayFormatted = orderDateInMorocco
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, '-');
+    const ordersData: Record<string, { day: string; totalAmount: number }> = {};
+    for (let i = 6; i >= 0; i--) {
+      const d = subDays(endDate, i);
+      const formatted = d.toISOString().slice(0, 10);
+      ordersData[formatted] = { day: formatted, totalAmount: 0 };
+    }
 
-        if (!acc[dayFormatted]) {
-          acc[dayFormatted] = {
-            day: dayFormatted,
-            totalAmount: 0,
-          };
-        }
+    ordersLastWeek.forEach((order) => {
+      const orderDateInMorocco = this.convertToMoroccoTime(order.createdAt);
+      const dayFormatted = orderDateInMorocco
+        .toISOString()
+        .slice(0, 10);
 
-        acc[dayFormatted].totalAmount += order.totalAmount;
-        return acc;
-      },
-      {} as Record<string, { day: string; totalAmount: number }>,
-    );
+      if (ordersData[dayFormatted]) {
+        ordersData[dayFormatted].totalAmount += order.totalAmount;
+      }
+    });
 
     const ordersDataArray = Object.values(ordersData);
 
@@ -342,29 +340,25 @@ export class OrdersService {
         : totalProfitMonth !== 0
           ? 100
           : 0;
-    const ordersData = orderItemsLastWeek.reduce(
-      (acc, item) => {
-        const orderDateInMorocco = this.convertToMoroccoTime(
-          item.order.createdAt,
-        );
-        const dayFormatted = orderDateInMorocco
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, '-');
+    const ordersData: Record<string, { day: string; totalProfit: number }> = {};
+    for (let i = 6; i >= 0; i--) {
+      const d = subDays(endDate, i);
+      const formatted = d.toISOString().slice(0, 10);
+      ordersData[formatted] = { day: formatted, totalProfit: 0 };
+    }
 
-        if (!acc[dayFormatted]) {
-          acc[dayFormatted] = {
-            day: dayFormatted,
-            totalProfit: 0,
-          };
-        }
+    orderItemsLastWeek.forEach((item) => {
+      const orderDateInMorocco = this.convertToMoroccoTime(
+        item.order.createdAt,
+      );
+      const dayFormatted = orderDateInMorocco.toISOString().slice(0, 10);
+
+      if (ordersData[dayFormatted]) {
         const profit =
           (item.unitPrice - item.product.cost_price) * item.quantity;
-        acc[dayFormatted].totalProfit += profit;
-        return acc;
-      },
-      {} as Record<string, { day: string; totalProfit: number }>,
-    );
+        ordersData[dayFormatted].totalProfit += profit;
+      }
+    });
 
     const ordersDataArray = Object.values(ordersData);
     const increased = totalProfitMonth > totalProfitPreviousMonth;
